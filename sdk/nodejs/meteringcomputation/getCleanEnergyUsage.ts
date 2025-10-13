@@ -8,6 +8,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
  *
  * Returns the clean energy usage summary by region.
+ *
+ * ## Example Usage
  */
 export function getCleanEnergyUsage(args: GetCleanEnergyUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetCleanEnergyUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -51,6 +53,8 @@ export interface GetCleanEnergyUsageResult {
  * This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
  *
  * Returns the clean energy usage summary by region.
+ *
+ * ## Example Usage
  */
 export function getCleanEnergyUsageOutput(args: GetCleanEnergyUsageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCleanEnergyUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

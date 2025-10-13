@@ -37,7 +37,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
      * * UNRESTRICTED (default): the access to the database is not restricted;
-     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
      * 
      */
     @Import(name="accessMode")
@@ -46,7 +46,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
      * * UNRESTRICTED (default): the access to the database is not restricted;
-     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
      * 
      */
     public Optional<Output<String>> accessMode() {
@@ -506,14 +506,14 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+     * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      * 
      */
     @Import(name="maintenance")
     private @Nullable Output<MysqlDbSystemMaintenanceArgs> maintenance;
 
     /**
-     * @return (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+     * @return (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      * 
      */
     public Optional<Output<MysqlDbSystemMaintenanceArgs>> maintenance() {
@@ -840,7 +840,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param accessMode (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
          * * UNRESTRICTED (default): the access to the database is not restricted;
-         * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
          * 
          * @return builder
          * 
@@ -853,7 +853,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param accessMode (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
          * * UNRESTRICTED (default): the access to the database is not restricted;
-         * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
          * 
          * @return builder
          * 
@@ -1543,7 +1543,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param maintenance (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+         * @param maintenance (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
          * 
          * @return builder
          * 
@@ -1554,7 +1554,7 @@ public final class MysqlDbSystemState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param maintenance (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+         * @param maintenance (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
          * 
          * @return builder
          * 

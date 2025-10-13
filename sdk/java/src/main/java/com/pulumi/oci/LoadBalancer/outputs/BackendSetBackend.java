@@ -47,7 +47,7 @@ public final class BackendSetBackend {
      * 
      * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
      * 
-     * Example: `example_backend_set`
+     * Example: `exampleBackendSet`
      * 
      */
     private @Nullable String name;
@@ -109,7 +109,7 @@ public final class BackendSetBackend {
      * 
      * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
      * 
-     * Example: `example_backend_set`
+     * Example: `exampleBackendSet`
      * 
      */
     public Optional<String> name() {

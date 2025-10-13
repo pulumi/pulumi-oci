@@ -13,7 +13,9 @@ import (
 
 // This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
 //
-// Gets an endpoint by identifier
+// # Gets an endpoint by identifier
+//
+// ## Example Usage
 func LookupEndpoint(ctx *pulumi.Context, args *LookupEndpointArgs, opts ...pulumi.InvokeOption) (*LookupEndpointResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupEndpointResult

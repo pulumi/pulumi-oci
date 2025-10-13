@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Replace Settings
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// Settings can be imported using the `id`, e.g.

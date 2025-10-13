@@ -4148,6 +4148,8 @@ class DomainsIdentityProvider(pulumi.CustomResource):
 
         Create an Identity Provider
 
+        ## Example Usage
+
         ## Import
 
         IdentityProviders can be imported using the `id`, e.g.
@@ -4720,6 +4722,8 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create an Identity Provider
+
+        ## Example Usage
 
         ## Import
 

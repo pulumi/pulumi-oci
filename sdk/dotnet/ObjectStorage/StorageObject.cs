@@ -75,7 +75,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Output<string?> CacheControl { get; private set; } = null!;
 
         /// <summary>
-        /// The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
+        /// The object to upload to the object store. Cannot be defined if `Source` or `SourceUriDetails` is defined.
         /// </summary>
         [Output("content")]
         public Output<string?> Content { get; private set; } = null!;
@@ -150,13 +150,13 @@ namespace Pulumi.Oci.ObjectStorage
         public Output<string> OpcSseKmsKeyId { get; private set; } = null!;
 
         /// <summary>
-        /// An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
+        /// An absolute path to a file on the local system. Cannot be defined if `Content` or `SourceUriDetails` is defined.
         /// </summary>
         [Output("source")]
         public Output<string?> Source { get; private set; } = null!;
 
         /// <summary>
-        /// Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+        /// Details of the source URI of the object in the cloud. Cannot be defined if `Content` or `Source` is defined. 
         /// Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         /// </summary>
         [Output("sourceUriDetails")]
@@ -236,7 +236,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? CacheControl { get; set; }
 
         /// <summary>
-        /// The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
+        /// The object to upload to the object store. Cannot be defined if `Source` or `SourceUriDetails` is defined.
         /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }
@@ -311,13 +311,13 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? OpcSseKmsKeyId { get; set; }
 
         /// <summary>
-        /// An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
+        /// An absolute path to a file on the local system. Cannot be defined if `Content` or `SourceUriDetails` is defined.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+        /// Details of the source URI of the object in the cloud. Cannot be defined if `Content` or `Source` is defined. 
         /// Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         /// </summary>
         [Input("sourceUriDetails")]
@@ -350,7 +350,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? CacheControl { get; set; }
 
         /// <summary>
-        /// The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
+        /// The object to upload to the object store. Cannot be defined if `Source` or `SourceUriDetails` is defined.
         /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }
@@ -431,13 +431,13 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? OpcSseKmsKeyId { get; set; }
 
         /// <summary>
-        /// An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
+        /// An absolute path to a file on the local system. Cannot be defined if `Content` or `SourceUriDetails` is defined.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+        /// Details of the source URI of the object in the cloud. Cannot be defined if `Content` or `Source` is defined. 
         /// Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         /// </summary>
         [Input("sourceUriDetails")]

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int? FastStartFailOverLagLimitInSeconds;
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : IsAutomaticFailoverEnabled = true.
         /// </summary>
         public readonly bool? IsAutomaticFailoverEnabled;
         /// <summary>

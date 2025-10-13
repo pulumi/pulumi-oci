@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A flag indicating whether this step should be enabled for execution.  Example: `true`
+        /// A flag indicating whether this step should be enabled for execution.  Example: `True`
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

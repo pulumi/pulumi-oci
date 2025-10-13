@@ -123,6 +123,8 @@ def get_network_firewall_policy_application(name: Optional[_builtins.str] = None
 
     Get Application by the given name in the context of network firewall policy.
 
+    ## Example Usage
+
 
     :param _builtins.str name: Name of the application.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -148,6 +150,8 @@ def get_network_firewall_policy_application_output(name: Optional[pulumi.Input[_
     This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
 
     Get Application by the given name in the context of network firewall policy.
+
+    ## Example Usage
 
 
     :param _builtins.str name: Name of the application.

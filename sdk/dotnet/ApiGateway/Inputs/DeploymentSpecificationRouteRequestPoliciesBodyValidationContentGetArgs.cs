@@ -13,9 +13,9 @@ namespace Pulumi.Oci.ApiGateway.Inputs
     public sealed class DeploymentSpecificationRouteRequestPoliciesBodyValidationContentGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
+        /// (Updatable) The MediaType is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
         /// 
-        /// media_type ::= ( / (  "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
+        /// MediaType ::= ( / (  "*" "/" "*" ) / ( type "/" "*" ) / ( type "/" subtype ) )
         /// 
         /// For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
         /// </summary>

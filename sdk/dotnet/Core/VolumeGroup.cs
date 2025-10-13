@@ -164,7 +164,7 @@ namespace Pulumi.Oci.Core
         public Output<bool?> VolumeGroupReplicasDeletion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+        /// (Updatable) Use this for update operation only. This field is not supported during creation. For create use `VolumeIds` under `SourceDetails`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -306,7 +306,7 @@ namespace Pulumi.Oci.Core
         private InputList<string>? _volumeIds;
 
         /// <summary>
-        /// (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+        /// (Updatable) Use this for update operation only. This field is not supported during creation. For create use `VolumeIds` under `SourceDetails`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -443,7 +443,7 @@ namespace Pulumi.Oci.Core
         private InputList<string>? _volumeIds;
 
         /// <summary>
-        /// (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+        /// (Updatable) Use this for update operation only. This field is not supported during creation. For create use `VolumeIds` under `SourceDetails`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

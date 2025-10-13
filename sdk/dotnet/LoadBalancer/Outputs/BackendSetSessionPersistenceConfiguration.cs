@@ -14,11 +14,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class BackendSetSessionPersistenceConfiguration
     {
         /// <summary>
-        /// (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+        /// (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `ExampleCookie`
         /// </summary>
         public readonly string CookieName;
         /// <summary>
-        /// (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
+        /// (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `False`
         /// </summary>
         public readonly bool? DisableFallback;
 

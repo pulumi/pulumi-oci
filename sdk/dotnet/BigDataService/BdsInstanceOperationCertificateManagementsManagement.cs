@@ -63,7 +63,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<string> ClusterAdminPassword { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// </summary>
         [Output("enableOperationCertificateManagement")]
         public Output<bool> EnableOperationCertificateManagement { get; private set; } = null!;
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<ImmutableArray<Outputs.BdsInstanceOperationCertificateManagementsManagementHostCertDetail>> HostCertDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
+        /// (Updatable) A required field when set to `True` calls renew action and when set to `False` defaults to enable_operation_certificate_management's value action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// </summary>
         [Input("enableOperationCertificateManagement", required: true)]
         public Input<bool> EnableOperationCertificateManagement { get; set; } = null!;
@@ -194,7 +194,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
+        /// (Updatable) A required field when set to `True` calls renew action and when set to `False` defaults to enable_operation_certificate_management's value action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -268,7 +268,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// </summary>
         [Input("enableOperationCertificateManagement")]
         public Input<bool>? EnableOperationCertificateManagement { get; set; }
@@ -286,7 +286,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
+        /// (Updatable) A required field when set to `True` calls renew action and when set to `False` defaults to enable_operation_certificate_management's value action.
         /// 
         /// 
         /// ** IMPORTANT **

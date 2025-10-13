@@ -231,6 +231,8 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[Union['Ge
 
     Lists the SQL plan baselines for the specified Managed Database.
 
+    ## Example Usage
+
 
     :param _builtins.bool is_accepted: A filter to return only SQL plan baselines that are either accepted or not accepted. By default, all SQL plan baselines are returned.
     :param _builtins.bool is_adaptive: A filter to return only SQL plan baselines that are either adaptive or not adaptive. By default, all SQL plan baselines are returned.
@@ -303,6 +305,8 @@ def get_managed_database_sql_plan_baselines_output(filters: Optional[pulumi.Inpu
     This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
 
     Lists the SQL plan baselines for the specified Managed Database.
+
+    ## Example Usage
 
 
     :param _builtins.bool is_accepted: A filter to return only SQL plan baselines that are either accepted or not accepted. By default, all SQL plan baselines are returned.

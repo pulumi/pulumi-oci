@@ -36,6 +36,8 @@ import javax.annotation.Nullable;
  * 
  * **Note:** After sending the POST request, the new object&#39;s state will temporarily be `CREATING`. Ensure that the resource&#39;s state has changed to `ACTIVE` before use.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * WaasPolicies can be imported using the `id`, e.g.

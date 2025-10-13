@@ -1314,6 +1314,8 @@ class DomainsGrant(pulumi.CustomResource):
 
         Add a Grantee to an AppRole
 
+        ## Example Usage
+
         ## Import
 
         Grants can be imported using the `id`, e.g.
@@ -1444,6 +1446,8 @@ class DomainsGrant(pulumi.CustomResource):
         This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Add a Grantee to an AppRole
+
+        ## Example Usage
 
         ## Import
 

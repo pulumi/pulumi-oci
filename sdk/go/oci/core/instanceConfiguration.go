@@ -17,6 +17,8 @@ import (
 // Creates an instance configuration. An instance configuration is a template that defines the
 // settings to use when creating Compute instances.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // InstanceConfigurations can be imported using the `id`, e.g.

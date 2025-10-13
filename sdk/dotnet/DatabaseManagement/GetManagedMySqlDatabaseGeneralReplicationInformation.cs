@@ -184,7 +184,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// If the value is ON, the instance is configured as read_only. If the value is SUPER, the instance is configured as super_read_only. If the value is OFF, the instance is neither read_only nor super_read_only.
+        /// If the value is ON, the instance is configured as read_only. If the value is SUPER, the instance is configured as super_read_only. If the value is OFF, the instance is neither ReadOnly nor super_read_only.
         /// </summary>
         public readonly string ReadOnly;
         /// <summary>

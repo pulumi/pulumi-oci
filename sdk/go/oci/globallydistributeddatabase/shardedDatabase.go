@@ -21,6 +21,8 @@ import (
 // operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
 // and remove in single operation is not allowed.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // ShardedDatabases can be imported using the `id`, e.g.

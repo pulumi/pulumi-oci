@@ -18,14 +18,14 @@ public final class GetListenersFilter extends com.pulumi.resources.InvokeArgs {
     public static final GetListenersFilter Empty = new GetListenersFilter();
 
     /**
-     * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetListenersFilter extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param name A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+         * @param name A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
          * 
          * @return builder
          * 

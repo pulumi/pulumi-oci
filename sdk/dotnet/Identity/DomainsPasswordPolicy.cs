@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a password policy.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// PasswordPolicies can be imported using the `id`, e.g.

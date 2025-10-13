@@ -15,7 +15,7 @@ namespace Pulumi.Oci.Identity
     /// Create a Request
     /// 
     /// ** IMPORTANT **
-    /// In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
+    /// In our latest release, the property `Status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
     /// 
     /// ## Example Usage
     /// 

@@ -15,9 +15,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationCont
     public static final DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs Empty = new DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs();
 
     /**
-     * (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
+     * (Updatable) The mediaType is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
      * 
-     * media_type ::= ( / (  &#34;*&#34; &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; subtype ) )
+     * mediaType ::= ( / (  &#34;*&#34; &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; subtype ) )
      * 
      * For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
      * 
@@ -26,9 +26,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationCont
     private Output<String> mediaType;
 
     /**
-     * @return (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
+     * @return (Updatable) The mediaType is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
      * 
-     * media_type ::= ( / (  &#34;*&#34; &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; subtype ) )
+     * mediaType ::= ( / (  &#34;*&#34; &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; subtype ) )
      * 
      * For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
      * 
@@ -82,9 +82,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationCont
         }
 
         /**
-         * @param mediaType (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
+         * @param mediaType (Updatable) The mediaType is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
          * 
-         * media_type ::= ( / (  &#34;*&#34; &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; subtype ) )
+         * mediaType ::= ( / (  &#34;*&#34; &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; subtype ) )
          * 
          * For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
          * 
@@ -97,9 +97,9 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidationCont
         }
 
         /**
-         * @param mediaType (Updatable) The media_type is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
+         * @param mediaType (Updatable) The mediaType is a [media type range](https://tools.ietf.org/html/rfc7231#appendix-D) subset restricted to the following schema
          * 
-         * media_type ::= ( / (  &#34;*&#34; &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; subtype ) )
+         * mediaType ::= ( / (  &#34;*&#34; &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; &#34;*&#34; ) / ( type &#34;/&#34; subtype ) )
          * 
          * For requests that match multiple media types, only the most specific media type is applicable. e.g. `text/plain` overrides `text/*`
          * 

@@ -20,6 +20,12 @@ import javax.annotation.Nullable;
  * Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
  * The reporting region cannot be updated once created.
  * 
+ * ## Example Usage
+ * 
+ * ## Import
+ * 
+ * Import is not supported for this resource.
+ * 
  */
 @ResourceType(type="oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration")
 public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource {

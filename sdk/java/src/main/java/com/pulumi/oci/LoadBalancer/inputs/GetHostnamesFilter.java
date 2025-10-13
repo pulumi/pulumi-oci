@@ -18,14 +18,14 @@ public final class GetHostnamesFilter extends com.pulumi.resources.InvokeArgs {
     public static final GetHostnamesFilter Empty = new GetHostnamesFilter();
 
     /**
-     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+     * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetHostnamesFilter extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param name A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+         * @param name A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
          * 
          * @return builder
          * 

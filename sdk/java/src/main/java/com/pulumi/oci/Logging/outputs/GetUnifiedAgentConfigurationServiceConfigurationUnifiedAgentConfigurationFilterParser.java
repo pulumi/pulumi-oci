@@ -53,7 +53,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
      */
     private String grokNameKey;
     /**
-     * @return If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+     * @return If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
      * 
      */
     private Boolean isEstimateCurrentEvent;
@@ -73,12 +73,12 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
      */
     private Boolean isNullEmptyString;
     /**
-     * @return Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+     * @return Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
      * 
      */
     private Boolean isSupportColonlessIdent;
     /**
-     * @return Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+     * @return Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
      * 
      */
     private Boolean isWithPriority;
@@ -163,7 +163,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
      */
     private Integer timeoutInMilliseconds;
     /**
-     * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user timeKey time &lt;/parse&gt;
      * 
      */
     private Map<String,String> types;
@@ -219,7 +219,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
         return this.grokNameKey;
     }
     /**
-     * @return If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+     * @return If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
      * 
      */
     public Boolean isEstimateCurrentEvent() {
@@ -247,14 +247,14 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
         return this.isNullEmptyString;
     }
     /**
-     * @return Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+     * @return Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
      * 
      */
     public Boolean isSupportColonlessIdent() {
         return this.isSupportColonlessIdent;
     }
     /**
-     * @return Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+     * @return Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
      * 
      */
     public Boolean isWithPriority() {
@@ -373,7 +373,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
         return this.timeoutInMilliseconds;
     }
     /**
-     * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user timeKey time &lt;/parse&gt;
      * 
      */
     public Map<String,String> types() {

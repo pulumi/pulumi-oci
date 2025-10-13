@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Dns
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// The attached domain within the attached zone. `domain_name` is case insensitive.
+        /// The attached domain within the attached zone. `DomainName` is case insensitive.
         /// </summary>
         [Output("domainName")]
         public Output<string> DomainName { get; private set; } = null!;
@@ -162,7 +162,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The attached domain within the attached zone. `domain_name` is case insensitive.
+        /// The attached domain within the attached zone. `DomainName` is case insensitive.
         /// </summary>
         [Input("domainName", required: true)]
         public Input<string> DomainName { get; set; } = null!;
@@ -204,7 +204,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The attached domain within the attached zone. `domain_name` is case insensitive.
+        /// The attached domain within the attached zone. `DomainName` is case insensitive.
         /// </summary>
         [Input("domainName")]
         public Input<string>? DomainName { get; set; }

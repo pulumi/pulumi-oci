@@ -30,14 +30,14 @@ public final class GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs 
     }
 
     /**
-     * The name of the backend set associated with the backend server for which to retrieve the operational status.  Example: `example_backend_set`
+     * The name of the backend set associated with the backend server for which to retrieve the operational status.  Example: `exampleBackendSet`
      * 
      */
     @Import(name="backendSetName", required=true)
     private Output<String> backendSetName;
 
     /**
-     * @return The name of the backend set associated with the backend server for which to retrieve the operational status.  Example: `example_backend_set`
+     * @return The name of the backend set associated with the backend server for which to retrieve the operational status.  Example: `exampleBackendSet`
      * 
      */
     public Output<String> backendSetName() {
@@ -107,7 +107,7 @@ public final class GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs 
         }
 
         /**
-         * @param backendSetName The name of the backend set associated with the backend server for which to retrieve the operational status.  Example: `example_backend_set`
+         * @param backendSetName The name of the backend set associated with the backend server for which to retrieve the operational status.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs 
         }
 
         /**
-         * @param backendSetName The name of the backend set associated with the backend server for which to retrieve the operational status.  Example: `example_backend_set`
+         * @param backendSetName The name of the backend set associated with the backend server for which to retrieve the operational status.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 

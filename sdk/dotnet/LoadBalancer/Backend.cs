@@ -52,23 +52,23 @@ namespace Pulumi.Oci.LoadBalancer
     public partial class Backend : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The name of the backend set to add the backend server to.  Example: `example_backend_set`
+        /// The name of the backend set to add the backend server to.  Example: `ExampleBackendSet`
         /// </summary>
         [Output("backendsetName")]
         public Output<string> BackendsetName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+        /// (Updatable) Whether the load balancer should treat this server as a backup unit. If `True`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
         /// 
-        /// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+        /// **Note:** You cannot add a backend server marked as `Backup` to a backend set that uses the IP Hash policy.
         /// 
-        /// Example: `false`
+        /// Example: `False`
         /// </summary>
         [Output("backup")]
         public Output<bool?> Backup { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+        /// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `False`
         /// </summary>
         [Output("drain")]
         public Output<bool> Drain { get; private set; } = null!;
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `False`
         /// </summary>
         [Output("offline")]
         public Output<bool> Offline { get; private set; } = null!;
@@ -173,23 +173,23 @@ namespace Pulumi.Oci.LoadBalancer
     public sealed class BackendArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the backend set to add the backend server to.  Example: `example_backend_set`
+        /// The name of the backend set to add the backend server to.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendsetName", required: true)]
         public Input<string> BackendsetName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+        /// (Updatable) Whether the load balancer should treat this server as a backup unit. If `True`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
         /// 
-        /// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+        /// **Note:** You cannot add a backend server marked as `Backup` to a backend set that uses the IP Hash policy.
         /// 
-        /// Example: `false`
+        /// Example: `False`
         /// </summary>
         [Input("backup")]
         public Input<bool>? Backup { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+        /// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `False`
         /// </summary>
         [Input("drain")]
         public Input<bool>? Drain { get; set; }
@@ -217,7 +217,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<int>? MaxConnections { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `False`
         /// </summary>
         [Input("offline")]
         public Input<bool>? Offline { get; set; }
@@ -247,23 +247,23 @@ namespace Pulumi.Oci.LoadBalancer
     public sealed class BackendState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the backend set to add the backend server to.  Example: `example_backend_set`
+        /// The name of the backend set to add the backend server to.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendsetName")]
         public Input<string>? BackendsetName { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+        /// (Updatable) Whether the load balancer should treat this server as a backup unit. If `True`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
         /// 
-        /// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+        /// **Note:** You cannot add a backend server marked as `Backup` to a backend set that uses the IP Hash policy.
         /// 
-        /// Example: `false`
+        /// Example: `False`
         /// </summary>
         [Input("backup")]
         public Input<bool>? Backup { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+        /// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `False`
         /// </summary>
         [Input("drain")]
         public Input<bool>? Drain { get; set; }
@@ -297,7 +297,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `False`
         /// </summary>
         [Input("offline")]
         public Input<bool>? Offline { get; set; }

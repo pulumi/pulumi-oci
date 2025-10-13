@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetPathRouteSetsPathRouteSetPathRouteResult
     {
         /// <summary>
-        /// The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
+        /// The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `ExampleBackendSet`
         /// </summary>
         public readonly string BackendSetName;
         /// <summary>

@@ -53,7 +53,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? TransportAttachmentId { get; set; }
 
         /// <summary>
-        /// Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+        /// Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `True`
         /// </summary>
         [Input("transportOnlyMode")]
         public Input<bool>? TransportOnlyMode { get; set; }

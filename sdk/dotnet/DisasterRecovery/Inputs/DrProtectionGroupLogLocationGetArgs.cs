@@ -13,19 +13,19 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrProtectionGroupLogLocationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+        /// (Updatable) The bucket name inside the object storage namespace.  Example: `OperationLogs`
         /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        /// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `Myocitenancy`
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
-        /// The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+        /// The object name inside the object storage bucket.  Example: `SwitchoverPlanExecutions`
         /// </summary>
         [Input("object")]
         public Input<string>? Object { get; set; }

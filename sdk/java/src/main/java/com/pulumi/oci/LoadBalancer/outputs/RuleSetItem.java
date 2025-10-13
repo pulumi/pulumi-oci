@@ -59,7 +59,7 @@ public final class RuleSetItem {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
+     * @return (Updatable) A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     private @Nullable String header;
@@ -78,7 +78,7 @@ public final class RuleSetItem {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_prefix_value`
+     * Example: `examplePrefixValue`
      * 
      */
     private @Nullable String prefix;
@@ -136,7 +136,7 @@ public final class RuleSetItem {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_suffix_value`
+     * Example: `exampleSuffixValue`
      * 
      */
     private @Nullable String suffix;
@@ -145,7 +145,7 @@ public final class RuleSetItem {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_value`
+     * Example: `exampleValue`
      * 
      */
     private @Nullable String value;
@@ -204,7 +204,7 @@ public final class RuleSetItem {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
+     * @return (Updatable) A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     public Optional<String> header() {
@@ -229,7 +229,7 @@ public final class RuleSetItem {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_prefix_value`
+     * Example: `examplePrefixValue`
      * 
      */
     public Optional<String> prefix() {
@@ -295,7 +295,7 @@ public final class RuleSetItem {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_suffix_value`
+     * Example: `exampleSuffixValue`
      * 
      */
     public Optional<String> suffix() {
@@ -306,7 +306,7 @@ public final class RuleSetItem {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_value`
+     * Example: `exampleValue`
      * 
      */
     public Optional<String> value() {

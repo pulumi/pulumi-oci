@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * 
  * Creates a new Decryption Rule for the Network Firewall Policy.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
@@ -121,14 +123,14 @@ public class NetworkFirewallPolicyDecryptionRule extends com.pulumi.resources.Cu
         return this.parentResourceId;
     }
     /**
-     * (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+     * (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
      * 
      */
     @Export(name="position", refs={NetworkFirewallPolicyDecryptionRulePosition.class}, tree="[0]")
     private Output<NetworkFirewallPolicyDecryptionRulePosition> position;
 
     /**
-     * @return (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+     * @return (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
      * 
      */
     public Output<NetworkFirewallPolicyDecryptionRulePosition> position() {

@@ -74,14 +74,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:NetworkLoadBalancer/backend:Backend")
 public class Backend extends com.pulumi.resources.CustomResource {
     /**
-     * The name of the backend set to which to add the backend server.  Example: `example_backend_set`
+     * The name of the backend set to which to add the backend server.  Example: `exampleBackendSet`
      * 
      */
     @Export(name="backendSetName", refs={String.class}, tree="[0]")
     private Output<String> backendSetName;
 
     /**
-     * @return The name of the backend set to which to add the backend server.  Example: `example_backend_set`
+     * @return The name of the backend set to which to add the backend server.  Example: `exampleBackendSet`
      * 
      */
     public Output<String> backendSetName() {

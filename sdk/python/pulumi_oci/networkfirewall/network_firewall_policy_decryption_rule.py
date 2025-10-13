@@ -323,6 +323,8 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
 
         Creates a new Decryption Rule for the Network Firewall Policy.
 
+        ## Example Usage
+
         ## Import
 
         NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
@@ -353,6 +355,8 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
         This resource provides the Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
 
         Creates a new Decryption Rule for the Network Firewall Policy.
+
+        ## Example Usage
 
         ## Import
 

@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Create an AppRole
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * AppRoles can be imported using the `id`, e.g.

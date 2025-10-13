@@ -15,6 +15,8 @@ namespace Pulumi.Oci.AiLanguage
         /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
         /// 
         /// Gets a model by identifier
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetModelResult> InvokeAsync(GetModelArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelResult>("oci:AiLanguage/getModel:getModel", args ?? new GetModelArgs(), options.WithDefaults());
@@ -23,6 +25,8 @@ namespace Pulumi.Oci.AiLanguage
         /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
         /// 
         /// Gets a model by identifier
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetModelResult> Invoke(GetModelInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelResult>("oci:AiLanguage/getModel:getModel", args ?? new GetModelInvokeArgs(), options.WithDefaults());
@@ -31,6 +35,8 @@ namespace Pulumi.Oci.AiLanguage
         /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
         /// 
         /// Gets a model by identifier
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetModelResult> Invoke(GetModelInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelResult>("oci:AiLanguage/getModel:getModel", args ?? new GetModelInvokeArgs(), options.WithDefaults());

@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) 
-        /// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+        /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
         /// </summary>
         [Output("items")]
         public Output<ImmutableArray<Outputs.RrsetItem>> Items { get; private set; } = null!;
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) 
-        /// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+        /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
         /// </summary>
         public InputList<Inputs.RrsetItemArgs> Items
         {
@@ -243,7 +243,7 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// (Updatable) 
-        /// **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
+        /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
         /// </summary>
         public InputList<Inputs.RrsetItemGetArgs> Items
         {

@@ -14,6 +14,12 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
     /// The reporting region cannot be updated once created.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ## Import
+    /// 
+    /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration")]
     public partial class CloudGuardConfiguration : global::Pulumi.CustomResource

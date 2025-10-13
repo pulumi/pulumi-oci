@@ -14,15 +14,15 @@ namespace Pulumi.Oci.Dns.Outputs
     public sealed class GetSteeringPolicyAnswerResult
     {
         /// <summary>
-        /// Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
+        /// Set this property to `True` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
         /// </summary>
         public readonly bool IsDisabled;
         /// <summary>
-        /// A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
+        /// A user-friendly name for the answer, unique within the steering policy. An answer's `Name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
+        /// The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `Pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
         /// </summary>
         public readonly string Pool;
         /// <summary>

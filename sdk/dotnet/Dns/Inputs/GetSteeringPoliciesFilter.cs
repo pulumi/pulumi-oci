@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Dns.Inputs
     public sealed class GetSteeringPoliciesFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
+        /// A user-friendly name for the answer, unique within the steering policy. An answer's `Name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

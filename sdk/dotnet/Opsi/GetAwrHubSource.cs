@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
+        /// This is `True` if the source databse is registered with a Awr Hub, otherwise `False`
         /// </summary>
         public readonly bool IsRegisteredWithAwrHub;
         /// <summary>

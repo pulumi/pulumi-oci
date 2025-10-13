@@ -384,6 +384,8 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
 
         Creates a new target-alert policy association to track a alert policy applied on target.
 
+        ## Example Usage
+
         ## Import
 
         TargetAlertPolicyAssociations can be imported using the `id`, e.g.
@@ -413,6 +415,8 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
 
         Creates a new target-alert policy association to track a alert policy applied on target.
+
+        ## Example Usage
 
         ## Import
 

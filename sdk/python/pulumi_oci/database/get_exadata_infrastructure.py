@@ -709,6 +709,8 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[_builtins.str
     Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
     To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
 
+    ## Example Usage
+
 
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
@@ -781,6 +783,8 @@ def get_exadata_infrastructure_output(exadata_infrastructure_id: Optional[pulumi
 
     Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
     To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
+
+    ## Example Usage
 
 
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

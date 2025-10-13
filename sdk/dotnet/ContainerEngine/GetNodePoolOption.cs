@@ -144,7 +144,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `node_image_name` property.
+        /// Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `NodeImageName` property.
         /// </summary>
         public readonly ImmutableArray<string> Images;
         /// <summary>

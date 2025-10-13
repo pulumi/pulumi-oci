@@ -139,6 +139,8 @@ def get_sensitive_data_model_referential_relation(key: Optional[_builtins.str] =
 
     Gets the details of the specified referential relation.
 
+    ## Example Usage
+
 
     :param _builtins.str key: The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
     :param _builtins.str sensitive_data_model_id: The OCID of the sensitive data model.
@@ -165,6 +167,8 @@ def get_sensitive_data_model_referential_relation_output(key: Optional[pulumi.In
     This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
 
     Gets the details of the specified referential relation.
+
+    ## Example Usage
 
 
     :param _builtins.str key: The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.

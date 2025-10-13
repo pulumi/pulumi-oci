@@ -124,7 +124,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class GetNetworkLoadBalancerHealthResult
     {
         /// <summary>
-        /// A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set`
+        /// A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `ExampleBackendSet`
         /// </summary>
         public readonly ImmutableArray<string> CriticalStateBackendSetNames;
         /// <summary>
@@ -149,11 +149,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         public readonly int TotalBackendSetCount;
         /// <summary>
-        /// A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set2`
+        /// A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `ExampleBackendSet2`
         /// </summary>
         public readonly ImmutableArray<string> UnknownStateBackendSetNames;
         /// <summary>
-        /// A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set3`
+        /// A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `ExampleBackendSet3`
         /// </summary>
         public readonly ImmutableArray<string> WarningStateBackendSetNames;
 

@@ -19,13 +19,13 @@ namespace Pulumi.Oci.Waas.Inputs
         public Input<string> Action { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
+        /// (Updatable) A header field name that conforms to RFC 7230.  Example: `ExampleHeaderName`
         /// </summary>
         [Input("header", required: true)]
         public Input<string> Header { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
+        /// (Updatable) A header field value that conforms to RFC 7230.  Example: `ExampleValue`
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

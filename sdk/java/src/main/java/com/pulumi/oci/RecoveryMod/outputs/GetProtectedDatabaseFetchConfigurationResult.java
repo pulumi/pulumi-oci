@@ -16,7 +16,7 @@ public final class GetProtectedDatabaseFetchConfigurationResult {
     private @Nullable Boolean base64EncodeContent;
     private @Nullable String configurationType;
     /**
-     * @return content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base_64_encode_content` to false.
+     * @return content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base64EncodeContent` to false.
      * 
      */
     private String content;
@@ -35,7 +35,7 @@ public final class GetProtectedDatabaseFetchConfigurationResult {
         return Optional.ofNullable(this.configurationType);
     }
     /**
-     * @return content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base_64_encode_content` to false.
+     * @return content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base64EncodeContent` to false.
      * 
      */
     public String content() {

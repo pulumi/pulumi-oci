@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Database
     /// 
     /// Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// AutonomousContainerDatabases can be imported using the `id`, e.g.
@@ -182,7 +184,7 @@ namespace Pulumi.Oci.Database
         public Output<string> InfrastructureType { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : IsAutomaticFailoverEnabled = true.
         /// </summary>
         [Output("isAutomaticFailoverEnabled")]
         public Output<bool> IsAutomaticFailoverEnabled { get; private set; } = null!;
@@ -402,7 +404,7 @@ namespace Pulumi.Oci.Database
         public Output<string> Role { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `CloudAutonomousVmClusterId` is set.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -655,7 +657,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : IsAutomaticFailoverEnabled = true.
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
@@ -757,7 +759,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? ReinstateTrigger { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `CloudAutonomousVmClusterId` is set.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1014,7 +1016,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? InfrastructureType { get; set; }
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : IsAutomaticFailoverEnabled = true.
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
@@ -1264,7 +1266,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? Role { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `CloudAutonomousVmClusterId` is set.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

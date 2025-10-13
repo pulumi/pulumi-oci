@@ -49,7 +49,7 @@ namespace Pulumi.Oci.FileStorage.Inputs
         public Input<string>? RetentionDurationInSeconds { get; set; }
 
         /// <summary>
-        /// (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+        /// (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `Compliance1`
         /// </summary>
         [Input("schedulePrefix")]
         public Input<string>? SchedulePrefix { get; set; }

@@ -62,7 +62,7 @@ public final class GetDrProtectionGroupMember {
      */
     private List<GetDrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations;
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `bucket_name`
+     * @return The bucket name inside the object storage namespace.  Example: `bucketName`
      * 
      */
     private String bucket;
@@ -286,7 +286,7 @@ public final class GetDrProtectionGroupMember {
         return this.blockVolumeOperations;
     }
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `bucket_name`
+     * @return The bucket name inside the object storage namespace.  Example: `bucketName`
      * 
      */
     public String bucket() {

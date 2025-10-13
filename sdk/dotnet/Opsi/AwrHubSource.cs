@@ -111,7 +111,7 @@ namespace Pulumi.Oci.Opsi
         public Output<double> HoursSinceLastImport { get; private set; } = null!;
 
         /// <summary>
-        /// This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
+        /// This is `True` if the source databse is registered with a Awr Hub, otherwise `False`
         /// </summary>
         [Output("isRegisteredWithAwrHub")]
         public Output<bool> IsRegisteredWithAwrHub { get; private set; } = null!;
@@ -377,7 +377,7 @@ namespace Pulumi.Oci.Opsi
         public Input<double>? HoursSinceLastImport { get; set; }
 
         /// <summary>
-        /// This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
+        /// This is `True` if the source databse is registered with a Awr Hub, otherwise `False`
         /// </summary>
         [Input("isRegisteredWithAwrHub")]
         public Input<bool>? IsRegisteredWithAwrHub { get; set; }

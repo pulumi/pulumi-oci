@@ -85,12 +85,12 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
      */
     private String type;
     /**
-     * @return The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+     * @return The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `sizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
     private String uniqueSizeInGbs;
     /**
-     * @return The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+     * @return The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `sizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
     private String uniqueSizeInMbs;
@@ -208,14 +208,14 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
         return this.type;
     }
     /**
-     * @return The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+     * @return The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `sizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
     public String uniqueSizeInGbs() {
         return this.uniqueSizeInGbs;
     }
     /**
-     * @return The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+     * @return The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `sizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
     public String uniqueSizeInMbs() {

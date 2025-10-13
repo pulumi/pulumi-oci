@@ -64,7 +64,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The error message indicating the reason for connection failure or `null` if the connection was successful.
+        /// The error message indicating the reason for connection failure or `Null` if the connection was successful.
         /// </summary>
         [Output("connectionFailureMessage")]
         public Output<string> ConnectionFailureMessage { get; private set; } = null!;
@@ -282,7 +282,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The error message indicating the reason for connection failure or `null` if the connection was successful.
+        /// The error message indicating the reason for connection failure or `Null` if the connection was successful.
         /// </summary>
         [Input("connectionFailureMessage")]
         public Input<string>? ConnectionFailureMessage { get; set; }

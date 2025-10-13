@@ -42,7 +42,7 @@ public final class GetInstanceResult {
      */
     private String availabilityDomain;
     /**
-     * @return The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+     * @return The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
      * 
      */
     private String bootVolumeId;
@@ -189,7 +189,7 @@ public final class GetInstanceResult {
     private Boolean preserveBootVolume;
     private Boolean preserveDataVolumesCreatedAtLaunch;
     /**
-     * @return The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+     * @return The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
      * 
      */
     private String privateIp;
@@ -279,7 +279,7 @@ public final class GetInstanceResult {
         return this.availabilityDomain;
     }
     /**
-     * @return The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+     * @return The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
      * 
      */
     public String bootVolumeId() {
@@ -488,7 +488,7 @@ public final class GetInstanceResult {
         return this.preserveDataVolumesCreatedAtLaunch;
     }
     /**
-     * @return The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+     * @return The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
      * 
      */
     public String privateIp() {

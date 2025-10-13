@@ -1267,6 +1267,8 @@ class DomainsGroup(pulumi.CustomResource):
 
         Create a group.
 
+        ## Example Usage
+
         ## Import
 
         Groups can be imported using the `id`, e.g.
@@ -1382,6 +1384,8 @@ class DomainsGroup(pulumi.CustomResource):
         This resource provides the Group resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a group.
+
+        ## Example Usage
 
         ## Import
 

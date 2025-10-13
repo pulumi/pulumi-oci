@@ -156,11 +156,11 @@ namespace Pulumi.Oci.Waas
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
+        /// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `Origins` field of a `UpdateWaasPolicy` request.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetWaasPolicyOriginGroupResult> OriginGroups;
         /// <summary>
-        /// A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
+        /// A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `Primary` or `Secondary`.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetWaasPolicyOriginResult> Origins;
         /// <summary>

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// and does not contain fields like the user-defined metadata.
         /// 
         /// ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
-        /// `opc-next-page` value with the `page` request parameter.
+        /// `opc-next-page` value with the `Page` request parameter.
         /// 
         /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// and does not contain fields like the user-defined metadata.
         /// 
         /// ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
-        /// `opc-next-page` value with the `page` request parameter.
+        /// `opc-next-page` value with the `Page` request parameter.
         /// 
         /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// and does not contain fields like the user-defined metadata.
         /// 
         /// ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
-        /// `opc-next-page` value with the `page` request parameter.
+        /// `opc-next-page` value with the `Page` request parameter.
         /// 
         /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see

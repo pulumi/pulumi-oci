@@ -276,7 +276,7 @@ namespace Pulumi.Oci.ManagementAgent
         }
 
         /// <summary>
-        /// When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+        /// When HostId argument is set, the data source will wait for the given period of time (in minutes) for this HostId to become available. This can be used when compute instance with Management Agent has been recently created.
         /// </summary>
         [Input("waitForHostId")]
         public int? WaitForHostId { get; set; }
@@ -418,7 +418,7 @@ namespace Pulumi.Oci.ManagementAgent
         }
 
         /// <summary>
-        /// When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+        /// When HostId argument is set, the data source will wait for the given period of time (in minutes) for this HostId to become available. This can be used when compute instance with Management Agent has been recently created.
         /// </summary>
         [Input("waitForHostId")]
         public Input<int>? WaitForHostId { get; set; }

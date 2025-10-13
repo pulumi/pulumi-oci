@@ -746,6 +746,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Address List by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs args) {
         return getNetworkFirewallPolicyAddressList(args, InvokeOptions.Empty);
@@ -754,6 +756,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Address List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressListPlain(GetNetworkFirewallPolicyAddressListPlainArgs args) {
@@ -764,6 +768,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Address List by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", TypeShape.of(GetNetworkFirewallPolicyAddressListResult.class), args, Utilities.withVersion(options));
@@ -773,6 +779,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Address List by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", TypeShape.of(GetNetworkFirewallPolicyAddressListResult.class), args, Utilities.withVersion(options));
@@ -781,6 +789,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Address List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressListPlain(GetNetworkFirewallPolicyAddressListPlainArgs args, InvokeOptions options) {
@@ -1006,6 +1016,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Application by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs args) {
         return getNetworkFirewallPolicyApplication(args, InvokeOptions.Empty);
@@ -1014,6 +1026,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Application by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplicationPlain(GetNetworkFirewallPolicyApplicationPlainArgs args) {
@@ -1024,6 +1038,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Application by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", TypeShape.of(GetNetworkFirewallPolicyApplicationResult.class), args, Utilities.withVersion(options));
@@ -1032,6 +1048,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Application by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs args, InvokeOutputOptions options) {
@@ -1042,6 +1060,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Application by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplicationPlain(GetNetworkFirewallPolicyApplicationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", TypeShape.of(GetNetworkFirewallPolicyApplicationResult.class), args, Utilities.withVersion(options));
@@ -1050,6 +1070,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get ApplicationGroup by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs args) {
@@ -1060,6 +1082,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get ApplicationGroup by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroupPlain(GetNetworkFirewallPolicyApplicationGroupPlainArgs args) {
         return getNetworkFirewallPolicyApplicationGroupPlain(args, InvokeOptions.Empty);
@@ -1068,6 +1092,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get ApplicationGroup by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs args, InvokeOptions options) {
@@ -1078,6 +1104,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get ApplicationGroup by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroup:getNetworkFirewallPolicyApplicationGroup", TypeShape.of(GetNetworkFirewallPolicyApplicationGroupResult.class), args, Utilities.withVersion(options));
@@ -1086,6 +1114,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get ApplicationGroup by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroupPlain(GetNetworkFirewallPolicyApplicationGroupPlainArgs args, InvokeOptions options) {
@@ -1526,6 +1556,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Decryption Profile by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs args) {
         return getNetworkFirewallPolicyDecryptionProfile(args, InvokeOptions.Empty);
@@ -1534,6 +1566,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Decryption Profile by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfilePlain(GetNetworkFirewallPolicyDecryptionProfilePlainArgs args) {
@@ -1544,6 +1578,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Decryption Profile by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", TypeShape.of(GetNetworkFirewallPolicyDecryptionProfileResult.class), args, Utilities.withVersion(options));
@@ -1553,6 +1589,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Decryption Profile by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", TypeShape.of(GetNetworkFirewallPolicyDecryptionProfileResult.class), args, Utilities.withVersion(options));
@@ -1561,6 +1599,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Decryption Profile by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfilePlain(GetNetworkFirewallPolicyDecryptionProfilePlainArgs args, InvokeOptions options) {
@@ -1786,6 +1826,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Decryption Rule by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs args) {
         return getNetworkFirewallPolicyDecryptionRule(args, InvokeOptions.Empty);
@@ -1794,6 +1836,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Decryption Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRulePlain(GetNetworkFirewallPolicyDecryptionRulePlainArgs args) {
@@ -1804,6 +1848,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Decryption Rule by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", TypeShape.of(GetNetworkFirewallPolicyDecryptionRuleResult.class), args, Utilities.withVersion(options));
@@ -1813,6 +1859,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Decryption Rule by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", TypeShape.of(GetNetworkFirewallPolicyDecryptionRuleResult.class), args, Utilities.withVersion(options));
@@ -1821,6 +1869,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Decryption Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRulePlain(GetNetworkFirewallPolicyDecryptionRulePlainArgs args, InvokeOptions options) {
@@ -2051,6 +2101,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Mapped Secret by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs args) {
         return getNetworkFirewallPolicyMappedSecret(args, InvokeOptions.Empty);
@@ -2059,6 +2111,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Mapped Secret by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecretPlain(GetNetworkFirewallPolicyMappedSecretPlainArgs args) {
@@ -2069,6 +2123,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Mapped Secret by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", TypeShape.of(GetNetworkFirewallPolicyMappedSecretResult.class), args, Utilities.withVersion(options));
@@ -2078,6 +2134,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Mapped Secret by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", TypeShape.of(GetNetworkFirewallPolicyMappedSecretResult.class), args, Utilities.withVersion(options));
@@ -2086,6 +2144,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Mapped Secret by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecretPlain(GetNetworkFirewallPolicyMappedSecretPlainArgs args, InvokeOptions options) {
@@ -2746,6 +2806,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Security Rule by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs args) {
         return getNetworkFirewallPolicySecurityRule(args, InvokeOptions.Empty);
@@ -2754,6 +2816,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Security Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRulePlain(GetNetworkFirewallPolicySecurityRulePlainArgs args) {
@@ -2764,6 +2828,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Security Rule by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", TypeShape.of(GetNetworkFirewallPolicySecurityRuleResult.class), args, Utilities.withVersion(options));
@@ -2773,6 +2839,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Security Rule by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", TypeShape.of(GetNetworkFirewallPolicySecurityRuleResult.class), args, Utilities.withVersion(options));
@@ -2781,6 +2849,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Security Rule by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRulePlain(GetNetworkFirewallPolicySecurityRulePlainArgs args, InvokeOptions options) {
@@ -3011,6 +3081,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Service by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs args) {
         return getNetworkFirewallPolicyService(args, InvokeOptions.Empty);
@@ -3019,6 +3091,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Service by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyServicePlain(GetNetworkFirewallPolicyServicePlainArgs args) {
@@ -3029,6 +3103,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Service by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyService:getNetworkFirewallPolicyService", TypeShape.of(GetNetworkFirewallPolicyServiceResult.class), args, Utilities.withVersion(options));
@@ -3037,6 +3113,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Service by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs args, InvokeOutputOptions options) {
@@ -3047,6 +3125,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Service by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyServicePlain(GetNetworkFirewallPolicyServicePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyService:getNetworkFirewallPolicyService", TypeShape.of(GetNetworkFirewallPolicyServiceResult.class), args, Utilities.withVersion(options));
@@ -3055,6 +3135,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get ServiceList by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs args) {
@@ -3065,6 +3147,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get ServiceList by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceListPlain(GetNetworkFirewallPolicyServiceListPlainArgs args) {
         return getNetworkFirewallPolicyServiceListPlain(args, InvokeOptions.Empty);
@@ -3073,6 +3157,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get ServiceList by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs args, InvokeOptions options) {
@@ -3083,6 +3169,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get ServiceList by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyServiceList:getNetworkFirewallPolicyServiceList", TypeShape.of(GetNetworkFirewallPolicyServiceListResult.class), args, Utilities.withVersion(options));
@@ -3091,6 +3179,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get ServiceList by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceListPlain(GetNetworkFirewallPolicyServiceListPlainArgs args, InvokeOptions options) {
@@ -3966,6 +4056,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Url List by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs args) {
         return getNetworkFirewallPolicyUrlList(args, InvokeOptions.Empty);
@@ -3974,6 +4066,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Url List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlListPlain(GetNetworkFirewallPolicyUrlListPlainArgs args) {
@@ -3984,6 +4078,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Url List by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyUrlList:getNetworkFirewallPolicyUrlList", TypeShape.of(GetNetworkFirewallPolicyUrlListResult.class), args, Utilities.withVersion(options));
@@ -3993,6 +4089,8 @@ public final class NetworkFirewallFunctions {
      * 
      * Get Url List by the given name in the context of network firewall policy.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyUrlList:getNetworkFirewallPolicyUrlList", TypeShape.of(GetNetworkFirewallPolicyUrlListResult.class), args, Utilities.withVersion(options));
@@ -4001,6 +4099,8 @@ public final class NetworkFirewallFunctions {
      * This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
      * 
      * Get Url List by the given name in the context of network firewall policy.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlListPlain(GetNetworkFirewallPolicyUrlListPlainArgs args, InvokeOptions options) {

@@ -219,6 +219,8 @@ def get_patch_management(compartment_id: Optional[_builtins.str] = None,
 
     Overview of Patch Management.
 
+    ## Example Usage
+
 
     :param _builtins.str compartment_id: The required ID of the compartment in which to list resources.
     :param _builtins.str database_release: A filter to return only database that match the given release version.
@@ -258,6 +260,8 @@ def get_patch_management_output(compartment_id: Optional[pulumi.Input[_builtins.
     This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
 
     Overview of Patch Management.
+
+    ## Example Usage
 
 
     :param _builtins.str compartment_id: The required ID of the compartment in which to list resources.

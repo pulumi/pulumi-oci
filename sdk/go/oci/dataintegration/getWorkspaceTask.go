@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
 //
 // Retrieves a task using the specified identifier.
+//
+// ## Example Usage
 func LookupWorkspaceTask(ctx *pulumi.Context, args *LookupWorkspaceTaskArgs, opts ...pulumi.InvokeOption) (*LookupWorkspaceTaskResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupWorkspaceTaskResult

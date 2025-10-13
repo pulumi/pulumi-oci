@@ -273,7 +273,7 @@ namespace Pulumi.Oci.Dns
         public readonly string? DisplayNameContains;
         public readonly ImmutableArray<Outputs.GetSteeringPoliciesFilterResult> Filters;
         /// <summary>
-        /// The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+        /// The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `Rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `Rdata` not matching any monitored endpoint will be assumed healthy.
         /// </summary>
         public readonly string? HealthCheckMonitorId;
         /// <summary>

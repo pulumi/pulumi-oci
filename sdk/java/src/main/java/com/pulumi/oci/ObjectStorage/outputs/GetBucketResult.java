@@ -35,7 +35,7 @@ public final class GetBucketResult {
      */
     private String autoTiering;
     /**
-     * @return The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+     * @return The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      * 
      */
     private String bucketId;
@@ -156,7 +156,7 @@ public final class GetBucketResult {
         return this.autoTiering;
     }
     /**
-     * @return The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+     * @return The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      * 
      */
     public String bucketId() {

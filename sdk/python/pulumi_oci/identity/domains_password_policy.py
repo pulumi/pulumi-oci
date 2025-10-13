@@ -3399,6 +3399,8 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
 
         Create a password policy.
 
+        ## Example Usage
+
         ## Import
 
         PasswordPolicies can be imported using the `id`, e.g.
@@ -3845,6 +3847,8 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
         This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a password policy.
+
+        ## Example Usage
 
         ## Import
 

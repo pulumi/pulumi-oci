@@ -39,6 +39,8 @@ class ConnectionArgs:
                  client_id: Optional[pulumi.Input[_builtins.str]] = None,
                  client_secret: Optional[pulumi.Input[_builtins.str]] = None,
                  client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_string: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_url: Optional[pulumi.Input[_builtins.str]] = None,
@@ -86,6 +88,7 @@ class ConnectionArgs:
                  sas_token_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
                  secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
                  servers: Optional[pulumi.Input[_builtins.str]] = None,
                  service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
@@ -111,6 +114,7 @@ class ConnectionArgs:
                  storage_credential_name: Optional[pulumi.Input[_builtins.str]] = None,
                  stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
                  tls_ca_file: Optional[pulumi.Input[_builtins.str]] = None,
@@ -151,6 +155,8 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param pulumi.Input[_builtins.str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+        :param pulumi.Input[_builtins.str] cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
         :param pulumi.Input[_builtins.str] connection_url: (Updatable) Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
@@ -200,13 +206,14 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
         :param pulumi.Input[_builtins.str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] security_protocol: (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[_builtins.str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[_builtins.str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
@@ -234,6 +241,7 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] storage_credential_name: (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param pulumi.Input[_builtins.str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+        :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[_builtins.str] tenancy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
         :param pulumi.Input[_builtins.str] tenant_id: (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[_builtins.str] tls_ca_file: (Updatable) Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
@@ -290,6 +298,10 @@ class ConnectionArgs:
             pulumi.set(__self__, "client_secret", client_secret)
         if client_secret_secret_id is not None:
             pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
+        if cluster_id is not None:
+            pulumi.set(__self__, "cluster_id", cluster_id)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if connection_factory is not None:
             pulumi.set(__self__, "connection_factory", connection_factory)
         if connection_string is not None:
@@ -384,6 +396,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "secret_access_key", secret_access_key)
         if secret_access_key_secret_id is not None:
             pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if security_protocol is not None:
             pulumi.set(__self__, "security_protocol", security_protocol)
         if servers is not None:
@@ -434,6 +448,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "stream_pool_id", stream_pool_id)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if tenancy_id is not None:
             pulumi.set(__self__, "tenancy_id", tenancy_id)
         if tenant_id is not None:
@@ -688,6 +704,30 @@ class ConnectionArgs:
     @client_secret_secret_id.setter
     def client_secret_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "client_secret_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @cluster_id.setter
+    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionFactory")
@@ -1254,6 +1294,18 @@ class ConnectionArgs:
         pulumi.set(self, "secret_access_key_secret_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1329,7 +1381,7 @@ class ConnectionArgs:
     @pulumi.getter(name="shouldUseResourcePrincipal")
     def should_use_resource_principal(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         """
         return pulumi.get(self, "should_use_resource_principal")
 
@@ -1561,6 +1613,18 @@ class ConnectionArgs:
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
@@ -1801,6 +1865,8 @@ class _ConnectionState:
                  client_id: Optional[pulumi.Input[_builtins.str]] = None,
                  client_secret: Optional[pulumi.Input[_builtins.str]] = None,
                  client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_string: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1853,6 +1919,7 @@ class _ConnectionState:
                  sas_token_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
                  secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
                  servers: Optional[pulumi.Input[_builtins.str]] = None,
                  service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1879,6 +1946,7 @@ class _ConnectionState:
                  storage_credential_name: Optional[pulumi.Input[_builtins.str]] = None,
                  stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  technology_type: Optional[pulumi.Input[_builtins.str]] = None,
                  tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1919,6 +1987,8 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param pulumi.Input[_builtins.str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+        :param pulumi.Input[_builtins.str] cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
@@ -1973,13 +2043,14 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
         :param pulumi.Input[_builtins.str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] security_protocol: (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[_builtins.str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[_builtins.str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
@@ -2008,6 +2079,7 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] storage_credential_name: (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param pulumi.Input[_builtins.str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+        :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] technology_type: The Kafka (e.g. Confluent) Schema Registry technology type.
         :param pulumi.Input[_builtins.str] tenancy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
@@ -2064,6 +2136,10 @@ class _ConnectionState:
             pulumi.set(__self__, "client_secret", client_secret)
         if client_secret_secret_id is not None:
             pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
+        if cluster_id is not None:
+            pulumi.set(__self__, "cluster_id", cluster_id)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_factory is not None:
@@ -2168,6 +2244,8 @@ class _ConnectionState:
             pulumi.set(__self__, "secret_access_key", secret_access_key)
         if secret_access_key_secret_id is not None:
             pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if security_protocol is not None:
             pulumi.set(__self__, "security_protocol", security_protocol)
         if servers is not None:
@@ -2220,6 +2298,8 @@ class _ConnectionState:
             pulumi.set(__self__, "stream_pool_id", stream_pool_id)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if technology_type is not None:
@@ -2434,6 +2514,30 @@ class _ConnectionState:
     @client_secret_secret_id.setter
     def client_secret_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "client_secret_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @cluster_id.setter
+    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -3060,6 +3164,18 @@ class _ConnectionState:
         pulumi.set(self, "secret_access_key_secret_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -3135,7 +3251,7 @@ class _ConnectionState:
     @pulumi.getter(name="shouldUseResourcePrincipal")
     def should_use_resource_principal(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         """
         return pulumi.get(self, "should_use_resource_principal")
 
@@ -3379,6 +3495,18 @@ class _ConnectionState:
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
@@ -3670,6 +3798,8 @@ class Connection(pulumi.CustomResource):
                  client_id: Optional[pulumi.Input[_builtins.str]] = None,
                  client_secret: Optional[pulumi.Input[_builtins.str]] = None,
                  client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_string: Optional[pulumi.Input[_builtins.str]] = None,
@@ -3720,6 +3850,7 @@ class Connection(pulumi.CustomResource):
                  sas_token_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
                  secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
                  servers: Optional[pulumi.Input[_builtins.str]] = None,
                  service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
@@ -3745,6 +3876,7 @@ class Connection(pulumi.CustomResource):
                  storage_credential_name: Optional[pulumi.Input[_builtins.str]] = None,
                  stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  technology_type: Optional[pulumi.Input[_builtins.str]] = None,
                  tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -3766,10 +3898,6 @@ class Connection(pulumi.CustomResource):
                  wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Connection resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Connection.
-
         ## Example Usage
 
         ```python
@@ -3812,6 +3940,8 @@ class Connection(pulumi.CustomResource):
             client_id=test_client["id"],
             client_secret=connection_client_secret,
             client_secret_secret_id=test_secret["id"],
+            cluster_id=test_cluster["id"],
+            cluster_placement_group_id=test_cluster_placement_group["id"],
             connection_factory=connection_connection_factory,
             connection_string=connection_connection_string,
             connection_url=connection_connection_url,
@@ -3865,6 +3995,7 @@ class Connection(pulumi.CustomResource):
             sas_token_secret_id=test_secret["id"],
             secret_access_key=connection_secret_access_key,
             secret_access_key_secret_id=test_secret["id"],
+            security_attributes=connection_security_attributes,
             security_protocol=connection_security_protocol,
             servers=connection_servers,
             service_account_key_file=connection_service_account_key_file,
@@ -3903,6 +4034,7 @@ class Connection(pulumi.CustomResource):
             storage_credential_name=connection_storage_credential_name,
             stream_pool_id=test_stream_pool["id"],
             subnet_id=test_subnet["id"],
+            subscription_id=test_subscription["id"],
             tenancy_id=test_tenancy["id"],
             tenant_id=test_tenant["id"],
             tls_ca_file=connection_tls_ca_file,
@@ -3949,6 +4081,8 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param pulumi.Input[_builtins.str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+        :param pulumi.Input[_builtins.str] cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
@@ -4001,13 +4135,14 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
         :param pulumi.Input[_builtins.str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] security_protocol: (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[_builtins.str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[_builtins.str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
@@ -4035,6 +4170,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] storage_credential_name: (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param pulumi.Input[_builtins.str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+        :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[_builtins.str] technology_type: The Kafka (e.g. Confluent) Schema Registry technology type.
         :param pulumi.Input[_builtins.str] tenancy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
         :param pulumi.Input[_builtins.str] tenant_id: (Updatable) Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
@@ -4067,10 +4203,6 @@ class Connection(pulumi.CustomResource):
                  args: ConnectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Connection resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Connection.
-
         ## Example Usage
 
         ```python
@@ -4113,6 +4245,8 @@ class Connection(pulumi.CustomResource):
             client_id=test_client["id"],
             client_secret=connection_client_secret,
             client_secret_secret_id=test_secret["id"],
+            cluster_id=test_cluster["id"],
+            cluster_placement_group_id=test_cluster_placement_group["id"],
             connection_factory=connection_connection_factory,
             connection_string=connection_connection_string,
             connection_url=connection_connection_url,
@@ -4166,6 +4300,7 @@ class Connection(pulumi.CustomResource):
             sas_token_secret_id=test_secret["id"],
             secret_access_key=connection_secret_access_key,
             secret_access_key_secret_id=test_secret["id"],
+            security_attributes=connection_security_attributes,
             security_protocol=connection_security_protocol,
             servers=connection_servers,
             service_account_key_file=connection_service_account_key_file,
@@ -4204,6 +4339,7 @@ class Connection(pulumi.CustomResource):
             storage_credential_name=connection_storage_credential_name,
             stream_pool_id=test_stream_pool["id"],
             subnet_id=test_subnet["id"],
+            subscription_id=test_subscription["id"],
             tenancy_id=test_tenancy["id"],
             tenant_id=test_tenant["id"],
             tls_ca_file=connection_tls_ca_file,
@@ -4261,6 +4397,8 @@ class Connection(pulumi.CustomResource):
                  client_id: Optional[pulumi.Input[_builtins.str]] = None,
                  client_secret: Optional[pulumi.Input[_builtins.str]] = None,
                  client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
                  connection_string: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4311,6 +4449,7 @@ class Connection(pulumi.CustomResource):
                  sas_token_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
                  secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
                  servers: Optional[pulumi.Input[_builtins.str]] = None,
                  service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4336,6 +4475,7 @@ class Connection(pulumi.CustomResource):
                  storage_credential_name: Optional[pulumi.Input[_builtins.str]] = None,
                  stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  technology_type: Optional[pulumi.Input[_builtins.str]] = None,
                  tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4378,6 +4518,8 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["client_id"] = client_id
             __props__.__dict__["client_secret"] = None if client_secret is None else pulumi.Output.secret(client_secret)
             __props__.__dict__["client_secret_secret_id"] = client_secret_secret_id
+            __props__.__dict__["cluster_id"] = cluster_id
+            __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -4434,6 +4576,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["sas_token_secret_id"] = sas_token_secret_id
             __props__.__dict__["secret_access_key"] = None if secret_access_key is None else pulumi.Output.secret(secret_access_key)
             __props__.__dict__["secret_access_key_secret_id"] = secret_access_key_secret_id
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["security_protocol"] = security_protocol
             __props__.__dict__["servers"] = servers
             __props__.__dict__["service_account_key_file"] = None if service_account_key_file is None else pulumi.Output.secret(service_account_key_file)
@@ -4459,6 +4602,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["storage_credential_name"] = storage_credential_name
             __props__.__dict__["stream_pool_id"] = stream_pool_id
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["subscription_id"] = subscription_id
             if technology_type is None and not opts.urn:
                 raise TypeError("Missing required property 'technology_type'")
             __props__.__dict__["technology_type"] = technology_type
@@ -4512,6 +4656,8 @@ class Connection(pulumi.CustomResource):
             client_id: Optional[pulumi.Input[_builtins.str]] = None,
             client_secret: Optional[pulumi.Input[_builtins.str]] = None,
             client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+            cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             connection_factory: Optional[pulumi.Input[_builtins.str]] = None,
             connection_string: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4564,6 +4710,7 @@ class Connection(pulumi.CustomResource):
             sas_token_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
             secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
             secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             security_protocol: Optional[pulumi.Input[_builtins.str]] = None,
             servers: Optional[pulumi.Input[_builtins.str]] = None,
             service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4590,6 +4737,7 @@ class Connection(pulumi.CustomResource):
             storage_credential_name: Optional[pulumi.Input[_builtins.str]] = None,
             stream_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             technology_type: Optional[pulumi.Input[_builtins.str]] = None,
             tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4635,6 +4783,8 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] client_id: (Updatable) Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param pulumi.Input[_builtins.str] client_secret: (Updatable) Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+        :param pulumi.Input[_builtins.str] cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_factory: (Updatable) The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
         :param pulumi.Input[_builtins.str] connection_string: (Updatable) Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
@@ -4689,13 +4839,14 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
         :param pulumi.Input[_builtins.str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] security_protocol: (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[_builtins.str] servers: (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[_builtins.str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
@@ -4724,6 +4875,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] storage_credential_name: (Updatable) Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param pulumi.Input[_builtins.str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+        :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] technology_type: The Kafka (e.g. Confluent) Schema Registry technology type.
         :param pulumi.Input[_builtins.str] tenancy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
@@ -4770,6 +4922,8 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["client_id"] = client_id
         __props__.__dict__["client_secret"] = client_secret
         __props__.__dict__["client_secret_secret_id"] = client_secret_secret_id
+        __props__.__dict__["cluster_id"] = cluster_id
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["connection_factory"] = connection_factory
         __props__.__dict__["connection_string"] = connection_string
@@ -4822,6 +4976,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["sas_token_secret_id"] = sas_token_secret_id
         __props__.__dict__["secret_access_key"] = secret_access_key
         __props__.__dict__["secret_access_key_secret_id"] = secret_access_key_secret_id
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["security_protocol"] = security_protocol
         __props__.__dict__["servers"] = servers
         __props__.__dict__["service_account_key_file"] = service_account_key_file
@@ -4848,6 +5003,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["storage_credential_name"] = storage_credential_name
         __props__.__dict__["stream_pool_id"] = stream_pool_id
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["technology_type"] = technology_type
         __props__.__dict__["tenancy_id"] = tenancy_id
@@ -4985,6 +5141,22 @@ class Connection(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         """
         return pulumi.get(self, "client_secret_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -5403,6 +5575,14 @@ class Connection(pulumi.CustomResource):
         return pulumi.get(self, "secret_access_key_secret_id")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> pulumi.Output[_builtins.str]:
         """
@@ -5454,7 +5634,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="shouldUseResourcePrincipal")
     def should_use_resource_principal(self) -> pulumi.Output[_builtins.bool]:
         """
-        (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         """
         return pulumi.get(self, "should_use_resource_principal")
 
@@ -5618,6 +5798,14 @@ class Connection(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
- *
- * Create a new virtual node pool.
- *
  * ## Example Usage
  *
  * ```typescript

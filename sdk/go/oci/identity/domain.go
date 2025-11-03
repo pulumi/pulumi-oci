@@ -12,25 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Domain resource in Oracle Cloud Infrastructure Identity service.
-//
-// Creates a new domain in the tenancy with domain home in {@code homeRegion}. This is an asynchronous call - where, at start,
-// {@code lifecycleState} of this domain is set to CREATING and {@code lifecycleDetails} to UPDATING. On domain creation completion
-// this Domain's {@code lifecycleState} will be set to ACTIVE and {@code lifecycleDetails} to null.
-//
-// To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-// the async operation's status.
-//
-// After creating a `Domain`, make sure its `lifecycleState` changes from CREATING to ACTIVE
-// before using it.
-// If the domain's {@code displayName} already exists, returns 400 BAD REQUEST.
-// If any one of admin related fields are provided and one of the following 3 fields
-//   - {@code adminEmail}, {@code adminLastName} and {@code adminUserName} - is not provided,
-//     returns 400 BAD REQUEST.
-//   - If {@code isNotificationBypassed} is NOT provided when admin information is provided,
-//     returns 400 BAD REQUEST.
-//   - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-//
 // ## Example Usage
 //
 // ```go

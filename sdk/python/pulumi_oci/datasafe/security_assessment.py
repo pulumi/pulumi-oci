@@ -880,11 +880,7 @@ class SecurityAssessment(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
-        it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
-        at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        ## Example Usage
 
         ## Import
 
@@ -925,11 +921,7 @@ class SecurityAssessment(pulumi.CustomResource):
                  args: SecurityAssessmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
-        it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
-        at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        ## Example Usage
 
         ## Import
 

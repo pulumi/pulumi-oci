@@ -366,10 +366,6 @@ class EmailReturnPath(pulumi.CustomResource):
                  parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Email Return Path resource in Oracle Cloud Infrastructure Email service.
-
-        Creates a new email return path. Avoid entering confidential information.
-
         ## Example Usage
 
         ```python
@@ -415,10 +411,6 @@ class EmailReturnPath(pulumi.CustomResource):
                  args: EmailReturnPathArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Email Return Path resource in Oracle Cloud Infrastructure Email service.
-
-        Creates a new email return path. Avoid entering confidential information.
-
         ## Example Usage
 
         ```python

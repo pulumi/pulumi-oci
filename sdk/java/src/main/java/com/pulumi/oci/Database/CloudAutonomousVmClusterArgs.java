@@ -23,14 +23,14 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     public static final CloudAutonomousVmClusterArgs Empty = new CloudAutonomousVmClusterArgs();
 
     /**
-     * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * (Updatable) The data disk group size to be allocated for Autonomous AI Databases, in TBs.
      * 
      */
     @Import(name="autonomousDataStorageSizeInTbs")
     private @Nullable Output<Double> autonomousDataStorageSizeInTbs;
 
     /**
-     * @return (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * @return (Updatable) The data disk group size to be allocated for Autonomous AI Databases, in TBs.
      * 
      */
     public Optional<Output<Double>> autonomousDataStorageSizeInTbs() {
@@ -203,7 +203,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+     * (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      * 
@@ -212,7 +212,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> licenseModel;
 
     /**
-     * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+     * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      * 
@@ -253,7 +253,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
 
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     @Import(name="nsgIds")
@@ -261,7 +261,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
 
     /**
      * @return (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -442,7 +442,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous AI Databases, in TBs.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous AI Databases, in TBs.
          * 
          * @return builder
          * 
@@ -704,7 +704,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param licenseModel (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+         * @param licenseModel (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
          * 
          * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          * 
@@ -717,7 +717,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param licenseModel (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+         * @param licenseModel (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
          * 
          * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          * 
@@ -772,7 +772,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
 
         /**
          * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -784,7 +784,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
 
         /**
          * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -795,7 +795,7 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
 
         /**
          * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 

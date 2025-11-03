@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
-//
-// Creates a new DataMaskRule resource definition.
-//
 // ## Example Usage
 //
 // ```go

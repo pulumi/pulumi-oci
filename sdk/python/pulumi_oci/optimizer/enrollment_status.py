@@ -200,9 +200,7 @@ class EnrollmentStatus(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
-
-        Updates the enrollment status of the tenancy.
+        ## Example Usage
 
         ## Import
 
@@ -228,9 +226,7 @@ class EnrollmentStatus(pulumi.CustomResource):
                  args: EnrollmentStatusArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
-
-        Updates the enrollment status of the tenancy.
+        ## Example Usage
 
         ## Import
 

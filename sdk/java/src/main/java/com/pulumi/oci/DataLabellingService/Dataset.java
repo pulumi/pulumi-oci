@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
- * 
- * Creates a new Dataset.
- * 
  * ## Example Usage
  * 
  * <pre>

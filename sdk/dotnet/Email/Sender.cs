@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Email
 {
     /// <summary>
-    /// This resource provides the Sender resource in Oracle Cloud Infrastructure Email service.
-    /// 
-    /// Creates a sender for a tenancy in a given compartment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

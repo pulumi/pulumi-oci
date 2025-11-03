@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

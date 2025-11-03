@@ -17,7 +17,7 @@ public final class GetAutonomousDatabaseResourcePoolSummary {
      */
     private Integer availableComputeCapacity;
     /**
-     * @return Indicates if the resource pool should be deleted for the Autonomous Database.
+     * @return Indicates if the vanity url details should be deleted for the Autonomous Database.
      * 
      */
     private Boolean isDisabled;
@@ -41,7 +41,7 @@ public final class GetAutonomousDatabaseResourcePoolSummary {
         return this.availableComputeCapacity;
     }
     /**
-     * @return Indicates if the resource pool should be deleted for the Autonomous Database.
+     * @return Indicates if the vanity url details should be deleted for the Autonomous Database.
      * 
      */
     public Boolean isDisabled() {

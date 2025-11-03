@@ -88,10 +88,6 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
                  operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Operations Insights Warehouse Rotate Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
-
-        Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
-
         ## Example Usage
 
         ```python
@@ -124,10 +120,6 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
                  args: OperationsInsightsWarehouseRotateWarehouseWalletArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Operations Insights Warehouse Rotate Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
-
-        Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
-
         ## Example Usage
 
         ```python

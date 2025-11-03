@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
-//
-// Creates a publication of the specified listing type with an optional default package.
-//
 // ## Example Usage
 //
 // ```go

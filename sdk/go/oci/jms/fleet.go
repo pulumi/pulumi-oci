@@ -12,16 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Fleet resource in Oracle Cloud Infrastructure Jms service.
-//
-// Create a new Fleet using the information provided.
-//
-// `inventoryLog` is now a required parameter for CreateFleet API.
-// Update existing applications using this API
-// before July 15, 2022 to ensure the applications continue to work.
-// See the [Service Change Notice](https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#JMS) for more details.
-// Migrate existing fleets using the `UpdateFleet` API to set the `inventoryLog` parameter.
-//
 // ## Example Usage
 //
 // ```go

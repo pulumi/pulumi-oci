@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates an attribute set.
- * 
  * ## Example Usage
  * 
  * <pre>

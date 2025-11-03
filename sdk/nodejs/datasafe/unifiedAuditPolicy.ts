@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Unified Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates the specified unified audit policy.
- *
  * ## Example Usage
  *
  * ```typescript

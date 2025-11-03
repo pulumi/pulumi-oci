@@ -9,9 +9,11 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
  *
- * Returns a list of stacks.
+ * Lists stacks according to the specified filter.
+ * For more information, see
+ * [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
  * - If called using the compartment ID, returns all stacks in the specified compartment.
- * - If called using the stack ID, returns the specified stack.
+ * - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
  *
  * ## Example Usage
  *
@@ -56,13 +58,7 @@ export interface GetStacksArgs {
      */
     id?: string;
     /**
-     * A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-     *
-     * Allowable values:
-     * * CREATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
+     * A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      */
     state?: string;
 }
@@ -76,7 +72,7 @@ export interface GetStacksResult {
      */
     readonly compartmentId: string;
     /**
-     * Human-readable display name for the stack.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     readonly displayName?: string;
     readonly filters?: outputs.ResourceManager.GetStacksFilter[];
@@ -89,16 +85,18 @@ export interface GetStacksResult {
      */
     readonly stacks: outputs.ResourceManager.GetStacksStack[];
     /**
-     * The current lifecycle state of the stack.
+     * The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
  *
- * Returns a list of stacks.
+ * Lists stacks according to the specified filter.
+ * For more information, see
+ * [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
  * - If called using the compartment ID, returns all stacks in the specified compartment.
- * - If called using the stack ID, returns the specified stack.
+ * - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
  *
  * ## Example Usage
  *
@@ -143,13 +141,7 @@ export interface GetStacksOutputArgs {
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-     *
-     * Allowable values:
-     * * CREATING
-     * * ACTIVE
-     * * DELETING
-     * * DELETED
+     * A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      */
     state?: pulumi.Input<string>;
 }

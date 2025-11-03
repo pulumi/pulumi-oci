@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
- *
- * Create and activate external metastore configuration.
- *
  * ## Example Usage
  *
  * ```typescript

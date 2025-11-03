@@ -13,6 +13,11 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointResult {
     /**
+     * @return Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     * 
+     */
+    private String alias;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the endpoint compartment.
      * 
      */
@@ -84,6 +89,13 @@ public final class GetEndpointResult {
     private String timeUpdated;
 
     private GetEndpointResult() {}
+    /**
+     * @return Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     * 
+     */
+    public String alias() {
+        return this.alias;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the endpoint compartment.
      * 
@@ -192,6 +204,7 @@ public final class GetEndpointResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String alias;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -209,6 +222,7 @@ public final class GetEndpointResult {
         public Builder() {}
         public Builder(GetEndpointResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alias = defaults.alias;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -225,6 +239,14 @@ public final class GetEndpointResult {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder alias(String alias) {
+            if (alias == null) {
+              throw new MissingRequiredPropertyException("GetEndpointResult", "alias");
+            }
+            this.alias = alias;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -339,6 +361,7 @@ public final class GetEndpointResult {
         }
         public GetEndpointResult build() {
             final var _resultValue = new GetEndpointResult();
+            _resultValue.alias = alias;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;

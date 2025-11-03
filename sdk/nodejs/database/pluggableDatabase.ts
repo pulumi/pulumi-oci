@@ -7,11 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Pluggable Database resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates and starts a pluggable database in the specified container database.
- * Pluggable Database can be created using different operations (e.g. LocalClone, RemoteClone, Relocate ) with this API.
- * Use the [StartPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StartPluggableDatabase) and [StopPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StopPluggableDatabase) APIs to start and stop the pluggable database.
+ * ## Example Usage
  *
  * ## Import
  *
@@ -81,6 +77,9 @@ export class PluggableDatabase extends pulumi.CustomResource {
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
     declare public /*out*/ readonly isRestricted: pulumi.Output<boolean>;
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     */
     declare public readonly kmsKeyVersionId: pulumi.Output<string | undefined>;
     /**
      * Detailed message for the lifecycle state.
@@ -266,6 +265,9 @@ export interface PluggableDatabaseState {
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
     isRestricted?: pulumi.Input<boolean>;
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
      * Detailed message for the lifecycle state.
@@ -361,6 +363,9 @@ export interface PluggableDatabaseArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
      * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.

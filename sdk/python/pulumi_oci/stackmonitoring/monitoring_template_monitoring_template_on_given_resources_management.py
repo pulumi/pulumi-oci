@@ -120,10 +120,6 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
                  monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Monitoring Template Monitoring Template On Given Resources Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Apply the Monitoring Template identified by the id
-
         ## Example Usage
 
         ```python
@@ -151,10 +147,6 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
                  args: MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Monitoring Template Monitoring Template On Given Resources Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Apply the Monitoring Template identified by the id
-
         ## Example Usage
 
         ```python

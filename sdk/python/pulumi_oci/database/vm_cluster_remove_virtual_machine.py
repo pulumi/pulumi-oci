@@ -104,7 +104,7 @@ class _VmClusterRemoveVirtualMachineState:
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the VM cluster is located in.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs']]] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[Sequence[pulumi.Input['VmClusterRemoveVirtualMachineDataCollectionOptionArgs']]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
@@ -243,7 +243,7 @@ class _VmClusterRemoveVirtualMachineState:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -602,10 +602,6 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Vm Cluster Remove Virtual Machine resource in Oracle Cloud Infrastructure Database service.
-
-        Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances only.
-
         ## Example Usage
 
         ```python
@@ -643,10 +639,6 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
                  args: VmClusterRemoveVirtualMachineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vm Cluster Remove Virtual Machine resource in Oracle Cloud Infrastructure Database service.
-
-        Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances only.
-
         ## Example Usage
 
         ```python
@@ -782,7 +774,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the VM cluster is located in.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs', 'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict']]]] cloud_automation_update_details: Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDataCollectionOptionArgs', 'VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict']]]] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
@@ -882,7 +874,7 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> pulumi.Output[_builtins.str]:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 

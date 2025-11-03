@@ -248,6 +248,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  list_one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs']]]] = None,
+                 memory_per_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -279,41 +280,42 @@ class _AutonomousContainerDatabaseAddStandbyState:
         """
         Input properties used for looking up and filtering AutonomousContainerDatabaseAddStandby resources.
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[_builtins.str] autonomous_exadata_infrastructure_id: **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+        :param pulumi.Input[_builtins.str] autonomous_exadata_infrastructure_id: **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[_builtins.str] availability_domain: The domain of the Autonomous Container Database
         :param pulumi.Input[_builtins.float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyBackupConfigArgs']]] backup_configs: Backup options for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs']]] dataguard_group_members: Array of Dg associations.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyDataguardArgs']]] dataguards: The properties that define Autonomous Container Databases Dataguard.
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
-        :param pulumi.Input[_builtins.str] db_version: Oracle Database version of the Autonomous Container Database.
+        :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        :param pulumi.Input[_builtins.str] db_version: Oracle AI Database version of the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-provided name for the Autonomous Container Database.
-        :param pulumi.Input[_builtins.str] distribution_affinity: Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+        :param pulumi.Input[_builtins.str] distribution_affinity: Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         :param pulumi.Input[_builtins.str] dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] infrastructure_type: The infrastructure type this resource belongs to.
         :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
-        :param pulumi.Input[_builtins.bool] is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param pulumi.Input[_builtins.bool] is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[_builtins.bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[_builtins.bool] is_multiple_standby: Indicates if it is multiple standby Autonomous Dataguard
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs']]] key_history_entries: Key History Entry.
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
-        :param pulumi.Input[_builtins.float] largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        :param pulumi.Input[_builtins.float] largest_provisionable_autonomous_database_in_cpus: The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] list_one_off_patches: List of One-Off patches that has been successfully applied to Autonomous Container Database
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         :param pulumi.Input[_builtins.str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[_builtins.str] okv_end_point_group_name: The OKV End Point Group name for the Autonomous Container Database.
@@ -326,11 +328,11 @@ class _AutonomousContainerDatabaseAddStandbyState:
         :param pulumi.Input[_builtins.str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] peer_db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         :param pulumi.Input[_builtins.str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
         :param pulumi.Input[_builtins.float] provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
-        :param pulumi.Input[_builtins.float] reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        :param pulumi.Input[_builtins.float] reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         :param pulumi.Input[_builtins.float] reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.str] service_level_agreement_type: The service level agreement type of the container database. The default is STANDARD.
         :param pulumi.Input[_builtins.int] standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database. 
                
@@ -418,6 +420,8 @@ class _AutonomousContainerDatabaseAddStandbyState:
             pulumi.set(__self__, "list_one_off_patches", list_one_off_patches)
         if maintenance_windows is not None:
             pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        if memory_per_compute_unit_in_gbs is not None:
+            pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         if memory_per_oracle_compute_unit_in_gbs is not None:
             pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if net_services_architecture is not None:
@@ -491,7 +495,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="autonomousExadataInfrastructureId")
     def autonomous_exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+        **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         """
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
@@ -575,7 +579,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -623,7 +627,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="dbSplitThreshold")
     def db_split_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         """
         return pulumi.get(self, "db_split_threshold")
 
@@ -644,7 +648,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Oracle Database version of the Autonomous Container Database.
+        Oracle AI Database version of the Autonomous Container Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -680,7 +684,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="distributionAffinity")
     def distribution_affinity(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+        Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         """
         return pulumi.get(self, "distribution_affinity")
 
@@ -752,7 +756,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="isDataGuardEnabled")
     def is_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
@@ -836,7 +840,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -848,7 +852,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
     def largest_provisionable_autonomous_database_in_cpus(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
-        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
         """
         return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
 
@@ -905,10 +909,22 @@ class _AutonomousContainerDatabaseAddStandbyState:
         pulumi.set(self, "maintenance_windows", value)
 
     @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
+
+    @memory_per_compute_unit_in_gbs.setter
+    def memory_per_compute_unit_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+        pulumi.set(self, "memory_per_compute_unit_in_gbs", value)
+
+    @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -1064,7 +1080,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.float]]]]:
         """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -1088,7 +1104,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -1112,7 +1128,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -1264,40 +1280,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Container Database Add Standby resource in Oracle Cloud Infrastructure Database service.
-
-        Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
-        [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
-
         ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_container_database_add_standby = oci.database.AutonomousContainerDatabaseAddStandby("test_autonomous_container_database_add_standby",
-            autonomous_container_database_id=test_autonomous_container_database["id"],
-            fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_add_standby_fast_start_fail_over_lag_limit_in_seconds,
-            is_automatic_failover_enabled=autonomous_container_database_add_standby_is_automatic_failover_enabled,
-            peer_autonomous_container_database_backup_config={
-                "backup_destination_details": [{
-                    "type": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_type,
-                    "dbrs_policy_id": test_policy["id"],
-                    "id": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_id,
-                    "internet_proxy": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    "vpc_password": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-                    "vpc_user": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
-                }],
-                "recovery_window_in_days": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_recovery_window_in_days,
-            },
-            peer_autonomous_container_database_compartment_id=test_compartment["id"],
-            peer_autonomous_container_database_display_name=autonomous_container_database_add_standby_peer_autonomous_container_database_display_name,
-            peer_autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
-            peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
-            peer_db_unique_name=autonomous_container_database_add_standby_peer_db_unique_name,
-            protection_mode=autonomous_container_database_add_standby_protection_mode,
-            standby_maintenance_buffer_in_days=autonomous_container_database_add_standby_standby_maintenance_buffer_in_days)
-        ```
 
         ## Import
 
@@ -1332,40 +1315,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
                  args: AutonomousContainerDatabaseAddStandbyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Container Database Add Standby resource in Oracle Cloud Infrastructure Database service.
-
-        Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
-        [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
-
         ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_container_database_add_standby = oci.database.AutonomousContainerDatabaseAddStandby("test_autonomous_container_database_add_standby",
-            autonomous_container_database_id=test_autonomous_container_database["id"],
-            fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_add_standby_fast_start_fail_over_lag_limit_in_seconds,
-            is_automatic_failover_enabled=autonomous_container_database_add_standby_is_automatic_failover_enabled,
-            peer_autonomous_container_database_backup_config={
-                "backup_destination_details": [{
-                    "type": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_type,
-                    "dbrs_policy_id": test_policy["id"],
-                    "id": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_id,
-                    "internet_proxy": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    "vpc_password": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-                    "vpc_user": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
-                }],
-                "recovery_window_in_days": autonomous_container_database_add_standby_peer_autonomous_container_database_backup_config_recovery_window_in_days,
-            },
-            peer_autonomous_container_database_compartment_id=test_compartment["id"],
-            peer_autonomous_container_database_display_name=autonomous_container_database_add_standby_peer_autonomous_container_database_display_name,
-            peer_autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
-            peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
-            peer_db_unique_name=autonomous_container_database_add_standby_peer_db_unique_name,
-            protection_mode=autonomous_container_database_add_standby_protection_mode,
-            standby_maintenance_buffer_in_days=autonomous_container_database_add_standby_standby_maintenance_buffer_in_days)
-        ```
 
         ## Import
 
@@ -1456,6 +1406,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["list_one_off_patches"] = None
             __props__.__dict__["maintenance_windows"] = None
+            __props__.__dict__["memory_per_compute_unit_in_gbs"] = None
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = None
             __props__.__dict__["net_services_architecture"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
@@ -1522,6 +1473,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             list_one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs', 'AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict']]]]] = None,
+            memory_per_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1558,41 +1510,42 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[_builtins.str] autonomous_exadata_infrastructure_id: **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+        :param pulumi.Input[_builtins.str] autonomous_exadata_infrastructure_id: **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[_builtins.str] availability_domain: The domain of the Autonomous Container Database
         :param pulumi.Input[_builtins.float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyBackupConfigArgsDict']]]] backup_configs: Backup options for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs', 'AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgsDict']]]] dataguard_group_members: Array of Dg associations.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyDataguardArgs', 'AutonomousContainerDatabaseAddStandbyDataguardArgsDict']]]] dataguards: The properties that define Autonomous Container Databases Dataguard.
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
-        :param pulumi.Input[_builtins.str] db_version: Oracle Database version of the Autonomous Container Database.
+        :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        :param pulumi.Input[_builtins.str] db_version: Oracle AI Database version of the Autonomous Container Database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: The user-provided name for the Autonomous Container Database.
-        :param pulumi.Input[_builtins.str] distribution_affinity: Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+        :param pulumi.Input[_builtins.str] distribution_affinity: Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         :param pulumi.Input[_builtins.str] dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] infrastructure_type: The infrastructure type this resource belongs to.
         :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
-        :param pulumi.Input[_builtins.bool] is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        :param pulumi.Input[_builtins.bool] is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[_builtins.bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[_builtins.bool] is_multiple_standby: Indicates if it is multiple standby Autonomous Dataguard
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs', 'AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgsDict']]]] key_history_entries: Key History Entry.
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
-        :param pulumi.Input[_builtins.float] largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        :param pulumi.Input[_builtins.float] largest_provisionable_autonomous_database_in_cpus: The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] list_one_off_patches: List of One-Off patches that has been successfully applied to Autonomous Container Database
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgs', 'AutonomousContainerDatabaseAddStandbyMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        :param pulumi.Input[_builtins.float] memory_per_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         :param pulumi.Input[_builtins.str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[_builtins.str] okv_end_point_group_name: The OKV End Point Group name for the Autonomous Container Database.
@@ -1605,11 +1558,11 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] peer_db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         :param pulumi.Input[_builtins.str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
         :param pulumi.Input[_builtins.float] provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
-        :param pulumi.Input[_builtins.float] reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        :param pulumi.Input[_builtins.float] reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         :param pulumi.Input[_builtins.float] reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.str] service_level_agreement_type: The service level agreement type of the container database. The default is STANDARD.
         :param pulumi.Input[_builtins.int] standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database. 
                
@@ -1665,6 +1618,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["list_one_off_patches"] = list_one_off_patches
         __props__.__dict__["maintenance_windows"] = maintenance_windows
+        __props__.__dict__["memory_per_compute_unit_in_gbs"] = memory_per_compute_unit_in_gbs
         __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
         __props__.__dict__["net_services_architecture"] = net_services_architecture
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
@@ -1707,7 +1661,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="autonomousExadataInfrastructureId")
     def autonomous_exadata_infrastructure_id(self) -> pulumi.Output[_builtins.str]:
         """
-        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+        **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         """
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
@@ -1763,7 +1717,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> pulumi.Output[_builtins.str]:
         """
-        The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -1795,7 +1749,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="dbSplitThreshold")
     def db_split_threshold(self) -> pulumi.Output[_builtins.int]:
         """
-        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         """
         return pulumi.get(self, "db_split_threshold")
 
@@ -1808,7 +1762,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Output[_builtins.str]:
         """
-        Oracle Database version of the Autonomous Container Database.
+        Oracle AI Database version of the Autonomous Container Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -1832,7 +1786,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="distributionAffinity")
     def distribution_affinity(self) -> pulumi.Output[_builtins.str]:
         """
-        Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+        Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         """
         return pulumi.get(self, "distribution_affinity")
 
@@ -1880,7 +1834,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="isDataGuardEnabled")
     def is_data_guard_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
@@ -1936,7 +1890,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -1944,7 +1898,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
     def largest_provisionable_autonomous_database_in_cpus(self) -> pulumi.Output[_builtins.float]:
         """
-        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
         """
         return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
 
@@ -1981,10 +1935,18 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         return pulumi.get(self, "maintenance_windows")
 
     @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> pulumi.Output[_builtins.float]:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Output[_builtins.int]:
         """
-        The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -2088,7 +2050,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> pulumi.Output[Sequence[_builtins.float]]:
         """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -2104,7 +2066,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> pulumi.Output[_builtins.float]:
         """
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -2120,7 +2082,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter
     def role(self) -> pulumi.Output[_builtins.str]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 

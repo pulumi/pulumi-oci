@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
-//
-// Creates a AdhocQuery resource.
-//
 // ## Example Usage
 //
 // ```go

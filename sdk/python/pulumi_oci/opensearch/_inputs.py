@@ -15,6 +15,8 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'ClusterCertificateConfigArgs',
+    'ClusterCertificateConfigArgsDict',
     'ClusterMaintenanceDetailsArgs',
     'ClusterMaintenanceDetailsArgsDict',
     'ClusterOutboundClusterConfigArgs',
@@ -36,6 +38,98 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class ClusterCertificateConfigArgsDict(TypedDict):
+        cluster_certificate_mode: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        """
+        dashboard_certificate_mode: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        """
+        open_search_api_certificate_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) certificate to be used for OpenSearch cluster api communication
+        """
+        open_search_dashboard_certificate_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) certificate to be used for OpenSearch dashboard api communication
+        """
+elif False:
+    ClusterCertificateConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ClusterCertificateConfigArgs:
+    def __init__(__self__, *,
+                 cluster_certificate_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 dashboard_certificate_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 open_search_api_certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 open_search_dashboard_certificate_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cluster_certificate_mode: (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        :param pulumi.Input[_builtins.str] dashboard_certificate_mode: (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        :param pulumi.Input[_builtins.str] open_search_api_certificate_id: (Updatable) certificate to be used for OpenSearch cluster api communication
+        :param pulumi.Input[_builtins.str] open_search_dashboard_certificate_id: (Updatable) certificate to be used for OpenSearch dashboard api communication
+        """
+        if cluster_certificate_mode is not None:
+            pulumi.set(__self__, "cluster_certificate_mode", cluster_certificate_mode)
+        if dashboard_certificate_mode is not None:
+            pulumi.set(__self__, "dashboard_certificate_mode", dashboard_certificate_mode)
+        if open_search_api_certificate_id is not None:
+            pulumi.set(__self__, "open_search_api_certificate_id", open_search_api_certificate_id)
+        if open_search_dashboard_certificate_id is not None:
+            pulumi.set(__self__, "open_search_dashboard_certificate_id", open_search_dashboard_certificate_id)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterCertificateMode")
+    def cluster_certificate_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        """
+        return pulumi.get(self, "cluster_certificate_mode")
+
+    @cluster_certificate_mode.setter
+    def cluster_certificate_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_certificate_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dashboardCertificateMode")
+    def dashboard_certificate_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        """
+        return pulumi.get(self, "dashboard_certificate_mode")
+
+    @dashboard_certificate_mode.setter
+    def dashboard_certificate_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "dashboard_certificate_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="openSearchApiCertificateId")
+    def open_search_api_certificate_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) certificate to be used for OpenSearch cluster api communication
+        """
+        return pulumi.get(self, "open_search_api_certificate_id")
+
+    @open_search_api_certificate_id.setter
+    def open_search_api_certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "open_search_api_certificate_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="openSearchDashboardCertificateId")
+    def open_search_dashboard_certificate_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) certificate to be used for OpenSearch dashboard api communication
+        """
+        return pulumi.get(self, "open_search_dashboard_certificate_id")
+
+    @open_search_dashboard_certificate_id.setter
+    def open_search_dashboard_certificate_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "open_search_dashboard_certificate_id", value)
+
 
 if not MYPY:
     class ClusterMaintenanceDetailsArgsDict(TypedDict):

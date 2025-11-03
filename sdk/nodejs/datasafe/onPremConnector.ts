@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the On Prem Connector resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates a new on-premises connector.
- *
  * ## Example Usage
  *
  * ```typescript

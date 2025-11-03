@@ -136,6 +136,12 @@ namespace Pulumi.Oci
         public Input<bool>? DisableAutoRetries { get; set; }
 
         /// <summary>
+        /// (Optional) flags to enable Dual Stack endpoint.
+        /// </summary>
+        [Input("dualStackEndpointEnabled", json: true)]
+        public Input<bool>? DualStackEndpointEnabled { get; set; }
+
+        /// <summary>
         /// (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Input("fingerprint")]

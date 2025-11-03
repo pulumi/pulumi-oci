@@ -35,7 +35,8 @@ class MountTargetArgs:
                  ldap_idmap: Optional[pulumi.Input['MountTargetLdapIdmapArgs']] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 requested_throughput: Optional[pulumi.Input[_builtins.str]] = None):
+                 requested_throughput: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a MountTarget resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
@@ -63,6 +64,7 @@ class MountTargetArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[_builtins.str] requested_throughput: (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -91,6 +93,8 @@ class MountTargetArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if requested_throughput is not None:
             pulumi.set(__self__, "requested_throughput", requested_throughput)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -282,6 +286,18 @@ class MountTargetArgs:
     def requested_throughput(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "requested_throughput", value)
 
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
 
 @pulumi.input_type
 class _MountTargetState:
@@ -305,6 +321,7 @@ class _MountTargetState:
                  private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  requested_throughput: Optional[pulumi.Input[_builtins.str]] = None,
                  reserved_storage_capacity: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -337,6 +354,7 @@ class _MountTargetState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
         :param pulumi.Input[_builtins.str] requested_throughput: (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param pulumi.Input[_builtins.str] reserved_storage_capacity: * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the mount target.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
                
@@ -385,6 +403,8 @@ class _MountTargetState:
             pulumi.set(__self__, "requested_throughput", requested_throughput)
         if reserved_storage_capacity is not None:
             pulumi.set(__self__, "reserved_storage_capacity", reserved_storage_capacity)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
@@ -631,6 +651,18 @@ class _MountTargetState:
         pulumi.set(self, "reserved_storage_capacity", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -715,44 +747,10 @@ class MountTarget(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  requested_throughput: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Mount Target resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new mount target in the specified compartment and
-        subnet. You can associate a file system with a mount
-        target only when they exist in the same availability domain. Instances
-        can connect to mount targets in another availablity domain, but
-        you might see higher latency than with instances in the same
-        availability domain as the mount target.
-
-        Mount targets have one or more private IP addresses that you can
-        provide as the host portion of remote target parameters in
-        client mount commands. These private IP addresses are listed
-        in the privateIpIds property of the mount target and are highly available. Mount
-        targets also consume additional IP addresses in their subnet.
-        Do not use /30 or smaller subnets for mount target creation because they
-        do not have sufficient available IP addresses.
-        Allow at least three IP addresses for each mount target.
-
-        For information about access control and compartments, see
-        [Overview of the IAM
-        Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        For information about availability domains, see [Regions and
-        Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of availability domains, use the
-        `ListAvailabilityDomains` operation in the Identity and Access
-        Management Service API.
-
-        All Oracle Cloud Infrastructure Services resources, including
-        mount targets, get an Oracle-assigned, unique ID called an
-        Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource
-        type, or by viewing the resource in the Console.
-
         ## Example Usage
 
         ```python
@@ -798,7 +796,8 @@ class MountTarget(pulumi.CustomResource):
                 "time_created": mount_target_locks_time_created,
             }],
             nsg_ids=mount_target_nsg_ids,
-            requested_throughput=mount_target_requested_throughput)
+            requested_throughput=mount_target_requested_throughput,
+            security_attributes=mount_target_security_attributes)
         ```
 
         ## Import
@@ -831,6 +830,7 @@ class MountTarget(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param pulumi.Input[_builtins.str] requested_throughput: (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
                
                
@@ -844,41 +844,6 @@ class MountTarget(pulumi.CustomResource):
                  args: MountTargetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Mount Target resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new mount target in the specified compartment and
-        subnet. You can associate a file system with a mount
-        target only when they exist in the same availability domain. Instances
-        can connect to mount targets in another availablity domain, but
-        you might see higher latency than with instances in the same
-        availability domain as the mount target.
-
-        Mount targets have one or more private IP addresses that you can
-        provide as the host portion of remote target parameters in
-        client mount commands. These private IP addresses are listed
-        in the privateIpIds property of the mount target and are highly available. Mount
-        targets also consume additional IP addresses in their subnet.
-        Do not use /30 or smaller subnets for mount target creation because they
-        do not have sufficient available IP addresses.
-        Allow at least three IP addresses for each mount target.
-
-        For information about access control and compartments, see
-        [Overview of the IAM
-        Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        For information about availability domains, see [Regions and
-        Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of availability domains, use the
-        `ListAvailabilityDomains` operation in the Identity and Access
-        Management Service API.
-
-        All Oracle Cloud Infrastructure Services resources, including
-        mount targets, get an Oracle-assigned, unique ID called an
-        Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-        When you create a resource, you can find its OCID in the response.
-        You can also retrieve a resource's OCID by using a List API operation on that resource
-        type, or by viewing the resource in the Console.
-
         ## Example Usage
 
         ```python
@@ -924,7 +889,8 @@ class MountTarget(pulumi.CustomResource):
                 "time_created": mount_target_locks_time_created,
             }],
             nsg_ids=mount_target_nsg_ids,
-            requested_throughput=mount_target_requested_throughput)
+            requested_throughput=mount_target_requested_throughput,
+            security_attributes=mount_target_security_attributes)
         ```
 
         ## Import
@@ -964,6 +930,7 @@ class MountTarget(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  requested_throughput: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -992,6 +959,7 @@ class MountTarget(pulumi.CustomResource):
             __props__.__dict__["locks"] = locks
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["requested_throughput"] = requested_throughput
+            __props__.__dict__["security_attributes"] = security_attributes
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -1033,6 +1001,7 @@ class MountTarget(pulumi.CustomResource):
             private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             requested_throughput: Optional[pulumi.Input[_builtins.str]] = None,
             reserved_storage_capacity: Optional[pulumi.Input[_builtins.str]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1070,6 +1039,7 @@ class MountTarget(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
         :param pulumi.Input[_builtins.str] requested_throughput: (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param pulumi.Input[_builtins.str] reserved_storage_capacity: * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the mount target.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target. 
                
@@ -1103,6 +1073,7 @@ class MountTarget(pulumi.CustomResource):
         __props__.__dict__["private_ip_ids"] = private_ip_ids
         __props__.__dict__["requested_throughput"] = requested_throughput
         __props__.__dict__["reserved_storage_capacity"] = reserved_storage_capacity
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["system_tags"] = system_tags
@@ -1267,6 +1238,14 @@ class MountTarget(pulumi.CustomResource):
         * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         """
         return pulumi.get(self, "reserved_storage_capacity")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

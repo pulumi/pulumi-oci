@@ -1021,10 +1021,6 @@ class DomainsApiKey(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsApiKeyUserArgs', 'DomainsApiKeyUserArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's API key.
-
         ## Example Usage
 
         ## Import
@@ -1116,10 +1112,6 @@ class DomainsApiKey(pulumi.CustomResource):
                  args: DomainsApiKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's API key.
-
         ## Example Usage
 
         ## Import

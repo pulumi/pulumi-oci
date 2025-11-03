@@ -97,22 +97,10 @@ namespace Pulumi.Oci.Jms
     public sealed class GetUtilsAnalyzeApplicationsConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the bucket used for analyzing applications.
-        /// </summary>
-        [Input("bucket")]
-        public string? Bucket { get; set; }
-
-        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
-
-        /// <summary>
-        /// The Object Storage namespace used for analyzing applications.
-        /// </summary>
-        [Input("namespace")]
-        public string? Namespace { get; set; }
 
         public GetUtilsAnalyzeApplicationsConfigurationArgs()
         {
@@ -123,22 +111,10 @@ namespace Pulumi.Oci.Jms
     public sealed class GetUtilsAnalyzeApplicationsConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the bucket used for analyzing applications.
-        /// </summary>
-        [Input("bucket")]
-        public Input<string>? Bucket { get; set; }
-
-        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
-
-        /// <summary>
-        /// The Object Storage namespace used for analyzing applications.
-        /// </summary>
-        [Input("namespace")]
-        public Input<string>? Namespace { get; set; }
 
         public GetUtilsAnalyzeApplicationsConfigurationInvokeArgs()
         {
@@ -155,9 +131,6 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string Bucket;
         public readonly string CompartmentId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
         public readonly string Id;
         /// <summary>
         /// The Object Storage namespace used for analyzing applications.

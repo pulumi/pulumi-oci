@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Registers a new [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
-    /// resource.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

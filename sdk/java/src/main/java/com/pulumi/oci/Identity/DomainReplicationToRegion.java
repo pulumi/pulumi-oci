@@ -14,22 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Domain Replication To Region resource in Oracle Cloud Infrastructure Identity service.
- * 
- * Replicate domain to a new region. This is an asynchronous call - where, at start,
- * {{@literal @}code state} of this domain in replica region is set to ENABLING_REPLICATION.
- * On domain replication completion the {{@literal @}code state} will be set to REPLICATION_ENABLED.
- * 
- * To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
- * the async operation&#39;s status.
- * 
- * If the replica region&#39;s {{@literal @}code state} is already ENABLING_REPLICATION or REPLICATION_ENABLED,
- * returns 409 CONFLICT.
- * - If the domain doesn&#39;t exists, returns 404 NOT FOUND.
- * - If home region is same as replication region, return 400 BAD REQUEST.
- * - If Domain is not active or being updated, returns 400 BAD REQUEST.
- * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
- * 
  * ## Example Usage
  * 
  * <pre>

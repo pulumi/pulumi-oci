@@ -7656,6 +7656,10 @@ if not MYPY:
 
         For more information about iPXE, see http://ipxe.org.
         """
+        is_ai_enterprise_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Whether to enable AI enterprise on the instance.
+        """
         is_pv_encryption_in_transit_enabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
         Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
@@ -7767,6 +7771,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  instance_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs']] = None,
                  ipxe_script: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_ai_enterprise_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  launch_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  launch_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs']] = None,
@@ -7819,6 +7824,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
                For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
                
                For more information about iPXE, see http://ipxe.org.
+        :param pulumi.Input[_builtins.bool] is_ai_enterprise_enabled: Whether to enable AI enterprise on the instance.
         :param pulumi.Input[_builtins.bool] is_pv_encryption_in_transit_enabled: Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         :param pulumi.Input[_builtins.str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -7904,6 +7910,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
             pulumi.set(__self__, "instance_options", instance_options)
         if ipxe_script is not None:
             pulumi.set(__self__, "ipxe_script", ipxe_script)
+        if is_ai_enterprise_enabled is not None:
+            pulumi.set(__self__, "is_ai_enterprise_enabled", is_ai_enterprise_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
             pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if launch_mode is not None:
@@ -8144,6 +8152,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @ipxe_script.setter
     def ipxe_script(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ipxe_script", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAiEnterpriseEnabled")
+    def is_ai_enterprise_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether to enable AI enterprise on the instance.
+        """
+        return pulumi.get(self, "is_ai_enterprise_enabled")
+
+    @is_ai_enterprise_enabled.setter
+    def is_ai_enterprise_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_ai_enterprise_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
@@ -8597,6 +8617,10 @@ if not MYPY:
         """
         Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
+        subnet_cidr: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
         subnet_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -8619,6 +8643,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
                  private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
+                 subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
@@ -8633,6 +8658,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
         :param pulumi.Input[_builtins.str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[_builtins.bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[_builtins.str] subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         if assign_ipv6ip is not None:
@@ -8659,6 +8685,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        if subnet_cidr is not None:
+            pulumi.set(__self__, "subnet_cidr", subnet_cidr)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -8805,6 +8833,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs:
     @skip_source_dest_check.setter
     def skip_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "skip_source_dest_check", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetCidr")
+    def subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "subnet_cidr")
+
+    @subnet_cidr.setter
+    def subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
@@ -9556,6 +9596,10 @@ if not MYPY:
         """
         The total number of OCPUs available to the instance.
         """
+        resource_management: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        This field is reserved for internal use.
+        """
         vcpus: NotRequired[pulumi.Input[_builtins.int]]
         """
         The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
@@ -9570,6 +9614,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
                  memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  nvmes: Optional[pulumi.Input[_builtins.int]] = None,
                  ocpus: Optional[pulumi.Input[_builtins.float]] = None,
+                 resource_management: Optional[pulumi.Input[_builtins.str]] = None,
                  vcpus: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -9581,6 +9626,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
         :param pulumi.Input[_builtins.float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs available to the instance.
+        :param pulumi.Input[_builtins.str] resource_management: This field is reserved for internal use.
         :param pulumi.Input[_builtins.int] vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
         if baseline_ocpu_utilization is not None:
@@ -9591,6 +9637,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+        if resource_management is not None:
+            pulumi.set(__self__, "resource_management", resource_management)
         if vcpus is not None:
             pulumi.set(__self__, "vcpus", vcpus)
 
@@ -9646,6 +9694,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs:
     @ocpus.setter
     def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @resource_management.setter
+    def resource_management(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "resource_management", value)
 
     @_builtins.property
     @pulumi.getter
@@ -10740,6 +10800,10 @@ if not MYPY:
         """
         This is an advanced option.
         """
+        is_ai_enterprise_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Whether to enable AI enterprise on the instance.
+        """
         is_pv_encryption_in_transit_enabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
         Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
@@ -10817,6 +10881,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  instance_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs']] = None,
                  ipxe_script: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_ai_enterprise_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  launch_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  launch_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs']] = None,
@@ -10847,6 +10912,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param pulumi.Input[_builtins.str] ipxe_script: This is an advanced option.
+        :param pulumi.Input[_builtins.bool] is_ai_enterprise_enabled: Whether to enable AI enterprise on the instance.
         :param pulumi.Input[_builtins.bool] is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         :param pulumi.Input[_builtins.str] launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -10898,6 +10964,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
             pulumi.set(__self__, "instance_options", instance_options)
         if ipxe_script is not None:
             pulumi.set(__self__, "ipxe_script", ipxe_script)
+        if is_ai_enterprise_enabled is not None:
+            pulumi.set(__self__, "is_ai_enterprise_enabled", is_ai_enterprise_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
             pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if launch_mode is not None:
@@ -11116,6 +11184,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @ipxe_script.setter
     def ipxe_script(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "ipxe_script", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAiEnterpriseEnabled")
+    def is_ai_enterprise_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether to enable AI enterprise on the instance.
+        """
+        return pulumi.get(self, "is_ai_enterprise_enabled")
+
+    @is_ai_enterprise_enabled.setter
+    def is_ai_enterprise_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_ai_enterprise_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
@@ -11574,6 +11654,10 @@ if not MYPY:
         """
         Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
+        subnet_cidr: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
         subnet_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -11596,6 +11680,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
                  private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
+                 subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
@@ -11609,6 +11694,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
         :param pulumi.Input[_builtins.str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[_builtins.bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[_builtins.str] subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         if assign_ipv6ip is not None:
@@ -11635,6 +11721,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        if subnet_cidr is not None:
+            pulumi.set(__self__, "subnet_cidr", subnet_cidr)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -11778,6 +11866,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsAr
     @skip_source_dest_check.setter
     def skip_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "skip_source_dest_check", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetCidr")
+    def subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "subnet_cidr")
+
+    @subnet_cidr.setter
+    def subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
@@ -12476,6 +12576,10 @@ if not MYPY:
         """
         The total number of OCPUs available to the instance.
         """
+        resource_management: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        This field is reserved for internal use.
+        """
         vcpus: NotRequired[pulumi.Input[_builtins.int]]
         """
         The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
@@ -12490,12 +12594,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
                  memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  nvmes: Optional[pulumi.Input[_builtins.int]] = None,
                  ocpus: Optional[pulumi.Input[_builtins.float]] = None,
+                 resource_management: Optional[pulumi.Input[_builtins.str]] = None,
                  vcpus: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         :param pulumi.Input[_builtins.float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs available to the instance.
+        :param pulumi.Input[_builtins.str] resource_management: This field is reserved for internal use.
         :param pulumi.Input[_builtins.int] vcpus: The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
         if baseline_ocpu_utilization is not None:
@@ -12506,6 +12612,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+        if resource_management is not None:
+            pulumi.set(__self__, "resource_management", resource_management)
         if vcpus is not None:
             pulumi.set(__self__, "vcpus", vcpus)
 
@@ -12556,6 +12664,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs:
     @ocpus.setter
     def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @resource_management.setter
+    def resource_management(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "resource_management", value)
 
     @_builtins.property
     @pulumi.getter
@@ -12932,6 +13052,10 @@ if not MYPY:
         """
         Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
+        subnet_cidr: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
         subnet_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -12954,6 +13078,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
                  private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
+                 subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
@@ -12967,6 +13092,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
         :param pulumi.Input[_builtins.str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[_builtins.bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[_builtins.str] subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         if assign_ipv6ip is not None:
@@ -12993,6 +13119,8 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        if subnet_cidr is not None:
+            pulumi.set(__self__, "subnet_cidr", subnet_cidr)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -13136,6 +13264,18 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsAr
     @skip_source_dest_check.setter
     def skip_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "skip_source_dest_check", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetCidr")
+    def subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "subnet_cidr")
+
+    @subnet_cidr.setter
+    def subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
@@ -13305,6 +13445,10 @@ if not MYPY:
         """
         Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
+        subnet_cidr: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
         subnet_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -13327,6 +13471,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
                  private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
+                 subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
@@ -13340,6 +13485,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
         :param pulumi.Input[_builtins.str] private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[_builtins.bool] skip_source_dest_check: Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        :param pulumi.Input[_builtins.str] subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         """
         if assign_ipv6ip is not None:
@@ -13366,6 +13512,8 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        if subnet_cidr is not None:
+            pulumi.set(__self__, "subnet_cidr", subnet_cidr)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
 
@@ -13511,6 +13659,18 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs:
         pulumi.set(self, "skip_source_dest_check", value)
 
     @_builtins.property
+    @pulumi.getter(name="subnetCidr")
+    def subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        """
+        return pulumi.get(self, "subnet_cidr")
+
+    @subnet_cidr.setter
+    def subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_cidr", value)
+
+    @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -13636,6 +13796,10 @@ if not MYPY:
 
         Example: `true`
         """
+        subnet_cidr: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+        """
         subnet_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
@@ -13666,6 +13830,7 @@ class InstanceCreateVnicDetailsArgs:
                  private_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
+                 subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vlan_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -13708,6 +13873,7 @@ class InstanceCreateVnicDetailsArgs:
                If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
                Example: `true`
+        :param pulumi.Input[_builtins.str] subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
                
                If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
@@ -13739,6 +13905,8 @@ class InstanceCreateVnicDetailsArgs:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        if subnet_cidr is not None:
+            pulumi.set(__self__, "subnet_cidr", subnet_cidr)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if vlan_id is not None:
@@ -13914,6 +14082,18 @@ class InstanceCreateVnicDetailsArgs:
     @skip_source_dest_check.setter
     def skip_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "skip_source_dest_check", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetCidr")
+    def subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+        """
+        return pulumi.get(self, "subnet_cidr")
+
+    @subnet_cidr.setter
+    def subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
@@ -15737,6 +15917,10 @@ if not MYPY:
         """
         A short description of the instance's processor (CPU).
         """
+        resource_management: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) This field is reserved for internal use.
+        """
         vcpus: NotRequired[pulumi.Input[_builtins.int]]
         """
         (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
@@ -15759,6 +15943,7 @@ class InstanceShapeConfigArgs:
                  nvmes: Optional[pulumi.Input[_builtins.int]] = None,
                  ocpus: Optional[pulumi.Input[_builtins.float]] = None,
                  processor_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 resource_management: Optional[pulumi.Input[_builtins.str]] = None,
                  vcpus: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] baseline_ocpu_utilization: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
@@ -15778,6 +15963,7 @@ class InstanceShapeConfigArgs:
         :param pulumi.Input[_builtins.int] nvmes: (Updatable) The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[_builtins.float] ocpus: (Updatable) The total number of OCPUs available to the instance.
         :param pulumi.Input[_builtins.str] processor_description: A short description of the instance's processor (CPU).
+        :param pulumi.Input[_builtins.str] resource_management: (Updatable) This field is reserved for internal use.
         :param pulumi.Input[_builtins.int] vcpus: (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         """
         if baseline_ocpu_utilization is not None:
@@ -15804,6 +15990,8 @@ class InstanceShapeConfigArgs:
             pulumi.set(__self__, "ocpus", ocpus)
         if processor_description is not None:
             pulumi.set(__self__, "processor_description", processor_description)
+        if resource_management is not None:
+            pulumi.set(__self__, "resource_management", resource_management)
         if vcpus is not None:
             pulumi.set(__self__, "vcpus", vcpus)
 
@@ -15955,6 +16143,18 @@ class InstanceShapeConfigArgs:
     @processor_description.setter
     def processor_description(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "processor_description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceManagement")
+    def resource_management(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) This field is reserved for internal use.
+        """
+        return pulumi.get(self, "resource_management")
+
+    @resource_management.setter
+    def resource_management(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "resource_management", value)
 
     @_builtins.property
     @pulumi.getter
@@ -19204,6 +19404,10 @@ if not MYPY:
 
         Example: `true`
         """
+        subnet_cidr: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+        """
         subnet_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
@@ -19235,6 +19439,7 @@ class VnicAttachmentCreateVnicDetailsArgs:
                  route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  skip_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
+                 subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vlan_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -19278,6 +19483,7 @@ class VnicAttachmentCreateVnicDetailsArgs:
                If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
                
                Example: `true`
+        :param pulumi.Input[_builtins.str] subnet_cidr: One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
                
                If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
@@ -19311,6 +19517,8 @@ class VnicAttachmentCreateVnicDetailsArgs:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if skip_source_dest_check is not None:
             pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+        if subnet_cidr is not None:
+            pulumi.set(__self__, "subnet_cidr", subnet_cidr)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if vlan_id is not None:
@@ -19496,6 +19704,18 @@ class VnicAttachmentCreateVnicDetailsArgs:
     @skip_source_dest_check.setter
     def skip_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "skip_source_dest_check", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetCidr")
+    def subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+        """
+        return pulumi.get(self, "subnet_cidr")
+
+    @subnet_cidr.setter
+    def subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subnet_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")

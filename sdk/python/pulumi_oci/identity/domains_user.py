@@ -3157,10 +3157,6 @@ class DomainsUser(pulumi.CustomResource):
                  x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserX509certificateArgs', 'DomainsUserX509certificateArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user.
-
         ## Example Usage
 
         ## Import
@@ -3514,10 +3510,6 @@ class DomainsUser(pulumi.CustomResource):
                  args: DomainsUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user.
-
         ## Example Usage
 
         ## Import

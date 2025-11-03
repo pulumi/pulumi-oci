@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cloud Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Updates the cloud ASM instance specified by `cloudAsmInstanceId`.
+ * ## Example Usage
  *
  * ## Import
  *

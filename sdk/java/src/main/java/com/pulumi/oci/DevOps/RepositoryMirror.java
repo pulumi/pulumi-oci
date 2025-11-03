@@ -14,10 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Repository Mirror resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Synchronize a mirrored repository to the latest version from external providers.
- * 
  * ## Example Usage
  * 
  * <pre>

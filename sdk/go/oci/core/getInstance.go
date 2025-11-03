@@ -107,6 +107,8 @@ type LookupInstanceResult struct {
 	InstanceOptions []GetInstanceInstanceOption `pulumi:"instanceOptions"`
 	// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
 	IpxeScript string `pulumi:"ipxeScript"`
+	// Whether AI enterprise is enabled on the instance.
+	IsAiEnterpriseEnabled bool `pulumi:"isAiEnterpriseEnabled"`
 	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
 	IsCrossNumaNode bool `pulumi:"isCrossNumaNode"`
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
@@ -308,6 +310,11 @@ func (o LookupInstanceResultOutput) InstanceOptions() GetInstanceInstanceOptionA
 // When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
 func (o LookupInstanceResultOutput) IpxeScript() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.IpxeScript }).(pulumi.StringOutput)
+}
+
+// Whether AI enterprise is enabled on the instance.
+func (o LookupInstanceResultOutput) IsAiEnterpriseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.IsAiEnterpriseEnabled }).(pulumi.BoolOutput)
 }
 
 // Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.

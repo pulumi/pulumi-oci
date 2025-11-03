@@ -302,10 +302,6 @@ class HttpRedirect(pulumi.CustomResource):
                  target: Optional[pulumi.Input[Union['HttpRedirectTargetArgs', 'HttpRedirectTargetArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-        Creates a new HTTP Redirect on the WAF edge.
-
         ## Example Usage
 
         ```python
@@ -357,10 +353,6 @@ class HttpRedirect(pulumi.CustomResource):
                  args: HttpRedirectArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-
-        Creates a new HTTP Redirect on the WAF edge.
-
         ## Example Usage
 
         ```python

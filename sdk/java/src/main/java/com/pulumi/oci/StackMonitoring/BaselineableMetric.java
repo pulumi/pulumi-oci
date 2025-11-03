@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
- * 
- * Creates the specified Baseline-able metric
- * 
  * ## Example Usage
  * 
  * <pre>

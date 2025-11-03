@@ -173,7 +173,7 @@ class GetMaintenanceRunResult:
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> _builtins.str:
         """
-        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "database_software_image_id")
 
@@ -282,7 +282,7 @@ class GetMaintenanceRunResult:
     @pulumi.getter(name="patchId")
     def patch_id(self) -> _builtins.str:
         """
-        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
 
@@ -343,7 +343,7 @@ class GetMaintenanceRunResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 

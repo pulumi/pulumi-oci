@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
-//
-// # Create a new EKMS private endpoint used to connect to external key manager system
-//
 // ## Example Usage
 //
 // ```go

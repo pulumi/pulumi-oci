@@ -105,6 +105,11 @@ public final class GetMountTargetsMountTarget {
      */
     private String reservedStorageCapacity;
     /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
@@ -260,6 +265,13 @@ public final class GetMountTargetsMountTarget {
         return this.reservedStorageCapacity;
     }
     /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      * 
      */
@@ -324,6 +336,7 @@ public final class GetMountTargetsMountTarget {
         private List<String> privateIpIds;
         private String requestedThroughput;
         private String reservedStorageCapacity;
+        private Map<String,String> securityAttributes;
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
@@ -352,6 +365,7 @@ public final class GetMountTargetsMountTarget {
     	      this.privateIpIds = defaults.privateIpIds;
     	      this.requestedThroughput = defaults.requestedThroughput;
     	      this.reservedStorageCapacity = defaults.reservedStorageCapacity;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
@@ -535,6 +549,14 @@ public final class GetMountTargetsMountTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetMountTargetsMountTarget", "state");
@@ -596,6 +618,7 @@ public final class GetMountTargetsMountTarget {
             _resultValue.privateIpIds = privateIpIds;
             _resultValue.requestedThroughput = requestedThroughput;
             _resultValue.reservedStorageCapacity = reservedStorageCapacity;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;

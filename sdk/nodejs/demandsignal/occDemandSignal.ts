@@ -7,12 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
- *
- * Creates a OccDemandSignal.
- *
- *   Updates the data of an OccDemandSignal.
- *
  * ## Example Usage
  *
  * ## Import

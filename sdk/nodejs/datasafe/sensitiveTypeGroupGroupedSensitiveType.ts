@@ -7,11 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Sensitive Type Group Grouped Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
- *
- *   Patches one or more sensitive types in a sensitive type group. You can use this operation to add or remove
- * sensitive type ids in a sensitive type group.
- *
  * ## Example Usage
  *
  * ```typescript

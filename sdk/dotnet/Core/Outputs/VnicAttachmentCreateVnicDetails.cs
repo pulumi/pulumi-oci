@@ -91,6 +91,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool? SkipSourceDestCheck;
         /// <summary>
+        /// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+        /// </summary>
+        public readonly string? SubnetCidr;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
         /// 
         /// If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
@@ -131,6 +135,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool? skipSourceDestCheck,
 
+            string? subnetCidr,
+
             string? subnetId,
 
             string? vlanId)
@@ -148,6 +154,7 @@ namespace Pulumi.Oci.Core.Outputs
             RouteTableId = routeTableId;
             SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
+            SubnetCidr = subnetCidr;
             SubnetId = subnetId;
             VlanId = vlanId;
         }

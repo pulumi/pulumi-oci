@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * API to create discovery Job and submit discovery Details to agent.
- *
  * ## Example Usage
  *
  * ```typescript

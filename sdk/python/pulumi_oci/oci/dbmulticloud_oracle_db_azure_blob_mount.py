@@ -362,10 +362,6 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
                  oracle_db_azure_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Creates Oracle DB Azure Blob Mount resource.
-
         ## Example Usage
 
         ```python
@@ -413,10 +409,6 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
                  args: DbmulticloudOracleDbAzureBlobMountArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Creates Oracle DB Azure Blob Mount resource.
-
         ## Example Usage
 
         ```python

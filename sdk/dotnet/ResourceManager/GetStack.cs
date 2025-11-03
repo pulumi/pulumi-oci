@@ -14,7 +14,10 @@ namespace Pulumi.Oci.ResourceManager
         /// <summary>
         /// This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
         /// 
-        /// Gets a stack using the stack ID.
+        /// Gets the specified stack.
+        /// For more information, see
+        /// [Getting a Stack's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +43,10 @@ namespace Pulumi.Oci.ResourceManager
         /// <summary>
         /// This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
         /// 
-        /// Gets a stack using the stack ID.
+        /// Gets the specified stack.
+        /// For more information, see
+        /// [Getting a Stack's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -66,7 +72,10 @@ namespace Pulumi.Oci.ResourceManager
         /// <summary>
         /// This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
         /// 
-        /// Gets a stack using the stack ID.
+        /// Gets the specified stack.
+        /// For more information, see
+        /// [Getting a Stack's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -137,11 +146,11 @@ namespace Pulumi.Oci.ResourceManager
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Human-readable display name for the stack.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
@@ -150,11 +159,16 @@ namespace Pulumi.Oci.ResourceManager
         public readonly string Id;
         public readonly string StackId;
         /// <summary>
-        /// The current lifecycle state of the stack.
+        /// The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The date and time at which the stack was created.
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        public readonly string TerraformVersion;
+        /// <summary>
+        /// The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         public readonly ImmutableDictionary<string, string> Variables;
@@ -179,6 +193,10 @@ namespace Pulumi.Oci.ResourceManager
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
+            string terraformVersion,
+
             string timeCreated,
 
             ImmutableDictionary<string, string> variables)
@@ -192,6 +210,8 @@ namespace Pulumi.Oci.ResourceManager
             Id = id;
             StackId = stackId;
             State = state;
+            SystemTags = systemTags;
+            TerraformVersion = terraformVersion;
             TimeCreated = timeCreated;
             Variables = variables;
         }

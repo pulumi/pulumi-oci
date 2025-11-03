@@ -105,6 +105,11 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      */
     private @Nullable String ipxeScript;
     /**
+     * @return Whether to enable AI enterprise on the instance.
+     * 
+     */
+    private @Nullable Boolean isAiEnterpriseEnabled;
+    /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
      * 
      */
@@ -286,6 +291,13 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
         return Optional.ofNullable(this.ipxeScript);
     }
     /**
+     * @return Whether to enable AI enterprise on the instance.
+     * 
+     */
+    public Optional<Boolean> isAiEnterpriseEnabled() {
+        return Optional.ofNullable(this.isAiEnterpriseEnabled);
+    }
+    /**
      * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
      * 
      */
@@ -404,6 +416,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
         private @Nullable Map<String,String> freeformTags;
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptions instanceOptions;
         private @Nullable String ipxeScript;
+        private @Nullable Boolean isAiEnterpriseEnabled;
         private @Nullable Boolean isPvEncryptionInTransitEnabled;
         private @Nullable String launchMode;
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions launchOptions;
@@ -436,6 +449,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     	      this.freeformTags = defaults.freeformTags;
     	      this.instanceOptions = defaults.instanceOptions;
     	      this.ipxeScript = defaults.ipxeScript;
+    	      this.isAiEnterpriseEnabled = defaults.isAiEnterpriseEnabled;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.launchMode = defaults.launchMode;
     	      this.launchOptions = defaults.launchOptions;
@@ -548,6 +562,12 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder isAiEnterpriseEnabled(@Nullable Boolean isAiEnterpriseEnabled) {
+
+            this.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
 
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
@@ -643,6 +663,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
             _resultValue.freeformTags = freeformTags;
             _resultValue.instanceOptions = instanceOptions;
             _resultValue.ipxeScript = ipxeScript;
+            _resultValue.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.launchMode = launchMode;
             _resultValue.launchOptions = launchOptions;

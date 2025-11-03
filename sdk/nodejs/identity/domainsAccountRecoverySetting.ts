@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Account Recovery Setting resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Replace an account recovery setting.
+ * ## Example Usage
  *
  * ## Import
  *

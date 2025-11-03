@@ -185,10 +185,6 @@ class ModelGroupArtifact(pulumi.CustomResource):
                  model_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Model Group Artifact resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates artifact for the Model Group.
-
         ## Example Usage
 
         ```python
@@ -228,10 +224,6 @@ class ModelGroupArtifact(pulumi.CustomResource):
                  args: ModelGroupArtifactArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model Group Artifact resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates artifact for the Model Group.
-
         ## Example Usage
 
         ```python

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataCatalog
 {
     /// <summary>
-    /// This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
-    /// 
-    /// Create a new private reverse connection endpoint.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

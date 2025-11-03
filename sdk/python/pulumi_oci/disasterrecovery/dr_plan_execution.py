@@ -115,6 +115,7 @@ class DrPlanExecutionArgs:
 @pulumi.input_type
 class _DrPlanExecutionState:
     def __init__(__self__, *,
+                 automatic_execution_details: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionAutomaticExecutionDetailArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -123,6 +124,7 @@ class _DrPlanExecutionState:
                  execution_options: Optional[pulumi.Input['DrPlanExecutionExecutionOptionsArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  group_executions: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionArgs']]]] = None,
+                 is_automatic: Optional[pulumi.Input[_builtins.bool]] = None,
                  life_cycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  log_locations: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionLogLocationArgs']]]] = None,
                  peer_dr_protection_group_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -137,6 +139,7 @@ class _DrPlanExecutionState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DrPlanExecution resources.
+        :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionAutomaticExecutionDetailArgs']]] automatic_execution_details: The details of the event that started the automatic DR plan execution.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
@@ -145,6 +148,7 @@ class _DrPlanExecutionState:
         :param pulumi.Input['DrPlanExecutionExecutionOptionsArgs'] execution_options: The options for a plan execution.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionArgs']]] group_executions: A list of groups executed in this DR plan execution.
+        :param pulumi.Input[_builtins.bool] is_automatic: A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
         :param pulumi.Input[_builtins.str] life_cycle_details: A message describing the DR plan execution's current state in more detail.
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionLogLocationArgs']]] log_locations: The details of an object storage log location for a DR protection group.
         :param pulumi.Input[_builtins.str] peer_dr_protection_group_id: The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -162,6 +166,8 @@ class _DrPlanExecutionState:
         :param pulumi.Input[_builtins.str] time_started: The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[_builtins.str] time_updated: The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
+        if automatic_execution_details is not None:
+            pulumi.set(__self__, "automatic_execution_details", automatic_execution_details)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -178,6 +184,8 @@ class _DrPlanExecutionState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if group_executions is not None:
             pulumi.set(__self__, "group_executions", group_executions)
+        if is_automatic is not None:
+            pulumi.set(__self__, "is_automatic", is_automatic)
         if life_cycle_details is not None:
             pulumi.set(__self__, "life_cycle_details", life_cycle_details)
         if log_locations is not None:
@@ -202,6 +210,18 @@ class _DrPlanExecutionState:
             pulumi.set(__self__, "time_started", time_started)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="automaticExecutionDetails")
+    def automatic_execution_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionAutomaticExecutionDetailArgs']]]]:
+        """
+        The details of the event that started the automatic DR plan execution.
+        """
+        return pulumi.get(self, "automatic_execution_details")
+
+    @automatic_execution_details.setter
+    def automatic_execution_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionAutomaticExecutionDetailArgs']]]]):
+        pulumi.set(self, "automatic_execution_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -298,6 +318,18 @@ class _DrPlanExecutionState:
     @group_executions.setter
     def group_executions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionArgs']]]]):
         pulumi.set(self, "group_executions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutomatic")
+    def is_automatic(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_automatic")
+
+    @is_automatic.setter
+    def is_automatic(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_automatic", value)
 
     @_builtins.property
     @pulumi.getter(name="lifeCycleDetails")
@@ -461,10 +493,6 @@ class DrPlanExecution(pulumi.CustomResource):
                  plan_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
-
-        Execute a DR plan for a DR protection group.
-
         ## Example Usage
 
         ```python
@@ -514,10 +542,6 @@ class DrPlanExecution(pulumi.CustomResource):
                  args: DrPlanExecutionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
-
-        Execute a DR plan for a DR protection group.
-
         ## Example Usage
 
         ```python
@@ -586,10 +610,12 @@ class DrPlanExecution(pulumi.CustomResource):
             if plan_id is None and not opts.urn:
                 raise TypeError("Missing required property 'plan_id'")
             __props__.__dict__["plan_id"] = plan_id
+            __props__.__dict__["automatic_execution_details"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["dr_protection_group_id"] = None
             __props__.__dict__["execution_duration_in_sec"] = None
             __props__.__dict__["group_executions"] = None
+            __props__.__dict__["is_automatic"] = None
             __props__.__dict__["life_cycle_details"] = None
             __props__.__dict__["log_locations"] = None
             __props__.__dict__["peer_dr_protection_group_id"] = None
@@ -611,6 +637,7 @@ class DrPlanExecution(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            automatic_execution_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionAutomaticExecutionDetailArgs', 'DrPlanExecutionAutomaticExecutionDetailArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -619,6 +646,7 @@ class DrPlanExecution(pulumi.CustomResource):
             execution_options: Optional[pulumi.Input[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict']]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             group_executions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionGroupExecutionArgs', 'DrPlanExecutionGroupExecutionArgsDict']]]]] = None,
+            is_automatic: Optional[pulumi.Input[_builtins.bool]] = None,
             life_cycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             log_locations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionLogLocationArgs', 'DrPlanExecutionLogLocationArgsDict']]]]] = None,
             peer_dr_protection_group_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -638,6 +666,7 @@ class DrPlanExecution(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionAutomaticExecutionDetailArgs', 'DrPlanExecutionAutomaticExecutionDetailArgsDict']]]] automatic_execution_details: The details of the event that started the automatic DR plan execution.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the DR plan execution.  Example: `Execution - EBS Switchover PHX to IAD`
@@ -646,6 +675,7 @@ class DrPlanExecution(pulumi.CustomResource):
         :param pulumi.Input[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict']] execution_options: The options for a plan execution.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionGroupExecutionArgs', 'DrPlanExecutionGroupExecutionArgsDict']]]] group_executions: A list of groups executed in this DR plan execution.
+        :param pulumi.Input[_builtins.bool] is_automatic: A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
         :param pulumi.Input[_builtins.str] life_cycle_details: A message describing the DR plan execution's current state in more detail.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DrPlanExecutionLogLocationArgs', 'DrPlanExecutionLogLocationArgsDict']]]] log_locations: The details of an object storage log location for a DR protection group.
         :param pulumi.Input[_builtins.str] peer_dr_protection_group_id: The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -667,6 +697,7 @@ class DrPlanExecution(pulumi.CustomResource):
 
         __props__ = _DrPlanExecutionState.__new__(_DrPlanExecutionState)
 
+        __props__.__dict__["automatic_execution_details"] = automatic_execution_details
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -675,6 +706,7 @@ class DrPlanExecution(pulumi.CustomResource):
         __props__.__dict__["execution_options"] = execution_options
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["group_executions"] = group_executions
+        __props__.__dict__["is_automatic"] = is_automatic
         __props__.__dict__["life_cycle_details"] = life_cycle_details
         __props__.__dict__["log_locations"] = log_locations
         __props__.__dict__["peer_dr_protection_group_id"] = peer_dr_protection_group_id
@@ -688,6 +720,14 @@ class DrPlanExecution(pulumi.CustomResource):
         __props__.__dict__["time_started"] = time_started
         __props__.__dict__["time_updated"] = time_updated
         return DrPlanExecution(resource_name, opts=opts, __props__=__props__)
+
+    @_builtins.property
+    @pulumi.getter(name="automaticExecutionDetails")
+    def automatic_execution_details(self) -> pulumi.Output[Sequence['outputs.DrPlanExecutionAutomaticExecutionDetail']]:
+        """
+        The details of the event that started the automatic DR plan execution.
+        """
+        return pulumi.get(self, "automatic_execution_details")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -752,6 +792,14 @@ class DrPlanExecution(pulumi.CustomResource):
         A list of groups executed in this DR plan execution.
         """
         return pulumi.get(self, "group_executions")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutomatic")
+    def is_automatic(self) -> pulumi.Output[_builtins.bool]:
+        """
+        A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_automatic")
 
     @_builtins.property
     @pulumi.getter(name="lifeCycleDetails")

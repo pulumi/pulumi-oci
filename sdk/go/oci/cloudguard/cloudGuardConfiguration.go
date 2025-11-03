@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
-//
-// Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
-// The reporting region cannot be updated once created.
-//
 // ## Example Usage
 //
 // ## Import

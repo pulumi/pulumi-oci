@@ -20,6 +20,7 @@ import java.util.Objects;
 @CustomType
 public final class GetClusterResult {
     private Integer actualEsxiHostsCount;
+    private List<String> attachDatastoreClusterIds;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
@@ -37,6 +38,11 @@ public final class GetClusterResult {
      */
     private String computeAvailabilityDomain;
     /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    private List<String> datastoreClusterIds;
+    /**
      * @return Datastores used for the Cluster.
      * 
      */
@@ -46,6 +52,7 @@ public final class GetClusterResult {
      * 
      */
     private Map<String,String> definedTags;
+    private List<String> detachDatastoreClusterIds;
     /**
      * @return A descriptive name for the Cluster. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
      * 
@@ -151,6 +158,9 @@ public final class GetClusterResult {
     public Integer actualEsxiHostsCount() {
         return this.actualEsxiHostsCount;
     }
+    public List<String> attachDatastoreClusterIds() {
+        return this.attachDatastoreClusterIds;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      * 
@@ -176,6 +186,13 @@ public final class GetClusterResult {
         return this.computeAvailabilityDomain;
     }
     /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    public List<String> datastoreClusterIds() {
+        return this.datastoreClusterIds;
+    }
+    /**
      * @return Datastores used for the Cluster.
      * 
      */
@@ -188,6 +205,9 @@ public final class GetClusterResult {
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
+    }
+    public List<String> detachDatastoreClusterIds() {
+        return this.detachDatastoreClusterIds;
     }
     /**
      * @return A descriptive name for the Cluster. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
@@ -340,12 +360,15 @@ public final class GetClusterResult {
     @CustomType.Builder
     public static final class Builder {
         private Integer actualEsxiHostsCount;
+        private List<String> attachDatastoreClusterIds;
         private String capacityReservationId;
         private String clusterId;
         private String compartmentId;
         private String computeAvailabilityDomain;
+        private List<String> datastoreClusterIds;
         private List<GetClusterDatastore> datastores;
         private Map<String,String> definedTags;
+        private List<String> detachDatastoreClusterIds;
         private String displayName;
         private Integer esxiHostsCount;
         private String esxiSoftwareVersion;
@@ -370,12 +393,15 @@ public final class GetClusterResult {
         public Builder(GetClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actualEsxiHostsCount = defaults.actualEsxiHostsCount;
+    	      this.attachDatastoreClusterIds = defaults.attachDatastoreClusterIds;
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.clusterId = defaults.clusterId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
+    	      this.datastoreClusterIds = defaults.datastoreClusterIds;
     	      this.datastores = defaults.datastores;
     	      this.definedTags = defaults.definedTags;
+    	      this.detachDatastoreClusterIds = defaults.detachDatastoreClusterIds;
     	      this.displayName = defaults.displayName;
     	      this.esxiHostsCount = defaults.esxiHostsCount;
     	      this.esxiSoftwareVersion = defaults.esxiSoftwareVersion;
@@ -405,6 +431,17 @@ public final class GetClusterResult {
             }
             this.actualEsxiHostsCount = actualEsxiHostsCount;
             return this;
+        }
+        @CustomType.Setter
+        public Builder attachDatastoreClusterIds(List<String> attachDatastoreClusterIds) {
+            if (attachDatastoreClusterIds == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "attachDatastoreClusterIds");
+            }
+            this.attachDatastoreClusterIds = attachDatastoreClusterIds;
+            return this;
+        }
+        public Builder attachDatastoreClusterIds(String... attachDatastoreClusterIds) {
+            return attachDatastoreClusterIds(List.of(attachDatastoreClusterIds));
         }
         @CustomType.Setter
         public Builder capacityReservationId(String capacityReservationId) {
@@ -439,6 +476,17 @@ public final class GetClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder datastoreClusterIds(List<String> datastoreClusterIds) {
+            if (datastoreClusterIds == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "datastoreClusterIds");
+            }
+            this.datastoreClusterIds = datastoreClusterIds;
+            return this;
+        }
+        public Builder datastoreClusterIds(String... datastoreClusterIds) {
+            return datastoreClusterIds(List.of(datastoreClusterIds));
+        }
+        @CustomType.Setter
         public Builder datastores(List<GetClusterDatastore> datastores) {
             if (datastores == null) {
               throw new MissingRequiredPropertyException("GetClusterResult", "datastores");
@@ -456,6 +504,17 @@ public final class GetClusterResult {
             }
             this.definedTags = definedTags;
             return this;
+        }
+        @CustomType.Setter
+        public Builder detachDatastoreClusterIds(List<String> detachDatastoreClusterIds) {
+            if (detachDatastoreClusterIds == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "detachDatastoreClusterIds");
+            }
+            this.detachDatastoreClusterIds = detachDatastoreClusterIds;
+            return this;
+        }
+        public Builder detachDatastoreClusterIds(String... detachDatastoreClusterIds) {
+            return detachDatastoreClusterIds(List.of(detachDatastoreClusterIds));
         }
         @CustomType.Setter
         public Builder displayName(String displayName) {
@@ -629,12 +688,15 @@ public final class GetClusterResult {
         public GetClusterResult build() {
             final var _resultValue = new GetClusterResult();
             _resultValue.actualEsxiHostsCount = actualEsxiHostsCount;
+            _resultValue.attachDatastoreClusterIds = attachDatastoreClusterIds;
             _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.clusterId = clusterId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
+            _resultValue.datastoreClusterIds = datastoreClusterIds;
             _resultValue.datastores = datastores;
             _resultValue.definedTags = definedTags;
+            _resultValue.detachDatastoreClusterIds = detachDatastoreClusterIds;
             _resultValue.displayName = displayName;
             _resultValue.esxiHostsCount = esxiHostsCount;
             _resultValue.esxiSoftwareVersion = esxiSoftwareVersion;

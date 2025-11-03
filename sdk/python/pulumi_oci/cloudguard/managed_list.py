@@ -487,9 +487,7 @@ class ManagedList(pulumi.CustomResource):
                  source_managed_list_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a new ManagedList resource.
+        ## Example Usage
 
         ## Import
 
@@ -528,9 +526,7 @@ class ManagedList(pulumi.CustomResource):
                  args: ManagedListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a new ManagedList resource.
+        ## Example Usage
 
         ## Import
 

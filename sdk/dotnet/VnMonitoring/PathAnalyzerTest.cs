@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.VnMonitoring
 {
     /// <summary>
-    /// This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
-    /// 
-    /// Creates a new `PathAnalyzerTest` resource.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
-//
-// Creates a new model deployment.
-//
 // ## Example Usage
 //
 // ```go

@@ -334,10 +334,6 @@ class ApiPlatformApiPlatformInstance(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
-
-        Creates an API Platform Instance
-
         ## Example Usage
 
         ```python
@@ -383,10 +379,6 @@ class ApiPlatformApiPlatformInstance(pulumi.CustomResource):
                  args: ApiPlatformApiPlatformInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
-
-        Creates an API Platform Instance
-
         ## Example Usage
 
         ```python

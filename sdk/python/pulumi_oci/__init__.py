@@ -450,6 +450,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "AiLanguage/job",
+  "fqn": "pulumi_oci.ailanguage",
+  "classes": {
+   "oci:AiLanguage/job:Job": "Job"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "AiLanguage/model",
   "fqn": "pulumi_oci.ailanguage",
   "classes": {
@@ -3002,6 +3010,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/databaseSnapshotStandby",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby": "DatabaseSnapshotStandby"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/databaseSoftwareImage",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -3746,6 +3762,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseTools/databaseToolsIdentity",
+  "fqn": "pulumi_oci.databasetools",
+  "classes": {
+   "oci:DatabaseTools/databaseToolsIdentity:DatabaseToolsIdentity": "DatabaseToolsIdentity"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseTools/databaseToolsPrivateEndpoint",
   "fqn": "pulumi_oci.databasetools",
   "classes": {
@@ -3926,6 +3950,14 @@ _utilities.register(
   "fqn": "pulumi_oci.devops",
   "classes": {
    "oci:DevOps/trigger:Trigger": "Trigger"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DisasterRecovery/automaticDrConfiguration",
+  "fqn": "pulumi_oci.disasterrecovery",
+  "classes": {
+   "oci:DisasterRecovery/automaticDrConfiguration:AutomaticDrConfiguration": "AutomaticDrConfiguration"
   }
  },
  {
@@ -4446,6 +4478,14 @@ _utilities.register(
   "fqn": "pulumi_oci.generativeai",
   "classes": {
    "oci:GenerativeAi/endpoint:Endpoint": "Endpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/generativeAiPrivateEndpoint",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint": "GenerativeAiPrivateEndpoint"
   }
  },
  {
@@ -5162,6 +5202,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Jms/fleetAgentConfiguration",
+  "fqn": "pulumi_oci.jms",
+  "classes": {
+   "oci:Jms/fleetAgentConfiguration:FleetAgentConfiguration": "FleetAgentConfiguration"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Jms/javaDownloadsJavaDownloadReport",
   "fqn": "pulumi_oci.jms",
   "classes": {
@@ -5198,6 +5246,22 @@ _utilities.register(
   "fqn": "pulumi_oci.jms",
   "classes": {
    "oci:Jms/taskSchedule:TaskSchedule": "TaskSchedule"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Jms/utilsAnalyzeApplicationsConfiguration",
+  "fqn": "pulumi_oci.jms",
+  "classes": {
+   "oci:Jms/utilsAnalyzeApplicationsConfiguration:UtilsAnalyzeApplicationsConfiguration": "UtilsAnalyzeApplicationsConfiguration"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Jms/utilsSubscriptionAcknowledgmentConfiguration",
+  "fqn": "pulumi_oci.jms",
+  "classes": {
+   "oci:Jms/utilsSubscriptionAcknowledgmentConfiguration:UtilsSubscriptionAcknowledgmentConfiguration": "UtilsSubscriptionAcknowledgmentConfiguration"
   }
  },
  {
@@ -5558,6 +5622,14 @@ _utilities.register(
   "fqn": "pulumi_oci.lustre",
   "classes": {
    "oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem": "FileStorageLustreFileSystem"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Lustre/fileStorageObjectStorageLink",
+  "fqn": "pulumi_oci.lustre",
+  "classes": {
+   "oci:Lustre/fileStorageObjectStorageLink:FileStorageObjectStorageLink": "FileStorageObjectStorageLink"
   }
  },
  {
@@ -6062,6 +6134,22 @@ _utilities.register(
   "fqn": "pulumi_oci.ocvp",
   "classes": {
    "oci:Ocvp/cluster:Cluster": "Cluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Ocvp/datastore",
+  "fqn": "pulumi_oci.ocvp",
+  "classes": {
+   "oci:Ocvp/datastore:Datastore": "Datastore"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Ocvp/datastoreCluster",
+  "fqn": "pulumi_oci.ocvp",
+  "classes": {
+   "oci:Ocvp/datastoreCluster:DatastoreCluster": "DatastoreCluster"
   }
  },
  {
@@ -7250,6 +7338,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "oci/aiDataPlatformAiDataPlatform",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/aiDataPlatformAiDataPlatform:AiDataPlatformAiDataPlatform": "AiDataPlatformAiDataPlatform"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "oci/apiPlatformApiPlatformInstance",
   "fqn": "pulumi_oci.oci",
   "classes": {
@@ -7338,6 +7434,54 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "oci/iotDigitalTwinAdapter",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter": "IotDigitalTwinAdapter"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotDigitalTwinInstance",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance": "IotDigitalTwinInstance"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotDigitalTwinModel",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotDigitalTwinModel:IotDigitalTwinModel": "IotDigitalTwinModel"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotDigitalTwinRelationship",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotDigitalTwinRelationship:IotDigitalTwinRelationship": "IotDigitalTwinRelationship"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotIotDomain",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotIotDomain:IotIotDomain": "IotIotDomain"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/iotIotDomainGroup",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/iotIotDomainGroup:IotIotDomainGroup": "IotIotDomainGroup"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "oci/managedKafkaKafkaCluster",
   "fqn": "pulumi_oci.oci",
   "classes": {
@@ -7358,6 +7502,38 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement": "ManagedKafkaKafkaClusterSuperusersManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/resourceAnalyticsMonitoredRegion",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion": "ResourceAnalyticsMonitoredRegion"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/resourceAnalyticsResourceAnalyticsInstance",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance": "ResourceAnalyticsResourceAnalyticsInstance"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement:ResourceAnalyticsResourceAnalyticsInstanceOacManagement": "ResourceAnalyticsResourceAnalyticsInstanceOacManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/resourceAnalyticsTenancyAttachment",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment": "ResourceAnalyticsTenancyAttachment"
   }
  }
 ]

@@ -10,20 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Upgrades the specified Oracle Database instance.
-    /// 
-    /// Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
-    /// 	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
-    /// 	To avoid a force new create of the DbHome on the next apply, add the following to the resource
-    /// 	```	lifecycle {
-    /// 	   	ignore_changes = [
-    /// 	   		db_home.0.db_version,
-    /// 	   	]
-    /// 	}
-    /// 	```
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import
@@ -154,7 +140,7 @@ namespace Pulumi.Oci.Database
         public Output<string> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         /// </summary>
         [Output("kmsKeyVersionId")]
         public Output<string> KmsKeyVersionId { get; private set; } = null!;
@@ -460,7 +446,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         /// </summary>
         [Input("kmsKeyVersionId")]
         public Input<string>? KmsKeyVersionId { get; set; }

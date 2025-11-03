@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
- * 
- * Creates a new budget.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the News Report resource in Oracle Cloud Infrastructure Opsi service.
- * 
- * Create a news report in Ops Insights. The report will be enabled in Ops Insights. Insights will be emailed as per selected frequency.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -659,10 +659,6 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new sensitive column in the specified sensitive data model.
-
         ## Example Usage
 
         ```python
@@ -720,10 +716,6 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
                  args: SensitiveDataModelsSensitiveColumnArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new sensitive column in the specified sensitive data model.
-
         ## Example Usage
 
         ```python

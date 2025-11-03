@@ -269,6 +269,21 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
     }
 
     /**
+     * Whether to enable AI enterprise on the instance.
+     * 
+     */
+    @Import(name="isAiEnterpriseEnabled")
+    private @Nullable Output<Boolean> isAiEnterpriseEnabled;
+
+    /**
+     * @return Whether to enable AI enterprise on the instance.
+     * 
+     */
+    public Optional<Output<Boolean>> isAiEnterpriseEnabled() {
+        return Optional.ofNullable(this.isAiEnterpriseEnabled);
+    }
+
+    /**
      * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
      * 
      */
@@ -486,6 +501,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         this.freeformTags = $.freeformTags;
         this.instanceOptions = $.instanceOptions;
         this.ipxeScript = $.ipxeScript;
+        this.isAiEnterpriseEnabled = $.isAiEnterpriseEnabled;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.launchMode = $.launchMode;
         this.launchOptions = $.launchOptions;
@@ -853,6 +869,27 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          */
         public Builder ipxeScript(String ipxeScript) {
             return ipxeScript(Output.of(ipxeScript));
+        }
+
+        /**
+         * @param isAiEnterpriseEnabled Whether to enable AI enterprise on the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAiEnterpriseEnabled(@Nullable Output<Boolean> isAiEnterpriseEnabled) {
+            $.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAiEnterpriseEnabled Whether to enable AI enterprise on the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAiEnterpriseEnabled(Boolean isAiEnterpriseEnabled) {
+            return isAiEnterpriseEnabled(Output.of(isAiEnterpriseEnabled));
         }
 
         /**

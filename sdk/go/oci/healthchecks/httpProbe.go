@@ -12,13 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Http Probe resource in Oracle Cloud Infrastructure Health Checks service.
-//
-// Creates an on-demand HTTP probe. The location response header contains the URL for
-// fetching the probe results.
-//
-// *Note:* On-demand probe configurations are not saved.
-//
 // ## Example Usage
 //
 // ```go

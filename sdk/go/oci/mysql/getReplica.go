@@ -99,6 +99,8 @@ type LookupReplicaResult struct {
 	ReplicaOverrides []GetReplicaReplicaOverride `pulumi:"replicaOverrides"`
 	// Secure connection configuration details.
 	SecureConnections []GetReplicaSecureConnection `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName string `pulumi:"shapeName"`
 	// The state of the read replica.
@@ -245,6 +247,11 @@ func (o LookupReplicaResultOutput) ReplicaOverrides() GetReplicaReplicaOverrideA
 // Secure connection configuration details.
 func (o LookupReplicaResultOutput) SecureConnections() GetReplicaSecureConnectionArrayOutput {
 	return o.ApplyT(func(v LookupReplicaResult) []GetReplicaSecureConnection { return v.SecureConnections }).(GetReplicaSecureConnectionArrayOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o LookupReplicaResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReplicaResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.

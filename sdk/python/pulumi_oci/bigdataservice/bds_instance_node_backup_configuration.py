@@ -334,10 +334,6 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
                  timezone: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance Node Backup Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Add a node volume backup configuration to the cluster for an indicated node type or node.
-
         ## Example Usage
 
         ```python
@@ -387,10 +383,6 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
                  args: BdsInstanceNodeBackupConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance Node Backup Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Add a node volume backup configuration to the cluster for an indicated node type or node.
-
         ## Example Usage
 
         ```python

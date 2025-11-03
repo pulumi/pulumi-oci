@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
-    /// This resource provides the Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
-    /// 
-    /// Register Awr Hub source
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

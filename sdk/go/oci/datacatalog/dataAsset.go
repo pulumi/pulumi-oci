@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
-//
-// Create a new data asset.
-//
 // ## Example Usage
 //
 // ```go

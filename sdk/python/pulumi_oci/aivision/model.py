@@ -675,10 +675,6 @@ class Model(pulumi.CustomResource):
                  validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
-
-        Create a new model.
-
         ## Example Usage
 
         ```python
@@ -750,10 +746,6 @@ class Model(pulumi.CustomResource):
                  args: ModelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
-
-        Create a new model.
-
         ## Example Usage
 
         ```python

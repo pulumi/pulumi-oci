@@ -27,7 +27,7 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, associated_backup_configuration_details=None, autonomous_container_database_backup_id=None, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, backup_destination_properties_lists=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, customer_contacts=None, database_software_image_id=None, dataguard_group_members=None, dataguards=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, failover_trigger=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_data_guard_enabled=None, is_dst_file_update_enabled=None, is_multiple_standby=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_version_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, okv_end_point_group_name=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, recovery_appliance_details=None, reinstate_trigger=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, source=None, standby_maintenance_buffer_in_days=None, state=None, switchover_trigger=None, system_tags=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
+    def __init__(__self__, associated_backup_configuration_details=None, autonomous_container_database_backup_id=None, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, backup_destination_properties_lists=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, customer_contacts=None, database_software_image_id=None, dataguard_group_members=None, dataguards=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, failover_trigger=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_data_guard_enabled=None, is_dst_file_update_enabled=None, is_multiple_standby=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_version_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, okv_end_point_group_name=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, recovery_appliance_details=None, reinstate_trigger=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, source=None, standby_maintenance_buffer_in_days=None, state=None, switchover_trigger=None, system_tags=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
         if associated_backup_configuration_details and not isinstance(associated_backup_configuration_details, list):
             raise TypeError("Expected argument 'associated_backup_configuration_details' to be a list")
         pulumi.set(__self__, "associated_backup_configuration_details", associated_backup_configuration_details)
@@ -163,6 +163,9 @@ class GetAutonomousContainerDatabaseResult:
         if maintenance_windows and not isinstance(maintenance_windows, list):
             raise TypeError("Expected argument 'maintenance_windows' to be a list")
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        if memory_per_compute_unit_in_gbs and not isinstance(memory_per_compute_unit_in_gbs, float):
+            raise TypeError("Expected argument 'memory_per_compute_unit_in_gbs' to be a float")
+        pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         if memory_per_oracle_compute_unit_in_gbs and not isinstance(memory_per_oracle_compute_unit_in_gbs, int):
             raise TypeError("Expected argument 'memory_per_oracle_compute_unit_in_gbs' to be a int")
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
@@ -286,7 +289,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -294,7 +297,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="autonomousExadataInfrastructureId")
     def autonomous_exadata_infrastructure_id(self) -> _builtins.str:
         """
-        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+        **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         """
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
@@ -318,7 +321,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> _builtins.float:
         """
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -358,7 +361,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -403,7 +406,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="dbSplitThreshold")
     def db_split_threshold(self) -> _builtins.int:
         """
-        The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+        The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         """
         return pulumi.get(self, "db_split_threshold")
 
@@ -416,7 +419,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> _builtins.str:
         """
-        Oracle Database version of the Autonomous Container Database.
+        Oracle AI Database version of the Autonomous Container Database.
         """
         return pulumi.get(self, "db_version")
 
@@ -440,7 +443,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="distributionAffinity")
     def distribution_affinity(self) -> _builtins.str:
         """
-        Determines whether an Autonomous Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
+        Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
         """
         return pulumi.get(self, "distribution_affinity")
 
@@ -448,7 +451,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="dstFileVersion")
     def dst_file_version(self) -> _builtins.str:
         """
-        DST Time-zone File version of the Autonomous Container Database.
+        DST Time-Zone File version of the Autonomous Container Database.
         """
         return pulumi.get(self, "dst_file_version")
 
@@ -477,7 +480,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -501,7 +504,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="isDataGuardEnabled")
     def is_data_guard_enabled(self) -> _builtins.bool:
         """
-        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
@@ -548,9 +551,6 @@ class GetAutonomousContainerDatabaseResult:
     @_builtins.property
     @pulumi.getter(name="keyVersionId")
     def key_version_id(self) -> _builtins.str:
-        """
-        (Optional) The OCID of the key version that is used in rotate key operations.
-        """
         return pulumi.get(self, "key_version_id")
 
     @_builtins.property
@@ -565,7 +565,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> _builtins.str:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -573,7 +573,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
     def largest_provisionable_autonomous_database_in_cpus(self) -> _builtins.float:
         """
-        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
+        The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
         """
         return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
 
@@ -615,10 +615,18 @@ class GetAutonomousContainerDatabaseResult:
         return pulumi.get(self, "maintenance_windows")
 
     @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> _builtins.int:
         """
-        The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -709,7 +717,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[_builtins.float]:
         """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.
+        An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -725,7 +733,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> _builtins.float:
         """
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -754,7 +762,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -833,7 +841,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> _builtins.int:
         """
-        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        The number of CPUs allocated to the Autonomous VM cluster.
         """
         return pulumi.get(self, "total_cpus")
 
@@ -841,7 +849,7 @@ class GetAutonomousContainerDatabaseResult:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -913,6 +921,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             list_one_off_patches=self.list_one_off_patches,
             maintenance_window_details=self.maintenance_window_details,
             maintenance_windows=self.maintenance_windows,
+            memory_per_compute_unit_in_gbs=self.memory_per_compute_unit_in_gbs,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             net_services_architecture=self.net_services_architecture,
             next_maintenance_run_id=self.next_maintenance_run_id,
@@ -1020,6 +1029,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         list_one_off_patches=pulumi.get(__ret__, 'list_one_off_patches'),
         maintenance_window_details=pulumi.get(__ret__, 'maintenance_window_details'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
+        memory_per_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_compute_unit_in_gbs'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_oracle_compute_unit_in_gbs'),
         net_services_architecture=pulumi.get(__ret__, 'net_services_architecture'),
         next_maintenance_run_id=pulumi.get(__ret__, 'next_maintenance_run_id'),
@@ -1124,6 +1134,7 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
         list_one_off_patches=pulumi.get(__response__, 'list_one_off_patches'),
         maintenance_window_details=pulumi.get(__response__, 'maintenance_window_details'),
         maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
+        memory_per_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_compute_unit_in_gbs'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_oracle_compute_unit_in_gbs'),
         net_services_architecture=pulumi.get(__response__, 'net_services_architecture'),
         next_maintenance_run_id=pulumi.get(__response__, 'next_maintenance_run_id'),

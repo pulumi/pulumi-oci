@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Configuration resource in Oracle Cloud Infrastructure Psql service.
-//
-// Creates a new configuration.
-//
 // ## Example Usage
 //
 // ```go

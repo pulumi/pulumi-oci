@@ -17,7 +17,7 @@ public final class GetAutonomousDatabaseConnectionStringProfile {
      */
     private String consumerGroup;
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     private String displayName;
@@ -26,6 +26,10 @@ public final class GetAutonomousDatabaseConnectionStringProfile {
      * 
      */
     private String hostFormat;
+    /**
+     * @return True for a regional connection string, applicable to cross-region DG only.
+     * 
+     */
     private Boolean isRegional;
     /**
      * @return Protocol used by the connection.
@@ -38,7 +42,7 @@ public final class GetAutonomousDatabaseConnectionStringProfile {
      */
     private String sessionMode;
     /**
-     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
      * 
      */
     private String syntaxFormat;
@@ -62,7 +66,7 @@ public final class GetAutonomousDatabaseConnectionStringProfile {
         return this.consumerGroup;
     }
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     public String displayName() {
@@ -75,6 +79,10 @@ public final class GetAutonomousDatabaseConnectionStringProfile {
     public String hostFormat() {
         return this.hostFormat;
     }
+    /**
+     * @return True for a regional connection string, applicable to cross-region DG only.
+     * 
+     */
     public Boolean isRegional() {
         return this.isRegional;
     }
@@ -93,7 +101,7 @@ public final class GetAutonomousDatabaseConnectionStringProfile {
         return this.sessionMode;
     }
     /**
-     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
      * 
      */
     public String syntaxFormat() {

@@ -1070,10 +1070,6 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                  urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Dynamic Resource Group.
-
         ## Example Usage
 
         ## Import
@@ -1168,10 +1164,6 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
                  args: DomainsDynamicResourceGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Dynamic Resource Group.
-
         ## Example Usage
 
         ## Import

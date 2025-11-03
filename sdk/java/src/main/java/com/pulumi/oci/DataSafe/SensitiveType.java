@@ -16,12 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a new sensitive type, which can be a basic sensitive type with regular expressions or a sensitive category.
- * While sensitive types are used for data discovery, sensitive categories are used for logically grouping the related
- * or similar sensitive types.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -272,11 +272,6 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Group Manage Module Streams Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Enables or disables module streams and installs or removes module stream profiles. Once complete, the state of the modules, streams, and profiles will match the state indicated in the operation. See [ManageModuleStreamsOnManagedInstanceGroupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/ManageModuleStreamsOnManagedInstanceGroupDetails) for more information.
-        You can preform this operation as a dry run. For a dry run, the service evaluates the operation against the current module, stream, and profile state on the managed instance, but does not commit the changes. Instead, the service returns work request log or error entries indicating the impact of the operation.
-
         ## Example Usage
 
         ```python
@@ -339,11 +334,6 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
                  args: ManagedInstanceGroupManageModuleStreamsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Group Manage Module Streams Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Enables or disables module streams and installs or removes module stream profiles. Once complete, the state of the modules, streams, and profiles will match the state indicated in the operation. See [ManageModuleStreamsOnManagedInstanceGroupDetails](https://docs.cloud.oracle.com/iaas/api/#/en/osmh/latest/datatypes/ManageModuleStreamsOnManagedInstanceGroupDetails) for more information.
-        You can preform this operation as a dry run. For a dry run, the service evaluates the operation against the current module, stream, and profile state on the managed instance, but does not commit the changes. Instead, the service returns work request log or error entries indicating the impact of the operation.
-
         ## Example Usage
 
         ```python

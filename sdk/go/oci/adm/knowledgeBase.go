@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Adm service.
-//
-// Creates a new Knowledge Base.
-//
 // ## Example Usage
 //
 // ```go

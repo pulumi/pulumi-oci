@@ -54,8 +54,8 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
      * Example: `10.0.1.0/24`
      * 
      */
-    @Import(name="cidrBlock", required=true)
-    private Output<String> cidrBlock;
+    @Import(name="cidrBlock")
+    private @Nullable Output<String> cidrBlock;
 
     /**
      * @return (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
@@ -65,8 +65,8 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
      * Example: `10.0.1.0/24`
      * 
      */
-    public Output<String> cidrBlock() {
-        return this.cidrBlock;
+    public Optional<Output<String>> cidrBlock() {
+        return Optional.ofNullable(this.cidrBlock);
     }
 
     /**
@@ -169,6 +169,27 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+     * * Ipv4 CIDR blocks must be valid.
+     * * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+     * 
+     */
+    @Import(name="ipv4cidrBlocks")
+    private @Nullable Output<List<String>> ipv4cidrBlocks;
+
+    /**
+     * @return The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+     * * Ipv4 CIDR blocks must be valid.
+     * * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+     * 
+     */
+    public Optional<Output<List<String>>> ipv4cidrBlocks() {
+        return Optional.ofNullable(this.ipv4cidrBlocks);
     }
 
     /**
@@ -327,6 +348,7 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.dnsLabel = $.dnsLabel;
         this.freeformTags = $.freeformTags;
+        this.ipv4cidrBlocks = $.ipv4cidrBlocks;
         this.ipv6cidrBlock = $.ipv6cidrBlock;
         this.ipv6cidrBlocks = $.ipv6cidrBlocks;
         this.prohibitInternetIngress = $.prohibitInternetIngress;
@@ -397,7 +419,7 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder cidrBlock(Output<String> cidrBlock) {
+        public Builder cidrBlock(@Nullable Output<String> cidrBlock) {
             $.cidrBlock = cidrBlock;
             return this;
         }
@@ -552,6 +574,46 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param ipv4cidrBlocks The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+         * * Ipv4 CIDR blocks must be valid.
+         * * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+         * * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv4cidrBlocks(@Nullable Output<List<String>> ipv4cidrBlocks) {
+            $.ipv4cidrBlocks = ipv4cidrBlocks;
+            return this;
+        }
+
+        /**
+         * @param ipv4cidrBlocks The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+         * * Ipv4 CIDR blocks must be valid.
+         * * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+         * * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv4cidrBlocks(List<String> ipv4cidrBlocks) {
+            return ipv4cidrBlocks(Output.of(ipv4cidrBlocks));
+        }
+
+        /**
+         * @param ipv4cidrBlocks The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+         * * Ipv4 CIDR blocks must be valid.
+         * * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+         * * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv4cidrBlocks(String... ipv4cidrBlocks) {
+            return ipv4cidrBlocks(List.of(ipv4cidrBlocks));
         }
 
         /**
@@ -765,9 +827,6 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public SubnetArgs build() {
-            if ($.cidrBlock == null) {
-                throw new MissingRequiredPropertyException("SubnetArgs", "cidrBlock");
-            }
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("SubnetArgs", "compartmentId");
             }

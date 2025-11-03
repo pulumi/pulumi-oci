@@ -17,23 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Security Attribute resource in Oracle Cloud Infrastructure Security Attribute service.
- * 
- * Creates a new security attribute in the specified security attribute namespace.
- * 
- * The security attribute requires either the OCID or the name of the security attribute namespace that will contain this
- * security attribute.
- * 
- * You must specify a *name* for the attribute, which must be unique across all attributes in the security attribute namespace
- * and cannot be changed. The only valid characters for security attribute names are: 0-9, A-Z, a-z, -, _ characters.
- * Names are case insensitive. That means, for example, &#34;mySecurityAttribute&#34; and &#34;mysecurityattribute&#34; are not allowed in the same namespace.
- * If you specify a name that&#39;s already in use in the security attribute namespace, a 409 error is returned.
- * 
- * The security attribute must have a *description*. It does not have to be unique, and you can change it with
- * [UpdateSecurityAttribute](https://docs.cloud.oracle.com/iaas/api/#/en/securityattribute/latest/Tag/UpdateSecurityAttribute).
- * 
- * When a validator is specified, The security attribute must have a value type. Security attribute can use either a static value or a list of possible values. Static values are entered by a user when applying the security attribute to a resource. Lists are created by the user and the user must apply a value from the list. Lists are validated.
- * 
  * ## Example Usage
  * 
  * <pre>

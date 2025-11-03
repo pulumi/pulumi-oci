@@ -17,10 +17,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
- * 
- * Executes a statement for a Session run.
- * 
  * ## Example Usage
  * 
  * <pre>

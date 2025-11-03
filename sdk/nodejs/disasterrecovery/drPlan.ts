@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
- *
- * Create a DR plan of the specified DR plan type.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a Cloud Gate server
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

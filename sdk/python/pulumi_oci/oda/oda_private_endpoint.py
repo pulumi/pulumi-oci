@@ -333,13 +333,6 @@ class OdaPrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Oda Private Endpoint resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-        Starts an asynchronous job to create an ODA Private Endpoint.
-
-        To monitor the status of the job, take the `opc-work-request-id` response
-        header value and use it to call `GET /workRequests/{workRequestID}`.
-
         ## Example Usage
 
         ```python
@@ -389,13 +382,6 @@ class OdaPrivateEndpoint(pulumi.CustomResource):
                  args: OdaPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oda Private Endpoint resource in Oracle Cloud Infrastructure Digital Assistant service.
-
-        Starts an asynchronous job to create an ODA Private Endpoint.
-
-        To monitor the status of the job, take the `opc-work-request-id` response
-        header value and use it to call `GET /workRequests/{workRequestID}`.
-
         ## Example Usage
 
         ```python

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
  *
- * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+ * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
  *
  * ## Example Usage
  *
@@ -73,7 +73,7 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly computeCount: number;
     /**
-     * The compute model of the Exadata infrastructure.
+     * The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
     readonly computeModel: string;
     /**
@@ -212,7 +212,7 @@ export interface GetCloudExadataInfrastructureResult {
 /**
  * This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
  *
- * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+ * Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
  *
  * ## Example Usage
  *

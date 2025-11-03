@@ -22,9 +22,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
- * 
- * Creates a new Vb Instance.
+ * ## Example Usage
  * 
  * ## Import
  * 

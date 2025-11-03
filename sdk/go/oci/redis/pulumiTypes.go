@@ -3893,6 +3893,8 @@ type GetRedisClustersRedisClusterCollectionItem struct {
 	ReplicasEndpointIpAddress string `pulumi:"replicasEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 	ReplicasFqdn string `pulumi:"replicasFqdn"`
+	// Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount int `pulumi:"shardCount"`
 	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
@@ -3957,6 +3959,8 @@ type GetRedisClustersRedisClusterCollectionItemArgs struct {
 	ReplicasEndpointIpAddress pulumi.StringInput `pulumi:"replicasEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 	ReplicasFqdn pulumi.StringInput `pulumi:"replicasFqdn"`
+	// Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount pulumi.IntInput `pulumi:"shardCount"`
 	// The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
@@ -4114,6 +4118,11 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) ReplicasEndpointIpAddr
 // The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
 func (o GetRedisClustersRedisClusterCollectionItemOutput) ReplicasFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.ReplicasFqdn }).(pulumi.StringOutput)
+}
+
+// Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetRedisClustersRedisClusterCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.

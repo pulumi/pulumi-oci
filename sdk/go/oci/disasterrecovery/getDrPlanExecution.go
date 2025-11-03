@@ -58,6 +58,8 @@ type LookupDrPlanExecutionArgs struct {
 
 // A collection of values returned by getDrPlanExecution.
 type LookupDrPlanExecutionResult struct {
+	// The details of the event that started the automatic DR plan execution.
+	AutomaticExecutionDetails []GetDrPlanExecutionAutomaticExecutionDetail `pulumi:"automaticExecutionDetails"`
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
@@ -77,6 +79,8 @@ type LookupDrPlanExecutionResult struct {
 	GroupExecutions []GetDrPlanExecutionGroupExecution `pulumi:"groupExecutions"`
 	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 	Id string `pulumi:"id"`
+	// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+	IsAutomatic bool `pulumi:"isAutomatic"`
 	// A message describing the DR plan execution's current state in more detail.
 	LifeCycleDetails string `pulumi:"lifeCycleDetails"`
 	// The details of an object storage log location for a DR protection group.
@@ -137,6 +141,13 @@ func (o LookupDrPlanExecutionResultOutput) ToLookupDrPlanExecutionResultOutputWi
 	return o
 }
 
+// The details of the event that started the automatic DR plan execution.
+func (o LookupDrPlanExecutionResultOutput) AutomaticExecutionDetails() GetDrPlanExecutionAutomaticExecutionDetailArrayOutput {
+	return o.ApplyT(func(v LookupDrPlanExecutionResult) []GetDrPlanExecutionAutomaticExecutionDetail {
+		return v.AutomaticExecutionDetails
+	}).(GetDrPlanExecutionAutomaticExecutionDetailArrayOutput)
+}
+
 // The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 func (o LookupDrPlanExecutionResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -184,6 +195,11 @@ func (o LookupDrPlanExecutionResultOutput) GroupExecutions() GetDrPlanExecutionG
 // The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
 func (o LookupDrPlanExecutionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDrPlanExecutionResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+func (o LookupDrPlanExecutionResultOutput) IsAutomatic() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDrPlanExecutionResult) bool { return v.IsAutomatic }).(pulumi.BoolOutput)
 }
 
 // A message describing the DR plan execution's current state in more detail.

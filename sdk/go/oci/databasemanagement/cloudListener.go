@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Cloud Listener resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Updates the cloud listener specified by `cloudListenerId`.
+// ## Example Usage
 //
 // ## Import
 //

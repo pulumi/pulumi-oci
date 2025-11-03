@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM Cluster in the Oracle cloud, see [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster).
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -249,6 +245,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("maxAcdsLowestScaledValue")]
         public Output<int> MaxAcdsLowestScaledValue { get; private set; } = null!;
+
+        /// <summary>
+        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        /// </summary>
+        [Output("memoryPerComputeUnitInGbs")]
+        public Output<double> MemoryPerComputeUnitInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
@@ -769,6 +771,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("maxAcdsLowestScaledValue")]
         public Input<int>? MaxAcdsLowestScaledValue { get; set; }
+
+        /// <summary>
+        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        /// </summary>
+        [Input("memoryPerComputeUnitInGbs")]
+        public Input<double>? MemoryPerComputeUnitInGbs { get; set; }
 
         /// <summary>
         /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.

@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.VisualBuilder
 {
     /// <summary>
-    /// This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
-    /// 
-    /// Creates a new Vb Instance.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
- *
- * Creates a patch in an application.
- *
  * ## Example Usage
  *
  * ```typescript

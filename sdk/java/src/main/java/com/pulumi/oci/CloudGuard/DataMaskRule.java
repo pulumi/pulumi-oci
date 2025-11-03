@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
- * 
- * Creates a new DataMaskRule resource definition.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -15,11 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Configuration resource in Oracle Cloud Infrastructure Zpr service.
- * 
- * Initiates the process to onboard ZPR
- * in a root compartment (the root compartment is the tenancy). It creates an object of ZPR configuration as part of onboarding.
- * 
  * ## Example Usage
  * 
  * <pre>

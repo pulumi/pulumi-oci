@@ -30,7 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := jms.GetUtilsSubscriptionAcknowledgmentConfiguration(ctx, &jms.GetUtilsSubscriptionAcknowledgmentConfigurationArgs{
-//				CompartmentId: pulumi.StringRef(compartmentId),
+//				CompartmentId: compartmentId,
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetUtilsSubscriptionAcknowledgmentConfiguration(ctx *pulumi.Context, args *GetUtilsSubscriptionAcknowledgmentConfigurationArgs, opts ...pulumi.InvokeOption) (*GetUtilsSubscriptionAcknowledgmentConfigurationResult, error) {
+func LookupUtilsSubscriptionAcknowledgmentConfiguration(ctx *pulumi.Context, args *LookupUtilsSubscriptionAcknowledgmentConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupUtilsSubscriptionAcknowledgmentConfigurationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetUtilsSubscriptionAcknowledgmentConfigurationResult
+	var rv LookupUtilsSubscriptionAcknowledgmentConfigurationResult
 	err := ctx.Invoke("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,86 +51,80 @@ func GetUtilsSubscriptionAcknowledgmentConfiguration(ctx *pulumi.Context, args *
 }
 
 // A collection of arguments for invoking getUtilsSubscriptionAcknowledgmentConfiguration.
-type GetUtilsSubscriptionAcknowledgmentConfigurationArgs struct {
+type LookupUtilsSubscriptionAcknowledgmentConfigurationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId *string `pulumi:"compartmentId"`
-	// Flag to determine whether the subscription was acknowledged or not.
-	IsAcknowledged *bool `pulumi:"isAcknowledged"`
+	CompartmentId string `pulumi:"compartmentId"`
 }
 
 // A collection of values returned by getUtilsSubscriptionAcknowledgmentConfiguration.
-type GetUtilsSubscriptionAcknowledgmentConfigurationResult struct {
+type LookupUtilsSubscriptionAcknowledgmentConfigurationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal that ackwnoledged the subscription.
 	AcknowledgedBy string `pulumi:"acknowledgedBy"`
 	CompartmentId  string `pulumi:"compartmentId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
 	// Flag to determine whether the subscription was acknowledged or not.
 	IsAcknowledged bool `pulumi:"isAcknowledged"`
 	// The date and time the subscription was acknowledged (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeAcknowledged string `pulumi:"timeAcknowledged"`
 }
 
-func GetUtilsSubscriptionAcknowledgmentConfigurationOutput(ctx *pulumi.Context, args GetUtilsSubscriptionAcknowledgmentConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput {
+func LookupUtilsSubscriptionAcknowledgmentConfigurationOutput(ctx *pulumi.Context, args LookupUtilsSubscriptionAcknowledgmentConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput, error) {
-			args := v.(GetUtilsSubscriptionAcknowledgmentConfigurationArgs)
+		ApplyT(func(v interface{}) (LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput, error) {
+			args := v.(LookupUtilsSubscriptionAcknowledgmentConfigurationArgs)
 			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", args, GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput{}, options).(GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput), nil
-		}).(GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput)
+			return ctx.InvokeOutput("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", args, LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput{}, options).(LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput), nil
+		}).(LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getUtilsSubscriptionAcknowledgmentConfiguration.
-type GetUtilsSubscriptionAcknowledgmentConfigurationOutputArgs struct {
+type LookupUtilsSubscriptionAcknowledgmentConfigurationOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// Flag to determine whether the subscription was acknowledged or not.
-	IsAcknowledged pulumi.BoolPtrInput `pulumi:"isAcknowledged"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 }
 
-func (GetUtilsSubscriptionAcknowledgmentConfigurationOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetUtilsSubscriptionAcknowledgmentConfigurationArgs)(nil)).Elem()
+func (LookupUtilsSubscriptionAcknowledgmentConfigurationOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupUtilsSubscriptionAcknowledgmentConfigurationArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getUtilsSubscriptionAcknowledgmentConfiguration.
-type GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput struct{ *pulumi.OutputState }
+type LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput struct{ *pulumi.OutputState }
 
-func (GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetUtilsSubscriptionAcknowledgmentConfigurationResult)(nil)).Elem()
+func (LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupUtilsSubscriptionAcknowledgmentConfigurationResult)(nil)).Elem()
 }
 
-func (o GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput) ToGetUtilsSubscriptionAcknowledgmentConfigurationResultOutput() GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput {
+func (o LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput) ToLookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput() LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput {
 	return o
 }
 
-func (o GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput) ToGetUtilsSubscriptionAcknowledgmentConfigurationResultOutputWithContext(ctx context.Context) GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput {
+func (o LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput) ToLookupUtilsSubscriptionAcknowledgmentConfigurationResultOutputWithContext(ctx context.Context) LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput {
 	return o
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal that ackwnoledged the subscription.
-func (o GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput) AcknowledgedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUtilsSubscriptionAcknowledgmentConfigurationResult) string { return v.AcknowledgedBy }).(pulumi.StringOutput)
+func (o LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput) AcknowledgedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUtilsSubscriptionAcknowledgmentConfigurationResult) string { return v.AcknowledgedBy }).(pulumi.StringOutput)
 }
 
-func (o GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUtilsSubscriptionAcknowledgmentConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUtilsSubscriptionAcknowledgmentConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUtilsSubscriptionAcknowledgmentConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUtilsSubscriptionAcknowledgmentConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // Flag to determine whether the subscription was acknowledged or not.
-func (o GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput) IsAcknowledged() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetUtilsSubscriptionAcknowledgmentConfigurationResult) bool { return v.IsAcknowledged }).(pulumi.BoolOutput)
+func (o LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput) IsAcknowledged() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupUtilsSubscriptionAcknowledgmentConfigurationResult) bool { return v.IsAcknowledged }).(pulumi.BoolOutput)
 }
 
 // The date and time the subscription was acknowledged (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput) TimeAcknowledged() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUtilsSubscriptionAcknowledgmentConfigurationResult) string { return v.TimeAcknowledged }).(pulumi.StringOutput)
+func (o LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput) TimeAcknowledged() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUtilsSubscriptionAcknowledgmentConfigurationResult) string { return v.TimeAcknowledged }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetUtilsSubscriptionAcknowledgmentConfigurationResultOutput{})
+	pulumi.RegisterOutputType(LookupUtilsSubscriptionAcknowledgmentConfigurationResultOutput{})
 }

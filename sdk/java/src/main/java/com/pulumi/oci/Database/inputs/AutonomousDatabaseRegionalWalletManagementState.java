@@ -54,14 +54,14 @@ public final class AutonomousDatabaseRegionalWalletManagementState extends com.p
     }
 
     /**
-     * The current lifecycle state of the Autonomous Database wallet.
+     * The current lifecycle state of the Autonomous AI Database wallet.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current lifecycle state of the Autonomous Database wallet.
+     * @return The current lifecycle state of the Autonomous AI Database wallet.
      * 
      */
     public Optional<Output<String>> state() {
@@ -159,7 +159,7 @@ public final class AutonomousDatabaseRegionalWalletManagementState extends com.p
         }
 
         /**
-         * @param state The current lifecycle state of the Autonomous Database wallet.
+         * @param state The current lifecycle state of the Autonomous AI Database wallet.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class AutonomousDatabaseRegionalWalletManagementState extends com.p
         }
 
         /**
-         * @param state The current lifecycle state of the Autonomous Database wallet.
+         * @param state The current lifecycle state of the Autonomous AI Database wallet.
          * 
          * @return builder
          * 

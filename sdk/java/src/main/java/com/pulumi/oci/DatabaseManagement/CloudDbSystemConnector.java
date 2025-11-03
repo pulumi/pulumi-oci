@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cloud Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Creates a new cloud connector.
- * 
  * ## Example Usage
  * 
  * <pre>

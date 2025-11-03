@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
- * 
- * Create a new Oracle Cloud Infrastructure Cache Config Set for the given Oracle Cloud Infrastructure cache engine version.
- * 
  * ## Example Usage
  * 
  * <pre>

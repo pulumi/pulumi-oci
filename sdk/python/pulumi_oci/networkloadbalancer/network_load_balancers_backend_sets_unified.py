@@ -434,10 +434,6 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
                  policy: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Load Balancers Backend Sets Unified resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-        Adds a backend set to a network load balancer.
-
         ## Example Usage
 
         ```python
@@ -522,10 +518,6 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
                  args: NetworkLoadBalancersBackendSetsUnifiedArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Load Balancers Backend Sets Unified resource in Oracle Cloud Infrastructure Network Load Balancer service.
-
-        Adds a backend set to a network load balancer.
-
         ## Example Usage
 
         ```python

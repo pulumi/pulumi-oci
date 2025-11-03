@@ -7,9 +7,15 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .cluster import *
+from .datastore import *
+from .datastore_cluster import *
 from .esxi_host import *
 from .get_cluster import *
 from .get_clusters import *
+from .get_datastore import *
+from .get_datastore_cluster import *
+from .get_datastore_clusters import *
+from .get_datastores import *
 from .get_exsi_host import *
 from .get_exsi_hosts import *
 from .get_retrieve_password import *

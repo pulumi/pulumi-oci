@@ -159,6 +159,7 @@ class _ReplicaState:
                  port_x: Optional[pulumi.Input[_builtins.int]] = None,
                  replica_overrides: Optional[pulumi.Input['ReplicaReplicaOverridesArgs']] = None,
                  secure_connections: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicaSecureConnectionArgs']]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape_name: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -184,6 +185,7 @@ class _ReplicaState:
         :param pulumi.Input[_builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input['ReplicaReplicaOverridesArgs'] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         :param pulumi.Input[Sequence[pulumi.Input['ReplicaSecureConnectionArgs']]] secure_connections: Secure connection configuration details.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[_builtins.str] state: The state of the read replica.
         :param pulumi.Input[_builtins.str] time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -227,6 +229,8 @@ class _ReplicaState:
             pulumi.set(__self__, "replica_overrides", replica_overrides)
         if secure_connections is not None:
             pulumi.set(__self__, "secure_connections", secure_connections)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shape_name is not None:
             pulumi.set(__self__, "shape_name", shape_name)
         if state is not None:
@@ -465,6 +469,18 @@ class _ReplicaState:
         pulumi.set(self, "secure_connections", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -528,10 +544,6 @@ class Replica(pulumi.CustomResource):
                  replica_overrides: Optional[pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Replica resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a DB System read replica.
-
         ## Example Usage
 
         ```python
@@ -553,6 +565,7 @@ class Replica(pulumi.CustomResource):
                 "configuration_id": test_mysql_configuration["id"],
                 "mysql_version": replica_replica_overrides_mysql_version,
                 "nsg_ids": replica_replica_overrides_nsg_ids,
+                "security_attributes": replica_replica_overrides_security_attributes,
                 "shape_name": test_shape["name"],
             })
         ```
@@ -582,10 +595,6 @@ class Replica(pulumi.CustomResource):
                  args: ReplicaArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Replica resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a DB System read replica.
-
         ## Example Usage
 
         ```python
@@ -607,6 +616,7 @@ class Replica(pulumi.CustomResource):
                 "configuration_id": test_mysql_configuration["id"],
                 "mysql_version": replica_replica_overrides_mysql_version,
                 "nsg_ids": replica_replica_overrides_nsg_ids,
+                "security_attributes": replica_replica_overrides_security_attributes,
                 "shape_name": test_shape["name"],
             })
         ```
@@ -671,6 +681,7 @@ class Replica(pulumi.CustomResource):
             __props__.__dict__["port"] = None
             __props__.__dict__["port_x"] = None
             __props__.__dict__["secure_connections"] = None
+            __props__.__dict__["security_attributes"] = None
             __props__.__dict__["shape_name"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -704,6 +715,7 @@ class Replica(pulumi.CustomResource):
             port_x: Optional[pulumi.Input[_builtins.int]] = None,
             replica_overrides: Optional[pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']]] = None,
             secure_connections: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReplicaSecureConnectionArgs', 'ReplicaSecureConnectionArgsDict']]]]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape_name: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -734,6 +746,7 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicaSecureConnectionArgs', 'ReplicaSecureConnectionArgsDict']]]] secure_connections: Secure connection configuration details.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[_builtins.str] state: The state of the read replica.
         :param pulumi.Input[_builtins.str] time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -762,6 +775,7 @@ class Replica(pulumi.CustomResource):
         __props__.__dict__["port_x"] = port_x
         __props__.__dict__["replica_overrides"] = replica_overrides
         __props__.__dict__["secure_connections"] = secure_connections
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape_name"] = shape_name
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
@@ -919,6 +933,14 @@ class Replica(pulumi.CustomResource):
         Secure connection configuration details.
         """
         return pulumi.get(self, "secure_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter(name="shapeName")

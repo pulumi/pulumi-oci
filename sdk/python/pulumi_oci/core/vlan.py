@@ -455,10 +455,6 @@ class Vlan(pulumi.CustomResource):
                  vlan_tag: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Vlan resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a VLAN in the specified VCN and the specified compartment.
-
         ## Example Usage
 
         ```python
@@ -524,10 +520,6 @@ class Vlan(pulumi.CustomResource):
                  args: VlanArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vlan resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a VLAN in the specified VCN and the specified compartment.
-
         ## Example Usage
 
         ```python

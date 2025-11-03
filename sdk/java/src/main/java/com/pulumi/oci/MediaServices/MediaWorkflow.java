@@ -19,10 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
- * 
- * Creates a new MediaWorkflow.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -628,10 +628,6 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
-
-        Creates an Exadata Database Storage Vault
-
         ## Example Usage
 
         ```python
@@ -695,10 +691,6 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
                  args: ExascaleDbStorageVaultArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
-
-        Creates an Exadata Database Storage Vault
-
         ## Example Usage
 
         ```python

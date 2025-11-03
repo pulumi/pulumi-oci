@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Application Vip resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
- * 
  * ## Example Usage
  * 
  * <pre>

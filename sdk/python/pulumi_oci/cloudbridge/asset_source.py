@@ -610,10 +610,6 @@ class AssetSource(pulumi.CustomResource):
                  vcenter_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an asset source.
-
         ## Example Usage
 
         ```python
@@ -685,10 +681,6 @@ class AssetSource(pulumi.CustomResource):
                  args: AssetSourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an asset source.
-
         ## Example Usage
 
         ```python

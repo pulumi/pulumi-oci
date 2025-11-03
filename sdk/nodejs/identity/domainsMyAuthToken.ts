@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create a user's own Auth token.
- *
  * ## Example Usage
  *
  * ## Import

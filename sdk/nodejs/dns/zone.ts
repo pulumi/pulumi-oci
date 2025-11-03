@@ -7,13 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Zone resource in Oracle Cloud Infrastructure DNS service.
- *
- * Creates a new zone in the specified compartment.
- *
- * Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under `oraclevcn.com`
- * within the default protected view of a VCN-dedicated resolver is not permitted.
- *
  * ## Example Usage
  *
  * ```typescript

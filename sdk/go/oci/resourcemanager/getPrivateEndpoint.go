@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
 //
 // Gets the specified private endpoint.
+// For more information, see
+// [Getting a Private Endpoint's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
 //
 // ## Example Usage
 //
@@ -58,7 +60,7 @@ type LookupPrivateEndpointArgs struct {
 
 // A collection of values returned by getPrivateEndpoint.
 type LookupPrivateEndpointResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -66,23 +68,27 @@ type LookupPrivateEndpointResult struct {
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
-	// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+	// DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
 	DnsZones []string `pulumi:"dnsZones"`
 	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	Id string `pulumi:"id"`
 	// When `true`, allows the private endpoint to be used with a configuration source provider.
 	IsUsedWithConfigurationSourceProvider bool `pulumi:"isUsedWithConfigurationSourceProvider"`
-	// An array of network security groups (NSG) that the customer can optionally provide.
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 	NsgIdLists        []string `pulumi:"nsgIdLists"`
 	PrivateEndpointId string   `pulumi:"privateEndpointId"`
-	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 	SourceIps []string `pulumi:"sourceIps"`
 	// The current lifecycle state of the private endpoint.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 	SubnetId string `pulumi:"subnetId"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
@@ -123,7 +129,7 @@ func (o LookupPrivateEndpointResultOutput) ToLookupPrivateEndpointResultOutputWi
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
 func (o LookupPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -143,7 +149,7 @@ func (o LookupPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+// DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
 func (o LookupPrivateEndpointResultOutput) DnsZones() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) []string { return v.DnsZones }).(pulumi.StringArrayOutput)
 }
@@ -153,7 +159,7 @@ func (o LookupPrivateEndpointResultOutput) FreeformTags() pulumi.StringMapOutput
 	return o.ApplyT(func(v LookupPrivateEndpointResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 func (o LookupPrivateEndpointResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -163,7 +169,7 @@ func (o LookupPrivateEndpointResultOutput) IsUsedWithConfigurationSourceProvider
 	return o.ApplyT(func(v LookupPrivateEndpointResult) bool { return v.IsUsedWithConfigurationSourceProvider }).(pulumi.BoolOutput)
 }
 
-// An array of network security groups (NSG) that the customer can optionally provide.
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 func (o LookupPrivateEndpointResultOutput) NsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) []string { return v.NsgIdLists }).(pulumi.StringArrayOutput)
 }
@@ -172,7 +178,12 @@ func (o LookupPrivateEndpointResultOutput) PrivateEndpointId() pulumi.StringOutp
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
 }
 
-// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o LookupPrivateEndpointResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 func (o LookupPrivateEndpointResultOutput) SourceIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) []string { return v.SourceIps }).(pulumi.StringArrayOutput)
 }
@@ -185,6 +196,11 @@ func (o LookupPrivateEndpointResultOutput) State() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 func (o LookupPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o LookupPrivateEndpointResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`

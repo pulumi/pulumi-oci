@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine
 {
     /// <summary>
-    /// This resource provides the Container Instance resource in Oracle Cloud Infrastructure Container Instances service.
-    /// 
-    /// Creates a container instance and deploys the containers on it.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

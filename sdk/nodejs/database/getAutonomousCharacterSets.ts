@@ -45,11 +45,12 @@ export interface GetAutonomousCharacterSetsArgs {
     characterSetType?: string;
     filters?: inputs.Database.GetAutonomousCharacterSetsFilter[];
     /**
-     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
      */
     isDedicated?: boolean;
     /**
-     * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure. 
+     *
      *
      * :
      */
@@ -112,11 +113,12 @@ export interface GetAutonomousCharacterSetsOutputArgs {
     characterSetType?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousCharacterSetsFilterArgs>[]>;
     /**
-     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
      */
     isDedicated?: pulumi.Input<boolean>;
     /**
-     * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure. 
+     *
      *
      * :
      */

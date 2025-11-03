@@ -25,10 +25,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
- * 
- * Create a new node pool.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -18,11 +18,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Volume Group Backup resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a new backup volume group of the specified volume group.
- * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
- * 
  * ## Example Usage
  * 
  * <pre>

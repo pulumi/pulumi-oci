@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Managed Instance Group Detach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Detaches the specified software sources from a managed instance group.
-//
 // ## Example Usage
 //
 // ```go

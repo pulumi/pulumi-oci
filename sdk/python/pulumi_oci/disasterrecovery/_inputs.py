@@ -15,6 +15,10 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'AutomaticDrConfigurationMemberArgs',
+    'AutomaticDrConfigurationMemberArgsDict',
+    'DrPlanExecutionAutomaticExecutionDetailArgs',
+    'DrPlanExecutionAutomaticExecutionDetailArgsDict',
     'DrPlanExecutionExecutionOptionsArgs',
     'DrPlanExecutionExecutionOptionsArgsDict',
     'DrPlanExecutionGroupExecutionArgs',
@@ -89,6 +93,8 @@ __all__ = [
     'DrProtectionGroupMemberVirtualNodePoolConfigArgsDict',
     'DrProtectionGroupMemberVnicMappingArgs',
     'DrProtectionGroupMemberVnicMappingArgsDict',
+    'GetAutomaticDrConfigurationsFilterArgs',
+    'GetAutomaticDrConfigurationsFilterArgsDict',
     'GetDrPlanExecutionsFilterArgs',
     'GetDrPlanExecutionsFilterArgsDict',
     'GetDrPlansFilterArgs',
@@ -98,6 +104,160 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class AutomaticDrConfigurationMemberArgsDict(TypedDict):
+        member_id: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
+        """
+        member_type: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The type of the member. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        is_auto_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        is_auto_switchover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+elif False:
+    AutomaticDrConfigurationMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutomaticDrConfigurationMemberArgs:
+    def __init__(__self__, *,
+                 member_id: pulumi.Input[_builtins.str],
+                 member_type: pulumi.Input[_builtins.str],
+                 is_auto_failover_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_auto_switchover_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] member_id: (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
+        :param pulumi.Input[_builtins.str] member_type: (Updatable) The type of the member. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.bool] is_auto_failover_enabled: (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        :param pulumi.Input[_builtins.bool] is_auto_switchover_enabled: (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_type", member_type)
+        if is_auto_failover_enabled is not None:
+            pulumi.set(__self__, "is_auto_failover_enabled", is_auto_failover_enabled)
+        if is_auto_switchover_enabled is not None:
+            pulumi.set(__self__, "is_auto_switchover_enabled", is_auto_switchover_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
+        """
+        return pulumi.get(self, "member_id")
+
+    @member_id.setter
+    def member_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "member_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memberType")
+    def member_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of the member. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "member_type")
+
+    @member_type.setter
+    def member_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "member_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoFailoverEnabled")
+    def is_auto_failover_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_auto_failover_enabled")
+
+    @is_auto_failover_enabled.setter
+    def is_auto_failover_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_auto_failover_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoSwitchoverEnabled")
+    def is_auto_switchover_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_auto_switchover_enabled")
+
+    @is_auto_switchover_enabled.setter
+    def is_auto_switchover_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_auto_switchover_enabled", value)
+
+
+if not MYPY:
+    class DrPlanExecutionAutomaticExecutionDetailArgsDict(TypedDict):
+        event_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+        """
+        member_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+        """
+elif False:
+    DrPlanExecutionAutomaticExecutionDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DrPlanExecutionAutomaticExecutionDetailArgs:
+    def __init__(__self__, *,
+                 event_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 member_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] event_name: The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+        :param pulumi.Input[_builtins.str] member_id: The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+        """
+        if event_name is not None:
+            pulumi.set(__self__, "event_name", event_name)
+        if member_id is not None:
+            pulumi.set(__self__, "member_id", member_id)
+
+    @_builtins.property
+    @pulumi.getter(name="eventName")
+    def event_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+        """
+        return pulumi.get(self, "event_name")
+
+    @event_name.setter
+    def event_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "event_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+        """
+        return pulumi.get(self, "member_id")
+
+    @member_id.setter
+    def member_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "member_id", value)
+
 
 if not MYPY:
     class DrPlanExecutionExecutionOptionsArgsDict(TypedDict):
@@ -3929,6 +4089,53 @@ class DrProtectionGroupMemberVnicMappingArgs:
     @source_vnic_id.setter
     def source_vnic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "source_vnic_id", value)
+
+
+if not MYPY:
+    class GetAutomaticDrConfigurationsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetAutomaticDrConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetAutomaticDrConfigurationsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 if not MYPY:

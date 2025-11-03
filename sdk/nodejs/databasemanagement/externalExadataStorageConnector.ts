@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Creates the Exadata storage server connector after validating the connection information.
- *
  * ## Example Usage
  *
  * ```typescript

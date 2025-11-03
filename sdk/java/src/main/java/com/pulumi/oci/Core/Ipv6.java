@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates an IPv6 for the specified VNIC.
- * 
  * ## Example Usage
  * 
  * <pre>

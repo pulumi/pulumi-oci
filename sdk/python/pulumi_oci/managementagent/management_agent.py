@@ -590,8 +590,6 @@ class ManagementAgent(pulumi.CustomResource):
                  managed_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
-
         ## Example Usage
 
         ```python
@@ -626,8 +624,6 @@ class ManagementAgent(pulumi.CustomResource):
                  args: ManagementAgentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
-
         ## Example Usage
 
         ```python

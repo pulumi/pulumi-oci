@@ -106,10 +106,6 @@ class Query(pulumi.CustomResource):
                  query_definition: Optional[pulumi.Input[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
-
-        Returns the created query.
-
         ## Example Usage
 
         ```python
@@ -170,10 +166,6 @@ class Query(pulumi.CustomResource):
                  args: QueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Query resource in Oracle Cloud Infrastructure Metering Computation service.
-
-        Returns the created query.
-
         ## Example Usage
 
         ```python

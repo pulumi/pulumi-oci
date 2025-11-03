@@ -575,10 +575,6 @@ class Pipeline(pulumi.CustomResource):
                  target_connection_details: Optional[pulumi.Input[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Pipeline.
-
         ## Example Usage
 
         ## Import
@@ -610,10 +606,6 @@ class Pipeline(pulumi.CustomResource):
                  args: PipelineArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Pipeline.
-
         ## Example Usage
 
         ## Import

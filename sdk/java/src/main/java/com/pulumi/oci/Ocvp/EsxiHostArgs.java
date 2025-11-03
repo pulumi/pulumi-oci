@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,6 +17,13 @@ import javax.annotation.Nullable;
 public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final EsxiHostArgs Empty = new EsxiHostArgs();
+
+    @Import(name="attachDatastoreClusterIds")
+    private @Nullable Output<List<String>> attachDatastoreClusterIds;
+
+    public Optional<Output<List<String>>> attachDatastoreClusterIds() {
+        return Optional.ofNullable(this.attachDatastoreClusterIds);
+    }
 
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
@@ -123,8 +131,15 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.definedTags);
     }
 
+    @Import(name="detachDatastoreClusterIds")
+    private @Nullable Output<List<String>> detachDatastoreClusterIds;
+
+    public Optional<Output<List<String>>> detachDatastoreClusterIds() {
+        return Optional.ofNullable(this.detachDatastoreClusterIds);
+    }
+
     /**
-     * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      * 
      * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
      * 
@@ -135,7 +150,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+     * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      * 
      * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
      * 
@@ -303,12 +318,14 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     private EsxiHostArgs() {}
 
     private EsxiHostArgs(EsxiHostArgs $) {
+        this.attachDatastoreClusterIds = $.attachDatastoreClusterIds;
         this.billingDonorHostId = $.billingDonorHostId;
         this.capacityReservationId = $.capacityReservationId;
         this.clusterId = $.clusterId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
         this.currentSku = $.currentSku;
         this.definedTags = $.definedTags;
+        this.detachDatastoreClusterIds = $.detachDatastoreClusterIds;
         this.displayName = $.displayName;
         this.esxiSoftwareVersion = $.esxiSoftwareVersion;
         this.failedEsxiHostId = $.failedEsxiHostId;
@@ -336,6 +353,19 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(EsxiHostArgs defaults) {
             $ = new EsxiHostArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder attachDatastoreClusterIds(@Nullable Output<List<String>> attachDatastoreClusterIds) {
+            $.attachDatastoreClusterIds = attachDatastoreClusterIds;
+            return this;
+        }
+
+        public Builder attachDatastoreClusterIds(List<String> attachDatastoreClusterIds) {
+            return attachDatastoreClusterIds(Output.of(attachDatastoreClusterIds));
+        }
+
+        public Builder attachDatastoreClusterIds(String... attachDatastoreClusterIds) {
+            return attachDatastoreClusterIds(List.of(attachDatastoreClusterIds));
         }
 
         /**
@@ -480,8 +510,21 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
             return definedTags(Output.of(definedTags));
         }
 
+        public Builder detachDatastoreClusterIds(@Nullable Output<List<String>> detachDatastoreClusterIds) {
+            $.detachDatastoreClusterIds = detachDatastoreClusterIds;
+            return this;
+        }
+
+        public Builder detachDatastoreClusterIds(List<String> detachDatastoreClusterIds) {
+            return detachDatastoreClusterIds(Output.of(detachDatastoreClusterIds));
+        }
+
+        public Builder detachDatastoreClusterIds(String... detachDatastoreClusterIds) {
+            return detachDatastoreClusterIds(List.of(detachDatastoreClusterIds));
+        }
+
         /**
-         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
          * 
          * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
          * 
@@ -496,7 +539,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
+         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-25 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
          * 
          * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
          * 

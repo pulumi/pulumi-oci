@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
-    /// This resource provides the Maintenance Windows Stop resource in Oracle Cloud Infrastructure Stack Monitoring service.
-    /// 
-    /// Stop a maintenance window before the end time is reached.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

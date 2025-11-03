@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:DisasterRecovery/automaticDrConfiguration:AutomaticDrConfiguration":
+		r = &AutomaticDrConfiguration{}
 	case "oci:DisasterRecovery/drPlan:DrPlan":
 		r = &DrPlan{}
 	case "oci:DisasterRecovery/drPlanExecution:DrPlanExecution":
@@ -40,6 +42,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DisasterRecovery/automaticDrConfiguration",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DisasterRecovery/drPlan",

@@ -6,7 +6,9 @@ package com.pulumi.oci.FleetSoftwareUpdate.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleGoalVersionDetailsComponentArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -15,6 +17,21 @@ import javax.annotation.Nullable;
 public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final FsuCycleGoalVersionDetailsArgs Empty = new FsuCycleGoalVersionDetailsArgs();
+
+    /**
+     * (Updatable) Details of goal versions for components in an Exadata software stack.
+     * 
+     */
+    @Import(name="components")
+    private @Nullable Output<List<FsuCycleGoalVersionDetailsComponentArgs>> components;
+
+    /**
+     * @return (Updatable) Details of goal versions for components in an Exadata software stack.
+     * 
+     */
+    public Optional<Output<List<FsuCycleGoalVersionDetailsComponentArgs>>> components() {
+        return Optional.ofNullable(this.components);
+    }
 
     /**
      * (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
@@ -47,14 +64,14 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Target database software image OCID.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
      * 
      */
     @Import(name="softwareImageId")
     private @Nullable Output<String> softwareImageId;
 
     /**
-     * @return (Updatable) Target database software image OCID.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
      * 
      */
     public Optional<Output<String>> softwareImageId() {
@@ -62,14 +79,14 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Type of goal target version specified
+     * (Updatable) Type of goal version specified
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of goal target version specified
+     * @return (Updatable) Type of goal version specified
      * 
      */
     public Output<String> type() {
@@ -77,14 +94,14 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+     * (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
      * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
-     * @return (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+     * @return (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
      * 
      */
     public Optional<Output<String>> version() {
@@ -94,6 +111,7 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
     private FsuCycleGoalVersionDetailsArgs() {}
 
     private FsuCycleGoalVersionDetailsArgs(FsuCycleGoalVersionDetailsArgs $) {
+        this.components = $.components;
         this.homePolicy = $.homePolicy;
         this.newHomePrefix = $.newHomePrefix;
         this.softwareImageId = $.softwareImageId;
@@ -117,6 +135,37 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
 
         public Builder(FsuCycleGoalVersionDetailsArgs defaults) {
             $ = new FsuCycleGoalVersionDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param components (Updatable) Details of goal versions for components in an Exadata software stack.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder components(@Nullable Output<List<FsuCycleGoalVersionDetailsComponentArgs>> components) {
+            $.components = components;
+            return this;
+        }
+
+        /**
+         * @param components (Updatable) Details of goal versions for components in an Exadata software stack.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder components(List<FsuCycleGoalVersionDetailsComponentArgs> components) {
+            return components(Output.of(components));
+        }
+
+        /**
+         * @param components (Updatable) Details of goal versions for components in an Exadata software stack.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder components(FsuCycleGoalVersionDetailsComponentArgs... components) {
+            return components(List.of(components));
         }
 
         /**
@@ -162,7 +211,7 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param softwareImageId (Updatable) Target database software image OCID.
+         * @param softwareImageId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
          * 
          * @return builder
          * 
@@ -173,7 +222,7 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param softwareImageId (Updatable) Target database software image OCID.
+         * @param softwareImageId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
          * 
          * @return builder
          * 
@@ -183,7 +232,7 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param type (Updatable) Type of goal target version specified
+         * @param type (Updatable) Type of goal version specified
          * 
          * @return builder
          * 
@@ -194,7 +243,7 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param type (Updatable) Type of goal target version specified
+         * @param type (Updatable) Type of goal version specified
          * 
          * @return builder
          * 
@@ -204,7 +253,7 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param version (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+         * @param version (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
          * 
          * @return builder
          * 
@@ -215,7 +264,7 @@ public final class FsuCycleGoalVersionDetailsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param version (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+         * @param version (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
          * 
          * @return builder
          * 

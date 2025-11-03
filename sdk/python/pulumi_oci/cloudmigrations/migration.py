@@ -332,10 +332,6 @@ class Migration(pulumi.CustomResource):
                  replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a migration.
-
         ## Example Usage
 
         ```python
@@ -383,10 +379,6 @@ class Migration(pulumi.CustomResource):
                  args: MigrationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a migration.
-
         ## Example Usage
 
         ```python

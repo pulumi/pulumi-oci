@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
- *
- * Creates a migration plan.
+ * ## Example Usage
  *
  * ## Import
  *

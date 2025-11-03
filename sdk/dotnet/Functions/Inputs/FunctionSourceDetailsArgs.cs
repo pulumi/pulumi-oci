@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Functions.Inputs
         public Input<string> PbfListingId { get; set; } = null!;
 
         /// <summary>
-        /// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        /// Type of the Function Source. Possible values: PBF.
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;

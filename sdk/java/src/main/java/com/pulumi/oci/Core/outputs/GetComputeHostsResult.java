@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetComputeHostsComputeHostCollection;
 import com.pulumi.oci.Core.outputs.GetComputeHostsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +38,7 @@ public final class GetComputeHostsResult {
      */
     private @Nullable String computeHostGroupId;
     private @Nullable String computeHostHealth;
+    private @Nullable Boolean computeHostInSubtree;
     private @Nullable String computeHostLifecycleState;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -88,6 +90,9 @@ public final class GetComputeHostsResult {
     public Optional<String> computeHostHealth() {
         return Optional.ofNullable(this.computeHostHealth);
     }
+    public Optional<Boolean> computeHostInSubtree() {
+        return Optional.ofNullable(this.computeHostInSubtree);
+    }
     public Optional<String> computeHostLifecycleState() {
         return Optional.ofNullable(this.computeHostLifecycleState);
     }
@@ -133,6 +138,7 @@ public final class GetComputeHostsResult {
         private List<GetComputeHostsComputeHostCollection> computeHostCollections;
         private @Nullable String computeHostGroupId;
         private @Nullable String computeHostHealth;
+        private @Nullable Boolean computeHostInSubtree;
         private @Nullable String computeHostLifecycleState;
         private @Nullable String displayName;
         private @Nullable List<GetComputeHostsFilter> filters;
@@ -147,6 +153,7 @@ public final class GetComputeHostsResult {
     	      this.computeHostCollections = defaults.computeHostCollections;
     	      this.computeHostGroupId = defaults.computeHostGroupId;
     	      this.computeHostHealth = defaults.computeHostHealth;
+    	      this.computeHostInSubtree = defaults.computeHostInSubtree;
     	      this.computeHostLifecycleState = defaults.computeHostLifecycleState;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
@@ -190,6 +197,12 @@ public final class GetComputeHostsResult {
         public Builder computeHostHealth(@Nullable String computeHostHealth) {
 
             this.computeHostHealth = computeHostHealth;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeHostInSubtree(@Nullable Boolean computeHostInSubtree) {
+
+            this.computeHostInSubtree = computeHostInSubtree;
             return this;
         }
         @CustomType.Setter
@@ -242,6 +255,7 @@ public final class GetComputeHostsResult {
             _resultValue.computeHostCollections = computeHostCollections;
             _resultValue.computeHostGroupId = computeHostGroupId;
             _resultValue.computeHostHealth = computeHostHealth;
+            _resultValue.computeHostInSubtree = computeHostInSubtree;
             _resultValue.computeHostLifecycleState = computeHostLifecycleState;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;

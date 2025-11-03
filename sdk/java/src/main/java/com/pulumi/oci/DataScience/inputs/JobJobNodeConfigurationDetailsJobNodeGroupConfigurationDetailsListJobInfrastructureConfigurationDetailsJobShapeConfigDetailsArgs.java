@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Double;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -14,6 +15,21 @@ import javax.annotation.Nullable;
 public final class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs Empty = new JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs();
+
+    /**
+     * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    @Import(name="cpuBaseline")
+    private @Nullable Output<String> cpuBaseline;
+
+    /**
+     * @return (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    public Optional<Output<String>> cpuBaseline() {
+        return Optional.ofNullable(this.cpuBaseline);
+    }
 
     /**
      * The total amount of memory available to the job run instance, in gigabytes.
@@ -48,6 +64,7 @@ public final class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetail
     private JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs() {}
 
     private JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs $) {
+        this.cpuBaseline = $.cpuBaseline;
         this.memoryInGbs = $.memoryInGbs;
         this.ocpus = $.ocpus;
     }
@@ -68,6 +85,27 @@ public final class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetail
 
         public Builder(JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs defaults) {
             $ = new JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param cpuBaseline (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuBaseline(@Nullable Output<String> cpuBaseline) {
+            $.cpuBaseline = cpuBaseline;
+            return this;
+        }
+
+        /**
+         * @param cpuBaseline (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuBaseline(String cpuBaseline) {
+            return cpuBaseline(Output.of(cpuBaseline));
         }
 
         /**

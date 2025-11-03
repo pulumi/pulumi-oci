@@ -15,10 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Namespace Ingest Time Rules Management resource in Oracle Cloud Infrastructure Log Analytics service.
- * 
- * Enables the specified ingest time rule.
- * 
  * ## Example Usage
  * 
  * <pre>

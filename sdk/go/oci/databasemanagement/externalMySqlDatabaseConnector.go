@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External My Sql Database Connector resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Creates an external MySQL connector resource.
-//
 // ## Example Usage
 //
 // ```go

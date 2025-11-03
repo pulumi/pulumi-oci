@@ -16,10 +16,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Managed Instance Group Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Reboots all managed instances in the specified group.
- * 
  * ## Example Usage
  * 
  * <pre>

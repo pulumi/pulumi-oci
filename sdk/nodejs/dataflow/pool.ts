@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Pool resource in Oracle Cloud Infrastructure Data Flow service.
- *
- * Create a pool to be used by dataflow runs or applications.
- *
  * ## Example Usage
  *
  * ```typescript

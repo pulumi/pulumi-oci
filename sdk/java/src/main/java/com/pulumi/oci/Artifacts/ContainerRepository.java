@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
- * 
- * Create a new empty container repository. Avoid entering confidential information.
- * 
  * ## Example Usage
  * 
  * <pre>

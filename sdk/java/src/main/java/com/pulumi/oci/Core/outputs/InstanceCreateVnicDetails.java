@@ -103,6 +103,11 @@ public final class InstanceCreateVnicDetails {
      */
     private @Nullable Boolean skipSourceDestCheck;
     /**
+     * @return One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+     * 
+     */
+    private @Nullable String subnetCidr;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
      * 
      * If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
@@ -230,6 +235,13 @@ public final class InstanceCreateVnicDetails {
         return Optional.ofNullable(this.skipSourceDestCheck);
     }
     /**
+     * @return One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+     * 
+     */
+    public Optional<String> subnetCidr() {
+        return Optional.ofNullable(this.subnetCidr);
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
      * 
      * If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
@@ -269,6 +281,7 @@ public final class InstanceCreateVnicDetails {
         private @Nullable String privateIp;
         private @Nullable Map<String,String> securityAttributes;
         private @Nullable Boolean skipSourceDestCheck;
+        private @Nullable String subnetCidr;
         private @Nullable String subnetId;
         private @Nullable String vlanId;
         public Builder() {}
@@ -286,6 +299,7 @@ public final class InstanceCreateVnicDetails {
     	      this.privateIp = defaults.privateIp;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.skipSourceDestCheck = defaults.skipSourceDestCheck;
+    	      this.subnetCidr = defaults.subnetCidr;
     	      this.subnetId = defaults.subnetId;
     	      this.vlanId = defaults.vlanId;
         }
@@ -369,6 +383,12 @@ public final class InstanceCreateVnicDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder subnetCidr(@Nullable String subnetCidr) {
+
+            this.subnetCidr = subnetCidr;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subnetId(@Nullable String subnetId) {
 
             this.subnetId = subnetId;
@@ -394,6 +414,7 @@ public final class InstanceCreateVnicDetails {
             _resultValue.privateIp = privateIp;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.skipSourceDestCheck = skipSourceDestCheck;
+            _resultValue.subnetCidr = subnetCidr;
             _resultValue.subnetId = subnetId;
             _resultValue.vlanId = vlanId;
             return _resultValue;

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// Create a user's Auth token.
-//
 // ## Example Usage
 //
 // ## Import

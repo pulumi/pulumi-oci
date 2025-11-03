@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
- *
- * This is a post API to create occm demand signal.
- *
  * ## Example Usage
  *
  * ```typescript

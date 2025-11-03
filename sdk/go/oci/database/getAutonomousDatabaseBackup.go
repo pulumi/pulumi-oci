@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
 //
-// Gets information about the specified Autonomous Database backup.
+// Gets information about the specified Autonomous AI Database backup.
 //
 // ## Example Usage
 //
@@ -52,14 +52,14 @@ func LookupAutonomousDatabaseBackup(ctx *pulumi.Context, args *LookupAutonomousD
 
 // A collection of arguments for invoking getAutonomousDatabaseBackup.
 type LookupAutonomousDatabaseBackupArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
 	AutonomousDatabaseBackupId string `pulumi:"autonomousDatabaseBackupId"`
 }
 
 // A collection of values returned by getAutonomousDatabaseBackup.
 type LookupAutonomousDatabaseBackupResult struct {
 	AutonomousDatabaseBackupId string `pulumi:"autonomousDatabaseBackupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
 	// Backup destination details
 	BackupDestinationDetails []GetAutonomousDatabaseBackupBackupDestinationDetail `pulumi:"backupDestinationDetails"`
@@ -67,16 +67,18 @@ type LookupAutonomousDatabaseBackupResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The size of the database in terabytes at the time the backup was taken.
 	DatabaseSizeInTbs float64 `pulumi:"databaseSizeInTbs"`
-	// A valid Oracle Database version for Autonomous Database.
+	// A valid Oracle AI Database version for Autonomous AI Database.
 	DbVersion string `pulumi:"dbVersion"`
 	// The user-friendly name for the backup. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
 	Id string `pulumi:"id"`
+	// The infrastructure type this resource belongs to.
+	InfrastructureType string `pulumi:"infrastructureType"`
 	// Indicates whether the backup is user-initiated or automatic.
 	IsAutomatic      bool `pulumi:"isAutomatic"`
 	IsLongTermBackup bool `pulumi:"isLongTermBackup"`
-	// Indicates whether the backup can be used to restore the associated Autonomous Database.
+	// Indicates whether the backup can be used to restore the associated Autonomous AI Database.
 	IsRestorable bool `pulumi:"isRestorable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId string `pulumi:"keyStoreId"`
@@ -84,14 +86,18 @@ type LookupAutonomousDatabaseBackupResult struct {
 	KeyStoreWalletName string `pulumi:"keyStoreWalletName"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Name of the region in which backup is taken in.
+	Region string `pulumi:"region"`
 	// Retention period, in days, for long-term backups
 	RetentionPeriodInDays int `pulumi:"retentionPeriodInDays"`
 	// The backup size in terrabytes (TB).
 	SizeInTbs float64 `pulumi:"sizeInTbs"`
+	// Source Autonomous Database details.
+	SourceDatabaseDetails []GetAutonomousDatabaseBackupSourceDatabaseDetail `pulumi:"sourceDatabaseDetails"`
 	// The current state of the backup.
 	State string `pulumi:"state"`
 	// Timestamp until when the backup will be available
@@ -117,7 +123,7 @@ func LookupAutonomousDatabaseBackupOutput(ctx *pulumi.Context, args LookupAutono
 
 // A collection of arguments for invoking getAutonomousDatabaseBackup.
 type LookupAutonomousDatabaseBackupOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
 	AutonomousDatabaseBackupId pulumi.StringInput `pulumi:"autonomousDatabaseBackupId"`
 }
 
@@ -144,7 +150,7 @@ func (o LookupAutonomousDatabaseBackupResultOutput) AutonomousDatabaseBackupId()
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.AutonomousDatabaseBackupId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
 func (o LookupAutonomousDatabaseBackupResultOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
@@ -166,7 +172,7 @@ func (o LookupAutonomousDatabaseBackupResultOutput) DatabaseSizeInTbs() pulumi.F
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) float64 { return v.DatabaseSizeInTbs }).(pulumi.Float64Output)
 }
 
-// A valid Oracle Database version for Autonomous Database.
+// A valid Oracle AI Database version for Autonomous AI Database.
 func (o LookupAutonomousDatabaseBackupResultOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.DbVersion }).(pulumi.StringOutput)
 }
@@ -176,9 +182,14 @@ func (o LookupAutonomousDatabaseBackupResultOutput) DisplayName() pulumi.StringO
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
 func (o LookupAutonomousDatabaseBackupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The infrastructure type this resource belongs to.
+func (o LookupAutonomousDatabaseBackupResultOutput) InfrastructureType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.InfrastructureType }).(pulumi.StringOutput)
 }
 
 // Indicates whether the backup is user-initiated or automatic.
@@ -190,7 +201,7 @@ func (o LookupAutonomousDatabaseBackupResultOutput) IsLongTermBackup() pulumi.Bo
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) bool { return v.IsLongTermBackup }).(pulumi.BoolOutput)
 }
 
-// Indicates whether the backup can be used to restore the associated Autonomous Database.
+// Indicates whether the backup can be used to restore the associated Autonomous AI Database.
 func (o LookupAutonomousDatabaseBackupResultOutput) IsRestorable() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) bool { return v.IsRestorable }).(pulumi.BoolOutput)
 }
@@ -210,7 +221,7 @@ func (o LookupAutonomousDatabaseBackupResultOutput) KmsKeyId() pulumi.StringOutp
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o LookupAutonomousDatabaseBackupResultOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }
@@ -218,6 +229,11 @@ func (o LookupAutonomousDatabaseBackupResultOutput) KmsKeyVersionId() pulumi.Str
 // Additional information about the current lifecycle state.
 func (o LookupAutonomousDatabaseBackupResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Name of the region in which backup is taken in.
+func (o LookupAutonomousDatabaseBackupResultOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) string { return v.Region }).(pulumi.StringOutput)
 }
 
 // Retention period, in days, for long-term backups
@@ -228,6 +244,13 @@ func (o LookupAutonomousDatabaseBackupResultOutput) RetentionPeriodInDays() pulu
 // The backup size in terrabytes (TB).
 func (o LookupAutonomousDatabaseBackupResultOutput) SizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) float64 { return v.SizeInTbs }).(pulumi.Float64Output)
+}
+
+// Source Autonomous Database details.
+func (o LookupAutonomousDatabaseBackupResultOutput) SourceDatabaseDetails() GetAutonomousDatabaseBackupSourceDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseBackupResult) []GetAutonomousDatabaseBackupSourceDatabaseDetail {
+		return v.SourceDatabaseDetails
+	}).(GetAutonomousDatabaseBackupSourceDatabaseDetailArrayOutput)
 }
 
 // The current state of the backup.

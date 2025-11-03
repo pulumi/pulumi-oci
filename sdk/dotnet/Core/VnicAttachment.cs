@@ -10,12 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Vnic Attachment resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates a secondary VNIC and attaches it to the specified instance.
-    /// For more information about secondary VNICs, see
-    /// [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,6 +36,7 @@ namespace Pulumi.Oci.Core
     ///             PrivateIp = vnicAttachmentCreateVnicDetailsPrivateIp,
     ///             SecurityAttributes = vnicAttachmentCreateVnicDetailsSecurityAttributes,
     ///             SkipSourceDestCheck = vnicAttachmentCreateVnicDetailsSkipSourceDestCheck,
+    ///             SubnetCidr = vnicAttachmentCreateVnicDetailsSubnetCidr,
     ///             SubnetId = testSubnet.Id,
     ///             VlanId = testVlan.Id,
     ///         },

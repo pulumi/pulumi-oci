@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
-//
-// Creates and registers a WLP agent for an
-// on-premise resource.
-//
 // ## Example Usage
 //
 // ```go

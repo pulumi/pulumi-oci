@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
- *
- * Adds a listener to a load balancer.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
- *
- * Creates an IPv6 for the specified VNIC.
- *
  * ## Example Usage
  *
  * ```typescript

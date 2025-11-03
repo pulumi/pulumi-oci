@@ -17,6 +17,9 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
         /// </summary>
         public readonly int ActualEsxiHostsCount;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        /// </summary>
         public readonly string CapacityReservationId;
         /// <summary>
         /// The number of Clusters in the SDDC.
@@ -30,6 +33,9 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string ComputeAvailabilityDomain;
+        /// <summary>
+        /// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionDatastoreResult> Datastores;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -40,7 +46,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// (**Deprecated**) The number of ESXi hosts in the SDDC.
+        /// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
         /// </summary>
         public readonly int EsxiHostsCount;
         /// <summary>
@@ -67,11 +73,17 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionHcxOnPremLicenseResult> HcxOnPremLicenses;
         public readonly string HcxPrivateIpId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+        /// </summary>
         public readonly string HcxVlanId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Details of SDDC initial configuration
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionInitialConfigurationResult> InitialConfigurations;
         /// <summary>
         /// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
@@ -82,6 +94,9 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string InitialHostShapeName;
         public readonly string InitialSku;
+        /// <summary>
+        /// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+        /// </summary>
         public readonly string InstanceDisplayNamePrefix;
         /// <summary>
         /// (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `HcxMode` instead.
@@ -103,9 +118,18 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// Indicates whether this SDDC is designated for only single ESXi host.
         /// </summary>
         public readonly bool IsSingleHostSddc;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        /// </summary>
         public readonly string NsxEdgeUplink1vlanId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        /// </summary>
         public readonly string NsxEdgeUplink2vlanId;
         public readonly string NsxEdgeUplinkIpId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+        /// </summary>
         public readonly string NsxEdgeVtepVlanId;
         /// <summary>
         /// The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
@@ -118,10 +142,22 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string NsxManagerUsername;
         public readonly string NsxOverlaySegmentName;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+        /// </summary>
         public readonly string NsxVtepVlanId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+        /// </summary>
         public readonly string ProvisioningSubnetId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+        /// </summary>
         public readonly string ProvisioningVlanId;
         public readonly bool RefreshHcxLicenseStatus;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+        /// </summary>
         public readonly string ReplicationVlanId;
         public readonly ImmutableArray<string> ReservingHcxOnPremiseLicenseKeys;
         public readonly string SshAuthorizedKeys;
@@ -129,6 +165,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// The lifecycle state of the resource.
         /// </summary>
         public readonly string State;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
@@ -147,15 +184,27 @@ namespace Pulumi.Oci.Ocvp.Outputs
         public readonly string VcenterInitialPassword;
         public readonly string VcenterPrivateIpId;
         public readonly string VcenterUsername;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+        /// </summary>
         public readonly string VmotionVlanId;
         /// <summary>
         /// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
         /// </summary>
         public readonly string VmwareSoftwareVersion;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+        /// </summary>
         public readonly string VsanVlanId;
         public readonly string VsphereUpgradeGuide;
         public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult> VsphereUpgradeObjects;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+        /// </summary>
         public readonly string VsphereVlanId;
+        /// <summary>
+        /// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+        /// </summary>
         public readonly string WorkloadNetworkCidr;
 
         [OutputConstructor]
@@ -254,6 +303,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string timeHcxBillingCycleEnd,
@@ -333,6 +384,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             ReservingHcxOnPremiseLicenseKeys = reservingHcxOnPremiseLicenseKeys;
             SshAuthorizedKeys = sshAuthorizedKeys;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
             TimeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;

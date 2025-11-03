@@ -25,7 +25,7 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
      */
     private Boolean shouldRotate;
     /**
-     * @return The current lifecycle state of the Autonomous Database wallet.
+     * @return The current lifecycle state of the Autonomous AI Database wallet.
      * 
      */
     private String state;
@@ -57,7 +57,7 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
         return this.shouldRotate;
     }
     /**
-     * @return The current lifecycle state of the Autonomous Database wallet.
+     * @return The current lifecycle state of the Autonomous AI Database wallet.
      * 
      */
     public String state() {

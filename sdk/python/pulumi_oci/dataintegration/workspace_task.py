@@ -894,10 +894,6 @@ class WorkspaceTask(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates a new task ready for performing data integrations. There are specialized types of tasks that include data loader and integration tasks.
-
         ## Example Usage
 
         ## Import
@@ -946,10 +942,6 @@ class WorkspaceTask(pulumi.CustomResource):
                  args: WorkspaceTaskArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates a new task ready for performing data integrations. There are specialized types of tasks that include data loader and integration tasks.
-
         ## Example Usage
 
         ## Import

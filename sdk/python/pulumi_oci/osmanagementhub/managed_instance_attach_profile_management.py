@@ -120,11 +120,6 @@ class ManagedInstanceAttachProfileManagement(pulumi.CustomResource):
                  profile_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Attach Profile Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Adds profile to a managed instance. After the profile has been added,
-        the instance can be registered as a managed instance.
-
         ## Example Usage
 
         ```python
@@ -160,11 +155,6 @@ class ManagedInstanceAttachProfileManagement(pulumi.CustomResource):
                  args: ManagedInstanceAttachProfileManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Attach Profile Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Adds profile to a managed instance. After the profile has been added,
-        the instance can be registered as a managed instance.
-
         ## Example Usage
 
         ```python

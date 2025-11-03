@@ -27,7 +27,7 @@ class GetPipelineResult:
     """
     A collection of values returned by getPipeline.
     """
-    def __init__(__self__, compartment_id=None, configuration_details=None, created_by=None, defined_tags=None, delete_related_pipeline_runs=None, description=None, display_name=None, freeform_tags=None, id=None, infrastructure_configuration_details=None, lifecycle_details=None, log_configuration_details=None, pipeline_id=None, project_id=None, state=None, step_artifacts=None, step_details=None, storage_mount_configuration_details_lists=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, configuration_details=None, created_by=None, defined_tags=None, delete_related_pipeline_runs=None, description=None, display_name=None, freeform_tags=None, id=None, infrastructure_configuration_details=None, lifecycle_details=None, log_configuration_details=None, parameters=None, pipeline_id=None, project_id=None, state=None, step_artifacts=None, step_details=None, storage_mount_configuration_details_lists=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -64,6 +64,9 @@ class GetPipelineResult:
         if log_configuration_details and not isinstance(log_configuration_details, list):
             raise TypeError("Expected argument 'log_configuration_details' to be a list")
         pulumi.set(__self__, "log_configuration_details", log_configuration_details)
+        if parameters and not isinstance(parameters, dict):
+            raise TypeError("Expected argument 'parameters' to be a dict")
+        pulumi.set(__self__, "parameters", parameters)
         if pipeline_id and not isinstance(pipeline_id, str):
             raise TypeError("Expected argument 'pipeline_id' to be a str")
         pulumi.set(__self__, "pipeline_id", pipeline_id)
@@ -189,6 +192,14 @@ class GetPipelineResult:
         return pulumi.get(self, "log_configuration_details")
 
     @_builtins.property
+    @pulumi.getter
+    def parameters(self) -> Mapping[str, _builtins.str]:
+        """
+        Parameters used in the pipeline.
+        """
+        return pulumi.get(self, "parameters")
+
+    @_builtins.property
     @pulumi.getter(name="pipelineId")
     def pipeline_id(self) -> _builtins.str:
         return pulumi.get(self, "pipeline_id")
@@ -273,6 +284,7 @@ class AwaitableGetPipelineResult(GetPipelineResult):
             infrastructure_configuration_details=self.infrastructure_configuration_details,
             lifecycle_details=self.lifecycle_details,
             log_configuration_details=self.log_configuration_details,
+            parameters=self.parameters,
             pipeline_id=self.pipeline_id,
             project_id=self.project_id,
             state=self.state,
@@ -321,6 +333,7 @@ def get_pipeline(pipeline_id: Optional[_builtins.str] = None,
         infrastructure_configuration_details=pulumi.get(__ret__, 'infrastructure_configuration_details'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         log_configuration_details=pulumi.get(__ret__, 'log_configuration_details'),
+        parameters=pulumi.get(__ret__, 'parameters'),
         pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
@@ -366,6 +379,7 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[_builtins.str]] = Non
         infrastructure_configuration_details=pulumi.get(__response__, 'infrastructure_configuration_details'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         log_configuration_details=pulumi.get(__response__, 'log_configuration_details'),
+        parameters=pulumi.get(__response__, 'parameters'),
         pipeline_id=pulumi.get(__response__, 'pipeline_id'),
         project_id=pulumi.get(__response__, 'project_id'),
         state=pulumi.get(__response__, 'state'),

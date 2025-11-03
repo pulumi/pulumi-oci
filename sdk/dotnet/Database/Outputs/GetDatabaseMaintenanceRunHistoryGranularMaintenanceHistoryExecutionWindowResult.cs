@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LifecycleSubstate;
         /// <summary>
-        /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        /// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         public readonly string State;
         /// <summary>

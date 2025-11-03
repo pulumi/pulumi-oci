@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Creates a new Database Management private endpoint.
- *
  * ## Example Usage
  *
  * ```typescript

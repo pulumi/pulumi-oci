@@ -24,22 +24,30 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
 
     public static final AutonomousContainerDatabaseArgs Empty = new AutonomousContainerDatabaseArgs();
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+     * 
+     */
     @Import(name="autonomousContainerDatabaseBackupId")
     private @Nullable Output<String> autonomousContainerDatabaseBackupId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+     * 
+     */
     public Optional<Output<String>> autonomousContainerDatabaseBackupId() {
         return Optional.ofNullable(this.autonomousContainerDatabaseBackupId);
     }
 
     /**
-     * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+     * **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
     @Import(name="autonomousExadataInfrastructureId")
     private @Nullable Output<String> autonomousExadataInfrastructureId;
 
     /**
-     * @return **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+     * @return **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
     public Optional<Output<String>> autonomousExadataInfrastructureId() {
@@ -122,14 +130,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="databaseSoftwareImageId")
     private @Nullable Output<String> databaseSoftwareImageId;
 
     /**
-     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> databaseSoftwareImageId() {
@@ -152,14 +160,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     @Import(name="dbSplitThreshold")
     private @Nullable Output<Integer> dbSplitThreshold;
 
     /**
-     * @return The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+     * @return The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      * 
      */
     public Optional<Output<Integer>> dbSplitThreshold() {
@@ -219,14 +227,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      * 
      */
     @Import(name="distributionAffinity")
     private @Nullable Output<String> distributionAffinity;
 
     /**
-     * @return Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+     * @return Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
      * 
      */
     public Optional<Output<String>> distributionAffinity() {
@@ -279,14 +287,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      * 
      */
     @Import(name="isAutomaticFailoverEnabled")
     private @Nullable Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+     * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      * 
      */
     public Optional<Output<Boolean>> isAutomaticFailoverEnabled() {
@@ -309,31 +317,23 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
      */
     @Import(name="keyStoreId")
     private @Nullable Output<String> keyStoreId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
      */
     public Optional<Output<String>> keyStoreId() {
         return Optional.ofNullable(this.keyStoreId);
     }
 
-    /**
-     * The OCID of the key version that is used in rotate key operations.
-     * 
-     */
     @Import(name="keyVersionId")
     private @Nullable Output<String> keyVersionId;
 
-    /**
-     * @return The OCID of the key version that is used in rotate key operations.
-     * 
-     */
     public Optional<Output<String>> keyVersionId() {
         return Optional.ofNullable(this.keyVersionId);
     }
@@ -413,9 +413,17 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         return this.patchModel;
     }
 
+    /**
+     * Backup options for the standby Autonomous Container Database.
+     * 
+     */
     @Import(name="peerAutonomousContainerDatabaseBackupConfig")
     private @Nullable Output<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs> peerAutonomousContainerDatabaseBackupConfig;
 
+    /**
+     * @return Backup options for the standby Autonomous Container Database.
+     * 
+     */
     public Optional<Output<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs>> peerAutonomousContainerDatabaseBackupConfig() {
         return Optional.ofNullable(this.peerAutonomousContainerDatabaseBackupConfig);
     }
@@ -451,14 +459,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+     * *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
     @Import(name="peerAutonomousExadataInfrastructureId")
     private @Nullable Output<String> peerAutonomousExadataInfrastructureId;
 
     /**
-     * @return *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+     * @return *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
     public Optional<Output<String>> peerAutonomousExadataInfrastructureId() {
@@ -481,14 +489,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      * 
      */
     @Import(name="peerCloudAutonomousVmClusterId")
     private @Nullable Output<String> peerCloudAutonomousVmClusterId;
 
     /**
-     * @return The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      * 
      */
     public Optional<Output<String>> peerCloudAutonomousVmClusterId() {
@@ -532,23 +540,9 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.reinstateTrigger);
     }
 
-    /**
-     * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     @Import(name="rotateKeyTrigger")
     private @Nullable Output<Boolean> rotateKeyTrigger;
 
-    /**
-     * @return (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     public Optional<Output<Boolean>> rotateKeyTrigger() {
         return Optional.ofNullable(this.rotateKeyTrigger);
     }
@@ -569,14 +563,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
      * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
-     * @return The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * @return The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
      * 
      */
     public Optional<Output<String>> source() {
@@ -601,12 +595,18 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     /**
      * (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="switchoverTrigger")
     private @Nullable Output<Integer> switchoverTrigger;
 
     /**
      * @return (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> switchoverTrigger() {
@@ -725,17 +725,29 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
             $ = new AutonomousContainerDatabaseArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param autonomousContainerDatabaseBackupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+         * 
+         * @return builder
+         * 
+         */
         public Builder autonomousContainerDatabaseBackupId(@Nullable Output<String> autonomousContainerDatabaseBackupId) {
             $.autonomousContainerDatabaseBackupId = autonomousContainerDatabaseBackupId;
             return this;
         }
 
+        /**
+         * @param autonomousContainerDatabaseBackupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+         * 
+         * @return builder
+         * 
+         */
         public Builder autonomousContainerDatabaseBackupId(String autonomousContainerDatabaseBackupId) {
             return autonomousContainerDatabaseBackupId(Output.of(autonomousContainerDatabaseBackupId));
         }
 
         /**
-         * @param autonomousExadataInfrastructureId **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+         * @param autonomousExadataInfrastructureId **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
          * 
          * @return builder
          * 
@@ -746,7 +758,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param autonomousExadataInfrastructureId **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+         * @param autonomousExadataInfrastructureId **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
          * 
          * @return builder
          * 
@@ -871,7 +883,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param databaseSoftwareImageId The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -882,7 +894,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param databaseSoftwareImageId The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -913,7 +925,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param dbSplitThreshold The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+         * @param dbSplitThreshold The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
          * 
          * @return builder
          * 
@@ -924,7 +936,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param dbSplitThreshold The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
+         * @param dbSplitThreshold The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
          * 
          * @return builder
          * 
@@ -1006,7 +1018,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param distributionAffinity Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+         * @param distributionAffinity Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
          * 
          * @return builder
          * 
@@ -1017,7 +1029,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param distributionAffinity Determines whether an Autonomous Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
+         * @param distributionAffinity Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
          * 
          * @return builder
          * 
@@ -1090,7 +1102,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+         * @param isAutomaticFailoverEnabled (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
          * 
          * @return builder
          * 
@@ -1101,7 +1113,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param isAutomaticFailoverEnabled Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+         * @param isAutomaticFailoverEnabled (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
          * 
          * @return builder
          * 
@@ -1132,7 +1144,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          * 
          * @return builder
          * 
@@ -1143,7 +1155,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
          * 
          * @return builder
          * 
@@ -1152,23 +1164,11 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
             return keyStoreId(Output.of(keyStoreId));
         }
 
-        /**
-         * @param keyVersionId The OCID of the key version that is used in rotate key operations.
-         * 
-         * @return builder
-         * 
-         */
         public Builder keyVersionId(@Nullable Output<String> keyVersionId) {
             $.keyVersionId = keyVersionId;
             return this;
         }
 
-        /**
-         * @param keyVersionId The OCID of the key version that is used in rotate key operations.
-         * 
-         * @return builder
-         * 
-         */
         public Builder keyVersionId(String keyVersionId) {
             return keyVersionId(Output.of(keyVersionId));
         }
@@ -1278,11 +1278,23 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
             return patchModel(Output.of(patchModel));
         }
 
+        /**
+         * @param peerAutonomousContainerDatabaseBackupConfig Backup options for the standby Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
         public Builder peerAutonomousContainerDatabaseBackupConfig(@Nullable Output<AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs> peerAutonomousContainerDatabaseBackupConfig) {
             $.peerAutonomousContainerDatabaseBackupConfig = peerAutonomousContainerDatabaseBackupConfig;
             return this;
         }
 
+        /**
+         * @param peerAutonomousContainerDatabaseBackupConfig Backup options for the standby Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
         public Builder peerAutonomousContainerDatabaseBackupConfig(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs peerAutonomousContainerDatabaseBackupConfig) {
             return peerAutonomousContainerDatabaseBackupConfig(Output.of(peerAutonomousContainerDatabaseBackupConfig));
         }
@@ -1330,7 +1342,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param peerAutonomousExadataInfrastructureId *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+         * @param peerAutonomousExadataInfrastructureId *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
          * 
          * @return builder
          * 
@@ -1341,7 +1353,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param peerAutonomousExadataInfrastructureId *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
+         * @param peerAutonomousExadataInfrastructureId *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
          * 
          * @return builder
          * 
@@ -1372,7 +1384,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param peerCloudAutonomousVmClusterId The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
+         * @param peerCloudAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
          * 
          * @return builder
          * 
@@ -1383,7 +1395,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param peerCloudAutonomousVmClusterId The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
+         * @param peerCloudAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
          * 
          * @return builder
          * 
@@ -1443,29 +1455,11 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
             return reinstateTrigger(Output.of(reinstateTrigger));
         }
 
-        /**
-         * @param rotateKeyTrigger (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
         public Builder rotateKeyTrigger(@Nullable Output<Boolean> rotateKeyTrigger) {
             $.rotateKeyTrigger = rotateKeyTrigger;
             return this;
         }
 
-        /**
-         * @param rotateKeyTrigger (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
         public Builder rotateKeyTrigger(Boolean rotateKeyTrigger) {
             return rotateKeyTrigger(Output.of(rotateKeyTrigger));
         }
@@ -1492,7 +1486,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param source The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+         * @param source The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
          * 
          * @return builder
          * 
@@ -1503,7 +1497,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param source The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+         * @param source The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
          * 
          * @return builder
          * 
@@ -1536,6 +1530,9 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         /**
          * @param switchoverTrigger (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -1546,6 +1543,9 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
 
         /**
          * @param switchoverTrigger (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

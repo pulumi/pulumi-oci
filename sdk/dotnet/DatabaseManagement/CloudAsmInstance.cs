@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the Cloud Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Updates the cloud ASM instance specified by `cloudAsmInstanceId`.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

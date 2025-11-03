@@ -50,14 +50,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * A filter to return only autonomous database resources that match the specified dbVersion.
+     * A filter to return only Autonomous AI Database resources that match the specified dbVersion.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable Output<String> dbVersion;
 
     /**
-     * @return A filter to return only autonomous database resources that match the specified dbVersion.
+     * @return A filter to return only Autonomous AI Database resources that match the specified dbVersion.
      * 
      */
     public Optional<Output<String>> dbVersion() {
@@ -65,14 +65,14 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      * 
      */
     @Import(name="dbWorkload")
     private @Nullable Output<String> dbWorkload;
 
     /**
-     * @return A filter to return only autonomous database resources that match the specified workload type.
+     * @return A filter to return only Autonomous AI Database resources that match the specified workload type.
      * 
      */
     public Optional<Output<String>> dbWorkload() {
@@ -176,30 +176,22 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         return Optional.ofNullable(this.isResourcePoolLeader);
     }
 
-    /**
-     * A filter to return only resources that not match the given lifecycle state.
-     * 
-     */
     @Import(name="lifecycleStateNotEqualTo")
     private @Nullable Output<String> lifecycleStateNotEqualTo;
 
-    /**
-     * @return A filter to return only resources that not match the given lifecycle state.
-     * 
-     */
     public Optional<Output<String>> lifecycleStateNotEqualTo() {
         return Optional.ofNullable(this.lifecycleStateNotEqualTo);
     }
 
     /**
-     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
      * 
      */
     @Import(name="resourcePoolLeaderId")
     private @Nullable Output<String> resourcePoolLeaderId;
 
     /**
-     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
      * 
      */
     public Optional<Output<String>> resourcePoolLeaderId() {
@@ -301,7 +293,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param dbVersion A filter to return only autonomous database resources that match the specified dbVersion.
+         * @param dbVersion A filter to return only Autonomous AI Database resources that match the specified dbVersion.
          * 
          * @return builder
          * 
@@ -312,7 +304,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param dbVersion A filter to return only autonomous database resources that match the specified dbVersion.
+         * @param dbVersion A filter to return only Autonomous AI Database resources that match the specified dbVersion.
          * 
          * @return builder
          * 
@@ -322,7 +314,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param dbWorkload A filter to return only autonomous database resources that match the specified workload type.
+         * @param dbWorkload A filter to return only Autonomous AI Database resources that match the specified workload type.
          * 
          * @return builder
          * 
@@ -333,7 +325,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param dbWorkload A filter to return only autonomous database resources that match the specified workload type.
+         * @param dbWorkload A filter to return only Autonomous AI Database resources that match the specified workload type.
          * 
          * @return builder
          * 
@@ -481,29 +473,17 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
             return isResourcePoolLeader(Output.of(isResourcePoolLeader));
         }
 
-        /**
-         * @param lifecycleStateNotEqualTo A filter to return only resources that not match the given lifecycle state.
-         * 
-         * @return builder
-         * 
-         */
         public Builder lifecycleStateNotEqualTo(@Nullable Output<String> lifecycleStateNotEqualTo) {
             $.lifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
             return this;
         }
 
-        /**
-         * @param lifecycleStateNotEqualTo A filter to return only resources that not match the given lifecycle state.
-         * 
-         * @return builder
-         * 
-         */
         public Builder lifecycleStateNotEqualTo(String lifecycleStateNotEqualTo) {
             return lifecycleStateNotEqualTo(Output.of(lifecycleStateNotEqualTo));
         }
 
         /**
-         * @param resourcePoolLeaderId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+         * @param resourcePoolLeaderId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
          * 
          * @return builder
          * 
@@ -514,7 +494,7 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param resourcePoolLeaderId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+         * @param resourcePoolLeaderId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
          * 
          * @return builder
          * 

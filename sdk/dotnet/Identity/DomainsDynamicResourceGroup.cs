@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a Dynamic Resource Group.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

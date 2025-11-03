@@ -19,9 +19,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Addon resource in Oracle Cloud Infrastructure Container Engine service.
- * 
- * Install the specified addon for a cluster.
+ * ## Example Usage
  * 
  * ## Import
  * 

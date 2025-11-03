@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Container Database resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a new external container database resource.
- *
  * ## Example Usage
  *
  * ```typescript

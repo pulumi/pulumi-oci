@@ -23,10 +23,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create an AppRole
- * 
  * ## Example Usage
  * 
  * ## Import

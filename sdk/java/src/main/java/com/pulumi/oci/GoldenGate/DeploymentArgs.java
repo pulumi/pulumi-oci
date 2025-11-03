@@ -72,6 +72,21 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
@@ -409,6 +424,21 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
@@ -445,12 +475,28 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         return this.subnetId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
     private DeploymentArgs() {}
 
     private DeploymentArgs(DeploymentArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.backupSchedule = $.backupSchedule;
         this.byolCpuCoreCountLimit = $.byolCpuCoreCountLimit;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
         this.definedTags = $.definedTags;
@@ -474,9 +520,11 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         this.nsgIds = $.nsgIds;
         this.oggData = $.oggData;
         this.placements = $.placements;
+        this.securityAttributes = $.securityAttributes;
         this.sourceDeploymentId = $.sourceDeploymentId;
         this.state = $.state;
         this.subnetId = $.subnetId;
+        this.subscriptionId = $.subscriptionId;
     }
 
     public static Builder builder() {
@@ -558,6 +606,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder byolCpuCoreCountLimit(Integer byolCpuCoreCountLimit) {
             return byolCpuCoreCountLimit(Output.of(byolCpuCoreCountLimit));
+        }
+
+        /**
+         * @param clusterPlacementGroupId The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**
@@ -1062,6 +1131,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param securityAttributes (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
+        }
+
+        /**
          * @param sourceDeploymentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
          * 
          * @return builder
@@ -1110,6 +1200,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         public DeploymentArgs build() {

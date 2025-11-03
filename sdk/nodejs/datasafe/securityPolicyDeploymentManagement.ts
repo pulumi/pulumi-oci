@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Security Policy Deployment Management resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates a Data Safe security policy deployment in the Data Safe Console.
- *
  * ## Example Usage
  *
  * ```typescript

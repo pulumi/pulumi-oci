@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
- *
- * Creates a new NetworkAddressList.
- *
  * ## Example Usage
  *
  * ```typescript

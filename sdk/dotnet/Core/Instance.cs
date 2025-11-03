@@ -10,57 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Instance resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates a new instance in the specified compartment and the specified availability domain.
-    /// For general information about instances, see
-    /// [Overview of the Compute Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
-    /// 
-    /// For information about access control and compartments, see
-    /// [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-    /// 
-    /// For information about availability domains, see
-    /// [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-    /// To get a list of availability domains, use the `ListAvailabilityDomains` operation
-    /// in the Identity and Access Management Service API.
-    /// 
-    /// All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
-    /// unique ID called an Oracle Cloud Identifier (OCID).
-    /// When you create a resource, you can find its OCID in the response. You can
-    /// also retrieve a resource's OCID by using a List API operation
-    /// on that resource type, or by viewing the resource in the Console.
-    /// 
-    /// To launch an instance using an image or a boot volume use the `sourceDetails` parameter in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails).
-    /// 
-    /// When you launch an instance, it is automatically attached to a virtual
-    /// network interface card (VNIC), called the *primary VNIC*. The VNIC
-    /// has a private IP address from the subnet's CIDR. You can either assign a
-    /// private IP address of your choice or let Oracle automatically assign one.
-    /// You can choose whether the instance has a public IP address. To retrieve the
-    /// addresses, use the [ListVnicAttachments](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/VnicAttachment/ListVnicAttachments)
-    /// operation to get the VNIC ID for the instance, and then call
-    /// [GetVnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/GetVnic) with the VNIC ID.
-    /// 
-    /// You can later add secondary VNICs to an instance. For more information, see
-    /// [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
-    /// 
-    /// To launch an instance from a Marketplace image listing, you must provide the image ID of the
-    /// listing resource version that you want, but you also must subscribe to the listing before you try
-    /// to launch the instance. To subscribe to the listing, use the [GetAppCatalogListingAgreements](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements)
-    /// operation to get the signature for the terms of use agreement for the desired listing resource version.
-    /// Then, call [CreateAppCatalogSubscription](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription)
-    /// with the signature. To get the image ID for the LaunchInstance operation, call
-    /// [GetAppCatalogListingResourceVersion](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion).
-    /// 
-    /// When launching an instance, you may provide the `securityAttributes` parameter in
-    /// [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/LaunchInstanceDetails) to manage security attributes via the instance,
-    /// or in the embedded [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) to manage security attributes
-    /// via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
-    /// 400 Bad Request response.
-    /// 
-    /// To determine whether capacity is available for a specific shape before you create an instance,
-    /// use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
-    /// operation.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 
@@ -210,6 +160,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("ipxeScript")]
         public Output<string> IpxeScript { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Whether to enable AI enterprise on the instance.
+        /// </summary>
+        [Output("isAiEnterpriseEnabled")]
+        public Output<bool> IsAiEnterpriseEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
@@ -613,6 +569,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpxeScript { get; set; }
 
         /// <summary>
+        /// (Updatable) Whether to enable AI enterprise on the instance.
+        /// </summary>
+        [Input("isAiEnterpriseEnabled")]
+        public Input<bool>? IsAiEnterpriseEnabled { get; set; }
+
+        /// <summary>
         /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `IsPvEncryptionInTransitEnabled` under `LaunchOptions` instead.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]
@@ -940,6 +902,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("ipxeScript")]
         public Input<string>? IpxeScript { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether to enable AI enterprise on the instance.
+        /// </summary>
+        [Input("isAiEnterpriseEnabled")]
+        public Input<bool>? IsAiEnterpriseEnabled { get; set; }
 
         /// <summary>
         /// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.

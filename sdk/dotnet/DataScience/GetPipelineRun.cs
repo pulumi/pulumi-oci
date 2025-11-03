@@ -177,6 +177,10 @@ namespace Pulumi.Oci.DataScience
         public readonly ImmutableArray<Outputs.GetPipelineRunLogDetailResult> LogDetails;
         public readonly string OpcParentRptUrl;
         /// <summary>
+        /// Parameters override used in the pipeline run.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> ParametersOverride;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         /// </summary>
         public readonly string PipelineId;
@@ -197,6 +201,10 @@ namespace Pulumi.Oci.DataScience
         /// Array of StepRun object for each step.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelineRunStepRunResult> StepRuns;
+        /// <summary>
+        /// The storage mount override details to mount to the instance running the pipeline step.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPipelineRunStorageMountConfigurationOverrideDetailsListResult> StorageMountConfigurationOverrideDetailsLists;
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
@@ -248,6 +256,8 @@ namespace Pulumi.Oci.DataScience
 
             string opcParentRptUrl,
 
+            ImmutableDictionary<string, string> parametersOverride,
+
             string pipelineId,
 
             string pipelineRunId,
@@ -259,6 +269,8 @@ namespace Pulumi.Oci.DataScience
             ImmutableArray<Outputs.GetPipelineRunStepOverrideDetailResult> stepOverrideDetails,
 
             ImmutableArray<Outputs.GetPipelineRunStepRunResult> stepRuns,
+
+            ImmutableArray<Outputs.GetPipelineRunStorageMountConfigurationOverrideDetailsListResult> storageMountConfigurationOverrideDetailsLists,
 
             ImmutableDictionary<string, string> systemTags,
 
@@ -284,12 +296,14 @@ namespace Pulumi.Oci.DataScience
             LogConfigurationOverrideDetails = logConfigurationOverrideDetails;
             LogDetails = logDetails;
             OpcParentRptUrl = opcParentRptUrl;
+            ParametersOverride = parametersOverride;
             PipelineId = pipelineId;
             PipelineRunId = pipelineRunId;
             ProjectId = projectId;
             State = state;
             StepOverrideDetails = stepOverrideDetails;
             StepRuns = stepRuns;
+            StorageMountConfigurationOverrideDetailsLists = storageMountConfigurationOverrideDetailsLists;
             SystemTags = systemTags;
             TimeAccepted = timeAccepted;
             TimeFinished = timeFinished;

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousDatabaseEncryptionKeyHistoryEntryResult
     {
         /// <summary>
-        /// Details of the Autonomous Database encryption key.
+        /// Details of the Autonomous AI Database encryption key.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyResult> EncryptionKeys;
         /// <summary>

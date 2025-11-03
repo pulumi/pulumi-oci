@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// Create a user's customer secret key.
-//
 // ## Example Usage
 //
 // ## Import

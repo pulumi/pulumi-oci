@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetSoftwareUpdate
 {
     /// <summary>
-    /// This resource provides the Fsu Collection resource in Oracle Cloud Infrastructure Fleet Software Update service.
-    /// 
-    /// Creates a new Exadata Fleet Update Collection.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -28,8 +24,44 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     ///     {
     ///         CompartmentId = compartmentId,
     ///         ServiceType = fsuCollectionServiceType,
-    ///         SourceMajorVersion = fsuCollectionSourceMajorVersion,
     ///         Type = fsuCollectionType,
+    ///         Components = new[]
+    ///         {
+    ///             new Oci.FleetSoftwareUpdate.Inputs.FsuCollectionComponentArgs
+    ///             {
+    ///                 ComponentType = fsuCollectionComponentsComponentType,
+    ///                 SourceMajorVersion = fsuCollectionComponentsSourceMajorVersion,
+    ///                 FleetDiscovery = new Oci.FleetSoftwareUpdate.Inputs.FsuCollectionComponentFleetDiscoveryArgs
+    ///                 {
+    ///                     Strategy = fsuCollectionComponentsFleetDiscoveryStrategy,
+    ///                     Filters = new[]
+    ///                     {
+    ///                         new Oci.FleetSoftwareUpdate.Inputs.FsuCollectionComponentFleetDiscoveryFilterArgs
+    ///                         {
+    ///                             Type = fsuCollectionComponentsFleetDiscoveryFiltersType,
+    ///                             EntityType = fsuCollectionComponentsFleetDiscoveryFiltersEntityType,
+    ///                             ExadataReleases = fsuCollectionComponentsFleetDiscoveryFiltersExadataReleases,
+    ///                             Identifiers = fsuCollectionComponentsFleetDiscoveryFiltersIdentifiers,
+    ///                             Mode = fsuCollectionComponentsFleetDiscoveryFiltersMode,
+    ///                             Operator = fsuCollectionComponentsFleetDiscoveryFiltersOperator,
+    ///                             Tags = new[]
+    ///                             {
+    ///                                 new Oci.FleetSoftwareUpdate.Inputs.FsuCollectionComponentFleetDiscoveryFilterTagArgs
+    ///                                 {
+    ///                                     Key = fsuCollectionComponentsFleetDiscoveryFiltersTagsKey,
+    ///                                     Namespace = fsuCollectionComponentsFleetDiscoveryFiltersTagsNamespace,
+    ///                                     Value = fsuCollectionComponentsFleetDiscoveryFiltersTagsValue,
+    ///                                 },
+    ///                             },
+    ///                             Versions = fsuCollectionComponentsFleetDiscoveryFiltersVersions,
+    ///                         },
+    ///                     },
+    ///                     FsuDiscoveryId = testFsuDiscovery.Id,
+    ///                     Query = fsuCollectionComponentsFleetDiscoveryQuery,
+    ///                     Targets = fsuCollectionComponentsFleetDiscoveryTargets,
+    ///                 },
+    ///             },
+    ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -44,6 +76,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     ///                 {
     ///                     Type = fsuCollectionFleetDiscoveryFiltersType,
     ///                     EntityType = fsuCollectionFleetDiscoveryFiltersEntityType,
+    ///                     ExadataReleases = fsuCollectionFleetDiscoveryFiltersExadataReleases,
     ///                     Identifiers = fsuCollectionFleetDiscoveryFiltersIdentifiers,
     ///                     Mode = fsuCollectionFleetDiscoveryFiltersMode,
     ///                     Names = fsuCollectionFleetDiscoveryFiltersNames,
@@ -53,8 +86,8 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     ///                         new Oci.FleetSoftwareUpdate.Inputs.FsuCollectionFleetDiscoveryFilterTagArgs
     ///                         {
     ///                             Key = fsuCollectionFleetDiscoveryFiltersTagsKey,
-    ///                             Value = fsuCollectionFleetDiscoveryFiltersTagsValue,
     ///                             Namespace = fsuCollectionFleetDiscoveryFiltersTagsNamespace,
+    ///                             Value = fsuCollectionFleetDiscoveryFiltersTagsValue,
     ///                         },
     ///                     },
     ///                     Versions = fsuCollectionFleetDiscoveryFiltersVersions,
@@ -68,6 +101,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         SourceMajorVersion = fsuCollectionSourceMajorVersion,
     ///     });
     /// 
     /// });
@@ -91,10 +125,16 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<ImmutableArray<Outputs.FsuCollectionActiveFsuCycle>> ActiveFsuCycles { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// Details of components in an Exadata software stack.
+        /// </summary>
+        [Output("components")]
+        public Output<ImmutableArray<Outputs.FsuCollectionComponent>> Components { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -103,13 +143,13 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Exadata Fleet Update Collection Identifier.
+        /// (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+        /// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
         /// </summary>
         [Output("fleetDiscovery")]
         public Output<Outputs.FsuCollectionFleetDiscovery> FleetDiscovery { get; private set; } = null!;
@@ -139,7 +179,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<string> ServiceType { get; private set; } = null!;
 
         /// <summary>
-        /// Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+        /// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
         /// </summary>
         [Output("sourceMajorVersion")]
         public Output<string> SourceMajorVersion { get; private set; } = null!;
@@ -175,7 +215,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. 
+        /// Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -231,10 +271,22 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
     public sealed class FsuCollectionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
+
+        [Input("components")]
+        private InputList<Inputs.FsuCollectionComponentArgs>? _components;
+
+        /// <summary>
+        /// Details of components in an Exadata software stack.
+        /// </summary>
+        public InputList<Inputs.FsuCollectionComponentArgs> Components
+        {
+            get => _components ?? (_components = new InputList<Inputs.FsuCollectionComponentArgs>());
+            set => _components = value;
+        }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -249,13 +301,13 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         }
 
         /// <summary>
-        /// (Updatable) Exadata Fleet Update Collection Identifier.
+        /// (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+        /// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
         /// </summary>
         [Input("fleetDiscovery")]
         public Input<Inputs.FsuCollectionFleetDiscoveryArgs>? FleetDiscovery { get; set; }
@@ -279,13 +331,13 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<string> ServiceType { get; set; } = null!;
 
         /// <summary>
-        /// Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+        /// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
         /// </summary>
-        [Input("sourceMajorVersion", required: true)]
-        public Input<string> SourceMajorVersion { get; set; } = null!;
+        [Input("sourceMajorVersion")]
+        public Input<string>? SourceMajorVersion { get; set; }
 
         /// <summary>
-        /// Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. 
+        /// Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -315,10 +367,22 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("components")]
+        private InputList<Inputs.FsuCollectionComponentGetArgs>? _components;
+
+        /// <summary>
+        /// Details of components in an Exadata software stack.
+        /// </summary>
+        public InputList<Inputs.FsuCollectionComponentGetArgs> Components
+        {
+            get => _components ?? (_components = new InputList<Inputs.FsuCollectionComponentGetArgs>());
+            set => _components = value;
+        }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -333,13 +397,13 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         }
 
         /// <summary>
-        /// (Updatable) Exadata Fleet Update Collection Identifier.
+        /// (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+        /// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
         /// </summary>
         [Input("fleetDiscovery")]
         public Input<Inputs.FsuCollectionFleetDiscoveryGetArgs>? FleetDiscovery { get; set; }
@@ -375,7 +439,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<string>? ServiceType { get; set; }
 
         /// <summary>
-        /// Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+        /// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
         /// </summary>
         [Input("sourceMajorVersion")]
         public Input<string>? SourceMajorVersion { get; set; }
@@ -417,7 +481,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. 
+        /// Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed. 
         /// 
         /// 
         /// ** IMPORTANT **

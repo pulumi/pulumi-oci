@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
- * 
- * Creates a migration.
- * 
  * ## Example Usage
  * 
  * <pre>

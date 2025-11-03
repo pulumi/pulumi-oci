@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
- * 
- * Creates a new endpoint and deploy the trained model
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -47,6 +43,7 @@ import javax.annotation.Nullable;
  *         var testEndpoint = new Endpoint("testEndpoint", EndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .modelId(testModel.id())
+ *             .alias(endpointAlias)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(endpointDescription)
  *             .displayName(endpointDisplayName)
@@ -70,6 +67,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:AiLanguage/endpoint:Endpoint")
 public class Endpoint extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     * 
+     */
+    @Export(name="alias", refs={String.class}, tree="[0]")
+    private Output<String> alias;
+
+    /**
+     * @return (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     * 
+     */
+    public Output<String> alias() {
+        return this.alias;
+    }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
      * 

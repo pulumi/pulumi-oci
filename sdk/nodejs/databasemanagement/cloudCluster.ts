@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cloud Cluster resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Updates the cloud cluster specified by `cloudClusterId`.
+ * ## Example Usage
  *
  * ## Import
  *

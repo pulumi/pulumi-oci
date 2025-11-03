@@ -226,6 +226,11 @@ public final class GetMysqlDbSystemResult {
      */
     private List<GetMysqlDbSystemSecureConnection> secureConnections;
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -540,6 +545,13 @@ public final class GetMysqlDbSystemResult {
         return this.secureConnections;
     }
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -641,6 +653,7 @@ public final class GetMysqlDbSystemResult {
         private List<GetMysqlDbSystemReadEndpoint> readEndpoints;
         private List<GetMysqlDbSystemRest> rests;
         private List<GetMysqlDbSystemSecureConnection> secureConnections;
+        private Map<String,String> securityAttributes;
         private String shapeName;
         private String shutdownType;
         private List<GetMysqlDbSystemSource> sources;
@@ -692,6 +705,7 @@ public final class GetMysqlDbSystemResult {
     	      this.readEndpoints = defaults.readEndpoints;
     	      this.rests = defaults.rests;
     	      this.secureConnections = defaults.secureConnections;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shapeName = defaults.shapeName;
     	      this.shutdownType = defaults.shutdownType;
     	      this.sources = defaults.sources;
@@ -1068,6 +1082,14 @@ public final class GetMysqlDbSystemResult {
             return secureConnections(List.of(secureConnections));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemResult", "shapeName");
@@ -1176,6 +1198,7 @@ public final class GetMysqlDbSystemResult {
             _resultValue.readEndpoints = readEndpoints;
             _resultValue.rests = rests;
             _resultValue.secureConnections = secureConnections;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shapeName = shapeName;
             _resultValue.shutdownType = shutdownType;
             _resultValue.sources = sources;

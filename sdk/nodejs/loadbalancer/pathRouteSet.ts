@@ -7,11 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Path Route Set resource in Oracle Cloud Infrastructure Load Balancer service.
- *
- * Adds a path route set to a load balancer. For more information, see
- * [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
- *
  * ## Example Usage
  *
  * ```typescript

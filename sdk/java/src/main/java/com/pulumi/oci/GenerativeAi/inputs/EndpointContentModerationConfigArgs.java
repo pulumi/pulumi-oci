@@ -7,7 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class EndpointContentModerationConfigArgs extends com.pulumi.resources.ResourceArgs {
@@ -29,10 +32,42 @@ public final class EndpointContentModerationConfigArgs extends com.pulumi.resour
         return this.isEnabled;
     }
 
+    /**
+     * (Updatable) Enum for the modes of operation for inference protection.
+     * 
+     */
+    @Import(name="mode")
+    private @Nullable Output<String> mode;
+
+    /**
+     * @return (Updatable) Enum for the modes of operation for inference protection.
+     * 
+     */
+    public Optional<Output<String>> mode() {
+        return Optional.ofNullable(this.mode);
+    }
+
+    /**
+     * (Updatable) The OCID of the model used for the feature.
+     * 
+     */
+    @Import(name="modelId")
+    private @Nullable Output<String> modelId;
+
+    /**
+     * @return (Updatable) The OCID of the model used for the feature.
+     * 
+     */
+    public Optional<Output<String>> modelId() {
+        return Optional.ofNullable(this.modelId);
+    }
+
     private EndpointContentModerationConfigArgs() {}
 
     private EndpointContentModerationConfigArgs(EndpointContentModerationConfigArgs $) {
         this.isEnabled = $.isEnabled;
+        this.mode = $.mode;
+        this.modelId = $.modelId;
     }
 
     public static Builder builder() {
@@ -72,6 +107,48 @@ public final class EndpointContentModerationConfigArgs extends com.pulumi.resour
          */
         public Builder isEnabled(Boolean isEnabled) {
             return isEnabled(Output.of(isEnabled));
+        }
+
+        /**
+         * @param mode (Updatable) Enum for the modes of operation for inference protection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mode(@Nullable Output<String> mode) {
+            $.mode = mode;
+            return this;
+        }
+
+        /**
+         * @param mode (Updatable) Enum for the modes of operation for inference protection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mode(String mode) {
+            return mode(Output.of(mode));
+        }
+
+        /**
+         * @param modelId (Updatable) The OCID of the model used for the feature.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelId(@Nullable Output<String> modelId) {
+            $.modelId = modelId;
+            return this;
+        }
+
+        /**
+         * @param modelId (Updatable) The OCID of the model used for the feature.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelId(String modelId) {
+            return modelId(Output.of(modelId));
         }
 
         public EndpointContentModerationConfigArgs build() {

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Maintenance Windows Retry Failed Operation resource in Oracle Cloud Infrastructure Stack Monitoring service.
-//
-// Retry the last failed operation. The operation failed will be the most recent one. It won't apply for previous failed operations.
-//
 // ## Example Usage
 //
 // ```go

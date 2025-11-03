@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
-//
-// Creates a KafkaClusterConfig.
-//
 // ## Example Usage
 //
 // ```go

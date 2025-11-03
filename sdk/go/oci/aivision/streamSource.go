@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
-//
-// # Registration of new streamSource
-//
 // ## Example Usage
 //
 // ```go

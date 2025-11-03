@@ -156,10 +156,6 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
                  work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Work Request Rerun Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Reruns a failed work for the specified work request [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Rerunning restarts the work on failed targets.
-
         ## Example Usage
 
         ```python
@@ -200,10 +196,6 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
                  args: WorkRequestRerunManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Work Request Rerun Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Reruns a failed work for the specified work request [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Rerunning restarts the work on failed targets.
-
         ## Example Usage
 
         ```python

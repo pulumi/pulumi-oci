@@ -771,6 +771,18 @@ export namespace AiLanguage {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetJobsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetJobsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetModelEvaluationResultsFilter {
         name: string;
         regex?: boolean;
@@ -805,6 +817,109 @@ export namespace AiLanguage {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface JobInputConfiguration {
+        /**
+         * meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
+         */
+        configuration?: pulumi.Input<{[key: string]: pulumi.Input<{[key: string]: pulumi.Input<string>}>}>;
+        /**
+         * Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+         */
+        documentTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface JobInputLocation {
+        /**
+         * Object Storage bucket name.
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * locationType
+         */
+        locationType: pulumi.Input<string>;
+        /**
+         * Object Storage namespace name.
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * List of objects to be processed
+         */
+        objectNames?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface JobModelMetadataDetail {
+        /**
+         * model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+         */
+        configuration?: pulumi.Input<{[key: string]: pulumi.Input<{[key: string]: pulumi.Input<string>}>}>;
+        /**
+         * Unique identifier endpoint OCID that should be used for inference
+         */
+        endpointId?: pulumi.Input<string>;
+        /**
+         * Language code supported
+         * * auto : Automatically detect language
+         * * ar : Arabic
+         * * pt-BR : Brazilian Portuguese
+         * * cs : Czech
+         * * da : Danish
+         * * nl : Dutch
+         * * en : English
+         * * fi : Finnish
+         * * fr : French
+         * * fr-CA : Canadian French
+         * * de : German
+         * * it : Italian
+         * * ja : Japanese
+         * * ko : Korean
+         * * no : Norwegian
+         * * pl : Polish
+         * * ro : Romanian
+         * * zh-CN : Simplified Chinese
+         * * es : Spanish
+         * * sv : Swedish
+         * * zh-TW : Traditional Chinese
+         * * tr : Turkish
+         * * el : Greek
+         * * he : Hebrew
+         */
+        languageCode?: pulumi.Input<string>;
+        /**
+         * Unique identifier model OCID that should be used for inference
+         */
+        modelId?: pulumi.Input<string>;
+        /**
+         * model type to used for inference allowed values are
+         * * LANGUAGE_SENTIMENT_ANALYSIS
+         * * LANGUAGE_DETECTION
+         * * TEXT_CLASSIFICATION
+         * * NAMED_ENTITY_RECOGNITION
+         * * KEY_PHRASE_EXTRACTION
+         * * LANGUAGE_PII_ENTITIES
+         * * LANGUAGE_TRANSLATION
+         */
+        modelType?: pulumi.Input<string>;
+    }
+
+    export interface JobOutputLocation {
+        /**
+         * Object Storage bucket name.
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * Object Storage namespace name.
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * The prefix (directory) in an Object Storage bucket.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        prefix?: pulumi.Input<string>;
     }
 
     export interface ModelEvaluationResult {
@@ -15462,6 +15577,10 @@ export namespace Core {
          */
         ipxeScript?: pulumi.Input<string>;
         /**
+         * Whether to enable AI enterprise on the instance.
+         */
+        isAiEnterpriseEnabled?: pulumi.Input<boolean>;
+        /**
          * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
          */
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
@@ -15647,6 +15766,10 @@ export namespace Core {
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
         /**
+         * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        subnetCidr?: pulumi.Input<string>;
+        /**
          * The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         subnetId?: pulumi.Input<string>;
@@ -15831,6 +15954,10 @@ export namespace Core {
          * The total number of OCPUs available to the instance.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * This field is reserved for internal use.
+         */
+        resourceManagement?: pulumi.Input<string>;
         /**
          * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
          */
@@ -16113,6 +16240,10 @@ export namespace Core {
          */
         ipxeScript?: pulumi.Input<string>;
         /**
+         * Whether to enable AI enterprise on the instance.
+         */
+        isAiEnterpriseEnabled?: pulumi.Input<boolean>;
+        /**
          * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
          */
         isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
@@ -16274,6 +16405,10 @@ export namespace Core {
          * Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
+        /**
+         * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        subnetCidr?: pulumi.Input<string>;
         /**
          * The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
@@ -16441,6 +16576,10 @@ export namespace Core {
          */
         ocpus?: pulumi.Input<number>;
         /**
+         * This field is reserved for internal use.
+         */
+        resourceManagement?: pulumi.Input<string>;
+        /**
          * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
          */
         vcpus?: pulumi.Input<number>;
@@ -16558,6 +16697,10 @@ export namespace Core {
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
         /**
+         * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        subnetCidr?: pulumi.Input<string>;
+        /**
          * The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         subnetId?: pulumi.Input<string>;
@@ -16629,6 +16772,10 @@ export namespace Core {
          * Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
+        /**
+         * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         */
+        subnetCidr?: pulumi.Input<string>;
         /**
          * The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
@@ -16716,6 +16863,10 @@ export namespace Core {
          * Example: `true`
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
+        /**
+         * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+         */
+        subnetCidr?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
          *
@@ -17156,6 +17307,10 @@ export namespace Core {
          * A short description of the instance's processor (CPU).
          */
         processorDescription?: pulumi.Input<string>;
+        /**
+         * (Updatable) This field is reserved for internal use.
+         */
+        resourceManagement?: pulumi.Input<string>;
         /**
          * (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
          */
@@ -17925,6 +18080,10 @@ export namespace Core {
          * Example: `true`
          */
         skipSourceDestCheck?: pulumi.Input<boolean>;
+        /**
+         * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+         */
+        subnetCidr?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
          *
@@ -25053,6 +25212,10 @@ export namespace DataScience {
 
     export interface JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails {
         /**
+         * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline?: pulumi.Input<string>;
+        /**
          * The total amount of memory available to the job run instance, in gigabytes.
          */
         memoryInGbs?: pulumi.Input<number>;
@@ -26641,6 +26804,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: pulumi.Input<number>;
         /**
+         * (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        blockStorageSizeInGbsParameterized?: pulumi.Input<string>;
+        /**
          * (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
          */
         shapeConfigDetails?: pulumi.Input<inputs.DataScience.PipelineInfrastructureConfigurationDetailsShapeConfigDetails>;
@@ -26660,13 +26827,21 @@ export namespace DataScience {
          */
         cpuBaseline?: pulumi.Input<string>;
         /**
-         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * (Updatable) The total amount of memory available to the pipeline step run instance GBs.
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        memoryInGbsParameterized?: pulumi.Input<string>;
+        /**
+         * (Updatable) The total number of OCPUs available to the pipeline step run instance.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+         */
+        ocpusParameterized?: pulumi.Input<string>;
     }
 
     export interface PipelineLogConfigurationDetails {
@@ -26732,6 +26907,10 @@ export namespace DataScience {
          */
         blockStorageSizeInGbs: pulumi.Input<number>;
         /**
+         * The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        blockStorageSizeInGbsParameterized?: pulumi.Input<string>;
+        /**
          * Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
          */
         shapeConfigDetails?: pulumi.Input<inputs.DataScience.PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetails>;
@@ -26747,13 +26926,25 @@ export namespace DataScience {
 
     export interface PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetails {
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline?: pulumi.Input<string>;
+        /**
+         * The total amount of memory available to the pipeline step run instance GBs.
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        memoryInGbsParameterized?: pulumi.Input<string>;
+        /**
+         * The total number of OCPUs available to the pipeline step run instance.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+         */
+        ocpusParameterized?: pulumi.Input<string>;
     }
 
     export interface PipelineRunLogConfigurationOverrideDetails {
@@ -26807,6 +26998,10 @@ export namespace DataScience {
          * The name of the step.
          */
         stepName: pulumi.Input<string>;
+        /**
+         * The storage mount details to mount to the instance running the pipeline step.
+         */
+        stepStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList>[]>;
     }
 
     export interface PipelineRunStepOverrideDetailStepConfigurationDetails {
@@ -26888,32 +27083,40 @@ export namespace DataScience {
 
     export interface PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
         /**
-         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-         */
-        cpuBaseline?: pulumi.Input<string>;
-        /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * The total amount of memory available to the pipeline step run instance GBs.
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        memoryInGbsParameterized?: pulumi.Input<string>;
+        /**
+         * The total number of OCPUs available to the pipeline step run instance.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+         */
+        ocpusParameterized?: pulumi.Input<string>;
     }
 
     export interface PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
         /**
-         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-         */
-        cpuBaseline?: pulumi.Input<string>;
-        /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * The total amount of memory available to the pipeline step run instance GBs.
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        memoryInGbsParameterized?: pulumi.Input<string>;
+        /**
+         * The total number of OCPUs available to the pipeline step run instance.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+         */
+        ocpusParameterized?: pulumi.Input<string>;
     }
 
     export interface PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails {
@@ -26921,6 +27124,10 @@ export namespace DataScience {
          * The size of the block storage volume to attach to the instance.
          */
         blockStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        blockStorageSizeInGbsParameterized?: pulumi.Input<string>;
         /**
          * Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
          */
@@ -26937,13 +27144,60 @@ export namespace DataScience {
 
     export interface PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetails {
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+         */
+        cpuBaseline?: pulumi.Input<string>;
+        /**
+         * The total amount of memory available to the pipeline step run instance GBs.
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        memoryInGbsParameterized?: pulumi.Input<string>;
+        /**
+         * The total number of OCPUs available to the pipeline step run instance.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+         */
+        ocpusParameterized?: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList {
+        /**
+         * The object storage bucket
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * The local directory name to be mounted
+         */
+        destinationDirectoryName: pulumi.Input<string>;
+        /**
+         * The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath?: pulumi.Input<string>;
+        /**
+         * OCID of the export
+         */
+        exportId?: pulumi.Input<string>;
+        /**
+         * OCID of the mount target
+         */
+        mountTargetId?: pulumi.Input<string>;
+        /**
+         * The object storage namespace
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * Prefix in the bucket to mount
+         */
+        prefix?: pulumi.Input<string>;
+        /**
+         * The type of storage.
+         */
+        storageType: pulumi.Input<string>;
     }
 
     export interface PipelineRunStepRun {
@@ -26968,6 +27222,10 @@ export namespace DataScience {
          */
         stepName?: pulumi.Input<string>;
         /**
+         * Name used when creating the steprun.
+         */
+        stepRunName?: pulumi.Input<string>;
+        /**
          * The type of step.
          */
         stepType?: pulumi.Input<string>;
@@ -26979,6 +27237,41 @@ export namespace DataScience {
          * The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          */
         timeStarted?: pulumi.Input<string>;
+    }
+
+    export interface PipelineRunStorageMountConfigurationOverrideDetailsList {
+        /**
+         * The object storage bucket
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * The local directory name to be mounted
+         */
+        destinationDirectoryName: pulumi.Input<string>;
+        /**
+         * The local path of the mounted directory, excluding directory name.
+         */
+        destinationPath?: pulumi.Input<string>;
+        /**
+         * OCID of the export
+         */
+        exportId?: pulumi.Input<string>;
+        /**
+         * OCID of the mount target
+         */
+        mountTargetId?: pulumi.Input<string>;
+        /**
+         * The object storage namespace
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * Prefix in the bucket to mount
+         */
+        prefix?: pulumi.Input<string>;
+        /**
+         * The type of storage.
+         */
+        storageType: pulumi.Input<string>;
     }
 
     export interface PipelineStepArtifact {
@@ -27034,6 +27327,14 @@ export namespace DataScience {
          * (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
          */
         stepName: pulumi.Input<string>;
+        /**
+         * (Updatable) Pipeline step parameter details
+         */
+        stepParameters?: pulumi.Input<inputs.DataScience.PipelineStepDetailStepParameters>;
+        /**
+         * (Updatable) Name used when creating the steprun.
+         */
+        stepRunName?: pulumi.Input<string>;
         /**
          * (Updatable) The storage mount details to mount to the instance running the pipeline step.
          */
@@ -27123,32 +27424,40 @@ export namespace DataScience {
 
     export interface PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails {
         /**
-         * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-         */
-        cpuBaseline?: pulumi.Input<string>;
-        /**
-         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * (Updatable) The total amount of memory available to the pipeline step run instance GBs.
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        memoryInGbsParameterized?: pulumi.Input<string>;
+        /**
+         * (Updatable) The total number of OCPUs available to the pipeline step run instance.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+         */
+        ocpusParameterized?: pulumi.Input<string>;
     }
 
     export interface PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails {
         /**
-         * (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-         */
-        cpuBaseline?: pulumi.Input<string>;
-        /**
-         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * (Updatable) The total amount of memory available to the pipeline step run instance GBs.
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        memoryInGbsParameterized?: pulumi.Input<string>;
+        /**
+         * (Updatable) The total number of OCPUs available to the pipeline step run instance.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+         */
+        ocpusParameterized?: pulumi.Input<string>;
     }
 
     export interface PipelineStepDetailStepInfrastructureConfigurationDetails {
@@ -27156,6 +27465,10 @@ export namespace DataScience {
          * (Updatable) The size of the block storage volume to attach to the instance.
          */
         blockStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        blockStorageSizeInGbsParameterized?: pulumi.Input<string>;
         /**
          * (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
          */
@@ -27176,13 +27489,47 @@ export namespace DataScience {
          */
         cpuBaseline?: pulumi.Input<string>;
         /**
-         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * (Updatable) The total amount of memory available to the pipeline step run instance GBs.
          */
         memoryInGbs?: pulumi.Input<number>;
         /**
-         * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+         */
+        memoryInGbsParameterized?: pulumi.Input<string>;
+        /**
+         * (Updatable) The total number of OCPUs available to the pipeline step run instance.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+         */
+        ocpusParameterized?: pulumi.Input<string>;
+    }
+
+    export interface PipelineStepDetailStepParameters {
+        /**
+         * (Updatable) Pipeline output parameter details
+         */
+        output: pulumi.Input<inputs.DataScience.PipelineStepDetailStepParametersOutput>;
+        /**
+         * (Updatable) Type of step parameter
+         */
+        parameterType: pulumi.Input<string>;
+    }
+
+    export interface PipelineStepDetailStepParametersOutput {
+        /**
+         * (Updatable) Output file name
+         */
+        outputFile: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of output parameters
+         */
+        outputParameterType: pulumi.Input<string>;
+        /**
+         * (Updatable) The list of parameter names that will be output by this step
+         */
+        parameterNames: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface PipelineStepDetailStepStorageMountConfigurationDetailsList {
@@ -27615,24 +27962,32 @@ export namespace Database {
          */
         backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail>[]>;
         /**
-         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+         * Number of days between the current and earliest point of recoverability covered by automatic backups.
          */
         recoveryWindowInDays?: pulumi.Input<number>;
     }
 
     export interface AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetail {
         /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          */
         dbrsPolicyId?: pulumi.Input<string>;
         /**
-         * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         * The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
          */
         id?: pulumi.Input<string>;
         /**
          * Proxy URL to connect to object store.
          */
         internetProxy?: pulumi.Input<string>;
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
         /**
          * Type of the database backup destination.
          */
@@ -27689,7 +28044,7 @@ export namespace Database {
          */
         redoTransportMode?: pulumi.Input<string>;
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          */
         role?: pulumi.Input<string>;
         /**
@@ -27760,7 +28115,7 @@ export namespace Database {
          */
         redoTransportMode?: pulumi.Input<string>;
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          */
         role?: pulumi.Input<string>;
         /**
@@ -27791,11 +28146,11 @@ export namespace Database {
 
     export interface AutonomousContainerDatabaseAddStandbyKeyHistoryEntry {
         /**
-         * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         * The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
          */
         id?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -27882,6 +28237,10 @@ export namespace Database {
 
     export interface AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail {
         /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          */
         dbrsPolicyId?: pulumi.Input<string>;
@@ -27893,6 +28252,10 @@ export namespace Database {
          * Proxy URL to connect to object store.
          */
         internetProxy?: pulumi.Input<string>;
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
         /**
          * Type of the database backup destination.
          */
@@ -27913,17 +28276,25 @@ export namespace Database {
          */
         backupDestinationAttachHistories?: pulumi.Input<pulumi.Input<string>[]>;
         /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          */
         dbrsPolicyId?: pulumi.Input<string>;
         /**
-         * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         * The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
          */
         id?: pulumi.Input<string>;
         /**
          * Proxy URL to connect to object store.
          */
         internetProxy?: pulumi.Input<string>;
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
         /**
          * Number of days between the current and earliest point of recoverability covered by automatic backups.
          */
@@ -27963,6 +28334,10 @@ export namespace Database {
 
     export interface AutonomousContainerDatabaseBackupConfigBackupDestinationDetails {
         /**
+         * (Updatable) Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          */
         id?: pulumi.Input<string>;
@@ -27971,13 +28346,15 @@ export namespace Database {
          */
         internetProxy?: pulumi.Input<string>;
         /**
-         * (Updatable) Indicates whether the backup destination is cross-region or local region.
+         * (Updatable) Indicates whether the backup destination is cross-region or local.
          */
         isRemote?: pulumi.Input<boolean>;
         /**
-         * (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.
-         *
-         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * (Updatable) Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         remoteRegion?: pulumi.Input<string>;
         /**
@@ -28030,7 +28407,7 @@ export namespace Database {
          */
         automaticFailoverTarget?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
          */
         autonomousContainerDatabaseId?: pulumi.Input<string>;
         /**
@@ -28042,7 +28419,7 @@ export namespace Database {
          */
         fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
         /**
-         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+         * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
          */
         isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
         /**
@@ -28058,7 +28435,7 @@ export namespace Database {
          */
         redoTransportMode?: pulumi.Input<string>;
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          */
         role?: pulumi.Input<string>;
         /**
@@ -28100,6 +28477,10 @@ export namespace Database {
 
     export interface AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail {
         /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          */
         dbrsPolicyId?: pulumi.Input<string>;
@@ -28112,13 +28493,15 @@ export namespace Database {
          */
         internetProxy?: pulumi.Input<string>;
         /**
-         * Indicates whether the backup destination is cross-region or local region.
+         * Indicates whether the backup destination is cross-region or local.
          */
         isRemote?: pulumi.Input<boolean>;
         /**
-         * The name of the remote region where the remote automatic incremental backups will be stored.
-         *
-         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         remoteRegion?: pulumi.Input<string>;
         /**
@@ -28149,7 +28532,7 @@ export namespace Database {
          */
         automaticFailoverTarget?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
          */
         autonomousContainerDatabaseId?: pulumi.Input<string>;
         /**
@@ -28161,7 +28544,7 @@ export namespace Database {
          */
         fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
         /**
-         * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
+         * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
          */
         isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
         /**
@@ -28177,7 +28560,7 @@ export namespace Database {
          */
         redoTransportMode?: pulumi.Input<string>;
         /**
-         * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          */
         role?: pulumi.Input<string>;
         /**
@@ -28208,11 +28591,11 @@ export namespace Database {
 
     export interface AutonomousContainerDatabaseKeyHistoryEntry {
         /**
-         * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         * The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
          */
         id?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -28235,8 +28618,7 @@ export namespace Database {
          */
         daysOfWeeks?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseMaintenanceWindowDaysOfWeek>[]>;
         /**
-         * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-         * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays?: pulumi.Input<pulumi.Input<number>[]>;
         /**
@@ -28264,7 +28646,7 @@ export namespace Database {
          */
         preference?: pulumi.Input<string>;
         /**
-         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
          */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
@@ -28290,8 +28672,7 @@ export namespace Database {
          */
         daysOfWeeks?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeek>[]>;
         /**
-         * (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-         * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         * (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays?: pulumi.Input<pulumi.Input<number>[]>;
         /**
@@ -28325,7 +28706,7 @@ export namespace Database {
          */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
-         * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          */
         weeksOfMonths?: pulumi.Input<pulumi.Input<number>[]>;
     }
@@ -28364,6 +28745,10 @@ export namespace Database {
 
     export interface AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail {
         /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          */
         id?: pulumi.Input<string>;
@@ -28372,13 +28757,15 @@ export namespace Database {
          */
         internetProxy?: pulumi.Input<string>;
         /**
-         * Indicates whether the backup destination is cross-region or local region.
+         * Indicates whether the backup destination is cross-region or local.
          */
         isRemote?: pulumi.Input<boolean>;
         /**
-         * The name of the remote region where the remote automatic incremental backups will be stored.
-         *
-         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         remoteRegion?: pulumi.Input<string>;
         /**
@@ -28412,7 +28799,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseApexDetail {
         /**
-         * The Oracle APEX Application Development version.
+         * The Oracle APEX AI Application Development version.
          */
         apexVersion?: pulumi.Input<string>;
         /**
@@ -28423,7 +28810,11 @@ export namespace Database {
 
     export interface AutonomousDatabaseBackupBackupDestinationDetails {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          */
         id?: pulumi.Input<string>;
         /**
@@ -28431,15 +28822,19 @@ export namespace Database {
          */
         internetProxy?: pulumi.Input<string>;
         /**
-         * Indicates whether the backup destination is cross-region or local region.
+         * Indicates whether the backup destination is cross-region or local.
          */
         isRemote?: pulumi.Input<boolean>;
         /**
-         * The name of the remote region where the remote automatic incremental backups will be stored.
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         remoteRegion?: pulumi.Input<string>;
         /**
-         * The type of backup.
+         * Type of the database backup destination.
          */
         type: pulumi.Input<string>;
         /**
@@ -28463,9 +28858,62 @@ export namespace Database {
         manualBackupType?: pulumi.Input<string>;
     }
 
+    export interface AutonomousDatabaseBackupSourceDatabaseDetail {
+        /**
+         * Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+         */
+        autonomousContainerDatabaseCustomerContacts?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContact>[]>;
+        /**
+         * The user-provided name for the Autonomous Container Database.
+         */
+        autonomousContainerDatabaseDisplayName?: pulumi.Input<string>;
+        /**
+         * DST Time-Zone File version of the Autonomous Container Database.
+         */
+        autonomousContainerDatabaseDstFileVersion?: pulumi.Input<string>;
+        /**
+         * Autonomous Container Database name.
+         */
+        autonomousContainerDatabaseName?: pulumi.Input<string>;
+        /**
+         * Customer Contacts for the Autonomous database.
+         */
+        autonomousDatabaseCustomerContacts?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact>[]>;
+        /**
+         * Autonomous Database's name.
+         */
+        autonomousDatabaseName?: pulumi.Input<string>;
+        /**
+         * Autonomous VM cluster's user-friendly name.
+         */
+        autonomousVmClusterDisplayName?: pulumi.Input<string>;
+        /**
+         * The Autonomous Database workload type. The following values are valid:
+         * * OLTP - indicates an Autonomous Transaction Processing database
+         * * DW - indicates an Autonomous Data Warehouse database
+         * * AJD - indicates an Autonomous JSON Database
+         * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+         */
+        dbWorkload?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContact {
+        /**
+         * The email address used by Oracle to send notifications regarding databases and infrastructure.
+         */
+        email?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContact {
+        /**
+         * The email address used by Oracle to send notifications regarding databases and infrastructure.
+         */
+        email?: pulumi.Input<string>;
+    }
+
     export interface AutonomousDatabaseConnectionString {
         /**
-         * Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         * Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
          */
         allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
@@ -28496,7 +28944,7 @@ export namespace Database {
          */
         consumerGroup?: pulumi.Input<string>;
         /**
-         * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+         * (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -28516,7 +28964,7 @@ export namespace Database {
          */
         sessionMode?: pulumi.Input<string>;
         /**
-         * Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+         * Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
          */
         syntaxFormat?: pulumi.Input<string>;
         /**
@@ -28596,7 +29044,7 @@ export namespace Database {
          */
         arnRole?: pulumi.Input<string>;
         /**
-         * (Updatable) The provider for the Autonomous Database encryption key.
+         * (Updatable) The provider for the Autonomous AI Database encryption key.
          */
         autonomousDatabaseProvider?: pulumi.Input<string>;
         /**
@@ -28624,9 +29072,21 @@ export namespace Database {
          */
         keyName?: pulumi.Input<string>;
         /**
+         * (Updatable) GCP key ring
+         */
+        keyRing?: pulumi.Input<string>;
+        /**
          * (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
         kmsKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) GCP kms REST API endpoint
+         */
+        kmsRestEndpoint?: pulumi.Input<string>;
+        /**
+         * (Updatable) GCP key ring location
+         */
+        location?: pulumi.Input<string>;
         /**
          * (Updatable) UUID of OKV KMS Key
          */
@@ -28635,6 +29095,10 @@ export namespace Database {
          * (Updatable) URI of OKV server
          */
         okvUri?: pulumi.Input<string>;
+        /**
+         * (Updatable) GCP project name
+         */
+        project?: pulumi.Input<string>;
         /**
          * (Updatable) AWS key service endpoint URI
          */
@@ -28651,7 +29115,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseEncryptionKeyHistoryEntry {
         /**
-         * (Updatable) Details of the Autonomous Database encryption key.
+         * (Updatable) Details of the Autonomous AI Database encryption key.
          */
         encryptionKeys?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey>[]>;
         /**
@@ -28666,7 +29130,7 @@ export namespace Database {
          */
         arnRole?: pulumi.Input<string>;
         /**
-         * (Updatable) The provider for the Autonomous Database encryption key.
+         * (Updatable) The provider for the Autonomous AI Database encryption key.
          */
         autonomousDatabaseProvider?: pulumi.Input<string>;
         /**
@@ -28694,9 +29158,21 @@ export namespace Database {
          */
         keyName?: pulumi.Input<string>;
         /**
+         * (Updatable) GCP key ring
+         */
+        keyRing?: pulumi.Input<string>;
+        /**
          * (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
         kmsKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) GCP kms REST API endpoint
+         */
+        kmsRestEndpoint?: pulumi.Input<string>;
+        /**
+         * (Updatable) GCP key ring location
+         */
+        location?: pulumi.Input<string>;
         /**
          * (Updatable) UUID of OKV KMS Key
          */
@@ -28705,6 +29181,10 @@ export namespace Database {
          * (Updatable) URI of OKV server
          */
         okvUri?: pulumi.Input<string>;
+        /**
+         * (Updatable) GCP project name
+         */
+        project?: pulumi.Input<string>;
         /**
          * (Updatable) AWS key service endpoint URI
          */
@@ -28721,11 +29201,11 @@ export namespace Database {
 
     export interface AutonomousDatabaseKeyHistoryEntry {
         /**
-         * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+         * The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
          */
         id?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -28740,7 +29220,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseLocalStandbyDb {
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
@@ -28756,15 +29236,15 @@ export namespace Database {
          */
         maintenanceTargetComponent?: pulumi.Input<string>;
         /**
-         * The current state of the Autonomous Database.
+         * The current state of the Autonomous AI Database.
          */
         state?: pulumi.Input<string>;
         /**
-         * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+         * The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
          */
         timeDataGuardRoleChanged?: pulumi.Input<string>;
         /**
-         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
          */
         timeDisasterRecoveryRoleChanged?: pulumi.Input<string>;
         /**
@@ -28779,7 +29259,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseLongTermBackupSchedule {
         /**
-         * Indicates if the resource pool should be deleted for the Autonomous Database.
+         * Indicates if the vanity url details should be deleted for the Autonomous Database.
          */
         isDisabled?: pulumi.Input<boolean>;
         /**
@@ -28833,7 +29313,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseRemoteDisasterRecoveryConfiguration {
         /**
-         * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          */
         disasterRecoveryType?: pulumi.Input<string>;
         /**
@@ -28852,11 +29332,11 @@ export namespace Database {
 
     export interface AutonomousDatabaseResourcePoolSummary {
         /**
-         * Available capacity left for new elastic pool members provision
+         * (Updatable) Available capacity left for new elastic pool members provision
          */
         availableComputeCapacity?: pulumi.Input<number>;
         /**
-         * (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+         * (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
          */
         isDisabled?: pulumi.Input<boolean>;
         /**
@@ -28893,7 +29373,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseStandbyDb {
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
          */
         availabilityDomain?: pulumi.Input<string>;
         /**
@@ -28909,15 +29389,15 @@ export namespace Database {
          */
         maintenanceTargetComponent?: pulumi.Input<string>;
         /**
-         * The current state of the Autonomous Database.
+         * The current state of the Autonomous AI Database.
          */
         state?: pulumi.Input<string>;
         /**
-         * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+         * The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
          */
         timeDataGuardRoleChanged?: pulumi.Input<string>;
         /**
-         * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         * The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
          */
         timeDisasterRecoveryRoleChanged?: pulumi.Input<string>;
         /**
@@ -28928,6 +29408,56 @@ export namespace Database {
          * The date and time when maintenance will end.
          */
         timeMaintenanceEnd?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseVanityConnectionUrl {
+        /**
+         * Oracle Application Express (APEX) URL.
+         */
+        apexUrl?: pulumi.Input<string>;
+        /**
+         * The URL of the Database Transforms for the Autonomous Database.
+         */
+        databaseTransformsUrl?: pulumi.Input<string>;
+        /**
+         * The URL of the Graph Studio for the Autonomous Database.
+         */
+        graphStudioUrl?: pulumi.Input<string>;
+        /**
+         * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+         */
+        machineLearningNotebookUrl?: pulumi.Input<string>;
+        /**
+         * Oracle Machine Learning user management URL.
+         */
+        machineLearningUserManagementUrl?: pulumi.Input<string>;
+        /**
+         * The URL of the MongoDB API for the Autonomous Database.
+         */
+        mongoDbUrl?: pulumi.Input<string>;
+        /**
+         * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+         */
+        ordsUrl?: pulumi.Input<string>;
+        /**
+         * Oracle SQL Developer Web URL.
+         */
+        sqlDevWebUrl?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseVanityUrlDetail {
+        /**
+         * API Gateway ID.
+         */
+        apiGatewayId?: pulumi.Input<string>;
+        /**
+         * Indicates if the vanity url details should be deleted for the Autonomous Database.
+         */
+        isDisabled?: pulumi.Input<boolean>;
+        /**
+         * Custom URL prefix provided by the customer to access dbTools.
+         */
+        vanityUrlHostName?: pulumi.Input<string>;
     }
 
     export interface AutonomousExadataInfrastructureMaintenanceWindow {
@@ -29159,6 +29689,17 @@ export namespace Database {
          * The display name of the database that is associated with the backup destination.
          */
         dbName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface BackupDestinationAssociatedLongTermBackup {
+        /**
+         * The user-provided name of the backup destination.
+         */
+        displayName?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          */
@@ -29814,7 +30355,7 @@ export namespace Database {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -29892,7 +30433,7 @@ export namespace Database {
          */
         autoFullBackupWindow?: pulumi.Input<string>;
         /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
         /**
@@ -29911,6 +30452,10 @@ export namespace Database {
 
     export interface DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
         /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          */
         dbrsPolicyId?: pulumi.Input<string>;
@@ -29919,26 +30464,22 @@ export namespace Database {
          */
         id?: pulumi.Input<string>;
         /**
-         * Indicates whether the backup destination is cross-region or local region.
+         * Indicates whether the backup destination is cross-region or local.
          */
         isRemote?: pulumi.Input<boolean>;
         /**
-         * The name of the remote region where the remote automatic incremental backups will be stored.
-         *
-         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         remoteRegion?: pulumi.Input<string>;
         /**
          * Type of the database backup destination.
          */
         type?: pulumi.Input<string>;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-         */
         vpcPassword?: pulumi.Input<string>;
-        /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-         */
         vpcUser?: pulumi.Input<string>;
     }
 
@@ -30012,7 +30553,7 @@ export namespace Database {
          */
         autoFullBackupWindow?: pulumi.Input<string>;
         /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
         /**
@@ -30031,6 +30572,10 @@ export namespace Database {
 
     export interface DatabaseDbBackupConfigBackupDestinationDetail {
         /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          */
         dbrsPolicyId?: pulumi.Input<string>;
@@ -30039,13 +30584,152 @@ export namespace Database {
          */
         id?: pulumi.Input<string>;
         /**
-         * Indicates whether the backup destination is cross-region or local region.
+         * Indicates whether the backup destination is cross-region or local.
          */
         isRemote?: pulumi.Input<boolean>;
         /**
-         * The name of the remote region where the remote automatic incremental backups will be stored.
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         remoteRegion?: pulumi.Input<string>;
+        /**
+         * Type of the database backup destination.
+         */
+        type?: pulumi.Input<string>;
+        vpcPassword?: pulumi.Input<string>;
+        vpcUser?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseSnapshotStandbyConnectionString {
+        /**
+         * All connection strings to use to connect to the Database.
+         */
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * Host name based CDB Connection String.
+         */
+        cdbDefault?: pulumi.Input<string>;
+        /**
+         * IP based CDB Connection String.
+         */
+        cdbIpDefault?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseSnapshotStandbyDataGuardGroup {
+        /**
+         * List of Data Guard members, representing each database that is part of Data Guard.
+         */
+        members?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseSnapshotStandbyDataGuardGroupMember>[]>;
+        /**
+         * The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+         */
+        protectionMode?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseSnapshotStandbyDataGuardGroupMember {
+        /**
+         * The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+         */
+        applyLag?: pulumi.Input<string>;
+        /**
+         * The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+         */
+        applyRate?: pulumi.Input<string>;
+        /**
+         * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        databaseId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+         */
+        dbSystemId?: pulumi.Input<string>;
+        /**
+         * True if active Data Guard is enabled.
+         */
+        isActiveDataGuardEnabled?: pulumi.Input<boolean>;
+        /**
+         * The role of the reporting database in this Data Guard association.
+         */
+        role?: pulumi.Input<string>;
+        /**
+         * The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+         */
+        transportLag?: pulumi.Input<string>;
+        /**
+         * The date and time when last redo transport has been done.
+         */
+        transportLagRefresh?: pulumi.Input<string>;
+        /**
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+         * * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         */
+        transportType?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseSnapshotStandbyDatabaseManagementConfig {
+        /**
+         * The status of the Database Management service.
+         */
+        managementStatus?: pulumi.Input<string>;
+        /**
+         * The Database Management type.
+         */
+        managementType?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseSnapshotStandbyDbBackupConfig {
+        /**
+         * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+         */
+        autoBackupEnabled?: pulumi.Input<boolean>;
+        /**
+         * Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+         */
+        autoBackupWindow?: pulumi.Input<string>;
+        /**
+         * Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+         */
+        autoFullBackupDay?: pulumi.Input<string>;
+        /**
+         * Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+         */
+        autoFullBackupWindow?: pulumi.Input<string>;
+        /**
+         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         */
+        backupDeletionPolicy?: pulumi.Input<string>;
+        /**
+         * Backup destination details.
+         */
+        backupDestinationDetails?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetail>[]>;
+        /**
+         * Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+         */
+        recoveryWindowInDays?: pulumi.Input<number>;
+        /**
+         * If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+         */
+        runImmediateFullBackup?: pulumi.Input<boolean>;
+    }
+
+    export interface DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetail {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         */
+        dbrsPolicyId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Proxy URL to connect to object store.
+         */
+        internetProxy?: pulumi.Input<string>;
         /**
          * Type of the database backup destination.
          */
@@ -30188,7 +30872,7 @@ export namespace Database {
          */
         autoFullBackupWindow?: pulumi.Input<string>;
         /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
         /**
@@ -30207,6 +30891,10 @@ export namespace Database {
 
     export interface DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
         /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          */
         dbrsPolicyId?: pulumi.Input<string>;
@@ -30219,11 +30907,15 @@ export namespace Database {
          */
         internetProxy?: pulumi.Input<string>;
         /**
-         * Indicates whether the backup destination is cross-region or local region.
+         * Indicates whether the backup destination is cross-region or local.
          */
         isRemote?: pulumi.Input<boolean>;
         /**
-         * The name of the remote region where the remote automatic incremental backups will be stored.
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         remoteRegion?: pulumi.Input<string>;
         /**
@@ -30308,7 +31000,7 @@ export namespace Database {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -30385,7 +31077,7 @@ export namespace Database {
          */
         autoFullBackupWindow?: pulumi.Input<string>;
         /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
         /**
@@ -30404,6 +31096,10 @@ export namespace Database {
 
     export interface DbHomeDatabaseDbBackupConfigBackupDestinationDetail {
         /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          */
         dbrsPolicyId?: pulumi.Input<string>;
@@ -30412,13 +31108,15 @@ export namespace Database {
          */
         id?: pulumi.Input<string>;
         /**
-         * Indicates whether the backup destination is cross-region or local region.
+         * Indicates whether the backup destination is cross-region or local.
          */
         isRemote?: pulumi.Input<boolean>;
         /**
-         * The name of the remote region where the remote automatic incremental backups will be stored.
-         *
-         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
+        /**
+         * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         remoteRegion?: pulumi.Input<string>;
         /**
@@ -30568,9 +31266,6 @@ export namespace Database {
          * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
          */
         dbName?: pulumi.Input<string>;
-        /**
-         * The `DB_UNIQUE_NAME` of the Oracle Database.
-         */
         dbUniqueName?: pulumi.Input<string>;
         /**
          * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
@@ -30595,7 +31290,7 @@ export namespace Database {
          */
         kmsKeyId?: pulumi.Input<string>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string>;
         /**
@@ -30660,7 +31355,7 @@ export namespace Database {
          */
         autoFullBackupWindow?: pulumi.Input<string>;
         /**
-         * This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+         * This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
          */
         backupDeletionPolicy?: pulumi.Input<string>;
         /**
@@ -30679,6 +31374,10 @@ export namespace Database {
 
     export interface DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
         /**
+         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         */
+        backupRetentionPolicyOnTerminate?: pulumi.Input<string>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          */
         dbrsPolicyId?: pulumi.Input<string>;
@@ -30690,6 +31389,10 @@ export namespace Database {
          * Indicates whether the backup destination is cross-region or local.
          */
         isRemote?: pulumi.Input<boolean>;
+        /**
+         * Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean>;
         /**
          * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
@@ -30752,8 +31455,7 @@ export namespace Database {
          */
         daysOfWeeks?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemMaintenanceWindowDaysOfWeek>[]>;
         /**
-         * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-         * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays?: pulumi.Input<pulumi.Input<number>[]>;
         /**
@@ -30780,6 +31482,9 @@ export namespace Database {
          * The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -30804,8 +31509,7 @@ export namespace Database {
          */
         daysOfWeeks?: pulumi.Input<pulumi.Input<inputs.Database.DbSystemMaintenanceWindowDetailsDaysOfWeek>[]>;
         /**
-         * (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-         * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         * (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          */
         hoursOfDays?: pulumi.Input<pulumi.Input<number>[]>;
         /**
@@ -30834,6 +31538,9 @@ export namespace Database {
          * (Updatable) The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -32772,6 +33479,17 @@ export namespace Database {
          * The unique name of the database that is associated with the key store.
          */
         dbUniqueName?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+         */
+        id?: pulumi.Input<string>;
+    }
+
+    export interface KeyStoreAssociatedLongTermBackup {
+        /**
+         * The user-friendly name for the key store. The name does not need to be unique.
+         */
+        displayName?: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
          */
@@ -38443,7 +39161,7 @@ export namespace DatabaseTools {
          */
         userName?: pulumi.Input<string>;
         /**
-         * (Updatable) The user password.
+         * (Updatable) The database user password.
          */
         userPassword?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionProxyClientUserPassword>;
     }
@@ -38483,6 +39201,25 @@ export namespace DatabaseTools {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         valueType: pulumi.Input<string>;
+    }
+
+    export interface DatabaseToolsIdentityLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * When the lock was created.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
     }
 
     export interface DatabaseToolsPrivateEndpointLock {
@@ -38543,6 +39280,18 @@ export namespace DatabaseTools {
         /**
          * A filter to return only resources that match the entire specified name.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDatabaseToolsIdentitiesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDatabaseToolsIdentitiesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -40637,6 +41386,40 @@ export namespace DevOps {
 }
 
 export namespace DisasterRecovery {
+    export interface AutomaticDrConfigurationMember {
+        /**
+         * (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+         */
+        isAutoFailoverEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+         */
+        isAutoSwitchoverEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
+         */
+        memberId: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the member. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        memberType: pulumi.Input<string>;
+    }
+
+    export interface DrPlanExecutionAutomaticExecutionDetail {
+        /**
+         * The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+         */
+        eventName?: pulumi.Input<string>;
+        /**
+         * The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+         */
+        memberId?: pulumi.Input<string>;
+    }
+
     export interface DrPlanExecutionExecutionOptions {
         /**
          * A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
@@ -41432,6 +42215,18 @@ export namespace DisasterRecovery {
          * (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
          */
         sourceVnicId?: pulumi.Input<string>;
+    }
+
+    export interface GetAutomaticDrConfigurationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAutomaticDrConfigurationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetDrPlanExecutionsFilter {
@@ -45221,13 +46016,101 @@ export namespace FleetAppsManagement {
 export namespace FleetSoftwareUpdate {
     export interface FsuCollectionActiveFsuCycle {
         /**
-         * (Updatable) Exadata Fleet Update Collection Identifier.
+         * (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
          */
         displayName?: pulumi.Input<string>;
         /**
-         * OCID identifier for the Exadata Fleet Update Collection.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
          */
         id?: pulumi.Input<string>;
+    }
+
+    export interface FsuCollectionComponent {
+        /**
+         * Type of component in an Exadata software stack.
+         */
+        componentType: pulumi.Input<string>;
+        /**
+         * Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+         */
+        fleetDiscovery?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionComponentFleetDiscovery>;
+        /**
+         * Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in an Exadata Fleet Update Collection. Major Versions of Exadata Software are demarcated by the underlying Oracle Linux OS version. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
+         */
+        sourceMajorVersion: pulumi.Input<string>;
+    }
+
+    export interface FsuCollectionComponentFleetDiscovery {
+        /**
+         * Filters to perform the target discovery.
+         */
+        filters?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionComponentFleetDiscoveryFilter>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+         */
+        fsuDiscoveryId?: pulumi.Input<string>;
+        /**
+         * [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+         */
+        query?: pulumi.Input<string>;
+        /**
+         * Supported fleet discovery strategies.
+         */
+        strategy: pulumi.Input<string>;
+        /**
+         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+         */
+        targets?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface FsuCollectionComponentFleetDiscoveryFilter {
+        /**
+         * Type of resource to match in the discovery.
+         */
+        entityType?: pulumi.Input<string>;
+        /**
+         * List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+         */
+        exadataReleases?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
+         */
+        identifiers?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
+         */
+        mode?: pulumi.Input<string>;
+        /**
+         * Type of join for each element in this filter.
+         */
+        operator?: pulumi.Input<string>;
+        /**
+         * [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+         */
+        tags?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionComponentFleetDiscoveryFilterTag>[]>;
+        /**
+         * Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
+         */
+        type: pulumi.Input<string>;
+        /**
+         * List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+         */
+        versions?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface FsuCollectionComponentFleetDiscoveryFilterTag {
+        /**
+         * Freeform tag key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Defined tag namespace.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * Freeform tag value.
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface FsuCollectionFleetDiscovery {
@@ -45236,19 +46119,19 @@ export namespace FleetSoftwareUpdate {
          */
         filters?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscoveryFilter>[]>;
         /**
-         * OCIDs of Fleet Software Update Discovery.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
          */
         fsuDiscoveryId?: pulumi.Input<string>;
         /**
-         * Oracle Cloud Infrastructure Search Service query string.
+         * [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
          */
         query?: pulumi.Input<string>;
         /**
-         * Possible fleet discovery strategies.
+         * Supported fleet discovery strategies.
          */
         strategy: pulumi.Input<string>;
         /**
-         * OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
          */
         targets?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -45259,11 +46142,15 @@ export namespace FleetSoftwareUpdate {
          */
         entityType?: pulumi.Input<string>;
         /**
-         * Related resource Ids to include in the discovery.  All must match the specified entityType.
+         * List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+         */
+        exadataReleases?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
          */
         identifiers?: pulumi.Input<pulumi.Input<string>[]>;
         /**
-         * INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+         * INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
          */
         mode?: pulumi.Input<string>;
         /**
@@ -45275,15 +46162,15 @@ export namespace FleetSoftwareUpdate {
          */
         operator?: pulumi.Input<string>;
         /**
-         * Freeform tags to include in the discovery.
+         * [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
          */
         tags?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscoveryFilterTag>[]>;
         /**
-         * Type of filters supported for Database targets discovery.
+         * Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
          */
         type: pulumi.Input<string>;
         /**
-         * List of Versions strings to include in the discovery.
+         * List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
          */
         versions?: pulumi.Input<pulumi.Input<string>[]>;
     }
@@ -45292,7 +46179,7 @@ export namespace FleetSoftwareUpdate {
         /**
          * Freeform tag key.
          */
-        key: pulumi.Input<string>;
+        key?: pulumi.Input<string>;
         /**
          * Defined tag namespace.
          */
@@ -45300,7 +46187,7 @@ export namespace FleetSoftwareUpdate {
         /**
          * Freeform tag value.
          */
-        value: pulumi.Input<string>;
+        value?: pulumi.Input<string>;
     }
 
     export interface FsuCycleApplyActionSchedule {
@@ -45342,6 +46229,10 @@ export namespace FleetSoftwareUpdate {
 
     export interface FsuCycleGoalVersionDetails {
         /**
+         * (Updatable) Details of goal versions for components in an Exadata software stack.
+         */
+        components?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleGoalVersionDetailsComponent>[]>;
+        /**
          * (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
          */
         homePolicy?: pulumi.Input<string>;
@@ -45350,17 +46241,51 @@ export namespace FleetSoftwareUpdate {
          */
         newHomePrefix?: pulumi.Input<string>;
         /**
-         * (Updatable) Target database software image OCID.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
          */
         softwareImageId?: pulumi.Input<string>;
         /**
-         * (Updatable) Type of goal target version specified
+         * (Updatable) Type of goal version specified
          */
         type: pulumi.Input<string>;
         /**
-         * (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+         * (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
          */
         version?: pulumi.Input<string>;
+    }
+
+    export interface FsuCycleGoalVersionDetailsComponent {
+        /**
+         * (Updatable) Type of component in an Exadata software stack.
+         */
+        componentType: pulumi.Input<string>;
+        /**
+         * (Updatable) Details of goal 'GUEST_OS' software version.
+         */
+        goalVersionDetails: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleGoalVersionDetailsComponentGoalVersionDetails>;
+        /**
+         * (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+         */
+        homePolicy?: pulumi.Input<string>;
+        /**
+         * (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+         */
+        newHomePrefix?: pulumi.Input<string>;
+    }
+
+    export interface FsuCycleGoalVersionDetailsComponentGoalVersionDetails {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
+         */
+        goalSoftwareImageId: pulumi.Input<string>;
+        /**
+         * (Updatable) Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
+         */
+        goalType: pulumi.Input<string>;
+        /**
+         * (Updatable) Goal version string matching an Oracle released 'GUEST_OS' software image.
+         */
+        goalVersion?: pulumi.Input<string>;
     }
 
     export interface FsuCycleNextActionToExecute {
@@ -45391,17 +46316,29 @@ export namespace FleetSoftwareUpdate {
          */
         collectionType: pulumi.Input<string>;
         /**
+         * (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+         */
+        isIgnorePostUpgradeErrors?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+         */
+        isIgnorePrerequisites?: pulumi.Input<boolean>;
+        /**
          * (Updatable) Enables or disables the recompilation of invalid objects.
          */
         isRecompileInvalidObjects?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Enables or disables time zone upgrade. 
+         * (Updatable) Enables or disables time zone upgrade.
+         */
+        isTimeZoneUpgrade?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Service drain timeout specified in seconds. 
          *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
-        isTimeZoneUpgrade?: pulumi.Input<boolean>;
+        maxDrainTimeoutInSeconds?: pulumi.Input<number>;
     }
 
     export interface GetFsuCollectionsFilter {
@@ -45464,6 +46401,29 @@ export namespace Functions {
         isEnabled?: pulumi.Input<boolean>;
     }
 
+    export interface FunctionFailureDestination {
+        /**
+         * (Updatable) The ID of the channel in the queue.
+         */
+        channelId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of destination for the response to a failed detached function invocation.
+         */
+        kind: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+         */
+        queueId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+         */
+        streamId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+         */
+        topicId?: pulumi.Input<string>;
+    }
+
     export interface FunctionProvisionedConcurrencyConfig {
         /**
          * (Updatable) Configuration specifying a constant amount of provisioned concurrency.
@@ -45481,9 +46441,32 @@ export namespace Functions {
          */
         pbfListingId: pulumi.Input<string>;
         /**
-         * Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+         * Type of the Function Source. Possible values: PBF.
          */
         sourceType: pulumi.Input<string>;
+    }
+
+    export interface FunctionSuccessDestination {
+        /**
+         * (Updatable) The ID of the channel in the queue.
+         */
+        channelId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of destination for the response to a successful detached function invocation.
+         */
+        kind: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
+         */
+        queueId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
+         */
+        streamId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
+         */
+        topicId?: pulumi.Input<string>;
     }
 
     export interface FunctionTraceConfig {
@@ -46391,6 +47374,14 @@ export namespace GenerativeAi {
          * (Updatable) Whether to enable the content moderation feature.
          */
         isEnabled: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Enum for the modes of operation for inference protection.
+         */
+        mode?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the model used for the feature.
+         */
+        modelId?: pulumi.Input<string>;
     }
 
     export interface GetAgentAgentEndpointsFilter {
@@ -46496,6 +47487,18 @@ export namespace GenerativeAi {
     }
 
     export interface GetEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetGenerativeAiPrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetGenerativeAiPrivateEndpointsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -60765,6 +61768,38 @@ export namespace Identity {
          * * uniqueness: none
          */
         adminScopes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Apple Developer ID
+         *
+         * **Added In:** 2311180004
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        appleDevId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Apple Private Key ID
+         *
+         * **Added In:** 2311180004
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        appleKeyId?: pulumi.Input<string>;
         /**
          * (Updatable) Social IDP Authorization URL
          *
@@ -75770,6 +76805,39 @@ export namespace Jms {
         isEnabled?: pulumi.Input<boolean>;
     }
 
+    export interface FleetAgentConfigurationLinuxConfiguration {
+        /**
+         * (Updatable) An array of file system paths (environment variables supported).
+         */
+        excludePaths: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) An array of file system paths (environment variables supported).
+         */
+        includePaths: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface FleetAgentConfigurationMacOsConfiguration {
+        /**
+         * (Updatable) An array of file system paths (environment variables supported).
+         */
+        excludePaths: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) An array of file system paths (environment variables supported).
+         */
+        includePaths: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface FleetAgentConfigurationWindowsConfiguration {
+        /**
+         * (Updatable) An array of file system paths (environment variables supported).
+         */
+        excludePaths: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) An array of file system paths (environment variables supported).
+         */
+        includePaths: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface FleetInventoryLog {
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -77618,7 +78686,7 @@ export namespace LoadBalancer {
 
     export interface LoadBalancerReservedIp {
         /**
-         * Ocid of the Reserved IP/Public Ip created with VCN.
+         * (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
          *
          * Reserved IPs are IPs which already registered using VCN API.
          *
@@ -79602,6 +80670,30 @@ export namespace Lustre {
     }
 
     export interface GetFileStorageLustreFileSystemsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFileStorageObjectStorageLinkSyncJobsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFileStorageObjectStorageLinkSyncJobsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFileStorageObjectStorageLinksFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFileStorageObjectStorageLinksFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -81939,6 +83031,10 @@ export namespace Mysql {
          */
         secureConnections?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotSecureConnection>[]>;
         /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+         */
+        securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
          * The shape of the DB System instance used for backup.
          */
         shapeName?: pulumi.Input<string>;
@@ -82090,6 +83186,26 @@ export namespace Mysql {
     }
 
     export interface MysqlBackupDbSystemSnapshotMaintenance {
+        /**
+         * The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+         */
+        maintenanceScheduleType?: pulumi.Input<string>;
+        /**
+         * The version that is expected to be targeted during the next scheduled maintenance run.
+         */
+        targetVersion?: pulumi.Input<string>;
+        /**
+         * The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeScheduled?: pulumi.Input<string>;
+        /**
+         * The preferred version to target when performing an automatic MySQL upgrade.
+         */
+        versionPreference?: pulumi.Input<string>;
+        /**
+         * The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+         */
+        versionTrackPreference?: pulumi.Input<string>;
         /**
          * The start time of the maintenance window.
          */
@@ -83244,6 +84360,28 @@ export namespace Mysql {
 
     export interface MysqlDbSystemMaintenance {
         /**
+         * (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+         */
+        maintenanceScheduleType?: pulumi.Input<string>;
+        /**
+         * The version that is expected to be targeted during the next scheduled maintenance run.
+         */
+        targetVersion?: pulumi.Input<string>;
+        /**
+         * The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         */
+        timeScheduled?: pulumi.Input<string>;
+        /**
+         * (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+         *
+         * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+         */
+        versionPreference?: pulumi.Input<string>;
+        /**
+         * (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+         */
+        versionTrackPreference?: pulumi.Input<string>;
+        /**
          * (Updatable) The start of the 2 hour maintenance window.
          *
          * This string is of the format: "{day-of-week} {time-of-day}".
@@ -83360,6 +84498,10 @@ export namespace Mysql {
          * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
          */
         nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+         */
+        securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
          *
@@ -84704,6 +85846,59 @@ export namespace Ocvp {
         linkDescription?: pulumi.Input<string>;
     }
 
+    export interface DatastoreBlockVolumeDetail {
+        /**
+         * List of BlockVolumeAttachment objects containing information about attachment details
+         */
+        attachments?: pulumi.Input<pulumi.Input<inputs.Ocvp.DatastoreBlockVolumeDetailAttachment>[]>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * An IQN of the Block Storage Volume.
+         */
+        iqn?: pulumi.Input<string>;
+    }
+
+    export interface DatastoreBlockVolumeDetailAttachment {
+        /**
+         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+         */
+        esxiHostId?: pulumi.Input<string>;
+        /**
+         * The IP address of block volume attachment.
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * The port of block volume attachment.
+         */
+        port?: pulumi.Input<number>;
+    }
+
+    export interface EsxiHostDatastoreAttachment {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+         */
+        blockVolumeId?: pulumi.Input<string>;
+        /**
+         * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+         */
+        datastoreId?: pulumi.Input<string>;
+        /**
+         * The IP address of datastore attachment.
+         */
+        ipAddress?: pulumi.Input<string>;
+        /**
+         * The port of datastore attachment.
+         */
+        port?: pulumi.Input<number>;
+        /**
+         * An IQN of the Block Storage Volume.
+         */
+        volumeIqn?: pulumi.Input<string>;
+    }
+
     export interface GetClustersFilter {
         name: string;
         regex?: boolean;
@@ -84711,6 +85906,30 @@ export namespace Ocvp {
     }
 
     export interface GetClustersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDatastoreClustersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDatastoreClustersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDatastoresFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDatastoresFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -84857,11 +86076,15 @@ export namespace Ocvp {
          */
         computeAvailabilityDomain: pulumi.Input<string>;
         /**
+         * A list of datastore clusters.
+         */
+        datastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
          */
         datastores?: pulumi.Input<pulumi.Input<inputs.Ocvp.SddcInitialConfigurationInitialClusterConfigurationDatastore>[]>;
         /**
-         * A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+         * A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
          */
         displayName?: pulumi.Input<string>;
         /**
@@ -85346,6 +86569,25 @@ export namespace Opa {
 }
 
 export namespace Opensearch {
+    export interface ClusterCertificateConfig {
+        /**
+         * (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+         */
+        clusterCertificateMode?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+         */
+        dashboardCertificateMode?: pulumi.Input<string>;
+        /**
+         * (Updatable) certificate to be used for OpenSearch cluster api communication
+         */
+        openSearchApiCertificateId?: pulumi.Input<string>;
+        /**
+         * (Updatable) certificate to be used for OpenSearch dashboard api communication
+         */
+        openSearchDashboardCertificateId?: pulumi.Input<string>;
+    }
+
     export interface ClusterMaintenanceDetails {
         /**
          * End time of the maintenance activity
@@ -89591,8 +90833,6 @@ export namespace ResourceScheduler {
         id: pulumi.Input<string>;
         /**
          * (Updatable) This is additional information that helps to identity the resource for the schedule.
-         *
-         * <<<<<<< ours
          * { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
          */
         metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -89646,7 +90886,6 @@ export namespace ResourceScheduler {
         parameterType: pulumi.Input<string>;
         /**
          * (Updatable) This is the HTTP request header value.
-         * =======
          * { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
          */
         value?: pulumi.Input<string>;
@@ -91780,11 +93019,7 @@ export namespace Streaming {
          */
         privateEndpointIp?: pulumi.Input<string>;
         /**
-         * If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed. 
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
          */
         subnetId?: pulumi.Input<string>;
     }
@@ -94674,6 +95909,18 @@ export namespace oci {
         timeLastChecked?: pulumi.Input<string>;
     }
 
+    export interface GetAiDataPlatformAiDataPlatformsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAiDataPlatformAiDataPlatformsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetApiPlatformApiPlatformInstancesFilter {
         /**
          * A filter to return only resources that match the given name exactly
@@ -94866,6 +96113,78 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetIotDigitalTwinAdaptersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetIotDigitalTwinAdaptersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetIotDigitalTwinInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetIotDigitalTwinInstancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetIotDigitalTwinModelsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetIotDigitalTwinModelsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetIotDigitalTwinRelationshipsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetIotDigitalTwinRelationshipsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetIotIotDomainGroupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetIotIotDomainGroupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetIotIotDomainsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetIotIotDomainsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetManagedKafkaKafkaClusterConfigVersionsFilter {
         name: string;
         regex?: boolean;
@@ -94903,6 +96222,90 @@ export namespace oci {
         /**
          * Name of the Kafka listener providing this bootstrap URL
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMulticloudExternalLocationMappingMetadataFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMulticloudExternalLocationMappingMetadataFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMulticloudExternalLocationSummariesMetadataFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMulticloudExternalLocationSummariesMetadataFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMulticloudExternalLocationsMetadataFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMulticloudExternalLocationsMetadataFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMulticloudResourceAnchorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMulticloudResourceAnchorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetResourceAnalyticsMonitoredRegionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetResourceAnalyticsMonitoredRegionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetResourceAnalyticsResourceAnalyticsInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetResourceAnalyticsTenancyAttachmentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetResourceAnalyticsTenancyAttachmentsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -95052,6 +96455,92 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface IotDigitalTwinAdapterInboundEnvelope {
+        /**
+         * (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+         */
+        envelopeMapping?: pulumi.Input<inputs.oci.IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping>;
+        /**
+         * (Updatable) The device endpoint.
+         */
+        referenceEndpoint: pulumi.Input<string>;
+        /**
+         * (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+         */
+        referencePayload?: pulumi.Input<inputs.oci.IotDigitalTwinAdapterInboundEnvelopeReferencePayload>;
+    }
+
+    export interface IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping {
+        /**
+         * (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+         */
+        timeObserved?: pulumi.Input<string>;
+    }
+
+    export interface IotDigitalTwinAdapterInboundEnvelopeReferencePayload {
+        /**
+         * (Updatable) JSON raw data.
+         */
+        data: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) Data format of the payload.
+         */
+        dataFormat: pulumi.Input<string>;
+    }
+
+    export interface IotDigitalTwinAdapterInboundRoute {
+        /**
+         * (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+         */
+        condition: pulumi.Input<string>;
+        /**
+         * (Updatable) Meaningful write up about the inbound route.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+         *
+         * The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
+         *
+         * Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
+         */
+        payloadMapping?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+         */
+        referencePayload?: pulumi.Input<inputs.oci.IotDigitalTwinAdapterInboundRouteReferencePayload>;
+    }
+
+    export interface IotDigitalTwinAdapterInboundRouteReferencePayload {
+        /**
+         * (Updatable) JSON raw data.
+         */
+        data: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) Data format of the payload.
+         */
+        dataFormat: pulumi.Input<string>;
+    }
+
+    export interface IotIotDomainDataRetentionPeriodsInDay {
+        /**
+         * Number of days for which any normalized data sent to IoT devices would be retained for.
+         */
+        historizedData?: pulumi.Input<number>;
+        /**
+         * Number of days for which any raw command data sent to IoT devices would be retained for.
+         */
+        rawCommandData?: pulumi.Input<number>;
+        /**
+         * Number of days for which any raw data sent to IoT devices would be retained for.
+         */
+        rawData?: pulumi.Input<number>;
+        /**
+         * Number of days for which any data sent to IoT devices would be retained for.
+         */
+        rejectedData?: pulumi.Input<number>;
+    }
+
     export interface ManagedKafkaKafkaClusterAccessSubnet {
         /**
          * (Updatable) Subnets OCIDs
@@ -95106,5 +96595,33 @@ export namespace oci {
          * Bootstrap URL
          */
         url?: pulumi.Input<string>;
+    }
+
+    export interface ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword {
+        /**
+         * Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * Password type
+         */
+        passwordType: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+         */
+        secretId?: pulumi.Input<string>;
+    }
+
+    export interface ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails {
+        idcsDomainId?: pulumi.Input<string>;
+        licenseModel?: pulumi.Input<string>;
+        networkDetails?: pulumi.Input<inputs.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails>;
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        subnetId?: pulumi.Input<string>;
+    }
+
+    export interface ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails {
+        nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+        subnetId?: pulumi.Input<string>;
     }
 }

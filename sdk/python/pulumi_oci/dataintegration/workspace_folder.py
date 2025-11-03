@@ -457,11 +457,6 @@ class WorkspaceFolder(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates a folder in a project or in another folder, limited to two levels of folders. |
-        Folders are used to organize your design-time resources, such as tasks or data flows.
-
         ## Example Usage
 
         ```python
@@ -517,11 +512,6 @@ class WorkspaceFolder(pulumi.CustomResource):
                  args: WorkspaceFolderArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Folder resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates a folder in a project or in another folder, limited to two levels of folders. |
-        Folders are used to organize your design-time resources, such as tasks or data flows.
-
         ## Example Usage
 
         ```python

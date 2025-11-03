@@ -300,10 +300,6 @@ class LogSavedSearch(pulumi.CustomResource):
                  query: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
-
-        Creates a new LogSavedSearch.
-
         ## Example Usage
 
         ```python
@@ -351,10 +347,6 @@ class LogSavedSearch(pulumi.CustomResource):
                  args: LogSavedSearchArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
-
-        Creates a new LogSavedSearch.
-
         ## Example Usage
 
         ```python

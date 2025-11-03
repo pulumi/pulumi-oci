@@ -21,6 +21,10 @@ public final class GetDedicatedAiClustersResult {
      * 
      */
     private List<GetDedicatedAiClustersDedicatedAiClusterCollection> dedicatedAiClusterCollections;
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
+     * 
+     */
     private @Nullable String displayName;
     private @Nullable List<GetDedicatedAiClustersFilter> filters;
     /**
@@ -28,6 +32,10 @@ public final class GetDedicatedAiClustersResult {
      * 
      */
     private @Nullable String id;
+    /**
+     * @return The current state of the dedicated AI cluster.
+     * 
+     */
     private @Nullable String state;
 
     private GetDedicatedAiClustersResult() {}
@@ -41,6 +49,10 @@ public final class GetDedicatedAiClustersResult {
     public List<GetDedicatedAiClustersDedicatedAiClusterCollection> dedicatedAiClusterCollections() {
         return this.dedicatedAiClusterCollections;
     }
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
+     * 
+     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
@@ -54,6 +66,10 @@ public final class GetDedicatedAiClustersResult {
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
+    /**
+     * @return The current state of the dedicated AI cluster.
+     * 
+     */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }

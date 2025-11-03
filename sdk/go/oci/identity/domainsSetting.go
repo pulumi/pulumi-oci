@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// # Replace Settings
-//
 // ## Example Usage
 //
 // ## Import

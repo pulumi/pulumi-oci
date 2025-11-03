@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
- *
- * Creates a pre-authenticated request specific to the bucket.
- *
  * ## Example Usage
  *
  * ```typescript

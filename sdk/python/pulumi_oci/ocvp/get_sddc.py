@@ -27,7 +27,7 @@ class GetSddcResult:
     """
     A collection of values returned by getSddc.
     """
-    def __init__(__self__, actual_esxi_hosts_count=None, capacity_reservation_id=None, clusters_count=None, compartment_id=None, compute_availability_domain=None, datastores=None, defined_tags=None, display_name=None, esxi_hosts_count=None, esxi_software_version=None, freeform_tags=None, hcx_action=None, hcx_fqdn=None, hcx_initial_password=None, hcx_mode=None, hcx_on_prem_key=None, hcx_on_prem_licenses=None, hcx_private_ip_id=None, hcx_vlan_id=None, id=None, initial_configurations=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_sku=None, instance_display_name_prefix=None, is_hcx_enabled=None, is_hcx_enterprise_enabled=None, is_hcx_pending_downgrade=None, is_shielded_instance_enabled=None, is_single_host_sddc=None, nsx_edge_uplink1vlan_id=None, nsx_edge_uplink2vlan_id=None, nsx_edge_uplink_ip_id=None, nsx_edge_vtep_vlan_id=None, nsx_manager_fqdn=None, nsx_manager_initial_password=None, nsx_manager_private_ip_id=None, nsx_manager_username=None, nsx_overlay_segment_name=None, nsx_vtep_vlan_id=None, provisioning_subnet_id=None, provisioning_vlan_id=None, refresh_hcx_license_status=None, replication_vlan_id=None, reserving_hcx_on_premise_license_keys=None, sddc_id=None, ssh_authorized_keys=None, state=None, time_created=None, time_hcx_billing_cycle_end=None, time_hcx_license_status_updated=None, time_updated=None, upgrade_licenses=None, vcenter_fqdn=None, vcenter_initial_password=None, vcenter_private_ip_id=None, vcenter_username=None, vmotion_vlan_id=None, vmware_software_version=None, vsan_vlan_id=None, vsphere_upgrade_guide=None, vsphere_upgrade_objects=None, vsphere_vlan_id=None, workload_network_cidr=None):
+    def __init__(__self__, actual_esxi_hosts_count=None, capacity_reservation_id=None, clusters_count=None, compartment_id=None, compute_availability_domain=None, datastores=None, defined_tags=None, display_name=None, esxi_hosts_count=None, esxi_software_version=None, freeform_tags=None, hcx_action=None, hcx_fqdn=None, hcx_initial_password=None, hcx_mode=None, hcx_on_prem_key=None, hcx_on_prem_licenses=None, hcx_private_ip_id=None, hcx_vlan_id=None, id=None, initial_configurations=None, initial_host_ocpu_count=None, initial_host_shape_name=None, initial_sku=None, instance_display_name_prefix=None, is_hcx_enabled=None, is_hcx_enterprise_enabled=None, is_hcx_pending_downgrade=None, is_shielded_instance_enabled=None, is_single_host_sddc=None, nsx_edge_uplink1vlan_id=None, nsx_edge_uplink2vlan_id=None, nsx_edge_uplink_ip_id=None, nsx_edge_vtep_vlan_id=None, nsx_manager_fqdn=None, nsx_manager_initial_password=None, nsx_manager_private_ip_id=None, nsx_manager_username=None, nsx_overlay_segment_name=None, nsx_vtep_vlan_id=None, provisioning_subnet_id=None, provisioning_vlan_id=None, refresh_hcx_license_status=None, replication_vlan_id=None, reserving_hcx_on_premise_license_keys=None, sddc_id=None, ssh_authorized_keys=None, state=None, system_tags=None, time_created=None, time_hcx_billing_cycle_end=None, time_hcx_license_status_updated=None, time_updated=None, upgrade_licenses=None, vcenter_fqdn=None, vcenter_initial_password=None, vcenter_private_ip_id=None, vcenter_username=None, vmotion_vlan_id=None, vmware_software_version=None, vsan_vlan_id=None, vsphere_upgrade_guide=None, vsphere_upgrade_objects=None, vsphere_vlan_id=None, workload_network_cidr=None):
         if actual_esxi_hosts_count and not isinstance(actual_esxi_hosts_count, int):
             raise TypeError("Expected argument 'actual_esxi_hosts_count' to be a int")
         pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
@@ -172,6 +172,9 @@ class GetSddcResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -285,7 +288,7 @@ class GetSddcResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -617,6 +620,11 @@ class GetSddcResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -807,6 +815,7 @@ class AwaitableGetSddcResult(GetSddcResult):
             sddc_id=self.sddc_id,
             ssh_authorized_keys=self.ssh_authorized_keys,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_hcx_billing_cycle_end=self.time_hcx_billing_cycle_end,
             time_hcx_license_status_updated=self.time_hcx_license_status_updated,
@@ -898,6 +907,7 @@ def get_sddc(sddc_id: Optional[_builtins.str] = None,
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         ssh_authorized_keys=pulumi.get(__ret__, 'ssh_authorized_keys'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_hcx_billing_cycle_end=pulumi.get(__ret__, 'time_hcx_billing_cycle_end'),
         time_hcx_license_status_updated=pulumi.get(__ret__, 'time_hcx_license_status_updated'),
@@ -986,6 +996,7 @@ def get_sddc_output(sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
         sddc_id=pulumi.get(__response__, 'sddc_id'),
         ssh_authorized_keys=pulumi.get(__response__, 'ssh_authorized_keys'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_hcx_billing_cycle_end=pulumi.get(__response__, 'time_hcx_billing_cycle_end'),
         time_hcx_license_status_updated=pulumi.get(__response__, 'time_hcx_license_status_updated'),

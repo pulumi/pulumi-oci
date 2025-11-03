@@ -12,21 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Db System resource in Oracle Cloud Infrastructure Database service.
-//
-// Creates a new DB system in the specified compartment and availability domain. The Oracle
-// Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
-//
-// An initial database is created on the DB system based on the request parameters you provide and some default
-// options. For detailed information about default options, see [Bare metal and virtual machine DB system default options.](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/creatingDBsystem.htm#Default)
-//
-// **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-//
-// For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
-//
-// Use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure/) and [CreateCloudVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster/) APIs to provision a new Exadata Cloud Service instance.
-//
-// **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
+// ## Example Usage
 //
 // ## Import
 //
@@ -141,7 +127,7 @@ type DbSystem struct {
 	IormConfigCaches DbSystemIormConfigCachArrayOutput `pulumi:"iormConfigCaches"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrOutput `pulumi:"kmsKeyVersionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
@@ -164,7 +150,7 @@ type DbSystem struct {
 	// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The most recent OS Patch Version applied on the DB system.
 	OsVersion pulumi.StringOutput `pulumi:"osVersion"`
@@ -358,7 +344,7 @@ type dbSystemState struct {
 	IormConfigCaches []DbSystemIormConfigCach `pulumi:"iormConfigCaches"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
@@ -381,7 +367,7 @@ type dbSystemState struct {
 	// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 	NodeCount *int `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The most recent OS Patch Version applied on the DB system.
 	OsVersion *string `pulumi:"osVersion"`
@@ -525,7 +511,7 @@ type DbSystemState struct {
 	IormConfigCaches DbSystemIormConfigCachArrayInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringPtrInput
@@ -548,7 +534,7 @@ type DbSystemState struct {
 	// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 	NodeCount pulumi.IntPtrInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
 	// The most recent OS Patch Version applied on the DB system.
 	OsVersion pulumi.StringPtrInput
@@ -694,7 +680,7 @@ type dbSystemArgs struct {
 	Hostname string `pulumi:"hostname"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
 	LicenseModel *string `pulumi:"licenseModel"`
@@ -703,7 +689,7 @@ type dbSystemArgs struct {
 	// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 	NodeCount *int `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
 	PrivateIp *string `pulumi:"privateIp"`
@@ -820,7 +806,7 @@ type DbSystemArgs struct {
 	Hostname pulumi.StringInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// (Updatable) The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
 	LicenseModel pulumi.StringPtrInput
@@ -829,7 +815,7 @@ type DbSystemArgs struct {
 	// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 	NodeCount pulumi.IntPtrInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
 	// A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. Supported for VM BM shape.
 	PrivateIp pulumi.StringPtrInput
@@ -1105,7 +1091,7 @@ func (o DbSystemOutput) KmsKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o DbSystemOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringPtrOutput { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
@@ -1161,7 +1147,7 @@ func (o DbSystemOutput) NodeCount() pulumi.IntOutput {
 }
 
 // (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 func (o DbSystemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }

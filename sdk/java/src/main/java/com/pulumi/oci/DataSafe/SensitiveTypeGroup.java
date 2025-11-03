@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a new sensitive type group.
- * 
  * ## Example Usage
  * 
  * <pre>

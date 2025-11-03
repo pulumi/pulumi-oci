@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MeteringComputation
 {
     /// <summary>
-    /// This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
-    /// 
-    /// Returns carbon emission usage for the given account.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

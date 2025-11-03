@@ -20,10 +20,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Audit Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Updates the audit policy.
- * 
  * ## Example Usage
  * 
  * <pre>

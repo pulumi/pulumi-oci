@@ -34,10 +34,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
- * 
- * Creates and launches a DB System.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -127,6 +123,9 @@ import javax.annotation.Nullable;
  *             .isHighlyAvailable(mysqlDbSystemIsHighlyAvailable)
  *             .maintenance(MysqlDbSystemMaintenanceArgs.builder()
  *                 .windowStartTime(mysqlDbSystemMaintenanceWindowStartTime)
+ *                 .maintenanceScheduleType(mysqlDbSystemMaintenanceMaintenanceScheduleType)
+ *                 .versionPreference(mysqlDbSystemMaintenanceVersionPreference)
+ *                 .versionTrackPreference(mysqlDbSystemMaintenanceVersionTrackPreference)
  *                 .build())
  *             .nsgIds(mysqlDbSystemNsgIds)
  *             .port(mysqlDbSystemPort)
@@ -145,6 +144,7 @@ import javax.annotation.Nullable;
  *                 .certificateGenerationType(mysqlDbSystemSecureConnectionsCertificateGenerationType)
  *                 .certificateId(testCertificate.id())
  *                 .build())
+ *             .securityAttributes(mysqlDbSystemSecurityAttributes)
  *             .source(MysqlDbSystemSourceArgs.builder()
  *                 .sourceType(mysqlDbSystemSourceSourceType)
  *                 .backupId(testBackup.id())
@@ -734,6 +734,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<MysqlDbSystemSecureConnections> secureConnections() {
         return this.secureConnections;
+    }
+    /**
+     * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * (Updatable) The name of the shape. The shape determines the resources allocated

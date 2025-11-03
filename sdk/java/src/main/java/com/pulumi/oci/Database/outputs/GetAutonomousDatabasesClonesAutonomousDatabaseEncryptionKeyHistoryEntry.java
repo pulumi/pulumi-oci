@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry {
     /**
-     * @return Details of the Autonomous Database encryption key.
+     * @return Details of the Autonomous AI Database encryption key.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey> encryptionKeys;
@@ -25,7 +25,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHi
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry() {}
     /**
-     * @return Details of the Autonomous Database encryption key.
+     * @return Details of the Autonomous AI Database encryption key.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey> encryptionKeys() {

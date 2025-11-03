@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a new security policy configuration resource.
- * 
  * ## Example Usage
  * 
  * <pre>

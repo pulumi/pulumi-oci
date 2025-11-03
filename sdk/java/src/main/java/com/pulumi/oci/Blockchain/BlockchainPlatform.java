@@ -22,10 +22,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
- * 
- * Creates a new Blockchain Platform.
- * 
  * ## Example Usage
  * 
  * <pre>

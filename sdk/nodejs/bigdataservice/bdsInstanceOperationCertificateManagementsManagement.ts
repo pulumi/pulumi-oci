@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Bds Instance Operation Certificate Managements Management resource in Oracle Cloud Infrastructure Big Data Service service.
- *
- * Configuring TLS/SSL for various ODH services running on the BDS cluster.
- *
  * ## Example Usage
  *
  * ```typescript

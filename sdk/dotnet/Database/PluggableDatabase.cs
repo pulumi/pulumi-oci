@@ -10,11 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Pluggable Database resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates and starts a pluggable database in the specified container database.
-    /// Pluggable Database can be created using different operations (e.g. LocalClone, RemoteClone, Relocate ) with this API.
-    /// Use the [StartPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StartPluggableDatabase) and [StopPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StopPluggableDatabase) APIs to start and stop the pluggable database.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 
@@ -75,6 +71,9 @@ namespace Pulumi.Oci.Database
         [Output("isRestricted")]
         public Output<bool> IsRestricted { get; private set; } = null!;
 
+        /// <summary>
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        /// </summary>
         [Output("kmsKeyVersionId")]
         public Output<string?> KmsKeyVersionId { get; private set; } = null!;
 
@@ -282,6 +281,9 @@ namespace Pulumi.Oci.Database
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        /// </summary>
         [Input("kmsKeyVersionId")]
         public Input<string>? KmsKeyVersionId { get; set; }
 
@@ -441,6 +443,9 @@ namespace Pulumi.Oci.Database
         [Input("isRestricted")]
         public Input<bool>? IsRestricted { get; set; }
 
+        /// <summary>
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        /// </summary>
         [Input("kmsKeyVersionId")]
         public Input<string>? KmsKeyVersionId { get; set; }
 

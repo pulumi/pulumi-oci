@@ -140,11 +140,6 @@ class ManagedInstanceRebootManagement(pulumi.CustomResource):
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceRebootManagementWorkRequestDetailsArgs', 'ManagedInstanceRebootManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Initiates a reboot of the specified managed instance. You can also specify the number of minutes the service
-        waits before marking the reboot operation as failed.
-
         ## Example Usage
 
         ```python
@@ -181,11 +176,6 @@ class ManagedInstanceRebootManagement(pulumi.CustomResource):
                  args: ManagedInstanceRebootManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Initiates a reboot of the specified managed instance. You can also specify the number of minutes the service
-        waits before marking the reboot operation as failed.
-
         ## Example Usage
 
         ```python

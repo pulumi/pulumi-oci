@@ -202,7 +202,7 @@ class _ModelState:
         :param pulumi.Input[_builtins.str] time_created: The time the the model was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the model was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: Possible data set type
-        :param pulumi.Input[_builtins.str] version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        :param pulumi.Input[_builtins.str] version: For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -421,7 +421,7 @@ class _ModelState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         return pulumi.get(self, "version")
 
@@ -447,10 +447,6 @@ class Model(pulumi.CustomResource):
                  training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
-
-        Creates a new model for training and train the model with date provided.
-
         ## Example Usage
 
         ```python
@@ -539,10 +535,6 @@ class Model(pulumi.CustomResource):
                  args: ModelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Language service.
-
-        Creates a new model for training and train the model with date provided.
-
         ## Example Usage
 
         ```python
@@ -717,7 +709,7 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time the the model was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the model was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: Possible data set type
-        :param pulumi.Input[_builtins.str] version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        :param pulumi.Input[_builtins.str] version: For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -865,7 +857,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[_builtins.str]:
         """
-        For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         return pulumi.get(self, "version")
 

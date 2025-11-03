@@ -12,8 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Configuration resource in Oracle Cloud Infrastructure Audit service.
-//
 // ## Example Usage
 //
 // ```go

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
-//
-// Creates a new Protection Policy.
-//
 // ## Example Usage
 //
 // ```go

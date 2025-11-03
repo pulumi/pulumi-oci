@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
- *
- * Create an API key on behalf of the specified user.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult
     {
         /// <summary>
+        /// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        /// </summary>
+        public readonly string BackupRetentionPolicyOnTerminate;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         /// </summary>
         public readonly string DbrsPolicyId;
@@ -22,11 +26,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether the backup destination is cross-region or local region.
+        /// Indicates whether the backup destination is cross-region or local.
         /// </summary>
         public readonly bool IsRemote;
         /// <summary>
-        /// The name of the remote region where the remote automatic incremental backups will be stored.
+        /// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        /// </summary>
+        public readonly bool IsRetentionLockEnabled;
+        /// <summary>
+        /// The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         /// </summary>
         public readonly string RemoteRegion;
         /// <summary>
@@ -38,11 +46,15 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult(
+            string backupRetentionPolicyOnTerminate,
+
             string dbrsPolicyId,
 
             string id,
 
             bool isRemote,
+
+            bool isRetentionLockEnabled,
 
             string remoteRegion,
 
@@ -52,9 +64,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             string vpcUser)
         {
+            BackupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
             IsRemote = isRemote;
+            IsRetentionLockEnabled = isRetentionLockEnabled;
             RemoteRegion = remoteRegion;
             Type = type;
             VpcPassword = vpcPassword;

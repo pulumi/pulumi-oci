@@ -24,9 +24,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Creates a new Pipeline.
+ * ## Example Usage
  * 
  * ## Import
  * 
@@ -184,6 +182,20 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
      */
     public Output<PipelineLogConfigurationDetails> logConfigurationDetails() {
         return this.logConfigurationDetails;
+    }
+    /**
+     * (Updatable) Parameters used in the pipeline.
+     * 
+     */
+    @Export(name="parameters", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> parameters;
+
+    /**
+     * @return (Updatable) Parameters used in the pipeline.
+     * 
+     */
+    public Output<Map<String,String>> parameters() {
+        return this.parameters;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.

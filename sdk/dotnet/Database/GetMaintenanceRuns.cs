@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+        /// A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
         /// </summary>
         [Input("isLocalAdg")]
         public bool? IsLocalAdg { get; set; }
@@ -202,7 +202,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+        /// A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
         /// </summary>
         [Input("isLocalAdg")]
         public Input<bool>? IsLocalAdg { get; set; }
@@ -271,7 +271,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string? MaintenanceType;
         /// <summary>
-        /// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        /// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         /// </summary>
         public readonly string? State;
         /// <summary>

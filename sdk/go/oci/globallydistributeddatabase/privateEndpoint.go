@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
-//
-// Creates a PrivateEndpoint.
-//
 // ## Example Usage
 //
 // ```go

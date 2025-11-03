@@ -35,6 +35,7 @@ from .cloud_vm_cluster import *
 from .cloud_vm_cluster_iorm_config import *
 from .data_guard_association import *
 from .database import *
+from .database_snapshot_standby import *
 from .database_software_image import *
 from .database_upgrade import *
 from .db_home import *

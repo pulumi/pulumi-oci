@@ -12,13 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Suppression resource in Oracle Cloud Infrastructure Email service.
-//
-// Adds recipient email addresses to the suppression list for a tenancy.
-// Addresses added to the suppression list via the API are denoted as
-// "MANUAL" in the `reason` field. *Note:* All email addresses added to the
-// suppression list are normalized to include only lowercase letters.
-//
 // ## Example Usage
 //
 // ```go

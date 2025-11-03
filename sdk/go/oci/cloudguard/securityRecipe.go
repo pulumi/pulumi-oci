@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-//
-// Creates a security zone recipe (SecurityRecipe resource), using parameters
-// passed in a CreateSecurityRecipeDetails resource.
-//
 // ## Example Usage
 //
 // ```go

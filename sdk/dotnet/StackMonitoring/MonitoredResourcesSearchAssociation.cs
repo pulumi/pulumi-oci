@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
-    /// This resource provides the Monitored Resources Search Association resource in Oracle Cloud Infrastructure Stack Monitoring service.
-    /// 
-    /// Search associations in the given compartment based on the search criteria.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

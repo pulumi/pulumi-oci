@@ -19,20 +19,38 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         public Input<string> CollectionType { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+        /// </summary>
+        [Input("isIgnorePostUpgradeErrors")]
+        public Input<bool>? IsIgnorePostUpgradeErrors { get; set; }
+
+        /// <summary>
+        /// (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+        /// </summary>
+        [Input("isIgnorePrerequisites")]
+        public Input<bool>? IsIgnorePrerequisites { get; set; }
+
+        /// <summary>
         /// (Updatable) Enables or disables the recompilation of invalid objects.
         /// </summary>
         [Input("isRecompileInvalidObjects")]
         public Input<bool>? IsRecompileInvalidObjects { get; set; }
 
         /// <summary>
-        /// (Updatable) Enables or disables time zone upgrade. 
+        /// (Updatable) Enables or disables time zone upgrade.
+        /// </summary>
+        [Input("isTimeZoneUpgrade")]
+        public Input<bool>? IsTimeZoneUpgrade { get; set; }
+
+        /// <summary>
+        /// (Updatable) Service drain timeout specified in seconds. 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("isTimeZoneUpgrade")]
-        public Input<bool>? IsTimeZoneUpgrade { get; set; }
+        [Input("maxDrainTimeoutInSeconds")]
+        public Input<int>? MaxDrainTimeoutInSeconds { get; set; }
 
         public FsuCycleUpgradeDetailsArgs()
         {

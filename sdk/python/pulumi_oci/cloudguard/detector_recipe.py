@@ -472,9 +472,7 @@ class DetectorRecipe(pulumi.CustomResource):
                  source_detector_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a new DetectorRecipe resource.
+        ## Example Usage
 
         ## Import
 
@@ -512,9 +510,7 @@ class DetectorRecipe(pulumi.CustomResource):
                  args: DetectorRecipeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a new DetectorRecipe resource.
+        ## Example Usage
 
         ## Import
 

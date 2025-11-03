@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Managed Database resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Updates the Managed Database specified by managedDatabaseId.
+ * ## Example Usage
  *
  * ## Import
  *

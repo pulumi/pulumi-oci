@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
  *
- * Gets information about the specified Autonomous Database backup.
+ * Gets information about the specified Autonomous AI Database backup.
  *
  * ## Example Usage
  *
@@ -34,7 +34,7 @@ export function getAutonomousDatabaseBackup(args: GetAutonomousDatabaseBackupArg
  */
 export interface GetAutonomousDatabaseBackupArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      */
     autonomousDatabaseBackupId: string;
 }
@@ -45,7 +45,7 @@ export interface GetAutonomousDatabaseBackupArgs {
 export interface GetAutonomousDatabaseBackupResult {
     readonly autonomousDatabaseBackupId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
      */
     readonly autonomousDatabaseId: string;
     /**
@@ -61,7 +61,7 @@ export interface GetAutonomousDatabaseBackupResult {
      */
     readonly databaseSizeInTbs: number;
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
      */
     readonly dbVersion: string;
     /**
@@ -69,16 +69,20 @@ export interface GetAutonomousDatabaseBackupResult {
      */
     readonly displayName: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      */
     readonly id: string;
+    /**
+     * The infrastructure type this resource belongs to.
+     */
+    readonly infrastructureType: string;
     /**
      * Indicates whether the backup is user-initiated or automatic.
      */
     readonly isAutomatic: boolean;
     readonly isLongTermBackup: boolean;
     /**
-     * Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      */
     readonly isRestorable: boolean;
     /**
@@ -94,13 +98,17 @@ export interface GetAutonomousDatabaseBackupResult {
      */
     readonly kmsKeyId: string;
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
     readonly kmsKeyVersionId: string;
     /**
      * Additional information about the current lifecycle state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Name of the region in which backup is taken in.
+     */
+    readonly region: string;
     /**
      * Retention period, in days, for long-term backups
      */
@@ -109,6 +117,10 @@ export interface GetAutonomousDatabaseBackupResult {
      * The backup size in terrabytes (TB).
      */
     readonly sizeInTbs: number;
+    /**
+     * Source Autonomous Database details.
+     */
+    readonly sourceDatabaseDetails: outputs.Database.GetAutonomousDatabaseBackupSourceDatabaseDetail[];
     /**
      * The current state of the backup.
      */
@@ -137,7 +149,7 @@ export interface GetAutonomousDatabaseBackupResult {
 /**
  * This data source provides details about a specific Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
  *
- * Gets information about the specified Autonomous Database backup.
+ * Gets information about the specified Autonomous AI Database backup.
  *
  * ## Example Usage
  *
@@ -162,7 +174,7 @@ export function getAutonomousDatabaseBackupOutput(args: GetAutonomousDatabaseBac
  */
 export interface GetAutonomousDatabaseBackupOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      */
     autonomousDatabaseBackupId: pulumi.Input<string>;
 }

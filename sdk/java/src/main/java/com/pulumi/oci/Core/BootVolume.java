@@ -21,13 +21,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
- * For general information about boot volumes, see [Boot Volumes](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/bootvolumes.htm).
- * You may optionally specify a *display name* for the volume, which is simply a friendly name or
- * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
- * 
  * ## Example Usage
  * 
  * <pre>

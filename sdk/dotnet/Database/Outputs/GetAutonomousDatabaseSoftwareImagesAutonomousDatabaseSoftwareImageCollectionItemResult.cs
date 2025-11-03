@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollectionItemResult
     {
         /// <summary>
-        /// One-off patches included in the Autonomous Database Software Image
+        /// One-off patches included in the Autonomous AI Database Software Image
         /// </summary>
         public readonly ImmutableArray<string> AutonomousDsiOneOffPatches;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The database version with which the Autonomous Database Software Image is to be built.
+        /// The database version with which the Autonomous AI Database Software Image is to be built.
         /// </summary>
         public readonly string DatabaseVersion;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The date and time the Autonomous Database Software Image was created.
+        /// The date and time the Autonomous AI Database Software Image was created.
         /// </summary>
         public readonly string TimeCreated;
 

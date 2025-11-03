@@ -24,10 +24,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Register a new Identity Propagation Trust configuration.
- * 
  * ## Example Usage
  * 
  * <pre>

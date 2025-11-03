@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
- *
- * Create a new index on the table identified by tableNameOrId.
- *
  * ## Example Usage
  *
  * ```typescript

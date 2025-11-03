@@ -148,11 +148,6 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
                  external_pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the External Pluggable Database Operations Insights Management resource in Oracle Cloud Infrastructure Database service.
-
-        Enable Operations Insights for the external pluggable database.
-        When deleting this resource block , we call disable if it was in enabled state .
-
         ## Example Usage
 
         ```python
@@ -185,11 +180,6 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
                  args: ExternalPluggableDatabaseOperationsInsightsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Pluggable Database Operations Insights Management resource in Oracle Cloud Infrastructure Database service.
-
-        Enable Operations Insights for the external pluggable database.
-        When deleting this resource block , we call disable if it was in enabled state .
-
         ## Example Usage
 
         ```python

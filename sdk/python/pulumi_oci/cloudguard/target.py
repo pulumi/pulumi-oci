@@ -504,10 +504,6 @@ class Target(pulumi.CustomResource):
                  target_responder_recipes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
-
         ## Example Usage
 
         ```python
@@ -590,10 +586,6 @@ class Target(pulumi.CustomResource):
                  args: TargetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
-
         ## Example Usage
 
         ```python

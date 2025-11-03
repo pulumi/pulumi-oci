@@ -1371,9 +1371,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                  test_recipients: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Notification Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace Notification Settings
+        ## Example Usage
 
         ## Import
 
@@ -1525,9 +1523,7 @@ class DomainsNotificationSetting(pulumi.CustomResource):
                  args: DomainsNotificationSettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Notification Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace Notification Settings
+        ## Example Usage
 
         ## Import
 

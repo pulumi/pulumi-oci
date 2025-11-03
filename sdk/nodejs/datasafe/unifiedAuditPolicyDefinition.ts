@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Updates the unified audit policy definition.
+ * ## Example Usage
  *
  * ## Import
  *

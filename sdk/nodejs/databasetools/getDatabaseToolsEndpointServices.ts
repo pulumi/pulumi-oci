@@ -41,7 +41,7 @@ export function getDatabaseToolsEndpointServices(args: GetDatabaseToolsEndpointS
  */
 export interface GetDatabaseToolsEndpointServicesArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
@@ -124,7 +124,7 @@ export function getDatabaseToolsEndpointServicesOutput(args: GetDatabaseToolsEnd
  */
 export interface GetDatabaseToolsEndpointServicesOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**

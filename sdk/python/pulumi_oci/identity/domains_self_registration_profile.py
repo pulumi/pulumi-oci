@@ -2155,10 +2155,6 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                  user_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a self-registration profile.
-
         ## Example Usage
 
         ## Import
@@ -2428,10 +2424,6 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
                  args: DomainsSelfRegistrationProfileArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a self-registration profile.
-
         ## Example Usage
 
         ## Import

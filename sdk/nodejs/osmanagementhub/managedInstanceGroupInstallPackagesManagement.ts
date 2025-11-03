@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Managed Instance Group Install Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Installs the specified packages on each managed instance in a managed instance group. The package must be compatible with the instances in the group.
- *
  * ## Example Usage
  *
  * ```typescript

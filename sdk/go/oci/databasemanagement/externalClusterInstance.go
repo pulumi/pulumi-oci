@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Updates the external cluster instance specified by `externalClusterInstanceId`.
+// ## Example Usage
 //
 // ## Import
 //

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
- *
- * Creates a new tunnel inspection rule for the network firewall policy.
- *
  * ## Example Usage
  *
  * ```typescript

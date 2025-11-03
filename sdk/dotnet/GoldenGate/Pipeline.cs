@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate
 {
     /// <summary>
-    /// This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
-    /// 
-    /// Creates a new Pipeline.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

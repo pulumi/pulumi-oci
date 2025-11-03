@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- *
- * Add an existing global property to a fleet in Fleet Application Management.
- *
  * ## Example Usage
  *
  * ```typescript

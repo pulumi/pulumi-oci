@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Add a user's own API key.
- *
  * ## Example Usage
  *
  * ## Import

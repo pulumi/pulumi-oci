@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Lists the Autonomous Database clones for the specified Autonomous Database.
+        /// Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
         /// 
         /// 
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Lists the Autonomous Database clones for the specified Autonomous Database.
+        /// Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
         /// 
         /// 
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Lists the Autonomous Database clones for the specified Autonomous Database.
+        /// Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
         /// 
         /// 
         /// ## Example Usage
@@ -208,7 +208,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseResult> AutonomousDatabases;
         /// <summary>
-        /// The Autonomous Database clone type.
+        /// The Autonomous AI Database clone type.
         /// </summary>
         public readonly string? CloneType;
         /// <summary>
@@ -216,7 +216,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        /// The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesFilterResult> Filters;
@@ -225,7 +225,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The current state of the Autonomous Database.
+        /// The current state of the Autonomous AI Database.
         /// </summary>
         public readonly string? State;
 

@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
- * 
- * Registers a new On-premise vantage point.
- * 
  * ## Example Usage
  * 
  * <pre>

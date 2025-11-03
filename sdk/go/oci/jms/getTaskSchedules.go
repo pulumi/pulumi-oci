@@ -30,11 +30,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := jms.GetTaskSchedules(ctx, &jms.GetTaskSchedulesArgs{
-//				FleetId:                  testFleet.Id,
-//				Id:                       pulumi.StringRef(taskScheduleId),
-//				ManagedInstanceId:        pulumi.StringRef(testManagedInstance.Id),
-//				Name:                     pulumi.StringRef(taskScheduleName),
-//				TaskScheduleNameContains: pulumi.StringRef(taskScheduleTaskScheduleNameContains),
+//				FleetId:                  "example-fleet-ocid",
+//				Id:                       pulumi.StringRef("example-task-schedule-ocid"),
+//				ManagedInstanceId:        pulumi.StringRef("example-managed-instance-ocid"),
+//				Name:                     pulumi.StringRef("JFR"),
+//				TaskScheduleNameContains: pulumi.StringRef("JFR"),
 //			}, nil)
 //			if err != nil {
 //				return err

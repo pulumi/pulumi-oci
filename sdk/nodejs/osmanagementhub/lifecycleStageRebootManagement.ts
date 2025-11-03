@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Lifecycle Stage Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Reboots all managed instances in the specified lifecycle stage.
- *
  * ## Example Usage
  *
  * ```typescript

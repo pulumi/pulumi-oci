@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Creates a new software source.
+// ## Example Usage
 //
 // ## Import
 //

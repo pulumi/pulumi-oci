@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
-//
-// Creates a target asset.
-//
 // ## Example Usage
 //
 // ```go

@@ -16,10 +16,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
- * 
- * Invokes a function
- * 
  * ## Example Usage
  * 
  * <pre>

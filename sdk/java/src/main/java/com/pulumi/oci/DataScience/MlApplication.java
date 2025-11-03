@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Ml Application resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Creates a new MlApplication.
- * 
  * ## Example Usage
  * 
  * <pre>

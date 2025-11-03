@@ -15,9 +15,47 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Lifecycle Stage Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+ * ## Example Usage
  * 
- * Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.OsManagementHub.LifecycleStageAttachManagedInstancesManagement;
+ * import com.pulumi.oci.OsManagementHub.LifecycleStageAttachManagedInstancesManagementArgs;
+ * import com.pulumi.oci.OsManagementHub.inputs.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs;
+ * import com.pulumi.oci.OsManagementHub.inputs.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testLifecycleStageAttachManagedInstancesManagement = new LifecycleStageAttachManagedInstancesManagement("testLifecycleStageAttachManagedInstancesManagement", LifecycleStageAttachManagedInstancesManagementArgs.builder()
+ *             .lifecycleStageId(testLifecycleStage.id())
+ *             .managedInstanceDetails(LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs.builder()
+ *                 .managedInstances(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsManagedInstances)
+ *                 .workRequestDetails(LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs.builder()
+ *                     .description(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription)
+ *                     .displayName(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName)
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * 
  * ## Import
  * 

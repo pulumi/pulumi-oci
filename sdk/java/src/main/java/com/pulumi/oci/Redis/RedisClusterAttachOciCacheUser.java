@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Redis Cluster Attach Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
- * 
- * Attach existing Oracle Cloud Infrastructure cache users to a redis cluster.
- * 
  * ## Example Usage
  * 
  * <pre>

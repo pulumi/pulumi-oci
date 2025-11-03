@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Address Action Verification resource in Oracle Cloud Infrastructure Osp Gateway service.
- * 
- * Verify address
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Creates a new SQL collection resource.
-//
 // ## Example Usage
 //
 // ```go

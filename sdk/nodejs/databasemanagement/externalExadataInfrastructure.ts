@@ -7,15 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Creates an Oracle Cloud Infrastructure resource for the Exadata infrastructure and enables the Monitoring service for the Exadata infrastructure.
- * The following resource/subresources are created:
- *   Infrastructure
- *   Storage server connectors
- *   Storage servers
- *   Storage grids
- *
  * ## Example Usage
  *
  * ```typescript

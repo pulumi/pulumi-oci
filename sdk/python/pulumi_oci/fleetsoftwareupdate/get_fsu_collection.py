@@ -27,13 +27,16 @@ class GetFsuCollectionResult:
     """
     A collection of values returned by getFsuCollection.
     """
-    def __init__(__self__, active_fsu_cycles=None, compartment_id=None, defined_tags=None, display_name=None, fleet_discoveries=None, freeform_tags=None, fsu_collection_id=None, id=None, last_completed_fsu_cycle_id=None, lifecycle_details=None, service_type=None, source_major_version=None, state=None, system_tags=None, target_count=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, active_fsu_cycles=None, compartment_id=None, components=None, defined_tags=None, display_name=None, fleet_discoveries=None, freeform_tags=None, fsu_collection_id=None, id=None, last_completed_fsu_cycle_id=None, lifecycle_details=None, service_type=None, source_major_version=None, state=None, system_tags=None, target_count=None, time_created=None, time_updated=None, type=None):
         if active_fsu_cycles and not isinstance(active_fsu_cycles, list):
             raise TypeError("Expected argument 'active_fsu_cycles' to be a list")
         pulumi.set(__self__, "active_fsu_cycles", active_fsu_cycles)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if components and not isinstance(components, list):
+            raise TypeError("Expected argument 'components' to be a list")
+        pulumi.set(__self__, "components", components)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -95,9 +98,17 @@ class GetFsuCollectionResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        Compartment Identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def components(self) -> Sequence['outputs.GetFsuCollectionComponentResult']:
+        """
+        Details of components in an Exadata software stack.
+        """
+        return pulumi.get(self, "components")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -111,7 +122,7 @@ class GetFsuCollectionResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Exadata Fleet Update Collection resource display name.
+        The user-friendly name for the Exadata Fleet Update Collection.
         """
         return pulumi.get(self, "display_name")
 
@@ -119,7 +130,7 @@ class GetFsuCollectionResult:
     @pulumi.getter(name="fleetDiscoveries")
     def fleet_discoveries(self) -> Sequence['outputs.GetFsuCollectionFleetDiscoveryResult']:
         """
-        Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+        Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
         """
         return pulumi.get(self, "fleet_discoveries")
 
@@ -140,7 +151,7 @@ class GetFsuCollectionResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        OCID identifier for the Exadata Fleet Update Collection.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
         """
         return pulumi.get(self, "id")
 
@@ -172,7 +183,7 @@ class GetFsuCollectionResult:
     @pulumi.getter(name="sourceMajorVersion")
     def source_major_version(self) -> _builtins.str:
         """
-        Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+        Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
         """
         return pulumi.get(self, "source_major_version")
 
@@ -233,6 +244,7 @@ class AwaitableGetFsuCollectionResult(GetFsuCollectionResult):
         return GetFsuCollectionResult(
             active_fsu_cycles=self.active_fsu_cycles,
             compartment_id=self.compartment_id,
+            components=self.components,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             fleet_discoveries=self.fleet_discoveries,
@@ -278,6 +290,7 @@ def get_fsu_collection(fsu_collection_id: Optional[_builtins.str] = None,
     return AwaitableGetFsuCollectionResult(
         active_fsu_cycles=pulumi.get(__ret__, 'active_fsu_cycles'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        components=pulumi.get(__ret__, 'components'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         fleet_discoveries=pulumi.get(__ret__, 'fleet_discoveries'),
@@ -320,6 +333,7 @@ def get_fsu_collection_output(fsu_collection_id: Optional[pulumi.Input[_builtins
     return __ret__.apply(lambda __response__: GetFsuCollectionResult(
         active_fsu_cycles=pulumi.get(__response__, 'active_fsu_cycles'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        components=pulumi.get(__response__, 'components'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         fleet_discoveries=pulumi.get(__response__, 'fleet_discoveries'),

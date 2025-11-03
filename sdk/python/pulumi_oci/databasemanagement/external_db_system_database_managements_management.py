@@ -153,11 +153,6 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
                  license_model: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the External Db System Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Database Management service for all the components of the specified
-        external DB system (except databases).
-
         ## Example Usage
 
         ```python
@@ -187,11 +182,6 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
                  args: ExternalDbSystemDatabaseManagementsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db System Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Database Management service for all the components of the specified
-        external DB system (except databases).
-
         ## Example Usage
 
         ```python

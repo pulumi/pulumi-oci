@@ -499,9 +499,7 @@ class ComputeHost(pulumi.CustomResource):
                  compute_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Compute Host resource in Oracle Cloud Infrastructure Core service.
-
-        Customer can update the some fields for ComputeHost record
+        ## Example Usage
 
         ## Import
 
@@ -523,9 +521,7 @@ class ComputeHost(pulumi.CustomResource):
                  args: ComputeHostArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Compute Host resource in Oracle Cloud Infrastructure Core service.
-
-        Customer can update the some fields for ComputeHost record
+        ## Example Usage
 
         ## Import
 

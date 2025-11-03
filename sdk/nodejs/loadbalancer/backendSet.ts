@@ -7,14 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
- *
- * Adds a backend set to a load balancer.
- *
- * ## Supported Aliases
- *
- * * `ociLoadBalancerBackendset`
- *
  * ## Example Usage
  *
  * ```typescript

@@ -799,9 +799,7 @@ class ManagedInstance(pulumi.CustomResource):
                  secondary_management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Updates the specified managed instance information, such as description, ONS topic, and associated management station.
+        ## Example Usage
 
         ## Import
 
@@ -831,9 +829,7 @@ class ManagedInstance(pulumi.CustomResource):
                  args: ManagedInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Updates the specified managed instance information, such as description, ONS topic, and associated management station.
+        ## Example Usage
 
         ## Import
 

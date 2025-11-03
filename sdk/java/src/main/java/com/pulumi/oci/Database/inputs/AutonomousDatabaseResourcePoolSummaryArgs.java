@@ -17,14 +17,14 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
     public static final AutonomousDatabaseResourcePoolSummaryArgs Empty = new AutonomousDatabaseResourcePoolSummaryArgs();
 
     /**
-     * Available capacity left for new elastic pool members provision
+     * (Updatable) Available capacity left for new elastic pool members provision
      * 
      */
     @Import(name="availableComputeCapacity")
     private @Nullable Output<Integer> availableComputeCapacity;
 
     /**
-     * @return Available capacity left for new elastic pool members provision
+     * @return (Updatable) Available capacity left for new elastic pool members provision
      * 
      */
     public Optional<Output<Integer>> availableComputeCapacity() {
@@ -32,14 +32,14 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+     * (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
      * 
      */
     @Import(name="isDisabled")
     private @Nullable Output<Boolean> isDisabled;
 
     /**
-     * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+     * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
      * 
      */
     public Optional<Output<Boolean>> isDisabled() {
@@ -104,7 +104,7 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
         }
 
         /**
-         * @param availableComputeCapacity Available capacity left for new elastic pool members provision
+         * @param availableComputeCapacity (Updatable) Available capacity left for new elastic pool members provision
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
         }
 
         /**
-         * @param availableComputeCapacity Available capacity left for new elastic pool members provision
+         * @param availableComputeCapacity (Updatable) Available capacity left for new elastic pool members provision
          * 
          * @return builder
          * 
@@ -125,7 +125,7 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
         }
 
         /**
-         * @param isDisabled (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+         * @param isDisabled (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
         }
 
         /**
-         * @param isDisabled (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+         * @param isDisabled (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
          * 
          * @return builder
          * 

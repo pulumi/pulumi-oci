@@ -14,9 +14,36 @@ import (
 
 // This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
 //
-// This operation updates SaaS administrative user configuration of the Autonomous Database.
+// This operation updates SaaS administrative user configuration of the Autonomous AI Database.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.NewAutonomousDatabaseSaasAdminUser(ctx, "test_autonomous_database_saas_admin_user", &database.AutonomousDatabaseSaasAdminUserArgs{
+//				AutonomousDatabaseId: pulumi.Any(testAutonomousDatabase.Id),
+//				Password:             pulumi.Any(autonomousDatabaseSaasAdminUserPassword),
+//				AccessType:           pulumi.Any(autonomousDatabaseSaasAdminUserAccessType),
+//				Duration:             pulumi.Any(autonomousDatabaseSaasAdminUserDuration),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 //
 // ## Import
 //
@@ -36,7 +63,7 @@ type AutonomousDatabaseSaasAdminUser struct {
 	SecretId pulumi.StringPtrOutput `pulumi:"secretId"`
 	// The version of the vault secret. If no version is specified, the latest version will be used.
 	SecretVersionNumber pulumi.IntPtrOutput `pulumi:"secretVersionNumber"`
-	// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+	// The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -95,7 +122,7 @@ type autonomousDatabaseSaasAdminUserState struct {
 	SecretId *string `pulumi:"secretId"`
 	// The version of the vault secret. If no version is specified, the latest version will be used.
 	SecretVersionNumber *int `pulumi:"secretVersionNumber"`
-	// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+	// The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -115,7 +142,7 @@ type AutonomousDatabaseSaasAdminUserState struct {
 	SecretId pulumi.StringPtrInput
 	// The version of the vault secret. If no version is specified, the latest version will be used.
 	SecretVersionNumber pulumi.IntPtrInput
-	// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+	// The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -139,7 +166,7 @@ type autonomousDatabaseSaasAdminUserArgs struct {
 	SecretId *string `pulumi:"secretId"`
 	// The version of the vault secret. If no version is specified, the latest version will be used.
 	SecretVersionNumber *int `pulumi:"secretVersionNumber"`
-	// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+	// The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -160,7 +187,7 @@ type AutonomousDatabaseSaasAdminUserArgs struct {
 	SecretId pulumi.StringPtrInput
 	// The version of the vault secret. If no version is specified, the latest version will be used.
 	SecretVersionNumber pulumi.IntPtrInput
-	// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+	// The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -284,7 +311,7 @@ func (o AutonomousDatabaseSaasAdminUserOutput) SecretVersionNumber() pulumi.IntP
 	return o.ApplyT(func(v *AutonomousDatabaseSaasAdminUser) pulumi.IntPtrOutput { return v.SecretVersionNumber }).(pulumi.IntPtrOutput)
 }
 
-// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+// The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

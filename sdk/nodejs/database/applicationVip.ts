@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Application Vip resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on the request parameters you provide.
- *
  * ## Example Usage
  *
  * ```typescript

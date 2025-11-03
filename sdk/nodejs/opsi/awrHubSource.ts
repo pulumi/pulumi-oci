@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
- *
- * Register Awr Hub source
- *
  * ## Example Usage
  *
  * ```typescript

@@ -88,11 +88,6 @@ class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
                  managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Detach Profile Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Detaches profile from a managed instance. After the profile has been removed,
-        the instance cannot be registered as a managed instance.
-
         ## Example Usage
 
         ```python
@@ -125,11 +120,6 @@ class ManagedInstanceDetachProfileManagement(pulumi.CustomResource):
                  args: ManagedInstanceDetachProfileManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Detach Profile Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Detaches profile from a managed instance. After the profile has been removed,
-        the instance cannot be registered as a managed instance.
-
         ## Example Usage
 
         ```python

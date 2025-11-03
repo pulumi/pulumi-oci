@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
-//
-// Create an FS level, user or group quota rule given the `fileSystemId`, `principalId`, `principalType` and
-// `isHardQuota` parameters.
-//
 // ## Example Usage
 //
 // ```go

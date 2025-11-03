@@ -263,6 +263,21 @@ public final class VnicAttachmentCreateVnicDetailsArgs extends com.pulumi.resour
     }
 
     /**
+     * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+     * 
+     */
+    @Import(name="subnetCidr")
+    private @Nullable Output<String> subnetCidr;
+
+    /**
+     * @return One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+     * 
+     */
+    public Optional<Output<String>> subnetCidr() {
+        return Optional.ofNullable(this.subnetCidr);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create the VNIC in. When launching an instance, use this `subnetId` instead of the deprecated `subnetId` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/LaunchInstanceDetails). At least one of them is required; if you provide both, the values must match.
      * 
      * If you are an Oracle Cloud VMware Solution customer and creating a secondary VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`. If you provide both a `vlanId` and `subnetId`, the request fails.
@@ -316,6 +331,7 @@ public final class VnicAttachmentCreateVnicDetailsArgs extends com.pulumi.resour
         this.routeTableId = $.routeTableId;
         this.securityAttributes = $.securityAttributes;
         this.skipSourceDestCheck = $.skipSourceDestCheck;
+        this.subnetCidr = $.subnetCidr;
         this.subnetId = $.subnetId;
         this.vlanId = $.vlanId;
     }
@@ -675,6 +691,27 @@ public final class VnicAttachmentCreateVnicDetailsArgs extends com.pulumi.resour
          */
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
             return skipSourceDestCheck(Output.of(skipSourceDestCheck));
+        }
+
+        /**
+         * @param subnetCidr One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetCidr(@Nullable Output<String> subnetCidr) {
+            $.subnetCidr = subnetCidr;
+            return this;
+        }
+
+        /**
+         * @param subnetCidr One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetCidr(String subnetCidr) {
+            return subnetCidr(Output.of(subnetCidr));
         }
 
         /**

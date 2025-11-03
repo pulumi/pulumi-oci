@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
- *
- * Creates a new metastore.
- *
  * ## Example Usage
  *
  * ```typescript

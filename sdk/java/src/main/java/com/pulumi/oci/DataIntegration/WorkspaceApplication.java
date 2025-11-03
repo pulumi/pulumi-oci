@@ -23,10 +23,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
- * 
- * Creates an application.
- * 
  * ## Example Usage
  * 
  * <pre>

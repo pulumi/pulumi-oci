@@ -69,7 +69,7 @@ public final class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExe
      */
     private String lifecycleSubstate;
     /**
-     * @return The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * @return The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
     private String state;
@@ -193,7 +193,7 @@ public final class GetDatabaseMaintenanceRunHistoryGranularMaintenanceHistoryExe
         return this.lifecycleSubstate;
     }
     /**
-     * @return The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * @return The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
     public String state() {

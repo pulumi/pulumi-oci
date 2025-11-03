@@ -30,12 +30,12 @@ public final class GetStackResult {
      */
     private String description;
     /**
-     * @return Human-readable display name for the stack.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private String displayName;
     /**
-     * @return Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     private Map<String,String> freeformTags;
@@ -46,12 +46,18 @@ public final class GetStackResult {
     private String id;
     private String stackId;
     /**
-     * @return The current lifecycle state of the stack.
+     * @return The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      * 
      */
     private String state;
     /**
-     * @return The date and time at which the stack was created.
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    private String terraformVersion;
+    /**
+     * @return The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
@@ -83,14 +89,14 @@ public final class GetStackResult {
         return this.description;
     }
     /**
-     * @return Human-readable display name for the stack.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,String> freeformTags() {
@@ -107,14 +113,24 @@ public final class GetStackResult {
         return this.stackId;
     }
     /**
-     * @return The current lifecycle state of the stack.
+     * @return The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The date and time at which the stack was created.
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    public String terraformVersion() {
+        return this.terraformVersion;
+    }
+    /**
+     * @return The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
@@ -142,6 +158,8 @@ public final class GetStackResult {
         private String id;
         private String stackId;
         private String state;
+        private Map<String,String> systemTags;
+        private String terraformVersion;
         private String timeCreated;
         private Map<String,String> variables;
         public Builder() {}
@@ -156,6 +174,8 @@ public final class GetStackResult {
     	      this.id = defaults.id;
     	      this.stackId = defaults.stackId;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
+    	      this.terraformVersion = defaults.terraformVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.variables = defaults.variables;
         }
@@ -236,6 +256,22 @@ public final class GetStackResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetStackResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder terraformVersion(String terraformVersion) {
+            if (terraformVersion == null) {
+              throw new MissingRequiredPropertyException("GetStackResult", "terraformVersion");
+            }
+            this.terraformVersion = terraformVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetStackResult", "timeCreated");
@@ -262,6 +298,8 @@ public final class GetStackResult {
             _resultValue.id = id;
             _resultValue.stackId = stackId;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.terraformVersion = terraformVersion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.variables = variables;
             return _resultValue;

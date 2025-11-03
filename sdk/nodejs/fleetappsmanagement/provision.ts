@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Provision resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- *
- * Creates a Provision.
- *
  * ## Example Usage
  *
  * ```typescript

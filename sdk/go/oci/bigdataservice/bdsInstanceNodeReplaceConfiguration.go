@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-//
-// Add a nodeReplaceConfigurations to the cluster.
-//
 // ## Example Usage
 //
 // ```go

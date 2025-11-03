@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
-//
-// Creates a dedicated AI cluster.
-//
 // ## Example Usage
 //
 // ```go
@@ -108,6 +104,9 @@ type DedicatedAiCluster struct {
 	// * LARGE_GENERIC_4
 	// * SMALL_GENERIC_V2
 	// * LARGE_GENERIC_2
+	// * SMALL_GENERIC_V1
+	// * MEDIUM_GENERIC_V1
+	// * LARGE_GENERIC_V1
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -201,6 +200,9 @@ type dedicatedAiClusterState struct {
 	// * LARGE_GENERIC_4
 	// * SMALL_GENERIC_V2
 	// * LARGE_GENERIC_2
+	// * SMALL_GENERIC_V1
+	// * MEDIUM_GENERIC_V1
+	// * LARGE_GENERIC_V1
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -253,6 +255,9 @@ type DedicatedAiClusterState struct {
 	// * LARGE_GENERIC_4
 	// * SMALL_GENERIC_V2
 	// * LARGE_GENERIC_2
+	// * SMALL_GENERIC_V1
+	// * MEDIUM_GENERIC_V1
+	// * LARGE_GENERIC_V1
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -297,6 +302,9 @@ type dedicatedAiClusterArgs struct {
 	// * LARGE_GENERIC_4
 	// * SMALL_GENERIC_V2
 	// * LARGE_GENERIC_2
+	// * SMALL_GENERIC_V1
+	// * MEDIUM_GENERIC_V1
+	// * LARGE_GENERIC_V1
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -338,6 +346,9 @@ type DedicatedAiClusterArgs struct {
 	// * LARGE_GENERIC_4
 	// * SMALL_GENERIC_V2
 	// * LARGE_GENERIC_2
+	// * SMALL_GENERIC_V1
+	// * MEDIUM_GENERIC_V1
+	// * LARGE_GENERIC_V1
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -515,6 +526,9 @@ func (o DedicatedAiClusterOutput) UnitCount() pulumi.IntOutput {
 // * LARGE_GENERIC_4
 // * SMALL_GENERIC_V2
 // * LARGE_GENERIC_2
+// * SMALL_GENERIC_V1
+// * MEDIUM_GENERIC_V1
+// * LARGE_GENERIC_V1
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

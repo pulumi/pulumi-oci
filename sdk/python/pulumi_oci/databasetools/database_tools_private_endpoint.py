@@ -30,7 +30,8 @@ class DatabaseToolsPrivateEndpointArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointLockArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DatabaseToolsPrivateEndpoint resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
@@ -47,6 +48,7 @@ class DatabaseToolsPrivateEndpointArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -64,6 +66,8 @@ class DatabaseToolsPrivateEndpointArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
             pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -189,6 +193,18 @@ class DatabaseToolsPrivateEndpointArgs:
     def private_endpoint_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "private_endpoint_ip", value)
 
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
 
 @pulumi.input_type
 class _DatabaseToolsPrivateEndpointState:
@@ -207,6 +223,7 @@ class _DatabaseToolsPrivateEndpointState:
                  private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
                  private_endpoint_vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
                  reverse_connection_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs']]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -229,6 +246,7 @@ class _DatabaseToolsPrivateEndpointState:
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param pulumi.Input[_builtins.str] private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs']]] reverse_connection_configurations: Reverse connection configuration details of the private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the Database Tools private endpoint.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
                
@@ -268,6 +286,8 @@ class _DatabaseToolsPrivateEndpointState:
             pulumi.set(__self__, "private_endpoint_vnic_id", private_endpoint_vnic_id)
         if reverse_connection_configurations is not None:
             pulumi.set(__self__, "reverse_connection_configurations", reverse_connection_configurations)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
@@ -450,6 +470,18 @@ class _DatabaseToolsPrivateEndpointState:
         pulumi.set(self, "reverse_connection_configurations", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -541,13 +573,10 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
-
-        Creates a new Database Tools private endpoint.
-
         ## Example Usage
 
         ```python
@@ -573,7 +602,8 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                 "time_created": database_tools_private_endpoint_locks_time_created,
             }],
             nsg_ids=database_tools_private_endpoint_nsg_ids,
-            private_endpoint_ip=database_tools_private_endpoint_private_endpoint_ip)
+            private_endpoint_ip=database_tools_private_endpoint_private_endpoint_ip,
+            security_attributes=database_tools_private_endpoint_security_attributes)
         ```
 
         ## Import
@@ -595,6 +625,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
                
                
@@ -608,10 +639,6 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                  args: DatabaseToolsPrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
-
-        Creates a new Database Tools private endpoint.
-
         ## Example Usage
 
         ```python
@@ -637,7 +664,8 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                 "time_created": database_tools_private_endpoint_locks_time_created,
             }],
             nsg_ids=database_tools_private_endpoint_nsg_ids,
-            private_endpoint_ip=database_tools_private_endpoint_private_endpoint_ip)
+            private_endpoint_ip=database_tools_private_endpoint_private_endpoint_ip,
+            security_attributes=database_tools_private_endpoint_security_attributes)
         ```
 
         ## Import
@@ -672,6 +700,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointLockArgs', 'DatabaseToolsPrivateEndpointLockArgsDict']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -697,6 +726,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
             __props__.__dict__["locks"] = locks
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
+            __props__.__dict__["security_attributes"] = security_attributes
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -734,6 +764,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
             private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
             private_endpoint_vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
             reverse_connection_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs', 'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict']]]]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -761,6 +792,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param pulumi.Input[_builtins.str] private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs', 'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict']]]] reverse_connection_configurations: Reverse connection configuration details of the private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the Database Tools private endpoint.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
                
@@ -790,6 +822,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
         __props__.__dict__["private_endpoint_vnic_id"] = private_endpoint_vnic_id
         __props__.__dict__["reverse_connection_configurations"] = reverse_connection_configurations
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["system_tags"] = system_tags
@@ -909,6 +942,14 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         Reverse connection configuration details of the private endpoint.
         """
         return pulumi.get(self, "reverse_connection_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
-    /// This resource provides the Repository Mirror resource in Oracle Cloud Infrastructure Devops service.
-    /// 
-    /// Synchronize a mirrored repository to the latest version from external providers.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

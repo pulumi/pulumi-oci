@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates a new rule for the alert policy.
- *
  * ## Example Usage
  *
  * ```typescript

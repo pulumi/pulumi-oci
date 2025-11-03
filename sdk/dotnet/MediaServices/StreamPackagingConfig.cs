@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MediaServices
 {
     /// <summary>
-    /// This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
-    /// 
-    /// Creates a new Packaging Configuration.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

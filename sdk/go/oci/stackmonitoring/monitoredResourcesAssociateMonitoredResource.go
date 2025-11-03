@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Monitored Resources Associate Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
-//
-// Create an association between two monitored resources. Associations can be created
-// between resources from different compartments as long they are in same tenancy.
-// User should have required access in both the compartments.
-//
 // ## Example Usage
 //
 // ```go

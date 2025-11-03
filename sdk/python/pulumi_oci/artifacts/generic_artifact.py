@@ -298,8 +298,6 @@ class GenericArtifact(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
-
         ## Example Usage
 
         ```python
@@ -341,8 +339,6 @@ class GenericArtifact(pulumi.CustomResource):
                  args: GenericArtifactArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
-
         ## Example Usage
 
         ```python

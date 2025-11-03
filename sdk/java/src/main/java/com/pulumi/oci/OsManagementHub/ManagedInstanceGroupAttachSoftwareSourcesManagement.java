@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Managed Instance Group Attach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Attaches software sources to the specified managed instance group. The software sources must be compatible with the type of instances in the group.
- * 
  * ## Example Usage
  * 
  * <pre>

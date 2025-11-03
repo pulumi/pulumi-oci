@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts
 {
     /// <summary>
-    /// This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
-    /// 
-    /// Create a new empty container repository. Avoid entering confidential information.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

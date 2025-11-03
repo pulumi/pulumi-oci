@@ -24,9 +24,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
- * 
- * Creates a new secret according to the details of the request.
+ * ## Example Usage
  * 
  * ## Import
  * 

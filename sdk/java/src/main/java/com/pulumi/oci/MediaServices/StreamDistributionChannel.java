@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Stream Distribution Channel resource in Oracle Cloud Infrastructure Media Services service.
- * 
- * Creates a new Stream Distribution Channel.
- * 
  * ## Example Usage
  * 
  * <pre>

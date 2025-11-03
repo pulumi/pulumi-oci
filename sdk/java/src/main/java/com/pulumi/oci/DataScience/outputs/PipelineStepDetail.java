@@ -9,6 +9,7 @@ import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepConfigurationDet
 import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepContainerConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepDataflowConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepInfrastructureConfigurationDetails;
+import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepParameters;
 import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepStorageMountConfigurationDetailsList;
 import java.lang.Boolean;
 import java.lang.String;
@@ -69,6 +70,16 @@ public final class PipelineStepDetail {
      * 
      */
     private String stepName;
+    /**
+     * @return (Updatable) Pipeline step parameter details
+     * 
+     */
+    private @Nullable PipelineStepDetailStepParameters stepParameters;
+    /**
+     * @return (Updatable) Name used when creating the steprun.
+     * 
+     */
+    private @Nullable String stepRunName;
     /**
      * @return (Updatable) The storage mount details to mount to the instance running the pipeline step.
      * 
@@ -152,6 +163,20 @@ public final class PipelineStepDetail {
         return this.stepName;
     }
     /**
+     * @return (Updatable) Pipeline step parameter details
+     * 
+     */
+    public Optional<PipelineStepDetailStepParameters> stepParameters() {
+        return Optional.ofNullable(this.stepParameters);
+    }
+    /**
+     * @return (Updatable) Name used when creating the steprun.
+     * 
+     */
+    public Optional<String> stepRunName() {
+        return Optional.ofNullable(this.stepRunName);
+    }
+    /**
      * @return (Updatable) The storage mount details to mount to the instance running the pipeline step.
      * 
      */
@@ -185,6 +210,8 @@ public final class PipelineStepDetail {
         private @Nullable PipelineStepDetailStepDataflowConfigurationDetails stepDataflowConfigurationDetails;
         private @Nullable PipelineStepDetailStepInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails;
         private String stepName;
+        private @Nullable PipelineStepDetailStepParameters stepParameters;
+        private @Nullable String stepRunName;
         private @Nullable List<PipelineStepDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists;
         private String stepType;
         public Builder() {}
@@ -200,6 +227,8 @@ public final class PipelineStepDetail {
     	      this.stepDataflowConfigurationDetails = defaults.stepDataflowConfigurationDetails;
     	      this.stepInfrastructureConfigurationDetails = defaults.stepInfrastructureConfigurationDetails;
     	      this.stepName = defaults.stepName;
+    	      this.stepParameters = defaults.stepParameters;
+    	      this.stepRunName = defaults.stepRunName;
     	      this.stepStorageMountConfigurationDetailsLists = defaults.stepStorageMountConfigurationDetailsLists;
     	      this.stepType = defaults.stepType;
         }
@@ -270,6 +299,18 @@ public final class PipelineStepDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder stepParameters(@Nullable PipelineStepDetailStepParameters stepParameters) {
+
+            this.stepParameters = stepParameters;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder stepRunName(@Nullable String stepRunName) {
+
+            this.stepRunName = stepRunName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stepStorageMountConfigurationDetailsLists(@Nullable List<PipelineStepDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists) {
 
             this.stepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
@@ -298,6 +339,8 @@ public final class PipelineStepDetail {
             _resultValue.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
             _resultValue.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             _resultValue.stepName = stepName;
+            _resultValue.stepParameters = stepParameters;
+            _resultValue.stepRunName = stepRunName;
             _resultValue.stepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
             _resultValue.stepType = stepType;
             return _resultValue;

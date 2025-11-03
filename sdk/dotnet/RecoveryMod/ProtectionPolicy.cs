@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.RecoveryMod
 {
     /// <summary>
-    /// This resource provides the Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
-    /// 
-    /// Creates a new Protection Policy.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

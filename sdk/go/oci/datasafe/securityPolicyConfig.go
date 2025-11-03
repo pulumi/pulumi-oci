@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Creates a new security policy configuration resource.
-//
 // ## Example Usage
 //
 // ```go

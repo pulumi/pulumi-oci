@@ -30,14 +30,14 @@ public final class FunctionSourceDetailsArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+     * Type of the Function Source. Possible values: PBF.
      * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
-     * @return Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+     * @return Type of the Function Source. Possible values: PBF.
      * 
      */
     public Output<String> sourceType() {
@@ -91,7 +91,7 @@ public final class FunctionSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceType Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+         * @param sourceType Type of the Function Source. Possible values: PBF.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class FunctionSourceDetailsArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param sourceType Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+         * @param sourceType Type of the Function Source. Possible values: PBF.
          * 
          * @return builder
          * 

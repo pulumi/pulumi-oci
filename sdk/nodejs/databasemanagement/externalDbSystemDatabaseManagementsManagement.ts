@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Db System Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Enables Database Management service for all the components of the specified
- * external DB system (except databases).
- *
  * ## Example Usage
  *
  * ```typescript

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience
 {
     /// <summary>
-    /// This resource provides the Ml Application Instance resource in Oracle Cloud Infrastructure Data Science service.
-    /// 
-    /// Creates a new MlApplicationInstance.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

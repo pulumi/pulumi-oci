@@ -10,12 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates a new saved user assessment for one or multiple targets in a compartment. It saves the latest assessments in the
-    /// specified compartment. If a scheduled is passed in, this operation persists the latest assessments that exist at the defined
-    /// date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

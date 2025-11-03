@@ -65,8 +65,12 @@ type LookupConnectionResult struct {
 	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId     string `pulumi:"clientId"`
 	ClientSecret string `pulumi:"clientSecret"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
 	ClientSecretSecretId string `pulumi:"clientSecretSecretId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+	ClusterId string `pulumi:"clusterId"`
+	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
@@ -173,6 +177,8 @@ type LookupConnectionResult struct {
 	SecretAccessKey  string `pulumi:"secretAccessKey"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
 	SecretAccessKeySecretId string `pulumi:"secretAccessKeySecretId"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Security Protocol to be provided for the following connection types:
 	// * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
 	// * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
@@ -187,7 +193,7 @@ type LookupConnectionResult struct {
 	SessionMode string `pulumi:"sessionMode"`
 	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
 	ShouldUseJndi bool `pulumi:"shouldUseJndi"`
-	// Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+	// Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
 	ShouldUseResourcePrincipal bool `pulumi:"shouldUseResourcePrincipal"`
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate bool `pulumi:"shouldValidateServerCertificate"`
@@ -224,6 +230,8 @@ type LookupConnectionResult struct {
 	StreamPoolId string `pulumi:"streamPoolId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId string `pulumi:"subscriptionId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The technology type.
@@ -369,9 +377,19 @@ func (o LookupConnectionResultOutput) ClientSecret() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ClientSecret }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
 func (o LookupConnectionResultOutput) ClientSecretSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ClientSecretSecretId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+func (o LookupConnectionResultOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+func (o LookupConnectionResultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -642,6 +660,11 @@ func (o LookupConnectionResultOutput) SecretAccessKeySecretId() pulumi.StringOut
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecretAccessKeySecretId }).(pulumi.StringOutput)
 }
 
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o LookupConnectionResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
 // Security Protocol to be provided for the following connection types:
 // * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
 // * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
@@ -674,7 +697,7 @@ func (o LookupConnectionResultOutput) ShouldUseJndi() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.ShouldUseJndi }).(pulumi.BoolOutput)
 }
 
-// Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+// Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
 func (o LookupConnectionResultOutput) ShouldUseResourcePrincipal() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.ShouldUseResourcePrincipal }).(pulumi.BoolOutput)
 }
@@ -769,6 +792,11 @@ func (o LookupConnectionResultOutput) StreamPoolId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 func (o LookupConnectionResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o LookupConnectionResultOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`

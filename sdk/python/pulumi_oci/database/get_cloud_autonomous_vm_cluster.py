@@ -27,7 +27,7 @@ class GetCloudAutonomousVmClusterResult:
     """
     A collection of values returned by getCloudAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpu_core_count_per_node=None, cpu_percentage=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, domain=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, hostname=None, id=None, is_mtls_enabled_vm_cluster=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, nsg_ids=None, ocpu_count=None, ocpus_lowest_scaled_value=None, opc_dry_run=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, security_attributes=None, shape=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_updated=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, total_cpus=None):
+    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, availability_domain=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, cloud_exadata_infrastructure_id=None, cluster_time_zone=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpu_core_count_per_node=None, cpu_percentage=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, description=None, display_name=None, domain=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, hostname=None, id=None, is_mtls_enabled_vm_cluster=None, last_maintenance_run_id=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, nsg_ids=None, ocpu_count=None, ocpus_lowest_scaled_value=None, opc_dry_run=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, security_attributes=None, shape=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_updated=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, total_cpus=None):
         if autonomous_data_storage_percentage and not isinstance(autonomous_data_storage_percentage, float):
             raise TypeError("Expected argument 'autonomous_data_storage_percentage' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
@@ -130,6 +130,9 @@ class GetCloudAutonomousVmClusterResult:
         if max_acds_lowest_scaled_value and not isinstance(max_acds_lowest_scaled_value, int):
             raise TypeError("Expected argument 'max_acds_lowest_scaled_value' to be a int")
         pulumi.set(__self__, "max_acds_lowest_scaled_value", max_acds_lowest_scaled_value)
+        if memory_per_compute_unit_in_gbs and not isinstance(memory_per_compute_unit_in_gbs, float):
+            raise TypeError("Expected argument 'memory_per_compute_unit_in_gbs' to be a float")
+        pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         if memory_per_oracle_compute_unit_in_gbs and not isinstance(memory_per_oracle_compute_unit_in_gbs, int):
             raise TypeError("Expected argument 'memory_per_oracle_compute_unit_in_gbs' to be a int")
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
@@ -222,7 +225,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="autonomousDataStoragePercentage")
     def autonomous_data_storage_percentage(self) -> _builtins.float:
         """
-        The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+        The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
         """
         return pulumi.get(self, "autonomous_data_storage_percentage")
 
@@ -230,7 +233,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="autonomousDataStorageSizeInTbs")
     def autonomous_data_storage_size_in_tbs(self) -> _builtins.float:
         """
-        The data disk group size allocated for Autonomous Databases, in TBs.
+        The data disk group size allocated for Autonomous AI Databases, in TBs.
         """
         return pulumi.get(self, "autonomous_data_storage_size_in_tbs")
 
@@ -246,7 +249,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
     def available_autonomous_data_storage_size_in_tbs(self) -> _builtins.float:
         """
-        The data disk group size available for Autonomous Databases, in TBs.
+        The data disk group size available for Autonomous AI Databases, in TBs.
         """
         return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
 
@@ -262,7 +265,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> _builtins.float:
         """
-        CPU cores available for allocation to Autonomous Databases.
+        CPU cores available for allocation to Autonomous AI Databases.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -299,7 +302,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> _builtins.str:
         """
-        The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
@@ -451,7 +454,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> _builtins.str:
         """
-        The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         """
         return pulumi.get(self, "license_model")
 
@@ -485,10 +488,18 @@ class GetCloudAutonomousVmClusterResult:
         return pulumi.get(self, "max_acds_lowest_scaled_value")
 
     @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> _builtins.int:
         """
-        The amount of memory (in GBs) enabled per OCPU or ECPU.
+        The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -529,7 +540,7 @@ class GetCloudAutonomousVmClusterResult:
     def nsg_ids(self) -> Sequence[_builtins.str]:
         """
         The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -582,9 +593,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> _builtins.float:
         """
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -696,7 +705,7 @@ class GetCloudAutonomousVmClusterResult:
     @pulumi.getter(name="totalAutonomousDataStorageInTbs")
     def total_autonomous_data_storage_in_tbs(self) -> _builtins.float:
         """
-        The total data disk group size for Autonomous Databases, in TBs.
+        The total data disk group size for Autonomous AI Databases, in TBs.
         """
         return pulumi.get(self, "total_autonomous_data_storage_in_tbs")
 
@@ -757,6 +766,7 @@ class AwaitableGetCloudAutonomousVmClusterResult(GetCloudAutonomousVmClusterResu
             maintenance_window_details=self.maintenance_window_details,
             maintenance_windows=self.maintenance_windows,
             max_acds_lowest_scaled_value=self.max_acds_lowest_scaled_value,
+            memory_per_compute_unit_in_gbs=self.memory_per_compute_unit_in_gbs,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
             next_maintenance_run_id=self.next_maintenance_run_id,
@@ -847,6 +857,7 @@ def get_cloud_autonomous_vm_cluster(cloud_autonomous_vm_cluster_id: Optional[_bu
         maintenance_window_details=pulumi.get(__ret__, 'maintenance_window_details'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
         max_acds_lowest_scaled_value=pulumi.get(__ret__, 'max_acds_lowest_scaled_value'),
+        memory_per_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_compute_unit_in_gbs'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_oracle_compute_unit_in_gbs'),
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         next_maintenance_run_id=pulumi.get(__ret__, 'next_maintenance_run_id'),
@@ -934,6 +945,7 @@ def get_cloud_autonomous_vm_cluster_output(cloud_autonomous_vm_cluster_id: Optio
         maintenance_window_details=pulumi.get(__response__, 'maintenance_window_details'),
         maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
         max_acds_lowest_scaled_value=pulumi.get(__response__, 'max_acds_lowest_scaled_value'),
+        memory_per_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_compute_unit_in_gbs'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_oracle_compute_unit_in_gbs'),
         memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
         next_maintenance_run_id=pulumi.get(__response__, 'next_maintenance_run_id'),

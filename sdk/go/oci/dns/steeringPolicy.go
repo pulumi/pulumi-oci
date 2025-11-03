@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Steering Policy resource in Oracle Cloud Infrastructure DNS service.
-//
-// Creates a new steering policy in the specified compartment. For more information on
-// creating policies with templates, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
-//
 // ## Example Usage
 //
 // ```go

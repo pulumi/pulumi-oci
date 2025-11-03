@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
- *
- * Customer can update displayName and tags for compute GPU memory fabric record
+ * ## Example Usage
  *
  * ## Import
  *

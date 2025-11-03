@@ -8,6 +8,10 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationPlainArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsPlainArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.GetDrPlanExecutionPlainArgs;
@@ -20,6 +24,8 @@ import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupPlainArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupsArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.GetDrProtectionGroupsPlainArgs;
+import com.pulumi.oci.DisasterRecovery.outputs.GetAutomaticDrConfigurationResult;
+import com.pulumi.oci.DisasterRecovery.outputs.GetAutomaticDrConfigurationsResult;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionResult;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanExecutionsResult;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlanResult;
@@ -30,6 +36,446 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class DisasterRecoveryFunctions {
+    /**
+     * This data source provides details about a specific Automatic Dr Configuration resource in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get details for the Automatic DR configuration identified by *automaticDrConfigurationId*.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutomaticDrConfiguration = DisasterRecoveryFunctions.getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs.builder()
+     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutomaticDrConfigurationResult> getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs args) {
+        return getAutomaticDrConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Automatic Dr Configuration resource in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get details for the Automatic DR configuration identified by *automaticDrConfigurationId*.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutomaticDrConfiguration = DisasterRecoveryFunctions.getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs.builder()
+     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutomaticDrConfigurationResult> getAutomaticDrConfigurationPlain(GetAutomaticDrConfigurationPlainArgs args) {
+        return getAutomaticDrConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Automatic Dr Configuration resource in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get details for the Automatic DR configuration identified by *automaticDrConfigurationId*.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutomaticDrConfiguration = DisasterRecoveryFunctions.getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs.builder()
+     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutomaticDrConfigurationResult> getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DisasterRecovery/getAutomaticDrConfiguration:getAutomaticDrConfiguration", TypeShape.of(GetAutomaticDrConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Automatic Dr Configuration resource in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get details for the Automatic DR configuration identified by *automaticDrConfigurationId*.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutomaticDrConfiguration = DisasterRecoveryFunctions.getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs.builder()
+     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutomaticDrConfigurationResult> getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DisasterRecovery/getAutomaticDrConfiguration:getAutomaticDrConfiguration", TypeShape.of(GetAutomaticDrConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Automatic Dr Configuration resource in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get details for the Automatic DR configuration identified by *automaticDrConfigurationId*.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutomaticDrConfiguration = DisasterRecoveryFunctions.getAutomaticDrConfiguration(GetAutomaticDrConfigurationArgs.builder()
+     *             .automaticDrConfigurationId(testAutomaticDrConfigurationOciDisasterRecoveryAutomaticDrConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutomaticDrConfigurationResult> getAutomaticDrConfigurationPlain(GetAutomaticDrConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DisasterRecovery/getAutomaticDrConfiguration:getAutomaticDrConfiguration", TypeShape.of(GetAutomaticDrConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Automatic Dr Configurations in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get a summary list of automatic DR configurations for a DR protection group.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutomaticDrConfigurations = DisasterRecoveryFunctions.getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs.builder()
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.id())
+     *             .displayName(automaticDrConfigurationDisplayName)
+     *             .lifecycleStateNotEqualTo(automaticDrConfigurationLifecycleStateNotEqualTo)
+     *             .state(automaticDrConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutomaticDrConfigurationsResult> getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs args) {
+        return getAutomaticDrConfigurations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Automatic Dr Configurations in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get a summary list of automatic DR configurations for a DR protection group.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutomaticDrConfigurations = DisasterRecoveryFunctions.getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs.builder()
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.id())
+     *             .displayName(automaticDrConfigurationDisplayName)
+     *             .lifecycleStateNotEqualTo(automaticDrConfigurationLifecycleStateNotEqualTo)
+     *             .state(automaticDrConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutomaticDrConfigurationsResult> getAutomaticDrConfigurationsPlain(GetAutomaticDrConfigurationsPlainArgs args) {
+        return getAutomaticDrConfigurationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Automatic Dr Configurations in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get a summary list of automatic DR configurations for a DR protection group.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutomaticDrConfigurations = DisasterRecoveryFunctions.getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs.builder()
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.id())
+     *             .displayName(automaticDrConfigurationDisplayName)
+     *             .lifecycleStateNotEqualTo(automaticDrConfigurationLifecycleStateNotEqualTo)
+     *             .state(automaticDrConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutomaticDrConfigurationsResult> getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DisasterRecovery/getAutomaticDrConfigurations:getAutomaticDrConfigurations", TypeShape.of(GetAutomaticDrConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Automatic Dr Configurations in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get a summary list of automatic DR configurations for a DR protection group.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutomaticDrConfigurations = DisasterRecoveryFunctions.getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs.builder()
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.id())
+     *             .displayName(automaticDrConfigurationDisplayName)
+     *             .lifecycleStateNotEqualTo(automaticDrConfigurationLifecycleStateNotEqualTo)
+     *             .state(automaticDrConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutomaticDrConfigurationsResult> getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DisasterRecovery/getAutomaticDrConfigurations:getAutomaticDrConfigurations", TypeShape.of(GetAutomaticDrConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Automatic Dr Configurations in Oracle Cloud Infrastructure Disaster Recovery service.
+     * 
+     * Get a summary list of automatic DR configurations for a DR protection group.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DisasterRecovery.DisasterRecoveryFunctions;
+     * import com.pulumi.oci.DisasterRecovery.inputs.GetAutomaticDrConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutomaticDrConfigurations = DisasterRecoveryFunctions.getAutomaticDrConfigurations(GetAutomaticDrConfigurationsArgs.builder()
+     *             .drProtectionGroupId(testDrProtectionGroup.id())
+     *             .automaticDrConfigurationId(testAutomaticDrConfiguration.id())
+     *             .displayName(automaticDrConfigurationDisplayName)
+     *             .lifecycleStateNotEqualTo(automaticDrConfigurationLifecycleStateNotEqualTo)
+     *             .state(automaticDrConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutomaticDrConfigurationsResult> getAutomaticDrConfigurationsPlain(GetAutomaticDrConfigurationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DisasterRecovery/getAutomaticDrConfigurations:getAutomaticDrConfigurations", TypeShape.of(GetAutomaticDrConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
      * 

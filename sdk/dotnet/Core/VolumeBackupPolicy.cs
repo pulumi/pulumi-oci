@@ -10,13 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Volume Backup Policy resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates a new user defined backup policy.
-    /// 
-    /// For more information about Oracle defined backup policies and user defined backup policies,
-    /// see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

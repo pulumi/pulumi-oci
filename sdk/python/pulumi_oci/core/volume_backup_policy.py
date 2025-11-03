@@ -255,13 +255,6 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                  schedules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeBackupPolicyScheduleArgs', 'VolumeBackupPolicyScheduleArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Volume Backup Policy resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new user defined backup policy.
-
-        For more information about Oracle defined backup policies and user defined backup policies,
-        see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
-
         ## Example Usage
 
         ```python
@@ -316,13 +309,6 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                  args: VolumeBackupPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Volume Backup Policy resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new user defined backup policy.
-
-        For more information about Oracle defined backup policies and user defined backup policies,
-        see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
-
         ## Example Usage
 
         ```python

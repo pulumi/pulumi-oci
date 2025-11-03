@@ -35,14 +35,14 @@ public final class ExternalDatabaseConnectorArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The Oracle Database connection string.
+     * (Updatable) The Oracle AI Database connection string.
      * 
      */
     @Import(name="connectionString", required=true)
     private Output<ExternalDatabaseConnectorConnectionStringArgs> connectionString;
 
     /**
-     * @return (Updatable) The Oracle Database connection string.
+     * @return (Updatable) The Oracle AI Database connection string.
      * 
      */
     public Output<ExternalDatabaseConnectorConnectionStringArgs> connectionString() {
@@ -198,7 +198,7 @@ public final class ExternalDatabaseConnectorArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param connectionString (Updatable) The Oracle Database connection string.
+         * @param connectionString (Updatable) The Oracle AI Database connection string.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class ExternalDatabaseConnectorArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param connectionString (Updatable) The Oracle Database connection string.
+         * @param connectionString (Updatable) The Oracle AI Database connection string.
          * 
          * @return builder
          * 

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Oneoff Patch resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates one-off patch for specified database version to download.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

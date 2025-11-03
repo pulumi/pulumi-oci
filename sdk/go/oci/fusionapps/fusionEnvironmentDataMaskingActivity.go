@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-//
-// Creates a new DataMaskingActivity.
-//
 // ## Example Usage
 //
 // ```go

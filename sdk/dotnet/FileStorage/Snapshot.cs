@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage
 {
     /// <summary>
-    /// This resource provides the Snapshot resource in Oracle Cloud Infrastructure File Storage service.
-    /// 
-    /// Creates a new snapshot of the specified file system. You
-    /// can access the snapshot at `.snapshot/&lt;name&gt;`.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

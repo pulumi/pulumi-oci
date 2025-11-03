@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
-//
-// Creates a new certificate according to the details of the request.
-//
 // ## Example Usage
 //
 // ## Import

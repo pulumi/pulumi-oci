@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Bds Capacity Report resource in Oracle Cloud Infrastructure Big Data Service service. Customer would require BDS_READ permission for the target compartment.
-//
-// # Create a detailed capacity report for BDS service
-//
 // ## Example Usage
 //
 // ```go

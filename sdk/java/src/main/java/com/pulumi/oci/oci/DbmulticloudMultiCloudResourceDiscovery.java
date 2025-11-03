@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
- * 
- * Discovers Multicloud Resource and their associated resources based on the information provided.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -27,7 +27,8 @@ class StreamPoolArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  kafka_settings: Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint_settings: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']] = None):
+                 private_endpoint_settings: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a StreamPool resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the stream.
@@ -37,6 +38,11 @@ class StreamPoolArgs:
         :param pulumi.Input['StreamPoolKafkaSettingsArgs'] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
         :param pulumi.Input['StreamPoolPrivateEndpointSettingsArgs'] private_endpoint_settings: Optional parameters if a private stream pool is requested.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if custom_encryption_key is not None:
@@ -51,6 +57,8 @@ class StreamPoolArgs:
             pulumi.set(__self__, "name", name)
         if private_endpoint_settings is not None:
             pulumi.set(__self__, "private_endpoint_settings", private_endpoint_settings)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -136,6 +144,22 @@ class StreamPoolArgs:
     def private_endpoint_settings(self, value: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']]):
         pulumi.set(self, "private_endpoint_settings", value)
 
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
 
 @pulumi.input_type
 class _StreamPoolState:
@@ -150,6 +174,7 @@ class _StreamPoolState:
                  lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  private_endpoint_settings: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -164,6 +189,11 @@ class _StreamPoolState:
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Any additional details about the current state of the stream.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
         :param pulumi.Input['StreamPoolPrivateEndpointSettingsArgs'] private_endpoint_settings: Optional parameters if a private stream pool is requested.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the stream pool.
         :param pulumi.Input[_builtins.str] time_created: The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
@@ -187,6 +217,8 @@ class _StreamPoolState:
             pulumi.set(__self__, "name", name)
         if private_endpoint_settings is not None:
             pulumi.set(__self__, "private_endpoint_settings", private_endpoint_settings)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -313,6 +345,22 @@ class _StreamPoolState:
         pulumi.set(self, "private_endpoint_settings", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -350,14 +398,9 @@ class StreamPool(pulumi.CustomResource):
                  kafka_settings: Optional[pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  private_endpoint_settings: Optional[pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
-
-        Starts the provisioning of a new stream pool.
-        To track the progress of the provisioning, you can periodically call GetStreamPool.
-        In the response, the `lifecycleState` parameter of the object tells you its current state.
-
         ## Example Usage
 
         ```python
@@ -384,7 +427,8 @@ class StreamPool(pulumi.CustomResource):
                 "nsg_ids": stream_pool_private_endpoint_settings_nsg_ids,
                 "private_endpoint_ip": stream_pool_private_endpoint_settings_private_endpoint_ip,
                 "subnet_id": test_subnet["id"],
-            })
+            },
+            security_attributes=stream_pool_security_attributes)
         ```
 
         ## Import
@@ -404,6 +448,11 @@ class StreamPool(pulumi.CustomResource):
         :param pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']] kafka_settings: (Updatable) Settings for the Kafka compatibility layer.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
         :param pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']] private_endpoint_settings: Optional parameters if a private stream pool is requested.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -412,12 +461,6 @@ class StreamPool(pulumi.CustomResource):
                  args: StreamPoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
-
-        Starts the provisioning of a new stream pool.
-        To track the progress of the provisioning, you can periodically call GetStreamPool.
-        In the response, the `lifecycleState` parameter of the object tells you its current state.
-
         ## Example Usage
 
         ```python
@@ -444,7 +487,8 @@ class StreamPool(pulumi.CustomResource):
                 "nsg_ids": stream_pool_private_endpoint_settings_nsg_ids,
                 "private_endpoint_ip": stream_pool_private_endpoint_settings_private_endpoint_ip,
                 "subnet_id": test_subnet["id"],
-            })
+            },
+            security_attributes=stream_pool_security_attributes)
         ```
 
         ## Import
@@ -477,6 +521,7 @@ class StreamPool(pulumi.CustomResource):
                  kafka_settings: Optional[pulumi.Input[Union['StreamPoolKafkaSettingsArgs', 'StreamPoolKafkaSettingsArgsDict']]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  private_endpoint_settings: Optional[pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -495,6 +540,7 @@ class StreamPool(pulumi.CustomResource):
             __props__.__dict__["kafka_settings"] = kafka_settings
             __props__.__dict__["name"] = name
             __props__.__dict__["private_endpoint_settings"] = private_endpoint_settings
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["endpoint_fqdn"] = None
             __props__.__dict__["is_private"] = None
             __props__.__dict__["lifecycle_state_details"] = None
@@ -520,6 +566,7 @@ class StreamPool(pulumi.CustomResource):
             lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             private_endpoint_settings: Optional[pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'StreamPool':
         """
@@ -539,6 +586,11 @@ class StreamPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Any additional details about the current state of the stream.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
         :param pulumi.Input[Union['StreamPoolPrivateEndpointSettingsArgs', 'StreamPoolPrivateEndpointSettingsArgsDict']] private_endpoint_settings: Optional parameters if a private stream pool is requested.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the stream pool.
         :param pulumi.Input[_builtins.str] time_created: The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
@@ -556,6 +608,7 @@ class StreamPool(pulumi.CustomResource):
         __props__.__dict__["lifecycle_state_details"] = lifecycle_state_details
         __props__.__dict__["name"] = name
         __props__.__dict__["private_endpoint_settings"] = private_endpoint_settings
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         return StreamPool(resource_name, opts=opts, __props__=__props__)
@@ -639,6 +692,18 @@ class StreamPool(pulumi.CustomResource):
         Optional parameters if a private stream pool is requested.
         """
         return pulumi.get(self, "private_endpoint_settings")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

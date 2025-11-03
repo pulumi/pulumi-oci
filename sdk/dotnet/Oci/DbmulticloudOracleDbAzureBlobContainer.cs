@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
-    /// This resource provides the Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
-    /// 
-    /// Creates Oracle DB Azure Blob Container resource.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

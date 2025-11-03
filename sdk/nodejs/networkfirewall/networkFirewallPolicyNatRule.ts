@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Network Firewall Policy Nat Rule resource in Oracle Cloud Infrastructure Network Firewall service.
- *
- * Creates a new NAT Rule for the Network Firewall Policy.
- *
  * ## Example Usage
  *
  * ```typescript

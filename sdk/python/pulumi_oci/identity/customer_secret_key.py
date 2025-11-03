@@ -200,20 +200,6 @@ class CustomerSecretKey(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
-        compatible API. The secret key consists of an Access Key/Secret Key pair. For information, see
-        [Managing User Credentials](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).
-
-        You must specify a *description* for the secret key (although it can be an empty string). It does not
-        have to be unique, and you can change it anytime with
-        [UpdateCustomerSecretKey](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/UpdateCustomerSecretKey).
-
-        Every user has permission to create a secret key for *their own user ID*. An administrator in your organization
-        does not need to write a policy to give users this ability. To compare, administrators who have permission to the
-        tenancy can use this operation to create a secret key for any user, including themselves.
-
         ## Example Usage
 
         ```python
@@ -249,20 +235,6 @@ class CustomerSecretKey(pulumi.CustomResource):
                  args: CustomerSecretKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity service.
-
-        Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
-        compatible API. The secret key consists of an Access Key/Secret Key pair. For information, see
-        [Managing User Credentials](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).
-
-        You must specify a *description* for the secret key (although it can be an empty string). It does not
-        have to be unique, and you can change it anytime with
-        [UpdateCustomerSecretKey](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/CustomerSecretKeySummary/UpdateCustomerSecretKey).
-
-        Every user has permission to create a secret key for *their own user ID*. An administrator in your organization
-        does not need to write a policy to give users this ability. To compare, administrators who have permission to the
-        tenancy can use this operation to create a secret key for any user, including themselves.
-
         ## Example Usage
 
         ```python

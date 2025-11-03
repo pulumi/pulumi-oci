@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of the Autonomous Database Software Images in the specified compartment.
+ * Gets a list of the Autonomous AI Database Software Images in the specified compartment.
  *
  * ## Example Usage
  *
@@ -72,7 +72,7 @@ export interface GetAutonomousDatabaseSoftwareImagesResult {
      */
     readonly compartmentId: string;
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Database.GetAutonomousDatabaseSoftwareImagesFilter[];
@@ -85,14 +85,14 @@ export interface GetAutonomousDatabaseSoftwareImagesResult {
      */
     readonly imageShapeFamily: string;
     /**
-     * The current state of the Autonomous Database Software Image.
+     * The current state of the Autonomous AI Database Software Image.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of the Autonomous Database Software Images in the specified compartment.
+ * Gets a list of the Autonomous AI Database Software Images in the specified compartment.
  *
  * ## Example Usage
  *

@@ -166,17 +166,9 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         return Optional.ofNullable(this.dbName);
     }
 
-    /**
-     * The `DB_UNIQUE_NAME` of the Oracle Database.
-     * 
-     */
     @Import(name="dbUniqueName")
     private @Nullable Output<String> dbUniqueName;
 
-    /**
-     * @return The `DB_UNIQUE_NAME` of the Oracle Database.
-     * 
-     */
     public Optional<Output<String>> dbUniqueName() {
         return Optional.ofNullable(this.dbUniqueName);
     }
@@ -261,14 +253,14 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     @Import(name="kmsKeyVersionId")
     private @Nullable Output<String> kmsKeyVersionId;
 
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public Optional<Output<String>> kmsKeyVersionId() {
@@ -665,23 +657,11 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
             return dbName(Output.of(dbName));
         }
 
-        /**
-         * @param dbUniqueName The `DB_UNIQUE_NAME` of the Oracle Database.
-         * 
-         * @return builder
-         * 
-         */
         public Builder dbUniqueName(@Nullable Output<String> dbUniqueName) {
             $.dbUniqueName = dbUniqueName;
             return this;
         }
 
-        /**
-         * @param dbUniqueName The `DB_UNIQUE_NAME` of the Oracle Database.
-         * 
-         * @return builder
-         * 
-         */
         public Builder dbUniqueName(String dbUniqueName) {
             return dbUniqueName(Output.of(dbUniqueName));
         }
@@ -796,7 +776,7 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          * 
          * @return builder
          * 
@@ -807,7 +787,7 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          * 
          * @return builder
          * 

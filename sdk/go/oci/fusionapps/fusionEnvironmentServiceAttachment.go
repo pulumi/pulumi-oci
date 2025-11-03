@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
-//
-// Attaches a service instance to the fusion pod.
-//
 // ## Example Usage
 //
 // ```go

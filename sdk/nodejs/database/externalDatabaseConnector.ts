@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Database Connector resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a new external database connector.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -92,7 +88,7 @@ export class ExternalDatabaseConnector extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly connectionStatus: pulumi.Output<string>;
     /**
-     * (Updatable) The Oracle Database connection string.
+     * (Updatable) The Oracle AI Database connection string.
      */
     declare public readonly connectionString: pulumi.Output<outputs.Database.ExternalDatabaseConnectorConnectionString>;
     /**
@@ -227,7 +223,7 @@ export interface ExternalDatabaseConnectorState {
      */
     connectionStatus?: pulumi.Input<string>;
     /**
-     * (Updatable) The Oracle Database connection string.
+     * (Updatable) The Oracle AI Database connection string.
      */
     connectionString?: pulumi.Input<inputs.Database.ExternalDatabaseConnectorConnectionString>;
     /**
@@ -289,7 +285,7 @@ export interface ExternalDatabaseConnectorArgs {
      */
     connectionCredentials: pulumi.Input<inputs.Database.ExternalDatabaseConnectorConnectionCredentials>;
     /**
-     * (Updatable) The Oracle Database connection string.
+     * (Updatable) The Oracle AI Database connection string.
      */
     connectionString: pulumi.Input<inputs.Database.ExternalDatabaseConnectorConnectionString>;
     /**

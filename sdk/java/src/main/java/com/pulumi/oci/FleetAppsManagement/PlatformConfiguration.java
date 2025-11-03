@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Platform Configuration resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- * 
- * Creates a new PlatformConfiguration.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
- *
- * Creates a public IP pool.
- *
  * ## Example Usage
  *
  * ```typescript

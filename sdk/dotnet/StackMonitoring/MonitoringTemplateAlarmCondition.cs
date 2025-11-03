@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
-    /// This resource provides the Monitoring Template Alarm Condition resource in Oracle Cloud Infrastructure Stack Monitoring service.
-    /// 
-    /// Create a new alarm condition in same monitoringTemplate compartment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

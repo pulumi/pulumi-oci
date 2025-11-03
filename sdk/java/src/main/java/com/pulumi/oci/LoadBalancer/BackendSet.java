@@ -22,14 +22,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
- * 
- * Adds a backend set to a load balancer.
- * 
- * ## Supported Aliases
- * 
- * * `ociLoadBalancerBackendset`
- * 
  * ## Example Usage
  * 
  * <pre>

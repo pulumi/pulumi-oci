@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
- * 
- * Creates a new Packaging Configuration.
- * 
  * ## Example Usage
  * 
  * <pre>

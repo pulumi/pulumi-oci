@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
- *
- * Creates a new email domain. Avoid entering confidential information.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
- *
- * Create a new visionPrivateEndpoint.
- *
  * ## Example Usage
  *
  * ```typescript

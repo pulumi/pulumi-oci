@@ -594,10 +594,6 @@ class NewsReport(pulumi.CustomResource):
                  tag_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the News Report resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a news report in Ops Insights. The report will be enabled in Ops Insights. Insights will be emailed as per selected frequency.
-
         ## Example Usage
 
         ```python
@@ -670,10 +666,6 @@ class NewsReport(pulumi.CustomResource):
                  args: NewsReportArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the News Report resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create a news report in Ops Insights. The report will be enabled in Ops Insights. Insights will be emailed as per selected frequency.
-
         ## Example Usage
 
         ```python

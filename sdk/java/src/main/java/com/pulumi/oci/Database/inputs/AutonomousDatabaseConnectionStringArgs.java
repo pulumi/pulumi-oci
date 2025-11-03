@@ -19,14 +19,14 @@ public final class AutonomousDatabaseConnectionStringArgs extends com.pulumi.res
     public static final AutonomousDatabaseConnectionStringArgs Empty = new AutonomousDatabaseConnectionStringArgs();
 
     /**
-     * Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+     * Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
      */
     @Import(name="allConnectionStrings")
     private @Nullable Output<Map<String,String>> allConnectionStrings;
 
     /**
-     * @return Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+     * @return Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
      */
     public Optional<Output<Map<String,String>>> allConnectionStrings() {
@@ -138,7 +138,7 @@ public final class AutonomousDatabaseConnectionStringArgs extends com.pulumi.res
         }
 
         /**
-         * @param allConnectionStrings Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         * @param allConnectionStrings Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class AutonomousDatabaseConnectionStringArgs extends com.pulumi.res
         }
 
         /**
-         * @param allConnectionStrings Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         * @param allConnectionStrings Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
          * 
          * @return builder
          * 

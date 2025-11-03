@@ -327,10 +327,6 @@ class InvokeFunction(pulumi.CustomResource):
                  is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
-
-        Invokes a function
-
         ## Example Usage
 
         ```python
@@ -369,10 +365,6 @@ class InvokeFunction(pulumi.CustomResource):
                  args: InvokeFunctionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
-
-        Invokes a function
-
         ## Example Usage
 
         ```python

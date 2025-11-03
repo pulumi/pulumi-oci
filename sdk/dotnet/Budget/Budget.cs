@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Budget
 {
     /// <summary>
-    /// This resource provides the Budget resource in Oracle Cloud Infrastructure Budget service.
-    /// 
-    /// Creates a new budget.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -10,12 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GenerativeAi
 {
     /// <summary>
-    /// This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
-    /// 
-    /// Creates an endpoint.
-    /// 
-    /// The header contains an opc-work-request-id, which is the id for the WorkRequest that tracks the endpoint creation progress.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -34,6 +28,8 @@ namespace Pulumi.Oci.GenerativeAi
     ///         ContentModerationConfig = new Oci.GenerativeAi.Inputs.EndpointContentModerationConfigArgs
     ///         {
     ///             IsEnabled = endpointContentModerationConfigIsEnabled,
+    ///             Mode = endpointContentModerationConfigMode,
+    ///             ModelId = testModel.Id,
     ///         },
     ///         DefinedTags = 
     ///         {
@@ -45,6 +41,7 @@ namespace Pulumi.Oci.GenerativeAi
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         GenerativeAiPrivateEndpointId = testGenerativeAiPrivateEndpoint.Id,
     ///     });
     /// 
     /// });
@@ -68,7 +65,7 @@ namespace Pulumi.Oci.GenerativeAi
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        /// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         /// </summary>
         [Output("contentModerationConfig")]
         public Output<Outputs.EndpointContentModerationConfig> ContentModerationConfig { get; private set; } = null!;
@@ -104,13 +101,19 @@ namespace Pulumi.Oci.GenerativeAi
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+        /// </summary>
+        [Output("generativeAiPrivateEndpointId")]
+        public Output<string> GenerativeAiPrivateEndpointId { get; private set; } = null!;
+
+        /// <summary>
         /// A message describing the current state of the endpoint in more detail that can provide actionable information.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the model that's used to create this endpoint.
+        /// The OCID of the model that's used to create this endpoint.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -196,7 +199,7 @@ namespace Pulumi.Oci.GenerativeAi
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        /// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         /// </summary>
         [Input("contentModerationConfig")]
         public Input<Inputs.EndpointContentModerationConfigArgs>? ContentModerationConfig { get; set; }
@@ -244,7 +247,13 @@ namespace Pulumi.Oci.GenerativeAi
         }
 
         /// <summary>
-        /// The ID of the model that's used to create this endpoint.
+        /// (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+        /// </summary>
+        [Input("generativeAiPrivateEndpointId")]
+        public Input<string>? GenerativeAiPrivateEndpointId { get; set; }
+
+        /// <summary>
+        /// The OCID of the model that's used to create this endpoint.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -268,7 +277,7 @@ namespace Pulumi.Oci.GenerativeAi
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        /// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         /// </summary>
         [Input("contentModerationConfig")]
         public Input<Inputs.EndpointContentModerationConfigGetArgs>? ContentModerationConfig { get; set; }
@@ -316,13 +325,19 @@ namespace Pulumi.Oci.GenerativeAi
         }
 
         /// <summary>
+        /// (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+        /// </summary>
+        [Input("generativeAiPrivateEndpointId")]
+        public Input<string>? GenerativeAiPrivateEndpointId { get; set; }
+
+        /// <summary>
         /// A message describing the current state of the endpoint in more detail that can provide actionable information.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The ID of the model that's used to create this endpoint.
+        /// The OCID of the model that's used to create this endpoint.
         /// 
         /// 
         /// ** IMPORTANT **

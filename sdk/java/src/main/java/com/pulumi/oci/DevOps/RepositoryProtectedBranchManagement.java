@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Repository Protected Branch Management resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Creates a restriction on a branch that prevents certain actions on it.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -382,6 +382,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Whether to enable AI enterprise on the instance.
+     * 
+     */
+    @Import(name="isAiEnterpriseEnabled")
+    private @Nullable Output<Boolean> isAiEnterpriseEnabled;
+
+    /**
+     * @return (Updatable) Whether to enable AI enterprise on the instance.
+     * 
+     */
+    public Optional<Output<Boolean>> isAiEnterpriseEnabled() {
+        return Optional.ofNullable(this.isAiEnterpriseEnabled);
+    }
+
+    /**
      * Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
      * 
      */
@@ -877,6 +892,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.instanceConfigurationId = $.instanceConfigurationId;
         this.instanceOptions = $.instanceOptions;
         this.ipxeScript = $.ipxeScript;
+        this.isAiEnterpriseEnabled = $.isAiEnterpriseEnabled;
         this.isCrossNumaNode = $.isCrossNumaNode;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.launchMode = $.launchMode;
@@ -1390,6 +1406,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipxeScript(String ipxeScript) {
             return ipxeScript(Output.of(ipxeScript));
+        }
+
+        /**
+         * @param isAiEnterpriseEnabled (Updatable) Whether to enable AI enterprise on the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAiEnterpriseEnabled(@Nullable Output<Boolean> isAiEnterpriseEnabled) {
+            $.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAiEnterpriseEnabled (Updatable) Whether to enable AI enterprise on the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAiEnterpriseEnabled(Boolean isAiEnterpriseEnabled) {
+            return isAiEnterpriseEnabled(Output.of(isAiEnterpriseEnabled));
         }
 
         /**

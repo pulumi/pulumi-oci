@@ -25,7 +25,7 @@ class AutonomousContainerDatabaseSnapshotStandbyArgs:
         """
         The set of arguments for constructing a AutonomousContainerDatabaseSnapshotStandby resource.
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
                
                
                ** IMPORTANT **
@@ -53,7 +53,7 @@ class AutonomousContainerDatabaseSnapshotStandbyArgs:
     @pulumi.getter
     def role(self) -> pulumi.Input[_builtins.str]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
 
 
         ** IMPORTANT **
@@ -88,7 +88,7 @@ class _AutonomousContainerDatabaseSnapshotStandbyState:
         Input properties used for looking up and filtering AutonomousContainerDatabaseSnapshotStandby resources.
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] connection_strings_type: type of connection strings when converting database to snapshot mode
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
                
                
                ** IMPORTANT **
@@ -129,7 +129,7 @@ class _AutonomousContainerDatabaseSnapshotStandbyState:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
 
 
         ** IMPORTANT **
@@ -153,11 +153,6 @@ class AutonomousContainerDatabaseSnapshotStandby(pulumi.CustomResource):
                  role: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Container Database Snapshot Standby resource in Oracle Cloud Infrastructure Database service.
-
-        Convert the standby Autonomous Container Database (ACD) between physical standby and snapshot standby ACD. For more information about converting standby ACDs, see
-        [Convert Physical Standby to Snapshot Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
-
         ## Example Usage
 
         ```python
@@ -182,7 +177,7 @@ class AutonomousContainerDatabaseSnapshotStandby(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] connection_strings_type: type of connection strings when converting database to snapshot mode
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
                
                
                ** IMPORTANT **
@@ -195,11 +190,6 @@ class AutonomousContainerDatabaseSnapshotStandby(pulumi.CustomResource):
                  args: AutonomousContainerDatabaseSnapshotStandbyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Container Database Snapshot Standby resource in Oracle Cloud Infrastructure Database service.
-
-        Convert the standby Autonomous Container Database (ACD) between physical standby and snapshot standby ACD. For more information about converting standby ACDs, see
-        [Convert Physical Standby to Snapshot Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
-
         ## Example Usage
 
         ```python
@@ -276,7 +266,7 @@ class AutonomousContainerDatabaseSnapshotStandby(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] connection_strings_type: type of connection strings when converting database to snapshot mode
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
                
                
                ** IMPORTANT **
@@ -311,7 +301,7 @@ class AutonomousContainerDatabaseSnapshotStandby(pulumi.CustomResource):
     @pulumi.getter
     def role(self) -> pulumi.Output[_builtins.str]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled. 
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
 
 
         ** IMPORTANT **

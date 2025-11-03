@@ -74,10 +74,6 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
                  software_source_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs', 'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Software Source Change Availability Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Updates the availability for a list of specified software sources.
-
         ## Example Usage
 
         ```python
@@ -110,10 +106,6 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
                  args: SoftwareSourceChangeAvailabilityManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Software Source Change Availability Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Updates the availability for a list of specified software sources.
-
         ## Example Usage
 
         ```python

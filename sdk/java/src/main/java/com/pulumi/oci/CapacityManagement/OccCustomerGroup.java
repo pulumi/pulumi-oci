@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Occ Customer Group resource in Oracle Cloud Infrastructure Capacity Management service.
- * 
- * Create customer group.
- * 
  * ## Example Usage
  * 
  * <pre>

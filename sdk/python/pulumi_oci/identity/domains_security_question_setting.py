@@ -1151,9 +1151,7 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSecurityQuestionSettingTagArgs', 'DomainsSecurityQuestionSettingTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Security Question Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace a security question setting.
+        ## Example Usage
 
         ## Import
 
@@ -1270,9 +1268,7 @@ class DomainsSecurityQuestionSetting(pulumi.CustomResource):
                  args: DomainsSecurityQuestionSettingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Security Question Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Replace a security question setting.
+        ## Example Usage
 
         ## Import
 

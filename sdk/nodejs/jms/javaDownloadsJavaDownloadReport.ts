@@ -7,11 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
- *
- * Create a new report in the specified format containing the download details
- * for the tenancy.
- *
  * ## Example Usage
  *
  * ```typescript

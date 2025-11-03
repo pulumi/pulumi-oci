@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.BigDataService
 {
     /// <summary>
-    /// This resource provides the Bds Instance Node Backup Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-    /// 
-    /// Add a node volume backup configuration to the cluster for an indicated node type or node.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

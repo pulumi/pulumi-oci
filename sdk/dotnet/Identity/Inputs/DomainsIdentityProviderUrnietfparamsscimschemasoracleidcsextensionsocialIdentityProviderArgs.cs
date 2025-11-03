@@ -73,6 +73,42 @@ namespace Pulumi.Oci.Identity.Inputs
         }
 
         /// <summary>
+        /// (Updatable) Apple Developer ID
+        /// 
+        /// **Added In:** 2311180004
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("appleDevId")]
+        public Input<string>? AppleDevId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Apple Private Key ID
+        /// 
+        /// **Added In:** 2311180004
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("appleKeyId")]
+        public Input<string>? AppleKeyId { get; set; }
+
+        /// <summary>
         /// (Updatable) Social IDP Authorization URL
         /// 
         /// **Added In:** 20.1.3

@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Autonomous Container Database Snapshot Standby resource in Oracle Cloud Infrastructure Database service.
-//
-// Convert the standby Autonomous Container Database (ACD) between physical standby and snapshot standby ACD. For more information about converting standby ACDs, see
-// [Convert Physical Standby to Snapshot Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
-//
 // ## Example Usage
 //
 // ```go
@@ -59,7 +54,7 @@ type AutonomousContainerDatabaseSnapshotStandby struct {
 	AutonomousContainerDatabaseId pulumi.StringOutput `pulumi:"autonomousContainerDatabaseId"`
 	// type of connection strings when converting database to snapshot mode
 	ConnectionStringsType pulumi.StringOutput `pulumi:"connectionStringsType"`
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -106,7 +101,7 @@ type autonomousContainerDatabaseSnapshotStandbyState struct {
 	AutonomousContainerDatabaseId *string `pulumi:"autonomousContainerDatabaseId"`
 	// type of connection strings when converting database to snapshot mode
 	ConnectionStringsType *string `pulumi:"connectionStringsType"`
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -118,7 +113,7 @@ type AutonomousContainerDatabaseSnapshotStandbyState struct {
 	AutonomousContainerDatabaseId pulumi.StringPtrInput
 	// type of connection strings when converting database to snapshot mode
 	ConnectionStringsType pulumi.StringPtrInput
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -134,7 +129,7 @@ type autonomousContainerDatabaseSnapshotStandbyArgs struct {
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	// type of connection strings when converting database to snapshot mode
 	ConnectionStringsType *string `pulumi:"connectionStringsType"`
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -147,7 +142,7 @@ type AutonomousContainerDatabaseSnapshotStandbyArgs struct {
 	AutonomousContainerDatabaseId pulumi.StringInput
 	// type of connection strings when converting database to snapshot mode
 	ConnectionStringsType pulumi.StringPtrInput
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -255,7 +250,7 @@ func (o AutonomousContainerDatabaseSnapshotStandbyOutput) ConnectionStringsType(
 	}).(pulumi.StringOutput)
 }
 
-// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

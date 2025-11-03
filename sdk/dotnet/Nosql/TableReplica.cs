@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Nosql
 {
     /// <summary>
-    /// This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
-    /// 
-    /// Add a replica for this table. The table's schema must be frozen prior to this operation.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

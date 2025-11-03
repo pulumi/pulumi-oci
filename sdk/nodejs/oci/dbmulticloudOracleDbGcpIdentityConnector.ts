@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
- *
- * Creates Oracle DB GCP Identity Connector resource.
- *
  * ## Example Usage
  *
  * ```typescript

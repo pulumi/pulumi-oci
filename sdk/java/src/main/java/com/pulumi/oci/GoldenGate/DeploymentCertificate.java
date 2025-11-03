@@ -15,10 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
- * 
- * Creates a new certificate to truststore.
- * 
  * ## Example Usage
  * 
  * <pre>

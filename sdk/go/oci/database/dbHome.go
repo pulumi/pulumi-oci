@@ -56,7 +56,7 @@ type DbHome struct {
 	// The user-provided name of the Database Home.
 	DisplayName          pulumi.StringOutput  `pulumi:"displayName"`
 	EnableDatabaseDelete pulumi.BoolPtrOutput `pulumi:"enableDatabaseDelete"`
-	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion pulumi.BoolOutput `pulumi:"isDesupportedVersion"`
@@ -64,7 +64,7 @@ type DbHome struct {
 	IsUnifiedAuditingEnabled pulumi.BoolOutput `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
 	LastPatchHistoryEntryId pulumi.StringOutput `pulumi:"lastPatchHistoryEntryId"`
@@ -136,7 +136,7 @@ type dbHomeState struct {
 	// The user-provided name of the Database Home.
 	DisplayName          *string `pulumi:"displayName"`
 	EnableDatabaseDelete *bool   `pulumi:"enableDatabaseDelete"`
-	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion *bool `pulumi:"isDesupportedVersion"`
@@ -144,7 +144,7 @@ type dbHomeState struct {
 	IsUnifiedAuditingEnabled *bool `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
 	LastPatchHistoryEntryId *string `pulumi:"lastPatchHistoryEntryId"`
@@ -187,7 +187,7 @@ type DbHomeState struct {
 	// The user-provided name of the Database Home.
 	DisplayName          pulumi.StringPtrInput
 	EnableDatabaseDelete pulumi.BoolPtrInput
-	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion pulumi.BoolPtrInput
@@ -195,7 +195,7 @@ type DbHomeState struct {
 	IsUnifiedAuditingEnabled pulumi.BoolPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
 	LastPatchHistoryEntryId pulumi.StringPtrInput
@@ -238,7 +238,7 @@ type dbHomeArgs struct {
 	// The user-provided name of the Database Home.
 	DisplayName          *string `pulumi:"displayName"`
 	EnableDatabaseDelete *bool   `pulumi:"enableDatabaseDelete"`
-	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion *bool `pulumi:"isDesupportedVersion"`
@@ -246,7 +246,7 @@ type dbHomeArgs struct {
 	IsUnifiedAuditingEnabled *bool `pulumi:"isUnifiedAuditingEnabled"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
 	Source *string `pulumi:"source"`
@@ -276,7 +276,7 @@ type DbHomeArgs struct {
 	// The user-provided name of the Database Home.
 	DisplayName          pulumi.StringPtrInput
 	EnableDatabaseDelete pulumi.BoolPtrInput
-	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
 	IsDesupportedVersion pulumi.BoolPtrInput
@@ -284,7 +284,7 @@ type DbHomeArgs struct {
 	IsUnifiedAuditingEnabled pulumi.BoolPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput
 	// The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
 	Source pulumi.StringPtrInput
@@ -430,7 +430,7 @@ func (o DbHomeOutput) EnableDatabaseDelete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.BoolPtrOutput { return v.EnableDatabaseDelete }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o DbHomeOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
@@ -450,7 +450,7 @@ func (o DbHomeOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o DbHomeOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbHome) pulumi.StringOutput { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }

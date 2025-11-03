@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetSoftwareUpdate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycle;
+import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery;
 import java.lang.Integer;
 import java.lang.String;
@@ -26,6 +27,11 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
      */
     private String compartmentId;
     /**
+     * @return Details of components in an Exadata software stack.
+     * 
+     */
+    private List<GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent> components;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -36,7 +42,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
      */
     private String displayName;
     /**
-     * @return Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+     * @return Fleet discovery strategies for a &#39;GUEST_OS&#39; collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      * 
      */
     private List<GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery> fleetDiscoveries;
@@ -46,7 +52,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return OCID identifier for the Exadata Fleet Update Collection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      * 
      */
     private String id;
@@ -66,7 +72,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
      */
     private String serviceType;
     /**
-     * @return Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+     * @return Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose &#39;systemVersion&#39; is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
      * 
      */
     private String sourceMajorVersion;
@@ -117,6 +123,13 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
         return this.compartmentId;
     }
     /**
+     * @return Details of components in an Exadata software stack.
+     * 
+     */
+    public List<GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent> components() {
+        return this.components;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -131,7 +144,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+     * @return Fleet discovery strategies for a &#39;GUEST_OS&#39; collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      * 
      */
     public List<GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery> fleetDiscoveries() {
@@ -145,7 +158,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return OCID identifier for the Exadata Fleet Update Collection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      * 
      */
     public String id() {
@@ -173,7 +186,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
         return this.serviceType;
     }
     /**
-     * @return Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+     * @return Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose &#39;systemVersion&#39; is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
      * 
      */
     public String sourceMajorVersion() {
@@ -233,6 +246,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
     public static final class Builder {
         private List<GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycle> activeFsuCycles;
         private String compartmentId;
+        private List<GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent> components;
         private Map<String,String> definedTags;
         private String displayName;
         private List<GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery> fleetDiscoveries;
@@ -253,6 +267,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
     	      Objects.requireNonNull(defaults);
     	      this.activeFsuCycles = defaults.activeFsuCycles;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.components = defaults.components;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.fleetDiscoveries = defaults.fleetDiscoveries;
@@ -288,6 +303,17 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder components(List<GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent> components) {
+            if (components == null) {
+              throw new MissingRequiredPropertyException("GetFsuCollectionsFsuCollectionSummaryCollectionItem", "components");
+            }
+            this.components = components;
+            return this;
+        }
+        public Builder components(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent... components) {
+            return components(List.of(components));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
@@ -416,6 +442,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
             final var _resultValue = new GetFsuCollectionsFsuCollectionSummaryCollectionItem();
             _resultValue.activeFsuCycles = activeFsuCycles;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.components = components;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.fleetDiscoveries = fleetDiscoveries;

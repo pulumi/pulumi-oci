@@ -7,23 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
- *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testAutonomousDatabaseBackup = new oci.database.AutonomousDatabaseBackup("test_autonomous_database_backup", {
- *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     displayName: autonomousDatabaseBackupDisplayName,
- *     isLongTermBackup: autonomousDatabaseBackupIsLongTermBackup,
- *     retentionPeriodInDays: autonomousDatabaseBackupRetentionPeriodInDays,
- * });
- * ```
  *
  * ## Import
  *
@@ -62,7 +46,7 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      */
     declare public readonly autonomousDatabaseId: pulumi.Output<string>;
     /**
@@ -78,13 +62,17 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly databaseSizeInTbs: pulumi.Output<number>;
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
      */
     declare public /*out*/ readonly dbVersion: pulumi.Output<string>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
     declare public readonly displayName: pulumi.Output<string>;
+    /**
+     * The infrastructure type this resource belongs to.
+     */
+    declare public /*out*/ readonly infrastructureType: pulumi.Output<string>;
     /**
      * Indicates whether the backup is user-initiated or automatic.
      */
@@ -94,7 +82,7 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
      */
     declare public readonly isLongTermBackup: pulumi.Output<boolean>;
     /**
-     * Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      */
     declare public /*out*/ readonly isRestorable: pulumi.Output<boolean>;
     /**
@@ -110,13 +98,17 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly kmsKeyId: pulumi.Output<string>;
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
     declare public /*out*/ readonly kmsKeyVersionId: pulumi.Output<string>;
     /**
      * Additional information about the current lifecycle state.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    /**
+     * Name of the region in which backup is taken in.
+     */
+    declare public /*out*/ readonly region: pulumi.Output<string>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
      *
@@ -129,6 +121,10 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
      * The backup size in terrabytes (TB).
      */
     declare public /*out*/ readonly sizeInTbs: pulumi.Output<number>;
+    /**
+     * Source Autonomous Database details.
+     */
+    declare public /*out*/ readonly sourceDatabaseDetails: pulumi.Output<outputs.Database.AutonomousDatabaseBackupSourceDatabaseDetail[]>;
     /**
      * The current state of the backup.
      */
@@ -173,6 +169,7 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
             resourceInputs["databaseSizeInTbs"] = state?.databaseSizeInTbs;
             resourceInputs["dbVersion"] = state?.dbVersion;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["infrastructureType"] = state?.infrastructureType;
             resourceInputs["isAutomatic"] = state?.isAutomatic;
             resourceInputs["isLongTermBackup"] = state?.isLongTermBackup;
             resourceInputs["isRestorable"] = state?.isRestorable;
@@ -181,8 +178,10 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
             resourceInputs["kmsKeyId"] = state?.kmsKeyId;
             resourceInputs["kmsKeyVersionId"] = state?.kmsKeyVersionId;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["region"] = state?.region;
             resourceInputs["retentionPeriodInDays"] = state?.retentionPeriodInDays;
             resourceInputs["sizeInTbs"] = state?.sizeInTbs;
+            resourceInputs["sourceDatabaseDetails"] = state?.sourceDatabaseDetails;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeAvailableTill"] = state?.timeAvailableTill;
             resourceInputs["timeEnded"] = state?.timeEnded;
@@ -202,6 +201,7 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["databaseSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbVersion"] = undefined /*out*/;
+            resourceInputs["infrastructureType"] = undefined /*out*/;
             resourceInputs["isAutomatic"] = undefined /*out*/;
             resourceInputs["isRestorable"] = undefined /*out*/;
             resourceInputs["keyStoreId"] = undefined /*out*/;
@@ -209,7 +209,9 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
             resourceInputs["kmsKeyId"] = undefined /*out*/;
             resourceInputs["kmsKeyVersionId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["region"] = undefined /*out*/;
             resourceInputs["sizeInTbs"] = undefined /*out*/;
+            resourceInputs["sourceDatabaseDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeAvailableTill"] = undefined /*out*/;
             resourceInputs["timeEnded"] = undefined /*out*/;
@@ -227,7 +229,7 @@ export class AutonomousDatabaseBackup extends pulumi.CustomResource {
  */
 export interface AutonomousDatabaseBackupState {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      */
     autonomousDatabaseId?: pulumi.Input<string>;
     /**
@@ -243,13 +245,17 @@ export interface AutonomousDatabaseBackupState {
      */
     databaseSizeInTbs?: pulumi.Input<number>;
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
      */
     dbVersion?: pulumi.Input<string>;
     /**
      * The user-friendly name for the backup. The name does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * The infrastructure type this resource belongs to.
+     */
+    infrastructureType?: pulumi.Input<string>;
     /**
      * Indicates whether the backup is user-initiated or automatic.
      */
@@ -259,7 +265,7 @@ export interface AutonomousDatabaseBackupState {
      */
     isLongTermBackup?: pulumi.Input<boolean>;
     /**
-     * Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      */
     isRestorable?: pulumi.Input<boolean>;
     /**
@@ -275,13 +281,17 @@ export interface AutonomousDatabaseBackupState {
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
     kmsKeyVersionId?: pulumi.Input<string>;
     /**
      * Additional information about the current lifecycle state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Name of the region in which backup is taken in.
+     */
+    region?: pulumi.Input<string>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
      *
@@ -294,6 +304,10 @@ export interface AutonomousDatabaseBackupState {
      * The backup size in terrabytes (TB).
      */
     sizeInTbs?: pulumi.Input<number>;
+    /**
+     * Source Autonomous Database details.
+     */
+    sourceDatabaseDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseBackupSourceDatabaseDetail>[]>;
     /**
      * The current state of the backup.
      */
@@ -325,7 +339,7 @@ export interface AutonomousDatabaseBackupState {
  */
 export interface AutonomousDatabaseBackupArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      */
     autonomousDatabaseId: pulumi.Input<string>;
     /**

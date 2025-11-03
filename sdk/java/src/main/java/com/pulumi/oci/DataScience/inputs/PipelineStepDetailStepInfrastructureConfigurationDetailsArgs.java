@@ -34,6 +34,21 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs 
     }
 
     /**
+     * (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    @Import(name="blockStorageSizeInGbsParameterized")
+    private @Nullable Output<String> blockStorageSizeInGbsParameterized;
+
+    /**
+     * @return (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    public Optional<Output<String>> blockStorageSizeInGbsParameterized() {
+        return Optional.ofNullable(this.blockStorageSizeInGbsParameterized);
+    }
+
+    /**
      * (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
      * 
      */
@@ -82,6 +97,7 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs 
 
     private PipelineStepDetailStepInfrastructureConfigurationDetailsArgs(PipelineStepDetailStepInfrastructureConfigurationDetailsArgs $) {
         this.blockStorageSizeInGbs = $.blockStorageSizeInGbs;
+        this.blockStorageSizeInGbsParameterized = $.blockStorageSizeInGbsParameterized;
         this.shapeConfigDetails = $.shapeConfigDetails;
         this.shapeName = $.shapeName;
         this.subnetId = $.subnetId;
@@ -124,6 +140,27 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs 
          */
         public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
             return blockStorageSizeInGbs(Output.of(blockStorageSizeInGbs));
+        }
+
+        /**
+         * @param blockStorageSizeInGbsParameterized (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blockStorageSizeInGbsParameterized(@Nullable Output<String> blockStorageSizeInGbsParameterized) {
+            $.blockStorageSizeInGbsParameterized = blockStorageSizeInGbsParameterized;
+            return this;
+        }
+
+        /**
+         * @param blockStorageSizeInGbsParameterized (Updatable) The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder blockStorageSizeInGbsParameterized(String blockStorageSizeInGbsParameterized) {
+            return blockStorageSizeInGbsParameterized(Output.of(blockStorageSizeInGbsParameterized));
         }
 
         /**

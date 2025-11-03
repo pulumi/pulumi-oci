@@ -418,14 +418,6 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new file system snapshot policy in the specified compartment and
-        availability domain.
-
-        After you create a file system snapshot policy, you can associate it with
-        file systems.
-
         ## Example Usage
 
         ```python
@@ -495,14 +487,6 @@ class FilesystemSnapshotPolicy(pulumi.CustomResource):
                  args: FilesystemSnapshotPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
-
-        Creates a new file system snapshot policy in the specified compartment and
-        availability domain.
-
-        After you create a file system snapshot policy, you can associate it with
-        file systems.
-
         ## Example Usage
 
         ```python

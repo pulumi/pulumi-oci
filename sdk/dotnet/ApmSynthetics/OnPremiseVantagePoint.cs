@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics
 {
     /// <summary>
-    /// This resource provides the On Premise Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
-    /// 
-    /// Registers a new On-premise vantage point.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

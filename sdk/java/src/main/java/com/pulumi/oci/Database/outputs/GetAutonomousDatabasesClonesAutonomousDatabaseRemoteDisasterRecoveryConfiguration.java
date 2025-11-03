@@ -12,14 +12,10 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration {
     /**
-     * @return Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     private String disasterRecoveryType;
-    /**
-     * @return If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
-     * 
-     */
     private Boolean isReplicateAutomaticBackups;
     /**
      * @return Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
@@ -34,16 +30,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterR
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration() {}
     /**
-     * @return Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public String disasterRecoveryType() {
         return this.disasterRecoveryType;
     }
-    /**
-     * @return If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
-     * 
-     */
     public Boolean isReplicateAutomaticBackups() {
         return this.isReplicateAutomaticBackups;
     }

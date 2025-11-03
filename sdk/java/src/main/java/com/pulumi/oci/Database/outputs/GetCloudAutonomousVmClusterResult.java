@@ -18,12 +18,12 @@ import java.util.Objects;
 @CustomType
 public final class GetCloudAutonomousVmClusterResult {
     /**
-     * @return The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     * @return The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
      * 
      */
     private Double autonomousDataStoragePercentage;
     /**
-     * @return The data disk group size allocated for Autonomous Databases, in TBs.
+     * @return The data disk group size allocated for Autonomous AI Databases, in TBs.
      * 
      */
     private Double autonomousDataStorageSizeInTbs;
@@ -33,7 +33,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String availabilityDomain;
     /**
-     * @return The data disk group size available for Autonomous Databases, in TBs.
+     * @return The data disk group size available for Autonomous AI Databases, in TBs.
      * 
      */
     private Double availableAutonomousDataStorageSizeInTbs;
@@ -43,7 +43,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private Integer availableContainerDatabases;
     /**
-     * @return CPU cores available for allocation to Autonomous Databases.
+     * @return CPU cores available for allocation to Autonomous AI Databases.
      * 
      */
     private Double availableCpus;
@@ -64,7 +64,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String compartmentId;
     /**
-     * @return The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     private String computeModel;
@@ -159,7 +159,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String lastUpdateHistoryEntryId;
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+     * @return The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      */
     private String licenseModel;
@@ -180,7 +180,12 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private Integer maxAcdsLowestScaledValue;
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    private Double memoryPerComputeUnitInGbs;
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -206,7 +211,7 @@ public final class GetCloudAutonomousVmClusterResult {
     private Integer nonProvisionableAutonomousContainerDatabases;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     private List<String> nsgIds;
@@ -237,9 +242,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private Double provisionedCpus;
     /**
-     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     private Double reclaimableCpus;
@@ -309,7 +312,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String timeUpdated;
     /**
-     * @return The total data disk group size for Autonomous Databases, in TBs.
+     * @return The total data disk group size for Autonomous AI Databases, in TBs.
      * 
      */
     private Double totalAutonomousDataStorageInTbs;
@@ -326,14 +329,14 @@ public final class GetCloudAutonomousVmClusterResult {
 
     private GetCloudAutonomousVmClusterResult() {}
     /**
-     * @return The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     * @return The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
      * 
      */
     public Double autonomousDataStoragePercentage() {
         return this.autonomousDataStoragePercentage;
     }
     /**
-     * @return The data disk group size allocated for Autonomous Databases, in TBs.
+     * @return The data disk group size allocated for Autonomous AI Databases, in TBs.
      * 
      */
     public Double autonomousDataStorageSizeInTbs() {
@@ -347,7 +350,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.availabilityDomain;
     }
     /**
-     * @return The data disk group size available for Autonomous Databases, in TBs.
+     * @return The data disk group size available for Autonomous AI Databases, in TBs.
      * 
      */
     public Double availableAutonomousDataStorageSizeInTbs() {
@@ -361,7 +364,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.availableContainerDatabases;
     }
     /**
-     * @return CPU cores available for allocation to Autonomous Databases.
+     * @return CPU cores available for allocation to Autonomous AI Databases.
      * 
      */
     public Double availableCpus() {
@@ -392,7 +395,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.compartmentId;
     }
     /**
-     * @return The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+     * @return The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      * 
      */
     public String computeModel() {
@@ -525,7 +528,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.lastUpdateHistoryEntryId;
     }
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+     * @return The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      */
     public String licenseModel() {
@@ -556,7 +559,14 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.maxAcdsLowestScaledValue;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    public Double memoryPerComputeUnitInGbs() {
+        return this.memoryPerComputeUnitInGbs;
+    }
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -592,7 +602,7 @@ public final class GetCloudAutonomousVmClusterResult {
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     public List<String> nsgIds() {
@@ -637,9 +647,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.provisionedCpus;
     }
     /**
-     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     public Double reclaimableCpus() {
@@ -737,7 +745,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.timeUpdated;
     }
     /**
-     * @return The total data disk group size for Autonomous Databases, in TBs.
+     * @return The total data disk group size for Autonomous AI Databases, in TBs.
      * 
      */
     public Double totalAutonomousDataStorageInTbs() {
@@ -801,6 +809,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails;
         private List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
         private Integer maxAcdsLowestScaledValue;
+        private Double memoryPerComputeUnitInGbs;
         private Integer memoryPerOracleComputeUnitInGbs;
         private Integer memorySizeInGbs;
         private String nextMaintenanceRunId;
@@ -867,6 +876,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.maintenanceWindowDetails = defaults.maintenanceWindowDetails;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.maxAcdsLowestScaledValue = defaults.maxAcdsLowestScaledValue;
+    	      this.memoryPerComputeUnitInGbs = defaults.memoryPerComputeUnitInGbs;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
@@ -1180,6 +1190,14 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder memoryPerComputeUnitInGbs(Double memoryPerComputeUnitInGbs) {
+            if (memoryPerComputeUnitInGbs == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "memoryPerComputeUnitInGbs");
+            }
+            this.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             if (memoryPerOracleComputeUnitInGbs == null) {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "memoryPerOracleComputeUnitInGbs");
@@ -1450,6 +1468,7 @@ public final class GetCloudAutonomousVmClusterResult {
             _resultValue.maintenanceWindowDetails = maintenanceWindowDetails;
             _resultValue.maintenanceWindows = maintenanceWindows;
             _resultValue.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+            _resultValue.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.nextMaintenanceRunId = nextMaintenanceRunId;

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates a new referential relation in the specified sensitive data model.
- *
  * ## Example Usage
  *
  * ```typescript

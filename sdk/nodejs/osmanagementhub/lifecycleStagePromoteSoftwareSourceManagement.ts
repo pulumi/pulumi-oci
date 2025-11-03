@@ -7,12 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Lifecycle Stage Promote Software Source Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Updates the versioned custom software source content to the specified lifecycle stage.
- * A versioned custom software source OCID (softwareSourceId) is required when promoting content to the first lifecycle stage. You must promote content to the first stage before promoting to subsequent stages, otherwise the service returns an error.
- * The softwareSourceId is optional when promoting content to the second, third, forth, or fifth stages. If you provide a softwareSourceId, the service validates that it matches the softwareSourceId of the previous stage. If it does not match, the service returns an error. If you don't provide a softwareSourceId, the service promotes the versioned software source from the previous lifecycle stage. If the previous lifecycle stage has no software source, the service returns an error.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.MediaServices
 {
     /// <summary>
-    /// This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
-    /// 
-    /// Creates a new CDN Configuration.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection":
 		r = &DatabaseToolsConnection{}
+	case "oci:DatabaseTools/databaseToolsIdentity:DatabaseToolsIdentity":
+		r = &DatabaseToolsIdentity{}
 	case "oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint":
 		r = &DatabaseToolsPrivateEndpoint{}
 	default:
@@ -41,6 +43,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseTools/databaseToolsConnection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseTools/databaseToolsIdentity",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

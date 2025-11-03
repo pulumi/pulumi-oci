@@ -17,10 +17,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
- * 
- * Create a new index on the table identified by tableNameOrId.
- * 
  * ## Example Usage
  * 
  * <pre>

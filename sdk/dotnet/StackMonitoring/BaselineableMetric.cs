@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
-    /// This resource provides the Baselineable Metric resource in Oracle Cloud Infrastructure Stack Monitoring service.
-    /// 
-    /// Creates the specified Baseline-able metric
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

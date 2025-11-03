@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Repository Protected Branch Management resource in Oracle Cloud Infrastructure Devops service.
-//
-// Creates a restriction on a branch that prevents certain actions on it.
-//
 // ## Example Usage
 //
 // ```go

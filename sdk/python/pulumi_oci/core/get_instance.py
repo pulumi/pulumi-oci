@@ -27,7 +27,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, cluster_placement_group_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, launch_volume_attachments=None, licensing_configs=None, metadata=None, placement_constraint_details=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, preserve_data_volumes_created_at_launch=None, private_ip=None, public_ip=None, region=None, security_attributes=None, security_attributes_state=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
+    def __init__(__self__, agent_configs=None, async_=None, availability_configs=None, availability_domain=None, boot_volume_id=None, capacity_reservation_id=None, cluster_placement_group_id=None, compartment_id=None, compute_cluster_id=None, create_vnic_details=None, dedicated_vm_host_id=None, defined_tags=None, display_name=None, extended_metadata=None, fault_domain=None, freeform_tags=None, hostname_label=None, id=None, image=None, instance_configuration_id=None, instance_id=None, instance_options=None, ipxe_script=None, is_ai_enterprise_enabled=None, is_cross_numa_node=None, is_pv_encryption_in_transit_enabled=None, launch_mode=None, launch_options=None, launch_volume_attachments=None, licensing_configs=None, metadata=None, placement_constraint_details=None, platform_configs=None, preemptible_instance_configs=None, preserve_boot_volume=None, preserve_data_volumes_created_at_launch=None, private_ip=None, public_ip=None, region=None, security_attributes=None, security_attributes_state=None, shape=None, shape_configs=None, source_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_maintenance_reboot_due=None, update_operation_constraint=None):
         if agent_configs and not isinstance(agent_configs, list):
             raise TypeError("Expected argument 'agent_configs' to be a list")
         pulumi.set(__self__, "agent_configs", agent_configs)
@@ -97,6 +97,9 @@ class GetInstanceResult:
         if ipxe_script and not isinstance(ipxe_script, str):
             raise TypeError("Expected argument 'ipxe_script' to be a str")
         pulumi.set(__self__, "ipxe_script", ipxe_script)
+        if is_ai_enterprise_enabled and not isinstance(is_ai_enterprise_enabled, bool):
+            raise TypeError("Expected argument 'is_ai_enterprise_enabled' to be a bool")
+        pulumi.set(__self__, "is_ai_enterprise_enabled", is_ai_enterprise_enabled)
         if is_cross_numa_node and not isinstance(is_cross_numa_node, bool):
             raise TypeError("Expected argument 'is_cross_numa_node' to be a bool")
         pulumi.set(__self__, "is_cross_numa_node", is_cross_numa_node)
@@ -351,6 +354,14 @@ class GetInstanceResult:
         return pulumi.get(self, "ipxe_script")
 
     @_builtins.property
+    @pulumi.getter(name="isAiEnterpriseEnabled")
+    def is_ai_enterprise_enabled(self) -> _builtins.bool:
+        """
+        Whether AI enterprise is enabled on the instance.
+        """
+        return pulumi.get(self, "is_ai_enterprise_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isCrossNumaNode")
     def is_cross_numa_node(self) -> _builtins.bool:
         """
@@ -578,6 +589,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             instance_id=self.instance_id,
             instance_options=self.instance_options,
             ipxe_script=self.ipxe_script,
+            is_ai_enterprise_enabled=self.is_ai_enterprise_enabled,
             is_cross_numa_node=self.is_cross_numa_node,
             is_pv_encryption_in_transit_enabled=self.is_pv_encryption_in_transit_enabled,
             launch_mode=self.launch_mode,
@@ -657,6 +669,7 @@ def get_instance(instance_id: Optional[_builtins.str] = None,
         instance_id=pulumi.get(__ret__, 'instance_id'),
         instance_options=pulumi.get(__ret__, 'instance_options'),
         ipxe_script=pulumi.get(__ret__, 'ipxe_script'),
+        is_ai_enterprise_enabled=pulumi.get(__ret__, 'is_ai_enterprise_enabled'),
         is_cross_numa_node=pulumi.get(__ret__, 'is_cross_numa_node'),
         is_pv_encryption_in_transit_enabled=pulumi.get(__ret__, 'is_pv_encryption_in_transit_enabled'),
         launch_mode=pulumi.get(__ret__, 'launch_mode'),
@@ -733,6 +746,7 @@ def get_instance_output(instance_id: Optional[pulumi.Input[_builtins.str]] = Non
         instance_id=pulumi.get(__response__, 'instance_id'),
         instance_options=pulumi.get(__response__, 'instance_options'),
         ipxe_script=pulumi.get(__response__, 'ipxe_script'),
+        is_ai_enterprise_enabled=pulumi.get(__response__, 'is_ai_enterprise_enabled'),
         is_cross_numa_node=pulumi.get(__response__, 'is_cross_numa_node'),
         is_pv_encryption_in_transit_enabled=pulumi.get(__response__, 'is_pv_encryption_in_transit_enabled'),
         launch_mode=pulumi.get(__response__, 'launch_mode'),

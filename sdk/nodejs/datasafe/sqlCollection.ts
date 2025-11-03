@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates a new SQL collection resource.
- *
  * ## Example Usage
  *
  * ```typescript

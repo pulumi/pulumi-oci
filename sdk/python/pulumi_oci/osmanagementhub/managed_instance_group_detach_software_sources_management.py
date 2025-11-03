@@ -139,10 +139,6 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Group Detach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Detaches the specified software sources from a managed instance group.
-
         ## Example Usage
 
         ```python
@@ -179,10 +175,6 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
                  args: ManagedInstanceGroupDetachSoftwareSourcesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Group Detach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Detaches the specified software sources from a managed instance group.
-
         ## Example Usage
 
         ```python

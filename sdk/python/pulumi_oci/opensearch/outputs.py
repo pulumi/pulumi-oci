@@ -16,12 +16,14 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ClusterCertificateConfig',
     'ClusterMaintenanceDetails',
     'ClusterOutboundClusterConfig',
     'ClusterOutboundClusterConfigOutboundCluster',
     'ClusterReverseConnectionEndpoint',
     'ClusterSecuritySamlConfig',
     'OpensearchClusterPipelineReverseConnectionEndpoint',
+    'GetOpensearchClusterCertificateConfigResult',
     'GetOpensearchClusterMaintenanceDetailResult',
     'GetOpensearchClusterOutboundClusterConfigResult',
     'GetOpensearchClusterOutboundClusterConfigOutboundClusterResult',
@@ -35,6 +37,7 @@ __all__ = [
     'GetOpensearchClustersFilterResult',
     'GetOpensearchClustersOpensearchClusterCollectionResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterResult',
@@ -45,6 +48,84 @@ __all__ = [
     'GetOpensearchVersionsOpensearchVersionsCollectionResult',
     'GetOpensearchVersionsOpensearchVersionsCollectionItemResult',
 ]
+
+@pulumi.output_type
+class ClusterCertificateConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clusterCertificateMode":
+            suggest = "cluster_certificate_mode"
+        elif key == "dashboardCertificateMode":
+            suggest = "dashboard_certificate_mode"
+        elif key == "openSearchApiCertificateId":
+            suggest = "open_search_api_certificate_id"
+        elif key == "openSearchDashboardCertificateId":
+            suggest = "open_search_dashboard_certificate_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterCertificateConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterCertificateConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterCertificateConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cluster_certificate_mode: Optional[_builtins.str] = None,
+                 dashboard_certificate_mode: Optional[_builtins.str] = None,
+                 open_search_api_certificate_id: Optional[_builtins.str] = None,
+                 open_search_dashboard_certificate_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str cluster_certificate_mode: (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        :param _builtins.str dashboard_certificate_mode: (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        :param _builtins.str open_search_api_certificate_id: (Updatable) certificate to be used for OpenSearch cluster api communication
+        :param _builtins.str open_search_dashboard_certificate_id: (Updatable) certificate to be used for OpenSearch dashboard api communication
+        """
+        if cluster_certificate_mode is not None:
+            pulumi.set(__self__, "cluster_certificate_mode", cluster_certificate_mode)
+        if dashboard_certificate_mode is not None:
+            pulumi.set(__self__, "dashboard_certificate_mode", dashboard_certificate_mode)
+        if open_search_api_certificate_id is not None:
+            pulumi.set(__self__, "open_search_api_certificate_id", open_search_api_certificate_id)
+        if open_search_dashboard_certificate_id is not None:
+            pulumi.set(__self__, "open_search_dashboard_certificate_id", open_search_dashboard_certificate_id)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterCertificateMode")
+    def cluster_certificate_mode(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        """
+        return pulumi.get(self, "cluster_certificate_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="dashboardCertificateMode")
+    def dashboard_certificate_mode(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        """
+        return pulumi.get(self, "dashboard_certificate_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="openSearchApiCertificateId")
+    def open_search_api_certificate_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) certificate to be used for OpenSearch cluster api communication
+        """
+        return pulumi.get(self, "open_search_api_certificate_id")
+
+    @_builtins.property
+    @pulumi.getter(name="openSearchDashboardCertificateId")
+    def open_search_dashboard_certificate_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) certificate to be used for OpenSearch dashboard api communication
+        """
+        return pulumi.get(self, "open_search_dashboard_certificate_id")
+
 
 @pulumi.output_type
 class ClusterMaintenanceDetails(dict):
@@ -471,6 +552,57 @@ class OpensearchClusterPipelineReverseConnectionEndpoint(dict):
         (Updatable) The IPv4 address in the customer VCN
         """
         return pulumi.get(self, "customer_ip")
+
+
+@pulumi.output_type
+class GetOpensearchClusterCertificateConfigResult(dict):
+    def __init__(__self__, *,
+                 cluster_certificate_mode: _builtins.str,
+                 dashboard_certificate_mode: _builtins.str,
+                 open_search_api_certificate_id: _builtins.str,
+                 open_search_dashboard_certificate_id: _builtins.str):
+        """
+        :param _builtins.str cluster_certificate_mode: Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        :param _builtins.str dashboard_certificate_mode: Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        :param _builtins.str open_search_api_certificate_id: certificate to be used for OpenSearch cluster api communication
+        :param _builtins.str open_search_dashboard_certificate_id: certificate to be used for OpenSearch dashboard api communication
+        """
+        pulumi.set(__self__, "cluster_certificate_mode", cluster_certificate_mode)
+        pulumi.set(__self__, "dashboard_certificate_mode", dashboard_certificate_mode)
+        pulumi.set(__self__, "open_search_api_certificate_id", open_search_api_certificate_id)
+        pulumi.set(__self__, "open_search_dashboard_certificate_id", open_search_dashboard_certificate_id)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterCertificateMode")
+    def cluster_certificate_mode(self) -> _builtins.str:
+        """
+        Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        """
+        return pulumi.get(self, "cluster_certificate_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="dashboardCertificateMode")
+    def dashboard_certificate_mode(self) -> _builtins.str:
+        """
+        Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        """
+        return pulumi.get(self, "dashboard_certificate_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="openSearchApiCertificateId")
+    def open_search_api_certificate_id(self) -> _builtins.str:
+        """
+        certificate to be used for OpenSearch cluster api communication
+        """
+        return pulumi.get(self, "open_search_api_certificate_id")
+
+    @_builtins.property
+    @pulumi.getter(name="openSearchDashboardCertificateId")
+    def open_search_dashboard_certificate_id(self) -> _builtins.str:
+        """
+        certificate to be used for OpenSearch dashboard api communication
+        """
+        return pulumi.get(self, "open_search_dashboard_certificate_id")
 
 
 @pulumi.output_type
@@ -1122,6 +1254,7 @@ class GetOpensearchClustersOpensearchClusterCollectionResult(dict):
 class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
     def __init__(__self__, *,
                  availability_domains: Sequence[_builtins.str],
+                 certificate_configs: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigResult'],
                  compartment_id: _builtins.str,
                  configure_outbound_cluster_trigger: _builtins.int,
                  data_node_count: _builtins.int,
@@ -1145,6 +1278,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  master_node_host_ocpu_count: _builtins.int,
                  master_node_host_shape: _builtins.str,
                  master_node_host_type: _builtins.str,
+                 nsg_id: _builtins.str,
                  opendashboard_fqdn: _builtins.str,
                  opendashboard_node_count: _builtins.int,
                  opendashboard_node_host_memory_gb: _builtins.int,
@@ -1162,6 +1296,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  search_node_host_shape: _builtins.str,
                  search_node_host_type: _builtins.str,
                  search_node_storage_gb: _builtins.int,
+                 security_attributes: Mapping[str, _builtins.str],
                  security_master_user_name: _builtins.str,
                  security_master_user_password_hash: _builtins.str,
                  security_mode: _builtins.str,
@@ -1180,6 +1315,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  vcn_id: _builtins.str):
         """
         :param Sequence[_builtins.str] availability_domains: The availability domains to distribute the cluser nodes across.
+        :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigArgs'] certificate_configs: Custom certificate config for customer provided certs.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param _builtins.int data_node_count: The number of data nodes configured for the cluster.
         :param _builtins.str data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
@@ -1202,6 +1338,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param _builtins.int master_node_host_ocpu_count: The number of OCPUs configured for cluster's master nodes.
         :param _builtins.str master_node_host_shape: The node shape for the cluster's master nodes.
         :param _builtins.str master_node_host_type: The instance type for the cluster's master nodes.
+        :param _builtins.str nsg_id: The OCID of the NSG where the private endpoint vnic will be attached.
         :param _builtins.str opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         :param _builtins.int opendashboard_node_count: The number of OpenSearch Dashboard nodes configured for the cluster.
         :param _builtins.int opendashboard_node_host_memory_gb: The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
@@ -1219,6 +1356,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param _builtins.str search_node_host_shape: The node shape for the cluster's search nodes.
         :param _builtins.str search_node_host_type: The instance type for the cluster's search nodes.
         :param _builtins.int search_node_storage_gb: The amount of storage in GB, to configure per node for the cluster's search nodes.
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str security_master_user_name: The name of the master user that are used to manage security config
         :param _builtins.str security_master_user_password_hash: The password hash of the master user that are used to manage security config
         :param _builtins.str security_mode: The security mode of the cluster.
@@ -1235,6 +1373,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param _builtins.str vcn_id: The OCID of the cluster's VCN.
         """
         pulumi.set(__self__, "availability_domains", availability_domains)
+        pulumi.set(__self__, "certificate_configs", certificate_configs)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "configure_outbound_cluster_trigger", configure_outbound_cluster_trigger)
         pulumi.set(__self__, "data_node_count", data_node_count)
@@ -1258,6 +1397,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
         pulumi.set(__self__, "master_node_host_shape", master_node_host_shape)
         pulumi.set(__self__, "master_node_host_type", master_node_host_type)
+        pulumi.set(__self__, "nsg_id", nsg_id)
         pulumi.set(__self__, "opendashboard_fqdn", opendashboard_fqdn)
         pulumi.set(__self__, "opendashboard_node_count", opendashboard_node_count)
         pulumi.set(__self__, "opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
@@ -1275,6 +1415,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "search_node_host_shape", search_node_host_shape)
         pulumi.set(__self__, "search_node_host_type", search_node_host_type)
         pulumi.set(__self__, "search_node_storage_gb", search_node_storage_gb)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
         pulumi.set(__self__, "security_mode", security_mode)
@@ -1299,6 +1440,14 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The availability domains to distribute the cluser nodes across.
         """
         return pulumi.get(self, "availability_domains")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateConfigs")
+    def certificate_configs(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigResult']:
+        """
+        Custom certificate config for customer provided certs.
+        """
+        return pulumi.get(self, "certificate_configs")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1482,6 +1631,14 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         return pulumi.get(self, "master_node_host_type")
 
     @_builtins.property
+    @pulumi.getter(name="nsgId")
+    def nsg_id(self) -> _builtins.str:
+        """
+        The OCID of the NSG where the private endpoint vnic will be attached.
+        """
+        return pulumi.get(self, "nsg_id")
+
+    @_builtins.property
     @pulumi.getter(name="opendashboardFqdn")
     def opendashboard_fqdn(self) -> _builtins.str:
         """
@@ -1618,6 +1775,14 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         return pulumi.get(self, "search_node_storage_gb")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="securityMasterUserName")
     def security_master_user_name(self) -> _builtins.str:
         """
@@ -1738,6 +1903,57 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         The OCID of the cluster's VCN.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemCertificateConfigResult(dict):
+    def __init__(__self__, *,
+                 cluster_certificate_mode: _builtins.str,
+                 dashboard_certificate_mode: _builtins.str,
+                 open_search_api_certificate_id: _builtins.str,
+                 open_search_dashboard_certificate_id: _builtins.str):
+        """
+        :param _builtins.str cluster_certificate_mode: Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        :param _builtins.str dashboard_certificate_mode: Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        :param _builtins.str open_search_api_certificate_id: certificate to be used for OpenSearch cluster api communication
+        :param _builtins.str open_search_dashboard_certificate_id: certificate to be used for OpenSearch dashboard api communication
+        """
+        pulumi.set(__self__, "cluster_certificate_mode", cluster_certificate_mode)
+        pulumi.set(__self__, "dashboard_certificate_mode", dashboard_certificate_mode)
+        pulumi.set(__self__, "open_search_api_certificate_id", open_search_api_certificate_id)
+        pulumi.set(__self__, "open_search_dashboard_certificate_id", open_search_dashboard_certificate_id)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterCertificateMode")
+    def cluster_certificate_mode(self) -> _builtins.str:
+        """
+        Specifies whether the certificate to be used in cluster is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        """
+        return pulumi.get(self, "cluster_certificate_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="dashboardCertificateMode")
+    def dashboard_certificate_mode(self) -> _builtins.str:
+        """
+        Specifies whether the certificate to be used in dashboard is managed by OpenSearch or Oracle Cloud Infrastructure Certificates service.
+        """
+        return pulumi.get(self, "dashboard_certificate_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="openSearchApiCertificateId")
+    def open_search_api_certificate_id(self) -> _builtins.str:
+        """
+        certificate to be used for OpenSearch cluster api communication
+        """
+        return pulumi.get(self, "open_search_api_certificate_id")
+
+    @_builtins.property
+    @pulumi.getter(name="openSearchDashboardCertificateId")
+    def open_search_dashboard_certificate_id(self) -> _builtins.str:
+        """
+        certificate to be used for OpenSearch dashboard api communication
+        """
+        return pulumi.get(self, "open_search_dashboard_certificate_id")
 
 
 @pulumi.output_type

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Protected Database resource in Oracle Cloud Infrastructure Recovery service.
- *
- * Creates a new Protected Database.
- *
  * ## Example Usage
  *
  * ```typescript

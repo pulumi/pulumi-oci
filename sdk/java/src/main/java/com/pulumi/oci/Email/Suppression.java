@@ -14,13 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Suppression resource in Oracle Cloud Infrastructure Email service.
- * 
- * Adds recipient email addresses to the suppression list for a tenancy.
- * Addresses added to the suppression list via the API are denoted as
- * &#34;MANUAL&#34; in the `reason` field. *Note:* All email addresses added to the
- * suppression list are normalized to include only lowercase letters.
- * 
  * ## Example Usage
  * 
  * <pre>

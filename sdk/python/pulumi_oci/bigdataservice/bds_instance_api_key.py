@@ -330,10 +330,6 @@ class BdsInstanceApiKey(pulumi.CustomResource):
                  user_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Create an API key on behalf of the specified user.
-
         ## Example Usage
 
         ```python
@@ -377,10 +373,6 @@ class BdsInstanceApiKey(pulumi.CustomResource):
                  args: BdsInstanceApiKeyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Create an API key on behalf of the specified user.
-
         ## Example Usage
 
         ```python

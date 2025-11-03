@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Tsig Key resource in Oracle Cloud Infrastructure DNS service.
- *
- * Creates a new TSIG key in the specified compartment. There is no
- * `opc-retry-token` header since TSIG key names must be globally unique.
- *
  * ## Example Usage
  *
  * ```typescript

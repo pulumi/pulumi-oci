@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates an Autonomous VM cluster for Exadata Cloud@Customer. To create an Autonomous VM Cluster in the Oracle cloud, see [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster).
- *
  * ## Example Usage
  *
  * ```typescript
@@ -197,6 +193,10 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
+    declare public /*out*/ readonly memoryPerComputeUnitInGbs: pulumi.Output<number>;
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     */
     declare public readonly memoryPerOracleComputeUnitInGbs: pulumi.Output<number>;
     /**
      * The memory allocated in GBs.
@@ -325,6 +325,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["maintenanceWindowDetails"] = state?.maintenanceWindowDetails;
             resourceInputs["maintenanceWindows"] = state?.maintenanceWindows;
             resourceInputs["maxAcdsLowestScaledValue"] = state?.maxAcdsLowestScaledValue;
+            resourceInputs["memoryPerComputeUnitInGbs"] = state?.memoryPerComputeUnitInGbs;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state?.memoryPerOracleComputeUnitInGbs;
             resourceInputs["memorySizeInGbs"] = state?.memorySizeInGbs;
             resourceInputs["nextMaintenanceRunId"] = state?.nextMaintenanceRunId;
@@ -396,6 +397,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maintenanceWindows"] = undefined /*out*/;
             resourceInputs["maxAcdsLowestScaledValue"] = undefined /*out*/;
+            resourceInputs["memoryPerComputeUnitInGbs"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["nodeCount"] = undefined /*out*/;
@@ -526,6 +528,10 @@ export interface AutonomousVmClusterState {
      * The lowest value to which maximum number of ACDs can be scaled down.
      */
     maxAcdsLowestScaledValue?: pulumi.Input<number>;
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     */
+    memoryPerComputeUnitInGbs?: pulumi.Input<number>;
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */

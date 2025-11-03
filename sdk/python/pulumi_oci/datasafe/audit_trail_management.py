@@ -646,10 +646,6 @@ class AuditTrailManagement(pulumi.CustomResource):
                  trail_location: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Audit Trail Management resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates one or more attributes of the specified audit trail.
-
         ## Example Usage
 
         ```python
@@ -704,10 +700,6 @@ class AuditTrailManagement(pulumi.CustomResource):
                  args: Optional[AuditTrailManagementArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Audit Trail Management resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates one or more attributes of the specified audit trail.
-
         ## Example Usage
 
         ```python

@@ -31,7 +31,7 @@ public final class GetFusionEnvironmentScheduledActivityAction {
      */
     private String description;
     /**
-     * @return A string that describeds whether the change is applied hot or cold
+     * @return A string that describes whether the change is applied hot or cold
      * 
      */
     private String mode;
@@ -86,7 +86,7 @@ public final class GetFusionEnvironmentScheduledActivityAction {
         return this.description;
     }
     /**
-     * @return A string that describeds whether the change is applied hot or cold
+     * @return A string that describes whether the change is applied hot or cold
      * 
      */
     public String mode() {

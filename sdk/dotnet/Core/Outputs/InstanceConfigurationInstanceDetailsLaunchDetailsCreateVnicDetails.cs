@@ -62,6 +62,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool? SkipSourceDestCheck;
         /// <summary>
+        /// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+        /// </summary>
+        public readonly string? SubnetCidr;
+        /// <summary>
         /// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         /// </summary>
         public readonly string? SubnetId;
@@ -92,6 +96,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool? skipSourceDestCheck,
 
+            string? subnetCidr,
+
             string? subnetId)
         {
             AssignIpv6ip = assignIpv6ip;
@@ -106,6 +112,7 @@ namespace Pulumi.Oci.Core.Outputs
             PrivateIp = privateIp;
             SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
+            SubnetCidr = subnetCidr;
             SubnetId = subnetId;
         }
     }

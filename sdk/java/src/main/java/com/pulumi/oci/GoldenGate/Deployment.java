@@ -26,9 +26,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
- * 
- * Creates a new Deployment.
+ * ## Example Usage
  * 
  * ## Import
  * 
@@ -96,6 +94,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> category() {
         return this.category;
+    }
+    /**
+     * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    public Output<String> clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -608,6 +620,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.publicIpAddress;
     }
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
@@ -654,6 +680,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`

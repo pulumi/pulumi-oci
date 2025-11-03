@@ -43,6 +43,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string>? StepName { get; set; }
 
         /// <summary>
+        /// Name used when creating the steprun.
+        /// </summary>
+        [Input("stepRunName")]
+        public Input<string>? StepRunName { get; set; }
+
+        /// <summary>
         /// The type of step.
         /// </summary>
         [Input("stepType")]

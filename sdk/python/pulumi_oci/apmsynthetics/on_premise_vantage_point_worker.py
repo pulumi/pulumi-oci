@@ -593,10 +593,6 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
                  worker_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
-
-        Registers a new worker.
-
         ## Example Usage
 
         ```python
@@ -654,10 +650,6 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
                  args: OnPremiseVantagePointWorkerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
-
-        Registers a new worker.
-
         ## Example Usage
 
         ```python

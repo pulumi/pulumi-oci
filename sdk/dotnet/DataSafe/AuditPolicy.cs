@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Updates the audit policy.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

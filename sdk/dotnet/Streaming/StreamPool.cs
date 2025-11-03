@@ -10,12 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Streaming
 {
     /// <summary>
-    /// This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
-    /// 
-    /// Starts the provisioning of a new stream pool.
-    /// To track the progress of the provisioning, you can periodically call GetStreamPool.
-    /// In the response, the `lifecycleState` parameter of the object tells you its current state.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -52,6 +46,7 @@ namespace Pulumi.Oci.Streaming
     ///             PrivateEndpointIp = streamPoolPrivateEndpointSettingsPrivateEndpointIp,
     ///             SubnetId = testSubnet.Id,
     ///         },
+    ///         SecurityAttributes = streamPoolSecurityAttributes,
     ///     });
     /// 
     /// });
@@ -127,6 +122,16 @@ namespace Pulumi.Oci.Streaming
         /// </summary>
         [Output("privateEndpointSettings")]
         public Output<Outputs.StreamPoolPrivateEndpointSettings> PrivateEndpointSettings { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the stream pool.
@@ -240,6 +245,22 @@ namespace Pulumi.Oci.Streaming
         [Input("privateEndpointSettings")]
         public Input<Inputs.StreamPoolPrivateEndpointSettingsArgs>? PrivateEndpointSettings { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         public StreamPoolArgs()
         {
         }
@@ -319,6 +340,22 @@ namespace Pulumi.Oci.Streaming
         /// </summary>
         [Input("privateEndpointSettings")]
         public Input<Inputs.StreamPoolPrivateEndpointSettingsGetArgs>? PrivateEndpointSettings { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The current state of the stream pool.

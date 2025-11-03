@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.GetComputeHostsFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -79,6 +80,21 @@ public final class GetComputeHostsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
+     * 
+     */
+    @Import(name="computeHostInSubtree")
+    private @Nullable Output<Boolean> computeHostInSubtree;
+
+    /**
+     * @return When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
+     * 
+     */
+    public Optional<Output<Boolean>> computeHostInSubtree() {
+        return Optional.ofNullable(this.computeHostInSubtree);
+    }
+
+    /**
      * A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
      * 
      */
@@ -143,6 +159,7 @@ public final class GetComputeHostsArgs extends com.pulumi.resources.InvokeArgs {
         this.compartmentId = $.compartmentId;
         this.computeHostGroupId = $.computeHostGroupId;
         this.computeHostHealth = $.computeHostHealth;
+        this.computeHostInSubtree = $.computeHostInSubtree;
         this.computeHostLifecycleState = $.computeHostLifecycleState;
         this.displayName = $.displayName;
         this.filters = $.filters;
@@ -249,6 +266,27 @@ public final class GetComputeHostsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder computeHostHealth(String computeHostHealth) {
             return computeHostHealth(Output.of(computeHostHealth));
+        }
+
+        /**
+         * @param computeHostInSubtree When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeHostInSubtree(@Nullable Output<Boolean> computeHostInSubtree) {
+            $.computeHostInSubtree = computeHostInSubtree;
+            return this;
+        }
+
+        /**
+         * @param computeHostInSubtree When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeHostInSubtree(Boolean computeHostInSubtree) {
+            return computeHostInSubtree(Output.of(computeHostInSubtree));
         }
 
         /**

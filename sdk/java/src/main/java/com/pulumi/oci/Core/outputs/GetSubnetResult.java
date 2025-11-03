@@ -59,6 +59,14 @@ public final class GetSubnetResult {
      */
     private String id;
     /**
+     * @return The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+     * * Ipv4 CIDR blocks must be valid.
+     * * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+     * 
+     */
+    private List<String> ipv4cidrBlocks;
+    /**
      * @return For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet&#39;s IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
      * 
      */
@@ -190,6 +198,16 @@ public final class GetSubnetResult {
         return this.id;
     }
     /**
+     * @return The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+     * * Ipv4 CIDR blocks must be valid.
+     * * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+     * * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+     * 
+     */
+    public List<String> ipv4cidrBlocks() {
+        return this.ipv4cidrBlocks;
+    }
+    /**
      * @return For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet&#39;s IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
      * 
      */
@@ -302,6 +320,7 @@ public final class GetSubnetResult {
         private String dnsLabel;
         private Map<String,String> freeformTags;
         private String id;
+        private List<String> ipv4cidrBlocks;
         private String ipv6cidrBlock;
         private List<String> ipv6cidrBlocks;
         private String ipv6virtualRouterIp;
@@ -328,6 +347,7 @@ public final class GetSubnetResult {
     	      this.dnsLabel = defaults.dnsLabel;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.ipv4cidrBlocks = defaults.ipv4cidrBlocks;
     	      this.ipv6cidrBlock = defaults.ipv6cidrBlock;
     	      this.ipv6cidrBlocks = defaults.ipv6cidrBlocks;
     	      this.ipv6virtualRouterIp = defaults.ipv6virtualRouterIp;
@@ -415,6 +435,17 @@ public final class GetSubnetResult {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder ipv4cidrBlocks(List<String> ipv4cidrBlocks) {
+            if (ipv4cidrBlocks == null) {
+              throw new MissingRequiredPropertyException("GetSubnetResult", "ipv4cidrBlocks");
+            }
+            this.ipv4cidrBlocks = ipv4cidrBlocks;
+            return this;
+        }
+        public Builder ipv4cidrBlocks(String... ipv4cidrBlocks) {
+            return ipv4cidrBlocks(List.of(ipv4cidrBlocks));
         }
         @CustomType.Setter
         public Builder ipv6cidrBlock(String ipv6cidrBlock) {
@@ -545,6 +576,7 @@ public final class GetSubnetResult {
             _resultValue.dnsLabel = dnsLabel;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.ipv4cidrBlocks = ipv4cidrBlocks;
             _resultValue.ipv6cidrBlock = ipv6cidrBlock;
             _resultValue.ipv6cidrBlocks = ipv6cidrBlocks;
             _resultValue.ipv6virtualRouterIp = ipv6virtualRouterIp;

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts
 {
     /// <summary>
-    /// This resource provides the Container Image Signature resource in Oracle Cloud Infrastructure Artifacts service.
-    /// 
-    /// Upload a signature to an image.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

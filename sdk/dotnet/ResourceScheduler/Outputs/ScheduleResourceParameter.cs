@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
         public readonly string ParameterType;
         /// <summary>
         /// (Updatable) This is the HTTP request header value.
-        /// =======
         /// { "id": "&lt;OCID_of_bucket&gt;" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         /// </summary>
         public readonly string? Value;

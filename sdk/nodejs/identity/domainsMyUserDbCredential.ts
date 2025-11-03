@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the My User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create a user's own database (DB) credential.
- *
  * ## Example Usage
  *
  * ## Import

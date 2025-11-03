@@ -243,10 +243,6 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
                  update_lookup_file: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Namespace Lookups Update Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
-
         ## Example Usage
 
         ## Import
@@ -272,10 +268,6 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
                  args: NamespaceLookupsUpdateDataManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Namespace Lookups Update Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
-
         ## Example Usage
 
         ## Import

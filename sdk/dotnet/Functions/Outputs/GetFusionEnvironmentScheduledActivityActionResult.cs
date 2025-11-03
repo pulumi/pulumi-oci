@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A string that describeds whether the change is applied hot or cold
+        /// A string that describes whether the change is applied hot or cold
         /// </summary>
         public readonly string Mode;
         /// <summary>

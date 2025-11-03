@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets information about the specified Autonomous Database Software Image.
+        /// Gets information about the specified Autonomous AI Database Software Image.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets information about the specified Autonomous Database Software Image.
+        /// Gets information about the specified Autonomous AI Database Software Image.
         /// 
         /// ## Example Usage
         /// 
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets information about the specified Autonomous Database Software Image.
+        /// Gets information about the specified Autonomous AI Database Software Image.
         /// 
         /// ## Example Usage
         /// 
@@ -94,7 +94,7 @@ namespace Pulumi.Oci.Database
     public sealed class GetAutonomousDatabaseSoftwareImageArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("autonomousDatabaseSoftwareImageId", required: true)]
         public string AutonomousDatabaseSoftwareImageId { get; set; } = null!;
@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Database
     public sealed class GetAutonomousDatabaseSoftwareImageInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("autonomousDatabaseSoftwareImageId", required: true)]
         public Input<string> AutonomousDatabaseSoftwareImageId { get; set; } = null!;
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Database
     {
         public readonly string AutonomousDatabaseSoftwareImageId;
         /// <summary>
-        /// One-off patches included in the Autonomous Database Software Image
+        /// One-off patches included in the Autonomous AI Database Software Image
         /// </summary>
         public readonly ImmutableArray<string> AutonomousDsiOneOffPatches;
         /// <summary>
@@ -133,7 +133,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The database version with which the Autonomous Database Software Image is to be built.
+        /// The database version with which the Autonomous AI Database Software Image is to be built.
         /// </summary>
         public readonly string DatabaseVersion;
         /// <summary>
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        /// The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Database
         public readonly string ReleaseUpdate;
         public readonly string SourceCdbId;
         /// <summary>
-        /// The current state of the Autonomous Database Software Image.
+        /// The current state of the Autonomous AI Database Software Image.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The date and time the Autonomous Database Software Image was created.
+        /// The date and time the Autonomous AI Database Software Image was created.
         /// </summary>
         public readonly string TimeCreated;
 

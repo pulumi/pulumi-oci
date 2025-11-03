@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
-    /// 
-    /// Updates authentication policy for the specified tenancy
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

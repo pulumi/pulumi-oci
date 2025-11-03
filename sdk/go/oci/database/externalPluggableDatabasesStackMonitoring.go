@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Externalpluggabledatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
-//
-// Enable Stack Monitoring for the external pluggable database.
-//
 // ## Example Usage
 //
 // ```go

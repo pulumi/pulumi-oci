@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Management Station Synchronize Mirrors Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Synchronize the specified software sources mirrored on the management station.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

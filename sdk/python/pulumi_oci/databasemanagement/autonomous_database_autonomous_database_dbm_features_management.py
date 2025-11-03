@@ -155,10 +155,6 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                  feature_details: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables a Database Management feature for the specified Autonomous Database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.
@@ -178,10 +174,6 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                  args: AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables a Database Management feature for the specified Autonomous Database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.

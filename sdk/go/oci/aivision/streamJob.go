@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
-//
-// Create a stream analysis job with given inputs and features.
-//
 // ## Example Usage
 //
 // ```go

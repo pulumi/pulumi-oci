@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
- * 
- * Create a new data asset.
- * 
  * ## Example Usage
  * 
  * <pre>

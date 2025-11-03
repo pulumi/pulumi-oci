@@ -17,15 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates and downloads a wallet for the specified Autonomous Database.
- * 
- * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
- * See this example for more details.
- * 
- * Recreate the resource to create and download a new wallet.
- * 
  * ## Example Usage
  * 
  * <pre>

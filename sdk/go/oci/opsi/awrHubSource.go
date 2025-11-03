@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
-//
-// # Register Awr Hub source
-//
 // ## Example Usage
 //
 // ```go

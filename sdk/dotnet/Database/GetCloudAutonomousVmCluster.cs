@@ -127,11 +127,11 @@ namespace Pulumi.Oci.Database
     public sealed class GetCloudAutonomousVmClusterResult
     {
         /// <summary>
-        /// The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+        /// The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
         /// </summary>
         public readonly double AutonomousDataStoragePercentage;
         /// <summary>
-        /// The data disk group size allocated for Autonomous Databases, in TBs.
+        /// The data disk group size allocated for Autonomous AI Databases, in TBs.
         /// </summary>
         public readonly double AutonomousDataStorageSizeInTbs;
         /// <summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// The data disk group size available for Autonomous Databases, in TBs.
+        /// The data disk group size available for Autonomous AI Databases, in TBs.
         /// </summary>
         public readonly double AvailableAutonomousDataStorageSizeInTbs;
         /// <summary>
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int AvailableContainerDatabases;
         /// <summary>
-        /// CPU cores available for allocation to Autonomous Databases.
+        /// CPU cores available for allocation to Autonomous AI Databases.
         /// </summary>
         public readonly double AvailableCpus;
         public readonly string CloudAutonomousVmClusterId;
@@ -164,7 +164,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly string ComputeModel;
         /// <summary>
@@ -240,7 +240,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string LastUpdateHistoryEntryId;
         /// <summary>
-        /// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+        /// The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
         /// </summary>
         public readonly string LicenseModel;
         /// <summary>
@@ -257,7 +257,11 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int MaxAcdsLowestScaledValue;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per OCPU or ECPU.
+        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        /// </summary>
+        public readonly double MemoryPerComputeUnitInGbs;
+        /// <summary>
+        /// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
@@ -278,7 +282,7 @@ namespace Pulumi.Oci.Database
         public readonly int NonProvisionableAutonomousContainerDatabases;
         /// <summary>
         /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        /// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
@@ -303,9 +307,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly double ProvisionedCpus;
         /// <summary>
-        /// For Autonomous Databases on Dedicated Exadata Infrastructure:
-        /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        /// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// </summary>
         public readonly double ReclaimableCpus;
         /// <summary>
@@ -361,7 +363,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The total data disk group size for Autonomous Databases, in TBs.
+        /// The total data disk group size for Autonomous AI Databases, in TBs.
         /// </summary>
         public readonly double TotalAutonomousDataStorageInTbs;
         /// <summary>
@@ -442,6 +444,8 @@ namespace Pulumi.Oci.Database
             ImmutableArray<Outputs.GetCloudAutonomousVmClusterMaintenanceWindowResult> maintenanceWindows,
 
             int maxAcdsLowestScaledValue,
+
+            double memoryPerComputeUnitInGbs,
 
             int memoryPerOracleComputeUnitInGbs,
 
@@ -535,6 +539,7 @@ namespace Pulumi.Oci.Database
             MaintenanceWindowDetails = maintenanceWindowDetails;
             MaintenanceWindows = maintenanceWindows;
             MaxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+            MemoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;

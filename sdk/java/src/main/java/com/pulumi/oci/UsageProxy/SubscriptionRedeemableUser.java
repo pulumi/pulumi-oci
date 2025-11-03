@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
- * 
- * Adds the list of redeemable user summary for a subscription ID.
- * 
  * ## Example Usage
  * 
  * <pre>

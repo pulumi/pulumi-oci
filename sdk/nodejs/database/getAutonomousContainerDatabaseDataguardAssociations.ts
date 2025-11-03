@@ -50,7 +50,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationsResult {
      */
     readonly autonomousContainerDatabaseDataguardAssociations: outputs.Database.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociation[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      */
     readonly autonomousContainerDatabaseId: string;
     readonly filters?: outputs.Database.GetAutonomousContainerDatabaseDataguardAssociationsFilter[];

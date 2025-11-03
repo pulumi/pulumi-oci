@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Ocvp.Outputs
     [OutputType]
     public sealed class GetSddcsSddcCollectionInitialConfigurationResult
     {
+        /// <summary>
+        /// The configurations for Clusters initially created in the SDDC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationResult> InitialClusterConfigurations;
 
         [OutputConstructor]

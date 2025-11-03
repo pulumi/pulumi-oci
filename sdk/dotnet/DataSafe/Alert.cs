@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Alert resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Updates the status of the specified alert.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

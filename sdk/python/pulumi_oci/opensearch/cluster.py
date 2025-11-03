@@ -40,6 +40,7 @@ class ClusterArgs:
                  subnet_id: pulumi.Input[_builtins.str],
                  vcn_compartment_id: pulumi.Input[_builtins.str],
                  vcn_id: pulumi.Input[_builtins.str],
+                 certificate_config: Optional[pulumi.Input['ClusterCertificateConfigArgs']] = None,
                  configure_outbound_cluster_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  data_node_host_bare_metal_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  data_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
@@ -49,6 +50,7 @@ class ClusterArgs:
                  maintenance_details: Optional[pulumi.Input['ClusterMaintenanceDetailsArgs']] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 nsg_id: Optional[pulumi.Input[_builtins.str]] = None,
                  opendashboard_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  outbound_cluster_config: Optional[pulumi.Input['ClusterOutboundClusterConfigArgs']] = None,
                  reverse_connection_endpoint_customer_ips: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -58,6 +60,7 @@ class ClusterArgs:
                  search_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  search_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
                  search_node_storage_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  security_master_user_name: Optional[pulumi.Input[_builtins.str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[_builtins.str]] = None,
                  security_mode: Optional[pulumi.Input[_builtins.str]] = None,
@@ -85,6 +88,7 @@ class ClusterArgs:
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the cluster's subnet.
         :param pulumi.Input[_builtins.str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the cluster's VCN.
+        :param pulumi.Input['ClusterCertificateConfigArgs'] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
         :param pulumi.Input[_builtins.str] data_node_host_shape: (Updatable) The node shape for the cluster's data nodes.
@@ -94,6 +98,7 @@ class ClusterArgs:
         :param pulumi.Input['ClusterMaintenanceDetailsArgs'] maintenance_details: (Updatable) Details for creation of maintenance details
         :param pulumi.Input[_builtins.str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
+        :param pulumi.Input[_builtins.str] nsg_id: The OCID of the NSG where the private endpoint vnic will be attached.
         :param pulumi.Input[_builtins.str] opendashboard_node_host_shape: (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input['ClusterOutboundClusterConfigArgs'] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
@@ -103,6 +108,7 @@ class ClusterArgs:
         :param pulumi.Input[_builtins.str] search_node_host_shape: (Updatable) The node shape for the cluster's search nodes.
         :param pulumi.Input[_builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
         :param pulumi.Input[_builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_mode: (Updatable) The security mode of the cluster.
@@ -133,6 +139,8 @@ class ClusterArgs:
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
         pulumi.set(__self__, "vcn_id", vcn_id)
+        if certificate_config is not None:
+            pulumi.set(__self__, "certificate_config", certificate_config)
         if configure_outbound_cluster_trigger is not None:
             pulumi.set(__self__, "configure_outbound_cluster_trigger", configure_outbound_cluster_trigger)
         if data_node_host_bare_metal_shape is not None:
@@ -151,6 +159,8 @@ class ClusterArgs:
             pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
         if master_node_host_shape is not None:
             pulumi.set(__self__, "master_node_host_shape", master_node_host_shape)
+        if nsg_id is not None:
+            pulumi.set(__self__, "nsg_id", nsg_id)
         if opendashboard_node_host_shape is not None:
             pulumi.set(__self__, "opendashboard_node_host_shape", opendashboard_node_host_shape)
         if outbound_cluster_config is not None:
@@ -169,6 +179,8 @@ class ClusterArgs:
             pulumi.set(__self__, "search_node_host_type", search_node_host_type)
         if search_node_storage_gb is not None:
             pulumi.set(__self__, "search_node_storage_gb", search_node_storage_gb)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if security_master_user_name is not None:
             pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         if security_master_user_password_hash is not None:
@@ -411,6 +423,18 @@ class ClusterArgs:
         pulumi.set(self, "vcn_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="certificateConfig")
+    def certificate_config(self) -> Optional[pulumi.Input['ClusterCertificateConfigArgs']]:
+        """
+        (Updatable) Custom certificate config for customer provided certs.
+        """
+        return pulumi.get(self, "certificate_config")
+
+    @certificate_config.setter
+    def certificate_config(self, value: Optional[pulumi.Input['ClusterCertificateConfigArgs']]):
+        pulumi.set(self, "certificate_config", value)
+
+    @_builtins.property
     @pulumi.getter(name="configureOutboundClusterTrigger")
     def configure_outbound_cluster_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -517,6 +541,18 @@ class ClusterArgs:
     @master_node_host_shape.setter
     def master_node_host_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "master_node_host_shape", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgId")
+    def nsg_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the NSG where the private endpoint vnic will be attached.
+        """
+        return pulumi.get(self, "nsg_id")
+
+    @nsg_id.setter
+    def nsg_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "nsg_id", value)
 
     @_builtins.property
     @pulumi.getter(name="opendashboardNodeHostShape")
@@ -627,6 +663,18 @@ class ClusterArgs:
         pulumi.set(self, "search_node_storage_gb", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityMasterUserName")
     def security_master_user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -707,6 +755,7 @@ class ClusterArgs:
 class _ClusterState:
     def __init__(__self__, *,
                  availability_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate_config: Optional[pulumi.Input['ClusterCertificateConfigArgs']] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  configure_outbound_cluster_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  data_node_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -729,6 +778,7 @@ class _ClusterState:
                  master_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
                  master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  master_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 nsg_id: Optional[pulumi.Input[_builtins.str]] = None,
                  opendashboard_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
                  opendashboard_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -746,6 +796,7 @@ class _ClusterState:
                  search_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  search_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
                  search_node_storage_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  security_master_user_name: Optional[pulumi.Input[_builtins.str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[_builtins.str]] = None,
                  security_mode: Optional[pulumi.Input[_builtins.str]] = None,
@@ -765,6 +816,7 @@ class _ClusterState:
         """
         Input properties used for looking up and filtering Cluster resources.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] availability_domains: The availability domains to distribute the cluser nodes across.
+        :param pulumi.Input['ClusterCertificateConfigArgs'] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[_builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
@@ -787,6 +839,7 @@ class _ClusterState:
         :param pulumi.Input[_builtins.int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_type: The instance type for the cluster's master nodes.
+        :param pulumi.Input[_builtins.str] nsg_id: The OCID of the NSG where the private endpoint vnic will be attached.
         :param pulumi.Input[_builtins.str] opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         :param pulumi.Input[_builtins.int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         :param pulumi.Input[_builtins.int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
@@ -804,6 +857,7 @@ class _ClusterState:
         :param pulumi.Input[_builtins.str] search_node_host_shape: (Updatable) The node shape for the cluster's search nodes.
         :param pulumi.Input[_builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
         :param pulumi.Input[_builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_mode: (Updatable) The security mode of the cluster.
@@ -827,6 +881,8 @@ class _ClusterState:
         """
         if availability_domains is not None:
             pulumi.set(__self__, "availability_domains", availability_domains)
+        if certificate_config is not None:
+            pulumi.set(__self__, "certificate_config", certificate_config)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if configure_outbound_cluster_trigger is not None:
@@ -871,6 +927,8 @@ class _ClusterState:
             pulumi.set(__self__, "master_node_host_shape", master_node_host_shape)
         if master_node_host_type is not None:
             pulumi.set(__self__, "master_node_host_type", master_node_host_type)
+        if nsg_id is not None:
+            pulumi.set(__self__, "nsg_id", nsg_id)
         if opendashboard_fqdn is not None:
             pulumi.set(__self__, "opendashboard_fqdn", opendashboard_fqdn)
         if opendashboard_node_count is not None:
@@ -905,6 +963,8 @@ class _ClusterState:
             pulumi.set(__self__, "search_node_host_type", search_node_host_type)
         if search_node_storage_gb is not None:
             pulumi.set(__self__, "search_node_storage_gb", search_node_storage_gb)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if security_master_user_name is not None:
             pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         if security_master_user_password_hash is not None:
@@ -949,6 +1009,18 @@ class _ClusterState:
     @availability_domains.setter
     def availability_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "availability_domains", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateConfig")
+    def certificate_config(self) -> Optional[pulumi.Input['ClusterCertificateConfigArgs']]:
+        """
+        (Updatable) Custom certificate config for customer provided certs.
+        """
+        return pulumi.get(self, "certificate_config")
+
+    @certificate_config.setter
+    def certificate_config(self, value: Optional[pulumi.Input['ClusterCertificateConfigArgs']]):
+        pulumi.set(self, "certificate_config", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1215,6 +1287,18 @@ class _ClusterState:
         pulumi.set(self, "master_node_host_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="nsgId")
+    def nsg_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the NSG where the private endpoint vnic will be attached.
+        """
+        return pulumi.get(self, "nsg_id")
+
+    @nsg_id.setter
+    def nsg_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "nsg_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="opendashboardFqdn")
     def opendashboard_fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1419,6 +1503,18 @@ class _ClusterState:
         pulumi.set(self, "search_node_storage_gb", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityMasterUserName")
     def security_master_user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1621,6 +1717,7 @@ class Cluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 certificate_config: Optional[pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  configure_outbound_cluster_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  data_node_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1641,6 +1738,7 @@ class Cluster(pulumi.CustomResource):
                  master_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
                  master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  master_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 nsg_id: Optional[pulumi.Input[_builtins.str]] = None,
                  opendashboard_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
                  opendashboard_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1653,6 +1751,7 @@ class Cluster(pulumi.CustomResource):
                  search_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  search_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
                  search_node_storage_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  security_master_user_name: Optional[pulumi.Input[_builtins.str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[_builtins.str]] = None,
                  security_mode: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1666,18 +1765,7 @@ class Cluster(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
-
-        Creates a new OpensearchCluster.
-
-        ## Prerequisites
-
-        The below policies must be created in compartment before creating OpensearchCluster
-
-        ##### {Compartment-Name} - Name of  your compartment
-
-        For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-        Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+        ## Example Usage
 
         ## Import
 
@@ -1689,6 +1777,7 @@ class Cluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[_builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
@@ -1709,6 +1798,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_type: The instance type for the cluster's master nodes.
+        :param pulumi.Input[_builtins.str] nsg_id: The OCID of the NSG where the private endpoint vnic will be attached.
         :param pulumi.Input[_builtins.int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         :param pulumi.Input[_builtins.int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[_builtins.int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
@@ -1721,6 +1811,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] search_node_host_shape: (Updatable) The node shape for the cluster's search nodes.
         :param pulumi.Input[_builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
         :param pulumi.Input[_builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_mode: (Updatable) The security mode of the cluster.
@@ -1744,18 +1835,7 @@ class Cluster(pulumi.CustomResource):
                  args: ClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
-
-        Creates a new OpensearchCluster.
-
-        ## Prerequisites
-
-        The below policies must be created in compartment before creating OpensearchCluster
-
-        ##### {Compartment-Name} - Name of  your compartment
-
-        For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
-        Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+        ## Example Usage
 
         ## Import
 
@@ -1780,6 +1860,7 @@ class Cluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 certificate_config: Optional[pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  configure_outbound_cluster_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  data_node_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1800,6 +1881,7 @@ class Cluster(pulumi.CustomResource):
                  master_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
                  master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  master_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 nsg_id: Optional[pulumi.Input[_builtins.str]] = None,
                  opendashboard_node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  opendashboard_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
                  opendashboard_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1812,6 +1894,7 @@ class Cluster(pulumi.CustomResource):
                  search_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  search_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
                  search_node_storage_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  security_master_user_name: Optional[pulumi.Input[_builtins.str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[_builtins.str]] = None,
                  security_mode: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1832,6 +1915,7 @@ class Cluster(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ClusterArgs.__new__(ClusterArgs)
 
+            __props__.__dict__["certificate_config"] = certificate_config
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1874,6 +1958,7 @@ class Cluster(pulumi.CustomResource):
             if master_node_host_type is None and not opts.urn:
                 raise TypeError("Missing required property 'master_node_host_type'")
             __props__.__dict__["master_node_host_type"] = master_node_host_type
+            __props__.__dict__["nsg_id"] = nsg_id
             if opendashboard_node_count is None and not opts.urn:
                 raise TypeError("Missing required property 'opendashboard_node_count'")
             __props__.__dict__["opendashboard_node_count"] = opendashboard_node_count
@@ -1892,6 +1977,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["search_node_host_shape"] = search_node_host_shape
             __props__.__dict__["search_node_host_type"] = search_node_host_type
             __props__.__dict__["search_node_storage_gb"] = search_node_storage_gb
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["security_master_user_name"] = security_master_user_name
             __props__.__dict__["security_master_user_password_hash"] = None if security_master_user_password_hash is None else pulumi.Output.secret(security_master_user_password_hash)
             __props__.__dict__["security_mode"] = security_mode
@@ -1939,6 +2025,7 @@ class Cluster(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             availability_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            certificate_config: Optional[pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             configure_outbound_cluster_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             data_node_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1961,6 +2048,7 @@ class Cluster(pulumi.CustomResource):
             master_node_host_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
             master_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
             master_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
+            nsg_id: Optional[pulumi.Input[_builtins.str]] = None,
             opendashboard_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
             opendashboard_node_count: Optional[pulumi.Input[_builtins.int]] = None,
             opendashboard_node_host_memory_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1978,6 +2066,7 @@ class Cluster(pulumi.CustomResource):
             search_node_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
             search_node_host_type: Optional[pulumi.Input[_builtins.str]] = None,
             search_node_storage_gb: Optional[pulumi.Input[_builtins.int]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             security_master_user_name: Optional[pulumi.Input[_builtins.str]] = None,
             security_master_user_password_hash: Optional[pulumi.Input[_builtins.str]] = None,
             security_mode: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2002,6 +2091,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] availability_domains: The availability domains to distribute the cluser nodes across.
+        :param pulumi.Input[Union['ClusterCertificateConfigArgs', 'ClusterCertificateConfigArgsDict']] certificate_config: (Updatable) Custom certificate config for customer provided certs.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to create the cluster in.
         :param pulumi.Input[_builtins.int] configure_outbound_cluster_trigger: (Updatable) An optional property when incremented triggers Configure Outbound Cluster. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] data_node_count: (Updatable) The number of data nodes to configure for the cluster.
@@ -2024,6 +2114,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] master_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluser's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_shape: (Updatable) The node shape for the cluster's master nodes.
         :param pulumi.Input[_builtins.str] master_node_host_type: The instance type for the cluster's master nodes.
+        :param pulumi.Input[_builtins.str] nsg_id: The OCID of the NSG where the private endpoint vnic will be attached.
         :param pulumi.Input[_builtins.str] opendashboard_fqdn: The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         :param pulumi.Input[_builtins.int] opendashboard_node_count: (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         :param pulumi.Input[_builtins.int] opendashboard_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure for the cluster's OpenSearch Dashboard nodes.
@@ -2041,6 +2132,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] search_node_host_shape: (Updatable) The node shape for the cluster's search nodes.
         :param pulumi.Input[_builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
         :param pulumi.Input[_builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_mode: (Updatable) The security mode of the cluster.
@@ -2067,6 +2159,7 @@ class Cluster(pulumi.CustomResource):
         __props__ = _ClusterState.__new__(_ClusterState)
 
         __props__.__dict__["availability_domains"] = availability_domains
+        __props__.__dict__["certificate_config"] = certificate_config
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["configure_outbound_cluster_trigger"] = configure_outbound_cluster_trigger
         __props__.__dict__["data_node_count"] = data_node_count
@@ -2089,6 +2182,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["master_node_host_ocpu_count"] = master_node_host_ocpu_count
         __props__.__dict__["master_node_host_shape"] = master_node_host_shape
         __props__.__dict__["master_node_host_type"] = master_node_host_type
+        __props__.__dict__["nsg_id"] = nsg_id
         __props__.__dict__["opendashboard_fqdn"] = opendashboard_fqdn
         __props__.__dict__["opendashboard_node_count"] = opendashboard_node_count
         __props__.__dict__["opendashboard_node_host_memory_gb"] = opendashboard_node_host_memory_gb
@@ -2106,6 +2200,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["search_node_host_shape"] = search_node_host_shape
         __props__.__dict__["search_node_host_type"] = search_node_host_type
         __props__.__dict__["search_node_storage_gb"] = search_node_storage_gb
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["security_master_user_name"] = security_master_user_name
         __props__.__dict__["security_master_user_password_hash"] = security_master_user_password_hash
         __props__.__dict__["security_mode"] = security_mode
@@ -2131,6 +2226,14 @@ class Cluster(pulumi.CustomResource):
         The availability domains to distribute the cluser nodes across.
         """
         return pulumi.get(self, "availability_domains")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateConfig")
+    def certificate_config(self) -> pulumi.Output['outputs.ClusterCertificateConfig']:
+        """
+        (Updatable) Custom certificate config for customer provided certs.
+        """
+        return pulumi.get(self, "certificate_config")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -2309,6 +2412,14 @@ class Cluster(pulumi.CustomResource):
         return pulumi.get(self, "master_node_host_type")
 
     @_builtins.property
+    @pulumi.getter(name="nsgId")
+    def nsg_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the NSG where the private endpoint vnic will be attached.
+        """
+        return pulumi.get(self, "nsg_id")
+
+    @_builtins.property
     @pulumi.getter(name="opendashboardFqdn")
     def opendashboard_fqdn(self) -> pulumi.Output[_builtins.str]:
         """
@@ -2443,6 +2554,14 @@ class Cluster(pulumi.CustomResource):
         (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
         """
         return pulumi.get(self, "search_node_storage_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter(name="securityMasterUserName")

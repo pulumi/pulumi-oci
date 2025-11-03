@@ -10,15 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates and downloads a wallet for the specified Autonomous Database.
-    /// 
-    /// If passing the base64 encoded content to a `LocalFile` resource, please use the `ContentBase64` attribute of the `LocalFile` resource.
-    /// See this example for more details.
-    /// 
-    /// Recreate the resource to create and download a new wallet.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

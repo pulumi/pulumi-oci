@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DisasterRecovery
 {
     /// <summary>
-    /// This resource provides the Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
-    /// 
-    /// Execute a DR plan for a DR protection group.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -58,6 +54,12 @@ namespace Pulumi.Oci.DisasterRecovery
     [OciResourceType("oci:DisasterRecovery/drPlanExecution:DrPlanExecution")]
     public partial class DrPlanExecution : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The details of the event that started the automatic DR plan execution.
+        /// </summary>
+        [Output("automaticExecutionDetails")]
+        public Output<ImmutableArray<Outputs.DrPlanExecutionAutomaticExecutionDetail>> AutomaticExecutionDetails { get; private set; } = null!;
+
         /// <summary>
         /// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
@@ -105,6 +107,12 @@ namespace Pulumi.Oci.DisasterRecovery
         /// </summary>
         [Output("groupExecutions")]
         public Output<ImmutableArray<Outputs.DrPlanExecutionGroupExecution>> GroupExecutions { get; private set; } = null!;
+
+        /// <summary>
+        /// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `False`
+        /// </summary>
+        [Output("isAutomatic")]
+        public Output<bool> IsAutomatic { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the DR plan execution's current state in more detail.
@@ -282,6 +290,18 @@ namespace Pulumi.Oci.DisasterRecovery
 
     public sealed class DrPlanExecutionState : global::Pulumi.ResourceArgs
     {
+        [Input("automaticExecutionDetails")]
+        private InputList<Inputs.DrPlanExecutionAutomaticExecutionDetailGetArgs>? _automaticExecutionDetails;
+
+        /// <summary>
+        /// The details of the event that started the automatic DR plan execution.
+        /// </summary>
+        public InputList<Inputs.DrPlanExecutionAutomaticExecutionDetailGetArgs> AutomaticExecutionDetails
+        {
+            get => _automaticExecutionDetails ?? (_automaticExecutionDetails = new InputList<Inputs.DrPlanExecutionAutomaticExecutionDetailGetArgs>());
+            set => _automaticExecutionDetails = value;
+        }
+
         /// <summary>
         /// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
         /// </summary>
@@ -347,6 +367,12 @@ namespace Pulumi.Oci.DisasterRecovery
             get => _groupExecutions ?? (_groupExecutions = new InputList<Inputs.DrPlanExecutionGroupExecutionGetArgs>());
             set => _groupExecutions = value;
         }
+
+        /// <summary>
+        /// A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `False`
+        /// </summary>
+        [Input("isAutomatic")]
+        public Input<bool>? IsAutomatic { get; set; }
 
         /// <summary>
         /// A message describing the DR plan execution's current state in more detail.

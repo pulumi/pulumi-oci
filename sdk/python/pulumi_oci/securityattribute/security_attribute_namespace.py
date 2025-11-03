@@ -316,23 +316,6 @@ class SecurityAttributeNamespace(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Security Attribute Namespace resource in Oracle Cloud Infrastructure Security Attribute service.
-
-        Creates a new security attribute namespace in the specified compartment.
-
-        You must specify the compartment ID in the request object (remember that the tenancy is simply the root
-        compartment).
-
-        You must also specify a *name* for the namespace, which must be unique across all namespaces in your tenancy
-        and cannot be changed. The only valid characters for security attribute names are:  0-9, A-Z, a-z, -, _ characters.
-        Names are case insensitive. That means, for example, "myNamespace" and "mynamespace" are not allowed
-        in the same tenancy. Once you created a namespace, you cannot change the name.
-        If you specify a name that's already in use in the tenancy, a 409 error is returned.
-
-        You must also specify a *description* for the namespace.
-        It does not have to be unique, and you can change it with
-        [UpdateSecurityAttributeNamespace](https://docs.cloud.oracle.com/iaas/api/#/en/securityattribute/latest/SecurityAttribute/SecurityAttributeNamespace).
-
         ## Example Usage
 
         ```python
@@ -379,23 +362,6 @@ class SecurityAttributeNamespace(pulumi.CustomResource):
                  args: SecurityAttributeNamespaceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Security Attribute Namespace resource in Oracle Cloud Infrastructure Security Attribute service.
-
-        Creates a new security attribute namespace in the specified compartment.
-
-        You must specify the compartment ID in the request object (remember that the tenancy is simply the root
-        compartment).
-
-        You must also specify a *name* for the namespace, which must be unique across all namespaces in your tenancy
-        and cannot be changed. The only valid characters for security attribute names are:  0-9, A-Z, a-z, -, _ characters.
-        Names are case insensitive. That means, for example, "myNamespace" and "mynamespace" are not allowed
-        in the same tenancy. Once you created a namespace, you cannot change the name.
-        If you specify a name that's already in use in the tenancy, a 409 error is returned.
-
-        You must also specify a *description* for the namespace.
-        It does not have to be unique, and you can change it with
-        [UpdateSecurityAttributeNamespace](https://docs.cloud.oracle.com/iaas/api/#/en/securityattribute/latest/SecurityAttribute/SecurityAttributeNamespace).
-
         ## Example Usage
 
         ```python

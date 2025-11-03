@@ -16,14 +16,14 @@ public final class AutonomousDatabaseApexDetailArgs extends com.pulumi.resources
     public static final AutonomousDatabaseApexDetailArgs Empty = new AutonomousDatabaseApexDetailArgs();
 
     /**
-     * The Oracle APEX Application Development version.
+     * The Oracle APEX AI Application Development version.
      * 
      */
     @Import(name="apexVersion")
     private @Nullable Output<String> apexVersion;
 
     /**
-     * @return The Oracle APEX Application Development version.
+     * @return The Oracle APEX AI Application Development version.
      * 
      */
     public Optional<Output<String>> apexVersion() {
@@ -71,7 +71,7 @@ public final class AutonomousDatabaseApexDetailArgs extends com.pulumi.resources
         }
 
         /**
-         * @param apexVersion The Oracle APEX Application Development version.
+         * @param apexVersion The Oracle APEX AI Application Development version.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class AutonomousDatabaseApexDetailArgs extends com.pulumi.resources
         }
 
         /**
-         * @param apexVersion The Oracle APEX Application Development version.
+         * @param apexVersion The Oracle APEX AI Application Development version.
          * 
          * @return builder
          * 

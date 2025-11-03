@@ -80,7 +80,7 @@ type LookupSddcResult struct {
 	Datastores []GetSddcDatastore `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
 	//
@@ -195,7 +195,8 @@ type LookupSddcResult struct {
 	// One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
 	SshAuthorizedKeys string `pulumi:"sshAuthorizedKeys"`
 	// The current state of the SDDC.
-	State string `pulumi:"state"`
+	State      string            `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -323,7 +324,7 @@ func (o LookupSddcResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSddcResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 func (o LookupSddcResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSddcResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -560,6 +561,10 @@ func (o LookupSddcResultOutput) SshAuthorizedKeys() pulumi.StringOutput {
 // The current state of the SDDC.
 func (o LookupSddcResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSddcResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o LookupSddcResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSddcResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

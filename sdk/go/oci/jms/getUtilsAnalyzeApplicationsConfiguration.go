@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetUtilsAnalyzeApplicationsConfiguration(ctx *pulumi.Context, args *GetUtilsAnalyzeApplicationsConfigurationArgs, opts ...pulumi.InvokeOption) (*GetUtilsAnalyzeApplicationsConfigurationResult, error) {
+func LookupUtilsAnalyzeApplicationsConfiguration(ctx *pulumi.Context, args *LookupUtilsAnalyzeApplicationsConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupUtilsAnalyzeApplicationsConfigurationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetUtilsAnalyzeApplicationsConfigurationResult
+	var rv LookupUtilsAnalyzeApplicationsConfigurationResult
 	err := ctx.Invoke("oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,83 +51,73 @@ func GetUtilsAnalyzeApplicationsConfiguration(ctx *pulumi.Context, args *GetUtil
 }
 
 // A collection of arguments for invoking getUtilsAnalyzeApplicationsConfiguration.
-type GetUtilsAnalyzeApplicationsConfigurationArgs struct {
-	// The name of the bucket used for analyzing applications.
-	Bucket *string `pulumi:"bucket"`
+type LookupUtilsAnalyzeApplicationsConfigurationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The Object Storage namespace used for analyzing applications.
-	Namespace *string `pulumi:"namespace"`
 }
 
 // A collection of values returned by getUtilsAnalyzeApplicationsConfiguration.
-type GetUtilsAnalyzeApplicationsConfigurationResult struct {
+type LookupUtilsAnalyzeApplicationsConfigurationResult struct {
 	// The name of the bucket used for analyzing applications.
 	Bucket        string `pulumi:"bucket"`
 	CompartmentId string `pulumi:"compartmentId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id            string `pulumi:"id"`
 	// The Object Storage namespace used for analyzing applications.
 	Namespace string `pulumi:"namespace"`
 }
 
-func GetUtilsAnalyzeApplicationsConfigurationOutput(ctx *pulumi.Context, args GetUtilsAnalyzeApplicationsConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetUtilsAnalyzeApplicationsConfigurationResultOutput {
+func LookupUtilsAnalyzeApplicationsConfigurationOutput(ctx *pulumi.Context, args LookupUtilsAnalyzeApplicationsConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupUtilsAnalyzeApplicationsConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetUtilsAnalyzeApplicationsConfigurationResultOutput, error) {
-			args := v.(GetUtilsAnalyzeApplicationsConfigurationArgs)
+		ApplyT(func(v interface{}) (LookupUtilsAnalyzeApplicationsConfigurationResultOutput, error) {
+			args := v.(LookupUtilsAnalyzeApplicationsConfigurationArgs)
 			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration", args, GetUtilsAnalyzeApplicationsConfigurationResultOutput{}, options).(GetUtilsAnalyzeApplicationsConfigurationResultOutput), nil
-		}).(GetUtilsAnalyzeApplicationsConfigurationResultOutput)
+			return ctx.InvokeOutput("oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration", args, LookupUtilsAnalyzeApplicationsConfigurationResultOutput{}, options).(LookupUtilsAnalyzeApplicationsConfigurationResultOutput), nil
+		}).(LookupUtilsAnalyzeApplicationsConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getUtilsAnalyzeApplicationsConfiguration.
-type GetUtilsAnalyzeApplicationsConfigurationOutputArgs struct {
-	// The name of the bucket used for analyzing applications.
-	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+type LookupUtilsAnalyzeApplicationsConfigurationOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The Object Storage namespace used for analyzing applications.
-	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 }
 
-func (GetUtilsAnalyzeApplicationsConfigurationOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetUtilsAnalyzeApplicationsConfigurationArgs)(nil)).Elem()
+func (LookupUtilsAnalyzeApplicationsConfigurationOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupUtilsAnalyzeApplicationsConfigurationArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getUtilsAnalyzeApplicationsConfiguration.
-type GetUtilsAnalyzeApplicationsConfigurationResultOutput struct{ *pulumi.OutputState }
+type LookupUtilsAnalyzeApplicationsConfigurationResultOutput struct{ *pulumi.OutputState }
 
-func (GetUtilsAnalyzeApplicationsConfigurationResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetUtilsAnalyzeApplicationsConfigurationResult)(nil)).Elem()
+func (LookupUtilsAnalyzeApplicationsConfigurationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupUtilsAnalyzeApplicationsConfigurationResult)(nil)).Elem()
 }
 
-func (o GetUtilsAnalyzeApplicationsConfigurationResultOutput) ToGetUtilsAnalyzeApplicationsConfigurationResultOutput() GetUtilsAnalyzeApplicationsConfigurationResultOutput {
+func (o LookupUtilsAnalyzeApplicationsConfigurationResultOutput) ToLookupUtilsAnalyzeApplicationsConfigurationResultOutput() LookupUtilsAnalyzeApplicationsConfigurationResultOutput {
 	return o
 }
 
-func (o GetUtilsAnalyzeApplicationsConfigurationResultOutput) ToGetUtilsAnalyzeApplicationsConfigurationResultOutputWithContext(ctx context.Context) GetUtilsAnalyzeApplicationsConfigurationResultOutput {
+func (o LookupUtilsAnalyzeApplicationsConfigurationResultOutput) ToLookupUtilsAnalyzeApplicationsConfigurationResultOutputWithContext(ctx context.Context) LookupUtilsAnalyzeApplicationsConfigurationResultOutput {
 	return o
 }
 
 // The name of the bucket used for analyzing applications.
-func (o GetUtilsAnalyzeApplicationsConfigurationResultOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUtilsAnalyzeApplicationsConfigurationResult) string { return v.Bucket }).(pulumi.StringOutput)
+func (o LookupUtilsAnalyzeApplicationsConfigurationResultOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUtilsAnalyzeApplicationsConfigurationResult) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-func (o GetUtilsAnalyzeApplicationsConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUtilsAnalyzeApplicationsConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupUtilsAnalyzeApplicationsConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUtilsAnalyzeApplicationsConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetUtilsAnalyzeApplicationsConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUtilsAnalyzeApplicationsConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupUtilsAnalyzeApplicationsConfigurationResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUtilsAnalyzeApplicationsConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // The Object Storage namespace used for analyzing applications.
-func (o GetUtilsAnalyzeApplicationsConfigurationResultOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUtilsAnalyzeApplicationsConfigurationResult) string { return v.Namespace }).(pulumi.StringOutput)
+func (o LookupUtilsAnalyzeApplicationsConfigurationResultOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUtilsAnalyzeApplicationsConfigurationResult) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetUtilsAnalyzeApplicationsConfigurationResultOutput{})
+	pulumi.RegisterOutputType(LookupUtilsAnalyzeApplicationsConfigurationResultOutput{})
 }

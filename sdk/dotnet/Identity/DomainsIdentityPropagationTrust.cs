@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Register a new Identity Propagation Trust configuration.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

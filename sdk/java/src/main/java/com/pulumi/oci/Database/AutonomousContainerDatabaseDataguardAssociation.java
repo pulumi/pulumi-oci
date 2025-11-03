@@ -18,11 +18,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
- * 
- * **Deprecated.** Use the [AddStandbyAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase) operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
- * specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html).
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -57,10 +52,12 @@ import javax.annotation.Nullable;
  *             .peerAutonomousContainerDatabaseBackupConfig(AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs.builder()
  *                 .backupDestinationDetails(AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs.builder()
  *                     .type(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType)
+ *                     .backupRetentionPolicyOnTerminate(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate)
  *                     .dbrsPolicyId(testPolicy.id())
  *                     .id(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId)
  *                     .internetProxy(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy)
  *                     .isRemote(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote)
+ *                     .isRetentionLockEnabled(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled)
  *                     .remoteRegion(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion)
  *                     .vpcPassword(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword)
  *                     .vpcUser(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser)
@@ -327,14 +324,14 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
         return this.peerLifecycleState;
     }
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Export(name="peerRole", refs={String.class}, tree="[0]")
     private Output<String> peerRole;
 
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public Output<String> peerRole() {
@@ -355,14 +352,14 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
         return this.protectionMode;
     }
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public Output<String> role() {

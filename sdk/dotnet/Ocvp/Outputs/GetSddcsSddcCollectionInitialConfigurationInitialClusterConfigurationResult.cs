@@ -17,20 +17,33 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
         /// </summary>
         public readonly int ActualEsxiHostsCount;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        /// </summary>
         public readonly string CapacityReservationId;
         /// <summary>
         /// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string ComputeAvailabilityDomain;
+        /// <summary>
+        /// A list of datastore clusters.
+        /// </summary>
+        public readonly ImmutableArray<string> DatastoreClusterIds;
+        /// <summary>
+        /// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreResult> Datastores;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// (**Deprecated**) The number of ESXi hosts in the SDDC.
+        /// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
         /// </summary>
         public readonly int EsxiHostsCount;
+        /// <summary>
+        /// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+        /// </summary>
         public readonly string InitialCommitment;
         /// <summary>
         /// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
@@ -40,13 +53,25 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
         /// </summary>
         public readonly string InitialHostShapeName;
+        /// <summary>
+        /// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+        /// </summary>
         public readonly string InstanceDisplayNamePrefix;
         /// <summary>
         /// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
         /// </summary>
         public readonly bool IsShieldedInstanceEnabled;
+        /// <summary>
+        /// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationResult> NetworkConfigurations;
+        /// <summary>
+        /// vSphere Cluster types.
+        /// </summary>
         public readonly string VsphereType;
+        /// <summary>
+        /// The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
+        /// </summary>
         public readonly string WorkloadNetworkCidr;
 
         [OutputConstructor]
@@ -56,6 +81,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
             string capacityReservationId,
 
             string computeAvailabilityDomain,
+
+            ImmutableArray<string> datastoreClusterIds,
 
             ImmutableArray<Outputs.GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreResult> datastores,
 
@@ -82,6 +109,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
             ActualEsxiHostsCount = actualEsxiHostsCount;
             CapacityReservationId = capacityReservationId;
             ComputeAvailabilityDomain = computeAvailabilityDomain;
+            DatastoreClusterIds = datastoreClusterIds;
             Datastores = datastores;
             DisplayName = displayName;
             EsxiHostsCount = esxiHostsCount;

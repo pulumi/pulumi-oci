@@ -19,38 +19,16 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DatabaseArgs Empty = new DatabaseArgs();
 
-    /**
-     * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-     * 
-     */
     @Import(name="actionTrigger")
     private @Nullable Output<Integer> actionTrigger;
 
-    /**
-     * @return (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-     * 
-     */
     public Optional<Output<Integer>> actionTrigger() {
         return Optional.ofNullable(this.actionTrigger);
     }
 
-    /**
-     * Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     @Import(name="dataGuardAction")
     private @Nullable Output<String> dataGuardAction;
 
-    /**
-     * @return Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     public Optional<Output<String>> dataGuardAction() {
         return Optional.ofNullable(this.dataGuardAction);
     }
@@ -138,45 +116,29 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.kmsKeyId);
     }
 
-    /**
-     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-     * 
-     */
     @Import(name="kmsKeyMigration")
     private @Nullable Output<Boolean> kmsKeyMigration;
 
-    /**
-     * @return The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-     * 
-     */
     public Optional<Output<Boolean>> kmsKeyMigration() {
         return Optional.ofNullable(this.kmsKeyMigration);
     }
 
-    /**
-     * The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-     * 
-     */
     @Import(name="kmsKeyRotation")
     private @Nullable Output<Integer> kmsKeyRotation;
 
-    /**
-     * @return The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-     * 
-     */
     public Optional<Output<Integer>> kmsKeyRotation() {
         return Optional.ofNullable(this.kmsKeyRotation);
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     @Import(name="kmsKeyVersionId")
     private @Nullable Output<String> kmsKeyVersionId;
 
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public Optional<Output<String>> kmsKeyVersionId() {
@@ -184,14 +146,14 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      * 
      */
     @Import(name="source", required=true)
     private Output<String> source;
 
     /**
-     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      * 
      */
     public Output<String> source() {
@@ -248,50 +210,20 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
             $ = new DatabaseArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param actionTrigger (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-         * 
-         * @return builder
-         * 
-         */
         public Builder actionTrigger(@Nullable Output<Integer> actionTrigger) {
             $.actionTrigger = actionTrigger;
             return this;
         }
 
-        /**
-         * @param actionTrigger (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-         * 
-         * @return builder
-         * 
-         */
         public Builder actionTrigger(Integer actionTrigger) {
             return actionTrigger(Output.of(actionTrigger));
         }
 
-        /**
-         * @param dataGuardAction Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
         public Builder dataGuardAction(@Nullable Output<String> dataGuardAction) {
             $.dataGuardAction = dataGuardAction;
             return this;
         }
 
-        /**
-         * @param dataGuardAction Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
         public Builder dataGuardAction(String dataGuardAction) {
             return dataGuardAction(Output.of(dataGuardAction));
         }
@@ -409,50 +341,26 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
             return kmsKeyId(Output.of(kmsKeyId));
         }
 
-        /**
-         * @param kmsKeyMigration The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-         * 
-         * @return builder
-         * 
-         */
         public Builder kmsKeyMigration(@Nullable Output<Boolean> kmsKeyMigration) {
             $.kmsKeyMigration = kmsKeyMigration;
             return this;
         }
 
-        /**
-         * @param kmsKeyMigration The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-         * 
-         * @return builder
-         * 
-         */
         public Builder kmsKeyMigration(Boolean kmsKeyMigration) {
             return kmsKeyMigration(Output.of(kmsKeyMigration));
         }
 
-        /**
-         * @param kmsKeyRotation The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder kmsKeyRotation(@Nullable Output<Integer> kmsKeyRotation) {
             $.kmsKeyRotation = kmsKeyRotation;
             return this;
         }
 
-        /**
-         * @param kmsKeyRotation The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder kmsKeyRotation(Integer kmsKeyRotation) {
             return kmsKeyRotation(Output.of(kmsKeyRotation));
         }
 
         /**
-         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          * 
          * @return builder
          * 
@@ -463,7 +371,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          * 
          * @return builder
          * 
@@ -473,7 +381,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+         * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
          * 
          * @return builder
          * 
@@ -484,7 +392,7 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+         * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
          * 
          * @return builder
          * 

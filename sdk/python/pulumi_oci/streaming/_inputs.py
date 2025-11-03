@@ -186,11 +186,7 @@ if not MYPY:
         """
         subnet_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
         """
 elif False:
     StreamPoolPrivateEndpointSettingsArgsDict: TypeAlias = Mapping[str, Any]
@@ -204,11 +200,7 @@ class StreamPoolPrivateEndpointSettingsArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: The optional list of network security groups to be used with the private endpoint of the stream pool. That value cannot be changed.
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
-        :param pulumi.Input[_builtins.str] subnet_id: If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] subnet_id: If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
         """
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -245,11 +237,7 @@ class StreamPoolPrivateEndpointSettingsArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
         """
         return pulumi.get(self, "subnet_id")
 

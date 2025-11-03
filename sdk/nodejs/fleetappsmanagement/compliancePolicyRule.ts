@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Compliance Policy Rule resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- *
- * Creates a compliance policy rule.
- *
  * ## Example Usage
  *
  * ```typescript

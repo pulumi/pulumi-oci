@@ -59,7 +59,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
     readonly applyRate: string;
     readonly autonomousContainerDatabaseDataguardAssociationId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      */
     readonly autonomousContainerDatabaseId: string;
     /**
@@ -98,7 +98,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
      */
     readonly peerLifecycleState: string;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
     readonly peerRole: string;
     /**
@@ -106,7 +106,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
      */
     readonly protectionMode: string;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
     readonly role: string;
     readonly standbyMaintenanceBufferInDays: number;

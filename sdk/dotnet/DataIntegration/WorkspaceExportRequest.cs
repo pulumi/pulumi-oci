@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataIntegration
 {
     /// <summary>
-    /// This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
-    /// 
-    /// Export Metadata Object
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

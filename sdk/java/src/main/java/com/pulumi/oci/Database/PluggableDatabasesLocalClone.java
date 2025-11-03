@@ -21,11 +21,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Pluggable Databases Local Clone resource in Oracle Cloud Infrastructure Database service. Although pluggable databases(PDB) belong to a container database(CDB), there is no change to the parent(CDB) as a result of this operation.
- * 
- * **Deprecated.** Use [CreatePluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/CreatePluggableDatabase) for Pluggable Database LocalClone Operation.
- * Clones and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation.
- * 
  * ## Example Usage
  * 
  * <pre>

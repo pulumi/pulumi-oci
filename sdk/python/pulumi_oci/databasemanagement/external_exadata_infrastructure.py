@@ -527,15 +527,6 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
                  storage_server_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an Oracle Cloud Infrastructure resource for the Exadata infrastructure and enables the Monitoring service for the Exadata infrastructure.
-        The following resource/subresources are created:
-          Infrastructure
-          Storage server connectors
-          Storage servers
-          Storage grids
-
         ## Example Usage
 
         ```python
@@ -587,15 +578,6 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
                  args: ExternalExadataInfrastructureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an Oracle Cloud Infrastructure resource for the Exadata infrastructure and enables the Monitoring service for the Exadata infrastructure.
-        The following resource/subresources are created:
-          Infrastructure
-          Storage server connectors
-          Storage servers
-          Storage grids
-
         ## Example Usage
 
         ```python

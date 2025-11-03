@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Set User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Sets the saved user assessment as the baseline in the compartment where the specified assessment resides. The user assessment needs to be of type 'SAVED'.
-//
 // ## Example Usage
 //
 // ```go

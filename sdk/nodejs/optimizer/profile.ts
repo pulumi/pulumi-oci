@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
- *
- * Creates a new profile.
- *
  * ## Example Usage
  *
  * ```typescript

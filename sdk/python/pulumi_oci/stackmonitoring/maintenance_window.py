@@ -366,11 +366,6 @@ class MaintenanceWindow(pulumi.CustomResource):
                  schedule: Optional[pulumi.Input[Union['MaintenanceWindowScheduleArgs', 'MaintenanceWindowScheduleArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a new Maintenance Window for the given resources. It will create also the
-        Alarms Suppression for each alarm that the resource migth trigger.
-
         ## Example Usage
 
         ```python
@@ -425,11 +420,6 @@ class MaintenanceWindow(pulumi.CustomResource):
                  args: MaintenanceWindowArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a new Maintenance Window for the given resources. It will create also the
-        Alarms Suppression for each alarm that the resource migth trigger.
-
         ## Example Usage
 
         ```python

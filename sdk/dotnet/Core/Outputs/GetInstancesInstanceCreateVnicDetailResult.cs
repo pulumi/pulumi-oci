@@ -37,6 +37,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SecurityAttributes;
         public readonly bool SkipSourceDestCheck;
+        public readonly string SubnetCidr;
         public readonly string SubnetId;
         public readonly string VlanId;
 
@@ -66,6 +67,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool skipSourceDestCheck,
 
+            string subnetCidr,
+
             string subnetId,
 
             string vlanId)
@@ -82,6 +85,7 @@ namespace Pulumi.Oci.Core.Outputs
             PrivateIp = privateIp;
             SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
+            SubnetCidr = subnetCidr;
             SubnetId = subnetId;
             VlanId = vlanId;
         }

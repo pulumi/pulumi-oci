@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
-//
-// # Creates a new endpoint and deploy the trained model
-//
 // ## Example Usage
 //
 // ```go
@@ -33,6 +29,7 @@ import (
 //			_, err := ailanguage.NewEndpoint(ctx, "test_endpoint", &ailanguage.EndpointArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ModelId:       pulumi.Any(testModel.Id),
+//				Alias:         pulumi.Any(endpointAlias),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
@@ -62,6 +59,8 @@ import (
 type Endpoint struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+	Alias pulumi.StringOutput `pulumi:"alias"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -129,6 +128,8 @@ func GetEndpoint(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Endpoint resources.
 type endpointState struct {
+	// (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+	Alias *string `pulumi:"alias"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -161,6 +162,8 @@ type endpointState struct {
 }
 
 type EndpointState struct {
+	// (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+	Alias pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -197,6 +200,8 @@ func (EndpointState) ElementType() reflect.Type {
 }
 
 type endpointArgs struct {
+	// (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+	Alias *string `pulumi:"alias"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -218,6 +223,8 @@ type endpointArgs struct {
 
 // The set of arguments for constructing a Endpoint resource.
 type EndpointArgs struct {
+	// (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+	Alias pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -322,6 +329,11 @@ func (o EndpointOutput) ToEndpointOutput() EndpointOutput {
 
 func (o EndpointOutput) ToEndpointOutputWithContext(ctx context.Context) EndpointOutput {
 	return o
+}
+
+// (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+func (o EndpointOutput) Alias() pulumi.StringOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.Alias }).(pulumi.StringOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint

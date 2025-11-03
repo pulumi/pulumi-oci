@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
- *
- * Attaches the specified storage volume to the specified instance.
- *
  * ## Example Usage
  *
  * ```typescript

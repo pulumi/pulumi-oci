@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Zpr Policy resource in Oracle Cloud Infrastructure Zpr service.
- *
- * Creates a ZprPolicy.
- *
  * ## Example Usage
  *
  * ```typescript

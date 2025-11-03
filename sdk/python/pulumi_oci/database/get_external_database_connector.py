@@ -108,7 +108,7 @@ class GetExternalDatabaseConnectorResult:
     @pulumi.getter(name="connectionStrings")
     def connection_strings(self) -> Sequence['outputs.GetExternalDatabaseConnectorConnectionStringResult']:
         """
-        The Oracle Database connection string.
+        The Oracle AI Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 

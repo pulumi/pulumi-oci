@@ -88,6 +88,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigA
     }
 
     /**
+     * This field is reserved for internal use.
+     * 
+     */
+    @Import(name="resourceManagement")
+    private @Nullable Output<String> resourceManagement;
+
+    /**
+     * @return This field is reserved for internal use.
+     * 
+     */
+    public Optional<Output<String>> resourceManagement() {
+        return Optional.ofNullable(this.resourceManagement);
+    }
+
+    /**
      * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
      * 
      */
@@ -109,6 +124,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigA
         this.memoryInGbs = $.memoryInGbs;
         this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
+        this.resourceManagement = $.resourceManagement;
         this.vcpus = $.vcpus;
     }
 
@@ -222,6 +238,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigA
          */
         public Builder ocpus(Double ocpus) {
             return ocpus(Output.of(ocpus));
+        }
+
+        /**
+         * @param resourceManagement This field is reserved for internal use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceManagement(@Nullable Output<String> resourceManagement) {
+            $.resourceManagement = resourceManagement;
+            return this;
+        }
+
+        /**
+         * @param resourceManagement This field is reserved for internal use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceManagement(String resourceManagement) {
+            return resourceManagement(Output.of(resourceManagement));
         }
 
         /**

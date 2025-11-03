@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testAddonOptions = oci.ContainerEngine.getAddonOptions({
  *     kubernetesVersion: addonOptionKubernetesVersion,
  *     addonName: testAddon.name,
+ *     shouldShowAllVersions: addonOptionShouldShowAllVersions,
  * });
  * ```
  */
@@ -29,6 +30,7 @@ export function getAddonOptions(args: GetAddonOptionsArgs, opts?: pulumi.InvokeO
         "addonName": args.addonName,
         "filters": args.filters,
         "kubernetesVersion": args.kubernetesVersion,
+        "shouldShowAllVersions": args.shouldShowAllVersions,
     }, opts);
 }
 
@@ -45,6 +47,10 @@ export interface GetAddonOptionsArgs {
      * The kubernetes version to fetch the addons.
      */
     kubernetesVersion: string;
+    /**
+     * Whether to show all add-on versions
+     */
+    shouldShowAllVersions?: boolean;
 }
 
 /**
@@ -62,6 +68,7 @@ export interface GetAddonOptionsResult {
      */
     readonly id: string;
     readonly kubernetesVersion: string;
+    readonly shouldShowAllVersions?: boolean;
 }
 /**
  * This data source provides the list of Addon Options in Oracle Cloud Infrastructure Container Engine service.
@@ -77,6 +84,7 @@ export interface GetAddonOptionsResult {
  * const testAddonOptions = oci.ContainerEngine.getAddonOptions({
  *     kubernetesVersion: addonOptionKubernetesVersion,
  *     addonName: testAddon.name,
+ *     shouldShowAllVersions: addonOptionShouldShowAllVersions,
  * });
  * ```
  */
@@ -86,6 +94,7 @@ export function getAddonOptionsOutput(args: GetAddonOptionsOutputArgs, opts?: pu
         "addonName": args.addonName,
         "filters": args.filters,
         "kubernetesVersion": args.kubernetesVersion,
+        "shouldShowAllVersions": args.shouldShowAllVersions,
     }, opts);
 }
 
@@ -102,4 +111,8 @@ export interface GetAddonOptionsOutputArgs {
      * The kubernetes version to fetch the addons.
      */
     kubernetesVersion: pulumi.Input<string>;
+    /**
+     * Whether to show all add-on versions
+     */
+    shouldShowAllVersions?: pulumi.Input<boolean>;
 }

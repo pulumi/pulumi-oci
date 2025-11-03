@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Network Firewall resource in Oracle Cloud Infrastructure Network Firewall service.
- * 
- * Creates a new NetworkFirewall.
- * 
  * ## Example Usage
  * 
  * <pre>

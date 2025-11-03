@@ -37,6 +37,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DedicatedAiCluster{}
 	case "oci:GenerativeAi/endpoint:Endpoint":
 		r = &Endpoint{}
+	case "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint":
+		r = &GenerativeAiPrivateEndpoint{}
 	case "oci:GenerativeAi/model:Model":
 		r = &Model{}
 	default:
@@ -90,6 +92,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"GenerativeAi/endpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/generativeAiPrivateEndpoint",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

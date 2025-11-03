@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Dr Protection Group resource in Oracle Cloud Infrastructure Disaster Recovery service.
-//
-// Create a DR protection group.
-//
 // ## Example Usage
 //
 // ```go

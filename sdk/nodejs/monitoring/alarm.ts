@@ -7,18 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Alarm resource in Oracle Cloud Infrastructure Monitoring service.
- *
- * Creates a new alarm in the specified compartment.
- * For more information, see
- * [Creating an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm.htm).
- * For important limits information, see
- * [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
- *
- * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
- * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
- * or transactions, per second (TPS) for a given tenancy.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Bds Instance Identity Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-//
-// # Create an identity configuration for the cluster
-//
 // ## Example Usage
 //
 // ```go

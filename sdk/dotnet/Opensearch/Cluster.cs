@@ -10,18 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opensearch
 {
     /// <summary>
-    /// This resource provides the Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
-    /// 
-    /// Creates a new OpensearchCluster.
-    /// 
-    /// ## Prerequisites
-    /// 
-    /// The below policies must be created in compartment before creating OpensearchCluster
-    /// 
-    /// ##### {Compartment-Name} - Name of  your compartment
-    /// 
-    /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
-    /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 
@@ -39,6 +28,12 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Output("availabilityDomains")]
         public Output<ImmutableArray<string>> AvailabilityDomains { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Custom certificate config for customer provided certs.
+        /// </summary>
+        [Output("certificateConfig")]
+        public Output<Outputs.ClusterCertificateConfig> CertificateConfig { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the compartment to create the cluster in.
@@ -173,6 +168,12 @@ namespace Pulumi.Oci.Opensearch
         public Output<string> MasterNodeHostType { get; private set; } = null!;
 
         /// <summary>
+        /// The OCID of the NSG where the private endpoint vnic will be attached.
+        /// </summary>
+        [Output("nsgId")]
+        public Output<string> NsgId { get; private set; } = null!;
+
+        /// <summary>
         /// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         /// </summary>
         [Output("opendashboardFqdn")]
@@ -273,6 +274,12 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Output("searchNodeStorageGb")]
         public Output<int> SearchNodeStorageGb { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
@@ -426,6 +433,12 @@ namespace Pulumi.Oci.Opensearch
     public sealed class ClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Custom certificate config for customer provided certs.
+        /// </summary>
+        [Input("certificateConfig")]
+        public Input<Inputs.ClusterCertificateConfigArgs>? CertificateConfig { get; set; }
+
+        /// <summary>
         /// The OCID of the compartment to create the cluster in.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -564,6 +577,12 @@ namespace Pulumi.Oci.Opensearch
         public Input<string> MasterNodeHostType { get; set; } = null!;
 
         /// <summary>
+        /// The OCID of the NSG where the private endpoint vnic will be attached.
+        /// </summary>
+        [Input("nsgId")]
+        public Input<string>? NsgId { get; set; }
+
+        /// <summary>
         /// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
         /// </summary>
         [Input("opendashboardNodeCount", required: true)]
@@ -640,6 +659,18 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("searchNodeStorageGb")]
         public Input<int>? SearchNodeStorageGb { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
@@ -756,6 +787,12 @@ namespace Pulumi.Oci.Opensearch
             get => _availabilityDomains ?? (_availabilityDomains = new InputList<string>());
             set => _availabilityDomains = value;
         }
+
+        /// <summary>
+        /// (Updatable) Custom certificate config for customer provided certs.
+        /// </summary>
+        [Input("certificateConfig")]
+        public Input<Inputs.ClusterCertificateConfigGetArgs>? CertificateConfig { get; set; }
 
         /// <summary>
         /// The OCID of the compartment to create the cluster in.
@@ -908,6 +945,12 @@ namespace Pulumi.Oci.Opensearch
         public Input<string>? MasterNodeHostType { get; set; }
 
         /// <summary>
+        /// The OCID of the NSG where the private endpoint vnic will be attached.
+        /// </summary>
+        [Input("nsgId")]
+        public Input<string>? NsgId { get; set; }
+
+        /// <summary>
         /// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
         /// </summary>
         [Input("opendashboardFqdn")]
@@ -1020,6 +1063,18 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Input("searchNodeStorageGb")]
         public Input<int>? SearchNodeStorageGb { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config

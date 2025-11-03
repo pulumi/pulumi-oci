@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
-    /// This resource provides the Privileged Api Request resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
-    /// 
-    /// Creates a PrivilegedApiRequest.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

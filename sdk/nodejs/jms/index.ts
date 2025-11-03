@@ -15,6 +15,11 @@ export type FleetAdvancedFeatureConfiguration = import("./fleetAdvancedFeatureCo
 export const FleetAdvancedFeatureConfiguration: typeof import("./fleetAdvancedFeatureConfiguration").FleetAdvancedFeatureConfiguration = null as any;
 utilities.lazyLoad(exports, ["FleetAdvancedFeatureConfiguration"], () => require("./fleetAdvancedFeatureConfiguration"));
 
+export { FleetAgentConfigurationArgs, FleetAgentConfigurationState } from "./fleetAgentConfiguration";
+export type FleetAgentConfiguration = import("./fleetAgentConfiguration").FleetAgentConfiguration;
+export const FleetAgentConfiguration: typeof import("./fleetAgentConfiguration").FleetAgentConfiguration = null as any;
+utilities.lazyLoad(exports, ["FleetAgentConfiguration"], () => require("./fleetAgentConfiguration"));
+
 export { GetAgentInstallersArgs, GetAgentInstallersResult, GetAgentInstallersOutputArgs } from "./getAgentInstallers";
 export const getAgentInstallers: typeof import("./getAgentInstallers").getAgentInstallers = null as any;
 export const getAgentInstallersOutput: typeof import("./getAgentInstallers").getAgentInstallersOutput = null as any;
@@ -34,6 +39,11 @@ export { GetFleetAdvancedFeatureConfigurationArgs, GetFleetAdvancedFeatureConfig
 export const getFleetAdvancedFeatureConfiguration: typeof import("./getFleetAdvancedFeatureConfiguration").getFleetAdvancedFeatureConfiguration = null as any;
 export const getFleetAdvancedFeatureConfigurationOutput: typeof import("./getFleetAdvancedFeatureConfiguration").getFleetAdvancedFeatureConfigurationOutput = null as any;
 utilities.lazyLoad(exports, ["getFleetAdvancedFeatureConfiguration","getFleetAdvancedFeatureConfigurationOutput"], () => require("./getFleetAdvancedFeatureConfiguration"));
+
+export { GetFleetAgentConfigurationArgs, GetFleetAgentConfigurationResult, GetFleetAgentConfigurationOutputArgs } from "./getFleetAgentConfiguration";
+export const getFleetAgentConfiguration: typeof import("./getFleetAgentConfiguration").getFleetAgentConfiguration = null as any;
+export const getFleetAgentConfigurationOutput: typeof import("./getFleetAgentConfiguration").getFleetAgentConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetAgentConfiguration","getFleetAgentConfigurationOutput"], () => require("./getFleetAgentConfiguration"));
 
 export { GetFleetBlocklistsArgs, GetFleetBlocklistsResult, GetFleetBlocklistsOutputArgs } from "./getFleetBlocklists";
 export const getFleetBlocklists: typeof import("./getFleetBlocklists").getFleetBlocklists = null as any;
@@ -320,6 +330,16 @@ export type TaskSchedule = import("./taskSchedule").TaskSchedule;
 export const TaskSchedule: typeof import("./taskSchedule").TaskSchedule = null as any;
 utilities.lazyLoad(exports, ["TaskSchedule"], () => require("./taskSchedule"));
 
+export { UtilsAnalyzeApplicationsConfigurationArgs, UtilsAnalyzeApplicationsConfigurationState } from "./utilsAnalyzeApplicationsConfiguration";
+export type UtilsAnalyzeApplicationsConfiguration = import("./utilsAnalyzeApplicationsConfiguration").UtilsAnalyzeApplicationsConfiguration;
+export const UtilsAnalyzeApplicationsConfiguration: typeof import("./utilsAnalyzeApplicationsConfiguration").UtilsAnalyzeApplicationsConfiguration = null as any;
+utilities.lazyLoad(exports, ["UtilsAnalyzeApplicationsConfiguration"], () => require("./utilsAnalyzeApplicationsConfiguration"));
+
+export { UtilsSubscriptionAcknowledgmentConfigurationArgs, UtilsSubscriptionAcknowledgmentConfigurationState } from "./utilsSubscriptionAcknowledgmentConfiguration";
+export type UtilsSubscriptionAcknowledgmentConfiguration = import("./utilsSubscriptionAcknowledgmentConfiguration").UtilsSubscriptionAcknowledgmentConfiguration;
+export const UtilsSubscriptionAcknowledgmentConfiguration: typeof import("./utilsSubscriptionAcknowledgmentConfiguration").UtilsSubscriptionAcknowledgmentConfiguration = null as any;
+utilities.lazyLoad(exports, ["UtilsSubscriptionAcknowledgmentConfiguration"], () => require("./utilsSubscriptionAcknowledgmentConfiguration"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -329,6 +349,8 @@ const _module = {
                 return new Fleet(name, <any>undefined, { urn })
             case "oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration":
                 return new FleetAdvancedFeatureConfiguration(name, <any>undefined, { urn })
+            case "oci:Jms/fleetAgentConfiguration:FleetAgentConfiguration":
+                return new FleetAgentConfiguration(name, <any>undefined, { urn })
             case "oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport":
                 return new JavaDownloadsJavaDownloadReport(name, <any>undefined, { urn })
             case "oci:Jms/javaDownloadsJavaDownloadToken:JavaDownloadsJavaDownloadToken":
@@ -339,6 +361,10 @@ const _module = {
                 return new JmsPlugin(name, <any>undefined, { urn })
             case "oci:Jms/taskSchedule:TaskSchedule":
                 return new TaskSchedule(name, <any>undefined, { urn })
+            case "oci:Jms/utilsAnalyzeApplicationsConfiguration:UtilsAnalyzeApplicationsConfiguration":
+                return new UtilsAnalyzeApplicationsConfiguration(name, <any>undefined, { urn })
+            case "oci:Jms/utilsSubscriptionAcknowledgmentConfiguration:UtilsSubscriptionAcknowledgmentConfiguration":
+                return new UtilsSubscriptionAcknowledgmentConfiguration(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -346,8 +372,11 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "Jms/fleet", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/fleetAdvancedFeatureConfiguration", _module)
+pulumi.runtime.registerResourceModule("oci", "Jms/fleetAgentConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaDownloadReport", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaDownloadToken", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaLicenseAcceptanceRecord", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/jmsPlugin", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/taskSchedule", _module)
+pulumi.runtime.registerResourceModule("oci", "Jms/utilsAnalyzeApplicationsConfiguration", _module)
+pulumi.runtime.registerResourceModule("oci", "Jms/utilsSubscriptionAcknowledgmentConfiguration", _module)

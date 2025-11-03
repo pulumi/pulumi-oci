@@ -10,13 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Library Masking Format resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates a new library masking format. A masking format can have one or more
-    /// format entries. The combined output of all the format entries is used for masking.
-    /// It provides the flexibility to define a masking format that can generate different
-    /// parts of a data value separately and then combine them to get the final data value
-    /// for masking. Note that you cannot define masking condition in a library masking format.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

@@ -17,11 +17,26 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// (Updatable) Whether to enable the content moderation feature.
         /// </summary>
         public readonly bool IsEnabled;
+        /// <summary>
+        /// (Updatable) Enum for the modes of operation for inference protection.
+        /// </summary>
+        public readonly string? Mode;
+        /// <summary>
+        /// (Updatable) The OCID of the model used for the feature.
+        /// </summary>
+        public readonly string? ModelId;
 
         [OutputConstructor]
-        private EndpointContentModerationConfig(bool isEnabled)
+        private EndpointContentModerationConfig(
+            bool isEnabled,
+
+            string? mode,
+
+            string? modelId)
         {
             IsEnabled = isEnabled;
+            Mode = mode;
+            ModelId = modelId;
         }
     }
 }

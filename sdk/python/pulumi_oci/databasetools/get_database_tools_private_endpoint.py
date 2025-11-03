@@ -27,7 +27,7 @@ class GetDatabaseToolsPrivateEndpointResult:
     """
     A collection of values returned by getDatabaseToolsPrivateEndpoint.
     """
-    def __init__(__self__, additional_fqdns=None, compartment_id=None, database_tools_private_endpoint_id=None, defined_tags=None, description=None, display_name=None, endpoint_fqdn=None, endpoint_service_id=None, freeform_tags=None, id=None, lifecycle_details=None, locks=None, nsg_ids=None, private_endpoint_ip=None, private_endpoint_vnic_id=None, reverse_connection_configurations=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, vcn_id=None):
+    def __init__(__self__, additional_fqdns=None, compartment_id=None, database_tools_private_endpoint_id=None, defined_tags=None, description=None, display_name=None, endpoint_fqdn=None, endpoint_service_id=None, freeform_tags=None, id=None, lifecycle_details=None, locks=None, nsg_ids=None, private_endpoint_ip=None, private_endpoint_vnic_id=None, reverse_connection_configurations=None, security_attributes=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, vcn_id=None):
         if additional_fqdns and not isinstance(additional_fqdns, list):
             raise TypeError("Expected argument 'additional_fqdns' to be a list")
         pulumi.set(__self__, "additional_fqdns", additional_fqdns)
@@ -76,6 +76,9 @@ class GetDatabaseToolsPrivateEndpointResult:
         if reverse_connection_configurations and not isinstance(reverse_connection_configurations, list):
             raise TypeError("Expected argument 'reverse_connection_configurations' to be a list")
         pulumi.set(__self__, "reverse_connection_configurations", reverse_connection_configurations)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -221,6 +224,14 @@ class GetDatabaseToolsPrivateEndpointResult:
         return pulumi.get(self, "reverse_connection_configurations")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -291,6 +302,7 @@ class AwaitableGetDatabaseToolsPrivateEndpointResult(GetDatabaseToolsPrivateEndp
             private_endpoint_ip=self.private_endpoint_ip,
             private_endpoint_vnic_id=self.private_endpoint_vnic_id,
             reverse_connection_configurations=self.reverse_connection_configurations,
+            security_attributes=self.security_attributes,
             state=self.state,
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
@@ -340,6 +352,7 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
         private_endpoint_ip=pulumi.get(__ret__, 'private_endpoint_ip'),
         private_endpoint_vnic_id=pulumi.get(__ret__, 'private_endpoint_vnic_id'),
         reverse_connection_configurations=pulumi.get(__ret__, 'reverse_connection_configurations'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -386,6 +399,7 @@ def get_database_tools_private_endpoint_output(database_tools_private_endpoint_i
         private_endpoint_ip=pulumi.get(__response__, 'private_endpoint_ip'),
         private_endpoint_vnic_id=pulumi.get(__response__, 'private_endpoint_vnic_id'),
         reverse_connection_configurations=pulumi.get(__response__, 'reverse_connection_configurations'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),

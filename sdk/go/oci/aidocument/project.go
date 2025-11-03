@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Project resource in Oracle Cloud Infrastructure Ai Document service.
-//
-// Create a new project.
-//
 // ## Example Usage
 //
 // ```go

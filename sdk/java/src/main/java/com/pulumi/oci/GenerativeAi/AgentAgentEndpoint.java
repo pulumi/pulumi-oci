@@ -21,10 +21,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- * 
- * Creates an endpoint.
- * 
  * ## Example Usage
  * 
  * <pre>

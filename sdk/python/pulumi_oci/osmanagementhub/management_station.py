@@ -671,10 +671,6 @@ class ManagementStation(pulumi.CustomResource):
                  refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Creates a management station using the proxy and mirror configuration information provided.
-
         ## Example Usage
 
         ```python
@@ -740,10 +736,6 @@ class ManagementStation(pulumi.CustomResource):
                  args: ManagementStationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Creates a management station using the proxy and mirror configuration information provided.
-
         ## Example Usage
 
         ```python

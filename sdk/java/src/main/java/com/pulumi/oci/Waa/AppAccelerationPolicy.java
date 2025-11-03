@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Web App Acceleration Policy resource in Oracle Cloud Infrastructure Waa service.
- * 
- * Creates a new WebAppAccelerationPolicy.
- * 
  * ## Example Usage
  * 
  * <pre>

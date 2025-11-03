@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Managed Instance Install Windows Updates Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Installs Windows updates on the specified managed instance.
-//
 // ## Example Usage
 //
 // ```go

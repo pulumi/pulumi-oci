@@ -462,10 +462,6 @@ class Publication(pulumi.CustomResource):
                  support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PublicationSupportContactArgs', 'PublicationSupportContactArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
-
-        Creates a publication of the specified listing type with an optional default package.
-
         ## Example Usage
 
         ```python
@@ -533,10 +529,6 @@ class Publication(pulumi.CustomResource):
                  args: PublicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
-
-        Creates a publication of the specified listing type with an optional default package.
-
         ## Example Usage
 
         ```python

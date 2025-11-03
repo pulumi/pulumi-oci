@@ -66,6 +66,21 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Optional) flags to enable Dual Stack endpoint.
+     * 
+     */
+    @Import(name="dualStackEndpointEnabled", json=true)
+    private @Nullable Output<Boolean> dualStackEndpointEnabled;
+
+    /**
+     * @return (Optional) flags to enable Dual Stack endpoint.
+     * 
+     */
+    public Optional<Output<Boolean>> dualStackEndpointEnabled() {
+        return Optional.ofNullable(this.dualStackEndpointEnabled);
+    }
+
+    /**
      * (Optional) The fingerprint for the user&#39;s RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
@@ -226,6 +241,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.auth = $.auth;
         this.configFileProfile = $.configFileProfile;
         this.disableAutoRetries = $.disableAutoRetries;
+        this.dualStackEndpointEnabled = $.dualStackEndpointEnabled;
         this.fingerprint = $.fingerprint;
         this.ignoreDefinedTags = $.ignoreDefinedTags;
         this.privateKey = $.privateKey;
@@ -320,6 +336,27 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder disableAutoRetries(Boolean disableAutoRetries) {
             return disableAutoRetries(Output.of(disableAutoRetries));
+        }
+
+        /**
+         * @param dualStackEndpointEnabled (Optional) flags to enable Dual Stack endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dualStackEndpointEnabled(@Nullable Output<Boolean> dualStackEndpointEnabled) {
+            $.dualStackEndpointEnabled = dualStackEndpointEnabled;
+            return this;
+        }
+
+        /**
+         * @param dualStackEndpointEnabled (Optional) flags to enable Dual Stack endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dualStackEndpointEnabled(Boolean dualStackEndpointEnabled) {
+            return dualStackEndpointEnabled(Output.of(dualStackEndpointEnabled));
         }
 
         /**

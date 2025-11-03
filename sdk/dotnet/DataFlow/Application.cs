@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
-    /// This resource provides the Application resource in Oracle Cloud Infrastructure Data Flow service.
-    /// 
-    /// Creates an application.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

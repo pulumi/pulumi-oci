@@ -431,10 +431,6 @@ class ContainerRepository(pulumi.CustomResource):
                  readme: Optional[pulumi.Input[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
-
-        Create a new empty container repository. Avoid entering confidential information.
-
         ## Example Usage
 
         ```python
@@ -483,10 +479,6 @@ class ContainerRepository(pulumi.CustomResource):
                  args: ContainerRepositoryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
-
-        Create a new empty container repository. Avoid entering confidential information.
-
         ## Example Usage
 
         ```python

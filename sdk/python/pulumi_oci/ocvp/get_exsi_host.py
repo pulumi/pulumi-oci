@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetExsiHostResult',
@@ -26,7 +27,10 @@ class GetExsiHostResult:
     """
     A collection of values returned by getExsiHost.
     """
-    def __init__(__self__, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_commitment=None, current_sku=None, defined_tags=None, display_name=None, esxi_host_id=None, esxi_software_version=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, next_commitment=None, next_sku=None, non_upgraded_esxi_host_id=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vmware_software_version=None):
+    def __init__(__self__, attach_datastore_cluster_ids=None, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_commitment=None, current_sku=None, datastore_attachments=None, datastore_cluster_ids=None, defined_tags=None, detach_datastore_cluster_ids=None, display_name=None, esxi_host_id=None, esxi_software_version=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, next_commitment=None, next_sku=None, non_upgraded_esxi_host_id=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vmware_software_version=None):
+        if attach_datastore_cluster_ids and not isinstance(attach_datastore_cluster_ids, list):
+            raise TypeError("Expected argument 'attach_datastore_cluster_ids' to be a list")
+        pulumi.set(__self__, "attach_datastore_cluster_ids", attach_datastore_cluster_ids)
         if billing_contract_end_date and not isinstance(billing_contract_end_date, str):
             raise TypeError("Expected argument 'billing_contract_end_date' to be a str")
         pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
@@ -54,9 +58,18 @@ class GetExsiHostResult:
         if current_sku and not isinstance(current_sku, str):
             raise TypeError("Expected argument 'current_sku' to be a str")
         pulumi.set(__self__, "current_sku", current_sku)
+        if datastore_attachments and not isinstance(datastore_attachments, list):
+            raise TypeError("Expected argument 'datastore_attachments' to be a list")
+        pulumi.set(__self__, "datastore_attachments", datastore_attachments)
+        if datastore_cluster_ids and not isinstance(datastore_cluster_ids, list):
+            raise TypeError("Expected argument 'datastore_cluster_ids' to be a list")
+        pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if detach_datastore_cluster_ids and not isinstance(detach_datastore_cluster_ids, list):
+            raise TypeError("Expected argument 'detach_datastore_cluster_ids' to be a list")
+        pulumi.set(__self__, "detach_datastore_cluster_ids", detach_datastore_cluster_ids)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -123,6 +136,11 @@ class GetExsiHostResult:
         if vmware_software_version and not isinstance(vmware_software_version, str):
             raise TypeError("Expected argument 'vmware_software_version' to be a str")
         pulumi.set(__self__, "vmware_software_version", vmware_software_version)
+
+    @_builtins.property
+    @pulumi.getter(name="attachDatastoreClusterIds")
+    def attach_datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "attach_datastore_cluster_ids")
 
     @_builtins.property
     @pulumi.getter(name="billingContractEndDate")
@@ -199,12 +217,33 @@ class GetExsiHostResult:
         return pulumi.get(self, "current_sku")
 
     @_builtins.property
+    @pulumi.getter(name="datastoreAttachments")
+    def datastore_attachments(self) -> Sequence['outputs.GetExsiHostDatastoreAttachmentResult']:
+        """
+        List of DatastoreAttachment objects containing information about attachment details
+        """
+        return pulumi.get(self, "datastore_attachments")
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="detachDatastoreClusterIds")
+    def detach_datastore_cluster_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "detach_datastore_cluster_ids")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -390,6 +429,7 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
         if False:
             yield self
         return GetExsiHostResult(
+            attach_datastore_cluster_ids=self.attach_datastore_cluster_ids,
             billing_contract_end_date=self.billing_contract_end_date,
             billing_donor_host_id=self.billing_donor_host_id,
             capacity_reservation_id=self.capacity_reservation_id,
@@ -399,7 +439,10 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             compute_instance_id=self.compute_instance_id,
             current_commitment=self.current_commitment,
             current_sku=self.current_sku,
+            datastore_attachments=self.datastore_attachments,
+            datastore_cluster_ids=self.datastore_cluster_ids,
             defined_tags=self.defined_tags,
+            detach_datastore_cluster_ids=self.detach_datastore_cluster_ids,
             display_name=self.display_name,
             esxi_host_id=self.esxi_host_id,
             esxi_software_version=self.esxi_software_version,
@@ -449,6 +492,7 @@ def get_exsi_host(esxi_host_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getExsiHost:getExsiHost', __args__, opts=opts, typ=GetExsiHostResult).value
 
     return AwaitableGetExsiHostResult(
+        attach_datastore_cluster_ids=pulumi.get(__ret__, 'attach_datastore_cluster_ids'),
         billing_contract_end_date=pulumi.get(__ret__, 'billing_contract_end_date'),
         billing_donor_host_id=pulumi.get(__ret__, 'billing_donor_host_id'),
         capacity_reservation_id=pulumi.get(__ret__, 'capacity_reservation_id'),
@@ -458,7 +502,10 @@ def get_exsi_host(esxi_host_id: Optional[_builtins.str] = None,
         compute_instance_id=pulumi.get(__ret__, 'compute_instance_id'),
         current_commitment=pulumi.get(__ret__, 'current_commitment'),
         current_sku=pulumi.get(__ret__, 'current_sku'),
+        datastore_attachments=pulumi.get(__ret__, 'datastore_attachments'),
+        datastore_cluster_ids=pulumi.get(__ret__, 'datastore_cluster_ids'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        detach_datastore_cluster_ids=pulumi.get(__ret__, 'detach_datastore_cluster_ids'),
         display_name=pulumi.get(__ret__, 'display_name'),
         esxi_host_id=pulumi.get(__ret__, 'esxi_host_id'),
         esxi_software_version=pulumi.get(__ret__, 'esxi_software_version'),
@@ -505,6 +552,7 @@ def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[_builtins.str]] = N
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Ocvp/getExsiHost:getExsiHost', __args__, opts=opts, typ=GetExsiHostResult)
     return __ret__.apply(lambda __response__: GetExsiHostResult(
+        attach_datastore_cluster_ids=pulumi.get(__response__, 'attach_datastore_cluster_ids'),
         billing_contract_end_date=pulumi.get(__response__, 'billing_contract_end_date'),
         billing_donor_host_id=pulumi.get(__response__, 'billing_donor_host_id'),
         capacity_reservation_id=pulumi.get(__response__, 'capacity_reservation_id'),
@@ -514,7 +562,10 @@ def get_exsi_host_output(esxi_host_id: Optional[pulumi.Input[_builtins.str]] = N
         compute_instance_id=pulumi.get(__response__, 'compute_instance_id'),
         current_commitment=pulumi.get(__response__, 'current_commitment'),
         current_sku=pulumi.get(__response__, 'current_sku'),
+        datastore_attachments=pulumi.get(__response__, 'datastore_attachments'),
+        datastore_cluster_ids=pulumi.get(__response__, 'datastore_cluster_ids'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
+        detach_datastore_cluster_ids=pulumi.get(__response__, 'detach_datastore_cluster_ids'),
         display_name=pulumi.get(__response__, 'display_name'),
         esxi_host_id=pulumi.get(__response__, 'esxi_host_id'),
         esxi_software_version=pulumi.get(__response__, 'esxi_software_version'),

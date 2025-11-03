@@ -39,20 +39,13 @@ class DatabaseArgs:
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[_builtins.str] db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
-        :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
-        :param pulumi.Input[_builtins.int] action_trigger: (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-        :param pulumi.Input[_builtins.str] data_guard_action: Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         :param pulumi.Input[_builtins.str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        :param pulumi.Input[_builtins.int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         pulumi.set(__self__, "database", database)
@@ -107,7 +100,7 @@ class DatabaseArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input[_builtins.str]:
         """
-        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         """
         return pulumi.get(self, "source")
 
@@ -118,9 +111,6 @@ class DatabaseArgs:
     @_builtins.property
     @pulumi.getter(name="actionTrigger")
     def action_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
-        """
-        (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-        """
         return pulumi.get(self, "action_trigger")
 
     @action_trigger.setter
@@ -130,12 +120,6 @@ class DatabaseArgs:
     @_builtins.property
     @pulumi.getter(name="dataGuardAction")
     def data_guard_action(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "data_guard_action")
 
     @data_guard_action.setter
@@ -183,9 +167,6 @@ class DatabaseArgs:
     @_builtins.property
     @pulumi.getter(name="kmsKeyMigration")
     def kms_key_migration(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        """
         return pulumi.get(self, "kms_key_migration")
 
     @kms_key_migration.setter
@@ -195,9 +176,6 @@ class DatabaseArgs:
     @_builtins.property
     @pulumi.getter(name="kmsKeyRotation")
     def kms_key_rotation(self) -> Optional[pulumi.Input[_builtins.int]]:
-        """
-        The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        """
         return pulumi.get(self, "kms_key_rotation")
 
     @kms_key_rotation.setter
@@ -208,7 +186,7 @@ class DatabaseArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -274,14 +252,9 @@ class _DatabaseState:
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Database resources.
-        :param pulumi.Input[_builtins.int] action_trigger: (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
         :param pulumi.Input[_builtins.str] character_set: The character set for the database.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseConnectionStringArgs']]] connection_strings: The Connection strings used to connect to the Oracle Database.
-        :param pulumi.Input[_builtins.str] data_guard_action: Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupArgs']]] data_guard_groups: Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
         :param pulumi.Input['DatabaseDatabaseArgs'] database: (Updatable) Details for creating a database.
                
@@ -303,9 +276,7 @@ class _DatabaseState:
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        :param pulumi.Input[_builtins.int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.int] last_backup_duration_in_seconds: The duration when the latest database backup created.
         :param pulumi.Input[_builtins.str] last_backup_timestamp: The date and time when the latest database backup was created.
         :param pulumi.Input[_builtins.str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
@@ -313,7 +284,7 @@ class _DatabaseState:
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.
         :param pulumi.Input[_builtins.str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[_builtins.str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+        :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         :param pulumi.Input[_builtins.str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         :param pulumi.Input[_builtins.str] state: The current state of the database.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseStorageSizeDetailArgs']]] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
@@ -406,9 +377,6 @@ class _DatabaseState:
     @_builtins.property
     @pulumi.getter(name="actionTrigger")
     def action_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
-        """
-        (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-        """
         return pulumi.get(self, "action_trigger")
 
     @action_trigger.setter
@@ -454,12 +422,6 @@ class _DatabaseState:
     @_builtins.property
     @pulumi.getter(name="dataGuardAction")
     def data_guard_action(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "data_guard_action")
 
     @data_guard_action.setter
@@ -677,9 +639,6 @@ class _DatabaseState:
     @_builtins.property
     @pulumi.getter(name="kmsKeyMigration")
     def kms_key_migration(self) -> Optional[pulumi.Input[_builtins.bool]]:
-        """
-        The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        """
         return pulumi.get(self, "kms_key_migration")
 
     @kms_key_migration.setter
@@ -689,9 +648,6 @@ class _DatabaseState:
     @_builtins.property
     @pulumi.getter(name="kmsKeyRotation")
     def kms_key_rotation(self) -> Optional[pulumi.Input[_builtins.int]]:
-        """
-        The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        """
         return pulumi.get(self, "kms_key_rotation")
 
     @kms_key_rotation.setter
@@ -702,7 +658,7 @@ class _DatabaseState:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -798,7 +754,7 @@ class _DatabaseState:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         """
         return pulumi.get(self, "source")
 
@@ -911,11 +867,7 @@ class Database(pulumi.CustomResource):
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
-
-        **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
+        ## Example Usage
 
         ## Import
 
@@ -927,11 +879,6 @@ class Database(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.int] action_trigger: (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-        :param pulumi.Input[_builtins.str] data_guard_action: Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']] database: (Updatable) Details for creating a database.
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
@@ -941,10 +888,8 @@ class Database(pulumi.CustomResource):
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        :param pulumi.Input[_builtins.int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
-        :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+        :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         ...
@@ -954,11 +899,7 @@ class Database(pulumi.CustomResource):
                  args: DatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
-
-        **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
+        ## Example Usage
 
         ## Import
 
@@ -1107,14 +1048,9 @@ class Database(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.int] action_trigger: (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
         :param pulumi.Input[_builtins.str] character_set: The character set for the database.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseConnectionStringArgs', 'DatabaseConnectionStringArgsDict']]]] connection_strings: The Connection strings used to connect to the Oracle Database.
-        :param pulumi.Input[_builtins.str] data_guard_action: Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseDataGuardGroupArgs', 'DatabaseDataGuardGroupArgsDict']]]] data_guard_groups: Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
         :param pulumi.Input[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict']] database: (Updatable) Details for creating a database.
                
@@ -1136,9 +1072,7 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.bool] kms_key_migration: The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        :param pulumi.Input[_builtins.int] kms_key_rotation: The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.int] last_backup_duration_in_seconds: The duration when the latest database backup created.
         :param pulumi.Input[_builtins.str] last_backup_timestamp: The date and time when the latest database backup was created.
         :param pulumi.Input[_builtins.str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
@@ -1146,7 +1080,7 @@ class Database(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.
         :param pulumi.Input[_builtins.str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[_builtins.str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
-        :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+        :param pulumi.Input[_builtins.str] source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         :param pulumi.Input[_builtins.str] source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         :param pulumi.Input[_builtins.str] state: The current state of the database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseStorageSizeDetailArgs', 'DatabaseStorageSizeDetailArgsDict']]]] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
@@ -1204,9 +1138,6 @@ class Database(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="actionTrigger")
     def action_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
-        """
-        (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-        """
         return pulumi.get(self, "action_trigger")
 
     @_builtins.property
@@ -1236,12 +1167,6 @@ class Database(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="dataGuardAction")
     def data_guard_action(self) -> pulumi.Output[Optional[_builtins.str]]:
-        """
-        Describes the Data Guard operation to be triggered. Could be set to a string value ('Switchover', 'Failover', 'Reinstate', 'DgConfig', "ConvertToStandalone').
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "data_guard_action")
 
     @_builtins.property
@@ -1387,24 +1312,18 @@ class Database(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="kmsKeyMigration")
     def kms_key_migration(self) -> pulumi.Output[Optional[_builtins.bool]]:
-        """
-        The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-        """
         return pulumi.get(self, "kms_key_migration")
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyRotation")
     def kms_key_rotation(self) -> pulumi.Output[Optional[_builtins.int]]:
-        """
-        The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-        """
         return pulumi.get(self, "kms_key_rotation")
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -1468,7 +1387,7 @@ class Database(pulumi.CustomResource):
     @pulumi.getter
     def source(self) -> pulumi.Output[_builtins.str]:
         """
-        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         """
         return pulumi.get(self, "source")
 

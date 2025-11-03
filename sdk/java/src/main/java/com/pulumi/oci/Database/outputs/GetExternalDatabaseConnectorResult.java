@@ -30,7 +30,7 @@ public final class GetExternalDatabaseConnectorResult {
      */
     private String connectionStatus;
     /**
-     * @return The Oracle Database connection string.
+     * @return The Oracle AI Database connection string.
      * 
      */
     private List<GetExternalDatabaseConnectorConnectionString> connectionStrings;
@@ -119,7 +119,7 @@ public final class GetExternalDatabaseConnectorResult {
         return this.connectionStatus;
     }
     /**
-     * @return The Oracle Database connection string.
+     * @return The Oracle AI Database connection string.
      * 
      */
     public List<GetExternalDatabaseConnectorConnectionString> connectionStrings() {

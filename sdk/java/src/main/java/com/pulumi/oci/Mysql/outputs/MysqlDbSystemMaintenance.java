@@ -7,9 +7,38 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class MysqlDbSystemMaintenance {
+    /**
+     * @return (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+     * 
+     */
+    private @Nullable String maintenanceScheduleType;
+    /**
+     * @return The version that is expected to be targeted during the next scheduled maintenance run.
+     * 
+     */
+    private @Nullable String targetVersion;
+    /**
+     * @return The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    private @Nullable String timeScheduled;
+    /**
+     * @return (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+     * 
+     * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+     * 
+     */
+    private @Nullable String versionPreference;
+    /**
+     * @return (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+     * 
+     */
+    private @Nullable String versionTrackPreference;
     /**
      * @return (Updatable) The start of the 2 hour maintenance window.
      * 
@@ -25,6 +54,43 @@ public final class MysqlDbSystemMaintenance {
     private String windowStartTime;
 
     private MysqlDbSystemMaintenance() {}
+    /**
+     * @return (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+     * 
+     */
+    public Optional<String> maintenanceScheduleType() {
+        return Optional.ofNullable(this.maintenanceScheduleType);
+    }
+    /**
+     * @return The version that is expected to be targeted during the next scheduled maintenance run.
+     * 
+     */
+    public Optional<String> targetVersion() {
+        return Optional.ofNullable(this.targetVersion);
+    }
+    /**
+     * @return The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    public Optional<String> timeScheduled() {
+        return Optional.ofNullable(this.timeScheduled);
+    }
+    /**
+     * @return (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+     * 
+     * OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+     * 
+     */
+    public Optional<String> versionPreference() {
+        return Optional.ofNullable(this.versionPreference);
+    }
+    /**
+     * @return (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+     * 
+     */
+    public Optional<String> versionTrackPreference() {
+        return Optional.ofNullable(this.versionTrackPreference);
+    }
     /**
      * @return (Updatable) The start of the 2 hour maintenance window.
      * 
@@ -50,13 +116,53 @@ public final class MysqlDbSystemMaintenance {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String maintenanceScheduleType;
+        private @Nullable String targetVersion;
+        private @Nullable String timeScheduled;
+        private @Nullable String versionPreference;
+        private @Nullable String versionTrackPreference;
         private String windowStartTime;
         public Builder() {}
         public Builder(MysqlDbSystemMaintenance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.maintenanceScheduleType = defaults.maintenanceScheduleType;
+    	      this.targetVersion = defaults.targetVersion;
+    	      this.timeScheduled = defaults.timeScheduled;
+    	      this.versionPreference = defaults.versionPreference;
+    	      this.versionTrackPreference = defaults.versionTrackPreference;
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
+        public Builder maintenanceScheduleType(@Nullable String maintenanceScheduleType) {
+
+            this.maintenanceScheduleType = maintenanceScheduleType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetVersion(@Nullable String targetVersion) {
+
+            this.targetVersion = targetVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeScheduled(@Nullable String timeScheduled) {
+
+            this.timeScheduled = timeScheduled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder versionPreference(@Nullable String versionPreference) {
+
+            this.versionPreference = versionPreference;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder versionTrackPreference(@Nullable String versionTrackPreference) {
+
+            this.versionTrackPreference = versionTrackPreference;
+            return this;
+        }
         @CustomType.Setter
         public Builder windowStartTime(String windowStartTime) {
             if (windowStartTime == null) {
@@ -67,6 +173,11 @@ public final class MysqlDbSystemMaintenance {
         }
         public MysqlDbSystemMaintenance build() {
             final var _resultValue = new MysqlDbSystemMaintenance();
+            _resultValue.maintenanceScheduleType = maintenanceScheduleType;
+            _resultValue.targetVersion = targetVersion;
+            _resultValue.timeScheduled = timeScheduled;
+            _resultValue.versionPreference = versionPreference;
+            _resultValue.versionTrackPreference = versionTrackPreference;
             _resultValue.windowStartTime = windowStartTime;
             return _resultValue;
         }

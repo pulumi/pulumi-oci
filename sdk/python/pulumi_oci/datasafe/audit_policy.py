@@ -497,9 +497,7 @@ class AuditPolicy(pulumi.CustomResource):
                  retrieve_from_target_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the audit policy.
+        ## Example Usage
 
         ## Import
 
@@ -531,9 +529,7 @@ class AuditPolicy(pulumi.CustomResource):
                  args: AuditPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the audit policy.
+        ## Example Usage
 
         ## Import
 

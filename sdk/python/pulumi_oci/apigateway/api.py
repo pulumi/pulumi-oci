@@ -390,10 +390,6 @@ class Api(pulumi.CustomResource):
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ApiLockArgs', 'ApiLockArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Api resource in Oracle Cloud Infrastructure API Gateway service.
-
-        Creates a new API.
-
         ## Example Usage
 
         ```python
@@ -440,10 +436,6 @@ class Api(pulumi.CustomResource):
                  args: ApiArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Api resource in Oracle Cloud Infrastructure API Gateway service.
-
-        Creates a new API.
-
         ## Example Usage
 
         ```python

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Apm service.
-//
-// Creates a new APM domain.
-//
 // ## Example Usage
 //
 // ```go

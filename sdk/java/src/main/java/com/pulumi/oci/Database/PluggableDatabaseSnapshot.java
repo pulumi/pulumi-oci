@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates a Pluggable Database Snapshot
- * 
  * ## Example Usage
  * 
  * <pre>

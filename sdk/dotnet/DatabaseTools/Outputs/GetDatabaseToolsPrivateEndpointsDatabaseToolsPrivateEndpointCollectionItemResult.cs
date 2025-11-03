@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableArray<string> AdditionalFqdns;
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -73,6 +73,10 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// Reverse connection configuration details of the private endpoint.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult> ReverseConnectionConfigurations;
+        /// <summary>
+        /// Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
         /// <summary>
         /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
@@ -130,6 +134,8 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
 
             ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult> reverseConnectionConfigurations,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string subnetId,
@@ -157,6 +163,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
             PrivateEndpointIp = privateEndpointIp;
             PrivateEndpointVnicId = privateEndpointVnicId;
             ReverseConnectionConfigurations = reverseConnectionConfigurations;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             SystemTags = systemTags;

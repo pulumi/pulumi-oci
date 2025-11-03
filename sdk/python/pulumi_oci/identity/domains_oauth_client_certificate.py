@@ -1301,10 +1301,6 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
                  x509base64certificate: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an OAuth Client Certificate
-
         ## Example Usage
 
         ```python
@@ -1448,10 +1444,6 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
                  args: DomainsOauthClientCertificateArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an OAuth Client Certificate
-
         ## Example Usage
 
         ```python

@@ -8,6 +8,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
  *
  * Gets the specified private endpoint.
+ * For more information, see
+ * [Getting a Private Endpoint's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
  *
  * ## Example Usage
  *
@@ -42,7 +44,7 @@ export interface GetPrivateEndpointArgs {
  */
 export interface GetPrivateEndpointResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
      */
     readonly compartmentId: string;
     /**
@@ -58,7 +60,7 @@ export interface GetPrivateEndpointResult {
      */
     readonly displayName: string;
     /**
-     * DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+     * DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
      */
     readonly dnsZones: string[];
     /**
@@ -66,7 +68,7 @@ export interface GetPrivateEndpointResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
     readonly id: string;
     /**
@@ -74,12 +76,16 @@ export interface GetPrivateEndpointResult {
      */
     readonly isUsedWithConfigurationSourceProvider: boolean;
     /**
-     * An array of network security groups (NSG) that the customer can optionally provide.
+     * The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
      */
     readonly nsgIdLists: string[];
     readonly privateEndpointId: string;
     /**
-     * The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+     * [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
+    /**
+     * The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
      */
     readonly sourceIps: string[];
     /**
@@ -90,6 +96,10 @@ export interface GetPrivateEndpointResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
      */
     readonly subnetId: string;
+    /**
+     * The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     */
+    readonly systemTags: {[key: string]: string};
     /**
      * The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
      */
@@ -103,6 +113,8 @@ export interface GetPrivateEndpointResult {
  * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
  *
  * Gets the specified private endpoint.
+ * For more information, see
+ * [Getting a Private Endpoint's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
  *
  * ## Example Usage
  *

@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
- * 
- * Creates a private application along with a single package to be hosted.
- * 
  * ## Example Usage
  * 
  * <pre>

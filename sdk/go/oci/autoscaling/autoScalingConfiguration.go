@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
-//
-// Creates an autoscaling configuration.
-//
 // ## Example Usage
 //
 // ```go

@@ -289,10 +289,6 @@ class InternalOccmDemandSignal(pulumi.CustomResource):
                  occm_demand_signal_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Internal Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        This is a internal PUT API which shall be used to update the metadata of the demand signal.
-
         ## Example Usage
 
         ```python
@@ -330,10 +326,6 @@ class InternalOccmDemandSignal(pulumi.CustomResource):
                  args: InternalOccmDemandSignalArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Internal Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        This is a internal PUT API which shall be used to update the metadata of the demand signal.
-
         ## Example Usage
 
         ```python

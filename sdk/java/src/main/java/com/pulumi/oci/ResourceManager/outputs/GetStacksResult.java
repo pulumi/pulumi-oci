@@ -21,7 +21,7 @@ public final class GetStacksResult {
      */
     private String compartmentId;
     /**
-     * @return Human-readable display name for the stack.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -37,7 +37,7 @@ public final class GetStacksResult {
      */
     private List<GetStacksStack> stacks;
     /**
-     * @return The current lifecycle state of the stack.
+     * @return The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      * 
      */
     private @Nullable String state;
@@ -51,7 +51,7 @@ public final class GetStacksResult {
         return this.compartmentId;
     }
     /**
-     * @return Human-readable display name for the stack.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -75,7 +75,7 @@ public final class GetStacksResult {
         return this.stacks;
     }
     /**
-     * @return The current lifecycle state of the stack.
+     * @return The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
      * 
      */
     public Optional<String> state() {

@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine
 {
     /// <summary>
-    /// This resource provides the Addon resource in Oracle Cloud Infrastructure Container Engine service.
-    /// 
-    /// Install the specified addon for a cluster.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

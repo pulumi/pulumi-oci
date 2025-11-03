@@ -19,24 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cluster Network resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a [cluster network with instance pools](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
- * A cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
- * instances that are connected with an ultra low-latency remote direct memory access (RDMA) network.
- * Cluster networks with instance pools use instance pools to manage groups of identical instances.
- * 
- * Use cluster networks with instance pools when you want predictable capacity for a specific number of identical
- * instances that are managed as a group.
- * 
- * If you want to manage instances in the RDMA network independently of each other or use different types of instances
- * in the network group, create a compute cluster by using the [CreateComputeCluster](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCluster/CreateComputeCluster)
- * operation.
- * 
- * To determine whether capacity is available for a specific shape before you create a cluster network,
- * use the [CreateComputeCapacityReport](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ComputeCapacityReport/CreateComputeCapacityReport)
- * operation.
- * 
  * ## Example Usage
  * 
  * <pre>

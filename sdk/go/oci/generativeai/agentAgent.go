@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-//
-// Creates an agent.
-//
 // ## Example Usage
 //
 // ```go

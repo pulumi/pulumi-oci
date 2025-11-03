@@ -284,10 +284,6 @@ class Project(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Project resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new project.
-
         ## Example Usage
 
         ```python
@@ -333,10 +329,6 @@ class Project(pulumi.CustomResource):
                  args: ProjectArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Project resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new project.
-
         ## Example Usage
 
         ```python

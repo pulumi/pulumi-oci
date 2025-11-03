@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a public IP pool.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasesAutonomousDatabaseApexDetail {
     /**
-     * @return The Oracle APEX Application Development version.
+     * @return The Oracle APEX AI Application Development version.
      * 
      */
     private String apexVersion;
@@ -23,7 +23,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseApexDetail {
 
     private GetAutonomousDatabasesAutonomousDatabaseApexDetail() {}
     /**
-     * @return The Oracle APEX Application Development version.
+     * @return The Oracle APEX AI Application Development version.
      * 
      */
     public String apexVersion() {

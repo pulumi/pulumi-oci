@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Backend resource in Oracle Cloud Infrastructure Load Balancer service.
- *
- * Adds a backend server to a backend set.
- *
  * ## Example Usage
  *
  * ```typescript

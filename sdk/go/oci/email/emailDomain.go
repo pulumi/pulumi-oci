@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Email Domain resource in Oracle Cloud Infrastructure Email service.
-//
-// Creates a new email domain. Avoid entering confidential information.
-//
 // ## Example Usage
 //
 // ```go

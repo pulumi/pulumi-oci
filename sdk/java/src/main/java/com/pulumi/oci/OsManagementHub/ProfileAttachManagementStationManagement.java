@@ -14,10 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Profile Attach Management Station Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Attaches the specified management station to a profile.
- * 
  * ## Example Usage
  * 
  * <pre>

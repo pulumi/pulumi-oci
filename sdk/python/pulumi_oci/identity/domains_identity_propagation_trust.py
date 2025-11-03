@@ -2046,10 +2046,6 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Register a new Identity Propagation Trust configuration.
-
         ## Example Usage
 
         ```python
@@ -2348,10 +2344,6 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
                  args: DomainsIdentityPropagationTrustArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Identity Propagation Trust resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Register a new Identity Propagation Trust configuration.
-
         ## Example Usage
 
         ```python

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Local Peering Gateway resource in Oracle Cloud Infrastructure Core service.
- *
- * Creates a new local peering gateway (LPG) for the specified VCN.
- *
  * ## Example Usage
  *
  * ```typescript

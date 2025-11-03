@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
-//
-// Creates a new rule set associated with the specified load balancer. For more information, see
-// [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
-//
 // ## Example Usage
 //
 // ```go

@@ -18,10 +18,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
- * 
- * Create an OPSI configuration resource.
- * 
  * ## Example Usage
  * 
  * <pre>

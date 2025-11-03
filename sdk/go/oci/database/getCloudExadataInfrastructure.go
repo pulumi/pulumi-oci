@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
 //
-// Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+// Gets information about the specified cloud Exadata infrastructure resource. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
 //
 // ## Example Usage
 //
@@ -73,7 +73,7 @@ type LookupCloudExadataInfrastructureResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The number of compute servers for the cloud Exadata infrastructure.
 	ComputeCount int `pulumi:"computeCount"`
-	// The compute model of the Exadata infrastructure.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel string `pulumi:"computeModel"`
 	// The total number of CPU cores allocated.
 	CpuCount int `pulumi:"cpuCount"`
@@ -216,7 +216,7 @@ func (o LookupCloudExadataInfrastructureResultOutput) ComputeCount() pulumi.IntO
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) int { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
-// The compute model of the Exadata infrastructure.
+// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 func (o LookupCloudExadataInfrastructureResultOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }

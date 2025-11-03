@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-//
-// Creates an endpoint.
-//
 // ## Example Usage
 //
 // ```go

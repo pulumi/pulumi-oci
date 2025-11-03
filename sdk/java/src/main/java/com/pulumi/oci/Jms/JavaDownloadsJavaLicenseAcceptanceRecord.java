@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
- * 
- * Creates a Java license acceptance record for the specified license type in a tenancy.
- * 
  * ## Example Usage
  * 
  * <pre>

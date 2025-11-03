@@ -23,10 +23,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Model resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Creates a new model.
- * 
  * ## Example Usage
  * 
  * <pre>

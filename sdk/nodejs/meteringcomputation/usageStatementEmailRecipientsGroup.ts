@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
- *
- * Creates a list of email recipients that can receive usage statements for the subscription.
- *
  * ## Example Usage
  *
  * ```typescript

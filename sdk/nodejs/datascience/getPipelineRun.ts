@@ -97,6 +97,10 @@ export interface GetPipelineRunResult {
     readonly logDetails: outputs.DataScience.GetPipelineRunLogDetail[];
     readonly opcParentRptUrl: string;
     /**
+     * Parameters override used in the pipeline run.
+     */
+    readonly parametersOverride: {[key: string]: string};
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
     readonly pipelineId: string;
@@ -117,6 +121,10 @@ export interface GetPipelineRunResult {
      * Array of StepRun object for each step.
      */
     readonly stepRuns: outputs.DataScience.GetPipelineRunStepRun[];
+    /**
+     * The storage mount override details to mount to the instance running the pipeline step.
+     */
+    readonly storageMountConfigurationOverrideDetailsLists: outputs.DataScience.GetPipelineRunStorageMountConfigurationOverrideDetailsList[];
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */

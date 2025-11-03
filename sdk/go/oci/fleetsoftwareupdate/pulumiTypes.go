@@ -14,9 +14,9 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type FsuCollectionActiveFsuCycle struct {
-	// (Updatable) Exadata Fleet Update Collection Identifier.
+	// (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
 	DisplayName *string `pulumi:"displayName"`
-	// OCID identifier for the Exadata Fleet Update Collection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 	Id *string `pulumi:"id"`
 }
 
@@ -32,9 +32,9 @@ type FsuCollectionActiveFsuCycleInput interface {
 }
 
 type FsuCollectionActiveFsuCycleArgs struct {
-	// (Updatable) Exadata Fleet Update Collection Identifier.
+	// (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// OCID identifier for the Exadata Fleet Update Collection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -89,12 +89,12 @@ func (o FsuCollectionActiveFsuCycleOutput) ToFsuCollectionActiveFsuCycleOutputWi
 	return o
 }
 
-// (Updatable) Exadata Fleet Update Collection Identifier.
+// (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
 func (o FsuCollectionActiveFsuCycleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCollectionActiveFsuCycle) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// OCID identifier for the Exadata Fleet Update Collection.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 func (o FsuCollectionActiveFsuCycleOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCollectionActiveFsuCycle) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -119,16 +119,623 @@ func (o FsuCollectionActiveFsuCycleArrayOutput) Index(i pulumi.IntInput) FsuColl
 	}).(FsuCollectionActiveFsuCycleOutput)
 }
 
+type FsuCollectionComponent struct {
+	// Type of component in an Exadata software stack.
+	ComponentType string `pulumi:"componentType"`
+	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+	FleetDiscovery *FsuCollectionComponentFleetDiscovery `pulumi:"fleetDiscovery"`
+	// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in an Exadata Fleet Update Collection. Major Versions of Exadata Software are demarcated by the underlying Oracle Linux OS version. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
+	SourceMajorVersion string `pulumi:"sourceMajorVersion"`
+}
+
+// FsuCollectionComponentInput is an input type that accepts FsuCollectionComponentArgs and FsuCollectionComponentOutput values.
+// You can construct a concrete instance of `FsuCollectionComponentInput` via:
+//
+//	FsuCollectionComponentArgs{...}
+type FsuCollectionComponentInput interface {
+	pulumi.Input
+
+	ToFsuCollectionComponentOutput() FsuCollectionComponentOutput
+	ToFsuCollectionComponentOutputWithContext(context.Context) FsuCollectionComponentOutput
+}
+
+type FsuCollectionComponentArgs struct {
+	// Type of component in an Exadata software stack.
+	ComponentType pulumi.StringInput `pulumi:"componentType"`
+	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+	FleetDiscovery FsuCollectionComponentFleetDiscoveryPtrInput `pulumi:"fleetDiscovery"`
+	// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in an Exadata Fleet Update Collection. Major Versions of Exadata Software are demarcated by the underlying Oracle Linux OS version. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
+	SourceMajorVersion pulumi.StringInput `pulumi:"sourceMajorVersion"`
+}
+
+func (FsuCollectionComponentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCollectionComponent)(nil)).Elem()
+}
+
+func (i FsuCollectionComponentArgs) ToFsuCollectionComponentOutput() FsuCollectionComponentOutput {
+	return i.ToFsuCollectionComponentOutputWithContext(context.Background())
+}
+
+func (i FsuCollectionComponentArgs) ToFsuCollectionComponentOutputWithContext(ctx context.Context) FsuCollectionComponentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCollectionComponentOutput)
+}
+
+// FsuCollectionComponentArrayInput is an input type that accepts FsuCollectionComponentArray and FsuCollectionComponentArrayOutput values.
+// You can construct a concrete instance of `FsuCollectionComponentArrayInput` via:
+//
+//	FsuCollectionComponentArray{ FsuCollectionComponentArgs{...} }
+type FsuCollectionComponentArrayInput interface {
+	pulumi.Input
+
+	ToFsuCollectionComponentArrayOutput() FsuCollectionComponentArrayOutput
+	ToFsuCollectionComponentArrayOutputWithContext(context.Context) FsuCollectionComponentArrayOutput
+}
+
+type FsuCollectionComponentArray []FsuCollectionComponentInput
+
+func (FsuCollectionComponentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuCollectionComponent)(nil)).Elem()
+}
+
+func (i FsuCollectionComponentArray) ToFsuCollectionComponentArrayOutput() FsuCollectionComponentArrayOutput {
+	return i.ToFsuCollectionComponentArrayOutputWithContext(context.Background())
+}
+
+func (i FsuCollectionComponentArray) ToFsuCollectionComponentArrayOutputWithContext(ctx context.Context) FsuCollectionComponentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCollectionComponentArrayOutput)
+}
+
+type FsuCollectionComponentOutput struct{ *pulumi.OutputState }
+
+func (FsuCollectionComponentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCollectionComponent)(nil)).Elem()
+}
+
+func (o FsuCollectionComponentOutput) ToFsuCollectionComponentOutput() FsuCollectionComponentOutput {
+	return o
+}
+
+func (o FsuCollectionComponentOutput) ToFsuCollectionComponentOutputWithContext(ctx context.Context) FsuCollectionComponentOutput {
+	return o
+}
+
+// Type of component in an Exadata software stack.
+func (o FsuCollectionComponentOutput) ComponentType() pulumi.StringOutput {
+	return o.ApplyT(func(v FsuCollectionComponent) string { return v.ComponentType }).(pulumi.StringOutput)
+}
+
+// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+func (o FsuCollectionComponentOutput) FleetDiscovery() FsuCollectionComponentFleetDiscoveryPtrOutput {
+	return o.ApplyT(func(v FsuCollectionComponent) *FsuCollectionComponentFleetDiscovery { return v.FleetDiscovery }).(FsuCollectionComponentFleetDiscoveryPtrOutput)
+}
+
+// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in an Exadata Fleet Update Collection. Major Versions of Exadata Software are demarcated by the underlying Oracle Linux OS version. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
+func (o FsuCollectionComponentOutput) SourceMajorVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v FsuCollectionComponent) string { return v.SourceMajorVersion }).(pulumi.StringOutput)
+}
+
+type FsuCollectionComponentArrayOutput struct{ *pulumi.OutputState }
+
+func (FsuCollectionComponentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuCollectionComponent)(nil)).Elem()
+}
+
+func (o FsuCollectionComponentArrayOutput) ToFsuCollectionComponentArrayOutput() FsuCollectionComponentArrayOutput {
+	return o
+}
+
+func (o FsuCollectionComponentArrayOutput) ToFsuCollectionComponentArrayOutputWithContext(ctx context.Context) FsuCollectionComponentArrayOutput {
+	return o
+}
+
+func (o FsuCollectionComponentArrayOutput) Index(i pulumi.IntInput) FsuCollectionComponentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FsuCollectionComponent {
+		return vs[0].([]FsuCollectionComponent)[vs[1].(int)]
+	}).(FsuCollectionComponentOutput)
+}
+
+type FsuCollectionComponentFleetDiscovery struct {
+	// Filters to perform the target discovery.
+	Filters []FsuCollectionComponentFleetDiscoveryFilter `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+	FsuDiscoveryId *string `pulumi:"fsuDiscoveryId"`
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+	Query *string `pulumi:"query"`
+	// Supported fleet discovery strategies.
+	Strategy string `pulumi:"strategy"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	Targets []string `pulumi:"targets"`
+}
+
+// FsuCollectionComponentFleetDiscoveryInput is an input type that accepts FsuCollectionComponentFleetDiscoveryArgs and FsuCollectionComponentFleetDiscoveryOutput values.
+// You can construct a concrete instance of `FsuCollectionComponentFleetDiscoveryInput` via:
+//
+//	FsuCollectionComponentFleetDiscoveryArgs{...}
+type FsuCollectionComponentFleetDiscoveryInput interface {
+	pulumi.Input
+
+	ToFsuCollectionComponentFleetDiscoveryOutput() FsuCollectionComponentFleetDiscoveryOutput
+	ToFsuCollectionComponentFleetDiscoveryOutputWithContext(context.Context) FsuCollectionComponentFleetDiscoveryOutput
+}
+
+type FsuCollectionComponentFleetDiscoveryArgs struct {
+	// Filters to perform the target discovery.
+	Filters FsuCollectionComponentFleetDiscoveryFilterArrayInput `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+	FsuDiscoveryId pulumi.StringPtrInput `pulumi:"fsuDiscoveryId"`
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+	Query pulumi.StringPtrInput `pulumi:"query"`
+	// Supported fleet discovery strategies.
+	Strategy pulumi.StringInput `pulumi:"strategy"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	Targets pulumi.StringArrayInput `pulumi:"targets"`
+}
+
+func (FsuCollectionComponentFleetDiscoveryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCollectionComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (i FsuCollectionComponentFleetDiscoveryArgs) ToFsuCollectionComponentFleetDiscoveryOutput() FsuCollectionComponentFleetDiscoveryOutput {
+	return i.ToFsuCollectionComponentFleetDiscoveryOutputWithContext(context.Background())
+}
+
+func (i FsuCollectionComponentFleetDiscoveryArgs) ToFsuCollectionComponentFleetDiscoveryOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCollectionComponentFleetDiscoveryOutput)
+}
+
+func (i FsuCollectionComponentFleetDiscoveryArgs) ToFsuCollectionComponentFleetDiscoveryPtrOutput() FsuCollectionComponentFleetDiscoveryPtrOutput {
+	return i.ToFsuCollectionComponentFleetDiscoveryPtrOutputWithContext(context.Background())
+}
+
+func (i FsuCollectionComponentFleetDiscoveryArgs) ToFsuCollectionComponentFleetDiscoveryPtrOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCollectionComponentFleetDiscoveryOutput).ToFsuCollectionComponentFleetDiscoveryPtrOutputWithContext(ctx)
+}
+
+// FsuCollectionComponentFleetDiscoveryPtrInput is an input type that accepts FsuCollectionComponentFleetDiscoveryArgs, FsuCollectionComponentFleetDiscoveryPtr and FsuCollectionComponentFleetDiscoveryPtrOutput values.
+// You can construct a concrete instance of `FsuCollectionComponentFleetDiscoveryPtrInput` via:
+//
+//	        FsuCollectionComponentFleetDiscoveryArgs{...}
+//
+//	or:
+//
+//	        nil
+type FsuCollectionComponentFleetDiscoveryPtrInput interface {
+	pulumi.Input
+
+	ToFsuCollectionComponentFleetDiscoveryPtrOutput() FsuCollectionComponentFleetDiscoveryPtrOutput
+	ToFsuCollectionComponentFleetDiscoveryPtrOutputWithContext(context.Context) FsuCollectionComponentFleetDiscoveryPtrOutput
+}
+
+type fsuCollectionComponentFleetDiscoveryPtrType FsuCollectionComponentFleetDiscoveryArgs
+
+func FsuCollectionComponentFleetDiscoveryPtr(v *FsuCollectionComponentFleetDiscoveryArgs) FsuCollectionComponentFleetDiscoveryPtrInput {
+	return (*fsuCollectionComponentFleetDiscoveryPtrType)(v)
+}
+
+func (*fsuCollectionComponentFleetDiscoveryPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FsuCollectionComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (i *fsuCollectionComponentFleetDiscoveryPtrType) ToFsuCollectionComponentFleetDiscoveryPtrOutput() FsuCollectionComponentFleetDiscoveryPtrOutput {
+	return i.ToFsuCollectionComponentFleetDiscoveryPtrOutputWithContext(context.Background())
+}
+
+func (i *fsuCollectionComponentFleetDiscoveryPtrType) ToFsuCollectionComponentFleetDiscoveryPtrOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCollectionComponentFleetDiscoveryPtrOutput)
+}
+
+type FsuCollectionComponentFleetDiscoveryOutput struct{ *pulumi.OutputState }
+
+func (FsuCollectionComponentFleetDiscoveryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCollectionComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (o FsuCollectionComponentFleetDiscoveryOutput) ToFsuCollectionComponentFleetDiscoveryOutput() FsuCollectionComponentFleetDiscoveryOutput {
+	return o
+}
+
+func (o FsuCollectionComponentFleetDiscoveryOutput) ToFsuCollectionComponentFleetDiscoveryOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryOutput {
+	return o
+}
+
+func (o FsuCollectionComponentFleetDiscoveryOutput) ToFsuCollectionComponentFleetDiscoveryPtrOutput() FsuCollectionComponentFleetDiscoveryPtrOutput {
+	return o.ToFsuCollectionComponentFleetDiscoveryPtrOutputWithContext(context.Background())
+}
+
+func (o FsuCollectionComponentFleetDiscoveryOutput) ToFsuCollectionComponentFleetDiscoveryPtrOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FsuCollectionComponentFleetDiscovery) *FsuCollectionComponentFleetDiscovery {
+		return &v
+	}).(FsuCollectionComponentFleetDiscoveryPtrOutput)
+}
+
+// Filters to perform the target discovery.
+func (o FsuCollectionComponentFleetDiscoveryOutput) Filters() FsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscovery) []FsuCollectionComponentFleetDiscoveryFilter {
+		return v.Filters
+	}).(FsuCollectionComponentFleetDiscoveryFilterArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+func (o FsuCollectionComponentFleetDiscoveryOutput) FsuDiscoveryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscovery) *string { return v.FsuDiscoveryId }).(pulumi.StringPtrOutput)
+}
+
+// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+func (o FsuCollectionComponentFleetDiscoveryOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscovery) *string { return v.Query }).(pulumi.StringPtrOutput)
+}
+
+// Supported fleet discovery strategies.
+func (o FsuCollectionComponentFleetDiscoveryOutput) Strategy() pulumi.StringOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscovery) string { return v.Strategy }).(pulumi.StringOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+func (o FsuCollectionComponentFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscovery) []string { return v.Targets }).(pulumi.StringArrayOutput)
+}
+
+type FsuCollectionComponentFleetDiscoveryPtrOutput struct{ *pulumi.OutputState }
+
+func (FsuCollectionComponentFleetDiscoveryPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FsuCollectionComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (o FsuCollectionComponentFleetDiscoveryPtrOutput) ToFsuCollectionComponentFleetDiscoveryPtrOutput() FsuCollectionComponentFleetDiscoveryPtrOutput {
+	return o
+}
+
+func (o FsuCollectionComponentFleetDiscoveryPtrOutput) ToFsuCollectionComponentFleetDiscoveryPtrOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryPtrOutput {
+	return o
+}
+
+func (o FsuCollectionComponentFleetDiscoveryPtrOutput) Elem() FsuCollectionComponentFleetDiscoveryOutput {
+	return o.ApplyT(func(v *FsuCollectionComponentFleetDiscovery) FsuCollectionComponentFleetDiscovery {
+		if v != nil {
+			return *v
+		}
+		var ret FsuCollectionComponentFleetDiscovery
+		return ret
+	}).(FsuCollectionComponentFleetDiscoveryOutput)
+}
+
+// Filters to perform the target discovery.
+func (o FsuCollectionComponentFleetDiscoveryPtrOutput) Filters() FsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return o.ApplyT(func(v *FsuCollectionComponentFleetDiscovery) []FsuCollectionComponentFleetDiscoveryFilter {
+		if v == nil {
+			return nil
+		}
+		return v.Filters
+	}).(FsuCollectionComponentFleetDiscoveryFilterArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+func (o FsuCollectionComponentFleetDiscoveryPtrOutput) FsuDiscoveryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FsuCollectionComponentFleetDiscovery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FsuDiscoveryId
+	}).(pulumi.StringPtrOutput)
+}
+
+// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+func (o FsuCollectionComponentFleetDiscoveryPtrOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FsuCollectionComponentFleetDiscovery) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Query
+	}).(pulumi.StringPtrOutput)
+}
+
+// Supported fleet discovery strategies.
+func (o FsuCollectionComponentFleetDiscoveryPtrOutput) Strategy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FsuCollectionComponentFleetDiscovery) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Strategy
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+func (o FsuCollectionComponentFleetDiscoveryPtrOutput) Targets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *FsuCollectionComponentFleetDiscovery) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Targets
+	}).(pulumi.StringArrayOutput)
+}
+
+type FsuCollectionComponentFleetDiscoveryFilter struct {
+	// Type of resource to match in the discovery.
+	EntityType *string `pulumi:"entityType"`
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases []string `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
+	Identifiers []string `pulumi:"identifiers"`
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
+	Mode *string `pulumi:"mode"`
+	// Type of join for each element in this filter.
+	Operator *string `pulumi:"operator"`
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Tags []FsuCollectionComponentFleetDiscoveryFilterTag `pulumi:"tags"`
+	// Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Type string `pulumi:"type"`
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Versions []string `pulumi:"versions"`
+}
+
+// FsuCollectionComponentFleetDiscoveryFilterInput is an input type that accepts FsuCollectionComponentFleetDiscoveryFilterArgs and FsuCollectionComponentFleetDiscoveryFilterOutput values.
+// You can construct a concrete instance of `FsuCollectionComponentFleetDiscoveryFilterInput` via:
+//
+//	FsuCollectionComponentFleetDiscoveryFilterArgs{...}
+type FsuCollectionComponentFleetDiscoveryFilterInput interface {
+	pulumi.Input
+
+	ToFsuCollectionComponentFleetDiscoveryFilterOutput() FsuCollectionComponentFleetDiscoveryFilterOutput
+	ToFsuCollectionComponentFleetDiscoveryFilterOutputWithContext(context.Context) FsuCollectionComponentFleetDiscoveryFilterOutput
+}
+
+type FsuCollectionComponentFleetDiscoveryFilterArgs struct {
+	// Type of resource to match in the discovery.
+	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases pulumi.StringArrayInput `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
+	Identifiers pulumi.StringArrayInput `pulumi:"identifiers"`
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
+	Mode pulumi.StringPtrInput `pulumi:"mode"`
+	// Type of join for each element in this filter.
+	Operator pulumi.StringPtrInput `pulumi:"operator"`
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Tags FsuCollectionComponentFleetDiscoveryFilterTagArrayInput `pulumi:"tags"`
+	// Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Type pulumi.StringInput `pulumi:"type"`
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Versions pulumi.StringArrayInput `pulumi:"versions"`
+}
+
+func (FsuCollectionComponentFleetDiscoveryFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCollectionComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (i FsuCollectionComponentFleetDiscoveryFilterArgs) ToFsuCollectionComponentFleetDiscoveryFilterOutput() FsuCollectionComponentFleetDiscoveryFilterOutput {
+	return i.ToFsuCollectionComponentFleetDiscoveryFilterOutputWithContext(context.Background())
+}
+
+func (i FsuCollectionComponentFleetDiscoveryFilterArgs) ToFsuCollectionComponentFleetDiscoveryFilterOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCollectionComponentFleetDiscoveryFilterOutput)
+}
+
+// FsuCollectionComponentFleetDiscoveryFilterArrayInput is an input type that accepts FsuCollectionComponentFleetDiscoveryFilterArray and FsuCollectionComponentFleetDiscoveryFilterArrayOutput values.
+// You can construct a concrete instance of `FsuCollectionComponentFleetDiscoveryFilterArrayInput` via:
+//
+//	FsuCollectionComponentFleetDiscoveryFilterArray{ FsuCollectionComponentFleetDiscoveryFilterArgs{...} }
+type FsuCollectionComponentFleetDiscoveryFilterArrayInput interface {
+	pulumi.Input
+
+	ToFsuCollectionComponentFleetDiscoveryFilterArrayOutput() FsuCollectionComponentFleetDiscoveryFilterArrayOutput
+	ToFsuCollectionComponentFleetDiscoveryFilterArrayOutputWithContext(context.Context) FsuCollectionComponentFleetDiscoveryFilterArrayOutput
+}
+
+type FsuCollectionComponentFleetDiscoveryFilterArray []FsuCollectionComponentFleetDiscoveryFilterInput
+
+func (FsuCollectionComponentFleetDiscoveryFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuCollectionComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (i FsuCollectionComponentFleetDiscoveryFilterArray) ToFsuCollectionComponentFleetDiscoveryFilterArrayOutput() FsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return i.ToFsuCollectionComponentFleetDiscoveryFilterArrayOutputWithContext(context.Background())
+}
+
+func (i FsuCollectionComponentFleetDiscoveryFilterArray) ToFsuCollectionComponentFleetDiscoveryFilterArrayOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCollectionComponentFleetDiscoveryFilterArrayOutput)
+}
+
+type FsuCollectionComponentFleetDiscoveryFilterOutput struct{ *pulumi.OutputState }
+
+func (FsuCollectionComponentFleetDiscoveryFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCollectionComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (o FsuCollectionComponentFleetDiscoveryFilterOutput) ToFsuCollectionComponentFleetDiscoveryFilterOutput() FsuCollectionComponentFleetDiscoveryFilterOutput {
+	return o
+}
+
+func (o FsuCollectionComponentFleetDiscoveryFilterOutput) ToFsuCollectionComponentFleetDiscoveryFilterOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryFilterOutput {
+	return o
+}
+
+// Type of resource to match in the discovery.
+func (o FsuCollectionComponentFleetDiscoveryFilterOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilter) *string { return v.EntityType }).(pulumi.StringPtrOutput)
+}
+
+// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o FsuCollectionComponentFleetDiscoveryFilterOutput) ExadataReleases() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilter) []string { return v.ExadataReleases }).(pulumi.StringArrayOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
+func (o FsuCollectionComponentFleetDiscoveryFilterOutput) Identifiers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilter) []string { return v.Identifiers }).(pulumi.StringArrayOutput)
+}
+
+// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
+func (o FsuCollectionComponentFleetDiscoveryFilterOutput) Mode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilter) *string { return v.Mode }).(pulumi.StringPtrOutput)
+}
+
+// Type of join for each element in this filter.
+func (o FsuCollectionComponentFleetDiscoveryFilterOutput) Operator() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilter) *string { return v.Operator }).(pulumi.StringPtrOutput)
+}
+
+// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o FsuCollectionComponentFleetDiscoveryFilterOutput) Tags() FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilter) []FsuCollectionComponentFleetDiscoveryFilterTag {
+		return v.Tags
+	}).(FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput)
+}
+
+// Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o FsuCollectionComponentFleetDiscoveryFilterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilter) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o FsuCollectionComponentFleetDiscoveryFilterOutput) Versions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilter) []string { return v.Versions }).(pulumi.StringArrayOutput)
+}
+
+type FsuCollectionComponentFleetDiscoveryFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (FsuCollectionComponentFleetDiscoveryFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuCollectionComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (o FsuCollectionComponentFleetDiscoveryFilterArrayOutput) ToFsuCollectionComponentFleetDiscoveryFilterArrayOutput() FsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return o
+}
+
+func (o FsuCollectionComponentFleetDiscoveryFilterArrayOutput) ToFsuCollectionComponentFleetDiscoveryFilterArrayOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return o
+}
+
+func (o FsuCollectionComponentFleetDiscoveryFilterArrayOutput) Index(i pulumi.IntInput) FsuCollectionComponentFleetDiscoveryFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FsuCollectionComponentFleetDiscoveryFilter {
+		return vs[0].([]FsuCollectionComponentFleetDiscoveryFilter)[vs[1].(int)]
+	}).(FsuCollectionComponentFleetDiscoveryFilterOutput)
+}
+
+type FsuCollectionComponentFleetDiscoveryFilterTag struct {
+	// Freeform tag key.
+	Key *string `pulumi:"key"`
+	// Defined tag namespace.
+	Namespace *string `pulumi:"namespace"`
+	// Freeform tag value.
+	Value *string `pulumi:"value"`
+}
+
+// FsuCollectionComponentFleetDiscoveryFilterTagInput is an input type that accepts FsuCollectionComponentFleetDiscoveryFilterTagArgs and FsuCollectionComponentFleetDiscoveryFilterTagOutput values.
+// You can construct a concrete instance of `FsuCollectionComponentFleetDiscoveryFilterTagInput` via:
+//
+//	FsuCollectionComponentFleetDiscoveryFilterTagArgs{...}
+type FsuCollectionComponentFleetDiscoveryFilterTagInput interface {
+	pulumi.Input
+
+	ToFsuCollectionComponentFleetDiscoveryFilterTagOutput() FsuCollectionComponentFleetDiscoveryFilterTagOutput
+	ToFsuCollectionComponentFleetDiscoveryFilterTagOutputWithContext(context.Context) FsuCollectionComponentFleetDiscoveryFilterTagOutput
+}
+
+type FsuCollectionComponentFleetDiscoveryFilterTagArgs struct {
+	// Freeform tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Defined tag namespace.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// Freeform tag value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (FsuCollectionComponentFleetDiscoveryFilterTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCollectionComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (i FsuCollectionComponentFleetDiscoveryFilterTagArgs) ToFsuCollectionComponentFleetDiscoveryFilterTagOutput() FsuCollectionComponentFleetDiscoveryFilterTagOutput {
+	return i.ToFsuCollectionComponentFleetDiscoveryFilterTagOutputWithContext(context.Background())
+}
+
+func (i FsuCollectionComponentFleetDiscoveryFilterTagArgs) ToFsuCollectionComponentFleetDiscoveryFilterTagOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryFilterTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCollectionComponentFleetDiscoveryFilterTagOutput)
+}
+
+// FsuCollectionComponentFleetDiscoveryFilterTagArrayInput is an input type that accepts FsuCollectionComponentFleetDiscoveryFilterTagArray and FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput values.
+// You can construct a concrete instance of `FsuCollectionComponentFleetDiscoveryFilterTagArrayInput` via:
+//
+//	FsuCollectionComponentFleetDiscoveryFilterTagArray{ FsuCollectionComponentFleetDiscoveryFilterTagArgs{...} }
+type FsuCollectionComponentFleetDiscoveryFilterTagArrayInput interface {
+	pulumi.Input
+
+	ToFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput() FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput
+	ToFsuCollectionComponentFleetDiscoveryFilterTagArrayOutputWithContext(context.Context) FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput
+}
+
+type FsuCollectionComponentFleetDiscoveryFilterTagArray []FsuCollectionComponentFleetDiscoveryFilterTagInput
+
+func (FsuCollectionComponentFleetDiscoveryFilterTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuCollectionComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (i FsuCollectionComponentFleetDiscoveryFilterTagArray) ToFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput() FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput {
+	return i.ToFsuCollectionComponentFleetDiscoveryFilterTagArrayOutputWithContext(context.Background())
+}
+
+func (i FsuCollectionComponentFleetDiscoveryFilterTagArray) ToFsuCollectionComponentFleetDiscoveryFilterTagArrayOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput)
+}
+
+type FsuCollectionComponentFleetDiscoveryFilterTagOutput struct{ *pulumi.OutputState }
+
+func (FsuCollectionComponentFleetDiscoveryFilterTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCollectionComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (o FsuCollectionComponentFleetDiscoveryFilterTagOutput) ToFsuCollectionComponentFleetDiscoveryFilterTagOutput() FsuCollectionComponentFleetDiscoveryFilterTagOutput {
+	return o
+}
+
+func (o FsuCollectionComponentFleetDiscoveryFilterTagOutput) ToFsuCollectionComponentFleetDiscoveryFilterTagOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryFilterTagOutput {
+	return o
+}
+
+// Freeform tag key.
+func (o FsuCollectionComponentFleetDiscoveryFilterTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilterTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Defined tag namespace.
+func (o FsuCollectionComponentFleetDiscoveryFilterTagOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilterTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// Freeform tag value.
+func (o FsuCollectionComponentFleetDiscoveryFilterTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCollectionComponentFleetDiscoveryFilterTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput struct{ *pulumi.OutputState }
+
+func (FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuCollectionComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (o FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput) ToFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput() FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput {
+	return o
+}
+
+func (o FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput) ToFsuCollectionComponentFleetDiscoveryFilterTagArrayOutputWithContext(ctx context.Context) FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput {
+	return o
+}
+
+func (o FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput) Index(i pulumi.IntInput) FsuCollectionComponentFleetDiscoveryFilterTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FsuCollectionComponentFleetDiscoveryFilterTag {
+		return vs[0].([]FsuCollectionComponentFleetDiscoveryFilterTag)[vs[1].(int)]
+	}).(FsuCollectionComponentFleetDiscoveryFilterTagOutput)
+}
+
 type FsuCollectionFleetDiscovery struct {
 	// Filters to perform the target discovery.
 	Filters []FsuCollectionFleetDiscoveryFilter `pulumi:"filters"`
-	// OCIDs of Fleet Software Update Discovery.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
 	FsuDiscoveryId *string `pulumi:"fsuDiscoveryId"`
-	// Oracle Cloud Infrastructure Search Service query string.
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
 	Query *string `pulumi:"query"`
-	// Possible fleet discovery strategies.
+	// Supported fleet discovery strategies.
 	Strategy string `pulumi:"strategy"`
-	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 	Targets []string `pulumi:"targets"`
 }
 
@@ -146,13 +753,13 @@ type FsuCollectionFleetDiscoveryInput interface {
 type FsuCollectionFleetDiscoveryArgs struct {
 	// Filters to perform the target discovery.
 	Filters FsuCollectionFleetDiscoveryFilterArrayInput `pulumi:"filters"`
-	// OCIDs of Fleet Software Update Discovery.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
 	FsuDiscoveryId pulumi.StringPtrInput `pulumi:"fsuDiscoveryId"`
-	// Oracle Cloud Infrastructure Search Service query string.
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
 	Query pulumi.StringPtrInput `pulumi:"query"`
-	// Possible fleet discovery strategies.
+	// Supported fleet discovery strategies.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
-	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 }
 
@@ -238,22 +845,22 @@ func (o FsuCollectionFleetDiscoveryOutput) Filters() FsuCollectionFleetDiscovery
 	return o.ApplyT(func(v FsuCollectionFleetDiscovery) []FsuCollectionFleetDiscoveryFilter { return v.Filters }).(FsuCollectionFleetDiscoveryFilterArrayOutput)
 }
 
-// OCIDs of Fleet Software Update Discovery.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
 func (o FsuCollectionFleetDiscoveryOutput) FsuDiscoveryId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscovery) *string { return v.FsuDiscoveryId }).(pulumi.StringPtrOutput)
 }
 
-// Oracle Cloud Infrastructure Search Service query string.
+// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
 func (o FsuCollectionFleetDiscoveryOutput) Query() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscovery) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
-// Possible fleet discovery strategies.
+// Supported fleet discovery strategies.
 func (o FsuCollectionFleetDiscoveryOutput) Strategy() pulumi.StringOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscovery) string { return v.Strategy }).(pulumi.StringOutput)
 }
 
-// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 func (o FsuCollectionFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscovery) []string { return v.Targets }).(pulumi.StringArrayOutput)
 }
@@ -292,7 +899,7 @@ func (o FsuCollectionFleetDiscoveryPtrOutput) Filters() FsuCollectionFleetDiscov
 	}).(FsuCollectionFleetDiscoveryFilterArrayOutput)
 }
 
-// OCIDs of Fleet Software Update Discovery.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
 func (o FsuCollectionFleetDiscoveryPtrOutput) FsuDiscoveryId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FsuCollectionFleetDiscovery) *string {
 		if v == nil {
@@ -302,7 +909,7 @@ func (o FsuCollectionFleetDiscoveryPtrOutput) FsuDiscoveryId() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// Oracle Cloud Infrastructure Search Service query string.
+// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
 func (o FsuCollectionFleetDiscoveryPtrOutput) Query() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FsuCollectionFleetDiscovery) *string {
 		if v == nil {
@@ -312,7 +919,7 @@ func (o FsuCollectionFleetDiscoveryPtrOutput) Query() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Possible fleet discovery strategies.
+// Supported fleet discovery strategies.
 func (o FsuCollectionFleetDiscoveryPtrOutput) Strategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FsuCollectionFleetDiscovery) *string {
 		if v == nil {
@@ -322,7 +929,7 @@ func (o FsuCollectionFleetDiscoveryPtrOutput) Strategy() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 func (o FsuCollectionFleetDiscoveryPtrOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FsuCollectionFleetDiscovery) []string {
 		if v == nil {
@@ -335,19 +942,21 @@ func (o FsuCollectionFleetDiscoveryPtrOutput) Targets() pulumi.StringArrayOutput
 type FsuCollectionFleetDiscoveryFilter struct {
 	// Type of resource to match in the discovery.
 	EntityType *string `pulumi:"entityType"`
-	// Related resource Ids to include in the discovery.  All must match the specified entityType.
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases []string `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 	Identifiers []string `pulumi:"identifiers"`
-	// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
 	Mode *string `pulumi:"mode"`
 	// List of Database unique names to include in the discovery.
 	Names []string `pulumi:"names"`
 	// Type of join for each element in this filter.
 	Operator *string `pulumi:"operator"`
-	// Freeform tags to include in the discovery.
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Tags []FsuCollectionFleetDiscoveryFilterTag `pulumi:"tags"`
-	// Type of filters supported for Database targets discovery.
+	// Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Type string `pulumi:"type"`
-	// List of Versions strings to include in the discovery.
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Versions []string `pulumi:"versions"`
 }
 
@@ -365,19 +974,21 @@ type FsuCollectionFleetDiscoveryFilterInput interface {
 type FsuCollectionFleetDiscoveryFilterArgs struct {
 	// Type of resource to match in the discovery.
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
-	// Related resource Ids to include in the discovery.  All must match the specified entityType.
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases pulumi.StringArrayInput `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 	Identifiers pulumi.StringArrayInput `pulumi:"identifiers"`
-	// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
 	Mode pulumi.StringPtrInput `pulumi:"mode"`
 	// List of Database unique names to include in the discovery.
 	Names pulumi.StringArrayInput `pulumi:"names"`
 	// Type of join for each element in this filter.
 	Operator pulumi.StringPtrInput `pulumi:"operator"`
-	// Freeform tags to include in the discovery.
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Tags FsuCollectionFleetDiscoveryFilterTagArrayInput `pulumi:"tags"`
-	// Type of filters supported for Database targets discovery.
+	// Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Type pulumi.StringInput `pulumi:"type"`
-	// List of Versions strings to include in the discovery.
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Versions pulumi.StringArrayInput `pulumi:"versions"`
 }
 
@@ -437,12 +1048,17 @@ func (o FsuCollectionFleetDiscoveryFilterOutput) EntityType() pulumi.StringPtrOu
 	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilter) *string { return v.EntityType }).(pulumi.StringPtrOutput)
 }
 
-// Related resource Ids to include in the discovery.  All must match the specified entityType.
+// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o FsuCollectionFleetDiscoveryFilterOutput) ExadataReleases() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilter) []string { return v.ExadataReleases }).(pulumi.StringArrayOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 func (o FsuCollectionFleetDiscoveryFilterOutput) Identifiers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilter) []string { return v.Identifiers }).(pulumi.StringArrayOutput)
 }
 
-// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
 func (o FsuCollectionFleetDiscoveryFilterOutput) Mode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilter) *string { return v.Mode }).(pulumi.StringPtrOutput)
 }
@@ -457,17 +1073,17 @@ func (o FsuCollectionFleetDiscoveryFilterOutput) Operator() pulumi.StringPtrOutp
 	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilter) *string { return v.Operator }).(pulumi.StringPtrOutput)
 }
 
-// Freeform tags to include in the discovery.
+// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 func (o FsuCollectionFleetDiscoveryFilterOutput) Tags() FsuCollectionFleetDiscoveryFilterTagArrayOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilter) []FsuCollectionFleetDiscoveryFilterTag { return v.Tags }).(FsuCollectionFleetDiscoveryFilterTagArrayOutput)
 }
 
-// Type of filters supported for Database targets discovery.
+// Filters supported for searching Exadata VM Cluster targets for a 'GUEST_OS' collection.
 func (o FsuCollectionFleetDiscoveryFilterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilter) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// List of Versions strings to include in the discovery.
+// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 func (o FsuCollectionFleetDiscoveryFilterOutput) Versions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilter) []string { return v.Versions }).(pulumi.StringArrayOutput)
 }
@@ -494,11 +1110,11 @@ func (o FsuCollectionFleetDiscoveryFilterArrayOutput) Index(i pulumi.IntInput) F
 
 type FsuCollectionFleetDiscoveryFilterTag struct {
 	// Freeform tag key.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// Defined tag namespace.
 	Namespace *string `pulumi:"namespace"`
 	// Freeform tag value.
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // FsuCollectionFleetDiscoveryFilterTagInput is an input type that accepts FsuCollectionFleetDiscoveryFilterTagArgs and FsuCollectionFleetDiscoveryFilterTagOutput values.
@@ -514,11 +1130,11 @@ type FsuCollectionFleetDiscoveryFilterTagInput interface {
 
 type FsuCollectionFleetDiscoveryFilterTagArgs struct {
 	// Freeform tag key.
-	Key pulumi.StringInput `pulumi:"key"`
+	Key pulumi.StringPtrInput `pulumi:"key"`
 	// Defined tag namespace.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Freeform tag value.
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (FsuCollectionFleetDiscoveryFilterTagArgs) ElementType() reflect.Type {
@@ -573,8 +1189,8 @@ func (o FsuCollectionFleetDiscoveryFilterTagOutput) ToFsuCollectionFleetDiscover
 }
 
 // Freeform tag key.
-func (o FsuCollectionFleetDiscoveryFilterTagOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilterTag) string { return v.Key }).(pulumi.StringOutput)
+func (o FsuCollectionFleetDiscoveryFilterTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilterTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // Defined tag namespace.
@@ -583,8 +1199,8 @@ func (o FsuCollectionFleetDiscoveryFilterTagOutput) Namespace() pulumi.StringPtr
 }
 
 // Freeform tag value.
-func (o FsuCollectionFleetDiscoveryFilterTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilterTag) string { return v.Value }).(pulumi.StringOutput)
+func (o FsuCollectionFleetDiscoveryFilterTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCollectionFleetDiscoveryFilterTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
 type FsuCollectionFleetDiscoveryFilterTagArrayOutput struct{ *pulumi.OutputState }
@@ -1095,15 +1711,17 @@ func (o FsuCycleDiagnosticsCollectionPtrOutput) LogCollectionMode() pulumi.Strin
 }
 
 type FsuCycleGoalVersionDetails struct {
+	// (Updatable) Details of goal versions for components in an Exadata software stack.
+	Components []FsuCycleGoalVersionDetailsComponent `pulumi:"components"`
 	// (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy *string `pulumi:"homePolicy"`
 	// (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix *string `pulumi:"newHomePrefix"`
-	// (Updatable) Target database software image OCID.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
 	SoftwareImageId *string `pulumi:"softwareImageId"`
-	// (Updatable) Type of goal target version specified
+	// (Updatable) Type of goal version specified
 	Type string `pulumi:"type"`
-	// (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+	// (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 	Version *string `pulumi:"version"`
 }
 
@@ -1119,15 +1737,17 @@ type FsuCycleGoalVersionDetailsInput interface {
 }
 
 type FsuCycleGoalVersionDetailsArgs struct {
+	// (Updatable) Details of goal versions for components in an Exadata software stack.
+	Components FsuCycleGoalVersionDetailsComponentArrayInput `pulumi:"components"`
 	// (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy pulumi.StringPtrInput `pulumi:"homePolicy"`
 	// (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix pulumi.StringPtrInput `pulumi:"newHomePrefix"`
-	// (Updatable) Target database software image OCID.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
 	SoftwareImageId pulumi.StringPtrInput `pulumi:"softwareImageId"`
-	// (Updatable) Type of goal target version specified
+	// (Updatable) Type of goal version specified
 	Type pulumi.StringInput `pulumi:"type"`
-	// (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+	// (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
@@ -1208,6 +1828,11 @@ func (o FsuCycleGoalVersionDetailsOutput) ToFsuCycleGoalVersionDetailsPtrOutputW
 	}).(FsuCycleGoalVersionDetailsPtrOutput)
 }
 
+// (Updatable) Details of goal versions for components in an Exadata software stack.
+func (o FsuCycleGoalVersionDetailsOutput) Components() FsuCycleGoalVersionDetailsComponentArrayOutput {
+	return o.ApplyT(func(v FsuCycleGoalVersionDetails) []FsuCycleGoalVersionDetailsComponent { return v.Components }).(FsuCycleGoalVersionDetailsComponentArrayOutput)
+}
+
 // (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 func (o FsuCycleGoalVersionDetailsOutput) HomePolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCycleGoalVersionDetails) *string { return v.HomePolicy }).(pulumi.StringPtrOutput)
@@ -1218,17 +1843,17 @@ func (o FsuCycleGoalVersionDetailsOutput) NewHomePrefix() pulumi.StringPtrOutput
 	return o.ApplyT(func(v FsuCycleGoalVersionDetails) *string { return v.NewHomePrefix }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Target database software image OCID.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
 func (o FsuCycleGoalVersionDetailsOutput) SoftwareImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCycleGoalVersionDetails) *string { return v.SoftwareImageId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Type of goal target version specified
+// (Updatable) Type of goal version specified
 func (o FsuCycleGoalVersionDetailsOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v FsuCycleGoalVersionDetails) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+// (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 func (o FsuCycleGoalVersionDetailsOutput) Version() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FsuCycleGoalVersionDetails) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
@@ -1257,6 +1882,16 @@ func (o FsuCycleGoalVersionDetailsPtrOutput) Elem() FsuCycleGoalVersionDetailsOu
 	}).(FsuCycleGoalVersionDetailsOutput)
 }
 
+// (Updatable) Details of goal versions for components in an Exadata software stack.
+func (o FsuCycleGoalVersionDetailsPtrOutput) Components() FsuCycleGoalVersionDetailsComponentArrayOutput {
+	return o.ApplyT(func(v *FsuCycleGoalVersionDetails) []FsuCycleGoalVersionDetailsComponent {
+		if v == nil {
+			return nil
+		}
+		return v.Components
+	}).(FsuCycleGoalVersionDetailsComponentArrayOutput)
+}
+
 // (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 func (o FsuCycleGoalVersionDetailsPtrOutput) HomePolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FsuCycleGoalVersionDetails) *string {
@@ -1277,7 +1912,7 @@ func (o FsuCycleGoalVersionDetailsPtrOutput) NewHomePrefix() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Target database software image OCID.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
 func (o FsuCycleGoalVersionDetailsPtrOutput) SoftwareImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FsuCycleGoalVersionDetails) *string {
 		if v == nil {
@@ -1287,7 +1922,7 @@ func (o FsuCycleGoalVersionDetailsPtrOutput) SoftwareImageId() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Type of goal target version specified
+// (Updatable) Type of goal version specified
 func (o FsuCycleGoalVersionDetailsPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FsuCycleGoalVersionDetails) *string {
 		if v == nil {
@@ -1297,7 +1932,7 @@ func (o FsuCycleGoalVersionDetailsPtrOutput) Type() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+// (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 func (o FsuCycleGoalVersionDetailsPtrOutput) Version() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FsuCycleGoalVersionDetails) *string {
 		if v == nil {
@@ -1305,6 +1940,202 @@ func (o FsuCycleGoalVersionDetailsPtrOutput) Version() pulumi.StringPtrOutput {
 		}
 		return v.Version
 	}).(pulumi.StringPtrOutput)
+}
+
+type FsuCycleGoalVersionDetailsComponent struct {
+	// (Updatable) Type of component in an Exadata software stack.
+	ComponentType string `pulumi:"componentType"`
+	// (Updatable) Details of goal 'GUEST_OS' software version.
+	GoalVersionDetails FsuCycleGoalVersionDetailsComponentGoalVersionDetails `pulumi:"goalVersionDetails"`
+	// (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+	HomePolicy *string `pulumi:"homePolicy"`
+	// (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+	NewHomePrefix *string `pulumi:"newHomePrefix"`
+}
+
+// FsuCycleGoalVersionDetailsComponentInput is an input type that accepts FsuCycleGoalVersionDetailsComponentArgs and FsuCycleGoalVersionDetailsComponentOutput values.
+// You can construct a concrete instance of `FsuCycleGoalVersionDetailsComponentInput` via:
+//
+//	FsuCycleGoalVersionDetailsComponentArgs{...}
+type FsuCycleGoalVersionDetailsComponentInput interface {
+	pulumi.Input
+
+	ToFsuCycleGoalVersionDetailsComponentOutput() FsuCycleGoalVersionDetailsComponentOutput
+	ToFsuCycleGoalVersionDetailsComponentOutputWithContext(context.Context) FsuCycleGoalVersionDetailsComponentOutput
+}
+
+type FsuCycleGoalVersionDetailsComponentArgs struct {
+	// (Updatable) Type of component in an Exadata software stack.
+	ComponentType pulumi.StringInput `pulumi:"componentType"`
+	// (Updatable) Details of goal 'GUEST_OS' software version.
+	GoalVersionDetails FsuCycleGoalVersionDetailsComponentGoalVersionDetailsInput `pulumi:"goalVersionDetails"`
+	// (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+	HomePolicy pulumi.StringPtrInput `pulumi:"homePolicy"`
+	// (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+	NewHomePrefix pulumi.StringPtrInput `pulumi:"newHomePrefix"`
+}
+
+func (FsuCycleGoalVersionDetailsComponentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCycleGoalVersionDetailsComponent)(nil)).Elem()
+}
+
+func (i FsuCycleGoalVersionDetailsComponentArgs) ToFsuCycleGoalVersionDetailsComponentOutput() FsuCycleGoalVersionDetailsComponentOutput {
+	return i.ToFsuCycleGoalVersionDetailsComponentOutputWithContext(context.Background())
+}
+
+func (i FsuCycleGoalVersionDetailsComponentArgs) ToFsuCycleGoalVersionDetailsComponentOutputWithContext(ctx context.Context) FsuCycleGoalVersionDetailsComponentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCycleGoalVersionDetailsComponentOutput)
+}
+
+// FsuCycleGoalVersionDetailsComponentArrayInput is an input type that accepts FsuCycleGoalVersionDetailsComponentArray and FsuCycleGoalVersionDetailsComponentArrayOutput values.
+// You can construct a concrete instance of `FsuCycleGoalVersionDetailsComponentArrayInput` via:
+//
+//	FsuCycleGoalVersionDetailsComponentArray{ FsuCycleGoalVersionDetailsComponentArgs{...} }
+type FsuCycleGoalVersionDetailsComponentArrayInput interface {
+	pulumi.Input
+
+	ToFsuCycleGoalVersionDetailsComponentArrayOutput() FsuCycleGoalVersionDetailsComponentArrayOutput
+	ToFsuCycleGoalVersionDetailsComponentArrayOutputWithContext(context.Context) FsuCycleGoalVersionDetailsComponentArrayOutput
+}
+
+type FsuCycleGoalVersionDetailsComponentArray []FsuCycleGoalVersionDetailsComponentInput
+
+func (FsuCycleGoalVersionDetailsComponentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuCycleGoalVersionDetailsComponent)(nil)).Elem()
+}
+
+func (i FsuCycleGoalVersionDetailsComponentArray) ToFsuCycleGoalVersionDetailsComponentArrayOutput() FsuCycleGoalVersionDetailsComponentArrayOutput {
+	return i.ToFsuCycleGoalVersionDetailsComponentArrayOutputWithContext(context.Background())
+}
+
+func (i FsuCycleGoalVersionDetailsComponentArray) ToFsuCycleGoalVersionDetailsComponentArrayOutputWithContext(ctx context.Context) FsuCycleGoalVersionDetailsComponentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCycleGoalVersionDetailsComponentArrayOutput)
+}
+
+type FsuCycleGoalVersionDetailsComponentOutput struct{ *pulumi.OutputState }
+
+func (FsuCycleGoalVersionDetailsComponentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCycleGoalVersionDetailsComponent)(nil)).Elem()
+}
+
+func (o FsuCycleGoalVersionDetailsComponentOutput) ToFsuCycleGoalVersionDetailsComponentOutput() FsuCycleGoalVersionDetailsComponentOutput {
+	return o
+}
+
+func (o FsuCycleGoalVersionDetailsComponentOutput) ToFsuCycleGoalVersionDetailsComponentOutputWithContext(ctx context.Context) FsuCycleGoalVersionDetailsComponentOutput {
+	return o
+}
+
+// (Updatable) Type of component in an Exadata software stack.
+func (o FsuCycleGoalVersionDetailsComponentOutput) ComponentType() pulumi.StringOutput {
+	return o.ApplyT(func(v FsuCycleGoalVersionDetailsComponent) string { return v.ComponentType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Details of goal 'GUEST_OS' software version.
+func (o FsuCycleGoalVersionDetailsComponentOutput) GoalVersionDetails() FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput {
+	return o.ApplyT(func(v FsuCycleGoalVersionDetailsComponent) FsuCycleGoalVersionDetailsComponentGoalVersionDetails {
+		return v.GoalVersionDetails
+	}).(FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput)
+}
+
+// (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+func (o FsuCycleGoalVersionDetailsComponentOutput) HomePolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCycleGoalVersionDetailsComponent) *string { return v.HomePolicy }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+func (o FsuCycleGoalVersionDetailsComponentOutput) NewHomePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCycleGoalVersionDetailsComponent) *string { return v.NewHomePrefix }).(pulumi.StringPtrOutput)
+}
+
+type FsuCycleGoalVersionDetailsComponentArrayOutput struct{ *pulumi.OutputState }
+
+func (FsuCycleGoalVersionDetailsComponentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FsuCycleGoalVersionDetailsComponent)(nil)).Elem()
+}
+
+func (o FsuCycleGoalVersionDetailsComponentArrayOutput) ToFsuCycleGoalVersionDetailsComponentArrayOutput() FsuCycleGoalVersionDetailsComponentArrayOutput {
+	return o
+}
+
+func (o FsuCycleGoalVersionDetailsComponentArrayOutput) ToFsuCycleGoalVersionDetailsComponentArrayOutputWithContext(ctx context.Context) FsuCycleGoalVersionDetailsComponentArrayOutput {
+	return o
+}
+
+func (o FsuCycleGoalVersionDetailsComponentArrayOutput) Index(i pulumi.IntInput) FsuCycleGoalVersionDetailsComponentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FsuCycleGoalVersionDetailsComponent {
+		return vs[0].([]FsuCycleGoalVersionDetailsComponent)[vs[1].(int)]
+	}).(FsuCycleGoalVersionDetailsComponentOutput)
+}
+
+type FsuCycleGoalVersionDetailsComponentGoalVersionDetails struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
+	GoalSoftwareImageId string `pulumi:"goalSoftwareImageId"`
+	// (Updatable) Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
+	GoalType string `pulumi:"goalType"`
+	// (Updatable) Goal version string matching an Oracle released 'GUEST_OS' software image.
+	GoalVersion *string `pulumi:"goalVersion"`
+}
+
+// FsuCycleGoalVersionDetailsComponentGoalVersionDetailsInput is an input type that accepts FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs and FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput values.
+// You can construct a concrete instance of `FsuCycleGoalVersionDetailsComponentGoalVersionDetailsInput` via:
+//
+//	FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs{...}
+type FsuCycleGoalVersionDetailsComponentGoalVersionDetailsInput interface {
+	pulumi.Input
+
+	ToFsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput() FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput
+	ToFsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutputWithContext(context.Context) FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput
+}
+
+type FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
+	GoalSoftwareImageId pulumi.StringInput `pulumi:"goalSoftwareImageId"`
+	// (Updatable) Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
+	GoalType pulumi.StringInput `pulumi:"goalType"`
+	// (Updatable) Goal version string matching an Oracle released 'GUEST_OS' software image.
+	GoalVersion pulumi.StringPtrInput `pulumi:"goalVersion"`
+}
+
+func (FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCycleGoalVersionDetailsComponentGoalVersionDetails)(nil)).Elem()
+}
+
+func (i FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs) ToFsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput() FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput {
+	return i.ToFsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutputWithContext(context.Background())
+}
+
+func (i FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs) ToFsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutputWithContext(ctx context.Context) FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput)
+}
+
+type FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput struct{ *pulumi.OutputState }
+
+func (FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FsuCycleGoalVersionDetailsComponentGoalVersionDetails)(nil)).Elem()
+}
+
+func (o FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput) ToFsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput() FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput {
+	return o
+}
+
+func (o FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput) ToFsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutputWithContext(ctx context.Context) FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput {
+	return o
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
+func (o FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput) GoalSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v FsuCycleGoalVersionDetailsComponentGoalVersionDetails) string { return v.GoalSoftwareImageId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
+func (o FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput) GoalType() pulumi.StringOutput {
+	return o.ApplyT(func(v FsuCycleGoalVersionDetailsComponentGoalVersionDetails) string { return v.GoalType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Goal version string matching an Oracle released 'GUEST_OS' software image.
+func (o FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput) GoalVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FsuCycleGoalVersionDetailsComponentGoalVersionDetails) *string { return v.GoalVersion }).(pulumi.StringPtrOutput)
 }
 
 type FsuCycleNextActionToExecute struct {
@@ -1572,13 +2403,19 @@ func (o FsuCycleStageActionSchedulePtrOutput) Type() pulumi.StringPtrOutput {
 type FsuCycleUpgradeDetails struct {
 	// (Updatable) Type of Exadata Fleet Update collection being upgraded.
 	CollectionType string `pulumi:"collectionType"`
+	// (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+	IsIgnorePostUpgradeErrors *bool `pulumi:"isIgnorePostUpgradeErrors"`
+	// (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+	IsIgnorePrerequisites *bool `pulumi:"isIgnorePrerequisites"`
 	// (Updatable) Enables or disables the recompilation of invalid objects.
 	IsRecompileInvalidObjects *bool `pulumi:"isRecompileInvalidObjects"`
 	// (Updatable) Enables or disables time zone upgrade.
+	IsTimeZoneUpgrade *bool `pulumi:"isTimeZoneUpgrade"`
+	// (Updatable) Service drain timeout specified in seconds.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsTimeZoneUpgrade *bool `pulumi:"isTimeZoneUpgrade"`
+	MaxDrainTimeoutInSeconds *int `pulumi:"maxDrainTimeoutInSeconds"`
 }
 
 // FsuCycleUpgradeDetailsInput is an input type that accepts FsuCycleUpgradeDetailsArgs and FsuCycleUpgradeDetailsOutput values.
@@ -1595,13 +2432,19 @@ type FsuCycleUpgradeDetailsInput interface {
 type FsuCycleUpgradeDetailsArgs struct {
 	// (Updatable) Type of Exadata Fleet Update collection being upgraded.
 	CollectionType pulumi.StringInput `pulumi:"collectionType"`
+	// (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+	IsIgnorePostUpgradeErrors pulumi.BoolPtrInput `pulumi:"isIgnorePostUpgradeErrors"`
+	// (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+	IsIgnorePrerequisites pulumi.BoolPtrInput `pulumi:"isIgnorePrerequisites"`
 	// (Updatable) Enables or disables the recompilation of invalid objects.
 	IsRecompileInvalidObjects pulumi.BoolPtrInput `pulumi:"isRecompileInvalidObjects"`
 	// (Updatable) Enables or disables time zone upgrade.
+	IsTimeZoneUpgrade pulumi.BoolPtrInput `pulumi:"isTimeZoneUpgrade"`
+	// (Updatable) Service drain timeout specified in seconds.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsTimeZoneUpgrade pulumi.BoolPtrInput `pulumi:"isTimeZoneUpgrade"`
+	MaxDrainTimeoutInSeconds pulumi.IntPtrInput `pulumi:"maxDrainTimeoutInSeconds"`
 }
 
 func (FsuCycleUpgradeDetailsArgs) ElementType() reflect.Type {
@@ -1686,17 +2529,32 @@ func (o FsuCycleUpgradeDetailsOutput) CollectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v FsuCycleUpgradeDetails) string { return v.CollectionType }).(pulumi.StringOutput)
 }
 
+// (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+func (o FsuCycleUpgradeDetailsOutput) IsIgnorePostUpgradeErrors() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FsuCycleUpgradeDetails) *bool { return v.IsIgnorePostUpgradeErrors }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+func (o FsuCycleUpgradeDetailsOutput) IsIgnorePrerequisites() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FsuCycleUpgradeDetails) *bool { return v.IsIgnorePrerequisites }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Enables or disables the recompilation of invalid objects.
 func (o FsuCycleUpgradeDetailsOutput) IsRecompileInvalidObjects() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FsuCycleUpgradeDetails) *bool { return v.IsRecompileInvalidObjects }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Enables or disables time zone upgrade.
+func (o FsuCycleUpgradeDetailsOutput) IsTimeZoneUpgrade() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FsuCycleUpgradeDetails) *bool { return v.IsTimeZoneUpgrade }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Service drain timeout specified in seconds.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o FsuCycleUpgradeDetailsOutput) IsTimeZoneUpgrade() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v FsuCycleUpgradeDetails) *bool { return v.IsTimeZoneUpgrade }).(pulumi.BoolPtrOutput)
+func (o FsuCycleUpgradeDetailsOutput) MaxDrainTimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FsuCycleUpgradeDetails) *int { return v.MaxDrainTimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 type FsuCycleUpgradeDetailsPtrOutput struct{ *pulumi.OutputState }
@@ -1733,6 +2591,26 @@ func (o FsuCycleUpgradeDetailsPtrOutput) CollectionType() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+func (o FsuCycleUpgradeDetailsPtrOutput) IsIgnorePostUpgradeErrors() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FsuCycleUpgradeDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsIgnorePostUpgradeErrors
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+func (o FsuCycleUpgradeDetailsPtrOutput) IsIgnorePrerequisites() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FsuCycleUpgradeDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsIgnorePrerequisites
+	}).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) Enables or disables the recompilation of invalid objects.
 func (o FsuCycleUpgradeDetailsPtrOutput) IsRecompileInvalidObjects() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *FsuCycleUpgradeDetails) *bool {
@@ -1744,9 +2622,6 @@ func (o FsuCycleUpgradeDetailsPtrOutput) IsRecompileInvalidObjects() pulumi.Bool
 }
 
 // (Updatable) Enables or disables time zone upgrade.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FsuCycleUpgradeDetailsPtrOutput) IsTimeZoneUpgrade() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *FsuCycleUpgradeDetails) *bool {
 		if v == nil {
@@ -1756,10 +2631,23 @@ func (o FsuCycleUpgradeDetailsPtrOutput) IsTimeZoneUpgrade() pulumi.BoolPtrOutpu
 	}).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) Service drain timeout specified in seconds.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o FsuCycleUpgradeDetailsPtrOutput) MaxDrainTimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FsuCycleUpgradeDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxDrainTimeoutInSeconds
+	}).(pulumi.IntPtrOutput)
+}
+
 type GetFsuCollectionActiveFsuCycle struct {
-	// Exadata Fleet Update Collection resource display name.
+	// The user-friendly name for the Exadata Fleet Update Collection.
 	DisplayName string `pulumi:"displayName"`
-	// OCID identifier for the Exadata Fleet Update Collection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 	Id string `pulumi:"id"`
 }
 
@@ -1775,9 +2663,9 @@ type GetFsuCollectionActiveFsuCycleInput interface {
 }
 
 type GetFsuCollectionActiveFsuCycleArgs struct {
-	// Exadata Fleet Update Collection resource display name.
+	// The user-friendly name for the Exadata Fleet Update Collection.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// OCID identifier for the Exadata Fleet Update Collection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
@@ -1832,12 +2720,12 @@ func (o GetFsuCollectionActiveFsuCycleOutput) ToGetFsuCollectionActiveFsuCycleOu
 	return o
 }
 
-// Exadata Fleet Update Collection resource display name.
+// The user-friendly name for the Exadata Fleet Update Collection.
 func (o GetFsuCollectionActiveFsuCycleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionActiveFsuCycle) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// OCID identifier for the Exadata Fleet Update Collection.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 func (o GetFsuCollectionActiveFsuCycleOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionActiveFsuCycle) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -1862,16 +2750,543 @@ func (o GetFsuCollectionActiveFsuCycleArrayOutput) Index(i pulumi.IntInput) GetF
 	}).(GetFsuCollectionActiveFsuCycleOutput)
 }
 
+type GetFsuCollectionComponent struct {
+	// Type of component in an Exadata software stack.
+	ComponentType string `pulumi:"componentType"`
+	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+	FleetDiscoveries []GetFsuCollectionComponentFleetDiscovery `pulumi:"fleetDiscoveries"`
+	// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
+	SourceMajorVersion string `pulumi:"sourceMajorVersion"`
+}
+
+// GetFsuCollectionComponentInput is an input type that accepts GetFsuCollectionComponentArgs and GetFsuCollectionComponentOutput values.
+// You can construct a concrete instance of `GetFsuCollectionComponentInput` via:
+//
+//	GetFsuCollectionComponentArgs{...}
+type GetFsuCollectionComponentInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionComponentOutput() GetFsuCollectionComponentOutput
+	ToGetFsuCollectionComponentOutputWithContext(context.Context) GetFsuCollectionComponentOutput
+}
+
+type GetFsuCollectionComponentArgs struct {
+	// Type of component in an Exadata software stack.
+	ComponentType pulumi.StringInput `pulumi:"componentType"`
+	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+	FleetDiscoveries GetFsuCollectionComponentFleetDiscoveryArrayInput `pulumi:"fleetDiscoveries"`
+	// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
+	SourceMajorVersion pulumi.StringInput `pulumi:"sourceMajorVersion"`
+}
+
+func (GetFsuCollectionComponentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionComponent)(nil)).Elem()
+}
+
+func (i GetFsuCollectionComponentArgs) ToGetFsuCollectionComponentOutput() GetFsuCollectionComponentOutput {
+	return i.ToGetFsuCollectionComponentOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionComponentArgs) ToGetFsuCollectionComponentOutputWithContext(ctx context.Context) GetFsuCollectionComponentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionComponentOutput)
+}
+
+// GetFsuCollectionComponentArrayInput is an input type that accepts GetFsuCollectionComponentArray and GetFsuCollectionComponentArrayOutput values.
+// You can construct a concrete instance of `GetFsuCollectionComponentArrayInput` via:
+//
+//	GetFsuCollectionComponentArray{ GetFsuCollectionComponentArgs{...} }
+type GetFsuCollectionComponentArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionComponentArrayOutput() GetFsuCollectionComponentArrayOutput
+	ToGetFsuCollectionComponentArrayOutputWithContext(context.Context) GetFsuCollectionComponentArrayOutput
+}
+
+type GetFsuCollectionComponentArray []GetFsuCollectionComponentInput
+
+func (GetFsuCollectionComponentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionComponent)(nil)).Elem()
+}
+
+func (i GetFsuCollectionComponentArray) ToGetFsuCollectionComponentArrayOutput() GetFsuCollectionComponentArrayOutput {
+	return i.ToGetFsuCollectionComponentArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionComponentArray) ToGetFsuCollectionComponentArrayOutputWithContext(ctx context.Context) GetFsuCollectionComponentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionComponentArrayOutput)
+}
+
+type GetFsuCollectionComponentOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionComponentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionComponent)(nil)).Elem()
+}
+
+func (o GetFsuCollectionComponentOutput) ToGetFsuCollectionComponentOutput() GetFsuCollectionComponentOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentOutput) ToGetFsuCollectionComponentOutputWithContext(ctx context.Context) GetFsuCollectionComponentOutput {
+	return o
+}
+
+// Type of component in an Exadata software stack.
+func (o GetFsuCollectionComponentOutput) ComponentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponent) string { return v.ComponentType }).(pulumi.StringOutput)
+}
+
+// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+func (o GetFsuCollectionComponentOutput) FleetDiscoveries() GetFsuCollectionComponentFleetDiscoveryArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponent) []GetFsuCollectionComponentFleetDiscovery { return v.FleetDiscoveries }).(GetFsuCollectionComponentFleetDiscoveryArrayOutput)
+}
+
+// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
+func (o GetFsuCollectionComponentOutput) SourceMajorVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponent) string { return v.SourceMajorVersion }).(pulumi.StringOutput)
+}
+
+type GetFsuCollectionComponentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionComponentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionComponent)(nil)).Elem()
+}
+
+func (o GetFsuCollectionComponentArrayOutput) ToGetFsuCollectionComponentArrayOutput() GetFsuCollectionComponentArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentArrayOutput) ToGetFsuCollectionComponentArrayOutputWithContext(ctx context.Context) GetFsuCollectionComponentArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentArrayOutput) Index(i pulumi.IntInput) GetFsuCollectionComponentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCollectionComponent {
+		return vs[0].([]GetFsuCollectionComponent)[vs[1].(int)]
+	}).(GetFsuCollectionComponentOutput)
+}
+
+type GetFsuCollectionComponentFleetDiscovery struct {
+	// Filters to perform the target discovery.
+	Filters []GetFsuCollectionComponentFleetDiscoveryFilter `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+	FsuDiscoveryId string `pulumi:"fsuDiscoveryId"`
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+	Query string `pulumi:"query"`
+	// Supported fleet discovery strategies.
+	Strategy string `pulumi:"strategy"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	Targets []string `pulumi:"targets"`
+}
+
+// GetFsuCollectionComponentFleetDiscoveryInput is an input type that accepts GetFsuCollectionComponentFleetDiscoveryArgs and GetFsuCollectionComponentFleetDiscoveryOutput values.
+// You can construct a concrete instance of `GetFsuCollectionComponentFleetDiscoveryInput` via:
+//
+//	GetFsuCollectionComponentFleetDiscoveryArgs{...}
+type GetFsuCollectionComponentFleetDiscoveryInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionComponentFleetDiscoveryOutput() GetFsuCollectionComponentFleetDiscoveryOutput
+	ToGetFsuCollectionComponentFleetDiscoveryOutputWithContext(context.Context) GetFsuCollectionComponentFleetDiscoveryOutput
+}
+
+type GetFsuCollectionComponentFleetDiscoveryArgs struct {
+	// Filters to perform the target discovery.
+	Filters GetFsuCollectionComponentFleetDiscoveryFilterArrayInput `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+	FsuDiscoveryId pulumi.StringInput `pulumi:"fsuDiscoveryId"`
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+	Query pulumi.StringInput `pulumi:"query"`
+	// Supported fleet discovery strategies.
+	Strategy pulumi.StringInput `pulumi:"strategy"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	Targets pulumi.StringArrayInput `pulumi:"targets"`
+}
+
+func (GetFsuCollectionComponentFleetDiscoveryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryArgs) ToGetFsuCollectionComponentFleetDiscoveryOutput() GetFsuCollectionComponentFleetDiscoveryOutput {
+	return i.ToGetFsuCollectionComponentFleetDiscoveryOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryArgs) ToGetFsuCollectionComponentFleetDiscoveryOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionComponentFleetDiscoveryOutput)
+}
+
+// GetFsuCollectionComponentFleetDiscoveryArrayInput is an input type that accepts GetFsuCollectionComponentFleetDiscoveryArray and GetFsuCollectionComponentFleetDiscoveryArrayOutput values.
+// You can construct a concrete instance of `GetFsuCollectionComponentFleetDiscoveryArrayInput` via:
+//
+//	GetFsuCollectionComponentFleetDiscoveryArray{ GetFsuCollectionComponentFleetDiscoveryArgs{...} }
+type GetFsuCollectionComponentFleetDiscoveryArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionComponentFleetDiscoveryArrayOutput() GetFsuCollectionComponentFleetDiscoveryArrayOutput
+	ToGetFsuCollectionComponentFleetDiscoveryArrayOutputWithContext(context.Context) GetFsuCollectionComponentFleetDiscoveryArrayOutput
+}
+
+type GetFsuCollectionComponentFleetDiscoveryArray []GetFsuCollectionComponentFleetDiscoveryInput
+
+func (GetFsuCollectionComponentFleetDiscoveryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryArray) ToGetFsuCollectionComponentFleetDiscoveryArrayOutput() GetFsuCollectionComponentFleetDiscoveryArrayOutput {
+	return i.ToGetFsuCollectionComponentFleetDiscoveryArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryArray) ToGetFsuCollectionComponentFleetDiscoveryArrayOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionComponentFleetDiscoveryArrayOutput)
+}
+
+type GetFsuCollectionComponentFleetDiscoveryOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionComponentFleetDiscoveryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryOutput) ToGetFsuCollectionComponentFleetDiscoveryOutput() GetFsuCollectionComponentFleetDiscoveryOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryOutput) ToGetFsuCollectionComponentFleetDiscoveryOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryOutput {
+	return o
+}
+
+// Filters to perform the target discovery.
+func (o GetFsuCollectionComponentFleetDiscoveryOutput) Filters() GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscovery) []GetFsuCollectionComponentFleetDiscoveryFilter {
+		return v.Filters
+	}).(GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+func (o GetFsuCollectionComponentFleetDiscoveryOutput) FsuDiscoveryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscovery) string { return v.FsuDiscoveryId }).(pulumi.StringOutput)
+}
+
+// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+func (o GetFsuCollectionComponentFleetDiscoveryOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscovery) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// Supported fleet discovery strategies.
+func (o GetFsuCollectionComponentFleetDiscoveryOutput) Strategy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscovery) string { return v.Strategy }).(pulumi.StringOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+func (o GetFsuCollectionComponentFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscovery) []string { return v.Targets }).(pulumi.StringArrayOutput)
+}
+
+type GetFsuCollectionComponentFleetDiscoveryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionComponentFleetDiscoveryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryArrayOutput) ToGetFsuCollectionComponentFleetDiscoveryArrayOutput() GetFsuCollectionComponentFleetDiscoveryArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryArrayOutput) ToGetFsuCollectionComponentFleetDiscoveryArrayOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryArrayOutput) Index(i pulumi.IntInput) GetFsuCollectionComponentFleetDiscoveryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCollectionComponentFleetDiscovery {
+		return vs[0].([]GetFsuCollectionComponentFleetDiscovery)[vs[1].(int)]
+	}).(GetFsuCollectionComponentFleetDiscoveryOutput)
+}
+
+type GetFsuCollectionComponentFleetDiscoveryFilter struct {
+	// Type of resource to match in the discovery.
+	EntityType string `pulumi:"entityType"`
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases []string `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
+	Identifiers []string `pulumi:"identifiers"`
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
+	Mode string `pulumi:"mode"`
+	// Type of join for each element in this filter.
+	Operator string `pulumi:"operator"`
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Tags []GetFsuCollectionComponentFleetDiscoveryFilterTag `pulumi:"tags"`
+	// Exadata Fleet Update Collection type.
+	Type string `pulumi:"type"`
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Versions []string `pulumi:"versions"`
+}
+
+// GetFsuCollectionComponentFleetDiscoveryFilterInput is an input type that accepts GetFsuCollectionComponentFleetDiscoveryFilterArgs and GetFsuCollectionComponentFleetDiscoveryFilterOutput values.
+// You can construct a concrete instance of `GetFsuCollectionComponentFleetDiscoveryFilterInput` via:
+//
+//	GetFsuCollectionComponentFleetDiscoveryFilterArgs{...}
+type GetFsuCollectionComponentFleetDiscoveryFilterInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionComponentFleetDiscoveryFilterOutput() GetFsuCollectionComponentFleetDiscoveryFilterOutput
+	ToGetFsuCollectionComponentFleetDiscoveryFilterOutputWithContext(context.Context) GetFsuCollectionComponentFleetDiscoveryFilterOutput
+}
+
+type GetFsuCollectionComponentFleetDiscoveryFilterArgs struct {
+	// Type of resource to match in the discovery.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases pulumi.StringArrayInput `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
+	Identifiers pulumi.StringArrayInput `pulumi:"identifiers"`
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// Type of join for each element in this filter.
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Tags GetFsuCollectionComponentFleetDiscoveryFilterTagArrayInput `pulumi:"tags"`
+	// Exadata Fleet Update Collection type.
+	Type pulumi.StringInput `pulumi:"type"`
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Versions pulumi.StringArrayInput `pulumi:"versions"`
+}
+
+func (GetFsuCollectionComponentFleetDiscoveryFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryFilterArgs) ToGetFsuCollectionComponentFleetDiscoveryFilterOutput() GetFsuCollectionComponentFleetDiscoveryFilterOutput {
+	return i.ToGetFsuCollectionComponentFleetDiscoveryFilterOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryFilterArgs) ToGetFsuCollectionComponentFleetDiscoveryFilterOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionComponentFleetDiscoveryFilterOutput)
+}
+
+// GetFsuCollectionComponentFleetDiscoveryFilterArrayInput is an input type that accepts GetFsuCollectionComponentFleetDiscoveryFilterArray and GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput values.
+// You can construct a concrete instance of `GetFsuCollectionComponentFleetDiscoveryFilterArrayInput` via:
+//
+//	GetFsuCollectionComponentFleetDiscoveryFilterArray{ GetFsuCollectionComponentFleetDiscoveryFilterArgs{...} }
+type GetFsuCollectionComponentFleetDiscoveryFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionComponentFleetDiscoveryFilterArrayOutput() GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput
+	ToGetFsuCollectionComponentFleetDiscoveryFilterArrayOutputWithContext(context.Context) GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput
+}
+
+type GetFsuCollectionComponentFleetDiscoveryFilterArray []GetFsuCollectionComponentFleetDiscoveryFilterInput
+
+func (GetFsuCollectionComponentFleetDiscoveryFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryFilterArray) ToGetFsuCollectionComponentFleetDiscoveryFilterArrayOutput() GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return i.ToGetFsuCollectionComponentFleetDiscoveryFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryFilterArray) ToGetFsuCollectionComponentFleetDiscoveryFilterArrayOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput)
+}
+
+type GetFsuCollectionComponentFleetDiscoveryFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionComponentFleetDiscoveryFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryFilterOutput) ToGetFsuCollectionComponentFleetDiscoveryFilterOutput() GetFsuCollectionComponentFleetDiscoveryFilterOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryFilterOutput) ToGetFsuCollectionComponentFleetDiscoveryFilterOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryFilterOutput {
+	return o
+}
+
+// Type of resource to match in the discovery.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilter) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterOutput) ExadataReleases() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilter) []string { return v.ExadataReleases }).(pulumi.StringArrayOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterOutput) Identifiers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilter) []string { return v.Identifiers }).(pulumi.StringArrayOutput)
+}
+
+// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilter) string { return v.Mode }).(pulumi.StringOutput)
+}
+
+// Type of join for each element in this filter.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilter) string { return v.Operator }).(pulumi.StringOutput)
+}
+
+// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterOutput) Tags() GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilter) []GetFsuCollectionComponentFleetDiscoveryFilterTag {
+		return v.Tags
+	}).(GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput)
+}
+
+// Exadata Fleet Update Collection type.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilter) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterOutput) Versions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilter) []string { return v.Versions }).(pulumi.StringArrayOutput)
+}
+
+type GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput) ToGetFsuCollectionComponentFleetDiscoveryFilterArrayOutput() GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput) ToGetFsuCollectionComponentFleetDiscoveryFilterArrayOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput) Index(i pulumi.IntInput) GetFsuCollectionComponentFleetDiscoveryFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCollectionComponentFleetDiscoveryFilter {
+		return vs[0].([]GetFsuCollectionComponentFleetDiscoveryFilter)[vs[1].(int)]
+	}).(GetFsuCollectionComponentFleetDiscoveryFilterOutput)
+}
+
+type GetFsuCollectionComponentFleetDiscoveryFilterTag struct {
+	// Freeform tag key.
+	Key string `pulumi:"key"`
+	// Defined tag namespace.
+	Namespace string `pulumi:"namespace"`
+	// Freeform tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetFsuCollectionComponentFleetDiscoveryFilterTagInput is an input type that accepts GetFsuCollectionComponentFleetDiscoveryFilterTagArgs and GetFsuCollectionComponentFleetDiscoveryFilterTagOutput values.
+// You can construct a concrete instance of `GetFsuCollectionComponentFleetDiscoveryFilterTagInput` via:
+//
+//	GetFsuCollectionComponentFleetDiscoveryFilterTagArgs{...}
+type GetFsuCollectionComponentFleetDiscoveryFilterTagInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionComponentFleetDiscoveryFilterTagOutput() GetFsuCollectionComponentFleetDiscoveryFilterTagOutput
+	ToGetFsuCollectionComponentFleetDiscoveryFilterTagOutputWithContext(context.Context) GetFsuCollectionComponentFleetDiscoveryFilterTagOutput
+}
+
+type GetFsuCollectionComponentFleetDiscoveryFilterTagArgs struct {
+	// Freeform tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Defined tag namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Freeform tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFsuCollectionComponentFleetDiscoveryFilterTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryFilterTagArgs) ToGetFsuCollectionComponentFleetDiscoveryFilterTagOutput() GetFsuCollectionComponentFleetDiscoveryFilterTagOutput {
+	return i.ToGetFsuCollectionComponentFleetDiscoveryFilterTagOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryFilterTagArgs) ToGetFsuCollectionComponentFleetDiscoveryFilterTagOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryFilterTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionComponentFleetDiscoveryFilterTagOutput)
+}
+
+// GetFsuCollectionComponentFleetDiscoveryFilterTagArrayInput is an input type that accepts GetFsuCollectionComponentFleetDiscoveryFilterTagArray and GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput values.
+// You can construct a concrete instance of `GetFsuCollectionComponentFleetDiscoveryFilterTagArrayInput` via:
+//
+//	GetFsuCollectionComponentFleetDiscoveryFilterTagArray{ GetFsuCollectionComponentFleetDiscoveryFilterTagArgs{...} }
+type GetFsuCollectionComponentFleetDiscoveryFilterTagArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput() GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput
+	ToGetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutputWithContext(context.Context) GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput
+}
+
+type GetFsuCollectionComponentFleetDiscoveryFilterTagArray []GetFsuCollectionComponentFleetDiscoveryFilterTagInput
+
+func (GetFsuCollectionComponentFleetDiscoveryFilterTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryFilterTagArray) ToGetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput() GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput {
+	return i.ToGetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionComponentFleetDiscoveryFilterTagArray) ToGetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput)
+}
+
+type GetFsuCollectionComponentFleetDiscoveryFilterTagOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionComponentFleetDiscoveryFilterTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryFilterTagOutput) ToGetFsuCollectionComponentFleetDiscoveryFilterTagOutput() GetFsuCollectionComponentFleetDiscoveryFilterTagOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryFilterTagOutput) ToGetFsuCollectionComponentFleetDiscoveryFilterTagOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryFilterTagOutput {
+	return o
+}
+
+// Freeform tag key.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilterTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Defined tag namespace.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterTagOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilterTag) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Freeform tag value.
+func (o GetFsuCollectionComponentFleetDiscoveryFilterTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionComponentFleetDiscoveryFilterTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput) ToGetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput() GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput) ToGetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutputWithContext(ctx context.Context) GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput) Index(i pulumi.IntInput) GetFsuCollectionComponentFleetDiscoveryFilterTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCollectionComponentFleetDiscoveryFilterTag {
+		return vs[0].([]GetFsuCollectionComponentFleetDiscoveryFilterTag)[vs[1].(int)]
+	}).(GetFsuCollectionComponentFleetDiscoveryFilterTagOutput)
+}
+
 type GetFsuCollectionFleetDiscovery struct {
 	// Filters to perform the target discovery.
 	Filters []GetFsuCollectionFleetDiscoveryFilter `pulumi:"filters"`
-	// OCIDs of Fleet Software Update Discovery.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
 	FsuDiscoveryId string `pulumi:"fsuDiscoveryId"`
-	// Oracle Cloud Infrastructure Search Service query string.
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
 	Query string `pulumi:"query"`
-	// Possible fleet discovery strategies.
+	// Supported fleet discovery strategies.
 	Strategy string `pulumi:"strategy"`
-	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 	Targets []string `pulumi:"targets"`
 }
 
@@ -1889,13 +3304,13 @@ type GetFsuCollectionFleetDiscoveryInput interface {
 type GetFsuCollectionFleetDiscoveryArgs struct {
 	// Filters to perform the target discovery.
 	Filters GetFsuCollectionFleetDiscoveryFilterArrayInput `pulumi:"filters"`
-	// OCIDs of Fleet Software Update Discovery.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
 	FsuDiscoveryId pulumi.StringInput `pulumi:"fsuDiscoveryId"`
-	// Oracle Cloud Infrastructure Search Service query string.
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
 	Query pulumi.StringInput `pulumi:"query"`
-	// Possible fleet discovery strategies.
+	// Supported fleet discovery strategies.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
-	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 }
 
@@ -1955,22 +3370,22 @@ func (o GetFsuCollectionFleetDiscoveryOutput) Filters() GetFsuCollectionFleetDis
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscovery) []GetFsuCollectionFleetDiscoveryFilter { return v.Filters }).(GetFsuCollectionFleetDiscoveryFilterArrayOutput)
 }
 
-// OCIDs of Fleet Software Update Discovery.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
 func (o GetFsuCollectionFleetDiscoveryOutput) FsuDiscoveryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscovery) string { return v.FsuDiscoveryId }).(pulumi.StringOutput)
 }
 
-// Oracle Cloud Infrastructure Search Service query string.
+// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
 func (o GetFsuCollectionFleetDiscoveryOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscovery) string { return v.Query }).(pulumi.StringOutput)
 }
 
-// Possible fleet discovery strategies.
+// Supported fleet discovery strategies.
 func (o GetFsuCollectionFleetDiscoveryOutput) Strategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscovery) string { return v.Strategy }).(pulumi.StringOutput)
 }
 
-// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 func (o GetFsuCollectionFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscovery) []string { return v.Targets }).(pulumi.StringArrayOutput)
 }
@@ -1998,19 +3413,21 @@ func (o GetFsuCollectionFleetDiscoveryArrayOutput) Index(i pulumi.IntInput) GetF
 type GetFsuCollectionFleetDiscoveryFilter struct {
 	// Type of resource to match in the discovery.
 	EntityType string `pulumi:"entityType"`
-	// Related resource Ids to include in the discovery.  All must match the specified entityType.
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases []string `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 	Identifiers []string `pulumi:"identifiers"`
-	// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
 	Mode string `pulumi:"mode"`
 	// List of Database unique names to include in the discovery.
 	Names []string `pulumi:"names"`
 	// Type of join for each element in this filter.
 	Operator string `pulumi:"operator"`
-	// Freeform tags to include in the discovery.
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Tags []GetFsuCollectionFleetDiscoveryFilterTag `pulumi:"tags"`
 	// Exadata Fleet Update Collection type.
 	Type string `pulumi:"type"`
-	// List of Versions strings to include in the discovery.
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Versions []string `pulumi:"versions"`
 }
 
@@ -2028,19 +3445,21 @@ type GetFsuCollectionFleetDiscoveryFilterInput interface {
 type GetFsuCollectionFleetDiscoveryFilterArgs struct {
 	// Type of resource to match in the discovery.
 	EntityType pulumi.StringInput `pulumi:"entityType"`
-	// Related resource Ids to include in the discovery.  All must match the specified entityType.
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases pulumi.StringArrayInput `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 	Identifiers pulumi.StringArrayInput `pulumi:"identifiers"`
-	// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
 	Mode pulumi.StringInput `pulumi:"mode"`
 	// List of Database unique names to include in the discovery.
 	Names pulumi.StringArrayInput `pulumi:"names"`
 	// Type of join for each element in this filter.
 	Operator pulumi.StringInput `pulumi:"operator"`
-	// Freeform tags to include in the discovery.
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Tags GetFsuCollectionFleetDiscoveryFilterTagArrayInput `pulumi:"tags"`
 	// Exadata Fleet Update Collection type.
 	Type pulumi.StringInput `pulumi:"type"`
-	// List of Versions strings to include in the discovery.
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Versions pulumi.StringArrayInput `pulumi:"versions"`
 }
 
@@ -2100,12 +3519,17 @@ func (o GetFsuCollectionFleetDiscoveryFilterOutput) EntityType() pulumi.StringOu
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscoveryFilter) string { return v.EntityType }).(pulumi.StringOutput)
 }
 
-// Related resource Ids to include in the discovery.  All must match the specified entityType.
+// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o GetFsuCollectionFleetDiscoveryFilterOutput) ExadataReleases() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionFleetDiscoveryFilter) []string { return v.ExadataReleases }).(pulumi.StringArrayOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 func (o GetFsuCollectionFleetDiscoveryFilterOutput) Identifiers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscoveryFilter) []string { return v.Identifiers }).(pulumi.StringArrayOutput)
 }
 
-// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
 func (o GetFsuCollectionFleetDiscoveryFilterOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscoveryFilter) string { return v.Mode }).(pulumi.StringOutput)
 }
@@ -2120,7 +3544,7 @@ func (o GetFsuCollectionFleetDiscoveryFilterOutput) Operator() pulumi.StringOutp
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscoveryFilter) string { return v.Operator }).(pulumi.StringOutput)
 }
 
-// Freeform tags to include in the discovery.
+// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 func (o GetFsuCollectionFleetDiscoveryFilterOutput) Tags() GetFsuCollectionFleetDiscoveryFilterTagArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscoveryFilter) []GetFsuCollectionFleetDiscoveryFilterTag { return v.Tags }).(GetFsuCollectionFleetDiscoveryFilterTagArrayOutput)
 }
@@ -2130,7 +3554,7 @@ func (o GetFsuCollectionFleetDiscoveryFilterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscoveryFilter) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// List of Versions strings to include in the discovery.
+// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 func (o GetFsuCollectionFleetDiscoveryFilterOutput) Versions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionFleetDiscoveryFilter) []string { return v.Versions }).(pulumi.StringArrayOutput)
 }
@@ -2477,15 +3901,17 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItem struct {
 	ActiveFsuCycles []GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycle `pulumi:"activeFsuCycles"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Details of components in an Exadata software stack.
+	Components []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent `pulumi:"components"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
-	// Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 	FleetDiscoveries []GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery `pulumi:"fleetDiscoveries"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// OCID identifier for the Exadata Fleet Update Collection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
 	LastCompletedFsuCycleId string `pulumi:"lastCompletedFsuCycleId"`
@@ -2493,7 +3919,7 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Exadata service type for the target resource members.
 	ServiceType string `pulumi:"serviceType"`
-	// Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+	// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
 	SourceMajorVersion string `pulumi:"sourceMajorVersion"`
 	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
@@ -2525,15 +3951,17 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemArgs struct {
 	ActiveFsuCycles GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleArrayInput `pulumi:"activeFsuCycles"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Details of components in an Exadata software stack.
+	Components GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayInput `pulumi:"components"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 	FleetDiscoveries GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArrayInput `pulumi:"fleetDiscoveries"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// OCID identifier for the Exadata Fleet Update Collection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
 	LastCompletedFsuCycleId pulumi.StringInput `pulumi:"lastCompletedFsuCycleId"`
@@ -2541,7 +3969,7 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Exadata service type for the target resource members.
 	ServiceType pulumi.StringInput `pulumi:"serviceType"`
-	// Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+	// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
 	SourceMajorVersion pulumi.StringInput `pulumi:"sourceMajorVersion"`
 	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
@@ -2620,6 +4048,13 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) CompartmentId
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Details of components in an Exadata software stack.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) Components() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent {
+		return v.Components
+	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -2630,7 +4065,7 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) DisplayName()
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) FleetDiscoveries() GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) []GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery {
 		return v.FleetDiscoveries
@@ -2642,7 +4077,7 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) FreeformTags(
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// OCID identifier for the Exadata Fleet Update Collection.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -2662,7 +4097,7 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) ServiceType()
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) string { return v.ServiceType }).(pulumi.StringOutput)
 }
 
-// Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) SourceMajorVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) string { return v.SourceMajorVersion }).(pulumi.StringOutput)
 }
@@ -2720,7 +4155,7 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemArrayOutput) Index(i 
 type GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycle struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
-	// OCID identifier for the Exadata Fleet Update Collection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 	Id string `pulumi:"id"`
 }
 
@@ -2738,7 +4173,7 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleInput inte
 type GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// OCID identifier for the Exadata Fleet Update Collection.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 	Id pulumi.StringInput `pulumi:"id"`
 }
 
@@ -2798,7 +4233,7 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleOutput)
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycle) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// OCID identifier for the Exadata Fleet Update Collection.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycle) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -2823,16 +4258,575 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleArrayOu
 	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleOutput)
 }
 
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent struct {
+	// Type of component in an Exadata software stack.
+	ComponentType string `pulumi:"componentType"`
+	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+	FleetDiscoveries []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery `pulumi:"fleetDiscoveries"`
+	// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
+	SourceMajorVersion string `pulumi:"sourceMajorVersion"`
+}
+
+// GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentInput is an input type that accepts GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArgs and GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput values.
+// You can construct a concrete instance of `GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentInput` via:
+//
+//	GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArgs{...}
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutputWithContext(context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArgs struct {
+	// Type of component in an Exadata software stack.
+	ComponentType pulumi.StringInput `pulumi:"componentType"`
+	// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+	FleetDiscoveries GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayInput `pulumi:"fleetDiscoveries"`
+	// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
+	SourceMajorVersion pulumi.StringInput `pulumi:"sourceMajorVersion"`
+}
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent)(nil)).Elem()
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArgs) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput {
+	return i.ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArgs) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput)
+}
+
+// GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayInput is an input type that accepts GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArray and GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput values.
+// You can construct a concrete instance of `GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayInput` via:
+//
+//	GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArray{ GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArgs{...} }
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutputWithContext(context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArray []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentInput
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent)(nil)).Elem()
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArray) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput {
+	return i.ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArray) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent)(nil)).Elem()
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput {
+	return o
+}
+
+// Type of component in an Exadata software stack.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput) ComponentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent) string { return v.ComponentType }).(pulumi.StringOutput)
+}
+
+// Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput) FleetDiscoveries() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent) []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery {
+		return v.FleetDiscoveries
+	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput)
+}
+
+// Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput) SourceMajorVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent) string {
+		return v.SourceMajorVersion
+	}).(pulumi.StringOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent)(nil)).Elem()
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput) Index(i pulumi.IntInput) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent {
+		return vs[0].([]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponent)[vs[1].(int)]
+	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery struct {
+	// Filters to perform the target discovery.
+	Filters []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+	FsuDiscoveryId string `pulumi:"fsuDiscoveryId"`
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+	Query string `pulumi:"query"`
+	// Supported fleet discovery strategies.
+	Strategy string `pulumi:"strategy"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	Targets []string `pulumi:"targets"`
+}
+
+// GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryInput is an input type that accepts GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArgs and GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput values.
+// You can construct a concrete instance of `GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryInput` via:
+//
+//	GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArgs{...}
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutputWithContext(context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArgs struct {
+	// Filters to perform the target discovery.
+	Filters GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayInput `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+	FsuDiscoveryId pulumi.StringInput `pulumi:"fsuDiscoveryId"`
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+	Query pulumi.StringInput `pulumi:"query"`
+	// Supported fleet discovery strategies.
+	Strategy pulumi.StringInput `pulumi:"strategy"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+	Targets pulumi.StringArrayInput `pulumi:"targets"`
+}
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArgs) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput {
+	return i.ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArgs) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput)
+}
+
+// GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayInput is an input type that accepts GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArray and GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput values.
+// You can construct a concrete instance of `GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayInput` via:
+//
+//	GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArray{ GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArgs{...} }
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutputWithContext(context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArray []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryInput
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArray) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput {
+	return i.ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArray) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput {
+	return o
+}
+
+// Filters to perform the target discovery.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput) Filters() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery) []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter {
+		return v.Filters
+	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput) FsuDiscoveryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery) string {
+		return v.FsuDiscoveryId
+	}).(pulumi.StringOutput)
+}
+
+// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery) string {
+		return v.Query
+	}).(pulumi.StringOutput)
+}
+
+// Supported fleet discovery strategies.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput) Strategy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery) string {
+		return v.Strategy
+	}).(pulumi.StringOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery) []string {
+		return v.Targets
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery)(nil)).Elem()
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput) Index(i pulumi.IntInput) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery {
+		return vs[0].([]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscovery)[vs[1].(int)]
+	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter struct {
+	// Type of resource to match in the discovery.
+	EntityType string `pulumi:"entityType"`
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases []string `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
+	Identifiers []string `pulumi:"identifiers"`
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
+	Mode string `pulumi:"mode"`
+	// Type of join for each element in this filter.
+	Operator string `pulumi:"operator"`
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Tags []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag `pulumi:"tags"`
+	// A filter to return only resources whose type matches the given type.
+	Type string `pulumi:"type"`
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Versions []string `pulumi:"versions"`
+}
+
+// GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterInput is an input type that accepts GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArgs and GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput values.
+// You can construct a concrete instance of `GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterInput` via:
+//
+//	GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArgs{...}
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutputWithContext(context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArgs struct {
+	// Type of resource to match in the discovery.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases pulumi.StringArrayInput `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
+	Identifiers pulumi.StringArrayInput `pulumi:"identifiers"`
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
+	Mode pulumi.StringInput `pulumi:"mode"`
+	// Type of join for each element in this filter.
+	Operator pulumi.StringInput `pulumi:"operator"`
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Tags GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayInput `pulumi:"tags"`
+	// A filter to return only resources whose type matches the given type.
+	Type pulumi.StringInput `pulumi:"type"`
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	Versions pulumi.StringArrayInput `pulumi:"versions"`
+}
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArgs) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput {
+	return i.ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArgs) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput)
+}
+
+// GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayInput is an input type that accepts GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArray and GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput values.
+// You can construct a concrete instance of `GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayInput` via:
+//
+//	GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArray{ GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArgs{...} }
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutputWithContext(context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArray []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterInput
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArray) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput {
+	return i.ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArray) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput {
+	return o
+}
+
+// Type of resource to match in the discovery.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter) string {
+		return v.EntityType
+	}).(pulumi.StringOutput)
+}
+
+// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) ExadataReleases() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter) []string {
+		return v.ExadataReleases
+	}).(pulumi.StringArrayOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) Identifiers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter) []string {
+		return v.Identifiers
+	}).(pulumi.StringArrayOutput)
+}
+
+// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) Mode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter) string {
+		return v.Mode
+	}).(pulumi.StringOutput)
+}
+
+// Type of join for each element in this filter.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) Operator() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter) string {
+		return v.Operator
+	}).(pulumi.StringOutput)
+}
+
+// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) Tags() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter) []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag {
+		return v.Tags
+	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput)
+}
+
+// A filter to return only resources whose type matches the given type.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput) Versions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter) []string {
+		return v.Versions
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter)(nil)).Elem()
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput) Index(i pulumi.IntInput) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter {
+		return vs[0].([]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilter)[vs[1].(int)]
+	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag struct {
+	// Freeform tag key.
+	Key string `pulumi:"key"`
+	// Defined tag namespace.
+	Namespace string `pulumi:"namespace"`
+	// Freeform tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagInput is an input type that accepts GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArgs and GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput values.
+// You can construct a concrete instance of `GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagInput` via:
+//
+//	GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArgs{...}
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutputWithContext(context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArgs struct {
+	// Freeform tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Defined tag namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Freeform tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArgs) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput {
+	return i.ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArgs) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput)
+}
+
+// GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayInput is an input type that accepts GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArray and GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput values.
+// You can construct a concrete instance of `GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayInput` via:
+//
+//	GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArray{ GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArgs{...} }
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput
+	ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutputWithContext(context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArray []GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagInput
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArray) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput {
+	return i.ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArray) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput {
+	return o
+}
+
+// Freeform tag key.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Defined tag namespace.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Freeform tag value.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag)(nil)).Elem()
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput() GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput) ToGetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutputWithContext(ctx context.Context) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput {
+	return o
+}
+
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput) Index(i pulumi.IntInput) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag {
+		return vs[0].([]GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTag)[vs[1].(int)]
+	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput)
+}
+
 type GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery struct {
 	// Filters to perform the target discovery.
 	Filters []GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilter `pulumi:"filters"`
-	// OCIDs of Fleet Software Update Discovery.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
 	FsuDiscoveryId string `pulumi:"fsuDiscoveryId"`
-	// Oracle Cloud Infrastructure Search Service query string.
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
 	Query string `pulumi:"query"`
-	// Possible fleet discovery strategies.
+	// Supported fleet discovery strategies.
 	Strategy string `pulumi:"strategy"`
-	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 	Targets []string `pulumi:"targets"`
 }
 
@@ -2850,13 +4844,13 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryInput inte
 type GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArgs struct {
 	// Filters to perform the target discovery.
 	Filters GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterArrayInput `pulumi:"filters"`
-	// OCIDs of Fleet Software Update Discovery.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
 	FsuDiscoveryId pulumi.StringInput `pulumi:"fsuDiscoveryId"`
-	// Oracle Cloud Infrastructure Search Service query string.
+	// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
 	Query pulumi.StringInput `pulumi:"query"`
-	// Possible fleet discovery strategies.
+	// Supported fleet discovery strategies.
 	Strategy pulumi.StringInput `pulumi:"strategy"`
-	// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 	Targets pulumi.StringArrayInput `pulumi:"targets"`
 }
 
@@ -2918,24 +4912,24 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryOutput)
 	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterArrayOutput)
 }
 
-// OCIDs of Fleet Software Update Discovery.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryOutput) FsuDiscoveryId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery) string {
 		return v.FsuDiscoveryId
 	}).(pulumi.StringOutput)
 }
 
-// Oracle Cloud Infrastructure Search Service query string.
+// [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryOutput) Query() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery) string { return v.Query }).(pulumi.StringOutput)
 }
 
-// Possible fleet discovery strategies.
+// Supported fleet discovery strategies.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryOutput) Strategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery) string { return v.Strategy }).(pulumi.StringOutput)
 }
 
-// OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified 'serviceType' are allowed.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryOutput) Targets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery) []string { return v.Targets }).(pulumi.StringArrayOutput)
 }
@@ -2963,19 +4957,21 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArrayOu
 type GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilter struct {
 	// Type of resource to match in the discovery.
 	EntityType string `pulumi:"entityType"`
-	// Related resource Ids to include in the discovery.  All must match the specified entityType.
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases []string `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 	Identifiers []string `pulumi:"identifiers"`
-	// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
 	Mode string `pulumi:"mode"`
 	// List of Database unique names to include in the discovery.
 	Names []string `pulumi:"names"`
 	// Type of join for each element in this filter.
 	Operator string `pulumi:"operator"`
-	// Freeform tags to include in the discovery.
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Tags []GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterTag `pulumi:"tags"`
 	// A filter to return only resources whose type matches the given type.
 	Type string `pulumi:"type"`
-	// List of Versions strings to include in the discovery.
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Versions []string `pulumi:"versions"`
 }
 
@@ -2993,19 +4989,21 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterInpu
 type GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterArgs struct {
 	// Type of resource to match in the discovery.
 	EntityType pulumi.StringInput `pulumi:"entityType"`
-	// Related resource Ids to include in the discovery.  All must match the specified entityType.
+	// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+	ExadataReleases pulumi.StringArrayInput `pulumi:"exadataReleases"`
+	// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 	Identifiers pulumi.StringArrayInput `pulumi:"identifiers"`
-	// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+	// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
 	Mode pulumi.StringInput `pulumi:"mode"`
 	// List of Database unique names to include in the discovery.
 	Names pulumi.StringArrayInput `pulumi:"names"`
 	// Type of join for each element in this filter.
 	Operator pulumi.StringInput `pulumi:"operator"`
-	// Freeform tags to include in the discovery.
+	// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Tags GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterTagArrayInput `pulumi:"tags"`
 	// A filter to return only resources whose type matches the given type.
 	Type pulumi.StringInput `pulumi:"type"`
-	// List of Versions strings to include in the discovery.
+	// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 	Versions pulumi.StringArrayInput `pulumi:"versions"`
 }
 
@@ -3067,14 +5065,21 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterO
 	}).(pulumi.StringOutput)
 }
 
-// Related resource Ids to include in the discovery.  All must match the specified entityType.
+// List of Exadata Release versions to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterOutput) ExadataReleases() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilter) []string {
+		return v.ExadataReleases
+	}).(pulumi.StringArrayOutput)
+}
+
+// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of associated resources to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.  Specified resources must match the specified 'entityType'. FsuCollection of type 'GI' or 'GUEST_OS' can be specified.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterOutput) Identifiers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilter) []string {
 		return v.Identifiers
 	}).(pulumi.StringArrayOutput)
 }
 
-// INCLUDE or EXCLUDE the filter results in the discovery for DB targets. Supported for 'FSUCOLLECTION' RESOURCE_ID filter only.
+// INCLUDE or EXCLUDE the filter results when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection. Supported only for RESOURCE_ID filter.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilter) string { return v.Mode }).(pulumi.StringOutput)
 }
@@ -3093,7 +5098,7 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterO
 	}).(pulumi.StringOutput)
 }
 
-// Freeform tags to include in the discovery.
+// [Free-form tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm) to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterOutput) Tags() GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterTagArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilter) []GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterTag {
 		return v.Tags
@@ -3105,7 +5110,7 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterO
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilter) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// List of Versions strings to include in the discovery.
+// List of Exadata Image (Guest OS) version strings to include when discovering Exadata VM Cluster targets for a 'GUEST_OS' collection.
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterOutput) Versions() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilter) []string {
 		return v.Versions
@@ -3581,15 +5586,17 @@ func (o GetFsuCycleDiagnosticsCollectionArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetFsuCycleGoalVersionDetail struct {
+	// Details of goal versions for components in an Exadata software stack.
+	Components []GetFsuCycleGoalVersionDetailComponent `pulumi:"components"`
 	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy string `pulumi:"homePolicy"`
 	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix string `pulumi:"newHomePrefix"`
-	// Target database software image OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
 	SoftwareImageId string `pulumi:"softwareImageId"`
 	// Type of Exadata Fleet Update Cycle.
 	Type string `pulumi:"type"`
-	// Target DB or GI version string for the Exadata Fleet Update Cycle.
+	// Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 	Version string `pulumi:"version"`
 }
 
@@ -3605,15 +5612,17 @@ type GetFsuCycleGoalVersionDetailInput interface {
 }
 
 type GetFsuCycleGoalVersionDetailArgs struct {
+	// Details of goal versions for components in an Exadata software stack.
+	Components GetFsuCycleGoalVersionDetailComponentArrayInput `pulumi:"components"`
 	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy pulumi.StringInput `pulumi:"homePolicy"`
 	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix pulumi.StringInput `pulumi:"newHomePrefix"`
-	// Target database software image OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
 	SoftwareImageId pulumi.StringInput `pulumi:"softwareImageId"`
 	// Type of Exadata Fleet Update Cycle.
 	Type pulumi.StringInput `pulumi:"type"`
-	// Target DB or GI version string for the Exadata Fleet Update Cycle.
+	// Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -3668,6 +5677,11 @@ func (o GetFsuCycleGoalVersionDetailOutput) ToGetFsuCycleGoalVersionDetailOutput
 	return o
 }
 
+// Details of goal versions for components in an Exadata software stack.
+func (o GetFsuCycleGoalVersionDetailOutput) Components() GetFsuCycleGoalVersionDetailComponentArrayOutput {
+	return o.ApplyT(func(v GetFsuCycleGoalVersionDetail) []GetFsuCycleGoalVersionDetailComponent { return v.Components }).(GetFsuCycleGoalVersionDetailComponentArrayOutput)
+}
+
 // Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 func (o GetFsuCycleGoalVersionDetailOutput) HomePolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCycleGoalVersionDetail) string { return v.HomePolicy }).(pulumi.StringOutput)
@@ -3678,7 +5692,7 @@ func (o GetFsuCycleGoalVersionDetailOutput) NewHomePrefix() pulumi.StringOutput 
 	return o.ApplyT(func(v GetFsuCycleGoalVersionDetail) string { return v.NewHomePrefix }).(pulumi.StringOutput)
 }
 
-// Target database software image OCID.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
 func (o GetFsuCycleGoalVersionDetailOutput) SoftwareImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCycleGoalVersionDetail) string { return v.SoftwareImageId }).(pulumi.StringOutput)
 }
@@ -3688,7 +5702,7 @@ func (o GetFsuCycleGoalVersionDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCycleGoalVersionDetail) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// Target DB or GI version string for the Exadata Fleet Update Cycle.
+// Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 func (o GetFsuCycleGoalVersionDetailOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCycleGoalVersionDetail) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -3711,6 +5725,247 @@ func (o GetFsuCycleGoalVersionDetailArrayOutput) Index(i pulumi.IntInput) GetFsu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCycleGoalVersionDetail {
 		return vs[0].([]GetFsuCycleGoalVersionDetail)[vs[1].(int)]
 	}).(GetFsuCycleGoalVersionDetailOutput)
+}
+
+type GetFsuCycleGoalVersionDetailComponent struct {
+	// Type of component in an Exadata software stack.
+	ComponentType string `pulumi:"componentType"`
+	// Details of goal 'GUEST_OS' software version.
+	GoalVersionDetails []GetFsuCycleGoalVersionDetailComponentGoalVersionDetail `pulumi:"goalVersionDetails"`
+	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+	HomePolicy string `pulumi:"homePolicy"`
+	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+	NewHomePrefix string `pulumi:"newHomePrefix"`
+}
+
+// GetFsuCycleGoalVersionDetailComponentInput is an input type that accepts GetFsuCycleGoalVersionDetailComponentArgs and GetFsuCycleGoalVersionDetailComponentOutput values.
+// You can construct a concrete instance of `GetFsuCycleGoalVersionDetailComponentInput` via:
+//
+//	GetFsuCycleGoalVersionDetailComponentArgs{...}
+type GetFsuCycleGoalVersionDetailComponentInput interface {
+	pulumi.Input
+
+	ToGetFsuCycleGoalVersionDetailComponentOutput() GetFsuCycleGoalVersionDetailComponentOutput
+	ToGetFsuCycleGoalVersionDetailComponentOutputWithContext(context.Context) GetFsuCycleGoalVersionDetailComponentOutput
+}
+
+type GetFsuCycleGoalVersionDetailComponentArgs struct {
+	// Type of component in an Exadata software stack.
+	ComponentType pulumi.StringInput `pulumi:"componentType"`
+	// Details of goal 'GUEST_OS' software version.
+	GoalVersionDetails GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayInput `pulumi:"goalVersionDetails"`
+	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+	HomePolicy pulumi.StringInput `pulumi:"homePolicy"`
+	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+	NewHomePrefix pulumi.StringInput `pulumi:"newHomePrefix"`
+}
+
+func (GetFsuCycleGoalVersionDetailComponentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCycleGoalVersionDetailComponent)(nil)).Elem()
+}
+
+func (i GetFsuCycleGoalVersionDetailComponentArgs) ToGetFsuCycleGoalVersionDetailComponentOutput() GetFsuCycleGoalVersionDetailComponentOutput {
+	return i.ToGetFsuCycleGoalVersionDetailComponentOutputWithContext(context.Background())
+}
+
+func (i GetFsuCycleGoalVersionDetailComponentArgs) ToGetFsuCycleGoalVersionDetailComponentOutputWithContext(ctx context.Context) GetFsuCycleGoalVersionDetailComponentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCycleGoalVersionDetailComponentOutput)
+}
+
+// GetFsuCycleGoalVersionDetailComponentArrayInput is an input type that accepts GetFsuCycleGoalVersionDetailComponentArray and GetFsuCycleGoalVersionDetailComponentArrayOutput values.
+// You can construct a concrete instance of `GetFsuCycleGoalVersionDetailComponentArrayInput` via:
+//
+//	GetFsuCycleGoalVersionDetailComponentArray{ GetFsuCycleGoalVersionDetailComponentArgs{...} }
+type GetFsuCycleGoalVersionDetailComponentArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCycleGoalVersionDetailComponentArrayOutput() GetFsuCycleGoalVersionDetailComponentArrayOutput
+	ToGetFsuCycleGoalVersionDetailComponentArrayOutputWithContext(context.Context) GetFsuCycleGoalVersionDetailComponentArrayOutput
+}
+
+type GetFsuCycleGoalVersionDetailComponentArray []GetFsuCycleGoalVersionDetailComponentInput
+
+func (GetFsuCycleGoalVersionDetailComponentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCycleGoalVersionDetailComponent)(nil)).Elem()
+}
+
+func (i GetFsuCycleGoalVersionDetailComponentArray) ToGetFsuCycleGoalVersionDetailComponentArrayOutput() GetFsuCycleGoalVersionDetailComponentArrayOutput {
+	return i.ToGetFsuCycleGoalVersionDetailComponentArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCycleGoalVersionDetailComponentArray) ToGetFsuCycleGoalVersionDetailComponentArrayOutputWithContext(ctx context.Context) GetFsuCycleGoalVersionDetailComponentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCycleGoalVersionDetailComponentArrayOutput)
+}
+
+type GetFsuCycleGoalVersionDetailComponentOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCycleGoalVersionDetailComponentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCycleGoalVersionDetailComponent)(nil)).Elem()
+}
+
+func (o GetFsuCycleGoalVersionDetailComponentOutput) ToGetFsuCycleGoalVersionDetailComponentOutput() GetFsuCycleGoalVersionDetailComponentOutput {
+	return o
+}
+
+func (o GetFsuCycleGoalVersionDetailComponentOutput) ToGetFsuCycleGoalVersionDetailComponentOutputWithContext(ctx context.Context) GetFsuCycleGoalVersionDetailComponentOutput {
+	return o
+}
+
+// Type of component in an Exadata software stack.
+func (o GetFsuCycleGoalVersionDetailComponentOutput) ComponentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCycleGoalVersionDetailComponent) string { return v.ComponentType }).(pulumi.StringOutput)
+}
+
+// Details of goal 'GUEST_OS' software version.
+func (o GetFsuCycleGoalVersionDetailComponentOutput) GoalVersionDetails() GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput {
+	return o.ApplyT(func(v GetFsuCycleGoalVersionDetailComponent) []GetFsuCycleGoalVersionDetailComponentGoalVersionDetail {
+		return v.GoalVersionDetails
+	}).(GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput)
+}
+
+// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+func (o GetFsuCycleGoalVersionDetailComponentOutput) HomePolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCycleGoalVersionDetailComponent) string { return v.HomePolicy }).(pulumi.StringOutput)
+}
+
+// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+func (o GetFsuCycleGoalVersionDetailComponentOutput) NewHomePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCycleGoalVersionDetailComponent) string { return v.NewHomePrefix }).(pulumi.StringOutput)
+}
+
+type GetFsuCycleGoalVersionDetailComponentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCycleGoalVersionDetailComponentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCycleGoalVersionDetailComponent)(nil)).Elem()
+}
+
+func (o GetFsuCycleGoalVersionDetailComponentArrayOutput) ToGetFsuCycleGoalVersionDetailComponentArrayOutput() GetFsuCycleGoalVersionDetailComponentArrayOutput {
+	return o
+}
+
+func (o GetFsuCycleGoalVersionDetailComponentArrayOutput) ToGetFsuCycleGoalVersionDetailComponentArrayOutputWithContext(ctx context.Context) GetFsuCycleGoalVersionDetailComponentArrayOutput {
+	return o
+}
+
+func (o GetFsuCycleGoalVersionDetailComponentArrayOutput) Index(i pulumi.IntInput) GetFsuCycleGoalVersionDetailComponentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCycleGoalVersionDetailComponent {
+		return vs[0].([]GetFsuCycleGoalVersionDetailComponent)[vs[1].(int)]
+	}).(GetFsuCycleGoalVersionDetailComponentOutput)
+}
+
+type GetFsuCycleGoalVersionDetailComponentGoalVersionDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
+	GoalSoftwareImageId string `pulumi:"goalSoftwareImageId"`
+	// Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
+	GoalType string `pulumi:"goalType"`
+	// Goal version string matching an Oracle released 'GUEST_OS' software image.
+	GoalVersion string `pulumi:"goalVersion"`
+}
+
+// GetFsuCycleGoalVersionDetailComponentGoalVersionDetailInput is an input type that accepts GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArgs and GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput values.
+// You can construct a concrete instance of `GetFsuCycleGoalVersionDetailComponentGoalVersionDetailInput` via:
+//
+//	GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArgs{...}
+type GetFsuCycleGoalVersionDetailComponentGoalVersionDetailInput interface {
+	pulumi.Input
+
+	ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput() GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput
+	ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutputWithContext(context.Context) GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput
+}
+
+type GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
+	GoalSoftwareImageId pulumi.StringInput `pulumi:"goalSoftwareImageId"`
+	// Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
+	GoalType pulumi.StringInput `pulumi:"goalType"`
+	// Goal version string matching an Oracle released 'GUEST_OS' software image.
+	GoalVersion pulumi.StringInput `pulumi:"goalVersion"`
+}
+
+func (GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCycleGoalVersionDetailComponentGoalVersionDetail)(nil)).Elem()
+}
+
+func (i GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArgs) ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput() GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput {
+	return i.ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutputWithContext(context.Background())
+}
+
+func (i GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArgs) ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutputWithContext(ctx context.Context) GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput)
+}
+
+// GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayInput is an input type that accepts GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArray and GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput values.
+// You can construct a concrete instance of `GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayInput` via:
+//
+//	GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArray{ GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArgs{...} }
+type GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput() GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput
+	ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutputWithContext(context.Context) GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput
+}
+
+type GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArray []GetFsuCycleGoalVersionDetailComponentGoalVersionDetailInput
+
+func (GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCycleGoalVersionDetailComponentGoalVersionDetail)(nil)).Elem()
+}
+
+func (i GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArray) ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput() GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput {
+	return i.ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArray) ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutputWithContext(ctx context.Context) GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput)
+}
+
+type GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCycleGoalVersionDetailComponentGoalVersionDetail)(nil)).Elem()
+}
+
+func (o GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput) ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput() GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput {
+	return o
+}
+
+func (o GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput) ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutputWithContext(ctx context.Context) GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
+func (o GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput) GoalSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCycleGoalVersionDetailComponentGoalVersionDetail) string { return v.GoalSoftwareImageId }).(pulumi.StringOutput)
+}
+
+// Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
+func (o GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput) GoalType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCycleGoalVersionDetailComponentGoalVersionDetail) string { return v.GoalType }).(pulumi.StringOutput)
+}
+
+// Goal version string matching an Oracle released 'GUEST_OS' software image.
+func (o GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput) GoalVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCycleGoalVersionDetailComponentGoalVersionDetail) string { return v.GoalVersion }).(pulumi.StringOutput)
+}
+
+type GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCycleGoalVersionDetailComponentGoalVersionDetail)(nil)).Elem()
+}
+
+func (o GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput) ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput() GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput) ToGetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutputWithContext(ctx context.Context) GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput) Index(i pulumi.IntInput) GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCycleGoalVersionDetailComponentGoalVersionDetail {
+		return vs[0].([]GetFsuCycleGoalVersionDetailComponentGoalVersionDetail)[vs[1].(int)]
+	}).(GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput)
 }
 
 type GetFsuCycleNextActionToExecute struct {
@@ -3928,10 +6183,16 @@ func (o GetFsuCycleStageActionScheduleArrayOutput) Index(i pulumi.IntInput) GetF
 type GetFsuCycleUpgradeDetail struct {
 	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType string `pulumi:"collectionType"`
+	// Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+	IsIgnorePostUpgradeErrors bool `pulumi:"isIgnorePostUpgradeErrors"`
+	// Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+	IsIgnorePrerequisites bool `pulumi:"isIgnorePrerequisites"`
 	// Enables or disables the recompilation of invalid objects.
 	IsRecompileInvalidObjects bool `pulumi:"isRecompileInvalidObjects"`
 	// Enables or disables time zone upgrade.
 	IsTimeZoneUpgrade bool `pulumi:"isTimeZoneUpgrade"`
+	// Service drain timeout specified in seconds.
+	MaxDrainTimeoutInSeconds int `pulumi:"maxDrainTimeoutInSeconds"`
 }
 
 // GetFsuCycleUpgradeDetailInput is an input type that accepts GetFsuCycleUpgradeDetailArgs and GetFsuCycleUpgradeDetailOutput values.
@@ -3948,10 +6209,16 @@ type GetFsuCycleUpgradeDetailInput interface {
 type GetFsuCycleUpgradeDetailArgs struct {
 	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType pulumi.StringInput `pulumi:"collectionType"`
+	// Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+	IsIgnorePostUpgradeErrors pulumi.BoolInput `pulumi:"isIgnorePostUpgradeErrors"`
+	// Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+	IsIgnorePrerequisites pulumi.BoolInput `pulumi:"isIgnorePrerequisites"`
 	// Enables or disables the recompilation of invalid objects.
 	IsRecompileInvalidObjects pulumi.BoolInput `pulumi:"isRecompileInvalidObjects"`
 	// Enables or disables time zone upgrade.
 	IsTimeZoneUpgrade pulumi.BoolInput `pulumi:"isTimeZoneUpgrade"`
+	// Service drain timeout specified in seconds.
+	MaxDrainTimeoutInSeconds pulumi.IntInput `pulumi:"maxDrainTimeoutInSeconds"`
 }
 
 func (GetFsuCycleUpgradeDetailArgs) ElementType() reflect.Type {
@@ -4010,6 +6277,16 @@ func (o GetFsuCycleUpgradeDetailOutput) CollectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCycleUpgradeDetail) string { return v.CollectionType }).(pulumi.StringOutput)
 }
 
+// Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+func (o GetFsuCycleUpgradeDetailOutput) IsIgnorePostUpgradeErrors() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFsuCycleUpgradeDetail) bool { return v.IsIgnorePostUpgradeErrors }).(pulumi.BoolOutput)
+}
+
+// Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+func (o GetFsuCycleUpgradeDetailOutput) IsIgnorePrerequisites() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFsuCycleUpgradeDetail) bool { return v.IsIgnorePrerequisites }).(pulumi.BoolOutput)
+}
+
 // Enables or disables the recompilation of invalid objects.
 func (o GetFsuCycleUpgradeDetailOutput) IsRecompileInvalidObjects() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFsuCycleUpgradeDetail) bool { return v.IsRecompileInvalidObjects }).(pulumi.BoolOutput)
@@ -4018,6 +6295,11 @@ func (o GetFsuCycleUpgradeDetailOutput) IsRecompileInvalidObjects() pulumi.BoolO
 // Enables or disables time zone upgrade.
 func (o GetFsuCycleUpgradeDetailOutput) IsTimeZoneUpgrade() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFsuCycleUpgradeDetail) bool { return v.IsTimeZoneUpgrade }).(pulumi.BoolOutput)
+}
+
+// Service drain timeout specified in seconds.
+func (o GetFsuCycleUpgradeDetailOutput) MaxDrainTimeoutInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFsuCycleUpgradeDetail) int { return v.MaxDrainTimeoutInSeconds }).(pulumi.IntOutput)
 }
 
 type GetFsuCycleUpgradeDetailArrayOutput struct{ *pulumi.OutputState }
@@ -4257,21 +6539,21 @@ type GetFsuCyclesFsuCycleSummaryCollectionItem struct {
 	DiagnosticsCollections []GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollection `pulumi:"diagnosticsCollections"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
-	// OCID identifier for the Action that is currently in execution, if applicable.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
 	ExecutingFsuActionId string `pulumi:"executingFsuActionId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only resources whose fsuCollectionId matches the given fsuCollectionId.
 	FsuCollectionId string `pulumi:"fsuCollectionId"`
-	// Goal version or image details for the Exadata Fleet Update Cycle.
+	// Details of goal 'GUEST_OS' software version.
 	GoalVersionDetails []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail `pulumi:"goalVersionDetails"`
-	// OCID identifier for the Exadata Fleet Update Cycle.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Cycle.
 	Id string `pulumi:"id"`
-	// List of identifiers of patches to ignore.
+	// List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnoreMissingPatches []string `pulumi:"isIgnoreMissingPatches"`
-	// Ignore patch conflicts or missing patches between the source and goal homes.
+	// Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnorePatches bool `pulumi:"isIgnorePatches"`
-	// Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+	// Ensure that database services are online on the same VMs before and after the maintenance update.
 	IsKeepPlacement bool `pulumi:"isKeepPlacement"`
 	// The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
 	LastCompletedAction string `pulumi:"lastCompletedAction"`
@@ -4281,7 +6563,7 @@ type GetFsuCyclesFsuCycleSummaryCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Service drain timeout specified in seconds.
 	MaxDrainTimeoutInSeconds int `pulumi:"maxDrainTimeoutInSeconds"`
-	// In this array all the possible actions will be listed. The first element is the suggested Action.
+	// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
 	NextActionToExecutes []GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecute `pulumi:"nextActionToExecutes"`
 	// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
 	RollbackCycleState string `pulumi:"rollbackCycleState"`
@@ -4329,21 +6611,21 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemArgs struct {
 	DiagnosticsCollections GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollectionArrayInput `pulumi:"diagnosticsCollections"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// OCID identifier for the Action that is currently in execution, if applicable.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
 	ExecutingFsuActionId pulumi.StringInput `pulumi:"executingFsuActionId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only resources whose fsuCollectionId matches the given fsuCollectionId.
 	FsuCollectionId pulumi.StringInput `pulumi:"fsuCollectionId"`
-	// Goal version or image details for the Exadata Fleet Update Cycle.
+	// Details of goal 'GUEST_OS' software version.
 	GoalVersionDetails GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArrayInput `pulumi:"goalVersionDetails"`
-	// OCID identifier for the Exadata Fleet Update Cycle.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Cycle.
 	Id pulumi.StringInput `pulumi:"id"`
-	// List of identifiers of patches to ignore.
+	// List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnoreMissingPatches pulumi.StringArrayInput `pulumi:"isIgnoreMissingPatches"`
-	// Ignore patch conflicts or missing patches between the source and goal homes.
+	// Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnorePatches pulumi.BoolInput `pulumi:"isIgnorePatches"`
-	// Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+	// Ensure that database services are online on the same VMs before and after the maintenance update.
 	IsKeepPlacement pulumi.BoolInput `pulumi:"isKeepPlacement"`
 	// The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
 	LastCompletedAction pulumi.StringInput `pulumi:"lastCompletedAction"`
@@ -4353,7 +6635,7 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Service drain timeout specified in seconds.
 	MaxDrainTimeoutInSeconds pulumi.IntInput `pulumi:"maxDrainTimeoutInSeconds"`
-	// In this array all the possible actions will be listed. The first element is the suggested Action.
+	// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
 	NextActionToExecutes GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArrayInput `pulumi:"nextActionToExecutes"`
 	// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
 	RollbackCycleState pulumi.StringInput `pulumi:"rollbackCycleState"`
@@ -4467,7 +6749,7 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) DisplayName() pulumi.St
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// OCID identifier for the Action that is currently in execution, if applicable.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) ExecutingFsuActionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.ExecutingFsuActionId }).(pulumi.StringOutput)
 }
@@ -4482,29 +6764,29 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) FsuCollectionId() pulum
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.FsuCollectionId }).(pulumi.StringOutput)
 }
 
-// Goal version or image details for the Exadata Fleet Update Cycle.
+// Details of goal 'GUEST_OS' software version.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) GoalVersionDetails() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArrayOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
 		return v.GoalVersionDetails
 	}).(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArrayOutput)
 }
 
-// OCID identifier for the Exadata Fleet Update Cycle.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Cycle.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// List of identifiers of patches to ignore.
+// List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) IsIgnoreMissingPatches() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) []string { return v.IsIgnoreMissingPatches }).(pulumi.StringArrayOutput)
 }
 
-// Ignore patch conflicts or missing patches between the source and goal homes.
+// Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) IsIgnorePatches() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) bool { return v.IsIgnorePatches }).(pulumi.BoolOutput)
 }
 
-// Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+// Ensure that database services are online on the same VMs before and after the maintenance update.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) IsKeepPlacement() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) bool { return v.IsKeepPlacement }).(pulumi.BoolOutput)
 }
@@ -4529,7 +6811,7 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) MaxDrainTimeoutInSecond
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) int { return v.MaxDrainTimeoutInSeconds }).(pulumi.IntOutput)
 }
 
-// In this array all the possible actions will be listed. The first element is the suggested Action.
+// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) NextActionToExecutes() GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArrayOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) []GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecute {
 		return v.NextActionToExecutes
@@ -4935,15 +7217,17 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollectionArrayOutpu
 }
 
 type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail struct {
+	// Details of goal versions for components in an Exadata software stack.
+	Components []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent `pulumi:"components"`
 	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy string `pulumi:"homePolicy"`
 	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix string `pulumi:"newHomePrefix"`
-	// Target database software image OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
 	SoftwareImageId string `pulumi:"softwareImageId"`
 	// Type of Exadata Fleet Update Cycle.
 	Type string `pulumi:"type"`
-	// Target DB or GI version string for the Exadata Fleet Update Cycle.
+	// Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 	Version string `pulumi:"version"`
 }
 
@@ -4959,15 +7243,17 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailInput interface {
 }
 
 type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArgs struct {
+	// Details of goal versions for components in an Exadata software stack.
+	Components GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayInput `pulumi:"components"`
 	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 	HomePolicy pulumi.StringInput `pulumi:"homePolicy"`
 	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
 	NewHomePrefix pulumi.StringInput `pulumi:"newHomePrefix"`
-	// Target database software image OCID.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
 	SoftwareImageId pulumi.StringInput `pulumi:"softwareImageId"`
 	// Type of Exadata Fleet Update Cycle.
 	Type pulumi.StringInput `pulumi:"type"`
-	// Target DB or GI version string for the Exadata Fleet Update Cycle.
+	// Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -5022,6 +7308,13 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput) ToGetF
 	return o
 }
 
+// Details of goal versions for components in an Exadata software stack.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput) Components() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail) []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent {
+		return v.Components
+	}).(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput)
+}
+
 // Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput) HomePolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail) string { return v.HomePolicy }).(pulumi.StringOutput)
@@ -5032,7 +7325,7 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput) NewHom
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail) string { return v.NewHomePrefix }).(pulumi.StringOutput)
 }
 
-// Target database software image OCID.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput) SoftwareImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail) string { return v.SoftwareImageId }).(pulumi.StringOutput)
 }
@@ -5042,7 +7335,7 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput) Type()
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail) string { return v.Type }).(pulumi.StringOutput)
 }
 
-// Target DB or GI version string for the Exadata Fleet Update Cycle.
+// Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -5065,6 +7358,259 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArrayOutput) I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
 		return vs[0].([]GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail)[vs[1].(int)]
 	}).(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput)
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent struct {
+	// Type of component in an Exadata software stack.
+	ComponentType string `pulumi:"componentType"`
+	// Details of goal 'GUEST_OS' software version.
+	GoalVersionDetails []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail `pulumi:"goalVersionDetails"`
+	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+	HomePolicy string `pulumi:"homePolicy"`
+	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+	NewHomePrefix string `pulumi:"newHomePrefix"`
+}
+
+// GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentInput is an input type that accepts GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArgs and GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput values.
+// You can construct a concrete instance of `GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentInput` via:
+//
+//	GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArgs{...}
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentInput interface {
+	pulumi.Input
+
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutputWithContext(context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArgs struct {
+	// Type of component in an Exadata software stack.
+	ComponentType pulumi.StringInput `pulumi:"componentType"`
+	// Details of goal 'GUEST_OS' software version.
+	GoalVersionDetails GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayInput `pulumi:"goalVersionDetails"`
+	// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+	HomePolicy pulumi.StringInput `pulumi:"homePolicy"`
+	// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+	NewHomePrefix pulumi.StringInput `pulumi:"newHomePrefix"`
+}
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent)(nil)).Elem()
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArgs) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput {
+	return i.ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutputWithContext(context.Background())
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArgs) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput)
+}
+
+// GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayInput is an input type that accepts GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArray and GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput values.
+// You can construct a concrete instance of `GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayInput` via:
+//
+//	GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArray{ GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArgs{...} }
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutputWithContext(context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArray []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentInput
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent)(nil)).Elem()
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArray) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput {
+	return i.ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArray) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput)
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent)(nil)).Elem()
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput {
+	return o
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput {
+	return o
+}
+
+// Type of component in an Exadata software stack.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput) ComponentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent) string {
+		return v.ComponentType
+	}).(pulumi.StringOutput)
+}
+
+// Details of goal 'GUEST_OS' software version.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput) GoalVersionDetails() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent) []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail {
+		return v.GoalVersionDetails
+	}).(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput)
+}
+
+// Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput) HomePolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent) string {
+		return v.HomePolicy
+	}).(pulumi.StringOutput)
+}
+
+// Prefix name used for new DB home resources created as part of the Stage Action. Format: <specified_prefix>_<timestamp> If not specified, a default Oracle Cloud Infrastructure DB home resource will be generated for the new DB home resources created.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput) NewHomePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent) string {
+		return v.NewHomePrefix
+	}).(pulumi.StringOutput)
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent)(nil)).Elem()
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput {
+	return o
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput {
+	return o
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput) Index(i pulumi.IntInput) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent {
+		return vs[0].([]GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent)[vs[1].(int)]
+	}).(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput)
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
+	GoalSoftwareImageId string `pulumi:"goalSoftwareImageId"`
+	// Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
+	GoalType string `pulumi:"goalType"`
+	// Goal version string matching an Oracle released 'GUEST_OS' software image.
+	GoalVersion string `pulumi:"goalVersion"`
+}
+
+// GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailInput is an input type that accepts GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArgs and GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput values.
+// You can construct a concrete instance of `GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailInput` via:
+//
+//	GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArgs{...}
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailInput interface {
+	pulumi.Input
+
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutputWithContext(context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
+	GoalSoftwareImageId pulumi.StringInput `pulumi:"goalSoftwareImageId"`
+	// Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
+	GoalType pulumi.StringInput `pulumi:"goalType"`
+	// Goal version string matching an Oracle released 'GUEST_OS' software image.
+	GoalVersion pulumi.StringInput `pulumi:"goalVersion"`
+}
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail)(nil)).Elem()
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArgs) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput {
+	return i.ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutputWithContext(context.Background())
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArgs) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput)
+}
+
+// GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayInput is an input type that accepts GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArray and GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput values.
+// You can construct a concrete instance of `GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayInput` via:
+//
+//	GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArray{ GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArgs{...} }
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput
+	ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutputWithContext(context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArray []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailInput
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail)(nil)).Elem()
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArray) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput {
+	return i.ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArray) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput)
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail)(nil)).Elem()
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput {
+	return o
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom 'GI' software image.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput) GoalSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail) string {
+		return v.GoalSoftwareImageId
+	}).(pulumi.StringOutput)
+}
+
+// Preference to use an Oracle released 'GI' software image or a custom 'GI' software image.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput) GoalType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail) string {
+		return v.GoalType
+	}).(pulumi.StringOutput)
+}
+
+// Goal version string matching an Oracle released 'GUEST_OS' software image.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput) GoalVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail) string {
+		return v.GoalVersion
+	}).(pulumi.StringOutput)
+}
+
+type GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail)(nil)).Elem()
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput() GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput) ToGetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutputWithContext(ctx context.Context) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput) Index(i pulumi.IntInput) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail {
+		return vs[0].([]GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetail)[vs[1].(int)]
+	}).(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput)
 }
 
 type GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecute struct {
@@ -5282,10 +7828,16 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArrayOutput)
 type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail struct {
 	// A filter to return only resources whose Collection type matches the given type.
 	CollectionType string `pulumi:"collectionType"`
+	// Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+	IsIgnorePostUpgradeErrors bool `pulumi:"isIgnorePostUpgradeErrors"`
+	// Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+	IsIgnorePrerequisites bool `pulumi:"isIgnorePrerequisites"`
 	// Enables or disables the recompilation of invalid objects.
 	IsRecompileInvalidObjects bool `pulumi:"isRecompileInvalidObjects"`
 	// Enables or disables time zone upgrade.
 	IsTimeZoneUpgrade bool `pulumi:"isTimeZoneUpgrade"`
+	// Service drain timeout specified in seconds.
+	MaxDrainTimeoutInSeconds int `pulumi:"maxDrainTimeoutInSeconds"`
 }
 
 // GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailInput is an input type that accepts GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs and GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput values.
@@ -5302,10 +7854,16 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailInput interface {
 type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs struct {
 	// A filter to return only resources whose Collection type matches the given type.
 	CollectionType pulumi.StringInput `pulumi:"collectionType"`
+	// Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+	IsIgnorePostUpgradeErrors pulumi.BoolInput `pulumi:"isIgnorePostUpgradeErrors"`
+	// Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+	IsIgnorePrerequisites pulumi.BoolInput `pulumi:"isIgnorePrerequisites"`
 	// Enables or disables the recompilation of invalid objects.
 	IsRecompileInvalidObjects pulumi.BoolInput `pulumi:"isRecompileInvalidObjects"`
 	// Enables or disables time zone upgrade.
 	IsTimeZoneUpgrade pulumi.BoolInput `pulumi:"isTimeZoneUpgrade"`
+	// Service drain timeout specified in seconds.
+	MaxDrainTimeoutInSeconds pulumi.IntInput `pulumi:"maxDrainTimeoutInSeconds"`
 }
 
 func (GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArgs) ElementType() reflect.Type {
@@ -5364,6 +7922,18 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) Collection
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail) string { return v.CollectionType }).(pulumi.StringOutput)
 }
 
+// Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) IsIgnorePostUpgradeErrors() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail) bool {
+		return v.IsIgnorePostUpgradeErrors
+	}).(pulumi.BoolOutput)
+}
+
+// Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) IsIgnorePrerequisites() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail) bool { return v.IsIgnorePrerequisites }).(pulumi.BoolOutput)
+}
+
 // Enables or disables the recompilation of invalid objects.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) IsRecompileInvalidObjects() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail) bool {
@@ -5374,6 +7944,11 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) IsRecompil
 // Enables or disables time zone upgrade.
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) IsTimeZoneUpgrade() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail) bool { return v.IsTimeZoneUpgrade }).(pulumi.BoolOutput)
+}
+
+// Service drain timeout specified in seconds.
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailOutput) MaxDrainTimeoutInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail) int { return v.MaxDrainTimeoutInSeconds }).(pulumi.IntOutput)
 }
 
 type GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput struct{ *pulumi.OutputState }
@@ -5399,6 +7974,14 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayOutput) Index
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionActiveFsuCycleInput)(nil)).Elem(), FsuCollectionActiveFsuCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionActiveFsuCycleArrayInput)(nil)).Elem(), FsuCollectionActiveFsuCycleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionComponentInput)(nil)).Elem(), FsuCollectionComponentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionComponentArrayInput)(nil)).Elem(), FsuCollectionComponentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionComponentFleetDiscoveryInput)(nil)).Elem(), FsuCollectionComponentFleetDiscoveryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionComponentFleetDiscoveryPtrInput)(nil)).Elem(), FsuCollectionComponentFleetDiscoveryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionComponentFleetDiscoveryFilterInput)(nil)).Elem(), FsuCollectionComponentFleetDiscoveryFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionComponentFleetDiscoveryFilterArrayInput)(nil)).Elem(), FsuCollectionComponentFleetDiscoveryFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionComponentFleetDiscoveryFilterTagInput)(nil)).Elem(), FsuCollectionComponentFleetDiscoveryFilterTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionComponentFleetDiscoveryFilterTagArrayInput)(nil)).Elem(), FsuCollectionComponentFleetDiscoveryFilterTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionFleetDiscoveryInput)(nil)).Elem(), FsuCollectionFleetDiscoveryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionFleetDiscoveryPtrInput)(nil)).Elem(), FsuCollectionFleetDiscoveryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCollectionFleetDiscoveryFilterInput)(nil)).Elem(), FsuCollectionFleetDiscoveryFilterArgs{})
@@ -5413,6 +7996,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleDiagnosticsCollectionPtrInput)(nil)).Elem(), FsuCycleDiagnosticsCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleGoalVersionDetailsInput)(nil)).Elem(), FsuCycleGoalVersionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleGoalVersionDetailsPtrInput)(nil)).Elem(), FsuCycleGoalVersionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleGoalVersionDetailsComponentInput)(nil)).Elem(), FsuCycleGoalVersionDetailsComponentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleGoalVersionDetailsComponentArrayInput)(nil)).Elem(), FsuCycleGoalVersionDetailsComponentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleGoalVersionDetailsComponentGoalVersionDetailsInput)(nil)).Elem(), FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleNextActionToExecuteInput)(nil)).Elem(), FsuCycleNextActionToExecuteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleNextActionToExecuteArrayInput)(nil)).Elem(), FsuCycleNextActionToExecuteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleStageActionScheduleInput)(nil)).Elem(), FsuCycleStageActionScheduleArgs{})
@@ -5421,6 +8007,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FsuCycleUpgradeDetailsPtrInput)(nil)).Elem(), FsuCycleUpgradeDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionActiveFsuCycleInput)(nil)).Elem(), GetFsuCollectionActiveFsuCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionActiveFsuCycleArrayInput)(nil)).Elem(), GetFsuCollectionActiveFsuCycleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionComponentInput)(nil)).Elem(), GetFsuCollectionComponentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionComponentArrayInput)(nil)).Elem(), GetFsuCollectionComponentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionComponentFleetDiscoveryInput)(nil)).Elem(), GetFsuCollectionComponentFleetDiscoveryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionComponentFleetDiscoveryArrayInput)(nil)).Elem(), GetFsuCollectionComponentFleetDiscoveryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionComponentFleetDiscoveryFilterInput)(nil)).Elem(), GetFsuCollectionComponentFleetDiscoveryFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionComponentFleetDiscoveryFilterArrayInput)(nil)).Elem(), GetFsuCollectionComponentFleetDiscoveryFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionComponentFleetDiscoveryFilterTagInput)(nil)).Elem(), GetFsuCollectionComponentFleetDiscoveryFilterTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionComponentFleetDiscoveryFilterTagArrayInput)(nil)).Elem(), GetFsuCollectionComponentFleetDiscoveryFilterTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionFleetDiscoveryInput)(nil)).Elem(), GetFsuCollectionFleetDiscoveryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionFleetDiscoveryArrayInput)(nil)).Elem(), GetFsuCollectionFleetDiscoveryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionFleetDiscoveryFilterInput)(nil)).Elem(), GetFsuCollectionFleetDiscoveryFilterArgs{})
@@ -5435,6 +8029,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemArrayInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleArrayInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArrayInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterInput)(nil)).Elem(), GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterArgs{})
@@ -5449,6 +8051,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleDiagnosticsCollectionArrayInput)(nil)).Elem(), GetFsuCycleDiagnosticsCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleGoalVersionDetailInput)(nil)).Elem(), GetFsuCycleGoalVersionDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleGoalVersionDetailArrayInput)(nil)).Elem(), GetFsuCycleGoalVersionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleGoalVersionDetailComponentInput)(nil)).Elem(), GetFsuCycleGoalVersionDetailComponentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleGoalVersionDetailComponentArrayInput)(nil)).Elem(), GetFsuCycleGoalVersionDetailComponentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleGoalVersionDetailComponentGoalVersionDetailInput)(nil)).Elem(), GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayInput)(nil)).Elem(), GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleNextActionToExecuteInput)(nil)).Elem(), GetFsuCycleNextActionToExecuteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleNextActionToExecuteArrayInput)(nil)).Elem(), GetFsuCycleNextActionToExecuteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCycleStageActionScheduleInput)(nil)).Elem(), GetFsuCycleStageActionScheduleArgs{})
@@ -5469,6 +8075,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollectionArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArgs{})
@@ -5477,6 +8087,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArrayInput)(nil)).Elem(), GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetailArray{})
 	pulumi.RegisterOutputType(FsuCollectionActiveFsuCycleOutput{})
 	pulumi.RegisterOutputType(FsuCollectionActiveFsuCycleArrayOutput{})
+	pulumi.RegisterOutputType(FsuCollectionComponentOutput{})
+	pulumi.RegisterOutputType(FsuCollectionComponentArrayOutput{})
+	pulumi.RegisterOutputType(FsuCollectionComponentFleetDiscoveryOutput{})
+	pulumi.RegisterOutputType(FsuCollectionComponentFleetDiscoveryPtrOutput{})
+	pulumi.RegisterOutputType(FsuCollectionComponentFleetDiscoveryFilterOutput{})
+	pulumi.RegisterOutputType(FsuCollectionComponentFleetDiscoveryFilterArrayOutput{})
+	pulumi.RegisterOutputType(FsuCollectionComponentFleetDiscoveryFilterTagOutput{})
+	pulumi.RegisterOutputType(FsuCollectionComponentFleetDiscoveryFilterTagArrayOutput{})
 	pulumi.RegisterOutputType(FsuCollectionFleetDiscoveryOutput{})
 	pulumi.RegisterOutputType(FsuCollectionFleetDiscoveryPtrOutput{})
 	pulumi.RegisterOutputType(FsuCollectionFleetDiscoveryFilterOutput{})
@@ -5491,6 +8109,9 @@ func init() {
 	pulumi.RegisterOutputType(FsuCycleDiagnosticsCollectionPtrOutput{})
 	pulumi.RegisterOutputType(FsuCycleGoalVersionDetailsOutput{})
 	pulumi.RegisterOutputType(FsuCycleGoalVersionDetailsPtrOutput{})
+	pulumi.RegisterOutputType(FsuCycleGoalVersionDetailsComponentOutput{})
+	pulumi.RegisterOutputType(FsuCycleGoalVersionDetailsComponentArrayOutput{})
+	pulumi.RegisterOutputType(FsuCycleGoalVersionDetailsComponentGoalVersionDetailsOutput{})
 	pulumi.RegisterOutputType(FsuCycleNextActionToExecuteOutput{})
 	pulumi.RegisterOutputType(FsuCycleNextActionToExecuteArrayOutput{})
 	pulumi.RegisterOutputType(FsuCycleStageActionScheduleOutput{})
@@ -5499,6 +8120,14 @@ func init() {
 	pulumi.RegisterOutputType(FsuCycleUpgradeDetailsPtrOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionActiveFsuCycleOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionActiveFsuCycleArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionComponentOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionComponentArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionComponentFleetDiscoveryOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionComponentFleetDiscoveryArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionComponentFleetDiscoveryFilterOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionComponentFleetDiscoveryFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionComponentFleetDiscoveryFilterTagOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionComponentFleetDiscoveryFilterTagArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionFleetDiscoveryOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionFleetDiscoveryArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionFleetDiscoveryFilterOutput{})
@@ -5513,6 +8142,14 @@ func init() {
 	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagOutput{})
+	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemComponentFleetDiscoveryFilterTagArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryFilterOutput{})
@@ -5527,6 +8164,10 @@ func init() {
 	pulumi.RegisterOutputType(GetFsuCycleDiagnosticsCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCycleGoalVersionDetailOutput{})
 	pulumi.RegisterOutputType(GetFsuCycleGoalVersionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCycleGoalVersionDetailComponentOutput{})
+	pulumi.RegisterOutputType(GetFsuCycleGoalVersionDetailComponentArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCycleGoalVersionDetailComponentGoalVersionDetailOutput{})
+	pulumi.RegisterOutputType(GetFsuCycleGoalVersionDetailComponentGoalVersionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCycleNextActionToExecuteOutput{})
 	pulumi.RegisterOutputType(GetFsuCycleNextActionToExecuteArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCycleStageActionScheduleOutput{})
@@ -5547,6 +8188,10 @@ func init() {
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentOutput{})
+	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentArrayOutput{})
+	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailOutput{})
+	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponentGoalVersionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArrayOutput{})
 	pulumi.RegisterOutputType(GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleOutput{})

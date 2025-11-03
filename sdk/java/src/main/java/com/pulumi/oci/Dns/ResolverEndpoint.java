@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
- * 
- * Creates a new resolver endpoint in the same compartment as the resolver.
- * 
  * ## Example Usage
  * 
  * <pre>

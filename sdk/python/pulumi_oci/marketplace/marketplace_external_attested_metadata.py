@@ -136,10 +136,6 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
                  instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Marketplace External Attested Metadata resource in Oracle Cloud Infrastructure Marketplace service.
-
-        Generates attested marketplace metadata
-
         ## Example Usage
 
         ```python
@@ -175,10 +171,6 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
                  args: MarketplaceExternalAttestedMetadataArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Marketplace External Attested Metadata resource in Oracle Cloud Infrastructure Marketplace service.
-
-        Generates attested marketplace metadata
-
         ## Example Usage
 
         ```python

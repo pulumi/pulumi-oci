@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Repository Mirror resource in Oracle Cloud Infrastructure Devops service.
-//
-// Synchronize a mirrored repository to the latest version from external providers.
-//
 // ## Example Usage
 //
 // ```go

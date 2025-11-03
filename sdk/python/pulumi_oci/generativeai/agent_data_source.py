@@ -399,10 +399,6 @@ class AgentDataSource(pulumi.CustomResource):
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        Creates a data source.
-
         ## Example Usage
 
         ## Import
@@ -435,10 +431,6 @@ class AgentDataSource(pulumi.CustomResource):
                  args: AgentDataSourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        Creates a data source.
-
         ## Example Usage
 
         ## Import

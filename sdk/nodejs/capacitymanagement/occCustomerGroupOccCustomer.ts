@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Occ Customer Group Occ Customer resource in Oracle Cloud Infrastructure Capacity Management service.
- *
- * Create customer.
- *
  * ## Example Usage
  *
  * ```typescript

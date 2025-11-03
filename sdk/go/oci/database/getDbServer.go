@@ -67,7 +67,7 @@ type GetDbServerResult struct {
 	AutonomousVmClusterIds []string `pulumi:"autonomousVmClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel string `pulumi:"computeModel"`
 	// The number of CPU cores enabled on the Db server.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
@@ -161,7 +161,7 @@ func (o GetDbServerResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbServerResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 func (o GetDbServerResultOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbServerResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }

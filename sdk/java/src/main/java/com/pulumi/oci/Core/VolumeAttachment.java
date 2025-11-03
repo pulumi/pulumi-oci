@@ -18,10 +18,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
- * 
- * Attaches the specified storage volume to the specified instance.
- * 
  * ## Example Usage
  * 
  * <pre>

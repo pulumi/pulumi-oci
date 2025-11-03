@@ -18,14 +18,14 @@ public final class AutonomousDatabaseEncryptionKeyHistoryEntryArgs extends com.p
     public static final AutonomousDatabaseEncryptionKeyHistoryEntryArgs Empty = new AutonomousDatabaseEncryptionKeyHistoryEntryArgs();
 
     /**
-     * (Updatable) Details of the Autonomous Database encryption key.
+     * (Updatable) Details of the Autonomous AI Database encryption key.
      * 
      */
     @Import(name="encryptionKeys")
     private @Nullable Output<List<AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs>> encryptionKeys;
 
     /**
-     * @return (Updatable) Details of the Autonomous Database encryption key.
+     * @return (Updatable) Details of the Autonomous AI Database encryption key.
      * 
      */
     public Optional<Output<List<AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs>>> encryptionKeys() {
@@ -73,7 +73,7 @@ public final class AutonomousDatabaseEncryptionKeyHistoryEntryArgs extends com.p
         }
 
         /**
-         * @param encryptionKeys (Updatable) Details of the Autonomous Database encryption key.
+         * @param encryptionKeys (Updatable) Details of the Autonomous AI Database encryption key.
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class AutonomousDatabaseEncryptionKeyHistoryEntryArgs extends com.p
         }
 
         /**
-         * @param encryptionKeys (Updatable) Details of the Autonomous Database encryption key.
+         * @param encryptionKeys (Updatable) Details of the Autonomous AI Database encryption key.
          * 
          * @return builder
          * 
@@ -94,7 +94,7 @@ public final class AutonomousDatabaseEncryptionKeyHistoryEntryArgs extends com.p
         }
 
         /**
-         * @param encryptionKeys (Updatable) Details of the Autonomous Database encryption key.
+         * @param encryptionKeys (Updatable) Details of the Autonomous AI Database encryption key.
          * 
          * @return builder
          * 

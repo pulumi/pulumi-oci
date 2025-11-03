@@ -399,10 +399,6 @@ class ExternalDbSystem(pulumi.CustomResource):
                  stack_monitoring_config: Optional[pulumi.Input[Union['ExternalDbSystemStackMonitoringConfigArgs', 'ExternalDbSystemStackMonitoringConfigArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the External Db System resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an external DB system and its related resources.
-
         ## Example Usage
 
         ```python
@@ -453,10 +449,6 @@ class ExternalDbSystem(pulumi.CustomResource):
                  args: ExternalDbSystemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db System resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an external DB system and its related resources.
-
         ## Example Usage
 
         ```python

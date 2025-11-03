@@ -200,10 +200,6 @@ class SubscriptionMapping(pulumi.CustomResource):
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Subscription Mapping resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
-
-        Assign the tenancy record identified by the compartment ID to the given subscription ID.
-
         ## Example Usage
 
         ```python
@@ -239,10 +235,6 @@ class SubscriptionMapping(pulumi.CustomResource):
                  args: SubscriptionMappingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Subscription Mapping resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
-
-        Assign the tenancy record identified by the compartment ID to the given subscription ID.
-
         ## Example Usage
 
         ```python

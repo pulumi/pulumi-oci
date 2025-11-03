@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// # Create an Identity Provider
-//
 // ## Example Usage
 //
 // ## Import

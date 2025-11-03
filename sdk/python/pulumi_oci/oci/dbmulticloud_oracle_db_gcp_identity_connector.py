@@ -524,10 +524,6 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
                  resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Creates Oracle DB GCP Identity Connector resource.
-
         ## Example Usage
 
         ```python
@@ -585,10 +581,6 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
                  args: DbmulticloudOracleDbGcpIdentityConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Creates Oracle DB GCP Identity Connector resource.
-
         ## Example Usage
 
         ```python

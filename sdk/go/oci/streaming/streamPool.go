@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Stream Pool resource in Oracle Cloud Infrastructure Streaming service.
-//
-// Starts the provisioning of a new stream pool.
-// To track the progress of the provisioning, you can periodically call GetStreamPool.
-// In the response, the `lifecycleState` parameter of the object tells you its current state.
-//
 // ## Example Usage
 //
 // ```go
@@ -53,6 +47,7 @@ import (
 //					PrivateEndpointIp: pulumi.Any(streamPoolPrivateEndpointSettingsPrivateEndpointIp),
 //					SubnetId:          pulumi.Any(testSubnet.Id),
 //				},
+//				SecurityAttributes: pulumi.Any(streamPoolSecurityAttributes),
 //			})
 //			if err != nil {
 //				return err
@@ -93,6 +88,11 @@ type StreamPool struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Optional parameters if a private stream pool is requested.
 	PrivateEndpointSettings StreamPoolPrivateEndpointSettingsOutput `pulumi:"privateEndpointSettings"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The current state of the stream pool.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
@@ -152,6 +152,11 @@ type streamPoolState struct {
 	Name *string `pulumi:"name"`
 	// Optional parameters if a private stream pool is requested.
 	PrivateEndpointSettings *StreamPoolPrivateEndpointSettings `pulumi:"privateEndpointSettings"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the stream pool.
 	State *string `pulumi:"state"`
 	// The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
@@ -179,6 +184,11 @@ type StreamPoolState struct {
 	Name pulumi.StringPtrInput
 	// Optional parameters if a private stream pool is requested.
 	PrivateEndpointSettings StreamPoolPrivateEndpointSettingsPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SecurityAttributes pulumi.StringMapInput
 	// The current state of the stream pool.
 	State pulumi.StringPtrInput
 	// The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
@@ -204,6 +214,11 @@ type streamPoolArgs struct {
 	Name *string `pulumi:"name"`
 	// Optional parameters if a private stream pool is requested.
 	PrivateEndpointSettings *StreamPoolPrivateEndpointSettings `pulumi:"privateEndpointSettings"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 }
 
 // The set of arguments for constructing a StreamPool resource.
@@ -222,6 +237,11 @@ type StreamPoolArgs struct {
 	Name pulumi.StringPtrInput
 	// Optional parameters if a private stream pool is requested.
 	PrivateEndpointSettings StreamPoolPrivateEndpointSettingsPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SecurityAttributes pulumi.StringMapInput
 }
 
 func (StreamPoolArgs) ElementType() reflect.Type {
@@ -359,6 +379,14 @@ func (o StreamPoolOutput) Name() pulumi.StringOutput {
 // Optional parameters if a private stream pool is requested.
 func (o StreamPoolOutput) PrivateEndpointSettings() StreamPoolPrivateEndpointSettingsOutput {
 	return o.ApplyT(func(v *StreamPool) StreamPoolPrivateEndpointSettingsOutput { return v.PrivateEndpointSettings }).(StreamPoolPrivateEndpointSettingsOutput)
+}
+
+// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o StreamPoolOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *StreamPool) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the stream pool.

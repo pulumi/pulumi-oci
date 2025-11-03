@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Osn resource in Oracle Cloud Infrastructure Blockchain service.
-//
-// # Create Blockchain Platform Osn
-//
 // ## Example Usage
 //
 // ```go

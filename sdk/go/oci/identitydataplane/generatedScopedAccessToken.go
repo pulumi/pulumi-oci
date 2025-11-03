@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Generate Scoped Access Token resource in Oracle Cloud Infrastructure Identity Data Plane service.
-//
-// Based on the calling principal and the input payload, derive the claims and create a security token.
-//
 // ## Example Usage
 //
 // ```go

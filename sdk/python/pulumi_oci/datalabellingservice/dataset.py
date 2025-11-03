@@ -545,10 +545,6 @@ class Dataset(pulumi.CustomResource):
                  labeling_instructions: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
-
-        Creates a new Dataset.
-
         ## Example Usage
 
         ```python
@@ -634,10 +630,6 @@ class Dataset(pulumi.CustomResource):
                  args: DatasetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
-
-        Creates a new Dataset.
-
         ## Example Usage
 
         ```python

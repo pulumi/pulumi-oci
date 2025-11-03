@@ -186,10 +186,6 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
                  secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Kafka Cluster Superusers Management resource in Oracle Cloud Infrastructure Managed Kafka service.
-
-        Adds a SASL superuser to the Kafka cluster. A generated password will be updated to the specified vault.
-
         ## Example Usage
 
         ```python
@@ -221,10 +217,6 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
                  args: ManagedKafkaKafkaClusterSuperusersManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Kafka Cluster Superusers Management resource in Oracle Cloud Infrastructure Managed Kafka service.
-
-        Adds a SASL superuser to the Kafka cluster. A generated password will be updated to the specified vault.
-
         ## Example Usage
 
         ```python

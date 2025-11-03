@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasePeersAutonomousDatabasePeerCollection {
     /**
-     * @return This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+     * @return This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI Database.
      * 
      */
     private List<GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItem> items;
 
     private GetAutonomousDatabasePeersAutonomousDatabasePeerCollection() {}
     /**
-     * @return This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+     * @return This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI Database.
      * 
      */
     public List<GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItem> items() {

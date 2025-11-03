@@ -27,7 +27,7 @@ class GetStackResult:
     """
     A collection of values returned by getStack.
     """
-    def __init__(__self__, compartment_id=None, config_sources=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, stack_id=None, state=None, time_created=None, variables=None):
+    def __init__(__self__, compartment_id=None, config_sources=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, stack_id=None, state=None, system_tags=None, terraform_version=None, time_created=None, variables=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -55,6 +55,12 @@ class GetStackResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
+        if terraform_version and not isinstance(terraform_version, str):
+            raise TypeError("Expected argument 'terraform_version' to be a str")
+        pulumi.set(__self__, "terraform_version", terraform_version)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -95,7 +101,7 @@ class GetStackResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Human-readable display name for the stack.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -103,7 +109,7 @@ class GetStackResult:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -124,15 +130,28 @@ class GetStackResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current lifecycle state of the stack.
+        The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="terraformVersion")
+    def terraform_version(self) -> _builtins.str:
+        return pulumi.get(self, "terraform_version")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time at which the stack was created.
+        The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -157,6 +176,8 @@ class AwaitableGetStackResult(GetStackResult):
             id=self.id,
             stack_id=self.stack_id,
             state=self.state,
+            system_tags=self.system_tags,
+            terraform_version=self.terraform_version,
             time_created=self.time_created,
             variables=self.variables)
 
@@ -166,7 +187,9 @@ def get_stack(stack_id: Optional[_builtins.str] = None,
     """
     This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
 
-    Gets a stack using the stack ID.
+    Gets the specified stack.
+    For more information, see
+    [Getting a Stack's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
 
     ## Example Usage
 
@@ -195,6 +218,8 @@ def get_stack(stack_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         stack_id=pulumi.get(__ret__, 'stack_id'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
+        terraform_version=pulumi.get(__ret__, 'terraform_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
         variables=pulumi.get(__ret__, 'variables'))
 def get_stack_output(stack_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -202,7 +227,9 @@ def get_stack_output(stack_id: Optional[pulumi.Input[_builtins.str]] = None,
     """
     This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
 
-    Gets a stack using the stack ID.
+    Gets the specified stack.
+    For more information, see
+    [Getting a Stack's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
 
     ## Example Usage
 
@@ -230,5 +257,7 @@ def get_stack_output(stack_id: Optional[pulumi.Input[_builtins.str]] = None,
         id=pulumi.get(__response__, 'id'),
         stack_id=pulumi.get(__response__, 'stack_id'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
+        terraform_version=pulumi.get(__response__, 'terraform_version'),
         time_created=pulumi.get(__response__, 'time_created'),
         variables=pulumi.get(__response__, 'variables')))

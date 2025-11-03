@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the App Catalog Subscription resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

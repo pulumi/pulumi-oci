@@ -1211,10 +1211,6 @@ class InvokeRun(pulumi.CustomResource):
                  warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
-
-        Creates a run for an application.
-
         ## Example Usage
 
         ```python
@@ -1316,10 +1312,6 @@ class InvokeRun(pulumi.CustomResource):
                  args: InvokeRunArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
-
-        Creates a run for an application.
-
         ## Example Usage
 
         ```python

@@ -15,14 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Subscription resource in Oracle Cloud Infrastructure Notifications service.
- * 
- * Creates a subscription for the specified topic and sends a subscription confirmation URL to the endpoint. The subscription remains in &#34;Pending&#34; status until it has been confirmed.
- * For information about confirming subscriptions, see
- * [To confirm a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub).
- * 
- * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -384,10 +384,6 @@ class OccCustomerGroup(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Occ Customer Group resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        Create customer group.
-
         ## Example Usage
 
         ```python
@@ -444,10 +440,6 @@ class OccCustomerGroup(pulumi.CustomResource):
                  args: OccCustomerGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Occ Customer Group resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        Create customer group.
-
         ## Example Usage
 
         ```python

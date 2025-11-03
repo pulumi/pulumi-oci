@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
-    /// This resource provides the Namespace Storage Enable Disable Archiving resource in Oracle Cloud Infrastructure Log Analytics service.
-    /// 
-    /// THis API enables archiving.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

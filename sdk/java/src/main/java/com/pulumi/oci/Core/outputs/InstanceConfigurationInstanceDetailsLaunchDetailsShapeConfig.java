@@ -39,6 +39,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
      */
     private @Nullable Double ocpus;
     /**
+     * @return This field is reserved for internal use.
+     * 
+     */
+    private @Nullable String resourceManagement;
+    /**
      * @return The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
      * 
      */
@@ -79,6 +84,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
         return Optional.ofNullable(this.ocpus);
     }
     /**
+     * @return This field is reserved for internal use.
+     * 
+     */
+    public Optional<String> resourceManagement() {
+        return Optional.ofNullable(this.resourceManagement);
+    }
+    /**
      * @return The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
      * 
      */
@@ -99,6 +111,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
         private @Nullable Double memoryInGbs;
         private @Nullable Integer nvmes;
         private @Nullable Double ocpus;
+        private @Nullable String resourceManagement;
         private @Nullable Integer vcpus;
         public Builder() {}
         public Builder(InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig defaults) {
@@ -107,6 +120,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
+    	      this.resourceManagement = defaults.resourceManagement;
     	      this.vcpus = defaults.vcpus;
         }
 
@@ -135,6 +149,12 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
             return this;
         }
         @CustomType.Setter
+        public Builder resourceManagement(@Nullable String resourceManagement) {
+
+            this.resourceManagement = resourceManagement;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vcpus(@Nullable Integer vcpus) {
 
             this.vcpus = vcpus;
@@ -146,6 +166,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig 
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;
+            _resultValue.resourceManagement = resourceManagement;
             _resultValue.vcpus = vcpus;
             return _resultValue;
         }

@@ -251,10 +251,6 @@ class KnowledgeBase(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Adm service.
-
-        Creates a new Knowledge Base.
-
         ## Example Usage
 
         ```python
@@ -298,10 +294,6 @@ class KnowledgeBase(pulumi.CustomResource):
                  args: KnowledgeBaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Adm service.
-
-        Creates a new Knowledge Base.
-
         ## Example Usage
 
         ```python

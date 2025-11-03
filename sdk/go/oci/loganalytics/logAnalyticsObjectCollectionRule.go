@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
-//
-// Create a configuration to collect logs from object storage bucket.
-//
 // ## Example Usage
 //
 // ```go

@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Event resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Updates the tags for an event.
+// ## Example Usage
 //
 // ## Import
 //

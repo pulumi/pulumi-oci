@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Updates the cloud DB home specified by `cloudDbHomeId`.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

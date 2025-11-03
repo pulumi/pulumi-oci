@@ -120,10 +120,6 @@ class ManagedInstanceGroupDetachManagedInstancesManagement(pulumi.CustomResource
                  managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Group Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Removes a managed instance from the specified managed instance group.
-
         ## Example Usage
 
         ```python
@@ -159,10 +155,6 @@ class ManagedInstanceGroupDetachManagedInstancesManagement(pulumi.CustomResource
                  args: ManagedInstanceGroupDetachManagedInstancesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Group Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Removes a managed instance from the specified managed instance group.
-
         ## Example Usage
 
         ```python

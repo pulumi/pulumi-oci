@@ -15,10 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Externalnoncontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
- * 
- * Enable Stack Monitoring for the external non-container database.
- * 
  * ## Example Usage
  * 
  * <pre>

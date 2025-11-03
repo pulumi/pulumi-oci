@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
- * 
- * Returns the created schedule.
- * 
  * ## Example Usage
  * 
  * <pre>

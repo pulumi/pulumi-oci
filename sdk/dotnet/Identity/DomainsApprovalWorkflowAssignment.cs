@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create Approval Workflow Assignment
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

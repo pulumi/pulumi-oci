@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
-//
-// Creates a new Connection Assignment.
-//
 // ## Example Usage
 //
 // ```go

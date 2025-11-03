@@ -19,9 +19,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the External Listener resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Updates the external listener specified by `externalListenerId`.
+ * ## Example Usage
  * 
  * ## Import
  * 

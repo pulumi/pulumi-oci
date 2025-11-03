@@ -680,10 +680,6 @@ class SqlFirewallPolicyManagement(pulumi.CustomResource):
                  violation_audit: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Sql Firewall Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the SQL firewall policy.
-
         ## Example Usage
 
         ```python
@@ -745,10 +741,6 @@ class SqlFirewallPolicyManagement(pulumi.CustomResource):
                  args: Optional[SqlFirewallPolicyManagementArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sql Firewall Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the SQL firewall policy.
-
         ## Example Usage
 
         ```python

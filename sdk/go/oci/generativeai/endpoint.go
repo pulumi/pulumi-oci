@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
-//
-// Creates an endpoint.
-//
-// The header contains an opc-work-request-id, which is the id for the WorkRequest that tracks the endpoint creation progress.
-//
 // ## Example Usage
 //
 // ```go
@@ -38,6 +32,8 @@ import (
 //				ModelId:              pulumi.Any(testModel.Id),
 //				ContentModerationConfig: &generativeai.EndpointContentModerationConfigArgs{
 //					IsEnabled: pulumi.Any(endpointContentModerationConfigIsEnabled),
+//					Mode:      pulumi.Any(endpointContentModerationConfigMode),
+//					ModelId:   pulumi.Any(testModel.Id),
 //				},
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
@@ -47,6 +43,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				GenerativeAiPrivateEndpointId: pulumi.Any(testGenerativeAiPrivateEndpoint.Id),
 //			})
 //			if err != nil {
 //				return err
@@ -69,7 +66,7 @@ type Endpoint struct {
 
 	// (Updatable) The compartment OCID to create the endpoint in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+	// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
 	ContentModerationConfig EndpointContentModerationConfigOutput `pulumi:"contentModerationConfig"`
 	// The OCID of the dedicated AI cluster on which a model will be deployed to.
 	DedicatedAiClusterId pulumi.StringOutput `pulumi:"dedicatedAiClusterId"`
@@ -81,9 +78,11 @@ type Endpoint struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+	GenerativeAiPrivateEndpointId pulumi.StringOutput `pulumi:"generativeAiPrivateEndpointId"`
 	// A message describing the current state of the endpoint in more detail that can provide actionable information.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The ID of the model that's used to create this endpoint.
+	// The OCID of the model that's used to create this endpoint.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -139,7 +138,7 @@ func GetEndpoint(ctx *pulumi.Context,
 type endpointState struct {
 	// (Updatable) The compartment OCID to create the endpoint in.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+	// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
 	ContentModerationConfig *EndpointContentModerationConfig `pulumi:"contentModerationConfig"`
 	// The OCID of the dedicated AI cluster on which a model will be deployed to.
 	DedicatedAiClusterId *string `pulumi:"dedicatedAiClusterId"`
@@ -151,9 +150,11 @@ type endpointState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+	GenerativeAiPrivateEndpointId *string `pulumi:"generativeAiPrivateEndpointId"`
 	// A message describing the current state of the endpoint in more detail that can provide actionable information.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The ID of the model that's used to create this endpoint.
+	// The OCID of the model that's used to create this endpoint.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -171,7 +172,7 @@ type endpointState struct {
 type EndpointState struct {
 	// (Updatable) The compartment OCID to create the endpoint in.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+	// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
 	ContentModerationConfig EndpointContentModerationConfigPtrInput
 	// The OCID of the dedicated AI cluster on which a model will be deployed to.
 	DedicatedAiClusterId pulumi.StringPtrInput
@@ -183,9 +184,11 @@ type EndpointState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+	GenerativeAiPrivateEndpointId pulumi.StringPtrInput
 	// A message describing the current state of the endpoint in more detail that can provide actionable information.
 	LifecycleDetails pulumi.StringPtrInput
-	// The ID of the model that's used to create this endpoint.
+	// The OCID of the model that's used to create this endpoint.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -207,7 +210,7 @@ func (EndpointState) ElementType() reflect.Type {
 type endpointArgs struct {
 	// (Updatable) The compartment OCID to create the endpoint in.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+	// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
 	ContentModerationConfig *EndpointContentModerationConfig `pulumi:"contentModerationConfig"`
 	// The OCID of the dedicated AI cluster on which a model will be deployed to.
 	DedicatedAiClusterId string `pulumi:"dedicatedAiClusterId"`
@@ -219,7 +222,9 @@ type endpointArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The ID of the model that's used to create this endpoint.
+	// (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+	GenerativeAiPrivateEndpointId *string `pulumi:"generativeAiPrivateEndpointId"`
+	// The OCID of the model that's used to create this endpoint.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,7 +235,7 @@ type endpointArgs struct {
 type EndpointArgs struct {
 	// (Updatable) The compartment OCID to create the endpoint in.
 	CompartmentId pulumi.StringInput
-	// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+	// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
 	ContentModerationConfig EndpointContentModerationConfigPtrInput
 	// The OCID of the dedicated AI cluster on which a model will be deployed to.
 	DedicatedAiClusterId pulumi.StringInput
@@ -242,7 +247,9 @@ type EndpointArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// The ID of the model that's used to create this endpoint.
+	// (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+	GenerativeAiPrivateEndpointId pulumi.StringPtrInput
+	// The OCID of the model that's used to create this endpoint.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -341,7 +348,7 @@ func (o EndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+// (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
 func (o EndpointOutput) ContentModerationConfig() EndpointContentModerationConfigOutput {
 	return o.ApplyT(func(v *Endpoint) EndpointContentModerationConfigOutput { return v.ContentModerationConfig }).(EndpointContentModerationConfigOutput)
 }
@@ -371,12 +378,17 @@ func (o EndpointOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+func (o EndpointOutput) GenerativeAiPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.GenerativeAiPrivateEndpointId }).(pulumi.StringOutput)
+}
+
 // A message describing the current state of the endpoint in more detail that can provide actionable information.
 func (o EndpointOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Endpoint) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The ID of the model that's used to create this endpoint.
+// The OCID of the model that's used to create this endpoint.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

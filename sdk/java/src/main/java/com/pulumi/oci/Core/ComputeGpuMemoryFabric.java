@@ -15,9 +15,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
- * 
- * Customer can update displayName and tags for compute GPU memory fabric record
+ * ## Example Usage
  * 
  * ## Import
  * 

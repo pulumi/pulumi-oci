@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// # Replace KmsiSettings
+// ## Example Usage
 //
 // ## Import
 //

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Namespace Lookups Append Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
- *
- * Appends data to the lookup content. The csv file containing the content to be appended is passed in as binary data in the request.
- *
  * ## Example Usage
  *
  * ## Import

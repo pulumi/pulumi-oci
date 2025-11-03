@@ -18,9 +18,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Updates the database security configuration.
+ * ## Example Usage
  * 
  * ## Import
  * 

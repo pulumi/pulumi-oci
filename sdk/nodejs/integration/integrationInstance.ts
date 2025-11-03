@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
- *
- * Creates a new Integration Instance.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -51,6 +47,10 @@ import * as utilities from "../utilities";
  *             allowlistedIps: integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsAllowlistedIps,
  *         }],
  *         isIntegrationVcnAllowlisted: integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted,
+ *     },
+ *     securityAttributes: {
+ *         "oracle-zpr.sensitivity.value": "low",
+ *         "oracle-zpr.sensitivity.mode": "enforce",
  *     },
  *     shape: integrationInstanceShape,
  *     state: integrationInstanceTargetState,
@@ -163,7 +163,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly instanceUrl: pulumi.Output<string>;
     /**
-     * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
     declare public readonly integrationInstanceType: pulumi.Output<string>;
     /**
@@ -198,6 +198,13 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * Base representation for Outbound Connection (Reverse Connection).
      */
     declare public /*out*/ readonly privateEndpointOutboundConnections: pulumi.Output<outputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection[]>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+     * "oracle-zpr.sensitivity.value" = "low"
+     * "oracle-zpr.sensitivity.mode" = "enforce"
+     * }`
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * Shape
      */
@@ -267,6 +274,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["messagePacks"] = state?.messagePacks;
             resourceInputs["networkEndpointDetails"] = state?.networkEndpointDetails;
             resourceInputs["privateEndpointOutboundConnections"] = state?.privateEndpointOutboundConnections;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["shape"] = state?.shape;
             resourceInputs["state"] = state?.state;
             resourceInputs["stateMessage"] = state?.stateMessage;
@@ -309,6 +317,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["isVisualBuilderEnabled"] = args?.isVisualBuilderEnabled;
             resourceInputs["messagePacks"] = args?.messagePacks;
             resourceInputs["networkEndpointDetails"] = args?.networkEndpointDetails;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["shape"] = args?.shape;
             resourceInputs["state"] = args?.state;
             resourceInputs["attachments"] = undefined /*out*/;
@@ -405,7 +414,7 @@ export interface IntegrationInstanceState {
      */
     instanceUrl?: pulumi.Input<string>;
     /**
-     * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
     integrationInstanceType?: pulumi.Input<string>;
     /**
@@ -440,6 +449,13 @@ export interface IntegrationInstanceState {
      * Base representation for Outbound Connection (Reverse Connection).
      */
     privateEndpointOutboundConnections?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection>[]>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+     * "oracle-zpr.sensitivity.value" = "low"
+     * "oracle-zpr.sensitivity.mode" = "enforce"
+     * }`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Shape
      */
@@ -523,7 +539,7 @@ export interface IntegrationInstanceArgs {
      */
     idcsAt?: pulumi.Input<string>;
     /**
-     * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      */
     integrationInstanceType: pulumi.Input<string>;
     /**
@@ -550,6 +566,13 @@ export interface IntegrationInstanceArgs {
      * Base representation of a network endpoint.
      */
     networkEndpointDetails?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+     * "oracle-zpr.sensitivity.value" = "low"
+     * "oracle-zpr.sensitivity.mode" = "enforce"
+     * }`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Shape
      */

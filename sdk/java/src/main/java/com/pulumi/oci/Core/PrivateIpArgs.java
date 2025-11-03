@@ -5,6 +5,7 @@ package com.pulumi.oci.Core;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -15,6 +16,21 @@ import javax.annotation.Nullable;
 public final class PrivateIpArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final PrivateIpArgs Empty = new PrivateIpArgs();
+
+    /**
+     * An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet&#39;s CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don&#39;t specify a value, this option will be ignored.  Example: 18
+     * 
+     */
+    @Import(name="cidrPrefixLength")
+    private @Nullable Output<Integer> cidrPrefixLength;
+
+    /**
+     * @return An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet&#39;s CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don&#39;t specify a value, this option will be ignored.  Example: 18
+     * 
+     */
+    public Optional<Output<Integer>> cidrPrefixLength() {
+        return Optional.ofNullable(this.cidrPrefixLength);
+    }
 
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -100,7 +116,22 @@ public final class PrivateIpArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * Any one of the IPv4 CIDRs allocated to the subnet.
+     * 
+     */
+    @Import(name="ipv4subnetCidrAtCreation")
+    private @Nullable Output<String> ipv4subnetCidrAtCreation;
+
+    /**
+     * @return Any one of the IPv4 CIDRs allocated to the subnet.
+     * 
+     */
+    public Optional<Output<String>> ipv4subnetCidrAtCreation() {
+        return Optional.ofNullable(this.ipv4subnetCidrAtCreation);
+    }
+
+    /**
+     * (Updatable) Lifetime of the IP address. There are two types of IPs:
      * * Ephemeral
      * * Reserved
      * 
@@ -109,7 +140,7 @@ public final class PrivateIpArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> lifetime;
 
     /**
-     * @return (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+     * @return (Updatable) Lifetime of the IP address. There are two types of IPs:
      * * Ephemeral
      * * Reserved
      * 
@@ -191,11 +222,13 @@ public final class PrivateIpArgs extends com.pulumi.resources.ResourceArgs {
     private PrivateIpArgs() {}
 
     private PrivateIpArgs(PrivateIpArgs $) {
+        this.cidrPrefixLength = $.cidrPrefixLength;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.hostnameLabel = $.hostnameLabel;
         this.ipAddress = $.ipAddress;
+        this.ipv4subnetCidrAtCreation = $.ipv4subnetCidrAtCreation;
         this.lifetime = $.lifetime;
         this.routeTableId = $.routeTableId;
         this.subnetId = $.subnetId;
@@ -219,6 +252,27 @@ public final class PrivateIpArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(PrivateIpArgs defaults) {
             $ = new PrivateIpArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param cidrPrefixLength An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet&#39;s CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don&#39;t specify a value, this option will be ignored.  Example: 18
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cidrPrefixLength(@Nullable Output<Integer> cidrPrefixLength) {
+            $.cidrPrefixLength = cidrPrefixLength;
+            return this;
+        }
+
+        /**
+         * @param cidrPrefixLength An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet&#39;s CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don&#39;t specify a value, this option will be ignored.  Example: 18
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cidrPrefixLength(Integer cidrPrefixLength) {
+            return cidrPrefixLength(Output.of(cidrPrefixLength));
         }
 
         /**
@@ -335,7 +389,28 @@ public final class PrivateIpArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifetime (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+         * @param ipv4subnetCidrAtCreation Any one of the IPv4 CIDRs allocated to the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv4subnetCidrAtCreation(@Nullable Output<String> ipv4subnetCidrAtCreation) {
+            $.ipv4subnetCidrAtCreation = ipv4subnetCidrAtCreation;
+            return this;
+        }
+
+        /**
+         * @param ipv4subnetCidrAtCreation Any one of the IPv4 CIDRs allocated to the subnet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv4subnetCidrAtCreation(String ipv4subnetCidrAtCreation) {
+            return ipv4subnetCidrAtCreation(Output.of(ipv4subnetCidrAtCreation));
+        }
+
+        /**
+         * @param lifetime (Updatable) Lifetime of the IP address. There are two types of IPs:
          * * Ephemeral
          * * Reserved
          * 
@@ -348,7 +423,7 @@ public final class PrivateIpArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifetime (Updatable) Lifetime of the IP address. There are two types of IPv6 IPs:
+         * @param lifetime (Updatable) Lifetime of the IP address. There are two types of IPs:
          * * Ephemeral
          * * Reserved
          * 

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates a cloud VM cluster.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -150,20 +146,28 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The compute model of the cloud VM cluster.
+        /// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         /// </summary>
         [Output("computeModel")]
         public Output<string> ComputeModel { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
+        /// (Updatable) For fixed shapes, this is the total number of OCPUs to enable across the VM cluster.
         /// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-        /// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-        /// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-        /// * Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-        /// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-        /// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-        /// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+        /// * Exadata.Quarter3.100 - Specify a multiple of 2, from 0 to 100.
+        /// * Exadata.Half3.200 - Specify a multiple of 4, from 0 to 200.
+        /// * Exadata.Full3.400 - Specify a multiple of 8, from 0 to 400.
+        /// 
+        /// The API specification for fixed shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbSystemShapeSummary
+        /// 
+        /// For flexible shapes X8M and X9M, this is the total number of OCPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+        /// * Exadata.X8M - Specify a multiple of 2, from 2 to 50 per X8M database server.
+        /// * Exadata.X9M - Specify a multiple of 2, from 2 to 126 per X9M database server.
+        /// 
+        /// For flexible shapes X11M and higher, this is the total number of ECPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+        /// * Exadata.X11M - Specify a multiple of 8, from 8 to 760 per X11M database server.
+        /// 
+        /// The API specification for flexible shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/FlexComponentSummary
         /// </summary>
         [Output("cpuCoreCount")]
         public Output<int> CpuCoreCount { get; private set; } = null!;
@@ -321,7 +325,7 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        /// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
@@ -569,14 +573,22 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
+        /// (Updatable) For fixed shapes, this is the total number of OCPUs to enable across the VM cluster.
         /// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-        /// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-        /// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-        /// * Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-        /// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-        /// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-        /// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+        /// * Exadata.Quarter3.100 - Specify a multiple of 2, from 0 to 100.
+        /// * Exadata.Half3.200 - Specify a multiple of 4, from 0 to 200.
+        /// * Exadata.Full3.400 - Specify a multiple of 8, from 0 to 400.
+        /// 
+        /// The API specification for fixed shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbSystemShapeSummary
+        /// 
+        /// For flexible shapes X8M and X9M, this is the total number of OCPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+        /// * Exadata.X8M - Specify a multiple of 2, from 2 to 50 per X8M database server.
+        /// * Exadata.X9M - Specify a multiple of 2, from 2 to 126 per X9M database server.
+        /// 
+        /// For flexible shapes X11M and higher, this is the total number of ECPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+        /// * Exadata.X11M - Specify a multiple of 8, from 8 to 760 per X11M database server.
+        /// 
+        /// The API specification for flexible shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/FlexComponentSummary
         /// </summary>
         [Input("cpuCoreCount", required: true)]
         public Input<int> CpuCoreCount { get; set; } = null!;
@@ -719,7 +731,7 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        /// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -872,20 +884,28 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The compute model of the cloud VM cluster.
+        /// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         /// </summary>
         [Input("computeModel")]
         public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
-        /// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
+        /// (Updatable) For fixed shapes, this is the total number of OCPUs to enable across the VM cluster.
         /// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-        /// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-        /// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-        /// * Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-        /// * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-        /// * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-        /// * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
+        /// * Exadata.Quarter3.100 - Specify a multiple of 2, from 0 to 100.
+        /// * Exadata.Half3.200 - Specify a multiple of 4, from 0 to 200.
+        /// * Exadata.Full3.400 - Specify a multiple of 8, from 0 to 400.
+        /// 
+        /// The API specification for fixed shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbSystemShapeSummary
+        /// 
+        /// For flexible shapes X8M and X9M, this is the total number of OCPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+        /// * Exadata.X8M - Specify a multiple of 2, from 2 to 50 per X8M database server.
+        /// * Exadata.X9M - Specify a multiple of 2, from 2 to 126 per X9M database server.
+        /// 
+        /// For flexible shapes X11M and higher, this is the total number of ECPUs to enable across the VM cluster. The number available for the VM cluster will be based on the number of database servers selected for provisioning the VM cluster on the Exadata Infrastructure.
+        /// * Exadata.X11M - Specify a multiple of 8, from 8 to 760 per X11M database server.
+        /// 
+        /// The API specification for flexible shape values is https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/FlexComponentSummary
         /// </summary>
         [Input("cpuCoreCount")]
         public Input<int>? CpuCoreCount { get; set; }
@@ -1082,7 +1102,7 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        /// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {

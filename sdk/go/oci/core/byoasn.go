@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Byoasn resource in Oracle Cloud Infrastructure Core service.
-//
-// # Creates a BYOASN Resource
-//
 // ## Example Usage
 //
 // ```go

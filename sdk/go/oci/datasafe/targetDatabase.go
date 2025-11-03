@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
-//
 // ## Example Usage
 //
 // ```go

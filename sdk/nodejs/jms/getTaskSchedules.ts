@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTaskSchedules = oci.Jms.getTaskSchedules({
- *     fleetId: testFleet.id,
- *     id: taskScheduleId,
- *     managedInstanceId: testManagedInstance.id,
- *     name: taskScheduleName,
- *     taskScheduleNameContains: taskScheduleTaskScheduleNameContains,
+ *     fleetId: "example-fleet-ocid",
+ *     id: "example-task-schedule-ocid",
+ *     managedInstanceId: "example-managed-instance-ocid",
+ *     name: "JFR",
+ *     taskScheduleNameContains: "JFR",
  * });
  * ```
  */
@@ -104,11 +104,11 @@ export interface GetTaskSchedulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTaskSchedules = oci.Jms.getTaskSchedules({
- *     fleetId: testFleet.id,
- *     id: taskScheduleId,
- *     managedInstanceId: testManagedInstance.id,
- *     name: taskScheduleName,
- *     taskScheduleNameContains: taskScheduleTaskScheduleNameContains,
+ *     fleetId: "example-fleet-ocid",
+ *     id: "example-task-schedule-ocid",
+ *     managedInstanceId: "example-managed-instance-ocid",
+ *     name: "JFR",
+ *     taskScheduleNameContains: "JFR",
  * });
  * ```
  */

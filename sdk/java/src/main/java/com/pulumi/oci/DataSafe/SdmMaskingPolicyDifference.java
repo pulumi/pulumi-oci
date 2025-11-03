@@ -15,14 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Sdm Masking Policy Difference resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates SDM masking policy difference for the specified masking policy. It finds the difference between
- * masking columns of the masking policy and sensitive columns of the SDM. After performing this operation,
- * you can use ListDifferenceColumns to view the difference columns, PatchSdmMaskingPolicyDifferenceColumns
- * to specify the action you want perform on these columns, and then ApplySdmMaskingPolicyDifference to process the
- * difference columns and apply them to the masking policy.
- * 
  * ## Example Usage
  * 
  * <pre>

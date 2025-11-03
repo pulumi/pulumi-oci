@@ -349,10 +349,6 @@ class ComputeHostGroup(pulumi.CustomResource):
                  is_targeted_placement_required: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Compute Host Group resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new compute host group in the specified compartment and availability domain.
-
         ## Example Usage
 
         ```python
@@ -406,10 +402,6 @@ class ComputeHostGroup(pulumi.CustomResource):
                  args: ComputeHostGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Compute Host Group resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new compute host group in the specified compartment and availability domain.
-
         ## Example Usage
 
         ```python

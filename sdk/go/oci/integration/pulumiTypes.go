@@ -2666,7 +2666,7 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	InstanceDesignTimeUrl string                                               `pulumi:"instanceDesignTimeUrl"`
 	// The Integration Instance URL.
 	InstanceUrl string `pulumi:"instanceUrl"`
-	// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+	// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
 	IntegrationInstanceType string `pulumi:"integrationInstanceType"`
 	// Bring your own license.
 	IsByol bool `pulumi:"isByol"`
@@ -2684,6 +2684,11 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	NetworkEndpointDetails []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections []GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection `pulumi:"privateEndpointOutboundConnections"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+	// "oracle-zpr.sensitivity.value" = "low"
+	// "oracle-zpr.sensitivity.mode" = "enforce"
+	// }`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Shape
 	Shape string `pulumi:"shape"`
 	// Life cycle state to query on.
@@ -2742,7 +2747,7 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	InstanceDesignTimeUrl pulumi.StringInput                                           `pulumi:"instanceDesignTimeUrl"`
 	// The Integration Instance URL.
 	InstanceUrl pulumi.StringInput `pulumi:"instanceUrl"`
-	// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+	// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
 	IntegrationInstanceType pulumi.StringInput `pulumi:"integrationInstanceType"`
 	// Bring your own license.
 	IsByol pulumi.BoolInput `pulumi:"isByol"`
@@ -2760,6 +2765,11 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	NetworkEndpointDetails GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayInput `pulumi:"networkEndpointDetails"`
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayInput `pulumi:"privateEndpointOutboundConnections"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+	// "oracle-zpr.sensitivity.value" = "low"
+	// "oracle-zpr.sensitivity.mode" = "enforce"
+	// }`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Shape
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// Life cycle state to query on.
@@ -2924,7 +2934,7 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) InstanceUrl() pulumi.S
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.InstanceUrl }).(pulumi.StringOutput)
 }
 
-// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
 func (o GetIntegrationInstancesIntegrationInstanceOutput) IntegrationInstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.IntegrationInstanceType }).(pulumi.StringOutput)
 }
@@ -2971,6 +2981,14 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) PrivateEndpointOutboun
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) []GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection {
 		return v.PrivateEndpointOutboundConnections
 	}).(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+// "oracle-zpr.sensitivity.value" = "low"
+// "oracle-zpr.sensitivity.mode" = "enforce"
+// }`
+func (o GetIntegrationInstancesIntegrationInstanceOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // Shape

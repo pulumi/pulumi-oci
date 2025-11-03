@@ -1347,6 +1347,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  message_packs: _builtins.int,
                  network_endpoint_details: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult'],
                  private_endpoint_outbound_connections: Sequence['outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult'],
+                 security_attributes: Mapping[str, _builtins.str],
                  shape: _builtins.str,
                  state: _builtins.str,
                  state_message: _builtins.str,
@@ -1367,7 +1368,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param _builtins.str id: The Virtual Cloud Network OCID.
         :param Sequence['GetIntegrationInstancesIntegrationInstanceIdcsInfoArgs'] idcs_infos: Information for IDCS access
         :param _builtins.str instance_url: The Integration Instance URL.
-        :param _builtins.str integration_instance_type: Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        :param _builtins.str integration_instance_type: Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
         :param _builtins.bool is_byol: Bring your own license.
         :param _builtins.bool is_disaster_recovery_enabled: Is Disaster Recovery enabled for the integrationInstance
         :param _builtins.bool is_file_server_enabled: The file server is enabled or not.
@@ -1376,6 +1377,10 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param _builtins.int message_packs: The number of configured message packs (if any)
         :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param Sequence['GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs'] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+               "oracle-zpr.sensitivity.value" = "low"
+               "oracle-zpr.sensitivity.mode" = "enforce"
+               }`
         :param _builtins.str shape: Shape
         :param _builtins.str state: Life cycle state to query on.
         :param _builtins.str state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1411,6 +1416,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "message_packs", message_packs)
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         pulumi.set(__self__, "private_endpoint_outbound_connections", private_endpoint_outbound_connections)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "state_message", state_message)
@@ -1556,7 +1562,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> _builtins.str:
         """
-        Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -1623,6 +1629,17 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         Base representation for Outbound Connection (Reverse Connection).
         """
         return pulumi.get(self, "private_endpoint_outbound_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+        "oracle-zpr.sensitivity.value" = "low"
+        "oracle-zpr.sensitivity.mode" = "enforce"
+        }`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

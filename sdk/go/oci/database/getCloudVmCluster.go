@@ -73,7 +73,7 @@ type LookupCloudVmClusterResult struct {
 	ClusterName string `pulumi:"clusterName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The compute model of the cloud VM cluster.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel string `pulumi:"computeModel"`
 	// The number of CPU cores enabled on the cloud VM cluster.
 	CpuCoreCount int  `pulumi:"cpuCoreCount"`
@@ -129,7 +129,7 @@ type LookupCloudVmClusterResult struct {
 	// The number of nodes in the cloud VM cluster.
 	NodeCount int `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount     float64 `pulumi:"ocpuCount"`
@@ -257,7 +257,7 @@ func (o LookupCloudVmClusterResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The compute model of the cloud VM cluster.
+// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 func (o LookupCloudVmClusterResultOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
@@ -403,7 +403,7 @@ func (o LookupCloudVmClusterResultOutput) NodeCount() pulumi.IntOutput {
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 func (o LookupCloudVmClusterResultOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }

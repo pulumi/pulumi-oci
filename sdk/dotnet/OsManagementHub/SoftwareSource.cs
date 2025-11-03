@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Creates a new software source.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

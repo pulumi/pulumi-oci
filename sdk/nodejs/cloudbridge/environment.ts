@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Environment resource in Oracle Cloud Infrastructure Cloud Bridge service.
- *
- * Creates a source environment.
- *
  * ## Example Usage
  *
  * ```typescript

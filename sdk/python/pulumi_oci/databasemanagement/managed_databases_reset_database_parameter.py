@@ -228,10 +228,6 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Databases Reset Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
-
-        Resets database parameter values to their default or startup values.
-
         ## Example Usage
 
         ```python
@@ -283,10 +279,6 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
                  args: ManagedDatabasesResetDatabaseParameterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Databases Reset Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
-
-        Resets database parameter values to their default or startup values.
-
         ## Example Usage
 
         ```python

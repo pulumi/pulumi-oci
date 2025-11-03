@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
- *
- * Creates Oracle DB Azure Blob Container resource.
- *
  * ## Example Usage
  *
  * ```typescript

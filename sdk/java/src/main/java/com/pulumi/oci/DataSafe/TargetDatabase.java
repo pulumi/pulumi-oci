@@ -22,10 +22,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Registers the specified database with Data Safe and creates a Data Safe target database in the Data Safe Console.
- * 
  * ## Example Usage
  * 
  * <pre>

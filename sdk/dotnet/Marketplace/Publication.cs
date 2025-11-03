@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace
 {
     /// <summary>
-    /// This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
-    /// 
-    /// Creates a publication of the specified listing type with an optional default package.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

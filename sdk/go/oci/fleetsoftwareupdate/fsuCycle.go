@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
-//
-// Creates a new Exadata Fleet Update Cycle.
-//
 // ## Example Usage
 //
 // ```go
@@ -34,7 +30,19 @@ import (
 //				CompartmentId:   pulumi.Any(compartmentId),
 //				FsuCollectionId: pulumi.Any(testFsuCollection.Id),
 //				GoalVersionDetails: &fleetsoftwareupdate.FsuCycleGoalVersionDetailsArgs{
-//					Type:            pulumi.Any(fsuCycleGoalVersionDetailsType),
+//					Type: pulumi.Any(fsuCycleGoalVersionDetailsType),
+//					Components: fleetsoftwareupdate.FsuCycleGoalVersionDetailsComponentArray{
+//						&fleetsoftwareupdate.FsuCycleGoalVersionDetailsComponentArgs{
+//							ComponentType: pulumi.Any(fsuCycleGoalVersionDetailsComponentsComponentType),
+//							GoalVersionDetails: &fleetsoftwareupdate.FsuCycleGoalVersionDetailsComponentGoalVersionDetailsArgs{
+//								GoalSoftwareImageId: pulumi.Any(testImage.Id),
+//								GoalType:            pulumi.Any(fsuCycleGoalVersionDetailsComponentsGoalVersionDetailsGoalType),
+//								GoalVersion:         pulumi.Any(fsuCycleGoalVersionDetailsComponentsGoalVersionDetailsGoalVersion),
+//							},
+//							HomePolicy:    pulumi.Any(fsuCycleGoalVersionDetailsComponentsHomePolicy),
+//							NewHomePrefix: pulumi.Any(fsuCycleGoalVersionDetailsComponentsNewHomePrefix),
+//						},
+//					},
 //					HomePolicy:      pulumi.Any(fsuCycleGoalVersionDetailsHomePolicy),
 //					NewHomePrefix:   pulumi.Any(fsuCycleGoalVersionDetailsNewHomePrefix),
 //					SoftwareImageId: pulumi.Any(testImage.Id),
@@ -71,8 +79,11 @@ import (
 //				},
 //				UpgradeDetails: &fleetsoftwareupdate.FsuCycleUpgradeDetailsArgs{
 //					CollectionType:            pulumi.Any(fsuCycleUpgradeDetailsCollectionType),
+//					IsIgnorePostUpgradeErrors: pulumi.Any(fsuCycleUpgradeDetailsIsIgnorePostUpgradeErrors),
+//					IsIgnorePrerequisites:     pulumi.Any(fsuCycleUpgradeDetailsIsIgnorePrerequisites),
 //					IsRecompileInvalidObjects: pulumi.Any(fsuCycleUpgradeDetailsIsRecompileInvalidObjects),
 //					IsTimeZoneUpgrade:         pulumi.Any(fsuCycleUpgradeDetailsIsTimeZoneUpgrade),
+//					MaxDrainTimeoutInSeconds:  pulumi.Any(fsuCycleUpgradeDetailsMaxDrainTimeoutInSeconds),
 //				},
 //			})
 //			if err != nil {
@@ -100,27 +111,27 @@ type FsuCycle struct {
 	BatchingStrategy FsuCycleBatchingStrategyOutput `pulumi:"batchingStrategy"`
 	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType pulumi.StringOutput `pulumi:"collectionType"`
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
 	DiagnosticsCollection FsuCycleDiagnosticsCollectionOutput `pulumi:"diagnosticsCollection"`
-	// (Updatable) Exadata Fleet Update Cycle display name.
+	// (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// OCID identifier for the Action that is currently in execution, if applicable.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
 	ExecutingFsuActionId pulumi.StringOutput `pulumi:"executingFsuActionId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
 	FsuCollectionId pulumi.StringOutput `pulumi:"fsuCollectionId"`
 	// (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
 	GoalVersionDetails FsuCycleGoalVersionDetailsOutput `pulumi:"goalVersionDetails"`
-	// (Updatable) List of patch IDs to ignore.
+	// (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnoreMissingPatches pulumi.StringArrayOutput `pulumi:"isIgnoreMissingPatches"`
-	// (Updatable) Ignore all patches between the source and target homes during patching.
+	// (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnorePatches pulumi.BoolOutput `pulumi:"isIgnorePatches"`
-	// (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+	// (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
 	IsKeepPlacement pulumi.BoolOutput `pulumi:"isKeepPlacement"`
 	// The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
 	LastCompletedAction pulumi.StringOutput `pulumi:"lastCompletedAction"`
@@ -128,9 +139,9 @@ type FsuCycle struct {
 	LastCompletedActionId pulumi.StringOutput `pulumi:"lastCompletedActionId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) Service drain timeout specified in seconds.
+	// (Updatable) Timeout for session draining for database services specified in seconds.
 	MaxDrainTimeoutInSeconds pulumi.IntOutput `pulumi:"maxDrainTimeoutInSeconds"`
-	// In this array all the possible actions will be listed. The first element is the suggested Action.
+	// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
 	NextActionToExecutes FsuCycleNextActionToExecuteArrayOutput `pulumi:"nextActionToExecutes"`
 	// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
 	RollbackCycleState pulumi.StringOutput `pulumi:"rollbackCycleState"`
@@ -200,27 +211,27 @@ type fsuCycleState struct {
 	BatchingStrategy *FsuCycleBatchingStrategy `pulumi:"batchingStrategy"`
 	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType *string `pulumi:"collectionType"`
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
 	DiagnosticsCollection *FsuCycleDiagnosticsCollection `pulumi:"diagnosticsCollection"`
-	// (Updatable) Exadata Fleet Update Cycle display name.
+	// (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
 	DisplayName *string `pulumi:"displayName"`
-	// OCID identifier for the Action that is currently in execution, if applicable.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
 	ExecutingFsuActionId *string `pulumi:"executingFsuActionId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
 	FsuCollectionId *string `pulumi:"fsuCollectionId"`
 	// (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
 	GoalVersionDetails *FsuCycleGoalVersionDetails `pulumi:"goalVersionDetails"`
-	// (Updatable) List of patch IDs to ignore.
+	// (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnoreMissingPatches []string `pulumi:"isIgnoreMissingPatches"`
-	// (Updatable) Ignore all patches between the source and target homes during patching.
+	// (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnorePatches *bool `pulumi:"isIgnorePatches"`
-	// (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+	// (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
 	IsKeepPlacement *bool `pulumi:"isKeepPlacement"`
 	// The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
 	LastCompletedAction *string `pulumi:"lastCompletedAction"`
@@ -228,9 +239,9 @@ type fsuCycleState struct {
 	LastCompletedActionId *string `pulumi:"lastCompletedActionId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) Service drain timeout specified in seconds.
+	// (Updatable) Timeout for session draining for database services specified in seconds.
 	MaxDrainTimeoutInSeconds *int `pulumi:"maxDrainTimeoutInSeconds"`
-	// In this array all the possible actions will be listed. The first element is the suggested Action.
+	// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
 	NextActionToExecutes []FsuCycleNextActionToExecute `pulumi:"nextActionToExecutes"`
 	// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
 	RollbackCycleState *string `pulumi:"rollbackCycleState"`
@@ -259,27 +270,27 @@ type FsuCycleState struct {
 	BatchingStrategy FsuCycleBatchingStrategyPtrInput
 	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType pulumi.StringPtrInput
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
 	DiagnosticsCollection FsuCycleDiagnosticsCollectionPtrInput
-	// (Updatable) Exadata Fleet Update Cycle display name.
+	// (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
 	DisplayName pulumi.StringPtrInput
-	// OCID identifier for the Action that is currently in execution, if applicable.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
 	ExecutingFsuActionId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
 	FsuCollectionId pulumi.StringPtrInput
 	// (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
 	GoalVersionDetails FsuCycleGoalVersionDetailsPtrInput
-	// (Updatable) List of patch IDs to ignore.
+	// (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnoreMissingPatches pulumi.StringArrayInput
-	// (Updatable) Ignore all patches between the source and target homes during patching.
+	// (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnorePatches pulumi.BoolPtrInput
-	// (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+	// (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
 	IsKeepPlacement pulumi.BoolPtrInput
 	// The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
 	LastCompletedAction pulumi.StringPtrInput
@@ -287,9 +298,9 @@ type FsuCycleState struct {
 	LastCompletedActionId pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) Service drain timeout specified in seconds.
+	// (Updatable) Timeout for session draining for database services specified in seconds.
 	MaxDrainTimeoutInSeconds pulumi.IntPtrInput
-	// In this array all the possible actions will be listed. The first element is the suggested Action.
+	// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
 	NextActionToExecutes FsuCycleNextActionToExecuteArrayInput
 	// Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
 	RollbackCycleState pulumi.StringPtrInput
@@ -320,27 +331,27 @@ type fsuCycleArgs struct {
 	ApplyActionSchedule *FsuCycleApplyActionSchedule `pulumi:"applyActionSchedule"`
 	// (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
 	BatchingStrategy *FsuCycleBatchingStrategy `pulumi:"batchingStrategy"`
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
 	DiagnosticsCollection *FsuCycleDiagnosticsCollection `pulumi:"diagnosticsCollection"`
-	// (Updatable) Exadata Fleet Update Cycle display name.
+	// (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
 	FsuCollectionId string `pulumi:"fsuCollectionId"`
 	// (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
 	GoalVersionDetails FsuCycleGoalVersionDetails `pulumi:"goalVersionDetails"`
-	// (Updatable) List of patch IDs to ignore.
+	// (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnoreMissingPatches []string `pulumi:"isIgnoreMissingPatches"`
-	// (Updatable) Ignore all patches between the source and target homes during patching.
+	// (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnorePatches *bool `pulumi:"isIgnorePatches"`
-	// (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+	// (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
 	IsKeepPlacement *bool `pulumi:"isKeepPlacement"`
-	// (Updatable) Service drain timeout specified in seconds.
+	// (Updatable) Timeout for session draining for database services specified in seconds.
 	MaxDrainTimeoutInSeconds *int `pulumi:"maxDrainTimeoutInSeconds"`
 	// Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
 	StageActionSchedule *FsuCycleStageActionSchedule `pulumi:"stageActionSchedule"`
@@ -356,27 +367,27 @@ type FsuCycleArgs struct {
 	ApplyActionSchedule FsuCycleApplyActionSchedulePtrInput
 	// (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
 	BatchingStrategy FsuCycleBatchingStrategyPtrInput
-	// (Updatable) Compartment Identifier.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
 	DiagnosticsCollection FsuCycleDiagnosticsCollectionPtrInput
-	// (Updatable) Exadata Fleet Update Cycle display name.
+	// (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
 	FsuCollectionId pulumi.StringInput
 	// (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
 	GoalVersionDetails FsuCycleGoalVersionDetailsInput
-	// (Updatable) List of patch IDs to ignore.
+	// (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnoreMissingPatches pulumi.StringArrayInput
-	// (Updatable) Ignore all patches between the source and target homes during patching.
+	// (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 	IsIgnorePatches pulumi.BoolPtrInput
-	// (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+	// (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
 	IsKeepPlacement pulumi.BoolPtrInput
-	// (Updatable) Service drain timeout specified in seconds.
+	// (Updatable) Timeout for session draining for database services specified in seconds.
 	MaxDrainTimeoutInSeconds pulumi.IntPtrInput
 	// Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
 	StageActionSchedule FsuCycleStageActionSchedulePtrInput
@@ -488,7 +499,7 @@ func (o FsuCycleOutput) CollectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.CollectionType }).(pulumi.StringOutput)
 }
 
-// (Updatable) Compartment Identifier.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 func (o FsuCycleOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -503,12 +514,12 @@ func (o FsuCycleOutput) DiagnosticsCollection() FsuCycleDiagnosticsCollectionOut
 	return o.ApplyT(func(v *FsuCycle) FsuCycleDiagnosticsCollectionOutput { return v.DiagnosticsCollection }).(FsuCycleDiagnosticsCollectionOutput)
 }
 
-// (Updatable) Exadata Fleet Update Cycle display name.
+// (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
 func (o FsuCycleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// OCID identifier for the Action that is currently in execution, if applicable.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
 func (o FsuCycleOutput) ExecutingFsuActionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.ExecutingFsuActionId }).(pulumi.StringOutput)
 }
@@ -518,7 +529,7 @@ func (o FsuCycleOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
 func (o FsuCycleOutput) FsuCollectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.FsuCollectionId }).(pulumi.StringOutput)
 }
@@ -528,17 +539,17 @@ func (o FsuCycleOutput) GoalVersionDetails() FsuCycleGoalVersionDetailsOutput {
 	return o.ApplyT(func(v *FsuCycle) FsuCycleGoalVersionDetailsOutput { return v.GoalVersionDetails }).(FsuCycleGoalVersionDetailsOutput)
 }
 
-// (Updatable) List of patch IDs to ignore.
+// (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 func (o FsuCycleOutput) IsIgnoreMissingPatches() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringArrayOutput { return v.IsIgnoreMissingPatches }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Ignore all patches between the source and target homes during patching.
+// (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
 func (o FsuCycleOutput) IsIgnorePatches() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.BoolOutput { return v.IsIgnorePatches }).(pulumi.BoolOutput)
 }
 
-// (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+// (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
 func (o FsuCycleOutput) IsKeepPlacement() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.BoolOutput { return v.IsKeepPlacement }).(pulumi.BoolOutput)
 }
@@ -558,12 +569,12 @@ func (o FsuCycleOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) Service drain timeout specified in seconds.
+// (Updatable) Timeout for session draining for database services specified in seconds.
 func (o FsuCycleOutput) MaxDrainTimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.IntOutput { return v.MaxDrainTimeoutInSeconds }).(pulumi.IntOutput)
 }
 
-// In this array all the possible actions will be listed. The first element is the suggested Action.
+// All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
 func (o FsuCycleOutput) NextActionToExecutes() FsuCycleNextActionToExecuteArrayOutput {
 	return o.ApplyT(func(v *FsuCycle) FsuCycleNextActionToExecuteArrayOutput { return v.NextActionToExecutes }).(FsuCycleNextActionToExecuteArrayOutput)
 }

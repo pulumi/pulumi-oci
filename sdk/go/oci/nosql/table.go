@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Table resource in Oracle Cloud Infrastructure NoSQL Database service.
-//
-// Create a new table.
-//
 // ## Example Usage
 //
 // ```go

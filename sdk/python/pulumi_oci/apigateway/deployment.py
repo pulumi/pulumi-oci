@@ -423,10 +423,6 @@ class Deployment(pulumi.CustomResource):
                  specification: Optional[pulumi.Input[Union['DeploymentSpecificationArgs', 'DeploymentSpecificationArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Deployment resource in Oracle Cloud Infrastructure API Gateway service.
-
-        Creates a new deployment.
-
         ## Example Usage
 
         ```python
@@ -920,10 +916,6 @@ class Deployment(pulumi.CustomResource):
                  args: DeploymentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deployment resource in Oracle Cloud Infrastructure API Gateway service.
-
-        Creates a new deployment.
-
         ## Example Usage
 
         ```python

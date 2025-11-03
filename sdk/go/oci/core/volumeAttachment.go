@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
-//
-// Attaches the specified storage volume to the specified instance.
-//
 // ## Example Usage
 //
 // ```go

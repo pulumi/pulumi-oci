@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
- * 
- * Schedule a task as specified and return task info.
- * 
  * ## Example Usage
  * 
  * ## Import

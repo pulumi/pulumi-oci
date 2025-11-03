@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Database Security Config Management resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Updates the database security configuration.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -13,12 +13,14 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult
     {
+        public readonly string BackupRetentionPolicyOnTerminate;
         public readonly string DbrsPolicyId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         /// </summary>
         public readonly string Id;
         public readonly bool IsRemote;
+        public readonly bool IsRetentionLockEnabled;
         public readonly string RemoteRegion;
         public readonly string Type;
         public readonly string VpcPassword;
@@ -26,11 +28,15 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(
+            string backupRetentionPolicyOnTerminate,
+
             string dbrsPolicyId,
 
             string id,
 
             bool isRemote,
+
+            bool isRetentionLockEnabled,
 
             string remoteRegion,
 
@@ -40,9 +46,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             string vpcUser)
         {
+            BackupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
             IsRemote = isRemote;
+            IsRetentionLockEnabled = isRetentionLockEnabled;
             RemoteRegion = remoteRegion;
             Type = type;
             VpcPassword = vpcPassword;

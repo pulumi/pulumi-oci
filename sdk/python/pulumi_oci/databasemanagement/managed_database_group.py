@@ -303,11 +303,6 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a Managed Database Group. The group does not contain any
-        Managed Databases when it is created, and they must be added later.
-
         ## Example Usage
 
         ```python
@@ -353,11 +348,6 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
                  args: ManagedDatabaseGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a Managed Database Group. The group does not contain any
-        Managed Databases when it is created, and they must be added later.
-
         ## Example Usage
 
         ```python

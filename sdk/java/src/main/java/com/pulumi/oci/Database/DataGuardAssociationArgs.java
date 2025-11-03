@@ -375,14 +375,14 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      * 
      */
     @Import(name="licenseModel")
     private @Nullable Output<String> licenseModel;
 
     /**
-     * @return The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+     * @return The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
      * 
      */
     public Optional<Output<String>> licenseModel() {
@@ -427,7 +427,7 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
 
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     @Import(name="nsgIds")
@@ -435,7 +435,7 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
 
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -1244,7 +1244,7 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param licenseModel The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+         * @param licenseModel The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
          * 
          * @return builder
          * 
@@ -1255,7 +1255,7 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param licenseModel The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+         * @param licenseModel The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
          * 
          * @return builder
          * 
@@ -1314,7 +1314,7 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param nsgIds The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -1326,7 +1326,7 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param nsgIds The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -1337,7 +1337,7 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param nsgIds The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 

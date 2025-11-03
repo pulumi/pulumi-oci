@@ -462,10 +462,6 @@ class PrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a Data Science private endpoint to be used by a Data Science resource.
-
         ## Example Usage
 
         ```python
@@ -519,10 +515,6 @@ class PrivateEndpoint(pulumi.CustomResource):
                  args: PrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a Data Science private endpoint to be used by a Data Science resource.
-
         ## Example Usage
 
         ```python

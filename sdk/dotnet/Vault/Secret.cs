@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Vault
 {
     /// <summary>
-    /// This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
-    /// 
-    /// Creates a new secret according to the details of the request.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

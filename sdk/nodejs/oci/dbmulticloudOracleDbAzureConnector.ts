@@ -7,11 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
- *
- * Creates Oracle DB Azure Connector resource and configured Azure Identity in Oracle Database resource.
- *
- *   Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
+ * ## Example Usage
  *
  * ## Import
  *

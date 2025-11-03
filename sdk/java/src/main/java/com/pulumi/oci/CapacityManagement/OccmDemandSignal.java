@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
- * 
- * This is a post API to create occm demand signal.
- * 
  * ## Example Usage
  * 
  * <pre>

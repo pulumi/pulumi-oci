@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApmSynthetics
 {
     /// <summary>
-    /// This resource provides the Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
-    /// 
-    /// Creates a new monitor.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

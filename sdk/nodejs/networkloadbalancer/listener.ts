@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Listener resource in Oracle Cloud Infrastructure Network Load Balancer service.
- *
- * Adds a listener to a network load balancer.
- *
  * ## Example Usage
  *
  * ```typescript

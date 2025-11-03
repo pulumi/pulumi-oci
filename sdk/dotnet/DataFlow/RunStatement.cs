@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataFlow
 {
     /// <summary>
-    /// This resource provides the Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
-    /// 
-    /// Executes a statement for a Session run.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

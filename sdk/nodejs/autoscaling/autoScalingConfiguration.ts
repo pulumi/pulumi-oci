@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
- *
- * Creates an autoscaling configuration.
- *
  * ## Example Usage
  *
  * ```typescript

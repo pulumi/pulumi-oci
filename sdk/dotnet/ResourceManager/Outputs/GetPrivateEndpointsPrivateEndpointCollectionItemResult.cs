@@ -30,7 +30,7 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+        /// DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
         /// </summary>
         public readonly ImmutableArray<string> DnsZones;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -46,11 +46,15 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         /// </summary>
         public readonly bool IsUsedWithConfigurationSourceProvider;
         /// <summary>
-        /// An array of network security groups (NSG) that the customer can optionally provide.
+        /// The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
         /// </summary>
         public readonly ImmutableArray<string> NsgIdLists;
         /// <summary>
-        /// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+        /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
+        /// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
         /// </summary>
         public readonly ImmutableArray<string> SourceIps;
         /// <summary>
@@ -61,6 +65,10 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
         /// </summary>
         public readonly string SubnetId;
+        /// <summary>
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
         /// </summary>
@@ -90,11 +98,15 @@ namespace Pulumi.Oci.ResourceManager.Outputs
 
             ImmutableArray<string> nsgIdLists,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             ImmutableArray<string> sourceIps,
 
             string state,
 
             string subnetId,
+
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 
@@ -109,9 +121,11 @@ namespace Pulumi.Oci.ResourceManager.Outputs
             Id = id;
             IsUsedWithConfigurationSourceProvider = isUsedWithConfigurationSourceProvider;
             NsgIdLists = nsgIdLists;
+            SecurityAttributes = securityAttributes;
             SourceIps = sourceIps;
             State = state;
             SubnetId = subnetId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             VcnId = vcnId;
         }

@@ -217,10 +217,6 @@ class SslCipherSuite(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Creates a custom SSL cipher suite.
-
         ## Example Usage
 
         ```python
@@ -272,10 +268,6 @@ class SslCipherSuite(pulumi.CustomResource):
                  args: SslCipherSuiteArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Creates a custom SSL cipher suite.
-
         ## Example Usage
 
         ```python

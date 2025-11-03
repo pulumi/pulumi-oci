@@ -143,6 +143,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string Category;
         /// <summary>
+        /// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         /// </summary>
         public readonly string CompartmentId;
@@ -293,6 +297,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string PublicIpAddress;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         /// </summary>
         public readonly string SourceDeploymentId;
@@ -308,6 +316,10 @@ namespace Pulumi.Oci.GoldenGate
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         /// </summary>
         public readonly string SubnetId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        public readonly string SubscriptionId;
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
@@ -354,6 +366,8 @@ namespace Pulumi.Oci.GoldenGate
             int byolCpuCoreCountLimit,
 
             string category,
+
+            string clusterPlacementGroupId,
 
             string compartmentId,
 
@@ -433,6 +447,8 @@ namespace Pulumi.Oci.GoldenGate
 
             string publicIpAddress,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string sourceDeploymentId,
 
             string state,
@@ -440,6 +456,8 @@ namespace Pulumi.Oci.GoldenGate
             string storageUtilizationInBytes,
 
             string subnetId,
+
+            string subscriptionId,
 
             ImmutableDictionary<string, string> systemTags,
 
@@ -463,6 +481,7 @@ namespace Pulumi.Oci.GoldenGate
             BackupSchedules = backupSchedules;
             ByolCpuCoreCountLimit = byolCpuCoreCountLimit;
             Category = category;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             CpuCoreCount = cpuCoreCount;
             DefinedTags = definedTags;
@@ -502,10 +521,12 @@ namespace Pulumi.Oci.GoldenGate
             Placements = placements;
             PrivateIpAddress = privateIpAddress;
             PublicIpAddress = publicIpAddress;
+            SecurityAttributes = securityAttributes;
             SourceDeploymentId = sourceDeploymentId;
             State = state;
             StorageUtilizationInBytes = storageUtilizationInBytes;
             SubnetId = subnetId;
+            SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeLastBackupScheduled = timeLastBackupScheduled;

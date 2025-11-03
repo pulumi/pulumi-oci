@@ -36,6 +36,11 @@ public final class GetPipelineRunsPipelineRunStepRun {
      */
     private String stepName;
     /**
+     * @return Name used when creating the steprun.
+     * 
+     */
+    private String stepRunName;
+    /**
      * @return The type of step.
      * 
      */
@@ -88,6 +93,13 @@ public final class GetPipelineRunsPipelineRunStepRun {
         return this.stepName;
     }
     /**
+     * @return Name used when creating the steprun.
+     * 
+     */
+    public String stepRunName() {
+        return this.stepRunName;
+    }
+    /**
      * @return The type of step.
      * 
      */
@@ -123,6 +135,7 @@ public final class GetPipelineRunsPipelineRunStepRun {
         private String lifecycleDetails;
         private String state;
         private String stepName;
+        private String stepRunName;
         private String stepType;
         private String timeFinished;
         private String timeStarted;
@@ -134,6 +147,7 @@ public final class GetPipelineRunsPipelineRunStepRun {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
     	      this.stepName = defaults.stepName;
+    	      this.stepRunName = defaults.stepRunName;
     	      this.stepType = defaults.stepType;
     	      this.timeFinished = defaults.timeFinished;
     	      this.timeStarted = defaults.timeStarted;
@@ -180,6 +194,14 @@ public final class GetPipelineRunsPipelineRunStepRun {
             return this;
         }
         @CustomType.Setter
+        public Builder stepRunName(String stepRunName) {
+            if (stepRunName == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepRun", "stepRunName");
+            }
+            this.stepRunName = stepRunName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stepType(String stepType) {
             if (stepType == null) {
               throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepRun", "stepType");
@@ -210,6 +232,7 @@ public final class GetPipelineRunsPipelineRunStepRun {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
             _resultValue.stepName = stepName;
+            _resultValue.stepRunName = stepRunName;
             _resultValue.stepType = stepType;
             _resultValue.timeFinished = timeFinished;
             _resultValue.timeStarted = timeStarted;

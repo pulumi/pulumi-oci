@@ -7,11 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
- *
- * Creates a log within the specified log group. This call fails if a log group has already been created
- * with the same displayName or (service, resource, category) triplet.
- *
  * ## Example Usage
  *
  * ```typescript

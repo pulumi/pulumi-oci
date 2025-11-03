@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetAutonomousDatabasesResult {
     /**
-     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      */
     private @Nullable String autonomousContainerDatabaseId;
@@ -32,21 +32,22 @@ public final class GetAutonomousDatabasesResult {
      */
     private String compartmentId;
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     private @Nullable String dbVersion;
     /**
-     * @return The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * @return The Autonomous AI Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous AI Transaction Processing database
+     * * DW - indicates an Autonomous AI Lakehouse database
+     * * AJD - indicates an Autonomous AI JSON Database
+     * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * * LH - indicates an Oracle Autonomous AI Lakehouse database
      * 
      */
     private @Nullable String dbWorkload;
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     private @Nullable String displayName;
@@ -62,36 +63,36 @@ public final class GetAutonomousDatabasesResult {
      */
     private @Nullable String infrastructureType;
     /**
-     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     private @Nullable Boolean isDataGuardEnabled;
     /**
-     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      */
     private @Nullable Boolean isFreeTier;
     /**
-     * @return Indicates if the Autonomous Database is a refreshable clone.
+     * @return Indicates if the Autonomous AI Database is a refreshable clone.
      * 
      */
     private @Nullable Boolean isRefreshableClone;
     private @Nullable Boolean isResourcePoolLeader;
     private @Nullable String lifecycleStateNotEqualTo;
     /**
-     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private @Nullable String resourcePoolLeaderId;
     /**
-     * @return The current state of the Autonomous Database.
+     * @return The current state of the Autonomous AI Database.
      * 
      */
     private @Nullable String state;
 
     private GetAutonomousDatabasesResult() {}
     /**
-     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      */
     public Optional<String> autonomousContainerDatabaseId() {
@@ -112,25 +113,26 @@ public final class GetAutonomousDatabasesResult {
         return this.compartmentId;
     }
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     public Optional<String> dbVersion() {
         return Optional.ofNullable(this.dbVersion);
     }
     /**
-     * @return The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * @return The Autonomous AI Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous AI Transaction Processing database
+     * * DW - indicates an Autonomous AI Lakehouse database
+     * * AJD - indicates an Autonomous AI JSON Database
+     * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * * LH - indicates an Oracle Autonomous AI Lakehouse database
      * 
      */
     public Optional<String> dbWorkload() {
         return Optional.ofNullable(this.dbWorkload);
     }
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     public Optional<String> displayName() {
@@ -154,21 +156,21 @@ public final class GetAutonomousDatabasesResult {
         return Optional.ofNullable(this.infrastructureType);
     }
     /**
-     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Optional<Boolean> isDataGuardEnabled() {
         return Optional.ofNullable(this.isDataGuardEnabled);
     }
     /**
-     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      */
     public Optional<Boolean> isFreeTier() {
         return Optional.ofNullable(this.isFreeTier);
     }
     /**
-     * @return Indicates if the Autonomous Database is a refreshable clone.
+     * @return Indicates if the Autonomous AI Database is a refreshable clone.
      * 
      */
     public Optional<Boolean> isRefreshableClone() {
@@ -181,14 +183,14 @@ public final class GetAutonomousDatabasesResult {
         return Optional.ofNullable(this.lifecycleStateNotEqualTo);
     }
     /**
-     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> resourcePoolLeaderId() {
         return Optional.ofNullable(this.resourcePoolLeaderId);
     }
     /**
-     * @return The current state of the Autonomous Database.
+     * @return The current state of the Autonomous AI Database.
      * 
      */
     public Optional<String> state() {

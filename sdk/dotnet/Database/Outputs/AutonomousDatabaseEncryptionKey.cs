@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? ArnRole;
         /// <summary>
-        /// (Updatable) The provider for the Autonomous Database encryption key.
+        /// (Updatable) The provider for the Autonomous AI Database encryption key.
         /// </summary>
         public readonly string? AutonomousDatabaseProvider;
         /// <summary>
@@ -46,9 +46,21 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? KeyName;
         /// <summary>
+        /// (Updatable) GCP key ring
+        /// </summary>
+        public readonly string? KeyRing;
+        /// <summary>
         /// (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         public readonly string? KmsKeyId;
+        /// <summary>
+        /// (Updatable) GCP kms REST API endpoint
+        /// </summary>
+        public readonly string? KmsRestEndpoint;
+        /// <summary>
+        /// (Updatable) GCP key ring location
+        /// </summary>
+        public readonly string? Location;
         /// <summary>
         /// (Updatable) UUID of OKV KMS Key
         /// </summary>
@@ -57,6 +69,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// (Updatable) URI of OKV server
         /// </summary>
         public readonly string? OkvUri;
+        /// <summary>
+        /// (Updatable) GCP project name
+        /// </summary>
+        public readonly string? Project;
         /// <summary>
         /// (Updatable) AWS key service endpoint URI
         /// </summary>
@@ -88,11 +104,19 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? keyName,
 
+            string? keyRing,
+
             string? kmsKeyId,
+
+            string? kmsRestEndpoint,
+
+            string? location,
 
             string? okvKmsKey,
 
             string? okvUri,
+
+            string? project,
 
             string? serviceEndpointUri,
 
@@ -108,9 +132,13 @@ namespace Pulumi.Oci.Database.Outputs
             ExternalId = externalId;
             KeyArn = keyArn;
             KeyName = keyName;
+            KeyRing = keyRing;
             KmsKeyId = kmsKeyId;
+            KmsRestEndpoint = kmsRestEndpoint;
+            Location = location;
             OkvKmsKey = okvKmsKey;
             OkvUri = okvUri;
+            Project = project;
             ServiceEndpointUri = serviceEndpointUri;
             VaultId = vaultId;
             VaultUri = vaultUri;

@@ -283,10 +283,6 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Creates a new log group in the specified compartment with the input display name. You may also specify optional information such as description, defined tags, and free-form tags.
-
         ## Example Usage
 
         ```python
@@ -334,10 +330,6 @@ class LogAnalyticsLogGroup(pulumi.CustomResource):
                  args: LogAnalyticsLogGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Creates a new log group in the specified compartment with the input display name. You may also specify optional information such as description, defined tags, and free-form tags.
-
         ## Example Usage
 
         ```python

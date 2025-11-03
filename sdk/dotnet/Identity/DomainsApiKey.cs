@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a user's API key.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

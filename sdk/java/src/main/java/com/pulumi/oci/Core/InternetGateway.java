@@ -17,29 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Internet Gateway resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a new internet gateway for the specified VCN. For more information, see
- * [Access to the Internet](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIGs.htm).
- * 
- * For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the Internet
- * Gateway to reside. Notice that the internet gateway doesn&#39;t have to be in the same compartment as the VCN or
- * other Networking Service components. If you&#39;re not sure which compartment to use, put the Internet
- * Gateway in the same compartment with the VCN. For more information about compartments and access control, see
- * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
- * 
- * You may optionally specify a *display name* for the internet gateway, otherwise a default is provided. It
- * does not have to be unique, and you can change it. Avoid entering confidential information.
- * 
- * For traffic to flow between a subnet and an internet gateway, you must create a route rule accordingly in
- * the subnet&#39;s route table (for example, 0.0.0.0/0 &gt; internet gateway). See
- * [UpdateRouteTable](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/RouteTable/UpdateRouteTable).
- * 
- * You must specify whether the internet gateway is enabled when you create it. If it&#39;s disabled, that means no
- * traffic will flow to/from the internet even if there&#39;s a route rule that enables that traffic. You can later
- * use [UpdateInternetGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/InternetGateway/UpdateInternetGateway) to easily disable/enable
- * the gateway without changing the route rule.
- * 
  * ## Example Usage
  * 
  * <pre>

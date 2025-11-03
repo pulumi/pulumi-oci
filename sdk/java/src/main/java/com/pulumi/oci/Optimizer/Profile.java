@@ -19,10 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
- * 
- * Creates a new profile.
- * 
  * ## Example Usage
  * 
  * <pre>

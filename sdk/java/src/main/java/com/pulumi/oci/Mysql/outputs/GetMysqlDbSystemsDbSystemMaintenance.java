@@ -11,12 +11,72 @@ import java.util.Objects;
 @CustomType
 public final class GetMysqlDbSystemsDbSystemMaintenance {
     /**
+     * @return The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+     * 
+     */
+    private String maintenanceScheduleType;
+    /**
+     * @return The version that is expected to be targeted during the next scheduled maintenance run.
+     * 
+     */
+    private String targetVersion;
+    /**
+     * @return The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    private String timeScheduled;
+    /**
+     * @return The preferred version to target when performing an automatic MySQL upgrade.
+     * 
+     */
+    private String versionPreference;
+    /**
+     * @return The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+     * 
+     */
+    private String versionTrackPreference;
+    /**
      * @return The start time of the maintenance window.
      * 
      */
     private String windowStartTime;
 
     private GetMysqlDbSystemsDbSystemMaintenance() {}
+    /**
+     * @return The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+     * 
+     */
+    public String maintenanceScheduleType() {
+        return this.maintenanceScheduleType;
+    }
+    /**
+     * @return The version that is expected to be targeted during the next scheduled maintenance run.
+     * 
+     */
+    public String targetVersion() {
+        return this.targetVersion;
+    }
+    /**
+     * @return The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    public String timeScheduled() {
+        return this.timeScheduled;
+    }
+    /**
+     * @return The preferred version to target when performing an automatic MySQL upgrade.
+     * 
+     */
+    public String versionPreference() {
+        return this.versionPreference;
+    }
+    /**
+     * @return The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+     * 
+     */
+    public String versionTrackPreference() {
+        return this.versionTrackPreference;
+    }
     /**
      * @return The start time of the maintenance window.
      * 
@@ -34,13 +94,63 @@ public final class GetMysqlDbSystemsDbSystemMaintenance {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String maintenanceScheduleType;
+        private String targetVersion;
+        private String timeScheduled;
+        private String versionPreference;
+        private String versionTrackPreference;
         private String windowStartTime;
         public Builder() {}
         public Builder(GetMysqlDbSystemsDbSystemMaintenance defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.maintenanceScheduleType = defaults.maintenanceScheduleType;
+    	      this.targetVersion = defaults.targetVersion;
+    	      this.timeScheduled = defaults.timeScheduled;
+    	      this.versionPreference = defaults.versionPreference;
+    	      this.versionTrackPreference = defaults.versionTrackPreference;
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
+        @CustomType.Setter
+        public Builder maintenanceScheduleType(String maintenanceScheduleType) {
+            if (maintenanceScheduleType == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemMaintenance", "maintenanceScheduleType");
+            }
+            this.maintenanceScheduleType = maintenanceScheduleType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetVersion(String targetVersion) {
+            if (targetVersion == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemMaintenance", "targetVersion");
+            }
+            this.targetVersion = targetVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeScheduled(String timeScheduled) {
+            if (timeScheduled == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemMaintenance", "timeScheduled");
+            }
+            this.timeScheduled = timeScheduled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder versionPreference(String versionPreference) {
+            if (versionPreference == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemMaintenance", "versionPreference");
+            }
+            this.versionPreference = versionPreference;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder versionTrackPreference(String versionTrackPreference) {
+            if (versionTrackPreference == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystemMaintenance", "versionTrackPreference");
+            }
+            this.versionTrackPreference = versionTrackPreference;
+            return this;
+        }
         @CustomType.Setter
         public Builder windowStartTime(String windowStartTime) {
             if (windowStartTime == null) {
@@ -51,6 +161,11 @@ public final class GetMysqlDbSystemsDbSystemMaintenance {
         }
         public GetMysqlDbSystemsDbSystemMaintenance build() {
             final var _resultValue = new GetMysqlDbSystemsDbSystemMaintenance();
+            _resultValue.maintenanceScheduleType = maintenanceScheduleType;
+            _resultValue.targetVersion = targetVersion;
+            _resultValue.timeScheduled = timeScheduled;
+            _resultValue.versionPreference = versionPreference;
+            _resultValue.versionTrackPreference = versionTrackPreference;
             _resultValue.windowStartTime = windowStartTime;
             return _resultValue;
         }

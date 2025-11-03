@@ -7,11 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Pluggable Database resource in Oracle Cloud Infrastructure Database service.
- *
- * Registers a new [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
- * resource.
- *
  * ## Example Usage
  *
  * ```typescript

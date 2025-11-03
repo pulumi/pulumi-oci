@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
-//
-// Creates a new FusionEnvironment.
-//
 // ## Example Usage
 //
 // ```go
@@ -50,7 +46,8 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
-//				KmsKeyId: pulumi.Any(testKey.Id),
+//				IsIpv6dualStackEnabled: pulumi.Any(fusionEnvironmentIsIpv6dualStackEnabled),
+//				KmsKeyId:               pulumi.Any(testKey.Id),
 //				MaintenancePolicy: &fusionapps.FusionEnvironmentMaintenancePolicyArgs{
 //					EnvironmentMaintenanceOverride: pulumi.Any(fusionEnvironmentMaintenancePolicyEnvironmentMaintenanceOverride),
 //					MonthlyPatchingOverride:        pulumi.Any(fusionEnvironmentMaintenancePolicyMonthlyPatchingOverride),
@@ -113,6 +110,8 @@ type FusionEnvironment struct {
 	IdcsDomainUrl pulumi.StringOutput `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled pulumi.BoolOutput `pulumi:"isBreakGlassEnabled"`
+	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	IsIpv6dualStackEnabled pulumi.BoolOutput `pulumi:"isIpv6dualStackEnabled"`
 	// (Updatable) byok kms keyId
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
 	// BYOK key info
@@ -216,6 +215,8 @@ type fusionEnvironmentState struct {
 	IdcsDomainUrl *string `pulumi:"idcsDomainUrl"`
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled *bool `pulumi:"isBreakGlassEnabled"`
+	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	IsIpv6dualStackEnabled *bool `pulumi:"isIpv6dualStackEnabled"`
 	// (Updatable) byok kms keyId
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// BYOK key info
@@ -275,6 +276,8 @@ type FusionEnvironmentState struct {
 	IdcsDomainUrl pulumi.StringPtrInput
 	// If it's true, then the Break Glass feature is enabled
 	IsBreakGlassEnabled pulumi.BoolPtrInput
+	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	IsIpv6dualStackEnabled pulumi.BoolPtrInput
 	// (Updatable) byok kms keyId
 	KmsKeyId pulumi.StringPtrInput
 	// BYOK key info
@@ -330,6 +333,8 @@ type fusionEnvironmentArgs struct {
 	FusionEnvironmentFamilyId string `pulumi:"fusionEnvironmentFamilyId"`
 	// The type of environment. Valid values are Production, Test, or Development.
 	FusionEnvironmentType string `pulumi:"fusionEnvironmentType"`
+	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	IsIpv6dualStackEnabled *bool `pulumi:"isIpv6dualStackEnabled"`
 	// (Updatable) byok kms keyId
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
@@ -358,6 +363,8 @@ type FusionEnvironmentArgs struct {
 	FusionEnvironmentFamilyId pulumi.StringInput
 	// The type of environment. Valid values are Production, Test, or Development.
 	FusionEnvironmentType pulumi.StringInput
+	// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+	IsIpv6dualStackEnabled pulumi.BoolPtrInput
 	// (Updatable) byok kms keyId
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
@@ -518,6 +525,11 @@ func (o FusionEnvironmentOutput) IdcsDomainUrl() pulumi.StringOutput {
 // If it's true, then the Break Glass feature is enabled
 func (o FusionEnvironmentOutput) IsBreakGlassEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FusionEnvironment) pulumi.BoolOutput { return v.IsBreakGlassEnabled }).(pulumi.BoolOutput)
+}
+
+// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+func (o FusionEnvironmentOutput) IsIpv6dualStackEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.BoolOutput { return v.IsIpv6dualStackEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) byok kms keyId

@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- * 
- * Add credentials to a fleet in Fleet Application Management.
- * 
  * ## Example Usage
  * 
  * <pre>

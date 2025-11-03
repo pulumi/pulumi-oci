@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetSoftwareUpdate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,6 +20,16 @@ public final class FsuCycleUpgradeDetails {
      */
     private String collectionType;
     /**
+     * @return (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+     * 
+     */
+    private @Nullable Boolean isIgnorePostUpgradeErrors;
+    /**
+     * @return (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+     * 
+     */
+    private @Nullable Boolean isIgnorePrerequisites;
+    /**
      * @return (Updatable) Enables or disables the recompilation of invalid objects.
      * 
      */
@@ -26,11 +37,16 @@ public final class FsuCycleUpgradeDetails {
     /**
      * @return (Updatable) Enables or disables time zone upgrade.
      * 
+     */
+    private @Nullable Boolean isTimeZoneUpgrade;
+    /**
+     * @return (Updatable) Service drain timeout specified in seconds.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    private @Nullable Boolean isTimeZoneUpgrade;
+    private @Nullable Integer maxDrainTimeoutInSeconds;
 
     private FsuCycleUpgradeDetails() {}
     /**
@@ -39,6 +55,20 @@ public final class FsuCycleUpgradeDetails {
      */
     public String collectionType() {
         return this.collectionType;
+    }
+    /**
+     * @return (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+     * 
+     */
+    public Optional<Boolean> isIgnorePostUpgradeErrors() {
+        return Optional.ofNullable(this.isIgnorePostUpgradeErrors);
+    }
+    /**
+     * @return (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+     * 
+     */
+    public Optional<Boolean> isIgnorePrerequisites() {
+        return Optional.ofNullable(this.isIgnorePrerequisites);
     }
     /**
      * @return (Updatable) Enables or disables the recompilation of invalid objects.
@@ -50,12 +80,19 @@ public final class FsuCycleUpgradeDetails {
     /**
      * @return (Updatable) Enables or disables time zone upgrade.
      * 
+     */
+    public Optional<Boolean> isTimeZoneUpgrade() {
+        return Optional.ofNullable(this.isTimeZoneUpgrade);
+    }
+    /**
+     * @return (Updatable) Service drain timeout specified in seconds.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Boolean> isTimeZoneUpgrade() {
-        return Optional.ofNullable(this.isTimeZoneUpgrade);
+    public Optional<Integer> maxDrainTimeoutInSeconds() {
+        return Optional.ofNullable(this.maxDrainTimeoutInSeconds);
     }
 
     public static Builder builder() {
@@ -68,14 +105,20 @@ public final class FsuCycleUpgradeDetails {
     @CustomType.Builder
     public static final class Builder {
         private String collectionType;
+        private @Nullable Boolean isIgnorePostUpgradeErrors;
+        private @Nullable Boolean isIgnorePrerequisites;
         private @Nullable Boolean isRecompileInvalidObjects;
         private @Nullable Boolean isTimeZoneUpgrade;
+        private @Nullable Integer maxDrainTimeoutInSeconds;
         public Builder() {}
         public Builder(FsuCycleUpgradeDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.collectionType = defaults.collectionType;
+    	      this.isIgnorePostUpgradeErrors = defaults.isIgnorePostUpgradeErrors;
+    	      this.isIgnorePrerequisites = defaults.isIgnorePrerequisites;
     	      this.isRecompileInvalidObjects = defaults.isRecompileInvalidObjects;
     	      this.isTimeZoneUpgrade = defaults.isTimeZoneUpgrade;
+    	      this.maxDrainTimeoutInSeconds = defaults.maxDrainTimeoutInSeconds;
         }
 
         @CustomType.Setter
@@ -84,6 +127,18 @@ public final class FsuCycleUpgradeDetails {
               throw new MissingRequiredPropertyException("FsuCycleUpgradeDetails", "collectionType");
             }
             this.collectionType = collectionType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isIgnorePostUpgradeErrors(@Nullable Boolean isIgnorePostUpgradeErrors) {
+
+            this.isIgnorePostUpgradeErrors = isIgnorePostUpgradeErrors;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isIgnorePrerequisites(@Nullable Boolean isIgnorePrerequisites) {
+
+            this.isIgnorePrerequisites = isIgnorePrerequisites;
             return this;
         }
         @CustomType.Setter
@@ -98,11 +153,20 @@ public final class FsuCycleUpgradeDetails {
             this.isTimeZoneUpgrade = isTimeZoneUpgrade;
             return this;
         }
+        @CustomType.Setter
+        public Builder maxDrainTimeoutInSeconds(@Nullable Integer maxDrainTimeoutInSeconds) {
+
+            this.maxDrainTimeoutInSeconds = maxDrainTimeoutInSeconds;
+            return this;
+        }
         public FsuCycleUpgradeDetails build() {
             final var _resultValue = new FsuCycleUpgradeDetails();
             _resultValue.collectionType = collectionType;
+            _resultValue.isIgnorePostUpgradeErrors = isIgnorePostUpgradeErrors;
+            _resultValue.isIgnorePrerequisites = isIgnorePrerequisites;
             _resultValue.isRecompileInvalidObjects = isRecompileInvalidObjects;
             _resultValue.isTimeZoneUpgrade = isTimeZoneUpgrade;
+            _resultValue.maxDrainTimeoutInSeconds = maxDrainTimeoutInSeconds;
             return _resultValue;
         }
     }

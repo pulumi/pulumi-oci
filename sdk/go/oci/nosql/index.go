@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
-//
-// Create a new index on the table identified by tableNameOrId.
-//
 // ## Example Usage
 //
 // ```go

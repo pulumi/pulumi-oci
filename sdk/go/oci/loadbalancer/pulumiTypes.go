@@ -2297,7 +2297,7 @@ func (o LoadBalancerIpAddressDetailReservedIpArrayOutput) Index(i pulumi.IntInpu
 }
 
 type LoadBalancerReservedIp struct {
-	// Ocid of the Reserved IP/Public Ip created with VCN.
+	// (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
 	//
 	// Reserved IPs are IPs which already registered using VCN API.
 	//
@@ -2323,7 +2323,7 @@ type LoadBalancerReservedIpInput interface {
 }
 
 type LoadBalancerReservedIpArgs struct {
-	// Ocid of the Reserved IP/Public Ip created with VCN.
+	// (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
 	//
 	// Reserved IPs are IPs which already registered using VCN API.
 	//
@@ -2388,7 +2388,7 @@ func (o LoadBalancerReservedIpOutput) ToLoadBalancerReservedIpOutputWithContext(
 	return o
 }
 
-// Ocid of the Reserved IP/Public Ip created with VCN.
+// (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
 //
 // Reserved IPs are IPs which already registered using VCN API.
 //

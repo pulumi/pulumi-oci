@@ -24,10 +24,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Creates a management station using the proxy and mirror configuration information provided.
- * 
  * ## Example Usage
  * 
  * <pre>

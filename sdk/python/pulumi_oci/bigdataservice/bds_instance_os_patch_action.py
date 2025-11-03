@@ -216,10 +216,6 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
                  patching_configs: Optional[pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigsArgs', 'BdsInstanceOsPatchActionPatchingConfigsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance OS Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Install the specified OS patch to this cluster nodes.
-
         ## Example Usage
 
         ```python
@@ -264,10 +260,6 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
                  args: BdsInstanceOsPatchActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance OS Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Install the specified OS patch to this cluster nodes.
-
         ## Example Usage
 
         ```python

@@ -818,11 +818,7 @@ class Model(pulumi.CustomResource):
                  validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Document service.
-
-        Create a new model.
-
-          Updates the model metadata only selected path parameter.
+        ## Example Usage
 
         ## Import
 
@@ -860,11 +856,7 @@ class Model(pulumi.CustomResource):
                  args: ModelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model resource in Oracle Cloud Infrastructure Ai Document service.
-
-        Create a new model.
-
-          Updates the model metadata only selected path parameter.
+        ## Example Usage
 
         ## Import
 

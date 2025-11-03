@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
-//
-// Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
-//
 // ## Example Usage
 //
 // ```go

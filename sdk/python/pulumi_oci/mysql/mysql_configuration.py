@@ -417,10 +417,6 @@ class MysqlConfiguration(pulumi.CustomResource):
                  variables: Optional[pulumi.Input[Union['MysqlConfigurationVariablesArgs', 'MysqlConfigurationVariablesArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a new Configuration.
-
         ## Example Usage
 
         ```python
@@ -591,10 +587,6 @@ class MysqlConfiguration(pulumi.CustomResource):
                  args: MysqlConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Creates a new Configuration.
-
         ## Example Usage
 
         ```python

@@ -19,10 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Deploy Pipeline resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Creates a new deployment pipeline.
- * 
  * ## Example Usage
  * 
  * <pre>

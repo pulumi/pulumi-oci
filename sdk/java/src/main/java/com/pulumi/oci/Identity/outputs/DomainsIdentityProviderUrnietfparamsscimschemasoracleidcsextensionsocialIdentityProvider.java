@@ -68,6 +68,40 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
      */
     private @Nullable List<String> adminScopes;
     /**
+     * @return (Updatable) Apple Developer ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable String appleDevId;
+    /**
+     * @return (Updatable) Apple Private Key ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable String appleKeyId;
+    /**
      * @return (Updatable) Social IDP Authorization URL
      * 
      * **Added In:** 20.1.3
@@ -416,6 +450,44 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         return this.adminScopes == null ? List.of() : this.adminScopes;
     }
     /**
+     * @return (Updatable) Apple Developer ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<String> appleDevId() {
+        return Optional.ofNullable(this.appleDevId);
+    }
+    /**
+     * @return (Updatable) Apple Private Key ID
+     * 
+     * **Added In:** 2311180004
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<String> appleKeyId() {
+        return Optional.ofNullable(this.appleKeyId);
+    }
+    /**
      * @return (Updatable) Social IDP Authorization URL
      * 
      * **Added In:** 20.1.3
@@ -751,6 +823,8 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         private @Nullable String accessTokenUrl;
         private Boolean accountLinkingEnabled;
         private @Nullable List<String> adminScopes;
+        private @Nullable String appleDevId;
+        private @Nullable String appleKeyId;
         private @Nullable String authzUrl;
         private @Nullable Boolean autoRedirectEnabled;
         private @Nullable Boolean clientCredentialInPayload;
@@ -774,6 +848,8 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
     	      this.accessTokenUrl = defaults.accessTokenUrl;
     	      this.accountLinkingEnabled = defaults.accountLinkingEnabled;
     	      this.adminScopes = defaults.adminScopes;
+    	      this.appleDevId = defaults.appleDevId;
+    	      this.appleKeyId = defaults.appleKeyId;
     	      this.authzUrl = defaults.authzUrl;
     	      this.autoRedirectEnabled = defaults.autoRedirectEnabled;
     	      this.clientCredentialInPayload = defaults.clientCredentialInPayload;
@@ -815,6 +891,18 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
         }
         public Builder adminScopes(String... adminScopes) {
             return adminScopes(List.of(adminScopes));
+        }
+        @CustomType.Setter
+        public Builder appleDevId(@Nullable String appleDevId) {
+
+            this.appleDevId = appleDevId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder appleKeyId(@Nullable String appleKeyId) {
+
+            this.appleKeyId = appleKeyId;
+            return this;
         }
         @CustomType.Setter
         public Builder authzUrl(@Nullable String authzUrl) {
@@ -937,6 +1025,8 @@ public final class DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsexte
             _resultValue.accessTokenUrl = accessTokenUrl;
             _resultValue.accountLinkingEnabled = accountLinkingEnabled;
             _resultValue.adminScopes = adminScopes;
+            _resultValue.appleDevId = appleDevId;
+            _resultValue.appleKeyId = appleKeyId;
             _resultValue.authzUrl = authzUrl;
             _resultValue.autoRedirectEnabled = autoRedirectEnabled;
             _resultValue.clientCredentialInPayload = clientCredentialInPayload;

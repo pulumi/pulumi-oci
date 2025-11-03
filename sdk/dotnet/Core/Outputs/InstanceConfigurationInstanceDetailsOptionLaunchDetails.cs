@@ -78,6 +78,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? IpxeScript;
         /// <summary>
+        /// Whether to enable AI enterprise on the instance.
+        /// </summary>
+        public readonly bool? IsAiEnterpriseEnabled;
+        /// <summary>
         /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         /// </summary>
         public readonly bool? IsPvEncryptionInTransitEnabled;
@@ -167,6 +171,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? ipxeScript,
 
+            bool? isAiEnterpriseEnabled,
+
             bool? isPvEncryptionInTransitEnabled,
 
             string? launchMode,
@@ -209,6 +215,7 @@ namespace Pulumi.Oci.Core.Outputs
             FreeformTags = freeformTags;
             InstanceOptions = instanceOptions;
             IpxeScript = ipxeScript;
+            IsAiEnterpriseEnabled = isAiEnterpriseEnabled;
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             LaunchMode = launchMode;
             LaunchOptions = launchOptions;

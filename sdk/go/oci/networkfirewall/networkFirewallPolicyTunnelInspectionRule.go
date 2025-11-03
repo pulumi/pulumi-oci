@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-//
-// Creates a new tunnel inspection rule for the network firewall policy.
-//
 // ## Example Usage
 //
 // ```go

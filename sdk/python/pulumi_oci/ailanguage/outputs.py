@@ -16,6 +16,10 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'JobInputConfiguration',
+    'JobInputLocation',
+    'JobModelMetadataDetail',
+    'JobOutputLocation',
     'ModelEvaluationResult',
     'ModelEvaluationResultClassMetric',
     'ModelEvaluationResultEntityMetric',
@@ -32,6 +36,17 @@ __all__ = [
     'GetEndpointsEndpointCollectionResult',
     'GetEndpointsEndpointCollectionItemResult',
     'GetEndpointsFilterResult',
+    'GetJobInputConfigurationResult',
+    'GetJobInputLocationResult',
+    'GetJobModelMetadataDetailResult',
+    'GetJobOutputLocationResult',
+    'GetJobsFilterResult',
+    'GetJobsJobCollectionResult',
+    'GetJobsJobCollectionItemResult',
+    'GetJobsJobCollectionItemInputConfigurationResult',
+    'GetJobsJobCollectionItemInputLocationResult',
+    'GetJobsJobCollectionItemModelMetadataDetailResult',
+    'GetJobsJobCollectionItemOutputLocationResult',
     'GetModelEvaluationResultResult',
     'GetModelEvaluationResultClassMetricResult',
     'GetModelEvaluationResultEntityMetricResult',
@@ -70,6 +85,326 @@ __all__ = [
     'GetProjectsProjectCollectionResult',
     'GetProjectsProjectCollectionItemResult',
 ]
+
+@pulumi.output_type
+class JobInputConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "documentTypes":
+            suggest = "document_types"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobInputConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobInputConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobInputConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 configuration: Optional[Mapping[str, Mapping[str, _builtins.str]]] = None,
+                 document_types: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Mapping[str, Mapping[str, _builtins.str]] configuration: meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
+        :param Sequence[_builtins.str] document_types: Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+        """
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if document_types is not None:
+            pulumi.set(__self__, "document_types", document_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def configuration(self) -> Optional[Mapping[str, Mapping[str, _builtins.str]]]:
+        """
+        meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
+        """
+        return pulumi.get(self, "configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="documentTypes")
+    def document_types(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+        """
+        return pulumi.get(self, "document_types")
+
+
+@pulumi.output_type
+class JobInputLocation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "locationType":
+            suggest = "location_type"
+        elif key == "objectNames":
+            suggest = "object_names"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobInputLocation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobInputLocation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobInputLocation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 location_type: _builtins.str,
+                 namespace: _builtins.str,
+                 object_names: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str bucket: Object Storage bucket name.
+        :param _builtins.str location_type: locationType
+        :param _builtins.str namespace: Object Storage namespace name.
+        :param Sequence[_builtins.str] object_names: List of objects to be processed
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "location_type", location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        if object_names is not None:
+            pulumi.set(__self__, "object_names", object_names)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="locationType")
+    def location_type(self) -> _builtins.str:
+        """
+        locationType
+        """
+        return pulumi.get(self, "location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="objectNames")
+    def object_names(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        List of objects to be processed
+        """
+        return pulumi.get(self, "object_names")
+
+
+@pulumi.output_type
+class JobModelMetadataDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endpointId":
+            suggest = "endpoint_id"
+        elif key == "languageCode":
+            suggest = "language_code"
+        elif key == "modelId":
+            suggest = "model_id"
+        elif key == "modelType":
+            suggest = "model_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobModelMetadataDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobModelMetadataDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobModelMetadataDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 configuration: Optional[Mapping[str, Mapping[str, _builtins.str]]] = None,
+                 endpoint_id: Optional[_builtins.str] = None,
+                 language_code: Optional[_builtins.str] = None,
+                 model_id: Optional[_builtins.str] = None,
+                 model_type: Optional[_builtins.str] = None):
+        """
+        :param Mapping[str, Mapping[str, _builtins.str]] configuration: model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        :param _builtins.str endpoint_id: Unique identifier endpoint OCID that should be used for inference
+        :param _builtins.str language_code: Language code supported
+               * auto : Automatically detect language
+               * ar : Arabic
+               * pt-BR : Brazilian Portuguese
+               * cs : Czech
+               * da : Danish
+               * nl : Dutch
+               * en : English
+               * fi : Finnish
+               * fr : French
+               * fr-CA : Canadian French
+               * de : German
+               * it : Italian
+               * ja : Japanese
+               * ko : Korean
+               * no : Norwegian
+               * pl : Polish
+               * ro : Romanian
+               * zh-CN : Simplified Chinese
+               * es : Spanish
+               * sv : Swedish
+               * zh-TW : Traditional Chinese
+               * tr : Turkish
+               * el : Greek
+               * he : Hebrew
+        :param _builtins.str model_id: Unique identifier model OCID that should be used for inference
+        :param _builtins.str model_type: model type to used for inference allowed values are
+               * LANGUAGE_SENTIMENT_ANALYSIS
+               * LANGUAGE_DETECTION
+               * TEXT_CLASSIFICATION
+               * NAMED_ENTITY_RECOGNITION
+               * KEY_PHRASE_EXTRACTION
+               * LANGUAGE_PII_ENTITIES
+               * LANGUAGE_TRANSLATION
+        """
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if endpoint_id is not None:
+            pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if language_code is not None:
+            pulumi.set(__self__, "language_code", language_code)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def configuration(self) -> Optional[Mapping[str, Mapping[str, _builtins.str]]]:
+        """
+        model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        """
+        return pulumi.get(self, "configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> Optional[_builtins.str]:
+        """
+        Unique identifier endpoint OCID that should be used for inference
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="languageCode")
+    def language_code(self) -> Optional[_builtins.str]:
+        """
+        Language code supported
+        * auto : Automatically detect language
+        * ar : Arabic
+        * pt-BR : Brazilian Portuguese
+        * cs : Czech
+        * da : Danish
+        * nl : Dutch
+        * en : English
+        * fi : Finnish
+        * fr : French
+        * fr-CA : Canadian French
+        * de : German
+        * it : Italian
+        * ja : Japanese
+        * ko : Korean
+        * no : Norwegian
+        * pl : Polish
+        * ro : Romanian
+        * zh-CN : Simplified Chinese
+        * es : Spanish
+        * sv : Swedish
+        * zh-TW : Traditional Chinese
+        * tr : Turkish
+        * el : Greek
+        * he : Hebrew
+        """
+        return pulumi.get(self, "language_code")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[_builtins.str]:
+        """
+        Unique identifier model OCID that should be used for inference
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[_builtins.str]:
+        """
+        model type to used for inference allowed values are
+        * LANGUAGE_SENTIMENT_ANALYSIS
+        * LANGUAGE_DETECTION
+        * TEXT_CLASSIFICATION
+        * NAMED_ENTITY_RECOGNITION
+        * KEY_PHRASE_EXTRACTION
+        * LANGUAGE_PII_ENTITIES
+        * LANGUAGE_TRANSLATION
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
+class JobOutputLocation(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 prefix: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str bucket: Object Storage bucket name.
+        :param _builtins.str namespace: Object Storage namespace name.
+        :param _builtins.str prefix: The prefix (directory) in an Object Storage bucket.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> Optional[_builtins.str]:
+        """
+        The prefix (directory) in an Object Storage bucket.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "prefix")
+
 
 @pulumi.output_type
 class ModelEvaluationResult(dict):
@@ -1061,6 +1396,7 @@ class GetEndpointsEndpointCollectionResult(dict):
 @pulumi.output_type
 class GetEndpointsEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
+                 alias: _builtins.str,
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
@@ -1076,6 +1412,7 @@ class GetEndpointsEndpointCollectionItemResult(dict):
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
+        :param _builtins.str alias: Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str description: A short description of the endpoint.
@@ -1091,6 +1428,7 @@ class GetEndpointsEndpointCollectionItemResult(dict):
         :param _builtins.str time_created: The time the the endpoint was created. An RFC3339 formatted datetime string.
         :param _builtins.str time_updated: The time the endpoint was updated. An RFC3339 formatted datetime string.
         """
+        pulumi.set(__self__, "alias", alias)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
@@ -1105,6 +1443,14 @@ class GetEndpointsEndpointCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter
+    def alias(self) -> _builtins.str:
+        """
+        Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+        """
+        return pulumi.get(self, "alias")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1244,6 +1590,771 @@ class GetEndpointsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJobInputConfigurationResult(dict):
+    def __init__(__self__, *,
+                 configuration: Mapping[str, Mapping[str, _builtins.str]],
+                 document_types: Sequence[_builtins.str]):
+        """
+        :param Mapping[str, Mapping[str, _builtins.str]] configuration: model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        :param Sequence[_builtins.str] document_types: Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+        """
+        pulumi.set(__self__, "configuration", configuration)
+        pulumi.set(__self__, "document_types", document_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def configuration(self) -> Mapping[str, Mapping[str, _builtins.str]]:
+        """
+        model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        """
+        return pulumi.get(self, "configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="documentTypes")
+    def document_types(self) -> Sequence[_builtins.str]:
+        """
+        Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+        """
+        return pulumi.get(self, "document_types")
+
+
+@pulumi.output_type
+class GetJobInputLocationResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 location_type: _builtins.str,
+                 namespace: _builtins.str,
+                 object_names: Sequence[_builtins.str]):
+        """
+        :param _builtins.str bucket: Object Storage bucket name.
+        :param _builtins.str location_type: locationType
+        :param _builtins.str namespace: Object Storage namespace name.
+        :param Sequence[_builtins.str] object_names: List of objects to be processed
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "location_type", location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object_names", object_names)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="locationType")
+    def location_type(self) -> _builtins.str:
+        """
+        locationType
+        """
+        return pulumi.get(self, "location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="objectNames")
+    def object_names(self) -> Sequence[_builtins.str]:
+        """
+        List of objects to be processed
+        """
+        return pulumi.get(self, "object_names")
+
+
+@pulumi.output_type
+class GetJobModelMetadataDetailResult(dict):
+    def __init__(__self__, *,
+                 configuration: Mapping[str, Mapping[str, _builtins.str]],
+                 endpoint_id: _builtins.str,
+                 language_code: _builtins.str,
+                 model_id: _builtins.str,
+                 model_type: _builtins.str):
+        """
+        :param Mapping[str, Mapping[str, _builtins.str]] configuration: model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        :param _builtins.str endpoint_id: Unique identifier endpoint OCID that should be used for inference
+        :param _builtins.str language_code: Language code supported
+               * auto : Automatically detect language
+               * ar : Arabic
+               * pt-BR : Brazilian Portuguese
+               * cs : Czech
+               * da : Danish
+               * nl : Dutch
+               * en : English
+               * fi : Finnish
+               * fr : French
+               * fr-CA : Canadian French
+               * de : German
+               * it : Italian
+               * ja : Japanese
+               * ko : Korean
+               * no : Norwegian
+               * pl : Polish
+               * ro : Romanian
+               * zh-CN : Simplified Chinese
+               * es : Spanish
+               * sv : Swedish
+               * zh-TW : Traditional Chinese
+               * tr : Turkish
+               * el : Greek
+               * he : Hebrew
+        :param _builtins.str model_id: Unique identifier model OCID that should be used for inference
+        :param _builtins.str model_type: model type to used for inference allowed values are
+               * LANGUAGE_SENTIMENT_ANALYSIS
+               * LANGUAGE_DETECTION
+               * TEXT_CLASSIFICATION
+               * NAMED_ENTITY_RECOGNITION
+               * KEY_PHRASE_EXTRACTION
+               * LANGUAGE_PII_ENTITIES
+               * LANGUAGE_TRANSLATION
+        """
+        pulumi.set(__self__, "configuration", configuration)
+        pulumi.set(__self__, "endpoint_id", endpoint_id)
+        pulumi.set(__self__, "language_code", language_code)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "model_type", model_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def configuration(self) -> Mapping[str, Mapping[str, _builtins.str]]:
+        """
+        model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        """
+        return pulumi.get(self, "configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> _builtins.str:
+        """
+        Unique identifier endpoint OCID that should be used for inference
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="languageCode")
+    def language_code(self) -> _builtins.str:
+        """
+        Language code supported
+        * auto : Automatically detect language
+        * ar : Arabic
+        * pt-BR : Brazilian Portuguese
+        * cs : Czech
+        * da : Danish
+        * nl : Dutch
+        * en : English
+        * fi : Finnish
+        * fr : French
+        * fr-CA : Canadian French
+        * de : German
+        * it : Italian
+        * ja : Japanese
+        * ko : Korean
+        * no : Norwegian
+        * pl : Polish
+        * ro : Romanian
+        * zh-CN : Simplified Chinese
+        * es : Spanish
+        * sv : Swedish
+        * zh-TW : Traditional Chinese
+        * tr : Turkish
+        * el : Greek
+        * he : Hebrew
+        """
+        return pulumi.get(self, "language_code")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        Unique identifier model OCID that should be used for inference
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> _builtins.str:
+        """
+        model type to used for inference allowed values are
+        * LANGUAGE_SENTIMENT_ANALYSIS
+        * LANGUAGE_DETECTION
+        * TEXT_CLASSIFICATION
+        * NAMED_ENTITY_RECOGNITION
+        * KEY_PHRASE_EXTRACTION
+        * LANGUAGE_PII_ENTITIES
+        * LANGUAGE_TRANSLATION
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
+class GetJobOutputLocationResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 prefix: _builtins.str):
+        """
+        :param _builtins.str bucket: Object Storage bucket name.
+        :param _builtins.str namespace: Object Storage namespace name.
+        :param _builtins.str prefix: The prefix (directory) in an Object Storage bucket.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> _builtins.str:
+        """
+        The prefix (directory) in an Object Storage bucket.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetJobsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJobsJobCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJobsJobCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJobsJobCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetJobsJobCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 completed_documents: _builtins.int,
+                 created_by: _builtins.str,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 failed_documents: _builtins.int,
+                 id: _builtins.str,
+                 input_configurations: Sequence['outputs.GetJobsJobCollectionItemInputConfigurationResult'],
+                 input_locations: Sequence['outputs.GetJobsJobCollectionItemInputLocationResult'],
+                 lifecycle_details: _builtins.str,
+                 model_metadata_details: Sequence['outputs.GetJobsJobCollectionItemModelMetadataDetailResult'],
+                 output_locations: Sequence['outputs.GetJobsJobCollectionItemOutputLocationResult'],
+                 pending_documents: _builtins.int,
+                 percent_complete: _builtins.int,
+                 state: _builtins.str,
+                 time_accepted: _builtins.str,
+                 time_completed: _builtins.str,
+                 time_started: _builtins.str,
+                 total_documents: _builtins.int,
+                 ttl_in_days: _builtins.int,
+                 warnings_count: _builtins.int):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param _builtins.int completed_documents: Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+        :param _builtins.str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
+        :param _builtins.str description: A short description of the job.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.int failed_documents: Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+        :param _builtins.str id: Unique identifier(OCID).
+        :param Sequence['GetJobsJobCollectionItemInputConfigurationArgs'] input_configurations: input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
+        :param Sequence['GetJobsJobCollectionItemInputLocationArgs'] input_locations: document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Sequence['GetJobsJobCollectionItemModelMetadataDetailArgs'] model_metadata_details: training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
+        :param Sequence['GetJobsJobCollectionItemOutputLocationArgs'] output_locations: Object storage output location to write inference results
+        :param _builtins.int pending_documents: Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
+        :param _builtins.int percent_complete: How much progress the operation has made, vs the total amount of work that must be performed.
+        :param _builtins.str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+        :param _builtins.str time_accepted: Job accepted time.
+        :param _builtins.str time_completed: Job finished time.
+        :param _builtins.str time_started: Job started time.
+        :param _builtins.int total_documents: Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+        :param _builtins.int ttl_in_days: Time to live duration in days for Job. Job will be available till max 90 days.
+        :param _builtins.int warnings_count: warnings count
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "completed_documents", completed_documents)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "failed_documents", failed_documents)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "input_configurations", input_configurations)
+        pulumi.set(__self__, "input_locations", input_locations)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "model_metadata_details", model_metadata_details)
+        pulumi.set(__self__, "output_locations", output_locations)
+        pulumi.set(__self__, "pending_documents", pending_documents)
+        pulumi.set(__self__, "percent_complete", percent_complete)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_accepted", time_accepted)
+        pulumi.set(__self__, "time_completed", time_completed)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "total_documents", total_documents)
+        pulumi.set(__self__, "ttl_in_days", ttl_in_days)
+        pulumi.set(__self__, "warnings_count", warnings_count)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="completedDocuments")
+    def completed_documents(self) -> _builtins.int:
+        """
+        Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+        """
+        return pulumi.get(self, "completed_documents")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A short description of the job.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="failedDocuments")
+    def failed_documents(self) -> _builtins.int:
+        """
+        Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+        """
+        return pulumi.get(self, "failed_documents")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Unique identifier(OCID).
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="inputConfigurations")
+    def input_configurations(self) -> Sequence['outputs.GetJobsJobCollectionItemInputConfigurationResult']:
+        """
+        input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
+        """
+        return pulumi.get(self, "input_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="inputLocations")
+    def input_locations(self) -> Sequence['outputs.GetJobsJobCollectionItemInputLocationResult']:
+        """
+        document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
+        """
+        return pulumi.get(self, "input_locations")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelMetadataDetails")
+    def model_metadata_details(self) -> Sequence['outputs.GetJobsJobCollectionItemModelMetadataDetailResult']:
+        """
+        training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
+        """
+        return pulumi.get(self, "model_metadata_details")
+
+    @_builtins.property
+    @pulumi.getter(name="outputLocations")
+    def output_locations(self) -> Sequence['outputs.GetJobsJobCollectionItemOutputLocationResult']:
+        """
+        Object storage output location to write inference results
+        """
+        return pulumi.get(self, "output_locations")
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDocuments")
+    def pending_documents(self) -> _builtins.int:
+        """
+        Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
+        """
+        return pulumi.get(self, "pending_documents")
+
+    @_builtins.property
+    @pulumi.getter(name="percentComplete")
+    def percent_complete(self) -> _builtins.int:
+        """
+        How much progress the operation has made, vs the total amount of work that must be performed.
+        """
+        return pulumi.get(self, "percent_complete")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources whose lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeAccepted")
+    def time_accepted(self) -> _builtins.str:
+        """
+        Job accepted time.
+        """
+        return pulumi.get(self, "time_accepted")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCompleted")
+    def time_completed(self) -> _builtins.str:
+        """
+        Job finished time.
+        """
+        return pulumi.get(self, "time_completed")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        Job started time.
+        """
+        return pulumi.get(self, "time_started")
+
+    @_builtins.property
+    @pulumi.getter(name="totalDocuments")
+    def total_documents(self) -> _builtins.int:
+        """
+        Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+        """
+        return pulumi.get(self, "total_documents")
+
+    @_builtins.property
+    @pulumi.getter(name="ttlInDays")
+    def ttl_in_days(self) -> _builtins.int:
+        """
+        Time to live duration in days for Job. Job will be available till max 90 days.
+        """
+        return pulumi.get(self, "ttl_in_days")
+
+    @_builtins.property
+    @pulumi.getter(name="warningsCount")
+    def warnings_count(self) -> _builtins.int:
+        """
+        warnings count
+        """
+        return pulumi.get(self, "warnings_count")
+
+
+@pulumi.output_type
+class GetJobsJobCollectionItemInputConfigurationResult(dict):
+    def __init__(__self__, *,
+                 configuration: Mapping[str, Mapping[str, _builtins.str]],
+                 document_types: Sequence[_builtins.str]):
+        """
+        :param Mapping[str, Mapping[str, _builtins.str]] configuration: model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        :param Sequence[_builtins.str] document_types: Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+        """
+        pulumi.set(__self__, "configuration", configuration)
+        pulumi.set(__self__, "document_types", document_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def configuration(self) -> Mapping[str, Mapping[str, _builtins.str]]:
+        """
+        model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        """
+        return pulumi.get(self, "configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="documentTypes")
+    def document_types(self) -> Sequence[_builtins.str]:
+        """
+        Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+        """
+        return pulumi.get(self, "document_types")
+
+
+@pulumi.output_type
+class GetJobsJobCollectionItemInputLocationResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 location_type: _builtins.str,
+                 namespace: _builtins.str,
+                 object_names: Sequence[_builtins.str]):
+        """
+        :param _builtins.str bucket: Object Storage bucket name.
+        :param _builtins.str location_type: locationType
+        :param _builtins.str namespace: Object Storage namespace name.
+        :param Sequence[_builtins.str] object_names: List of objects to be processed
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "location_type", location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object_names", object_names)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="locationType")
+    def location_type(self) -> _builtins.str:
+        """
+        locationType
+        """
+        return pulumi.get(self, "location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="objectNames")
+    def object_names(self) -> Sequence[_builtins.str]:
+        """
+        List of objects to be processed
+        """
+        return pulumi.get(self, "object_names")
+
+
+@pulumi.output_type
+class GetJobsJobCollectionItemModelMetadataDetailResult(dict):
+    def __init__(__self__, *,
+                 configuration: Mapping[str, Mapping[str, _builtins.str]],
+                 endpoint_id: _builtins.str,
+                 language_code: _builtins.str,
+                 model_id: _builtins.str,
+                 model_type: _builtins.str):
+        """
+        :param Mapping[str, Mapping[str, _builtins.str]] configuration: model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        :param _builtins.str endpoint_id: Unique identifier endpoint OCID that should be used for inference
+        :param _builtins.str language_code: Language code supported
+               * auto : Automatically detect language
+               * ar : Arabic
+               * pt-BR : Brazilian Portuguese
+               * cs : Czech
+               * da : Danish
+               * nl : Dutch
+               * en : English
+               * fi : Finnish
+               * fr : French
+               * fr-CA : Canadian French
+               * de : German
+               * it : Italian
+               * ja : Japanese
+               * ko : Korean
+               * no : Norwegian
+               * pl : Polish
+               * ro : Romanian
+               * zh-CN : Simplified Chinese
+               * es : Spanish
+               * sv : Swedish
+               * zh-TW : Traditional Chinese
+               * tr : Turkish
+               * el : Greek
+               * he : Hebrew
+        :param _builtins.str model_id: Unique identifier model OCID that should be used for inference
+        :param _builtins.str model_type: model type to used for inference allowed values are
+               * LANGUAGE_SENTIMENT_ANALYSIS
+               * LANGUAGE_DETECTION
+               * TEXT_CLASSIFICATION
+               * NAMED_ENTITY_RECOGNITION
+               * KEY_PHRASE_EXTRACTION
+               * LANGUAGE_PII_ENTITIES
+               * LANGUAGE_TRANSLATION
+        """
+        pulumi.set(__self__, "configuration", configuration)
+        pulumi.set(__self__, "endpoint_id", endpoint_id)
+        pulumi.set(__self__, "language_code", language_code)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "model_type", model_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def configuration(self) -> Mapping[str, Mapping[str, _builtins.str]]:
+        """
+        model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        """
+        return pulumi.get(self, "configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> _builtins.str:
+        """
+        Unique identifier endpoint OCID that should be used for inference
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="languageCode")
+    def language_code(self) -> _builtins.str:
+        """
+        Language code supported
+        * auto : Automatically detect language
+        * ar : Arabic
+        * pt-BR : Brazilian Portuguese
+        * cs : Czech
+        * da : Danish
+        * nl : Dutch
+        * en : English
+        * fi : Finnish
+        * fr : French
+        * fr-CA : Canadian French
+        * de : German
+        * it : Italian
+        * ja : Japanese
+        * ko : Korean
+        * no : Norwegian
+        * pl : Polish
+        * ro : Romanian
+        * zh-CN : Simplified Chinese
+        * es : Spanish
+        * sv : Swedish
+        * zh-TW : Traditional Chinese
+        * tr : Turkish
+        * el : Greek
+        * he : Hebrew
+        """
+        return pulumi.get(self, "language_code")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        Unique identifier model OCID that should be used for inference
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> _builtins.str:
+        """
+        model type to used for inference allowed values are
+        * LANGUAGE_SENTIMENT_ANALYSIS
+        * LANGUAGE_DETECTION
+        * TEXT_CLASSIFICATION
+        * NAMED_ENTITY_RECOGNITION
+        * KEY_PHRASE_EXTRACTION
+        * LANGUAGE_PII_ENTITIES
+        * LANGUAGE_TRANSLATION
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
+class GetJobsJobCollectionItemOutputLocationResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 prefix: _builtins.str):
+        """
+        :param _builtins.str bucket: Object Storage bucket name.
+        :param _builtins.str namespace: Object Storage namespace name.
+        :param _builtins.str prefix: The prefix (directory) in an Object Storage bucket.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> _builtins.str:
+        """
+        The prefix (directory) in an Object Storage bucket.
+        """
+        return pulumi.get(self, "prefix")
 
 
 @pulumi.output_type
@@ -1791,7 +2902,7 @@ class GetModelModelDetailResult(dict):
         :param Sequence['GetModelModelDetailClassificationModeArgs'] classification_modes: classification Modes
         :param _builtins.str language_code: supported language default value is en
         :param _builtins.str model_type: Model type
-        :param _builtins.str version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        :param _builtins.str version: For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         pulumi.set(__self__, "classification_modes", classification_modes)
         pulumi.set(__self__, "language_code", language_code)
@@ -1826,7 +2937,7 @@ class GetModelModelDetailResult(dict):
     @pulumi.getter
     def version(self) -> _builtins.str:
         """
-        For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         return pulumi.get(self, "version")
 
@@ -1838,7 +2949,7 @@ class GetModelModelDetailClassificationModeResult(dict):
                  version: _builtins.str):
         """
         :param _builtins.str classification_mode: classification Modes
-        :param _builtins.str version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        :param _builtins.str version: For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         pulumi.set(__self__, "classification_mode", classification_mode)
         pulumi.set(__self__, "version", version)
@@ -1855,7 +2966,7 @@ class GetModelModelDetailClassificationModeResult(dict):
     @pulumi.getter
     def version(self) -> _builtins.str:
         """
-        For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         return pulumi.get(self, "version")
 
@@ -2249,7 +3360,7 @@ class GetModelsModelCollectionItemResult(dict):
         :param _builtins.str time_created: The time the the model was created. An RFC3339 formatted datetime string.
         :param _builtins.str time_updated: The time the model was updated. An RFC3339 formatted datetime string.
         :param Sequence['GetModelsModelCollectionItemTrainingDatasetArgs'] training_datasets: Possible data set type
-        :param _builtins.str version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        :param _builtins.str version: For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -2401,7 +3512,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter
     def version(self) -> _builtins.str:
         """
-        For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         return pulumi.get(self, "version")
 
@@ -2720,7 +3831,7 @@ class GetModelsModelCollectionItemModelDetailResult(dict):
         :param Sequence['GetModelsModelCollectionItemModelDetailClassificationModeArgs'] classification_modes: classification Modes
         :param _builtins.str language_code: supported language default value is en
         :param _builtins.str model_type: Model type
-        :param _builtins.str version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        :param _builtins.str version: For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         pulumi.set(__self__, "classification_modes", classification_modes)
         pulumi.set(__self__, "language_code", language_code)
@@ -2755,7 +3866,7 @@ class GetModelsModelCollectionItemModelDetailResult(dict):
     @pulumi.getter
     def version(self) -> _builtins.str:
         """
-        For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         return pulumi.get(self, "version")
 
@@ -2767,7 +3878,7 @@ class GetModelsModelCollectionItemModelDetailClassificationModeResult(dict):
                  version: _builtins.str):
         """
         :param _builtins.str classification_mode: classification Modes
-        :param _builtins.str version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        :param _builtins.str version: For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         pulumi.set(__self__, "classification_mode", classification_mode)
         pulumi.set(__self__, "version", version)
@@ -2784,7 +3895,7 @@ class GetModelsModelCollectionItemModelDetailClassificationModeResult(dict):
     @pulumi.getter
     def version(self) -> _builtins.str:
         """
-        For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+        For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         return pulumi.get(self, "version")
 

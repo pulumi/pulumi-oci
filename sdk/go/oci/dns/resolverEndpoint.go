@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
-//
-// Creates a new resolver endpoint in the same compartment as the resolver.
-//
 // ## Example Usage
 //
 // ```go

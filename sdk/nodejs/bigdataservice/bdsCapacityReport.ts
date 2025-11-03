@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Bds Capacity Report resource in Oracle Cloud Infrastructure Big Data Service service. Customer would require BDS_READ permission for the target compartment.
- *
- * Create a detailed capacity report for BDS service
- *
  * ## Example Usage
  *
  * ```typescript

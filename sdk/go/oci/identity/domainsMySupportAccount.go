@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// Create a user's own support account.
-//
 // ## Example Usage
 //
 // ## Import

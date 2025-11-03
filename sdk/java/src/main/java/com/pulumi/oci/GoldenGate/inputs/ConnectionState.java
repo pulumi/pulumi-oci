@@ -240,6 +240,36 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+     * 
+     */
+    @Import(name="clusterId")
+    private @Nullable Output<String> clusterId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+     * 
+     */
+    public Optional<Output<String>> clusterId() {
+        return Optional.ofNullable(this.clusterId);
+    }
+
+    /**
+     * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    /**
+     * @return The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+     * 
+     */
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      * 
      */
@@ -1018,6 +1048,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
@@ -1108,14 +1153,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
      * 
      */
     @Import(name="shouldUseResourcePrincipal")
     private @Nullable Output<Boolean> shouldUseResourcePrincipal;
 
     /**
-     * @return (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+     * @return (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
      * 
      */
     public Optional<Output<Boolean>> shouldUseResourcePrincipal() {
@@ -1423,6 +1468,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
     }
 
     /**
@@ -1780,6 +1840,8 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.clientId = $.clientId;
         this.clientSecret = $.clientSecret;
         this.clientSecretSecretId = $.clientSecretSecretId;
+        this.clusterId = $.clusterId;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.connectionFactory = $.connectionFactory;
         this.connectionString = $.connectionString;
@@ -1832,6 +1894,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.sasTokenSecretId = $.sasTokenSecretId;
         this.secretAccessKey = $.secretAccessKey;
         this.secretAccessKeySecretId = $.secretAccessKeySecretId;
+        this.securityAttributes = $.securityAttributes;
         this.securityProtocol = $.securityProtocol;
         this.servers = $.servers;
         this.serviceAccountKeyFile = $.serviceAccountKeyFile;
@@ -1858,6 +1921,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.storageCredentialName = $.storageCredentialName;
         this.streamPoolId = $.streamPoolId;
         this.subnetId = $.subnetId;
+        this.subscriptionId = $.subscriptionId;
         this.systemTags = $.systemTags;
         this.technologyType = $.technologyType;
         this.tenancyId = $.tenancyId;
@@ -2216,6 +2280,48 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder clientSecretSecretId(String clientSecretSecretId) {
             return clientSecretSecretId(Output.of(clientSecretSecretId));
+        }
+
+        /**
+         * @param clusterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterId(@Nullable Output<String> clusterId) {
+            $.clusterId = clusterId;
+            return this;
+        }
+
+        /**
+         * @param clusterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterId(String clusterId) {
+            return clusterId(Output.of(clusterId));
+        }
+
+        /**
+         * @param clusterPlacementGroupId The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        /**
+         * @param clusterPlacementGroupId The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**
@@ -3335,6 +3441,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param securityAttributes (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
+        }
+
+        /**
          * @param securityProtocol (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
          * 
          * @return builder
@@ -3461,7 +3588,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shouldUseResourcePrincipal (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+         * @param shouldUseResourcePrincipal (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
          * 
          * @return builder
          * 
@@ -3472,7 +3599,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shouldUseResourcePrincipal (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+         * @param shouldUseResourcePrincipal (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
          * 
          * @return builder
          * 
@@ -3896,6 +4023,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         /**

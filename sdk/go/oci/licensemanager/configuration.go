@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
-//
-// Updates the configuration for the compartment.
-//
 // ## Example Usage
 //
 // ```go

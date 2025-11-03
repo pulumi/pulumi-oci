@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
-    /// This resource provides the Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
-    /// 
-    /// Create an OPSI configuration resource.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

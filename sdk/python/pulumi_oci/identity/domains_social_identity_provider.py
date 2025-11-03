@@ -32,6 +32,8 @@ class DomainsSocialIdentityProviderArgs:
                  show_on_login: pulumi.Input[_builtins.bool],
                  access_token_url: Optional[pulumi.Input[_builtins.str]] = None,
                  admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 apple_dev_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 apple_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  authorization: Optional[pulumi.Input[_builtins.str]] = None,
                  authz_url: Optional[pulumi.Input[_builtins.str]] = None,
                  auto_redirect_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -163,6 +165,32 @@ class DomainsSocialIdentityProviderArgs:
                * caseExact: true
                * idcsSearchable: false
                * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] apple_dev_id: (Updatable) Apple Developer ID
+               
+               **Added In:** 2311180004
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] apple_key_id: (Updatable) Apple Private Key ID
+               
+               **Added In:** 2311180004
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
                * mutability: readWrite
                * required: false
                * returned: default
@@ -423,6 +451,10 @@ class DomainsSocialIdentityProviderArgs:
             pulumi.set(__self__, "access_token_url", access_token_url)
         if admin_scopes is not None:
             pulumi.set(__self__, "admin_scopes", admin_scopes)
+        if apple_dev_id is not None:
+            pulumi.set(__self__, "apple_dev_id", apple_dev_id)
+        if apple_key_id is not None:
+            pulumi.set(__self__, "apple_key_id", apple_key_id)
         if authorization is not None:
             pulumi.set(__self__, "authorization", authorization)
         if authz_url is not None:
@@ -700,6 +732,54 @@ class DomainsSocialIdentityProviderArgs:
     @admin_scopes.setter
     def admin_scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "admin_scopes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="appleDevId")
+    def apple_dev_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Apple Developer ID
+
+        **Added In:** 2311180004
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "apple_dev_id")
+
+    @apple_dev_id.setter
+    def apple_dev_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "apple_dev_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="appleKeyId")
+    def apple_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Apple Private Key ID
+
+        **Added In:** 2311180004
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "apple_key_id")
+
+    @apple_key_id.setter
+    def apple_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "apple_key_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -1191,6 +1271,8 @@ class _DomainsSocialIdentityProviderState:
                  access_token_url: Optional[pulumi.Input[_builtins.str]] = None,
                  account_linking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 apple_dev_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 apple_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  authorization: Optional[pulumi.Input[_builtins.str]] = None,
                  authz_url: Optional[pulumi.Input[_builtins.str]] = None,
                  auto_redirect_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -1260,6 +1342,32 @@ class _DomainsSocialIdentityProviderState:
                * caseExact: true
                * idcsSearchable: false
                * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] apple_dev_id: (Updatable) Apple Developer ID
+               
+               **Added In:** 2311180004
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] apple_key_id: (Updatable) Apple Private Key ID
+               
+               **Added In:** 2311180004
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
                * mutability: readWrite
                * required: false
                * returned: default
@@ -1690,6 +1798,10 @@ class _DomainsSocialIdentityProviderState:
             pulumi.set(__self__, "account_linking_enabled", account_linking_enabled)
         if admin_scopes is not None:
             pulumi.set(__self__, "admin_scopes", admin_scopes)
+        if apple_dev_id is not None:
+            pulumi.set(__self__, "apple_dev_id", apple_dev_id)
+        if apple_key_id is not None:
+            pulumi.set(__self__, "apple_key_id", apple_key_id)
         if authorization is not None:
             pulumi.set(__self__, "authorization", authorization)
         if authz_url is not None:
@@ -1834,6 +1946,54 @@ class _DomainsSocialIdentityProviderState:
     @admin_scopes.setter
     def admin_scopes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "admin_scopes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="appleDevId")
+    def apple_dev_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Apple Developer ID
+
+        **Added In:** 2311180004
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "apple_dev_id")
+
+    @apple_dev_id.setter
+    def apple_dev_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "apple_dev_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="appleKeyId")
+    def apple_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Apple Private Key ID
+
+        **Added In:** 2311180004
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "apple_key_id")
+
+    @apple_key_id.setter
+    def apple_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "apple_key_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -2692,6 +2852,8 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                  access_token_url: Optional[pulumi.Input[_builtins.str]] = None,
                  account_linking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 apple_dev_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 apple_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  authorization: Optional[pulumi.Input[_builtins.str]] = None,
                  authz_url: Optional[pulumi.Input[_builtins.str]] = None,
                  auto_redirect_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -2724,10 +2886,6 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsSocialIdentityProviderTagArgs', 'DomainsSocialIdentityProviderTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Social Identity Provider
-
         ## Example Usage
 
         ```python
@@ -2747,6 +2905,8 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
             show_on_login=social_identity_provider_show_on_login,
             access_token_url=social_identity_provider_access_token_url,
             admin_scopes=social_identity_provider_admin_scope,
+            apple_dev_id=test_apple_dev["id"],
+            apple_key_id=test_key["id"],
             authorization=social_identity_provider_authorization,
             authz_url=social_identity_provider_authz_url,
             auto_redirect_enabled=social_identity_provider_auto_redirect_enabled,
@@ -2816,6 +2976,32 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * caseExact: true
                * idcsSearchable: false
                * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] apple_dev_id: (Updatable) Apple Developer ID
+               
+               **Added In:** 2311180004
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] apple_key_id: (Updatable) Apple Private Key ID
+               
+               **Added In:** 2311180004
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
                * mutability: readWrite
                * required: false
                * returned: default
@@ -3149,10 +3335,6 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                  args: DomainsSocialIdentityProviderArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a Social Identity Provider
-
         ## Example Usage
 
         ```python
@@ -3172,6 +3354,8 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
             show_on_login=social_identity_provider_show_on_login,
             access_token_url=social_identity_provider_access_token_url,
             admin_scopes=social_identity_provider_admin_scope,
+            apple_dev_id=test_apple_dev["id"],
+            apple_key_id=test_key["id"],
             authorization=social_identity_provider_authorization,
             authz_url=social_identity_provider_authz_url,
             auto_redirect_enabled=social_identity_provider_auto_redirect_enabled,
@@ -3229,6 +3413,8 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                  access_token_url: Optional[pulumi.Input[_builtins.str]] = None,
                  account_linking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 apple_dev_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 apple_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  authorization: Optional[pulumi.Input[_builtins.str]] = None,
                  authz_url: Optional[pulumi.Input[_builtins.str]] = None,
                  auto_redirect_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -3273,6 +3459,8 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                 raise TypeError("Missing required property 'account_linking_enabled'")
             __props__.__dict__["account_linking_enabled"] = account_linking_enabled
             __props__.__dict__["admin_scopes"] = admin_scopes
+            __props__.__dict__["apple_dev_id"] = apple_dev_id
+            __props__.__dict__["apple_key_id"] = apple_key_id
             __props__.__dict__["authorization"] = authorization
             __props__.__dict__["authz_url"] = authz_url
             __props__.__dict__["auto_redirect_enabled"] = auto_redirect_enabled
@@ -3341,6 +3529,8 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
             access_token_url: Optional[pulumi.Input[_builtins.str]] = None,
             account_linking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
             admin_scopes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            apple_dev_id: Optional[pulumi.Input[_builtins.str]] = None,
+            apple_key_id: Optional[pulumi.Input[_builtins.str]] = None,
             authorization: Optional[pulumi.Input[_builtins.str]] = None,
             authz_url: Optional[pulumi.Input[_builtins.str]] = None,
             auto_redirect_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -3415,6 +3605,32 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
                * caseExact: true
                * idcsSearchable: false
                * multiValued: true
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] apple_dev_id: (Updatable) Apple Developer ID
+               
+               **Added In:** 2311180004
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[_builtins.str] apple_key_id: (Updatable) Apple Private Key ID
+               
+               **Added In:** 2311180004
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: false
+               * multiValued: false
                * mutability: readWrite
                * required: false
                * returned: default
@@ -3846,6 +4062,8 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
         __props__.__dict__["access_token_url"] = access_token_url
         __props__.__dict__["account_linking_enabled"] = account_linking_enabled
         __props__.__dict__["admin_scopes"] = admin_scopes
+        __props__.__dict__["apple_dev_id"] = apple_dev_id
+        __props__.__dict__["apple_key_id"] = apple_key_id
         __props__.__dict__["authorization"] = authorization
         __props__.__dict__["authz_url"] = authz_url
         __props__.__dict__["auto_redirect_enabled"] = auto_redirect_enabled
@@ -3940,6 +4158,46 @@ class DomainsSocialIdentityProvider(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "admin_scopes")
+
+    @_builtins.property
+    @pulumi.getter(name="appleDevId")
+    def apple_dev_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) Apple Developer ID
+
+        **Added In:** 2311180004
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "apple_dev_id")
+
+    @_builtins.property
+    @pulumi.getter(name="appleKeyId")
+    def apple_key_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) Apple Private Key ID
+
+        **Added In:** 2311180004
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: false
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "apple_key_id")
 
     @_builtins.property
     @pulumi.getter

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FusionApps
 {
     /// <summary>
-    /// This resource provides the Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
-    /// 
-    /// Creates a new DataMaskingActivity.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

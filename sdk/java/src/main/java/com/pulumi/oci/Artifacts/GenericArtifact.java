@@ -15,8 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
- * 
  * ## Example Usage
  * 
  * <pre>

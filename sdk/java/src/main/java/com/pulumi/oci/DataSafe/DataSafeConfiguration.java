@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Enables Data Safe in the tenancy and region.
- * 
  * ## Example Usage
  * 
  * <pre>

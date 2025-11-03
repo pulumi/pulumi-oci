@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
-//
-// Creates a new Database Tools private endpoint.
-//
 // ## Example Usage
 //
 // ```go
@@ -50,8 +46,9 @@ import (
 //						TimeCreated:       pulumi.Any(databaseToolsPrivateEndpointLocksTimeCreated),
 //					},
 //				},
-//				NsgIds:            pulumi.Any(databaseToolsPrivateEndpointNsgIds),
-//				PrivateEndpointIp: pulumi.Any(databaseToolsPrivateEndpointPrivateEndpointIp),
+//				NsgIds:             pulumi.Any(databaseToolsPrivateEndpointNsgIds),
+//				PrivateEndpointIp:  pulumi.Any(databaseToolsPrivateEndpointPrivateEndpointIp),
+//				SecurityAttributes: pulumi.Any(databaseToolsPrivateEndpointSecurityAttributes),
 //			})
 //			if err != nil {
 //				return err
@@ -100,6 +97,8 @@ type DatabaseToolsPrivateEndpoint struct {
 	PrivateEndpointVnicId pulumi.StringOutput `pulumi:"privateEndpointVnicId"`
 	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput `pulumi:"reverseConnectionConfigurations"`
+	// (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The current state of the Database Tools private endpoint.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
@@ -187,6 +186,8 @@ type databaseToolsPrivateEndpointState struct {
 	PrivateEndpointVnicId *string `pulumi:"privateEndpointVnicId"`
 	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations []DatabaseToolsPrivateEndpointReverseConnectionConfiguration `pulumi:"reverseConnectionConfigurations"`
+	// (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the Database Tools private endpoint.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
@@ -233,6 +234,8 @@ type DatabaseToolsPrivateEndpointState struct {
 	PrivateEndpointVnicId pulumi.StringPtrInput
 	// Reverse connection configuration details of the private endpoint.
 	ReverseConnectionConfigurations DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput
+	// (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The current state of the Database Tools private endpoint.
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
@@ -273,6 +276,8 @@ type databaseToolsPrivateEndpointArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address that represents the access point for the associated endpoint service.
 	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
+	// (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
 	//
 	// ** IMPORTANT **
@@ -300,6 +305,8 @@ type DatabaseToolsPrivateEndpointArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// The private IP address that represents the access point for the associated endpoint service.
 	PrivateEndpointIp pulumi.StringPtrInput
+	// (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
 	//
 	// ** IMPORTANT **
@@ -464,6 +471,11 @@ func (o DatabaseToolsPrivateEndpointOutput) ReverseConnectionConfigurations() Da
 	return o.ApplyT(func(v *DatabaseToolsPrivateEndpoint) DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput {
 		return v.ReverseConnectionConfigurations
 	}).(DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput)
+}
+
+// (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o DatabaseToolsPrivateEndpointOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseToolsPrivateEndpoint) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the Database Tools private endpoint.

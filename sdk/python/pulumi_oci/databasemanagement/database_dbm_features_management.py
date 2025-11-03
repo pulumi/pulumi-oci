@@ -230,10 +230,6 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                  modify_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables a Database Management feature for the specified cloud database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.
@@ -253,10 +249,6 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
                  args: DatabaseDbmFeaturesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables a Database Management feature for the specified cloud database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.

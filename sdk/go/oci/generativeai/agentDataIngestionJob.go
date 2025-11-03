@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-//
-// **CreateDataIngestionJob**
-//
-// Creates a data ingestion job.
-//
 // ## Example Usage
 //
 // ```go

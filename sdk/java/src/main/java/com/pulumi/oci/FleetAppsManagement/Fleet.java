@@ -23,9 +23,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- * 
- * Create a fleet in Fleet Application Management.
+ * ## Example Usage
  * 
  * ## Import
  * 

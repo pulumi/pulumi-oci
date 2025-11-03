@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
-//
-// **Deprecated.** Use the [AddStandbyAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/AddStandbyAutonomousContainerDatabase) operation to create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
-// specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/#articletitle.html).
-//
 // ## Example Usage
 //
 // ```go
@@ -40,14 +35,16 @@ import (
 //				PeerAutonomousContainerDatabaseBackupConfig: &database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs{
 //					BackupDestinationDetails: database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{
 //						&database.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{
-//							Type:          pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType),
-//							DbrsPolicyId:  pulumi.Any(testPolicy.Id),
-//							Id:            pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId),
-//							InternetProxy: pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy),
-//							IsRemote:      pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote),
-//							RemoteRegion:  pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion),
-//							VpcPassword:   pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword),
-//							VpcUser:       pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser),
+//							Type:                             pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType),
+//							BackupRetentionPolicyOnTerminate: pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate),
+//							DbrsPolicyId:                     pulumi.Any(testPolicy.Id),
+//							Id:                               pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId),
+//							InternetProxy:                    pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy),
+//							IsRemote:                         pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote),
+//							IsRetentionLockEnabled:           pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled),
+//							RemoteRegion:                     pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion),
+//							VpcPassword:                      pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword),
+//							VpcUser:                          pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser),
 //						},
 //					},
 //					RecoveryWindowInDays: pulumi.Any(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
@@ -113,11 +110,11 @@ type AutonomousContainerDatabaseDataguardAssociation struct {
 	PeerDbUniqueName pulumi.StringOutput `pulumi:"peerDbUniqueName"`
 	// The current state of the Autonomous Container Database.
 	PeerLifecycleState pulumi.StringOutput `pulumi:"peerLifecycleState"`
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	PeerRole pulumi.StringOutput `pulumi:"peerRole"`
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringOutput `pulumi:"protectionMode"`
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringOutput `pulumi:"role"`
 	// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays pulumi.IntOutput `pulumi:"standbyMaintenanceBufferInDays"`
@@ -208,11 +205,11 @@ type autonomousContainerDatabaseDataguardAssociationState struct {
 	PeerDbUniqueName *string `pulumi:"peerDbUniqueName"`
 	// The current state of the Autonomous Container Database.
 	PeerLifecycleState *string `pulumi:"peerLifecycleState"`
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	PeerRole *string `pulumi:"peerRole"`
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode *string `pulumi:"protectionMode"`
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	Role *string `pulumi:"role"`
 	// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays *int `pulumi:"standbyMaintenanceBufferInDays"`
@@ -265,11 +262,11 @@ type AutonomousContainerDatabaseDataguardAssociationState struct {
 	PeerDbUniqueName pulumi.StringPtrInput
 	// The current state of the Autonomous Container Database.
 	PeerLifecycleState pulumi.StringPtrInput
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	PeerRole pulumi.StringPtrInput
 	// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode pulumi.StringPtrInput
-	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+	// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringPtrInput
 	// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays pulumi.IntPtrInput
@@ -554,7 +551,7 @@ func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerLifecycleStat
 	}).(pulumi.StringOutput)
 }
 
-// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 func (o AutonomousContainerDatabaseDataguardAssociationOutput) PeerRole() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.PeerRole }).(pulumi.StringOutput)
 }
@@ -564,7 +561,7 @@ func (o AutonomousContainerDatabaseDataguardAssociationOutput) ProtectionMode() 
 	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.ProtectionMode }).(pulumi.StringOutput)
 }
 
-// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
 func (o AutonomousContainerDatabaseDataguardAssociationOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabaseDataguardAssociation) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
 }

@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cluster Placement Group resource in Oracle Cloud Infrastructure Cluster Placement Groups service.
- * 
- * Creates a new cluster placement group in the specified compartment.
- * 
  * ## Example Usage
  * 
  * <pre>

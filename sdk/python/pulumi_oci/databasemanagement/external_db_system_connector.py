@@ -431,10 +431,6 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a new external connector.
-
         ## Example Usage
 
         ```python
@@ -476,10 +472,6 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
                  args: ExternalDbSystemConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates a new external connector.
-
         ## Example Usage
 
         ```python

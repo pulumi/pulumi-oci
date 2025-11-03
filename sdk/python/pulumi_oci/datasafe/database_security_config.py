@@ -433,9 +433,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                  sql_firewall_config: Optional[pulumi.Input[Union['DatabaseSecurityConfigSqlFirewallConfigArgs', 'DatabaseSecurityConfigSqlFirewallConfigArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the database security configuration.
+        ## Example Usage
 
         ## Import
 
@@ -467,9 +465,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                  args: DatabaseSecurityConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the database security configuration.
+        ## Example Usage
 
         ## Import
 

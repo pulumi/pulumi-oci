@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Managed Instance Install Windows Updates Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Installs Windows updates on the specified managed instance.
- * 
  * ## Example Usage
  * 
  * <pre>

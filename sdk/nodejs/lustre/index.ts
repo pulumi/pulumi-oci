@@ -10,6 +10,11 @@ export type FileStorageLustreFileSystem = import("./fileStorageLustreFileSystem"
 export const FileStorageLustreFileSystem: typeof import("./fileStorageLustreFileSystem").FileStorageLustreFileSystem = null as any;
 utilities.lazyLoad(exports, ["FileStorageLustreFileSystem"], () => require("./fileStorageLustreFileSystem"));
 
+export { FileStorageObjectStorageLinkArgs, FileStorageObjectStorageLinkState } from "./fileStorageObjectStorageLink";
+export type FileStorageObjectStorageLink = import("./fileStorageObjectStorageLink").FileStorageObjectStorageLink;
+export const FileStorageObjectStorageLink: typeof import("./fileStorageObjectStorageLink").FileStorageObjectStorageLink = null as any;
+utilities.lazyLoad(exports, ["FileStorageObjectStorageLink"], () => require("./fileStorageObjectStorageLink"));
+
 export { GetFileStorageLustreFileSystemArgs, GetFileStorageLustreFileSystemResult, GetFileStorageLustreFileSystemOutputArgs } from "./getFileStorageLustreFileSystem";
 export const getFileStorageLustreFileSystem: typeof import("./getFileStorageLustreFileSystem").getFileStorageLustreFileSystem = null as any;
 export const getFileStorageLustreFileSystemOutput: typeof import("./getFileStorageLustreFileSystem").getFileStorageLustreFileSystemOutput = null as any;
@@ -20,6 +25,26 @@ export const getFileStorageLustreFileSystems: typeof import("./getFileStorageLus
 export const getFileStorageLustreFileSystemsOutput: typeof import("./getFileStorageLustreFileSystems").getFileStorageLustreFileSystemsOutput = null as any;
 utilities.lazyLoad(exports, ["getFileStorageLustreFileSystems","getFileStorageLustreFileSystemsOutput"], () => require("./getFileStorageLustreFileSystems"));
 
+export { GetFileStorageObjectStorageLinkArgs, GetFileStorageObjectStorageLinkResult, GetFileStorageObjectStorageLinkOutputArgs } from "./getFileStorageObjectStorageLink";
+export const getFileStorageObjectStorageLink: typeof import("./getFileStorageObjectStorageLink").getFileStorageObjectStorageLink = null as any;
+export const getFileStorageObjectStorageLinkOutput: typeof import("./getFileStorageObjectStorageLink").getFileStorageObjectStorageLinkOutput = null as any;
+utilities.lazyLoad(exports, ["getFileStorageObjectStorageLink","getFileStorageObjectStorageLinkOutput"], () => require("./getFileStorageObjectStorageLink"));
+
+export { GetFileStorageObjectStorageLinkSyncJobArgs, GetFileStorageObjectStorageLinkSyncJobResult, GetFileStorageObjectStorageLinkSyncJobOutputArgs } from "./getFileStorageObjectStorageLinkSyncJob";
+export const getFileStorageObjectStorageLinkSyncJob: typeof import("./getFileStorageObjectStorageLinkSyncJob").getFileStorageObjectStorageLinkSyncJob = null as any;
+export const getFileStorageObjectStorageLinkSyncJobOutput: typeof import("./getFileStorageObjectStorageLinkSyncJob").getFileStorageObjectStorageLinkSyncJobOutput = null as any;
+utilities.lazyLoad(exports, ["getFileStorageObjectStorageLinkSyncJob","getFileStorageObjectStorageLinkSyncJobOutput"], () => require("./getFileStorageObjectStorageLinkSyncJob"));
+
+export { GetFileStorageObjectStorageLinkSyncJobsArgs, GetFileStorageObjectStorageLinkSyncJobsResult, GetFileStorageObjectStorageLinkSyncJobsOutputArgs } from "./getFileStorageObjectStorageLinkSyncJobs";
+export const getFileStorageObjectStorageLinkSyncJobs: typeof import("./getFileStorageObjectStorageLinkSyncJobs").getFileStorageObjectStorageLinkSyncJobs = null as any;
+export const getFileStorageObjectStorageLinkSyncJobsOutput: typeof import("./getFileStorageObjectStorageLinkSyncJobs").getFileStorageObjectStorageLinkSyncJobsOutput = null as any;
+utilities.lazyLoad(exports, ["getFileStorageObjectStorageLinkSyncJobs","getFileStorageObjectStorageLinkSyncJobsOutput"], () => require("./getFileStorageObjectStorageLinkSyncJobs"));
+
+export { GetFileStorageObjectStorageLinksArgs, GetFileStorageObjectStorageLinksResult, GetFileStorageObjectStorageLinksOutputArgs } from "./getFileStorageObjectStorageLinks";
+export const getFileStorageObjectStorageLinks: typeof import("./getFileStorageObjectStorageLinks").getFileStorageObjectStorageLinks = null as any;
+export const getFileStorageObjectStorageLinksOutput: typeof import("./getFileStorageObjectStorageLinks").getFileStorageObjectStorageLinksOutput = null as any;
+utilities.lazyLoad(exports, ["getFileStorageObjectStorageLinks","getFileStorageObjectStorageLinksOutput"], () => require("./getFileStorageObjectStorageLinks"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -27,9 +52,12 @@ const _module = {
         switch (type) {
             case "oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem":
                 return new FileStorageLustreFileSystem(name, <any>undefined, { urn })
+            case "oci:Lustre/fileStorageObjectStorageLink:FileStorageObjectStorageLink":
+                return new FileStorageObjectStorageLink(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Lustre/fileStorageLustreFileSystem", _module)
+pulumi.runtime.registerResourceModule("oci", "Lustre/fileStorageObjectStorageLink", _module)

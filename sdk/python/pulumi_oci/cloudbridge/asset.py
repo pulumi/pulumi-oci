@@ -530,10 +530,6 @@ class Asset(pulumi.CustomResource):
                  vmware_vm: Optional[pulumi.Input[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an asset.
-
         ## Example Usage
 
         ```python
@@ -676,10 +672,6 @@ class Asset(pulumi.CustomResource):
                  args: AssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an asset.
-
         ## Example Usage
 
         ```python

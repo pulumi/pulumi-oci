@@ -7,60 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
- *
- * Create a vSphere Cluster in software-defined data center (SDDC).
- *
- * Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
- * creation of the Cluster.
- *
- * **Important:** You must configure the Cluster's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
- *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testCluster = new oci.ocvp.Cluster("test_cluster", {
- *     computeAvailabilityDomain: clusterComputeAvailabilityDomain,
- *     esxiHostsCount: clusterEsxiHostsCount,
- *     networkConfiguration: {
- *         nsxEdgeVtepVlanId: testVlan.id,
- *         nsxVtepVlanId: testVlan.id,
- *         provisioningSubnetId: testSubnet.id,
- *         vmotionVlanId: testVlan.id,
- *         vsanVlanId: testVlan.id,
- *         hcxVlanId: testVlan.id,
- *         nsxEdgeUplink1vlanId: testNsxEdgeUplink1vlan.id,
- *         nsxEdgeUplink2vlanId: testNsxEdgeUplink2vlan.id,
- *         provisioningVlanId: testVlan.id,
- *         replicationVlanId: testVlan.id,
- *         vsphereVlanId: testVlan.id,
- *     },
- *     sddcId: testSddc.id,
- *     capacityReservationId: testCapacityReservation.id,
- *     datastores: [{
- *         blockVolumeIds: clusterDatastoresBlockVolumeIds,
- *         datastoreType: clusterDatastoresDatastoreType,
- *     }],
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     displayName: clusterDisplayName,
- *     esxiSoftwareVersion: clusterEsxiSoftwareVersion,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     initialCommitment: clusterInitialCommitment,
- *     initialHostOcpuCount: clusterInitialHostOcpuCount,
- *     initialHostShapeName: testShape.name,
- *     instanceDisplayNamePrefix: clusterInstanceDisplayNamePrefix,
- *     isShieldedInstanceEnabled: clusterIsShieldedInstanceEnabled,
- *     vmwareSoftwareVersion: clusterVmwareSoftwareVersion,
- *     workloadNetworkCidr: clusterWorkloadNetworkCidr,
- * });
- * ```
  *
  * ## Import
  *
@@ -99,6 +46,7 @@ export class Cluster extends pulumi.CustomResource {
     }
 
     declare public /*out*/ readonly actualEsxiHostsCount: pulumi.Output<number>;
+    declare public readonly attachDatastoreClusterIds: pulumi.Output<string[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
@@ -112,6 +60,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public readonly computeAvailabilityDomain: pulumi.Output<string>;
     /**
+     * A list of datastore clusters.
+     */
+    declare public /*out*/ readonly datastoreClusterIds: pulumi.Output<string[]>;
+    /**
      * A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      */
     declare public readonly datastores: pulumi.Output<outputs.Ocvp.ClusterDatastore[]>;
@@ -119,8 +71,9 @@ export class Cluster extends pulumi.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    declare public readonly detachDatastoreClusterIds: pulumi.Output<string[] | undefined>;
     /**
-     * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
@@ -218,11 +171,14 @@ export class Cluster extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ClusterState | undefined;
             resourceInputs["actualEsxiHostsCount"] = state?.actualEsxiHostsCount;
+            resourceInputs["attachDatastoreClusterIds"] = state?.attachDatastoreClusterIds;
             resourceInputs["capacityReservationId"] = state?.capacityReservationId;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["computeAvailabilityDomain"] = state?.computeAvailabilityDomain;
+            resourceInputs["datastoreClusterIds"] = state?.datastoreClusterIds;
             resourceInputs["datastores"] = state?.datastores;
             resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["detachDatastoreClusterIds"] = state?.detachDatastoreClusterIds;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["esxiHostsCount"] = state?.esxiHostsCount;
             resourceInputs["esxiSoftwareVersion"] = state?.esxiSoftwareVersion;
@@ -256,10 +212,12 @@ export class Cluster extends pulumi.CustomResource {
             if (args?.sddcId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'sddcId'");
             }
+            resourceInputs["attachDatastoreClusterIds"] = args?.attachDatastoreClusterIds;
             resourceInputs["capacityReservationId"] = args?.capacityReservationId;
             resourceInputs["computeAvailabilityDomain"] = args?.computeAvailabilityDomain;
             resourceInputs["datastores"] = args?.datastores;
             resourceInputs["definedTags"] = args?.definedTags;
+            resourceInputs["detachDatastoreClusterIds"] = args?.detachDatastoreClusterIds;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["esxiHostsCount"] = args?.esxiHostsCount;
             resourceInputs["esxiSoftwareVersion"] = args?.esxiSoftwareVersion;
@@ -275,6 +233,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["workloadNetworkCidr"] = args?.workloadNetworkCidr;
             resourceInputs["actualEsxiHostsCount"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["datastoreClusterIds"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -292,6 +251,7 @@ export class Cluster extends pulumi.CustomResource {
  */
 export interface ClusterState {
     actualEsxiHostsCount?: pulumi.Input<number>;
+    attachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
@@ -305,6 +265,10 @@ export interface ClusterState {
      */
     computeAvailabilityDomain?: pulumi.Input<string>;
     /**
+     * A list of datastore clusters.
+     */
+    datastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      */
     datastores?: pulumi.Input<pulumi.Input<inputs.Ocvp.ClusterDatastore>[]>;
@@ -312,8 +276,9 @@ export interface ClusterState {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    detachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -402,6 +367,7 @@ export interface ClusterState {
  * The set of arguments for constructing a Cluster resource.
  */
 export interface ClusterArgs {
+    attachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
@@ -418,8 +384,9 @@ export interface ClusterArgs {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    detachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**

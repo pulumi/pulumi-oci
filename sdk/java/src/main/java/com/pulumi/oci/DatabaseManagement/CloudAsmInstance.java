@@ -15,9 +15,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cloud Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Updates the cloud ASM instance specified by `cloudAsmInstanceId`.
+ * ## Example Usage
  * 
  * ## Import
  * 

@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
-//
-// Create a private endpoint resource for the tenant in Ops Insights.
-// This resource will be created in customer compartment.
-//
 // ## Example Usage
 //
 // ```go

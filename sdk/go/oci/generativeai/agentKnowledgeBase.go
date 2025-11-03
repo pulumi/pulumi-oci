@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-//
-// Creates a knowledge base.
-//
 // ## Example Usage
 //
 // ```go

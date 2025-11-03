@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Profile Detach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Detaches the specified software sources from a profile.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -16,10 +16,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Backup Cancel Management resource in Oracle Cloud Infrastructure Database service.
- * 
- * Cancel automatic full/incremental create backup workrequests specified by the backup Id. This cannot be used on manual backups.
- * 
  * ## Example Usage
  * 
  * <pre>

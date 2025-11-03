@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Updates the Exadata storage server grid specified by exadataStorageGridId.
+// ## Example Usage
 //
 // ## Import
 //

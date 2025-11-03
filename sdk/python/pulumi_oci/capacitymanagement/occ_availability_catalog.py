@@ -462,10 +462,6 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
                  occ_customer_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Occ Availability Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        Create availability catalog
-
         ## Example Usage
 
         ```python
@@ -521,10 +517,6 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
                  args: OccAvailabilityCatalogArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Occ Availability Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
-
-        Create availability catalog
-
         ## Example Usage
 
         ```python

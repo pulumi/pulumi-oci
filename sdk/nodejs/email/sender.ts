@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Sender resource in Oracle Cloud Infrastructure Email service.
- *
- * Creates a sender for a tenancy in a given compartment.
- *
  * ## Example Usage
  *
  * ```typescript

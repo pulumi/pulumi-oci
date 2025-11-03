@@ -247,14 +247,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
+     * For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
      * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
-     * @return For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
+     * @return For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
      * 
      */
     public Optional<Output<String>> version() {
@@ -626,7 +626,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param version For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
+         * @param version For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
          * 
          * @return builder
          * 
@@ -637,7 +637,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param version For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
+         * @param version For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done &lt;&lt;service&gt;&gt;::&lt;&lt;service-name&gt;&gt;_&lt;&lt;model-type-version&gt;&gt;::&lt;&lt;custom model on which this training has to be done&gt;&gt; ex: ai-lang::NER_V1::CUSTOM-V0
          * 
          * @return builder
          * 

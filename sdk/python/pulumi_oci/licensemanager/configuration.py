@@ -152,10 +152,6 @@ class Configuration(pulumi.CustomResource):
                  email_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
-
-        Updates the configuration for the compartment.
-
         ## Example Usage
 
         ```python
@@ -191,10 +187,6 @@ class Configuration(pulumi.CustomResource):
                  args: ConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
-
-        Updates the configuration for the compartment.
-
         ## Example Usage
 
         ```python

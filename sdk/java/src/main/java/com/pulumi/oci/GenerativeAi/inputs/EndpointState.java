@@ -33,14 +33,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It&#39;s recommended to use content moderation.
+     * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
      * 
      */
     @Import(name="contentModerationConfig")
     private @Nullable Output<EndpointContentModerationConfigArgs> contentModerationConfig;
 
     /**
-     * @return (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It&#39;s recommended to use content moderation.
+     * @return (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
      * 
      */
     public Optional<Output<EndpointContentModerationConfigArgs>> contentModerationConfig() {
@@ -123,6 +123,21 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     * 
+     */
+    @Import(name="generativeAiPrivateEndpointId")
+    private @Nullable Output<String> generativeAiPrivateEndpointId;
+
+    /**
+     * @return (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     * 
+     */
+    public Optional<Output<String>> generativeAiPrivateEndpointId() {
+        return Optional.ofNullable(this.generativeAiPrivateEndpointId);
+    }
+
+    /**
      * A message describing the current state of the endpoint in more detail that can provide actionable information.
      * 
      */
@@ -138,7 +153,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The ID of the model that&#39;s used to create this endpoint.
+     * The OCID of the model that&#39;s used to create this endpoint.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -148,7 +163,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> modelId;
 
     /**
-     * @return The ID of the model that&#39;s used to create this endpoint.
+     * @return The OCID of the model that&#39;s used to create this endpoint.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,6 +243,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.generativeAiPrivateEndpointId = $.generativeAiPrivateEndpointId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.modelId = $.modelId;
         this.state = $.state;
@@ -276,7 +292,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contentModerationConfig (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It&#39;s recommended to use content moderation.
+         * @param contentModerationConfig (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
          * 
          * @return builder
          * 
@@ -287,7 +303,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param contentModerationConfig (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It&#39;s recommended to use content moderation.
+         * @param contentModerationConfig (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
          * 
          * @return builder
          * 
@@ -402,6 +418,27 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param generativeAiPrivateEndpointId (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generativeAiPrivateEndpointId(@Nullable Output<String> generativeAiPrivateEndpointId) {
+            $.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
+            return this;
+        }
+
+        /**
+         * @param generativeAiPrivateEndpointId (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generativeAiPrivateEndpointId(String generativeAiPrivateEndpointId) {
+            return generativeAiPrivateEndpointId(Output.of(generativeAiPrivateEndpointId));
+        }
+
+        /**
          * @param lifecycleDetails A message describing the current state of the endpoint in more detail that can provide actionable information.
          * 
          * @return builder
@@ -423,7 +460,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelId The ID of the model that&#39;s used to create this endpoint.
+         * @param modelId The OCID of the model that&#39;s used to create this endpoint.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -437,7 +474,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelId The ID of the model that&#39;s used to create this endpoint.
+         * @param modelId The OCID of the model that&#39;s used to create this endpoint.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

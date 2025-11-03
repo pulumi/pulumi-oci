@@ -159,6 +159,11 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
+    private Double memoryPerComputeUnitInGbs;
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+     * 
+     */
     private Integer memoryPerOracleComputeUnitInGbs;
     /**
      * @return The memory allocated in GBs.
@@ -463,6 +468,13 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
      * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
+    public Double memoryPerComputeUnitInGbs() {
+        return this.memoryPerComputeUnitInGbs;
+    }
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+     * 
+     */
     public Integer memoryPerOracleComputeUnitInGbs() {
         return this.memoryPerOracleComputeUnitInGbs;
     }
@@ -647,6 +659,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
         private List<GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails;
         private List<GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
         private Integer maxAcdsLowestScaledValue;
+        private Double memoryPerComputeUnitInGbs;
         private Integer memoryPerOracleComputeUnitInGbs;
         private Integer memorySizeInGbs;
         private String nextMaintenanceRunId;
@@ -702,6 +715,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
     	      this.maintenanceWindowDetails = defaults.maintenanceWindowDetails;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.maxAcdsLowestScaledValue = defaults.maxAcdsLowestScaledValue;
+    	      this.memoryPerComputeUnitInGbs = defaults.memoryPerComputeUnitInGbs;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
@@ -976,6 +990,14 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder memoryPerComputeUnitInGbs(Double memoryPerComputeUnitInGbs) {
+            if (memoryPerComputeUnitInGbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClustersAutonomousVmCluster", "memoryPerComputeUnitInGbs");
+            }
+            this.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             if (memoryPerOracleComputeUnitInGbs == null) {
               throw new MissingRequiredPropertyException("GetAutonomousVmClustersAutonomousVmCluster", "memoryPerOracleComputeUnitInGbs");
@@ -1183,6 +1205,7 @@ public final class GetAutonomousVmClustersAutonomousVmCluster {
             _resultValue.maintenanceWindowDetails = maintenanceWindowDetails;
             _resultValue.maintenanceWindows = maintenanceWindows;
             _resultValue.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+            _resultValue.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.nextMaintenanceRunId = nextMaintenanceRunId;

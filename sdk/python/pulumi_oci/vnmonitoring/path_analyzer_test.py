@@ -399,10 +399,6 @@ class PathAnalyzerTest(pulumi.CustomResource):
                  source_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestSourceEndpointArgs', 'PathAnalyzerTestSourceEndpointArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
-
-        Creates a new `PathAnalyzerTest` resource.
-
         ## Example Usage
 
         ```python
@@ -480,10 +476,6 @@ class PathAnalyzerTest(pulumi.CustomResource):
                  args: PathAnalyzerTestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
-
-        Creates a new `PathAnalyzerTest` resource.
-
         ## Example Usage
 
         ```python

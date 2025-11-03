@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionResult
     {
         /// <summary>
-        /// This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+        /// This array holds details about Autonomous AI Database Peers for Oracle an Autonomous AI Database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult> Items;
 

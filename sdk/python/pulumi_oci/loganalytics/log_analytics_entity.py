@@ -661,10 +661,6 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  timezone_region: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Create a new log analytics entity.
-
         ## Example Usage
 
         ```python
@@ -734,10 +730,6 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  args: LogAnalyticsEntityArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Create a new log analytics entity.
-
         ## Example Usage
 
         ```python

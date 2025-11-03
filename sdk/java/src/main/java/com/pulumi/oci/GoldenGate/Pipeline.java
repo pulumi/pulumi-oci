@@ -24,10 +24,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
- * 
- * Creates a new Pipeline.
- * 
  * ## Example Usage
  * 
  * ## Import

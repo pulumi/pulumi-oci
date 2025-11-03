@@ -122,7 +122,7 @@ class GetMaintenanceRunsResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 
@@ -196,7 +196,7 @@ def get_maintenance_runs(availability_domain: Optional[_builtins.str] = None,
 
     :param _builtins.str availability_domain: A filter to return only resources that match the given availability domain exactly.
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param _builtins.bool is_local_adg: A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+    :param _builtins.bool is_local_adg: A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
     :param _builtins.str maintenance_subtype: The sub-type of the maintenance run.
     :param _builtins.str maintenance_type: The maintenance type.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -262,7 +262,7 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
 
     :param _builtins.str availability_domain: A filter to return only resources that match the given availability domain exactly.
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param _builtins.bool is_local_adg: A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+    :param _builtins.bool is_local_adg: A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
     :param _builtins.str maintenance_subtype: The sub-type of the maintenance run.
     :param _builtins.str maintenance_type: The maintenance type.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.

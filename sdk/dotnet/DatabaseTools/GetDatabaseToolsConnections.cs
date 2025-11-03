@@ -32,6 +32,7 @@ namespace Pulumi.Oci.DatabaseTools
         ///         CompartmentId = compartmentId,
         ///         DisplayName = databaseToolsConnectionDisplayName,
         ///         RelatedResourceIdentifier = databaseToolsConnectionRelatedResourceIdentifier,
+        ///         RuntimeIdentities = databaseToolsConnectionRuntimeIdentity,
         ///         RuntimeSupports = databaseToolsConnectionRuntimeSupport,
         ///         State = databaseToolsConnectionState,
         ///         Types = databaseToolsConnectionType,
@@ -64,6 +65,7 @@ namespace Pulumi.Oci.DatabaseTools
         ///         CompartmentId = compartmentId,
         ///         DisplayName = databaseToolsConnectionDisplayName,
         ///         RelatedResourceIdentifier = databaseToolsConnectionRelatedResourceIdentifier,
+        ///         RuntimeIdentities = databaseToolsConnectionRuntimeIdentity,
         ///         RuntimeSupports = databaseToolsConnectionRuntimeSupport,
         ///         State = databaseToolsConnectionState,
         ///         Types = databaseToolsConnectionType,
@@ -96,6 +98,7 @@ namespace Pulumi.Oci.DatabaseTools
         ///         CompartmentId = compartmentId,
         ///         DisplayName = databaseToolsConnectionDisplayName,
         ///         RelatedResourceIdentifier = databaseToolsConnectionRelatedResourceIdentifier,
+        ///         RuntimeIdentities = databaseToolsConnectionRuntimeIdentity,
         ///         RuntimeSupports = databaseToolsConnectionRuntimeSupport,
         ///         State = databaseToolsConnectionState,
         ///         Types = databaseToolsConnectionType,
@@ -112,7 +115,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsConnectionsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -132,16 +135,28 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
         /// </summary>
         [Input("relatedResourceIdentifier")]
         public string? RelatedResourceIdentifier { get; set; }
+
+        [Input("runtimeIdentities")]
+        private List<string>? _runtimeIdentities;
+
+        /// <summary>
+        /// A filter to return only resources with one of the specified runtimeIdentity values.
+        /// </summary>
+        public List<string> RuntimeIdentities
+        {
+            get => _runtimeIdentities ?? (_runtimeIdentities = new List<string>());
+            set => _runtimeIdentities = value;
+        }
 
         [Input("runtimeSupports")]
         private List<string>? _runtimeSupports;
 
         /// <summary>
-        /// A filter to return only resources with one of the specified runtimeSupport values.
+        /// A filter to return only resources with one of the specified type values.
         /// </summary>
         public List<string> RuntimeSupports
         {
@@ -176,7 +191,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsConnectionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -196,16 +211,28 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
         /// </summary>
         [Input("relatedResourceIdentifier")]
         public Input<string>? RelatedResourceIdentifier { get; set; }
+
+        [Input("runtimeIdentities")]
+        private InputList<string>? _runtimeIdentities;
+
+        /// <summary>
+        /// A filter to return only resources with one of the specified runtimeIdentity values.
+        /// </summary>
+        public InputList<string> RuntimeIdentities
+        {
+            get => _runtimeIdentities ?? (_runtimeIdentities = new InputList<string>());
+            set => _runtimeIdentities = value;
+        }
 
         [Input("runtimeSupports")]
         private InputList<string>? _runtimeSupports;
 
         /// <summary>
-        /// A filter to return only resources with one of the specified runtimeSupport values.
+        /// A filter to return only resources with one of the specified type values.
         /// </summary>
         public InputList<string> RuntimeSupports
         {
@@ -260,6 +287,10 @@ namespace Pulumi.Oci.DatabaseTools
         public readonly string Id;
         public readonly string? RelatedResourceIdentifier;
         /// <summary>
+        /// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        /// </summary>
+        public readonly ImmutableArray<string> RuntimeIdentities;
+        /// <summary>
         /// Specifies whether this connection is supported by the Database Tools Runtime.
         /// </summary>
         public readonly ImmutableArray<string> RuntimeSupports;
@@ -286,6 +317,8 @@ namespace Pulumi.Oci.DatabaseTools
 
             string? relatedResourceIdentifier,
 
+            ImmutableArray<string> runtimeIdentities,
+
             ImmutableArray<string> runtimeSupports,
 
             string? state,
@@ -298,6 +331,7 @@ namespace Pulumi.Oci.DatabaseTools
             Filters = filters;
             Id = id;
             RelatedResourceIdentifier = relatedResourceIdentifier;
+            RuntimeIdentities = runtimeIdentities;
             RuntimeSupports = runtimeSupports;
             State = state;
             Types = types;

@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Creates a new Database Management private endpoint.
- * 
  * ## Example Usage
  * 
  * <pre>

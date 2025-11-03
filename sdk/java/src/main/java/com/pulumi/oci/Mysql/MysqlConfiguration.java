@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
- * 
- * Creates a new Configuration.
- * 
  * ## Example Usage
  * 
  * <pre>

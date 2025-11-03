@@ -27,7 +27,7 @@ class GetFunctionResult:
     """
     A collection of values returned by getFunction.
     """
-    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, function_id=None, id=None, image=None, image_digest=None, invoke_endpoint=None, memory_in_mbs=None, provisioned_concurrency_configs=None, shape=None, source_details=None, state=None, time_created=None, time_updated=None, timeout_in_seconds=None, trace_configs=None):
+    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, detached_mode_timeout_in_seconds=None, display_name=None, failure_destinations=None, freeform_tags=None, function_id=None, id=None, image=None, image_digest=None, invoke_endpoint=None, memory_in_mbs=None, provisioned_concurrency_configs=None, shape=None, source_details=None, state=None, success_destinations=None, time_created=None, time_updated=None, timeout_in_seconds=None, trace_configs=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -40,9 +40,15 @@ class GetFunctionResult:
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if detached_mode_timeout_in_seconds and not isinstance(detached_mode_timeout_in_seconds, int):
+            raise TypeError("Expected argument 'detached_mode_timeout_in_seconds' to be a int")
+        pulumi.set(__self__, "detached_mode_timeout_in_seconds", detached_mode_timeout_in_seconds)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if failure_destinations and not isinstance(failure_destinations, list):
+            raise TypeError("Expected argument 'failure_destinations' to be a list")
+        pulumi.set(__self__, "failure_destinations", failure_destinations)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -76,6 +82,9 @@ class GetFunctionResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if success_destinations and not isinstance(success_destinations, list):
+            raise TypeError("Expected argument 'success_destinations' to be a list")
+        pulumi.set(__self__, "success_destinations", success_destinations)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -122,12 +131,28 @@ class GetFunctionResult:
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
+    @pulumi.getter(name="detachedModeTimeoutInSeconds")
+    def detached_mode_timeout_in_seconds(self) -> _builtins.int:
+        """
+        Timeout for detached function invocations. Value in seconds.  Example: `{"detachedModeTimeoutInSeconds": 900}`
+        """
+        return pulumi.get(self, "detached_mode_timeout_in_seconds")
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
         The display name of the function. The display name is unique within the application containing the function.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="failureDestinations")
+    def failure_destinations(self) -> Sequence['outputs.GetFunctionFailureDestinationResult']:
+        """
+        An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+        """
+        return pulumi.get(self, "failure_destinations")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -215,6 +240,14 @@ class GetFunctionResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="successDestinations")
+    def success_destinations(self) -> Sequence['outputs.GetFunctionSuccessDestinationResult']:
+        """
+        An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+        """
+        return pulumi.get(self, "success_destinations")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -257,7 +290,9 @@ class AwaitableGetFunctionResult(GetFunctionResult):
             compartment_id=self.compartment_id,
             config=self.config,
             defined_tags=self.defined_tags,
+            detached_mode_timeout_in_seconds=self.detached_mode_timeout_in_seconds,
             display_name=self.display_name,
+            failure_destinations=self.failure_destinations,
             freeform_tags=self.freeform_tags,
             function_id=self.function_id,
             id=self.id,
@@ -269,6 +304,7 @@ class AwaitableGetFunctionResult(GetFunctionResult):
             shape=self.shape,
             source_details=self.source_details,
             state=self.state,
+            success_destinations=self.success_destinations,
             time_created=self.time_created,
             time_updated=self.time_updated,
             timeout_in_seconds=self.timeout_in_seconds,
@@ -304,7 +340,9 @@ def get_function(function_id: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         config=pulumi.get(__ret__, 'config'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        detached_mode_timeout_in_seconds=pulumi.get(__ret__, 'detached_mode_timeout_in_seconds'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        failure_destinations=pulumi.get(__ret__, 'failure_destinations'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         function_id=pulumi.get(__ret__, 'function_id'),
         id=pulumi.get(__ret__, 'id'),
@@ -316,6 +354,7 @@ def get_function(function_id: Optional[_builtins.str] = None,
         shape=pulumi.get(__ret__, 'shape'),
         source_details=pulumi.get(__ret__, 'source_details'),
         state=pulumi.get(__ret__, 'state'),
+        success_destinations=pulumi.get(__ret__, 'success_destinations'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
@@ -348,7 +387,9 @@ def get_function_output(function_id: Optional[pulumi.Input[_builtins.str]] = Non
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         config=pulumi.get(__response__, 'config'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
+        detached_mode_timeout_in_seconds=pulumi.get(__response__, 'detached_mode_timeout_in_seconds'),
         display_name=pulumi.get(__response__, 'display_name'),
+        failure_destinations=pulumi.get(__response__, 'failure_destinations'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         function_id=pulumi.get(__response__, 'function_id'),
         id=pulumi.get(__response__, 'id'),
@@ -360,6 +401,7 @@ def get_function_output(function_id: Optional[pulumi.Input[_builtins.str]] = Non
         shape=pulumi.get(__response__, 'shape'),
         source_details=pulumi.get(__response__, 'source_details'),
         state=pulumi.get(__response__, 'state'),
+        success_destinations=pulumi.get(__response__, 'success_destinations'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         timeout_in_seconds=pulumi.get(__response__, 'timeout_in_seconds'),

@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
- * 
- * Creates a project. Projects are organizational constructs within a workspace that you use to organize your design-time resources, such as tasks or data flows. Projects can be organized into folders.
- * 
  * ## Example Usage
  * 
  * <pre>

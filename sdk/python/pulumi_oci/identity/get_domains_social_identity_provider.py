@@ -27,7 +27,7 @@ class GetDomainsSocialIdentityProviderResult:
     """
     A collection of values returned by getDomainsSocialIdentityProvider.
     """
-    def __init__(__self__, access_token_url=None, account_linking_enabled=None, admin_scopes=None, authorization=None, authz_url=None, auto_redirect_enabled=None, client_credential_in_payload=None, clock_skew_in_seconds=None, compartment_ocid=None, consumer_key=None, consumer_secret=None, delete_in_progress=None, description=None, discovery_url=None, domain_ocid=None, enabled=None, icon_url=None, id=None, id_attribute=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, jit_prov_assigned_groups=None, jit_prov_group_static_list_enabled=None, metas=None, name=None, ocid=None, profile_url=None, redirect_url=None, refresh_token_url=None, registration_enabled=None, relay_idp_param_mappings=None, resource_type_schema_version=None, schemas=None, scopes=None, service_provider_name=None, show_on_login=None, social_identity_provider_id=None, social_jit_provisioning_enabled=None, status=None, tags=None, tenancy_ocid=None):
+    def __init__(__self__, access_token_url=None, account_linking_enabled=None, admin_scopes=None, apple_dev_id=None, apple_key_id=None, authorization=None, authz_url=None, auto_redirect_enabled=None, client_credential_in_payload=None, clock_skew_in_seconds=None, compartment_ocid=None, consumer_key=None, consumer_secret=None, delete_in_progress=None, description=None, discovery_url=None, domain_ocid=None, enabled=None, icon_url=None, id=None, id_attribute=None, idcs_created_bies=None, idcs_endpoint=None, idcs_last_modified_bies=None, idcs_last_upgraded_in_release=None, idcs_prevented_operations=None, jit_prov_assigned_groups=None, jit_prov_group_static_list_enabled=None, metas=None, name=None, ocid=None, profile_url=None, redirect_url=None, refresh_token_url=None, registration_enabled=None, relay_idp_param_mappings=None, resource_type_schema_version=None, schemas=None, scopes=None, service_provider_name=None, show_on_login=None, social_identity_provider_id=None, social_jit_provisioning_enabled=None, status=None, tags=None, tenancy_ocid=None):
         if access_token_url and not isinstance(access_token_url, str):
             raise TypeError("Expected argument 'access_token_url' to be a str")
         pulumi.set(__self__, "access_token_url", access_token_url)
@@ -37,6 +37,12 @@ class GetDomainsSocialIdentityProviderResult:
         if admin_scopes and not isinstance(admin_scopes, list):
             raise TypeError("Expected argument 'admin_scopes' to be a list")
         pulumi.set(__self__, "admin_scopes", admin_scopes)
+        if apple_dev_id and not isinstance(apple_dev_id, str):
+            raise TypeError("Expected argument 'apple_dev_id' to be a str")
+        pulumi.set(__self__, "apple_dev_id", apple_dev_id)
+        if apple_key_id and not isinstance(apple_key_id, str):
+            raise TypeError("Expected argument 'apple_key_id' to be a str")
+        pulumi.set(__self__, "apple_key_id", apple_key_id)
         if authorization and not isinstance(authorization, str):
             raise TypeError("Expected argument 'authorization' to be a str")
         pulumi.set(__self__, "authorization", authorization)
@@ -184,6 +190,22 @@ class GetDomainsSocialIdentityProviderResult:
         Admin scope to request
         """
         return pulumi.get(self, "admin_scopes")
+
+    @_builtins.property
+    @pulumi.getter(name="appleDevId")
+    def apple_dev_id(self) -> _builtins.str:
+        """
+        Apple Developer ID
+        """
+        return pulumi.get(self, "apple_dev_id")
+
+    @_builtins.property
+    @pulumi.getter(name="appleKeyId")
+    def apple_key_id(self) -> _builtins.str:
+        """
+        Apple Private Key ID
+        """
+        return pulumi.get(self, "apple_key_id")
 
     @_builtins.property
     @pulumi.getter
@@ -511,6 +533,8 @@ class AwaitableGetDomainsSocialIdentityProviderResult(GetDomainsSocialIdentityPr
             access_token_url=self.access_token_url,
             account_linking_enabled=self.account_linking_enabled,
             admin_scopes=self.admin_scopes,
+            apple_dev_id=self.apple_dev_id,
+            apple_key_id=self.apple_key_id,
             authorization=self.authorization,
             authz_url=self.authz_url,
             auto_redirect_enabled=self.auto_redirect_enabled,
@@ -594,6 +618,8 @@ def get_domains_social_identity_provider(authorization: Optional[_builtins.str] 
         access_token_url=pulumi.get(__ret__, 'access_token_url'),
         account_linking_enabled=pulumi.get(__ret__, 'account_linking_enabled'),
         admin_scopes=pulumi.get(__ret__, 'admin_scopes'),
+        apple_dev_id=pulumi.get(__ret__, 'apple_dev_id'),
+        apple_key_id=pulumi.get(__ret__, 'apple_key_id'),
         authorization=pulumi.get(__ret__, 'authorization'),
         authz_url=pulumi.get(__ret__, 'authz_url'),
         auto_redirect_enabled=pulumi.get(__ret__, 'auto_redirect_enabled'),
@@ -674,6 +700,8 @@ def get_domains_social_identity_provider_output(authorization: Optional[pulumi.I
         access_token_url=pulumi.get(__response__, 'access_token_url'),
         account_linking_enabled=pulumi.get(__response__, 'account_linking_enabled'),
         admin_scopes=pulumi.get(__response__, 'admin_scopes'),
+        apple_dev_id=pulumi.get(__response__, 'apple_dev_id'),
+        apple_key_id=pulumi.get(__response__, 'apple_key_id'),
         authorization=pulumi.get(__response__, 'authorization'),
         authz_url=pulumi.get(__response__, 'authz_url'),
         auto_redirect_enabled=pulumi.get(__response__, 'auto_redirect_enabled'),

@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
- *
- * Create a Operations Insights Warehouse user resource for the tenant in Operations Insights.
- * This resource will be created in root compartment.
- *
  * ## Example Usage
  *
  * ```typescript

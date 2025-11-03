@@ -7,11 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
- *
- * Creates a new rule set associated with the specified load balancer. For more information, see
- * [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm).
- *
  * ## Example Usage
  *
  * ```typescript

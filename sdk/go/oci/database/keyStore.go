@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
-//
-// Creates a Key Store.
-//
 // ## Example Usage
 //
 // ```go
@@ -66,6 +62,10 @@ type KeyStore struct {
 
 	// List of databases associated with the key store.
 	AssociatedDatabases KeyStoreAssociatedDatabaseArrayOutput `pulumi:"associatedDatabases"`
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount pulumi.IntOutput `pulumi:"associatedLongTermBackupCount"`
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups KeyStoreAssociatedLongTermBackupArrayOutput `pulumi:"associatedLongTermBackups"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId         pulumi.StringOutput `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger pulumi.IntPtrOutput `pulumi:"confirmDetailsTrigger"`
@@ -128,6 +128,10 @@ func GetKeyStore(ctx *pulumi.Context,
 type keyStoreState struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases []KeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount *int `pulumi:"associatedLongTermBackupCount"`
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups []KeyStoreAssociatedLongTermBackup `pulumi:"associatedLongTermBackups"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId         *string `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger *int    `pulumi:"confirmDetailsTrigger"`
@@ -152,6 +156,10 @@ type keyStoreState struct {
 type KeyStoreState struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases KeyStoreAssociatedDatabaseArrayInput
+	// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+	AssociatedLongTermBackupCount pulumi.IntPtrInput
+	// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+	AssociatedLongTermBackups KeyStoreAssociatedLongTermBackupArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId         pulumi.StringPtrInput
 	ConfirmDetailsTrigger pulumi.IntPtrInput
@@ -296,6 +304,16 @@ func (o KeyStoreOutput) ToKeyStoreOutputWithContext(ctx context.Context) KeyStor
 // List of databases associated with the key store.
 func (o KeyStoreOutput) AssociatedDatabases() KeyStoreAssociatedDatabaseArrayOutput {
 	return o.ApplyT(func(v *KeyStore) KeyStoreAssociatedDatabaseArrayOutput { return v.AssociatedDatabases }).(KeyStoreAssociatedDatabaseArrayOutput)
+}
+
+// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+func (o KeyStoreOutput) AssociatedLongTermBackupCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *KeyStore) pulumi.IntOutput { return v.AssociatedLongTermBackupCount }).(pulumi.IntOutput)
+}
+
+// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+func (o KeyStoreOutput) AssociatedLongTermBackups() KeyStoreAssociatedLongTermBackupArrayOutput {
+	return o.ApplyT(func(v *KeyStore) KeyStoreAssociatedLongTermBackupArrayOutput { return v.AssociatedLongTermBackups }).(KeyStoreAssociatedLongTermBackupArrayOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

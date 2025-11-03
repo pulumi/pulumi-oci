@@ -58,7 +58,8 @@ type LookupClusterArgs struct {
 
 // A collection of values returned by getCluster.
 type LookupClusterResult struct {
-	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
+	ActualEsxiHostsCount      int      `pulumi:"actualEsxiHostsCount"`
+	AttachDatastoreClusterIds []string `pulumi:"attachDatastoreClusterIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	ClusterId             string `pulumi:"clusterId"`
@@ -66,10 +67,13 @@ type LookupClusterResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain the ESXi hosts are running in. For Multi-AD Cluster, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore clusters.
+	DatastoreClusterIds []string `pulumi:"datastoreClusterIds"`
 	// Datastores used for the Cluster.
 	Datastores []GetClusterDatastore `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
+	DefinedTags               map[string]string `pulumi:"definedTags"`
+	DetachDatastoreClusterIds []string          `pulumi:"detachDatastoreClusterIds"`
 	// A descriptive name for the Cluster. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// The number of ESXi hosts in the Cluster.
@@ -150,6 +154,10 @@ func (o LookupClusterResultOutput) ActualEsxiHostsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupClusterResult) int { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
 }
 
+func (o LookupClusterResultOutput) AttachDatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupClusterResult) []string { return v.AttachDatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 func (o LookupClusterResultOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
@@ -169,6 +177,11 @@ func (o LookupClusterResultOutput) ComputeAvailabilityDomain() pulumi.StringOutp
 	return o.ApplyT(func(v LookupClusterResult) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// A list of datastore clusters.
+func (o LookupClusterResultOutput) DatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupClusterResult) []string { return v.DatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // Datastores used for the Cluster.
 func (o LookupClusterResultOutput) Datastores() GetClusterDatastoreArrayOutput {
 	return o.ApplyT(func(v LookupClusterResult) []GetClusterDatastore { return v.Datastores }).(GetClusterDatastoreArrayOutput)
@@ -177,6 +190,10 @@ func (o LookupClusterResultOutput) Datastores() GetClusterDatastoreArrayOutput {
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o LookupClusterResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupClusterResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o LookupClusterResultOutput) DetachDatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupClusterResult) []string { return v.DetachDatastoreClusterIds }).(pulumi.StringArrayOutput)
 }
 
 // A descriptive name for the Cluster. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ApiGateway
 {
     /// <summary>
-    /// This resource provides the Subscriber resource in Oracle Cloud Infrastructure API Gateway service.
-    /// 
-    /// Creates a new subscriber.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -12,17 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Object resource in Oracle Cloud Infrastructure Object Storage service.
-//
-// Creates a new object or overwrites an existing object with the same name. The maximum object size allowed by
-// PutObject is 50 GiB.
-//
-// See [Object Names](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
-// for object naming requirements.
-//
-// See [Special Instructions for Object Storage PUT](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
-// for request signature requirements.
-//
 // ## Example Usage
 //
 // ```go

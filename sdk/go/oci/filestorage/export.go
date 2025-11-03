@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
-//
-// Creates a new export in the specified export set, path, and
-// file system.
-//
 // ## Example Usage
 //
 // ```go

@@ -495,10 +495,6 @@ class SchedulerDefinition(pulumi.CustomResource):
                  schedule: Optional[pulumi.Input[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Create a SchedulerDefinition to perform lifecycle operations.
-
         ## Example Usage
 
         ```python
@@ -577,10 +573,6 @@ class SchedulerDefinition(pulumi.CustomResource):
                  args: SchedulerDefinitionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Create a SchedulerDefinition to perform lifecycle operations.
-
         ## Example Usage
 
         ```python

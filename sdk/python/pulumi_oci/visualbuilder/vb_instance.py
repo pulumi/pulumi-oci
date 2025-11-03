@@ -578,9 +578,7 @@ class VbInstance(pulumi.CustomResource):
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
-
-        Creates a new Vb Instance.
+        ## Example Usage
 
         ## Import
 
@@ -615,9 +613,7 @@ class VbInstance(pulumi.CustomResource):
                  args: VbInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Vb Instance resource in Oracle Cloud Infrastructure Visual Builder service.
-
-        Creates a new Vb Instance.
+        ## Example Usage
 
         ## Import
 

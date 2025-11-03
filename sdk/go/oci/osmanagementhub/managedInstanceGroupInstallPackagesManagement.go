@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Managed Instance Group Install Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Installs the specified packages on each managed instance in a managed instance group. The package must be compatible with the instances in the group.
-//
 // ## Example Usage
 //
 // ```go

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
- *
- * Creates a new Oracle Cloud Infrastructure Cache user. Oracle Cloud Infrastructure Cache user is required to authenticate to Oracle Cloud Infrastructure Cache cluster.
- *
  * ## Example Usage
  *
  * ```typescript

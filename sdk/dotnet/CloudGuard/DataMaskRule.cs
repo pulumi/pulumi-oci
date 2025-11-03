@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard
 {
     /// <summary>
-    /// This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
-    /// 
-    /// Creates a new DataMaskRule resource definition.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

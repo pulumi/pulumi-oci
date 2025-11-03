@@ -12,8 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
-//
 // ## Example Usage
 //
 // ```go

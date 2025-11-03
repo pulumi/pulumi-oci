@@ -11,6 +11,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail {
+    private String backupRetentionPolicyOnTerminate;
     private String dbrsPolicyId;
     /**
      * @return The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
@@ -19,12 +20,16 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     private String id;
     private String internetProxy;
     private Boolean isRemote;
+    private Boolean isRetentionLockEnabled;
     private String remoteRegion;
     private String type;
     private String vpcPassword;
     private String vpcUser;
 
     private GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail() {}
+    public String backupRetentionPolicyOnTerminate() {
+        return this.backupRetentionPolicyOnTerminate;
+    }
     public String dbrsPolicyId() {
         return this.dbrsPolicyId;
     }
@@ -40,6 +45,9 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     }
     public Boolean isRemote() {
         return this.isRemote;
+    }
+    public Boolean isRetentionLockEnabled() {
+        return this.isRetentionLockEnabled;
     }
     public String remoteRegion() {
         return this.remoteRegion;
@@ -63,10 +71,12 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     }
     @CustomType.Builder
     public static final class Builder {
+        private String backupRetentionPolicyOnTerminate;
         private String dbrsPolicyId;
         private String id;
         private String internetProxy;
         private Boolean isRemote;
+        private Boolean isRetentionLockEnabled;
         private String remoteRegion;
         private String type;
         private String vpcPassword;
@@ -74,16 +84,26 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupRetentionPolicyOnTerminate = defaults.backupRetentionPolicyOnTerminate;
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.internetProxy = defaults.internetProxy;
     	      this.isRemote = defaults.isRemote;
+    	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
+        public Builder backupRetentionPolicyOnTerminate(String backupRetentionPolicyOnTerminate) {
+            if (backupRetentionPolicyOnTerminate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "backupRetentionPolicyOnTerminate");
+            }
+            this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+            return this;
+        }
         @CustomType.Setter
         public Builder dbrsPolicyId(String dbrsPolicyId) {
             if (dbrsPolicyId == null) {
@@ -114,6 +134,14 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "isRemote");
             }
             this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            if (isRetentionLockEnabled == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "isRetentionLockEnabled");
+            }
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
             return this;
         }
         @CustomType.Setter
@@ -150,10 +178,12 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
         }
         public GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail build() {
             final var _resultValue = new GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail();
+            _resultValue.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
             _resultValue.internetProxy = internetProxy;
             _resultValue.isRemote = isRemote;
+            _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;

@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
-//
-// Creates a new Deployment.
+// ## Example Usage
 //
 // ## Import
 //
@@ -34,6 +32,8 @@ type Deployment struct {
 	ByolCpuCoreCountLimit pulumi.IntOutput `pulumi:"byolCpuCoreCountLimit"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category pulumi.StringOutput `pulumi:"category"`
+	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+	ClusterPlacementGroupId pulumi.StringOutput `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -107,6 +107,8 @@ type Deployment struct {
 	PrivateIpAddress pulumi.StringOutput `pulumi:"privateIpAddress"`
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress pulumi.StringOutput `pulumi:"publicIpAddress"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId pulumi.StringOutput `pulumi:"sourceDeploymentId"`
 	State              pulumi.StringOutput `pulumi:"state"`
@@ -114,6 +116,8 @@ type Deployment struct {
 	StorageUtilizationInBytes pulumi.StringOutput `pulumi:"storageUtilizationInBytes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -181,6 +185,8 @@ type deploymentState struct {
 	ByolCpuCoreCountLimit *int `pulumi:"byolCpuCoreCountLimit"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category *string `pulumi:"category"`
+	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -254,6 +260,8 @@ type deploymentState struct {
 	PrivateIpAddress *string `pulumi:"privateIpAddress"`
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress *string `pulumi:"publicIpAddress"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId *string `pulumi:"sourceDeploymentId"`
 	State              *string `pulumi:"state"`
@@ -261,6 +269,8 @@ type deploymentState struct {
 	StorageUtilizationInBytes *string `pulumi:"storageUtilizationInBytes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId *string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -290,6 +300,8 @@ type DeploymentState struct {
 	ByolCpuCoreCountLimit pulumi.IntPtrInput
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category pulumi.StringPtrInput
+	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -363,6 +375,8 @@ type DeploymentState struct {
 	PrivateIpAddress pulumi.StringPtrInput
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress pulumi.StringPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId pulumi.StringPtrInput
 	State              pulumi.StringPtrInput
@@ -370,6 +384,8 @@ type DeploymentState struct {
 	StorageUtilizationInBytes pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.StringMapInput
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -401,6 +417,8 @@ type deploymentArgs struct {
 	BackupSchedule *DeploymentBackupSchedule `pulumi:"backupSchedule"`
 	// (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
 	ByolCpuCoreCountLimit *int `pulumi:"byolCpuCoreCountLimit"`
+	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -446,11 +464,15 @@ type deploymentArgs struct {
 	OggData *DeploymentOggData `pulumi:"oggData"`
 	// (Updatable) An array of local peers of deployment
 	Placements []DeploymentPlacement `pulumi:"placements"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId *string `pulumi:"sourceDeploymentId"`
 	State              *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 // The set of arguments for constructing a Deployment resource.
@@ -461,6 +483,8 @@ type DeploymentArgs struct {
 	BackupSchedule DeploymentBackupSchedulePtrInput
 	// (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
 	ByolCpuCoreCountLimit pulumi.IntPtrInput
+	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
@@ -506,11 +530,15 @@ type DeploymentArgs struct {
 	OggData DeploymentOggDataPtrInput
 	// (Updatable) An array of local peers of deployment
 	Placements DeploymentPlacementArrayInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	SourceDeploymentId pulumi.StringPtrInput
 	State              pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringPtrInput
 }
 
 func (DeploymentArgs) ElementType() reflect.Type {
@@ -618,6 +646,11 @@ func (o DeploymentOutput) ByolCpuCoreCountLimit() pulumi.IntOutput {
 // The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 func (o DeploymentOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.Category }).(pulumi.StringOutput)
+}
+
+// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+func (o DeploymentOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -804,6 +837,11 @@ func (o DeploymentOutput) PublicIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.PublicIpAddress }).(pulumi.StringOutput)
 }
 
+// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o DeploymentOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 func (o DeploymentOutput) SourceDeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.SourceDeploymentId }).(pulumi.StringOutput)
@@ -821,6 +859,11 @@ func (o DeploymentOutput) StorageUtilizationInBytes() pulumi.StringOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 func (o DeploymentOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o DeploymentOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`

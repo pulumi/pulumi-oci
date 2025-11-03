@@ -16,6 +16,8 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'AutomaticDrConfigurationMember',
+    'DrPlanExecutionAutomaticExecutionDetail',
     'DrPlanExecutionExecutionOptions',
     'DrPlanExecutionGroupExecution',
     'DrPlanExecutionGroupExecutionStepExecution',
@@ -53,6 +55,12 @@ __all__ = [
     'DrProtectionGroupMemberVaultMapping',
     'DrProtectionGroupMemberVirtualNodePoolConfig',
     'DrProtectionGroupMemberVnicMapping',
+    'GetAutomaticDrConfigurationMemberResult',
+    'GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionResult',
+    'GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemResult',
+    'GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberResult',
+    'GetAutomaticDrConfigurationsFilterResult',
+    'GetDrPlanExecutionAutomaticExecutionDetailResult',
     'GetDrPlanExecutionExecutionOptionResult',
     'GetDrPlanExecutionGroupExecutionResult',
     'GetDrPlanExecutionGroupExecutionStepExecutionResult',
@@ -60,6 +68,7 @@ __all__ = [
     'GetDrPlanExecutionLogLocationResult',
     'GetDrPlanExecutionsDrPlanExecutionCollectionResult',
     'GetDrPlanExecutionsDrPlanExecutionCollectionItemResult',
+    'GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailResult',
     'GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionResult',
     'GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult',
     'GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionResult',
@@ -137,6 +146,140 @@ __all__ = [
     'GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult',
     'GetDrProtectionGroupsFilterResult',
 ]
+
+@pulumi.output_type
+class AutomaticDrConfigurationMember(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memberId":
+            suggest = "member_id"
+        elif key == "memberType":
+            suggest = "member_type"
+        elif key == "isAutoFailoverEnabled":
+            suggest = "is_auto_failover_enabled"
+        elif key == "isAutoSwitchoverEnabled":
+            suggest = "is_auto_switchover_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutomaticDrConfigurationMember. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutomaticDrConfigurationMember.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutomaticDrConfigurationMember.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 member_id: _builtins.str,
+                 member_type: _builtins.str,
+                 is_auto_failover_enabled: Optional[_builtins.bool] = None,
+                 is_auto_switchover_enabled: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str member_id: (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
+        :param _builtins.str member_type: (Updatable) The type of the member. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param _builtins.bool is_auto_failover_enabled: (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        :param _builtins.bool is_auto_switchover_enabled: (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_type", member_type)
+        if is_auto_failover_enabled is not None:
+            pulumi.set(__self__, "is_auto_failover_enabled", is_auto_failover_enabled)
+        if is_auto_switchover_enabled is not None:
+            pulumi.set(__self__, "is_auto_switchover_enabled", is_auto_switchover_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> _builtins.str:
+        """
+        (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
+        """
+        return pulumi.get(self, "member_id")
+
+    @_builtins.property
+    @pulumi.getter(name="memberType")
+    def member_type(self) -> _builtins.str:
+        """
+        (Updatable) The type of the member. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "member_type")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoFailoverEnabled")
+    def is_auto_failover_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_auto_failover_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoSwitchoverEnabled")
+    def is_auto_switchover_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_auto_switchover_enabled")
+
+
+@pulumi.output_type
+class DrPlanExecutionAutomaticExecutionDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "eventName":
+            suggest = "event_name"
+        elif key == "memberId":
+            suggest = "member_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DrPlanExecutionAutomaticExecutionDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DrPlanExecutionAutomaticExecutionDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DrPlanExecutionAutomaticExecutionDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 event_name: Optional[_builtins.str] = None,
+                 member_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str event_name: The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+        :param _builtins.str member_id: The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+        """
+        if event_name is not None:
+            pulumi.set(__self__, "event_name", event_name)
+        if member_id is not None:
+            pulumi.set(__self__, "member_id", member_id)
+
+    @_builtins.property
+    @pulumi.getter(name="eventName")
+    def event_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+        """
+        return pulumi.get(self, "event_name")
+
+    @_builtins.property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+        """
+        return pulumi.get(self, "member_id")
+
 
 @pulumi.output_type
 class DrPlanExecutionExecutionOptions(dict):
@@ -3123,6 +3266,370 @@ class DrProtectionGroupMemberVnicMapping(dict):
 
 
 @pulumi.output_type
+class GetAutomaticDrConfigurationMemberResult(dict):
+    def __init__(__self__, *,
+                 is_auto_failover_enabled: _builtins.bool,
+                 is_auto_switchover_enabled: _builtins.bool,
+                 member_id: _builtins.str,
+                 member_type: _builtins.str):
+        """
+        :param _builtins.bool is_auto_failover_enabled: A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        :param _builtins.bool is_auto_switchover_enabled: A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        :param _builtins.str member_id: The unique id of the member. Must not be modified by user.  Example: `ocid1.database.oc1..uniqueID`
+        :param _builtins.str member_type: The type of the member.
+        """
+        pulumi.set(__self__, "is_auto_failover_enabled", is_auto_failover_enabled)
+        pulumi.set(__self__, "is_auto_switchover_enabled", is_auto_switchover_enabled)
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_type", member_type)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoFailoverEnabled")
+    def is_auto_failover_enabled(self) -> _builtins.bool:
+        """
+        A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_auto_failover_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoSwitchoverEnabled")
+    def is_auto_switchover_enabled(self) -> _builtins.bool:
+        """
+        A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_auto_switchover_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> _builtins.str:
+        """
+        The unique id of the member. Must not be modified by user.  Example: `ocid1.database.oc1..uniqueID`
+        """
+        return pulumi.get(self, "member_id")
+
+    @_builtins.property
+    @pulumi.getter(name="memberType")
+    def member_type(self) -> _builtins.str:
+        """
+        The type of the member.
+        """
+        return pulumi.get(self, "member_type")
+
+
+@pulumi.output_type
+class GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 default_failover_dr_plan_id: _builtins.str,
+                 default_switchover_dr_plan_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 dr_protection_group_id: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 last_automatic_dr_execution_submit_details: _builtins.str,
+                 last_automatic_dr_execution_submit_status: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 members: Sequence['outputs.GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_last_automatic_dr_execution_submit_attempt: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The OCID of the compartment containing the Automatic DR configuration.  Example: `ocid1.compartment.oc1..uniqueID`
+        :param _builtins.str default_failover_dr_plan_id: The unique id of a Failover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
+        :param _builtins.str default_switchover_dr_plan_id: The unique id of a Switchover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
+        :param _builtins.str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The OCID of the Automatic DR configuration.  Example: `ocid1.automaticdrconfiguration.oc1..uniqueID`
+        :param _builtins.str last_automatic_dr_execution_submit_details: A message describing the result of the most recent attempt made to submit an Automatic DR plan execution.
+        :param _builtins.str last_automatic_dr_execution_submit_status: The status of most recent attempt to submit Automatic DR plan execution.
+        :param _builtins.str lifecycle_details: A message describing the Automatic DR configuration's current state in more detail.
+        :param Sequence['GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberArgs'] members: The list of members in this Automatic DR configuration.
+        :param _builtins.str state: A filter to return only Automatic DR configurations that match the given lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the Automatic DR configuration was created. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
+        :param _builtins.str time_last_automatic_dr_execution_submit_attempt: The date and time of the most recent attempt made to submit an Automatic DR plan execution. An RFC3339 formatted datetime string.  Example: `2025-06-30T09:36:42Z`
+        :param _builtins.str time_updated: The date and time the Automatic DR configuration was updated. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "default_failover_dr_plan_id", default_failover_dr_plan_id)
+        pulumi.set(__self__, "default_switchover_dr_plan_id", default_switchover_dr_plan_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dr_protection_group_id", dr_protection_group_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_automatic_dr_execution_submit_details", last_automatic_dr_execution_submit_details)
+        pulumi.set(__self__, "last_automatic_dr_execution_submit_status", last_automatic_dr_execution_submit_status)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "members", members)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_automatic_dr_execution_submit_attempt", time_last_automatic_dr_execution_submit_attempt)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID of the compartment containing the Automatic DR configuration.  Example: `ocid1.compartment.oc1..uniqueID`
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultFailoverDrPlanId")
+    def default_failover_dr_plan_id(self) -> _builtins.str:
+        """
+        The unique id of a Failover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
+        """
+        return pulumi.get(self, "default_failover_dr_plan_id")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultSwitchoverDrPlanId")
+    def default_switchover_dr_plan_id(self) -> _builtins.str:
+        """
+        The unique id of a Switchover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
+        """
+        return pulumi.get(self, "default_switchover_dr_plan_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="drProtectionGroupId")
+    def dr_protection_group_id(self) -> _builtins.str:
+        """
+        The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
+        """
+        return pulumi.get(self, "dr_protection_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the Automatic DR configuration.  Example: `ocid1.automaticdrconfiguration.oc1..uniqueID`
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lastAutomaticDrExecutionSubmitDetails")
+    def last_automatic_dr_execution_submit_details(self) -> _builtins.str:
+        """
+        A message describing the result of the most recent attempt made to submit an Automatic DR plan execution.
+        """
+        return pulumi.get(self, "last_automatic_dr_execution_submit_details")
+
+    @_builtins.property
+    @pulumi.getter(name="lastAutomaticDrExecutionSubmitStatus")
+    def last_automatic_dr_execution_submit_status(self) -> _builtins.str:
+        """
+        The status of most recent attempt to submit Automatic DR plan execution.
+        """
+        return pulumi.get(self, "last_automatic_dr_execution_submit_status")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the Automatic DR configuration's current state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def members(self) -> Sequence['outputs.GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberResult']:
+        """
+        The list of members in this Automatic DR configuration.
+        """
+        return pulumi.get(self, "members")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only Automatic DR configurations that match the given lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Automatic DR configuration was created. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastAutomaticDrExecutionSubmitAttempt")
+    def time_last_automatic_dr_execution_submit_attempt(self) -> _builtins.str:
+        """
+        The date and time of the most recent attempt made to submit an Automatic DR plan execution. An RFC3339 formatted datetime string.  Example: `2025-06-30T09:36:42Z`
+        """
+        return pulumi.get(self, "time_last_automatic_dr_execution_submit_attempt")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the Automatic DR configuration was updated. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetAutomaticDrConfigurationsAutomaticDrConfigurationCollectionItemMemberResult(dict):
+    def __init__(__self__, *,
+                 is_auto_failover_enabled: _builtins.bool,
+                 is_auto_switchover_enabled: _builtins.bool,
+                 member_id: _builtins.str,
+                 member_type: _builtins.str):
+        """
+        :param _builtins.bool is_auto_failover_enabled: A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        :param _builtins.bool is_auto_switchover_enabled: A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        :param _builtins.str member_id: The unique id of the member. Must not be modified by user.  Example: `ocid1.database.oc1..uniqueID`
+        :param _builtins.str member_type: The type of the member.
+        """
+        pulumi.set(__self__, "is_auto_failover_enabled", is_auto_failover_enabled)
+        pulumi.set(__self__, "is_auto_switchover_enabled", is_auto_switchover_enabled)
+        pulumi.set(__self__, "member_id", member_id)
+        pulumi.set(__self__, "member_type", member_type)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoFailoverEnabled")
+    def is_auto_failover_enabled(self) -> _builtins.bool:
+        """
+        A flag indicating if the automatic failover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_auto_failover_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoSwitchoverEnabled")
+    def is_auto_switchover_enabled(self) -> _builtins.bool:
+        """
+        A flag indicating if the automatic switchover should be enabled for the Autonomous Database Serverless member in the Automatic DR configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_auto_switchover_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> _builtins.str:
+        """
+        The unique id of the member. Must not be modified by user.  Example: `ocid1.database.oc1..uniqueID`
+        """
+        return pulumi.get(self, "member_id")
+
+    @_builtins.property
+    @pulumi.getter(name="memberType")
+    def member_type(self) -> _builtins.str:
+        """
+        The type of the member.
+        """
+        return pulumi.get(self, "member_type")
+
+
+@pulumi.output_type
+class GetAutomaticDrConfigurationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDrPlanExecutionAutomaticExecutionDetailResult(dict):
+    def __init__(__self__, *,
+                 event_name: _builtins.str,
+                 member_id: _builtins.str):
+        """
+        :param _builtins.str event_name: The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+        :param _builtins.str member_id: The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+        """
+        pulumi.set(__self__, "event_name", event_name)
+        pulumi.set(__self__, "member_id", member_id)
+
+    @_builtins.property
+    @pulumi.getter(name="eventName")
+    def event_name(self) -> _builtins.str:
+        """
+        The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+        """
+        return pulumi.get(self, "event_name")
+
+    @_builtins.property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> _builtins.str:
+        """
+        The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+        """
+        return pulumi.get(self, "member_id")
+
+
+@pulumi.output_type
 class GetDrPlanExecutionExecutionOptionResult(dict):
     def __init__(__self__, *,
                  are_prechecks_enabled: _builtins.bool,
@@ -3491,6 +3998,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionResult(dict):
 @pulumi.output_type
 class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
     def __init__(__self__, *,
+                 automatic_execution_details: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailResult'],
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
@@ -3500,6 +4008,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  group_executions: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult'],
                  id: _builtins.str,
+                 is_automatic: _builtins.bool,
                  life_cycle_details: _builtins.str,
                  log_locations: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationResult'],
                  peer_dr_protection_group_id: _builtins.str,
@@ -3513,6 +4022,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
                  time_started: _builtins.str,
                  time_updated: _builtins.str):
         """
+        :param Sequence['GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailArgs'] automatic_execution_details: The details of the event that started the automatic DR plan execution.
         :param _builtins.str compartment_id: The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
@@ -3522,6 +4032,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param Sequence['GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs'] group_executions: A list of groups executed in this DR plan execution.
         :param _builtins.str id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
+        :param _builtins.bool is_automatic: A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
         :param _builtins.str life_cycle_details: A message describing the DR plan execution's current state in more detail.
         :param Sequence['GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationArgs'] log_locations: The details of an object storage log location for a DR protection group.
         :param _builtins.str peer_dr_protection_group_id: The OCID of peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -3535,6 +4046,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
         :param _builtins.str time_started: The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param _builtins.str time_updated: The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
+        pulumi.set(__self__, "automatic_execution_details", automatic_execution_details)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
@@ -3544,6 +4056,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "group_executions", group_executions)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_automatic", is_automatic)
         pulumi.set(__self__, "life_cycle_details", life_cycle_details)
         pulumi.set(__self__, "log_locations", log_locations)
         pulumi.set(__self__, "peer_dr_protection_group_id", peer_dr_protection_group_id)
@@ -3556,6 +4069,14 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
         pulumi.set(__self__, "time_ended", time_ended)
         pulumi.set(__self__, "time_started", time_started)
         pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="automaticExecutionDetails")
+    def automatic_execution_details(self) -> Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailResult']:
+        """
+        The details of the event that started the automatic DR plan execution.
+        """
+        return pulumi.get(self, "automatic_execution_details")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -3628,6 +4149,14 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
         The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutomatic")
+    def is_automatic(self) -> _builtins.bool:
+        """
+        A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+        """
+        return pulumi.get(self, "is_automatic")
 
     @_builtins.property
     @pulumi.getter(name="lifeCycleDetails")
@@ -3724,6 +4253,35 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
         The time when DR plan execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDrPlanExecutionsDrPlanExecutionCollectionItemAutomaticExecutionDetailResult(dict):
+    def __init__(__self__, *,
+                 event_name: _builtins.str,
+                 member_id: _builtins.str):
+        """
+        :param _builtins.str event_name: The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+        :param _builtins.str member_id: The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+        """
+        pulumi.set(__self__, "event_name", event_name)
+        pulumi.set(__self__, "member_id", member_id)
+
+    @_builtins.property
+    @pulumi.getter(name="eventName")
+    def event_name(self) -> _builtins.str:
+        """
+        The name of the Oracle Cloud Infrastructure event that started the automatic DR plan execution.  Example: `SwitchoverAutonomousDatabase`
+        """
+        return pulumi.get(self, "event_name")
+
+    @_builtins.property
+    @pulumi.getter(name="memberId")
+    def member_id(self) -> _builtins.str:
+        """
+        The OCID of the member that emitted the event that started the automatic DR plan execution.  Example: "ocid1.autonomousdatabase.oc1..uniqueID"
+        """
+        return pulumi.get(self, "member_id")
 
 
 @pulumi.output_type

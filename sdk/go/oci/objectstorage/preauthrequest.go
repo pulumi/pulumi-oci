@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
-//
-// Creates a pre-authenticated request specific to the bucket.
-//
 // ## Example Usage
 //
 // ```go

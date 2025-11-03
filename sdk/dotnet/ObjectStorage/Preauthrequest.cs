@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ObjectStorage
 {
     /// <summary>
-    /// This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
-    /// 
-    /// Creates a pre-authenticated request specific to the bucket.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

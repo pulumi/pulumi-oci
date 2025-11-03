@@ -9,6 +9,7 @@ import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverride
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -40,6 +41,11 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
      * 
      */
     private String stepName;
+    /**
+     * @return The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    private List<GetPipelineRunsPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists;
 
     private GetPipelineRunsPipelineRunStepOverrideDetail() {}
     /**
@@ -77,6 +83,13 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
     public String stepName() {
         return this.stepName;
     }
+    /**
+     * @return The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    public List<GetPipelineRunsPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists() {
+        return this.stepStorageMountConfigurationDetailsLists;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -92,6 +105,7 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
         private List<GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails;
         private List<GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails;
         private String stepName;
+        private List<GetPipelineRunsPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists;
         public Builder() {}
         public Builder(GetPipelineRunsPipelineRunStepOverrideDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -100,6 +114,7 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
     	      this.stepDataflowConfigurationDetails = defaults.stepDataflowConfigurationDetails;
     	      this.stepInfrastructureConfigurationDetails = defaults.stepInfrastructureConfigurationDetails;
     	      this.stepName = defaults.stepName;
+    	      this.stepStorageMountConfigurationDetailsLists = defaults.stepStorageMountConfigurationDetailsLists;
         }
 
         @CustomType.Setter
@@ -154,6 +169,17 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
             this.stepName = stepName;
             return this;
         }
+        @CustomType.Setter
+        public Builder stepStorageMountConfigurationDetailsLists(List<GetPipelineRunsPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList> stepStorageMountConfigurationDetailsLists) {
+            if (stepStorageMountConfigurationDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepOverrideDetail", "stepStorageMountConfigurationDetailsLists");
+            }
+            this.stepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
+            return this;
+        }
+        public Builder stepStorageMountConfigurationDetailsLists(GetPipelineRunsPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList... stepStorageMountConfigurationDetailsLists) {
+            return stepStorageMountConfigurationDetailsLists(List.of(stepStorageMountConfigurationDetailsLists));
+        }
         public GetPipelineRunsPipelineRunStepOverrideDetail build() {
             final var _resultValue = new GetPipelineRunsPipelineRunStepOverrideDetail();
             _resultValue.stepConfigurationDetails = stepConfigurationDetails;
@@ -161,6 +187,7 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
             _resultValue.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
             _resultValue.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             _resultValue.stepName = stepName;
+            _resultValue.stepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
             return _resultValue;
         }
     }

@@ -23,14 +23,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     public static final CloudAutonomousVmClusterState Empty = new CloudAutonomousVmClusterState();
 
     /**
-     * The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     * The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
      * 
      */
     @Import(name="autonomousDataStoragePercentage")
     private @Nullable Output<Double> autonomousDataStoragePercentage;
 
     /**
-     * @return The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+     * @return The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
      * 
      */
     public Optional<Output<Double>> autonomousDataStoragePercentage() {
@@ -38,14 +38,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * (Updatable) The data disk group size to be allocated for Autonomous AI Databases, in TBs.
      * 
      */
     @Import(name="autonomousDataStorageSizeInTbs")
     private @Nullable Output<Double> autonomousDataStorageSizeInTbs;
 
     /**
-     * @return (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * @return (Updatable) The data disk group size to be allocated for Autonomous AI Databases, in TBs.
      * 
      */
     public Optional<Output<Double>> autonomousDataStorageSizeInTbs() {
@@ -68,14 +68,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The data disk group size available for Autonomous Databases, in TBs.
+     * The data disk group size available for Autonomous AI Databases, in TBs.
      * 
      */
     @Import(name="availableAutonomousDataStorageSizeInTbs")
     private @Nullable Output<Double> availableAutonomousDataStorageSizeInTbs;
 
     /**
-     * @return The data disk group size available for Autonomous Databases, in TBs.
+     * @return The data disk group size available for Autonomous AI Databases, in TBs.
      * 
      */
     public Optional<Output<Double>> availableAutonomousDataStorageSizeInTbs() {
@@ -98,14 +98,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * CPU cores available for allocation to Autonomous Databases.
+     * CPU cores available for allocation to Autonomous AI Databases.
      * 
      */
     @Import(name="availableCpus")
     private @Nullable Output<Double> availableCpus;
 
     /**
-     * @return CPU cores available for allocation to Autonomous Databases.
+     * @return CPU cores available for allocation to Autonomous AI Databases.
      * 
      */
     public Optional<Output<Double>> availableCpus() {
@@ -428,7 +428,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+     * (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      * 
@@ -437,7 +437,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     private @Nullable Output<String> licenseModel;
 
     /**
-     * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+     * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      * 
@@ -504,6 +504,21 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
      */
     public Optional<Output<Integer>> maxAcdsLowestScaledValue() {
         return Optional.ofNullable(this.maxAcdsLowestScaledValue);
+    }
+
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    @Import(name="memoryPerComputeUnitInGbs")
+    private @Nullable Output<Double> memoryPerComputeUnitInGbs;
+
+    /**
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    public Optional<Output<Double>> memoryPerComputeUnitInGbs() {
+        return Optional.ofNullable(this.memoryPerComputeUnitInGbs);
     }
 
     /**
@@ -583,7 +598,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
 
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     @Import(name="nsgIds")
@@ -591,7 +606,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
 
     /**
      * @return (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     public Optional<Output<List<String>>> nsgIds() {
@@ -689,18 +704,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     @Import(name="reclaimableCpus")
     private @Nullable Output<Double> reclaimableCpus;
 
     /**
-     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     public Optional<Output<Double>> reclaimableCpus() {
@@ -903,14 +914,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The total data disk group size for Autonomous Databases, in TBs.
+     * The total data disk group size for Autonomous AI Databases, in TBs.
      * 
      */
     @Import(name="totalAutonomousDataStorageInTbs")
     private @Nullable Output<Double> totalAutonomousDataStorageInTbs;
 
     /**
-     * @return The total data disk group size for Autonomous Databases, in TBs.
+     * @return The total data disk group size for Autonomous AI Databases, in TBs.
      * 
      */
     public Optional<Output<Double>> totalAutonomousDataStorageInTbs() {
@@ -988,6 +999,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.maintenanceWindowDetails = $.maintenanceWindowDetails;
         this.maintenanceWindows = $.maintenanceWindows;
         this.maxAcdsLowestScaledValue = $.maxAcdsLowestScaledValue;
+        this.memoryPerComputeUnitInGbs = $.memoryPerComputeUnitInGbs;
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
@@ -1038,7 +1050,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autonomousDataStoragePercentage The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+         * @param autonomousDataStoragePercentage The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
          * 
          * @return builder
          * 
@@ -1049,7 +1061,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autonomousDataStoragePercentage The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+         * @param autonomousDataStoragePercentage The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
          * 
          * @return builder
          * 
@@ -1059,7 +1071,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous AI Databases, in TBs.
          * 
          * @return builder
          * 
@@ -1070,7 +1082,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous AI Databases, in TBs.
          * 
          * @return builder
          * 
@@ -1101,7 +1113,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param availableAutonomousDataStorageSizeInTbs The data disk group size available for Autonomous Databases, in TBs.
+         * @param availableAutonomousDataStorageSizeInTbs The data disk group size available for Autonomous AI Databases, in TBs.
          * 
          * @return builder
          * 
@@ -1112,7 +1124,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param availableAutonomousDataStorageSizeInTbs The data disk group size available for Autonomous Databases, in TBs.
+         * @param availableAutonomousDataStorageSizeInTbs The data disk group size available for Autonomous AI Databases, in TBs.
          * 
          * @return builder
          * 
@@ -1143,7 +1155,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param availableCpus CPU cores available for allocation to Autonomous Databases.
+         * @param availableCpus CPU cores available for allocation to Autonomous AI Databases.
          * 
          * @return builder
          * 
@@ -1154,7 +1166,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param availableCpus CPU cores available for allocation to Autonomous Databases.
+         * @param availableCpus CPU cores available for allocation to Autonomous AI Databases.
          * 
          * @return builder
          * 
@@ -1615,7 +1627,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param licenseModel (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+         * @param licenseModel (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
          * 
          * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          * 
@@ -1628,7 +1640,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param licenseModel (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+         * @param licenseModel (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
          * 
          * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
          * 
@@ -1731,6 +1743,27 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
          */
         public Builder maxAcdsLowestScaledValue(Integer maxAcdsLowestScaledValue) {
             return maxAcdsLowestScaledValue(Output.of(maxAcdsLowestScaledValue));
+        }
+
+        /**
+         * @param memoryPerComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryPerComputeUnitInGbs(@Nullable Output<Double> memoryPerComputeUnitInGbs) {
+            $.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
+            return this;
+        }
+
+        /**
+         * @param memoryPerComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryPerComputeUnitInGbs(Double memoryPerComputeUnitInGbs) {
+            return memoryPerComputeUnitInGbs(Output.of(memoryPerComputeUnitInGbs));
         }
 
         /**
@@ -1840,7 +1873,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
 
         /**
          * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -1852,7 +1885,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
 
         /**
          * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -1863,7 +1896,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
 
         /**
          * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-         * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
          * 
          * @return builder
          * 
@@ -1999,9 +2032,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
-         * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-         * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * @param reclaimableCpus CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -2012,9 +2043,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
-         * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-         * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * @param reclaimableCpus CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          * 
          * @return builder
          * 
@@ -2297,7 +2326,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param totalAutonomousDataStorageInTbs The total data disk group size for Autonomous Databases, in TBs.
+         * @param totalAutonomousDataStorageInTbs The total data disk group size for Autonomous AI Databases, in TBs.
          * 
          * @return builder
          * 
@@ -2308,7 +2337,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param totalAutonomousDataStorageInTbs The total data disk group size for Autonomous Databases, in TBs.
+         * @param totalAutonomousDataStorageInTbs The total data disk group size for Autonomous AI Databases, in TBs.
          * 
          * @return builder
          * 

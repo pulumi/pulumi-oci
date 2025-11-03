@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Software Source Generate Metadata Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Regenerates metadata for the specified custom software source.
-//
 // ## Example Usage
 //
 // ```go

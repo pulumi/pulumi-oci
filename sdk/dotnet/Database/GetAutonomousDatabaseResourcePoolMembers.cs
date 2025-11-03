@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+        /// Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
         /// 
         /// 
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+        /// Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
         /// 
         /// 
         /// ## Example Usage
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+        /// Lists the OCIDs of the Autonomous AI Database resource pool members for the specified Autonomous AI Database leader.
         /// 
         /// 
         /// ## Example Usage

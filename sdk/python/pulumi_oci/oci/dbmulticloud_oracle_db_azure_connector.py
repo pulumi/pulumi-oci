@@ -461,11 +461,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
                  lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Creates Oracle DB Azure Connector resource and configured Azure Identity in Oracle Database resource.
-
-          Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
+        ## Example Usage
 
         ## Import
 
@@ -496,11 +492,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
                  args: DbmulticloudOracleDbAzureConnectorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Creates Oracle DB Azure Connector resource and configured Azure Identity in Oracle Database resource.
-
-          Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
+        ## Example Usage
 
         ## Import
 

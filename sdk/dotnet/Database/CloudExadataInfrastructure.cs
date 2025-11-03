@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -132,7 +128,7 @@ namespace Pulumi.Oci.Database
         public Output<int> ComputeCount { get; private set; } = null!;
 
         /// <summary>
-        /// The compute model of the Exadata infrastructure.
+        /// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         /// </summary>
         [Output("computeModel")]
         public Output<string> ComputeModel { get; private set; } = null!;
@@ -536,7 +532,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? ComputeCount { get; set; }
 
         /// <summary>
-        /// The compute model of the Exadata infrastructure.
+        /// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         /// </summary>
         [Input("computeModel")]
         public Input<string>? ComputeModel { get; set; }

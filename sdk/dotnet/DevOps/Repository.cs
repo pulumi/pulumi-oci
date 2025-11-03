@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
-    /// This resource provides the Repository resource in Oracle Cloud Infrastructure Devops service.
-    /// 
-    /// Creates a new repository.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create a Cloud Gate server
- *
  * ## Example Usage
  *
  * ## Import

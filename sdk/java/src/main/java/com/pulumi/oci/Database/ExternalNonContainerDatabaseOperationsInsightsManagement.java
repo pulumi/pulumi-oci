@@ -15,11 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the External Non Container Database Operations Insights Management resource in Oracle Cloud Infrastructure Database service.
- * 
- * Enable Operations Insights for the external non-container database.
- * When deleting this resource block , we call disable if it was in enabled state .
- * 
  * ## Example Usage
  * 
  * <pre>

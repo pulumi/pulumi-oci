@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Vlan resource in Oracle Cloud Infrastructure Core service.
- *
- * Creates a VLAN in the specified VCN and the specified compartment.
- *
  * ## Example Usage
  *
  * ```typescript

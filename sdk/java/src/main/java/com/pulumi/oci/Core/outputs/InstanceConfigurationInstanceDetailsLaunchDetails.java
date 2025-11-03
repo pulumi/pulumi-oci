@@ -127,6 +127,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
      */
     private @Nullable String ipxeScript;
     /**
+     * @return Whether to enable AI enterprise on the instance.
+     * 
+     */
+    private @Nullable Boolean isAiEnterpriseEnabled;
+    /**
      * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
      * 
      */
@@ -364,6 +369,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         return Optional.ofNullable(this.ipxeScript);
     }
     /**
+     * @return Whether to enable AI enterprise on the instance.
+     * 
+     */
+    public Optional<Boolean> isAiEnterpriseEnabled() {
+        return Optional.ofNullable(this.isAiEnterpriseEnabled);
+    }
+    /**
      * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
      * 
      */
@@ -516,6 +528,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         private @Nullable Map<String,String> freeformTags;
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions instanceOptions;
         private @Nullable String ipxeScript;
+        private @Nullable Boolean isAiEnterpriseEnabled;
         private @Nullable Boolean isPvEncryptionInTransitEnabled;
         private @Nullable String launchMode;
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions launchOptions;
@@ -548,6 +561,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
     	      this.freeformTags = defaults.freeformTags;
     	      this.instanceOptions = defaults.instanceOptions;
     	      this.ipxeScript = defaults.ipxeScript;
+    	      this.isAiEnterpriseEnabled = defaults.isAiEnterpriseEnabled;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.launchMode = defaults.launchMode;
     	      this.launchOptions = defaults.launchOptions;
@@ -660,6 +674,12 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder isAiEnterpriseEnabled(@Nullable Boolean isAiEnterpriseEnabled) {
+
+            this.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isPvEncryptionInTransitEnabled(@Nullable Boolean isPvEncryptionInTransitEnabled) {
 
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
@@ -755,6 +775,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
             _resultValue.freeformTags = freeformTags;
             _resultValue.instanceOptions = instanceOptions;
             _resultValue.ipxeScript = ipxeScript;
+            _resultValue.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.launchMode = launchMode;
             _resultValue.launchOptions = launchOptions;

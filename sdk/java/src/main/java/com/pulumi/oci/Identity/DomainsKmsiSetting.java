@@ -22,9 +22,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Replace KmsiSettings
+ * ## Example Usage
  * 
  * ## Import
  * 

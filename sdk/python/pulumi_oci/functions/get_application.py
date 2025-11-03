@@ -27,7 +27,7 @@ class GetApplicationResult:
     """
     A collection of values returned by getApplication.
     """
-    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_policy_configs=None, network_security_group_ids=None, shape=None, state=None, subnet_ids=None, syslog_url=None, time_created=None, time_updated=None, trace_configs=None):
+    def __init__(__self__, application_id=None, compartment_id=None, config=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_policy_configs=None, network_security_group_ids=None, security_attributes=None, shape=None, state=None, subnet_ids=None, syslog_url=None, time_created=None, time_updated=None, trace_configs=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -55,6 +55,9 @@ class GetApplicationResult:
         if network_security_group_ids and not isinstance(network_security_group_ids, list):
             raise TypeError("Expected argument 'network_security_group_ids' to be a list")
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -147,6 +150,14 @@ class GetApplicationResult:
         return pulumi.get(self, "network_security_group_ids")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> _builtins.str:
         """
@@ -218,6 +229,7 @@ class AwaitableGetApplicationResult(GetApplicationResult):
             id=self.id,
             image_policy_configs=self.image_policy_configs,
             network_security_group_ids=self.network_security_group_ids,
+            security_attributes=self.security_attributes,
             shape=self.shape,
             state=self.state,
             subnet_ids=self.subnet_ids,
@@ -261,6 +273,7 @@ def get_application(application_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         image_policy_configs=pulumi.get(__ret__, 'image_policy_configs'),
         network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         subnet_ids=pulumi.get(__ret__, 'subnet_ids'),
@@ -301,6 +314,7 @@ def get_application_output(application_id: Optional[pulumi.Input[_builtins.str]]
         id=pulumi.get(__response__, 'id'),
         image_policy_configs=pulumi.get(__response__, 'image_policy_configs'),
         network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state'),
         subnet_ids=pulumi.get(__response__, 'subnet_ids'),

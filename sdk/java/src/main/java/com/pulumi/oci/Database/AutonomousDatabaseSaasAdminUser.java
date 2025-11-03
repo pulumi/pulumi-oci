@@ -19,9 +19,43 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
  * 
- * This operation updates SaaS administrative user configuration of the Autonomous Database.
+ * This operation updates SaaS administrative user configuration of the Autonomous AI Database.
  * 
  * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousDatabaseSaasAdminUser;
+ * import com.pulumi.oci.Database.AutonomousDatabaseSaasAdminUserArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousDatabaseSaasAdminUser = new AutonomousDatabaseSaasAdminUser("testAutonomousDatabaseSaasAdminUser", AutonomousDatabaseSaasAdminUserArgs.builder()
+ *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .password(autonomousDatabaseSaasAdminUserPassword)
+ *             .accessType(autonomousDatabaseSaasAdminUserAccessType)
+ *             .duration(autonomousDatabaseSaasAdminUserDuration)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * 
  * ## Import
  * 
@@ -115,7 +149,7 @@ public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.Custom
         return Codegen.optional(this.secretVersionNumber);
     }
     /**
-     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,7 +159,7 @@ public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.Custom
     private Output<String> timeSaasAdminUserEnabled;
 
     /**
-     * @return The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * @return The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

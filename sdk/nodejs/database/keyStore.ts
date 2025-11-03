@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a Key Store.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -75,6 +71,14 @@ export class KeyStore extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly associatedDatabases: pulumi.Output<outputs.Database.KeyStoreAssociatedDatabase[]>;
     /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     */
+    declare public /*out*/ readonly associatedLongTermBackupCount: pulumi.Output<number>;
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     */
+    declare public /*out*/ readonly associatedLongTermBackups: pulumi.Output<outputs.Database.KeyStoreAssociatedLongTermBackup[]>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
@@ -126,6 +130,8 @@ export class KeyStore extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as KeyStoreState | undefined;
             resourceInputs["associatedDatabases"] = state?.associatedDatabases;
+            resourceInputs["associatedLongTermBackupCount"] = state?.associatedLongTermBackupCount;
+            resourceInputs["associatedLongTermBackups"] = state?.associatedLongTermBackups;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["confirmDetailsTrigger"] = state?.confirmDetailsTrigger;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -154,6 +160,8 @@ export class KeyStore extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["typeDetails"] = args?.typeDetails;
             resourceInputs["associatedDatabases"] = undefined /*out*/;
+            resourceInputs["associatedLongTermBackupCount"] = undefined /*out*/;
+            resourceInputs["associatedLongTermBackups"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -172,6 +180,14 @@ export interface KeyStoreState {
      * List of databases associated with the key store.
      */
     associatedDatabases?: pulumi.Input<pulumi.Input<inputs.Database.KeyStoreAssociatedDatabase>[]>;
+    /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     */
+    associatedLongTermBackupCount?: pulumi.Input<number>;
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     */
+    associatedLongTermBackups?: pulumi.Input<pulumi.Input<inputs.Database.KeyStoreAssociatedLongTermBackup>[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

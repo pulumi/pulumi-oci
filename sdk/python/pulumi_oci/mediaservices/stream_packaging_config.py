@@ -423,10 +423,6 @@ class StreamPackagingConfig(pulumi.CustomResource):
                  stream_packaging_format: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
-
-        Creates a new Packaging Configuration.
-
         ## Example Usage
 
         ```python
@@ -487,10 +483,6 @@ class StreamPackagingConfig(pulumi.CustomResource):
                  args: StreamPackagingConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
-
-        Creates a new Packaging Configuration.
-
         ## Example Usage
 
         ```python

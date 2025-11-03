@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Log Analytics Resource Categories Management resource in Oracle Cloud Infrastructure Log Analytics service.
-//
-// Updates the category assignments of DASHBOARD and SAVEDSEARCH resources.
-//
 // ## Example Usage
 //
 // ```go

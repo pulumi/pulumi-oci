@@ -413,10 +413,6 @@ class Rule(pulumi.CustomResource):
                  is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
-
-        Creates a new rule.
-
         ## Example Usage
 
         ```python
@@ -489,10 +485,6 @@ class Rule(pulumi.CustomResource):
                  args: RuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
-
-        Creates a new rule.
-
         ## Example Usage
 
         ```python

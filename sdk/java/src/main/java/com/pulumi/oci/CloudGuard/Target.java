@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
- * 
- * Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Repository resource in Oracle Cloud Infrastructure Artifacts service.
- *
- * Creates a new repository for storing artifacts.
- *
  * ## Example Usage
  *
  * ```typescript

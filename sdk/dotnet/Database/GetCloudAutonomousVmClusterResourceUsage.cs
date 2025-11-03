@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Database
     public sealed class GetCloudAutonomousVmClusterResourceUsageResult
     {
         /// <summary>
-        /// The data disk group size allocated for Autonomous Databases, in TBs.
+        /// The data disk group size allocated for Autonomous AI Databases, in TBs.
         /// </summary>
         public readonly double AutonomousDataStorageSizeInTbs;
         /// <summary>
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageResult> AutonomousVmResourceUsages;
         /// <summary>
-        /// The data disk group size available for Autonomous Databases, in TBs.
+        /// The data disk group size available for Autonomous AI Databases, in TBs.
         /// </summary>
         public readonly double AvailableAutonomousDataStorageSizeInTbs;
         /// <summary>
@@ -160,7 +160,11 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The amount of memory (in GBs) to be enabled per each CPU core.
+        /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        /// </summary>
+        public readonly double MemoryPerComputeUnitInGbs;
+        /// <summary>
+        /// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
@@ -184,7 +188,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly double ProvisionedCpus;
         /// <summary>
-        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         /// </summary>
         public readonly double ReclaimableCpus;
         /// <summary>
@@ -200,7 +204,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly double TotalCpus;
         /// <summary>
-        /// The data disk group size used for Autonomous Databases, in TBs.
+        /// The data disk group size used for Autonomous AI Databases, in TBs.
         /// </summary>
         public readonly double UsedAutonomousDataStorageSizeInTbs;
         /// <summary>
@@ -227,6 +231,8 @@ namespace Pulumi.Oci.Database
             double exadataStorageInTbs,
 
             string id,
+
+            double memoryPerComputeUnitInGbs,
 
             int memoryPerOracleComputeUnitInGbs,
 
@@ -261,6 +267,7 @@ namespace Pulumi.Oci.Database
             DisplayName = displayName;
             ExadataStorageInTbs = exadataStorageInTbs;
             Id = id;
+            MemoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             MemorySizeInGbs = memorySizeInGbs;
             NonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;

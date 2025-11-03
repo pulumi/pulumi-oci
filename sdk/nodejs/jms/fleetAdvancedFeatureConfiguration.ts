@@ -7,11 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
- *
- * Update advanced feature configurations for the Fleet.
- * Ensure that the namespace and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis feature.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -21,59 +16,59 @@ import * as utilities from "../utilities";
  * const testFleetAdvancedFeatureConfiguration = new oci.jms.FleetAdvancedFeatureConfiguration("test_fleet_advanced_feature_configuration", {
  *     fleetId: testFleet.id,
  *     advancedUsageTracking: {
- *         isEnabled: fleetAdvancedFeatureConfigurationAdvancedUsageTrackingIsEnabled,
+ *         isEnabled: true,
  *     },
  *     analyticBucketName: testBucket.name,
- *     analyticNamespace: fleetAdvancedFeatureConfigurationAnalyticNamespace,
+ *     analyticNamespace: "example-bucket-namespace",
  *     cryptoEventAnalysis: {
- *         isEnabled: fleetAdvancedFeatureConfigurationCryptoEventAnalysisIsEnabled,
+ *         isEnabled: true,
  *         summarizedEventsLog: {
  *             logGroupId: testLogGroup.id,
  *             logId: testLog.id,
  *         },
  *     },
  *     javaMigrationAnalysis: {
- *         isEnabled: fleetAdvancedFeatureConfigurationJavaMigrationAnalysisIsEnabled,
+ *         isEnabled: true,
  *     },
  *     jfrRecording: {
- *         isEnabled: fleetAdvancedFeatureConfigurationJfrRecordingIsEnabled,
+ *         isEnabled: true,
  *     },
  *     lcm: {
- *         isEnabled: fleetAdvancedFeatureConfigurationLcmIsEnabled,
+ *         isEnabled: true,
  *         postInstallationActions: {
- *             addLoggingHandler: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsAddLoggingHandler,
- *             disabledTlsVersions: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsDisabledTlsVersions,
- *             globalLoggingLevel: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsGlobalLoggingLevel,
+ *             addLoggingHandler: false,
+ *             disabledTlsVersions: ["TLS_1_0"],
+ *             globalLoggingLevel: "ALL",
  *             minimumKeySizeSettings: {
  *                 certpaths: [{
- *                     keySize: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathKeySize,
- *                     name: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathName,
+ *                     keySize: 2048,
+ *                     name: "RSA",
  *                 }],
  *                 jars: [{
- *                     keySize: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarKeySize,
- *                     name: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarName,
+ *                     keySize: 2048,
+ *                     name: "RSA",
  *                 }],
  *                 tls: [{
- *                     keySize: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsKeySize,
- *                     name: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsName,
+ *                     keySize: 2048,
+ *                     name: "RSA",
  *                 }],
  *             },
  *             proxies: {
- *                 ftpProxyHost: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesFtpProxyHost,
- *                 ftpProxyPort: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesFtpProxyPort,
- *                 httpProxyHost: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpProxyHost,
- *                 httpProxyPort: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpProxyPort,
- *                 httpsProxyHost: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpsProxyHost,
- *                 httpsProxyPort: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpsProxyPort,
- *                 socksProxyHost: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesSocksProxyHost,
- *                 socksProxyPort: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesSocksProxyPort,
- *                 useSystemProxies: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesUseSystemProxies,
+ *                 ftpProxyHost: "example-ftp-proxy-host",
+ *                 ftpProxyPort: 10,
+ *                 httpProxyHost: "example-http-proxy-host",
+ *                 httpProxyPort: 10,
+ *                 httpsProxyHost: "example-https-proxy-host",
+ *                 httpsProxyPort: 10,
+ *                 socksProxyHost: "example-socks-proxy-host",
+ *                 socksProxyPort: 10,
+ *                 useSystemProxies: false,
  *             },
- *             shouldReplaceCertificatesOperatingSystem: fleetAdvancedFeatureConfigurationLcmPostInstallationActionsShouldReplaceCertificatesOperatingSystem,
+ *             shouldReplaceCertificatesOperatingSystem: false,
  *         },
  *     },
  *     performanceTuningAnalysis: {
- *         isEnabled: fleetAdvancedFeatureConfigurationPerformanceTuningAnalysisIsEnabled,
+ *         isEnabled: true,
  *     },
  * });
  * ```

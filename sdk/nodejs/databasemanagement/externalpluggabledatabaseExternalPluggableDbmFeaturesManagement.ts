@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Externalpluggabledatabase External Pluggable Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Enables a Database Management feature for the specified external pluggable database.
- *
  * ## Example Usage
  */
 export class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement extends pulumi.CustomResource {

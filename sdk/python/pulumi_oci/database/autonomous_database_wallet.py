@@ -251,15 +251,6 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
                  password: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
-
-        Creates and downloads a wallet for the specified Autonomous Database.
-
-        If passing the base64 encoded content to a `local_file` resource, please use the `content_base64` attribute of the `local_file` resource.
-        See this example for more details.
-
-        Recreate the resource to create and download a new wallet.
-
         ## Example Usage
 
         ```python
@@ -302,15 +293,6 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
                  args: AutonomousDatabaseWalletArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
-
-        Creates and downloads a wallet for the specified Autonomous Database.
-
-        If passing the base64 encoded content to a `local_file` resource, please use the `content_base64` attribute of the `local_file` resource.
-        See this example for more details.
-
-        Recreate the resource to create and download a new wallet.
-
         ## Example Usage
 
         ```python

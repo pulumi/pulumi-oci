@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-//
-// Create a fleet in Fleet Application Management.
+// ## Example Usage
 //
 // ## Import
 //

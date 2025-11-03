@@ -10,8 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Audit
 {
     /// <summary>
-    /// This resource provides the Configuration resource in Oracle Cloud Infrastructure Audit service.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

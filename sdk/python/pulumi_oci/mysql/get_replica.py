@@ -27,7 +27,7 @@ class GetReplicaResult:
     """
     A collection of values returned by getReplica.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, encrypt_datas=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, nsg_ids=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, shape_name=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, encrypt_datas=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, nsg_ids=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, security_attributes=None, shape_name=None, state=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -91,6 +91,9 @@ class GetReplicaResult:
         if secure_connections and not isinstance(secure_connections, list):
             raise TypeError("Expected argument 'secure_connections' to be a list")
         pulumi.set(__self__, "secure_connections", secure_connections)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if shape_name and not isinstance(shape_name, str):
             raise TypeError("Expected argument 'shape_name' to be a str")
         pulumi.set(__self__, "shape_name", shape_name)
@@ -270,6 +273,14 @@ class GetReplicaResult:
         return pulumi.get(self, "secure_connections")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> _builtins.str:
         """
@@ -329,6 +340,7 @@ class AwaitableGetReplicaResult(GetReplicaResult):
             replica_id=self.replica_id,
             replica_overrides=self.replica_overrides,
             secure_connections=self.secure_connections,
+            security_attributes=self.security_attributes,
             shape_name=self.shape_name,
             state=self.state,
             time_created=self.time_created,
@@ -381,6 +393,7 @@ def get_replica(replica_id: Optional[_builtins.str] = None,
         replica_id=pulumi.get(__ret__, 'replica_id'),
         replica_overrides=pulumi.get(__ret__, 'replica_overrides'),
         secure_connections=pulumi.get(__ret__, 'secure_connections'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -430,6 +443,7 @@ def get_replica_output(replica_id: Optional[pulumi.Input[_builtins.str]] = None,
         replica_id=pulumi.get(__response__, 'replica_id'),
         replica_overrides=pulumi.get(__response__, 'replica_overrides'),
         secure_connections=pulumi.get(__response__, 'secure_connections'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         shape_name=pulumi.get(__response__, 'shape_name'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),

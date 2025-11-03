@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Quota resource in Oracle Cloud Infrastructure Limits service.
-//
-// Creates a new quota with the details supplied.
-//
 // ## Example Usage
 //
 // ```go

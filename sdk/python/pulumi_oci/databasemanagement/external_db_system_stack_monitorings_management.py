@@ -186,11 +186,6 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
                  metadata: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the External Db System Stack Monitorings Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Stack Monitoring for all the components of the specified
-        external DB system (except databases).
-
         ## Example Usage
 
         ```python
@@ -222,11 +217,6 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
                  args: ExternalDbSystemStackMonitoringsManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db System Stack Monitorings Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Stack Monitoring for all the components of the specified
-        external DB system (except databases).
-
         ## Example Usage
 
         ```python

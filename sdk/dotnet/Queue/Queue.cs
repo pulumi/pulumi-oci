@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Queue
 {
     /// <summary>
-    /// This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
-    /// 
-    /// Creates a new queue.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

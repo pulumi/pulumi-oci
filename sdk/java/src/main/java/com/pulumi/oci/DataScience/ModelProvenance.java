@@ -14,10 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Creates provenance information for the specified model.
- * 
  * ## Example Usage
  * 
  * <pre>

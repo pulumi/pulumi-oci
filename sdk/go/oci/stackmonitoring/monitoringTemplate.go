@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Monitoring Template resource in Oracle Cloud Infrastructure Stack Monitoring service.
-//
-// Creates a new monitoring template for a given compartment.
-//
 // ## Example Usage
 //
 // ```go

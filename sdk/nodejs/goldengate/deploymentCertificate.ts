@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
- *
- * Creates a new certificate to truststore.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -144,9 +144,17 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.isRestricted);
     }
 
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     * 
+     */
     @Import(name="kmsKeyVersionId")
     private @Nullable Output<String> kmsKeyVersionId;
 
+    /**
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     * 
+     */
     public Optional<Output<String>> kmsKeyVersionId() {
         return Optional.ofNullable(this.kmsKeyVersionId);
     }
@@ -623,11 +631,23 @@ public final class PluggableDatabaseState extends com.pulumi.resources.ResourceA
             return isRestricted(Output.of(isRestricted));
         }
 
+        /**
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+         * 
+         * @return builder
+         * 
+         */
         public Builder kmsKeyVersionId(@Nullable Output<String> kmsKeyVersionId) {
             $.kmsKeyVersionId = kmsKeyVersionId;
             return this;
         }
 
+        /**
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+         * 
+         * @return builder
+         * 
+         */
         public Builder kmsKeyVersionId(String kmsKeyVersionId) {
             return kmsKeyVersionId(Output.of(kmsKeyVersionId));
         }

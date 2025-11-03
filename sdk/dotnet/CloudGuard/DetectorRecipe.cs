@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard
 {
     /// <summary>
-    /// This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-    /// 
-    /// Creates a new DetectorRecipe resource.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

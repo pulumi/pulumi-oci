@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Audit Trail Management resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Updates one or more attributes of the specified audit trail.
- * 
  * ## Example Usage
  * 
  * <pre>

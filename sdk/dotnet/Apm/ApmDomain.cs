@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Apm
 {
     /// <summary>
-    /// This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Apm service.
-    /// 
-    /// Creates a new APM domain.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

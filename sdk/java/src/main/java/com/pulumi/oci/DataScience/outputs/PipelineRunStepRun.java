@@ -37,6 +37,11 @@ public final class PipelineRunStepRun {
      */
     private @Nullable String stepName;
     /**
+     * @return Name used when creating the steprun.
+     * 
+     */
+    private @Nullable String stepRunName;
+    /**
      * @return The type of step.
      * 
      */
@@ -89,6 +94,13 @@ public final class PipelineRunStepRun {
         return Optional.ofNullable(this.stepName);
     }
     /**
+     * @return Name used when creating the steprun.
+     * 
+     */
+    public Optional<String> stepRunName() {
+        return Optional.ofNullable(this.stepRunName);
+    }
+    /**
      * @return The type of step.
      * 
      */
@@ -124,6 +136,7 @@ public final class PipelineRunStepRun {
         private @Nullable String lifecycleDetails;
         private @Nullable String state;
         private @Nullable String stepName;
+        private @Nullable String stepRunName;
         private @Nullable String stepType;
         private @Nullable String timeFinished;
         private @Nullable String timeStarted;
@@ -135,6 +148,7 @@ public final class PipelineRunStepRun {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
     	      this.stepName = defaults.stepName;
+    	      this.stepRunName = defaults.stepRunName;
     	      this.stepType = defaults.stepType;
     	      this.timeFinished = defaults.timeFinished;
     	      this.timeStarted = defaults.timeStarted;
@@ -171,6 +185,12 @@ public final class PipelineRunStepRun {
             return this;
         }
         @CustomType.Setter
+        public Builder stepRunName(@Nullable String stepRunName) {
+
+            this.stepRunName = stepRunName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stepType(@Nullable String stepType) {
 
             this.stepType = stepType;
@@ -195,6 +215,7 @@ public final class PipelineRunStepRun {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
             _resultValue.stepName = stepName;
+            _resultValue.stepRunName = stepRunName;
             _resultValue.stepType = stepType;
             _resultValue.timeFinished = timeFinished;
             _resultValue.timeStarted = timeStarted;

@@ -22,6 +22,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSha
 	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the instance.
 	Ocpus float64 `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement string `pulumi:"resourceManagement"`
 	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
 	Vcpus int `pulumi:"vcpus"`
 }
@@ -46,6 +48,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSha
 	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement pulumi.StringInput `pulumi:"resourceManagement"`
 	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
 	Vcpus pulumi.IntInput `pulumi:"vcpus"`
 }
@@ -127,6 +131,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) float64 {
 		return v.Ocpus
 	}).(pulumi.Float64Output)
+}
+
+// This field is reserved for internal use.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfigOutput) ResourceManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig) string {
+		return v.ResourceManagement
+	}).(pulumi.StringOutput)
 }
 
 // The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
@@ -1473,6 +1484,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	InstanceOptions []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption `pulumi:"instanceOptions"`
 	// This is an advanced option.
 	IpxeScript string `pulumi:"ipxeScript"`
+	// Whether to enable AI enterprise on the instance.
+	IsAiEnterpriseEnabled bool `pulumi:"isAiEnterpriseEnabled"`
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
@@ -1550,6 +1563,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	InstanceOptions GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput `pulumi:"instanceOptions"`
 	// This is an advanced option.
 	IpxeScript pulumi.StringInput `pulumi:"ipxeScript"`
+	// Whether to enable AI enterprise on the instance.
+	IsAiEnterpriseEnabled pulumi.BoolInput `pulumi:"isAiEnterpriseEnabled"`
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
@@ -1744,6 +1759,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
 		return v.IpxeScript
 	}).(pulumi.StringOutput)
+}
+
+// Whether to enable AI enterprise on the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) IsAiEnterpriseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) bool {
+		return v.IsAiEnterpriseEnabled
+	}).(pulumi.BoolOutput)
 }
 
 // Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
@@ -2245,6 +2267,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
+	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetCidr string `pulumi:"subnetCidr"`
 	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -2285,6 +2309,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
+	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetCidr pulumi.StringInput `pulumi:"subnetCidr"`
 	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -2422,6 +2448,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) bool {
 		return v.SkipSourceDestCheck
 	}).(pulumi.BoolOutput)
+}
+
+// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) SubnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
+		return v.SubnetCidr
+	}).(pulumi.StringOutput)
 }
 
 // The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -3512,6 +3545,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the instance.
 	Ocpus float64 `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement string `pulumi:"resourceManagement"`
 	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
 	Vcpus int `pulumi:"vcpus"`
 }
@@ -3536,6 +3571,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the instance.
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement pulumi.StringInput `pulumi:"resourceManagement"`
 	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
 	Vcpus pulumi.IntInput `pulumi:"vcpus"`
 }
@@ -3617,6 +3654,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) float64 {
 		return v.Ocpus
 	}).(pulumi.Float64Output)
+}
+
+// This field is reserved for internal use.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ResourceManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) string {
+		return v.ResourceManagement
+	}).(pulumi.StringOutput)
 }
 
 // The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
@@ -4089,6 +4133,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondary
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
+	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetCidr string `pulumi:"subnetCidr"`
 	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -4129,6 +4175,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondary
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
+	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetCidr pulumi.StringInput `pulumi:"subnetCidr"`
 	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -4266,6 +4314,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecond
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetail) bool {
 		return v.SkipSourceDestCheck
 	}).(pulumi.BoolOutput)
+}
+
+// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailOutput) SubnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetail) string {
+		return v.SubnetCidr
+	}).(pulumi.StringOutput)
 }
 
 // The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -4551,6 +4606,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCr
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
+	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetCidr string `pulumi:"subnetCidr"`
 	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -4591,6 +4648,8 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCr
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
+	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetCidr pulumi.StringInput `pulumi:"subnetCidr"`
 	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
@@ -4728,6 +4787,13 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVni
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetail) bool {
 		return v.SkipSourceDestCheck
 	}).(pulumi.BoolOutput)
+}
+
+// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailOutput) SubnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetail) string {
+		return v.SubnetCidr
+	}).(pulumi.StringOutput)
 }
 
 // The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -5180,6 +5246,7 @@ type GetInstanceCreateVnicDetail struct {
 	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes  map[string]string `pulumi:"securityAttributes"`
 	SkipSourceDestCheck bool              `pulumi:"skipSourceDestCheck"`
+	SubnetCidr          string            `pulumi:"subnetCidr"`
 	SubnetId            string            `pulumi:"subnetId"`
 	VlanId              string            `pulumi:"vlanId"`
 }
@@ -5214,6 +5281,7 @@ type GetInstanceCreateVnicDetailArgs struct {
 	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes  pulumi.StringMapInput `pulumi:"securityAttributes"`
 	SkipSourceDestCheck pulumi.BoolInput      `pulumi:"skipSourceDestCheck"`
+	SubnetCidr          pulumi.StringInput    `pulumi:"subnetCidr"`
 	SubnetId            pulumi.StringInput    `pulumi:"subnetId"`
 	VlanId              pulumi.StringInput    `pulumi:"vlanId"`
 }
@@ -5323,6 +5391,10 @@ func (o GetInstanceCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMap
 
 func (o GetInstanceCreateVnicDetailOutput) SkipSourceDestCheck() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceCreateVnicDetail) bool { return v.SkipSourceDestCheck }).(pulumi.BoolOutput)
+}
+
+func (o GetInstanceCreateVnicDetailOutput) SubnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceCreateVnicDetail) string { return v.SubnetCidr }).(pulumi.StringOutput)
 }
 
 func (o GetInstanceCreateVnicDetailOutput) SubnetId() pulumi.StringOutput {
@@ -9923,6 +9995,8 @@ type GetInstanceShapeConfig struct {
 	Ocpus float64 `pulumi:"ocpus"`
 	// A short description of the instance's processor (CPU).
 	ProcessorDescription string `pulumi:"processorDescription"`
+	// This field is reserved for internal use.
+	ResourceManagement string `pulumi:"resourceManagement"`
 	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
 	Vcpus int `pulumi:"vcpus"`
 }
@@ -9962,6 +10036,8 @@ type GetInstanceShapeConfigArgs struct {
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 	// A short description of the instance's processor (CPU).
 	ProcessorDescription pulumi.StringInput `pulumi:"processorDescription"`
+	// This field is reserved for internal use.
+	ResourceManagement pulumi.StringInput `pulumi:"resourceManagement"`
 	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
 	Vcpus pulumi.IntInput `pulumi:"vcpus"`
 }
@@ -10074,6 +10150,11 @@ func (o GetInstanceShapeConfigOutput) Ocpus() pulumi.Float64Output {
 // A short description of the instance's processor (CPU).
 func (o GetInstanceShapeConfigOutput) ProcessorDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceShapeConfig) string { return v.ProcessorDescription }).(pulumi.StringOutput)
+}
+
+// This field is reserved for internal use.
+func (o GetInstanceShapeConfigOutput) ResourceManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) string { return v.ResourceManagement }).(pulumi.StringOutput)
 }
 
 // The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
@@ -10531,6 +10612,8 @@ type GetInstancesInstance struct {
 	InstanceOptions []GetInstancesInstanceInstanceOption `pulumi:"instanceOptions"`
 	// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
 	IpxeScript string `pulumi:"ipxeScript"`
+	// Whether AI enterprise is enabled on the instance.
+	IsAiEnterpriseEnabled bool `pulumi:"isAiEnterpriseEnabled"`
 	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
 	IsCrossNumaNode bool `pulumi:"isCrossNumaNode"`
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
@@ -10639,6 +10722,8 @@ type GetInstancesInstanceArgs struct {
 	InstanceOptions GetInstancesInstanceInstanceOptionArrayInput `pulumi:"instanceOptions"`
 	// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
 	IpxeScript pulumi.StringInput `pulumi:"ipxeScript"`
+	// Whether AI enterprise is enabled on the instance.
+	IsAiEnterpriseEnabled pulumi.BoolInput `pulumi:"isAiEnterpriseEnabled"`
 	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
 	IsCrossNumaNode pulumi.BoolInput `pulumi:"isCrossNumaNode"`
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
@@ -10850,6 +10935,11 @@ func (o GetInstancesInstanceOutput) InstanceOptions() GetInstancesInstanceInstan
 // When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
 func (o GetInstancesInstanceOutput) IpxeScript() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstance) string { return v.IpxeScript }).(pulumi.StringOutput)
+}
+
+// Whether AI enterprise is enabled on the instance.
+func (o GetInstancesInstanceOutput) IsAiEnterpriseEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstance) bool { return v.IsAiEnterpriseEnabled }).(pulumi.BoolOutput)
 }
 
 // Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
@@ -11367,6 +11457,7 @@ type GetInstancesInstanceCreateVnicDetail struct {
 	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes  map[string]string `pulumi:"securityAttributes"`
 	SkipSourceDestCheck bool              `pulumi:"skipSourceDestCheck"`
+	SubnetCidr          string            `pulumi:"subnetCidr"`
 	SubnetId            string            `pulumi:"subnetId"`
 	VlanId              string            `pulumi:"vlanId"`
 }
@@ -11399,6 +11490,7 @@ type GetInstancesInstanceCreateVnicDetailArgs struct {
 	// Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 	SecurityAttributes  pulumi.StringMapInput `pulumi:"securityAttributes"`
 	SkipSourceDestCheck pulumi.BoolInput      `pulumi:"skipSourceDestCheck"`
+	SubnetCidr          pulumi.StringInput    `pulumi:"subnetCidr"`
 	SubnetId            pulumi.StringInput    `pulumi:"subnetId"`
 	VlanId              pulumi.StringInput    `pulumi:"vlanId"`
 }
@@ -11506,6 +11598,10 @@ func (o GetInstancesInstanceCreateVnicDetailOutput) SecurityAttributes() pulumi.
 
 func (o GetInstancesInstanceCreateVnicDetailOutput) SkipSourceDestCheck() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstancesInstanceCreateVnicDetail) bool { return v.SkipSourceDestCheck }).(pulumi.BoolOutput)
+}
+
+func (o GetInstancesInstanceCreateVnicDetailOutput) SubnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceCreateVnicDetail) string { return v.SubnetCidr }).(pulumi.StringOutput)
 }
 
 func (o GetInstancesInstanceCreateVnicDetailOutput) SubnetId() pulumi.StringOutput {
@@ -12891,6 +12987,8 @@ type GetInstancesInstanceShapeConfig struct {
 	Ocpus float64 `pulumi:"ocpus"`
 	// A short description of the instance's processor (CPU).
 	ProcessorDescription string `pulumi:"processorDescription"`
+	// This field is reserved for internal use.
+	ResourceManagement string `pulumi:"resourceManagement"`
 	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
 	Vcpus int `pulumi:"vcpus"`
 }
@@ -12930,6 +13028,8 @@ type GetInstancesInstanceShapeConfigArgs struct {
 	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
 	// A short description of the instance's processor (CPU).
 	ProcessorDescription pulumi.StringInput `pulumi:"processorDescription"`
+	// This field is reserved for internal use.
+	ResourceManagement pulumi.StringInput `pulumi:"resourceManagement"`
 	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
 	Vcpus pulumi.IntInput `pulumi:"vcpus"`
 }
@@ -13042,6 +13142,11 @@ func (o GetInstancesInstanceShapeConfigOutput) Ocpus() pulumi.Float64Output {
 // A short description of the instance's processor (CPU).
 func (o GetInstancesInstanceShapeConfigOutput) ProcessorDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceShapeConfig) string { return v.ProcessorDescription }).(pulumi.StringOutput)
+}
+
+// This field is reserved for internal use.
+func (o GetInstancesInstanceShapeConfigOutput) ResourceManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceShapeConfig) string { return v.ResourceManagement }).(pulumi.StringOutput)
 }
 
 // The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
@@ -20850,6 +20955,8 @@ func (o GetPrivateIpsFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateIpsFi
 type GetPrivateIpsPrivateIp struct {
 	// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The secondary IPv4 CIDR prefix length.
+	CidrPrefixLength int `pulumi:"cidrPrefixLength"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -20866,6 +20973,8 @@ type GetPrivateIpsPrivateIp struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
 	IpState string `pulumi:"ipState"`
+	// Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+	Ipv4subnetCidrAtCreation string `pulumi:"ipv4subnetCidrAtCreation"`
 	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
 	IsPrimary  bool `pulumi:"isPrimary"`
 	IsReserved bool `pulumi:"isReserved"`
@@ -20899,6 +21008,8 @@ type GetPrivateIpsPrivateIpInput interface {
 type GetPrivateIpsPrivateIpArgs struct {
 	// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The secondary IPv4 CIDR prefix length.
+	CidrPrefixLength pulumi.IntInput `pulumi:"cidrPrefixLength"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -20915,6 +21026,8 @@ type GetPrivateIpsPrivateIpArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
 	IpState pulumi.StringInput `pulumi:"ipState"`
+	// Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+	Ipv4subnetCidrAtCreation pulumi.StringInput `pulumi:"ipv4subnetCidrAtCreation"`
 	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
 	IsPrimary  pulumi.BoolInput `pulumi:"isPrimary"`
 	IsReserved pulumi.BoolInput `pulumi:"isReserved"`
@@ -20990,6 +21103,11 @@ func (o GetPrivateIpsPrivateIpOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// The secondary IPv4 CIDR prefix length.
+func (o GetPrivateIpsPrivateIpOutput) CidrPrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) int { return v.CidrPrefixLength }).(pulumi.IntOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
 func (o GetPrivateIpsPrivateIpOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -21028,6 +21146,11 @@ func (o GetPrivateIpsPrivateIpOutput) IpAddress() pulumi.StringOutput {
 // State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
 func (o GetPrivateIpsPrivateIpOutput) IpState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.IpState }).(pulumi.StringOutput)
+}
+
+// Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+func (o GetPrivateIpsPrivateIpOutput) Ipv4subnetCidrAtCreation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateIpsPrivateIp) string { return v.Ipv4subnetCidrAtCreation }).(pulumi.StringOutput)
 }
 
 // Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
@@ -29447,6 +29570,11 @@ type GetSubnetsSubnet struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id string `pulumi:"id"`
+	// The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+	// * Ipv4 CIDR blocks must be valid.
+	// * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+	// * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+	Ipv4cidrBlocks []string `pulumi:"ipv4cidrBlocks"`
 	// For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
 	Ipv6cidrBlock string `pulumi:"ipv6cidrBlock"`
 	// The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
@@ -29505,6 +29633,11 @@ type GetSubnetsSubnetArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id pulumi.StringInput `pulumi:"id"`
+	// The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+	// * Ipv4 CIDR blocks must be valid.
+	// * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+	// * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+	Ipv4cidrBlocks pulumi.StringArrayInput `pulumi:"ipv4cidrBlocks"`
 	// For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
 	Ipv6cidrBlock pulumi.StringInput `pulumi:"ipv6cidrBlock"`
 	// The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
@@ -29627,6 +29760,14 @@ func (o GetSubnetsSubnetOutput) FreeformTags() pulumi.StringMapOutput {
 // The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 func (o GetSubnetsSubnetOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubnetsSubnet) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+// * Ipv4 CIDR blocks must be valid.
+// * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+// * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+func (o GetSubnetsSubnetOutput) Ipv4cidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSubnetsSubnet) []string { return v.Ipv4cidrBlocks }).(pulumi.StringArrayOutput)
 }
 
 // For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
@@ -33465,6 +33606,7 @@ type GetVnicAttachmentsVnicAttachmentCreateVnicDetail struct {
 	RouteTableId                         string                                                                                `pulumi:"routeTableId"`
 	SecurityAttributes                   map[string]string                                                                     `pulumi:"securityAttributes"`
 	SkipSourceDestCheck                  bool                                                                                  `pulumi:"skipSourceDestCheck"`
+	SubnetCidr                           string                                                                                `pulumi:"subnetCidr"`
 	// The OCID of the subnet to create the VNIC in.
 	SubnetId string `pulumi:"subnetId"`
 	// The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -33497,6 +33639,7 @@ type GetVnicAttachmentsVnicAttachmentCreateVnicDetailArgs struct {
 	RouteTableId                         pulumi.StringInput                                                                            `pulumi:"routeTableId"`
 	SecurityAttributes                   pulumi.StringMapInput                                                                         `pulumi:"securityAttributes"`
 	SkipSourceDestCheck                  pulumi.BoolInput                                                                              `pulumi:"skipSourceDestCheck"`
+	SubnetCidr                           pulumi.StringInput                                                                            `pulumi:"subnetCidr"`
 	// The OCID of the subnet to create the VNIC in.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
@@ -33609,6 +33752,10 @@ func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) SecurityAttribut
 
 func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) SkipSourceDestCheck() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) bool { return v.SkipSourceDestCheck }).(pulumi.BoolOutput)
+}
+
+func (o GetVnicAttachmentsVnicAttachmentCreateVnicDetailOutput) SubnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVnicAttachmentsVnicAttachmentCreateVnicDetail) string { return v.SubnetCidr }).(pulumi.StringOutput)
 }
 
 // The OCID of the subnet to create the VNIC in.

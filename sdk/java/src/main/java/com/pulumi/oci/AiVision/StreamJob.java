@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
- * 
- * Create a stream analysis job with given inputs and features.
- * 
  * ## Example Usage
  * 
  * <pre>

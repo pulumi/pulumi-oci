@@ -319,10 +319,6 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
                  secret: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Decryption Rule for the Network Firewall Policy.
-
         ## Example Usage
 
         ## Import
@@ -352,10 +348,6 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
                  args: NetworkFirewallPolicyDecryptionRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Decryption Rule for the Network Firewall Policy.
-
         ## Example Usage
 
         ## Import

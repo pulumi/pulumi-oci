@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
-    /// This resource provides the Log Analytics Entity resource in Oracle Cloud Infrastructure Log Analytics service.
-    /// 
-    /// Create a new log analytics entity.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -74,7 +74,7 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
 
     private GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {

@@ -17,10 +17,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
- * 
- * Add a nodeReplaceConfigurations to the cluster.
- * 
  * ## Example Usage
  * 
  * <pre>

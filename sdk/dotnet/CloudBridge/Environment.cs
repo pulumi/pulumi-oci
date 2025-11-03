@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudBridge
 {
     /// <summary>
-    /// This resource provides the Environment resource in Oracle Cloud Infrastructure Cloud Bridge service.
-    /// 
-    /// Creates a source environment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

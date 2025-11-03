@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Management Station Mirror Synchronize Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Synchronize the specified software source mirrors on the management station.
- *
  * ## Example Usage
  *
  * ```typescript

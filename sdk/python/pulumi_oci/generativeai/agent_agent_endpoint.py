@@ -664,10 +664,6 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                  should_enable_trace: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        Creates an endpoint.
-
         ## Example Usage
 
         ```python
@@ -762,10 +758,6 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                  args: AgentAgentEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        Creates an endpoint.
-
         ## Example Usage
 
         ```python

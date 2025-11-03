@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Quota resource in Oracle Cloud Infrastructure Limits service.
- * 
- * Creates a new quota with the details supplied.
- * 
  * ## Example Usage
  * 
  * <pre>

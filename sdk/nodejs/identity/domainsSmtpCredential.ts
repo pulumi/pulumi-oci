@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create a user's SMTP credentials.
- *
  * ## Example Usage
  *
  * ## Import

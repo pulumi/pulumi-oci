@@ -15,9 +15,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Updates the external cluster instance specified by `externalClusterInstanceId`.
+ * ## Example Usage
  * 
  * ## Import
  * 

@@ -10,6 +10,16 @@ export type Cluster = import("./cluster").Cluster;
 export const Cluster: typeof import("./cluster").Cluster = null as any;
 utilities.lazyLoad(exports, ["Cluster"], () => require("./cluster"));
 
+export { DatastoreArgs, DatastoreState } from "./datastore";
+export type Datastore = import("./datastore").Datastore;
+export const Datastore: typeof import("./datastore").Datastore = null as any;
+utilities.lazyLoad(exports, ["Datastore"], () => require("./datastore"));
+
+export { DatastoreClusterArgs, DatastoreClusterState } from "./datastoreCluster";
+export type DatastoreCluster = import("./datastoreCluster").DatastoreCluster;
+export const DatastoreCluster: typeof import("./datastoreCluster").DatastoreCluster = null as any;
+utilities.lazyLoad(exports, ["DatastoreCluster"], () => require("./datastoreCluster"));
+
 export { EsxiHostArgs, EsxiHostState } from "./esxiHost";
 export type EsxiHost = import("./esxiHost").EsxiHost;
 export const EsxiHost: typeof import("./esxiHost").EsxiHost = null as any;
@@ -24,6 +34,26 @@ export { GetClustersArgs, GetClustersResult, GetClustersOutputArgs } from "./get
 export const getClusters: typeof import("./getClusters").getClusters = null as any;
 export const getClustersOutput: typeof import("./getClusters").getClustersOutput = null as any;
 utilities.lazyLoad(exports, ["getClusters","getClustersOutput"], () => require("./getClusters"));
+
+export { GetDatastoreArgs, GetDatastoreResult, GetDatastoreOutputArgs } from "./getDatastore";
+export const getDatastore: typeof import("./getDatastore").getDatastore = null as any;
+export const getDatastoreOutput: typeof import("./getDatastore").getDatastoreOutput = null as any;
+utilities.lazyLoad(exports, ["getDatastore","getDatastoreOutput"], () => require("./getDatastore"));
+
+export { GetDatastoreClusterArgs, GetDatastoreClusterResult, GetDatastoreClusterOutputArgs } from "./getDatastoreCluster";
+export const getDatastoreCluster: typeof import("./getDatastoreCluster").getDatastoreCluster = null as any;
+export const getDatastoreClusterOutput: typeof import("./getDatastoreCluster").getDatastoreClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getDatastoreCluster","getDatastoreClusterOutput"], () => require("./getDatastoreCluster"));
+
+export { GetDatastoreClustersArgs, GetDatastoreClustersResult, GetDatastoreClustersOutputArgs } from "./getDatastoreClusters";
+export const getDatastoreClusters: typeof import("./getDatastoreClusters").getDatastoreClusters = null as any;
+export const getDatastoreClustersOutput: typeof import("./getDatastoreClusters").getDatastoreClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getDatastoreClusters","getDatastoreClustersOutput"], () => require("./getDatastoreClusters"));
+
+export { GetDatastoresArgs, GetDatastoresResult, GetDatastoresOutputArgs } from "./getDatastores";
+export const getDatastores: typeof import("./getDatastores").getDatastores = null as any;
+export const getDatastoresOutput: typeof import("./getDatastores").getDatastoresOutput = null as any;
+utilities.lazyLoad(exports, ["getDatastores","getDatastoresOutput"], () => require("./getDatastores"));
 
 export { GetExsiHostArgs, GetExsiHostResult, GetExsiHostOutputArgs } from "./getExsiHost";
 export const getExsiHost: typeof import("./getExsiHost").getExsiHost = null as any;
@@ -82,6 +112,10 @@ const _module = {
         switch (type) {
             case "oci:Ocvp/cluster:Cluster":
                 return new Cluster(name, <any>undefined, { urn })
+            case "oci:Ocvp/datastore:Datastore":
+                return new Datastore(name, <any>undefined, { urn })
+            case "oci:Ocvp/datastoreCluster:DatastoreCluster":
+                return new DatastoreCluster(name, <any>undefined, { urn })
             case "oci:Ocvp/esxiHost:EsxiHost":
                 return new EsxiHost(name, <any>undefined, { urn })
             case "oci:Ocvp/sddc:Sddc":
@@ -92,5 +126,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Ocvp/cluster", _module)
+pulumi.runtime.registerResourceModule("oci", "Ocvp/datastore", _module)
+pulumi.runtime.registerResourceModule("oci", "Ocvp/datastoreCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/esxiHost", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/sddc", _module)

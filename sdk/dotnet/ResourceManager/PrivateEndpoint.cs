@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ResourceManager
 {
     /// <summary>
-    /// This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
-    /// 
-    /// Creates a a private endpoint in the specified compartment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -42,6 +38,7 @@ namespace Pulumi.Oci.ResourceManager
     ///         },
     ///         IsUsedWithConfigurationSourceProvider = privateEndpointIsUsedWithConfigurationSourceProvider,
     ///         NsgIdLists = privateEndpointNsgIdList,
+    ///         SecurityAttributes = privateEndpointSecurityAttributes,
     ///     });
     /// 
     /// });
@@ -59,7 +56,7 @@ namespace Pulumi.Oci.ResourceManager
     public partial class PrivateEndpoint : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -77,7 +74,7 @@ namespace Pulumi.Oci.ResourceManager
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The private endpoint display name. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -101,13 +98,19 @@ namespace Pulumi.Oci.ResourceManager
         public Output<bool> IsUsedWithConfigurationSourceProvider { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+        /// (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
         /// </summary>
         [Output("nsgIdLists")]
         public Output<ImmutableArray<string>> NsgIdLists { get; private set; } = null!;
 
         /// <summary>
-        /// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+        /// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
+
+        /// <summary>
+        /// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
         /// </summary>
         [Output("sourceIps")]
         public Output<ImmutableArray<string>> SourceIps { get; private set; } = null!;
@@ -123,6 +126,12 @@ namespace Pulumi.Oci.ResourceManager
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
+
+        /// <summary>
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
@@ -187,7 +196,7 @@ namespace Pulumi.Oci.ResourceManager
     public sealed class PrivateEndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -211,7 +220,7 @@ namespace Pulumi.Oci.ResourceManager
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The private endpoint display name. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -250,12 +259,24 @@ namespace Pulumi.Oci.ResourceManager
         private InputList<string>? _nsgIdLists;
 
         /// <summary>
-        /// (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+        /// (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
         /// </summary>
         public InputList<string> NsgIdLists
         {
             get => _nsgIdLists ?? (_nsgIdLists = new InputList<string>());
             set => _nsgIdLists = value;
+        }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
         }
 
         /// <summary>
@@ -283,7 +304,7 @@ namespace Pulumi.Oci.ResourceManager
     public sealed class PrivateEndpointState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -307,7 +328,7 @@ namespace Pulumi.Oci.ResourceManager
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The private endpoint display name. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -346,7 +367,7 @@ namespace Pulumi.Oci.ResourceManager
         private InputList<string>? _nsgIdLists;
 
         /// <summary>
-        /// (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+        /// (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
         /// </summary>
         public InputList<string> NsgIdLists
         {
@@ -354,11 +375,23 @@ namespace Pulumi.Oci.ResourceManager
             set => _nsgIdLists = value;
         }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         [Input("sourceIps")]
         private InputList<string>? _sourceIps;
 
         /// <summary>
-        /// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+        /// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
         /// </summary>
         public InputList<string> SourceIps
         {
@@ -377,6 +410,18 @@ namespace Pulumi.Oci.ResourceManager
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`

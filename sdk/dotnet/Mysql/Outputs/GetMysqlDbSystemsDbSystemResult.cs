@@ -168,6 +168,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemSecureConnectionResult> SecureConnections;
         /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
         /// </summary>
         public readonly string ShapeName;
@@ -277,6 +281,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemSecureConnectionResult> secureConnections,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string shapeName,
 
             string shutdownType,
@@ -332,6 +338,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             ReadEndpoints = readEndpoints;
             Rests = rests;
             SecureConnections = secureConnections;
+            SecurityAttributes = securityAttributes;
             ShapeName = shapeName;
             ShutdownType = shutdownType;
             Sources = sources;

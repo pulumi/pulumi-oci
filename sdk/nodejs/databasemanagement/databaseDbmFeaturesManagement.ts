@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Enables a Database Management feature for the specified cloud database.
- *
  * ## Example Usage
  */
 export class DatabaseDbmFeaturesManagement extends pulumi.CustomResource {

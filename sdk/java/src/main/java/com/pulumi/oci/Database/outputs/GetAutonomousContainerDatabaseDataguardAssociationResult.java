@@ -26,7 +26,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
     private String applyRate;
     private String autonomousContainerDatabaseDataguardAssociationId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      */
     private String autonomousContainerDatabaseId;
@@ -73,7 +73,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
      */
     private String peerLifecycleState;
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     private String peerRole;
@@ -83,7 +83,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
      */
     private String protectionMode;
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     private String role;
@@ -133,7 +133,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
         return this.autonomousContainerDatabaseDataguardAssociationId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      */
     public String autonomousContainerDatabaseId() {
@@ -210,7 +210,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
         return this.peerLifecycleState;
     }
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public String peerRole() {
@@ -224,7 +224,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationResult {
         return this.protectionMode;
     }
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public String role() {

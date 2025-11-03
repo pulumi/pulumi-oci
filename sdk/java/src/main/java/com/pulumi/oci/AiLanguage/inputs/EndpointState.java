@@ -18,6 +18,21 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     public static final EndpointState Empty = new EndpointState();
 
     /**
+     * (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     * 
+     */
+    @Import(name="alias")
+    private @Nullable Output<String> alias;
+
+    /**
+     * @return (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     * 
+     */
+    public Optional<Output<String>> alias() {
+        return Optional.ofNullable(this.alias);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
      * 
      */
@@ -221,6 +236,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     private EndpointState() {}
 
     private EndpointState(EndpointState $) {
+        this.alias = $.alias;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -252,6 +268,27 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(EndpointState defaults) {
             $ = new EndpointState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param alias (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alias(@Nullable Output<String> alias) {
+            $.alias = alias;
+            return this;
+        }
+
+        /**
+         * @param alias (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder alias(String alias) {
+            return alias(Output.of(alias));
         }
 
         /**

@@ -59,6 +59,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelinesPipelineLogConfigurationDetailResult> LogConfigurationDetails;
         /// <summary>
+        /// Parameters used in the pipeline.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> Parameters;
+        /// <summary>
         /// &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         /// </summary>
         public readonly string ProjectId;
@@ -114,6 +118,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetPipelinesPipelineLogConfigurationDetailResult> logConfigurationDetails,
 
+            ImmutableDictionary<string, string> parameters,
+
             string projectId,
 
             string state,
@@ -142,6 +148,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             InfrastructureConfigurationDetails = infrastructureConfigurationDetails;
             LifecycleDetails = lifecycleDetails;
             LogConfigurationDetails = logConfigurationDetails;
+            Parameters = parameters;
             ProjectId = projectId;
             State = state;
             StepArtifacts = stepArtifacts;

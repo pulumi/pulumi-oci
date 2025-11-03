@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Namespace Lookup resource in Oracle Cloud Infrastructure Log Analytics service.
- *
- * Creates a lookup with the specified name, type and description. The csv file containing the lookup content is passed in as binary data in the request.
- *
  * ## Example Usage
  *
  * ```typescript

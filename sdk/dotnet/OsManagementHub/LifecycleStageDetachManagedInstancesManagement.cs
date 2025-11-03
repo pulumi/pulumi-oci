@@ -10,9 +10,32 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Lifecycle Stage Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// ## Example Usage
     /// 
-    /// Detaches (removes) a managed instance from a lifecycle stage.
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testLifecycleStageDetachManagedInstancesManagement = new Oci.OsManagementHub.LifecycleStageDetachManagedInstancesManagement("test_lifecycle_stage_detach_managed_instances_management", new()
+    ///     {
+    ///         LifecycleStageId = testLifecycleStage.Id,
+    ///         ManagedInstanceDetails = new Oci.OsManagementHub.Inputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsArgs
+    ///         {
+    ///             ManagedInstances = lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsManagedInstances,
+    ///             WorkRequestDetails = new Oci.OsManagementHub.Inputs.LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs
+    ///             {
+    ///                 Description = lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription,
+    ///                 DisplayName = lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// 
     /// ## Import
     /// 

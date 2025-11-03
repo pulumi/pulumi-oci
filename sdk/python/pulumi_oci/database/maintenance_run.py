@@ -38,7 +38,7 @@ class MaintenanceRunArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
-        :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[_builtins.bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[_builtins.str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
                
@@ -112,7 +112,7 @@ class MaintenanceRunArgs:
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "database_software_image_id")
 
@@ -190,7 +190,7 @@ class _MaintenanceRunState:
         :param pulumi.Input[_builtins.int] current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param pulumi.Input[_builtins.str] current_patching_component: The name of the current infrastruture component that is getting patched.
         :param pulumi.Input[_builtins.int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
-        :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[_builtins.str] description: Description of the maintenance run.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the maintenance run.
         :param pulumi.Input[_builtins.str] estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
@@ -202,7 +202,7 @@ class _MaintenanceRunState:
         :param pulumi.Input[_builtins.str] maintenance_subtype: Maintenance sub-type.
         :param pulumi.Input[_builtins.str] maintenance_type: Maintenance type.
         :param pulumi.Input[_builtins.int] patch_failure_count: Contain the patch failure count.
-        :param pulumi.Input[_builtins.str] patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        :param pulumi.Input[_builtins.str] patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         :param pulumi.Input[_builtins.str] patch_type: Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         :param pulumi.Input[_builtins.str] patching_end_time: The time when the patching operation ended.
         :param pulumi.Input[_builtins.str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -212,7 +212,7 @@ class _MaintenanceRunState:
         :param pulumi.Input[_builtins.str] patching_status: The status of the patching operation.
         :param pulumi.Input[_builtins.str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
-        :param pulumi.Input[_builtins.str] state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        :param pulumi.Input[_builtins.str] state: The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] target_db_server_version: The target software version for the database server patching operation.
         :param pulumi.Input[_builtins.str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
@@ -348,7 +348,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "database_software_image_id")
 
@@ -492,7 +492,7 @@ class _MaintenanceRunState:
     @pulumi.getter(name="patchId")
     def patch_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
 
@@ -590,7 +590,7 @@ class _MaintenanceRunState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 
@@ -726,13 +726,6 @@ class MaintenanceRun(pulumi.CustomResource):
                  time_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a maintenance run with one of the following:
-        The latest available release update patch (RUP) for the Autonomous Container Database.
-        The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
-        Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
-
         ## Example Usage
 
         ```python
@@ -760,7 +753,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
-        :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[_builtins.bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         :param pulumi.Input[_builtins.str] patch_type: Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         :param pulumi.Input[_builtins.str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -780,13 +773,6 @@ class MaintenanceRun(pulumi.CustomResource):
                  args: MaintenanceRunArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a maintenance run with one of the following:
-        The latest available release update patch (RUP) for the Autonomous Container Database.
-        The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
-        Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
-
         ## Example Usage
 
         ```python
@@ -937,7 +923,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] current_custom_action_timeout_in_mins: Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         :param pulumi.Input[_builtins.str] current_patching_component: The name of the current infrastruture component that is getting patched.
         :param pulumi.Input[_builtins.int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
-        :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param pulumi.Input[_builtins.str] description: Description of the maintenance run.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the maintenance run.
         :param pulumi.Input[_builtins.str] estimated_component_patching_start_time: The estimated start time of the next infrastruture component patching operation.
@@ -949,7 +935,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] maintenance_subtype: Maintenance sub-type.
         :param pulumi.Input[_builtins.str] maintenance_type: Maintenance type.
         :param pulumi.Input[_builtins.int] patch_failure_count: Contain the patch failure count.
-        :param pulumi.Input[_builtins.str] patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        :param pulumi.Input[_builtins.str] patch_id: The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         :param pulumi.Input[_builtins.str] patch_type: Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         :param pulumi.Input[_builtins.str] patching_end_time: The time when the patching operation ended.
         :param pulumi.Input[_builtins.str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
@@ -959,7 +945,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] patching_status: The status of the patching operation.
         :param pulumi.Input[_builtins.str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
-        :param pulumi.Input[_builtins.str] state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        :param pulumi.Input[_builtins.str] state: The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] target_db_server_version: The target software version for the database server patching operation.
         :param pulumi.Input[_builtins.str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
@@ -1050,7 +1036,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="databaseSoftwareImageId")
     def database_software_image_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "database_software_image_id")
 
@@ -1146,7 +1132,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter(name="patchId")
     def patch_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+        The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
 
@@ -1212,7 +1198,7 @@ class MaintenanceRun(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 

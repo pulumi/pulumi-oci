@@ -171,6 +171,10 @@ namespace Pulumi.Oci.DataScience
         /// The pipeline log configuration details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelineLogConfigurationDetailResult> LogConfigurationDetails;
+        /// <summary>
+        /// Parameters used in the pipeline.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> Parameters;
         public readonly string PipelineId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
@@ -228,6 +232,8 @@ namespace Pulumi.Oci.DataScience
 
             ImmutableArray<Outputs.GetPipelineLogConfigurationDetailResult> logConfigurationDetails,
 
+            ImmutableDictionary<string, string> parameters,
+
             string pipelineId,
 
             string projectId,
@@ -258,6 +264,7 @@ namespace Pulumi.Oci.DataScience
             InfrastructureConfigurationDetails = infrastructureConfigurationDetails;
             LifecycleDetails = lifecycleDetails;
             LogConfigurationDetails = logConfigurationDetails;
+            Parameters = parameters;
             PipelineId = pipelineId;
             ProjectId = projectId;
             State = state;

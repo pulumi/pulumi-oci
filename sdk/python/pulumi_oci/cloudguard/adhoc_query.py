@@ -308,10 +308,6 @@ class AdhocQuery(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a AdhocQuery resource.
-
         ## Example Usage
 
         ```python
@@ -364,10 +360,6 @@ class AdhocQuery(pulumi.CustomResource):
                  args: AdhocQueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Adhoc Query resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a AdhocQuery resource.
-
         ## Example Usage
 
         ```python

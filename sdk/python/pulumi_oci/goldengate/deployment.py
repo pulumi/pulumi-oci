@@ -27,6 +27,7 @@ class DeploymentArgs:
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input['DeploymentBackupScheduleArgs']] = None,
                  byol_cpu_core_count_limit: Optional[pulumi.Input[_builtins.int]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  deployment_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -48,8 +49,10 @@ class DeploymentArgs:
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ogg_data: Optional[pulumi.Input['DeploymentOggDataArgs']] = None,
                  placements: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Deployment resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
@@ -58,6 +61,7 @@ class DeploymentArgs:
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input['DeploymentBackupScheduleArgs'] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
@@ -78,7 +82,9 @@ class DeploymentArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]] placements: (Updatable) An array of local peers of deployment
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -89,6 +95,8 @@ class DeploymentArgs:
             pulumi.set(__self__, "backup_schedule", backup_schedule)
         if byol_cpu_core_count_limit is not None:
             pulumi.set(__self__, "byol_cpu_core_count_limit", byol_cpu_core_count_limit)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if defined_tags is not None:
@@ -131,10 +139,14 @@ class DeploymentArgs:
             pulumi.set(__self__, "ogg_data", ogg_data)
         if placements is not None:
             pulumi.set(__self__, "placements", placements)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if source_deployment_id is not None:
             pulumi.set(__self__, "source_deployment_id", source_deployment_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -207,6 +219,18 @@ class DeploymentArgs:
     @byol_cpu_core_count_limit.setter
     def byol_cpu_core_count_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "byol_cpu_core_count_limit", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
@@ -458,6 +482,18 @@ class DeploymentArgs:
         pulumi.set(self, "placements", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="sourceDeploymentId")
     def source_deployment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -478,6 +514,18 @@ class DeploymentArgs:
     def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
 
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subscription_id", value)
+
 
 @pulumi.input_type
 class _DeploymentState:
@@ -486,6 +534,7 @@ class _DeploymentState:
                  backup_schedule: Optional[pulumi.Input['DeploymentBackupScheduleArgs']] = None,
                  byol_cpu_core_count_limit: Optional[pulumi.Input[_builtins.int]] = None,
                  category: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -523,10 +572,12 @@ class _DeploymentState:
                  placements: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]]] = None,
                  private_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
                  public_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  storage_utilization_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_last_backup_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
@@ -542,6 +593,7 @@ class _DeploymentState:
         :param pulumi.Input['DeploymentBackupScheduleArgs'] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
         :param pulumi.Input[_builtins.str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -578,9 +630,11 @@ class _DeploymentState:
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[_builtins.str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[_builtins.str] public_ip_address: The public IP address representing the access point for the Deployment.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[_builtins.str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
+        :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_last_backup_scheduled: The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
@@ -599,6 +653,8 @@ class _DeploymentState:
             pulumi.set(__self__, "byol_cpu_core_count_limit", byol_cpu_core_count_limit)
         if category is not None:
             pulumi.set(__self__, "category", category)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if cpu_core_count is not None:
@@ -673,6 +729,8 @@ class _DeploymentState:
             pulumi.set(__self__, "private_ip_address", private_ip_address)
         if public_ip_address is not None:
             pulumi.set(__self__, "public_ip_address", public_ip_address)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if source_deployment_id is not None:
             pulumi.set(__self__, "source_deployment_id", source_deployment_id)
         if state is not None:
@@ -681,6 +739,8 @@ class _DeploymentState:
             pulumi.set(__self__, "storage_utilization_in_bytes", storage_utilization_in_bytes)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
@@ -747,6 +807,18 @@ class _DeploymentState:
     @category.setter
     def category(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "category", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1190,6 +1262,18 @@ class _DeploymentState:
         pulumi.set(self, "public_ip_address", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="sourceDeploymentId")
     def source_deployment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1233,6 +1317,18 @@ class _DeploymentState:
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
@@ -1352,6 +1448,7 @@ class Deployment(pulumi.CustomResource):
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
                  byol_cpu_core_count_limit: Optional[pulumi.Input[_builtins.int]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1375,14 +1472,14 @@ class Deployment(pulumi.CustomResource):
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ogg_data: Optional[pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
                  placements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Deployment.
+        ## Example Usage
 
         ## Import
 
@@ -1397,6 +1494,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a placement.
         :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -1419,8 +1517,10 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]] placements: (Updatable) An array of local peers of deployment
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
+        :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         """
         ...
     @overload
@@ -1429,9 +1529,7 @@ class Deployment(pulumi.CustomResource):
                  args: DeploymentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Deployment.
+        ## Example Usage
 
         ## Import
 
@@ -1459,6 +1557,7 @@ class Deployment(pulumi.CustomResource):
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
                  byol_cpu_core_count_limit: Optional[pulumi.Input[_builtins.int]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1482,9 +1581,11 @@ class Deployment(pulumi.CustomResource):
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ogg_data: Optional[pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict']]] = None,
                  placements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  source_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1497,6 +1598,7 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["availability_domain"] = availability_domain
             __props__.__dict__["backup_schedule"] = backup_schedule
             __props__.__dict__["byol_cpu_core_count_limit"] = byol_cpu_core_count_limit
+            __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1524,11 +1626,13 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["ogg_data"] = ogg_data
             __props__.__dict__["placements"] = placements
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["source_deployment_id"] = source_deployment_id
             __props__.__dict__["state"] = state
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["category"] = None
             __props__.__dict__["deployment_diagnostic_datas"] = None
             __props__.__dict__["deployment_role"] = None
@@ -1568,6 +1672,7 @@ class Deployment(pulumi.CustomResource):
             backup_schedule: Optional[pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']]] = None,
             byol_cpu_core_count_limit: Optional[pulumi.Input[_builtins.int]] = None,
             category: Optional[pulumi.Input[_builtins.str]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1605,10 +1710,12 @@ class Deployment(pulumi.CustomResource):
             placements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]]] = None,
             private_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
             public_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             source_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             storage_utilization_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_last_backup_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1629,6 +1736,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Union['DeploymentBackupScheduleArgs', 'DeploymentBackupScheduleArgsDict']] backup_schedule: (Updatable) Defines the backup schedule details for create operation.
         :param pulumi.Input[_builtins.int] byol_cpu_core_count_limit: (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
         :param pulumi.Input[_builtins.str] category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.int] cpu_core_count: (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -1665,9 +1773,11 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict']]]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[_builtins.str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[_builtins.str] public_ip_address: The public IP address representing the access point for the Deployment.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[_builtins.str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
+        :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[_builtins.str] time_last_backup_scheduled: The timestamp of last deployment backup scheduled. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-10-25T18:19:29.600Z`.
@@ -1686,6 +1796,7 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["backup_schedule"] = backup_schedule
         __props__.__dict__["byol_cpu_core_count_limit"] = byol_cpu_core_count_limit
         __props__.__dict__["category"] = category
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1723,10 +1834,12 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["placements"] = placements
         __props__.__dict__["private_ip_address"] = private_ip_address
         __props__.__dict__["public_ip_address"] = public_ip_address
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["source_deployment_id"] = source_deployment_id
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_utilization_in_bytes"] = storage_utilization_in_bytes
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_last_backup_scheduled"] = time_last_backup_scheduled
@@ -1769,6 +1882,14 @@ class Deployment(pulumi.CustomResource):
         The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         """
         return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -2064,6 +2185,14 @@ class Deployment(pulumi.CustomResource):
         return pulumi.get(self, "public_ip_address")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="sourceDeploymentId")
     def source_deployment_id(self) -> pulumi.Output[_builtins.str]:
         """
@@ -2091,6 +2220,14 @@ class Deployment(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")

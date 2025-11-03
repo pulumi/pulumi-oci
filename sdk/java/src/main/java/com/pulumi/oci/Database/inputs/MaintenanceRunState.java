@@ -81,14 +81,14 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     @Import(name="databaseSoftwareImageId")
     private @Nullable Output<String> databaseSoftwareImageId;
 
     /**
-     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     public Optional<Output<String>> databaseSoftwareImageId() {
@@ -261,14 +261,14 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
      * 
      */
     @Import(name="patchId")
     private @Nullable Output<String> patchId;
 
     /**
-     * @return The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     * @return The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
      * 
      */
     public Optional<Output<String>> patchId() {
@@ -385,14 +385,14 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * @return The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
     public Optional<Output<String>> state() {
@@ -682,7 +682,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param databaseSoftwareImageId The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * 
          * @return builder
          * 
@@ -693,7 +693,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param databaseSoftwareImageId The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * 
          * @return builder
          * 
@@ -944,7 +944,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param patchId The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+         * @param patchId The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
          * 
          * @return builder
          * 
@@ -955,7 +955,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param patchId The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+         * @param patchId The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
          * 
          * @return builder
          * 
@@ -1126,7 +1126,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param state The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+         * @param state The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          * 
          * @return builder
          * 
@@ -1137,7 +1137,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param state The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+         * @param state The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
          * 
          * @return builder
          * 

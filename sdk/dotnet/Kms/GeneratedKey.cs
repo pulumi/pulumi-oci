@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Kms
 {
     /// <summary>
-    /// This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
-    /// 
-    /// Generates a key that you can use to encrypt or decrypt data.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

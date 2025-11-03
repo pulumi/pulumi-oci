@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the License Record resource in Oracle Cloud Infrastructure License Manager service.
-//
-// Creates a new license record for the given product license ID.
-//
 // ## Example Usage
 //
 // ```go

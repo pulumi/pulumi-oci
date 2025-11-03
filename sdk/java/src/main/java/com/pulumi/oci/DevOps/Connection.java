@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Connection resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Creates a new connection.
- * 
  * ## Example Usage
  * 
  * <pre>

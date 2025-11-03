@@ -23,6 +23,12 @@ __all__ = [
     'ClusterUpgradeLicenseArgsDict',
     'ClusterVsphereUpgradeObjectArgs',
     'ClusterVsphereUpgradeObjectArgsDict',
+    'DatastoreBlockVolumeDetailArgs',
+    'DatastoreBlockVolumeDetailArgsDict',
+    'DatastoreBlockVolumeDetailAttachmentArgs',
+    'DatastoreBlockVolumeDetailAttachmentArgsDict',
+    'EsxiHostDatastoreAttachmentArgs',
+    'EsxiHostDatastoreAttachmentArgsDict',
     'SddcDatastoreArgs',
     'SddcDatastoreArgsDict',
     'SddcHcxOnPremLicenseArgs',
@@ -41,6 +47,10 @@ __all__ = [
     'SddcVsphereUpgradeObjectArgsDict',
     'GetClustersFilterArgs',
     'GetClustersFilterArgsDict',
+    'GetDatastoreClustersFilterArgs',
+    'GetDatastoreClustersFilterArgsDict',
+    'GetDatastoresFilterArgs',
+    'GetDatastoresFilterArgsDict',
     'GetExsiHostsFilterArgs',
     'GetExsiHostsFilterArgsDict',
     'GetSddcsFilterArgs',
@@ -555,6 +565,262 @@ class ClusterVsphereUpgradeObjectArgs:
 
 
 if not MYPY:
+    class DatastoreBlockVolumeDetailArgsDict(TypedDict):
+        attachments: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgsDict']]]]
+        """
+        List of BlockVolumeAttachment objects containing information about attachment details
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        """
+        iqn: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        An IQN of the Block Storage Volume.
+        """
+elif False:
+    DatastoreBlockVolumeDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatastoreBlockVolumeDetailArgs:
+    def __init__(__self__, *,
+                 attachments: Optional[pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 iqn: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]] attachments: List of BlockVolumeAttachment objects containing information about attachment details
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        :param pulumi.Input[_builtins.str] iqn: An IQN of the Block Storage Volume.
+        """
+        if attachments is not None:
+            pulumi.set(__self__, "attachments", attachments)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if iqn is not None:
+            pulumi.set(__self__, "iqn", iqn)
+
+    @_builtins.property
+    @pulumi.getter
+    def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]]:
+        """
+        List of BlockVolumeAttachment objects containing information about attachment details
+        """
+        return pulumi.get(self, "attachments")
+
+    @attachments.setter
+    def attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatastoreBlockVolumeDetailAttachmentArgs']]]]):
+        pulumi.set(self, "attachments", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def iqn(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        An IQN of the Block Storage Volume.
+        """
+        return pulumi.get(self, "iqn")
+
+    @iqn.setter
+    def iqn(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "iqn", value)
+
+
+if not MYPY:
+    class DatastoreBlockVolumeDetailAttachmentArgsDict(TypedDict):
+        esxi_host_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+        """
+        ip_address: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The IP address of block volume attachment.
+        """
+        port: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The port of block volume attachment.
+        """
+elif False:
+    DatastoreBlockVolumeDetailAttachmentArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatastoreBlockVolumeDetailAttachmentArgs:
+    def __init__(__self__, *,
+                 esxi_host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 port: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] esxi_host_id: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+        :param pulumi.Input[_builtins.str] ip_address: The IP address of block volume attachment.
+        :param pulumi.Input[_builtins.int] port: The port of block volume attachment.
+        """
+        if esxi_host_id is not None:
+            pulumi.set(__self__, "esxi_host_id", esxi_host_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+
+    @_builtins.property
+    @pulumi.getter(name="esxiHostId")
+    def esxi_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that block volume is attached to.
+        """
+        return pulumi.get(self, "esxi_host_id")
+
+    @esxi_host_id.setter
+    def esxi_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "esxi_host_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The IP address of block volume attachment.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The port of block volume attachment.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "port", value)
+
+
+if not MYPY:
+    class EsxiHostDatastoreAttachmentArgsDict(TypedDict):
+        block_volume_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+        """
+        datastore_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+        """
+        ip_address: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The IP address of datastore attachment.
+        """
+        port: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The port of datastore attachment.
+        """
+        volume_iqn: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        An IQN of the Block Storage Volume.
+        """
+elif False:
+    EsxiHostDatastoreAttachmentArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class EsxiHostDatastoreAttachmentArgs:
+    def __init__(__self__, *,
+                 block_volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 datastore_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 port: Optional[pulumi.Input[_builtins.int]] = None,
+                 volume_iqn: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] block_volume_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+        :param pulumi.Input[_builtins.str] datastore_id: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+        :param pulumi.Input[_builtins.str] ip_address: The IP address of datastore attachment.
+        :param pulumi.Input[_builtins.int] port: The port of datastore attachment.
+        :param pulumi.Input[_builtins.str] volume_iqn: An IQN of the Block Storage Volume.
+        """
+        if block_volume_id is not None:
+            pulumi.set(__self__, "block_volume_id", block_volume_id)
+        if datastore_id is not None:
+            pulumi.set(__self__, "datastore_id", datastore_id)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if volume_iqn is not None:
+            pulumi.set(__self__, "volume_iqn", volume_iqn)
+
+    @_builtins.property
+    @pulumi.getter(name="blockVolumeId")
+    def block_volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Block Volume that belongs to the datastore.
+        """
+        return pulumi.get(self, "block_volume_id")
+
+    @block_volume_id.setter
+    def block_volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "block_volume_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="datastoreId")
+    def datastore_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore that ESXi host is attached to.
+        """
+        return pulumi.get(self, "datastore_id")
+
+    @datastore_id.setter
+    def datastore_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "datastore_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The IP address of datastore attachment.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The port of datastore attachment.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "port", value)
+
+    @_builtins.property
+    @pulumi.getter(name="volumeIqn")
+    def volume_iqn(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        An IQN of the Block Storage Volume.
+        """
+        return pulumi.get(self, "volume_iqn")
+
+    @volume_iqn.setter
+    def volume_iqn(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "volume_iqn", value)
+
+
+if not MYPY:
     class SddcDatastoreArgsDict(TypedDict):
         block_volume_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
         """
@@ -751,13 +1017,17 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         """
+        datastore_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        A list of datastore clusters.
+        """
         datastores: NotRequired[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgsDict']]]]
         """
         A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         """
         display_name: NotRequired[pulumi.Input[_builtins.str]]
         """
-        A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         initial_commitment: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -800,6 +1070,7 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
                  vsphere_type: pulumi.Input[_builtins.str],
                  actual_esxi_hosts_count: Optional[pulumi.Input[_builtins.int]] = None,
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 datastore_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  datastores: Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  initial_commitment: Optional[pulumi.Input[_builtins.str]] = None,
@@ -817,8 +1088,9 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
         :param pulumi.Input[_builtins.str] vsphere_type: vSphere Cluster types.
         :param pulumi.Input[_builtins.int] actual_esxi_hosts_count: The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] datastore_cluster_ids: A list of datastore clusters.
         :param pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
-        :param pulumi.Input[_builtins.str] display_name: A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] display_name: A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] initial_commitment: The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
         :param pulumi.Input[_builtins.float] initial_host_ocpu_count: The initial OCPU count of the Cluster's ESXi hosts.
         :param pulumi.Input[_builtins.str] initial_host_shape_name: The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
@@ -836,6 +1108,8 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
             pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
         if capacity_reservation_id is not None:
             pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if datastore_cluster_ids is not None:
+            pulumi.set(__self__, "datastore_cluster_ids", datastore_cluster_ids)
         if datastores is not None:
             pulumi.set(__self__, "datastores", datastores)
         if display_name is not None:
@@ -918,6 +1192,18 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
         pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="datastoreClusterIds")
+    def datastore_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of datastore clusters.
+        """
+        return pulumi.get(self, "datastore_cluster_ids")
+
+    @datastore_cluster_ids.setter
+    def datastore_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "datastore_cluster_ids", value)
+
+    @_builtins.property
     @pulumi.getter
     def datastores(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs']]]]:
         """
@@ -933,7 +1219,7 @@ class SddcInitialConfigurationInitialClusterConfigurationArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -1515,6 +1801,100 @@ elif False:
 
 @pulumi.input_type
 class GetClustersFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDatastoreClustersFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetDatastoreClustersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDatastoreClustersFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDatastoresFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetDatastoresFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDatastoresFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

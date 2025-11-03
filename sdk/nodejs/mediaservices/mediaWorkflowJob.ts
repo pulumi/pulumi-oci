@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
- *
- * Run the MediaWorkflow according to the given mediaWorkflow definition and configuration.
- *
  * ## Example Usage
  *
  * ```typescript

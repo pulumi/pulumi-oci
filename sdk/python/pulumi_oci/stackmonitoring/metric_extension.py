@@ -525,10 +525,6 @@ class MetricExtension(pulumi.CustomResource):
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a new metric extension resource for a given compartment
-
         ## Example Usage
 
         ```python
@@ -618,10 +614,6 @@ class MetricExtension(pulumi.CustomResource):
                  args: MetricExtensionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        Creates a new metric extension resource for a given compartment
-
         ## Example Usage
 
         ```python

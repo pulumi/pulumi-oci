@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Db Node Console History resource in Oracle Cloud Infrastructure Database service.
- * 
- * Captures the most recent serial console data (up to a megabyte) for the specified database node.
- * 
  * ## Example Usage
  * 
  * <pre>

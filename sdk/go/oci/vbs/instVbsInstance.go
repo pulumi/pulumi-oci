@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
-//
-// Creates a new VbsInstance.
-//
 // ## Example Usage
 //
 // ```go

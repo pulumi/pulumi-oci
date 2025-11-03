@@ -27,7 +27,7 @@ class GetFusionEnvironmentResult:
     """
     A collection of values returned by getFusionEnvironment.
     """
-    def __init__(__self__, additional_language_packs=None, applied_patch_bundles=None, compartment_id=None, create_fusion_environment_admin_user_details=None, defined_tags=None, display_name=None, dns_prefix=None, domain_id=None, freeform_tags=None, fusion_environment_family_id=None, fusion_environment_id=None, fusion_environment_type=None, id=None, idcs_domain_url=None, is_break_glass_enabled=None, kms_key_id=None, kms_key_infos=None, lifecycle_details=None, lockbox_id=None, maintenance_policies=None, public_url=None, refreshes=None, rules=None, state=None, subscription_ids=None, system_name=None, time_created=None, time_upcoming_maintenance=None, time_updated=None, version=None):
+    def __init__(__self__, additional_language_packs=None, applied_patch_bundles=None, compartment_id=None, create_fusion_environment_admin_user_details=None, defined_tags=None, display_name=None, dns_prefix=None, domain_id=None, freeform_tags=None, fusion_environment_family_id=None, fusion_environment_id=None, fusion_environment_type=None, id=None, idcs_domain_url=None, is_break_glass_enabled=None, is_ipv6dual_stack_enabled=None, kms_key_id=None, kms_key_infos=None, lifecycle_details=None, lockbox_id=None, maintenance_policies=None, public_url=None, refreshes=None, rules=None, state=None, subscription_ids=None, system_name=None, time_created=None, time_upcoming_maintenance=None, time_updated=None, version=None):
         if additional_language_packs and not isinstance(additional_language_packs, list):
             raise TypeError("Expected argument 'additional_language_packs' to be a list")
         pulumi.set(__self__, "additional_language_packs", additional_language_packs)
@@ -73,6 +73,9 @@ class GetFusionEnvironmentResult:
         if is_break_glass_enabled and not isinstance(is_break_glass_enabled, bool):
             raise TypeError("Expected argument 'is_break_glass_enabled' to be a bool")
         pulumi.set(__self__, "is_break_glass_enabled", is_break_glass_enabled)
+        if is_ipv6dual_stack_enabled and not isinstance(is_ipv6dual_stack_enabled, bool):
+            raise TypeError("Expected argument 'is_ipv6dual_stack_enabled' to be a bool")
+        pulumi.set(__self__, "is_ipv6dual_stack_enabled", is_ipv6dual_stack_enabled)
         if kms_key_id and not isinstance(kms_key_id, str):
             raise TypeError("Expected argument 'kms_key_id' to be a str")
         pulumi.set(__self__, "kms_key_id", kms_key_id)
@@ -234,6 +237,14 @@ class GetFusionEnvironmentResult:
         return pulumi.get(self, "is_break_glass_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isIpv6dualStackEnabled")
+    def is_ipv6dual_stack_enabled(self) -> _builtins.bool:
+        """
+        Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        """
+        return pulumi.get(self, "is_ipv6dual_stack_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
@@ -375,6 +386,7 @@ class AwaitableGetFusionEnvironmentResult(GetFusionEnvironmentResult):
             id=self.id,
             idcs_domain_url=self.idcs_domain_url,
             is_break_glass_enabled=self.is_break_glass_enabled,
+            is_ipv6dual_stack_enabled=self.is_ipv6dual_stack_enabled,
             kms_key_id=self.kms_key_id,
             kms_key_infos=self.kms_key_infos,
             lifecycle_details=self.lifecycle_details,
@@ -432,6 +444,7 @@ def get_fusion_environment(fusion_environment_id: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         idcs_domain_url=pulumi.get(__ret__, 'idcs_domain_url'),
         is_break_glass_enabled=pulumi.get(__ret__, 'is_break_glass_enabled'),
+        is_ipv6dual_stack_enabled=pulumi.get(__ret__, 'is_ipv6dual_stack_enabled'),
         kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
         kms_key_infos=pulumi.get(__ret__, 'kms_key_infos'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
@@ -486,6 +499,7 @@ def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[_
         id=pulumi.get(__response__, 'id'),
         idcs_domain_url=pulumi.get(__response__, 'idcs_domain_url'),
         is_break_glass_enabled=pulumi.get(__response__, 'is_break_glass_enabled'),
+        is_ipv6dual_stack_enabled=pulumi.get(__response__, 'is_ipv6dual_stack_enabled'),
         kms_key_id=pulumi.get(__response__, 'kms_key_id'),
         kms_key_infos=pulumi.get(__response__, 'kms_key_infos'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),

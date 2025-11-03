@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// # Create a NetworkPerimeter
-//
 // ## Example Usage
 //
 // ## Import

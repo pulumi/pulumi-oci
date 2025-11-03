@@ -348,10 +348,6 @@ class ModelVersionSet(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new modelVersionSet.
-
         ## Example Usage
 
         ```python
@@ -399,10 +395,6 @@ class ModelVersionSet(pulumi.CustomResource):
                  args: ModelVersionSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model Version Set resource in Oracle Cloud Infrastructure Data Science service.
-
-        Creates a new modelVersionSet.
-
         ## Example Usage
 
         ```python

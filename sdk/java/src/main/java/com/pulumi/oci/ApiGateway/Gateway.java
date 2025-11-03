@@ -21,10 +21,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Gateway resource in Oracle Cloud Infrastructure API Gateway service.
- * 
- * Creates a new gateway.
- * 
  * ## Example Usage
  * 
  * <pre>

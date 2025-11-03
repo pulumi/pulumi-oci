@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
-//
-// Creates a new Recovery Service Subnet.
-//
 // ## Example Usage
 //
 // ```go

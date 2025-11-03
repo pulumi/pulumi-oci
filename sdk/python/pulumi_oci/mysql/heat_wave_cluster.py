@@ -280,10 +280,6 @@ class HeatWaveCluster(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Updates the HeatWave cluster.
-
         ## Example Usage
 
         ```python
@@ -323,10 +319,6 @@ class HeatWaveCluster(pulumi.CustomResource):
                  args: HeatWaveClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Updates the HeatWave cluster.
-
         ## Example Usage
 
         ```python

@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousDatabaseResourcePoolSummary {
     /**
-     * @return Available capacity left for new elastic pool members provision
+     * @return (Updatable) Available capacity left for new elastic pool members provision
      * 
      */
     private @Nullable Integer availableComputeCapacity;
     /**
-     * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+     * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
      * 
      */
     private @Nullable Boolean isDisabled;
@@ -35,14 +35,14 @@ public final class AutonomousDatabaseResourcePoolSummary {
 
     private AutonomousDatabaseResourcePoolSummary() {}
     /**
-     * @return Available capacity left for new elastic pool members provision
+     * @return (Updatable) Available capacity left for new elastic pool members provision
      * 
      */
     public Optional<Integer> availableComputeCapacity() {
         return Optional.ofNullable(this.availableComputeCapacity);
     }
     /**
-     * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+     * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
      * 
      */
     public Optional<Boolean> isDisabled() {

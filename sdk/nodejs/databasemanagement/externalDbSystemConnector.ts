@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Creates a new external connector.
- *
  * ## Example Usage
  *
  * ```typescript

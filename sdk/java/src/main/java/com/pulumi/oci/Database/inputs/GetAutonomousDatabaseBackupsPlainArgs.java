@@ -32,6 +32,21 @@ public final class GetAutonomousDatabaseBackupsPlainArgs extends com.pulumi.reso
     }
 
     /**
+     * A filter to return only resources that have the given backup destination id.
+     * 
+     */
+    @Import(name="backupDestinationId")
+    private @Nullable String backupDestinationId;
+
+    /**
+     * @return A filter to return only resources that have the given backup destination id.
+     * 
+     */
+    public Optional<String> backupDestinationId() {
+        return Optional.ofNullable(this.backupDestinationId);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -69,6 +84,36 @@ public final class GetAutonomousDatabaseBackupsPlainArgs extends com.pulumi.reso
     }
 
     /**
+     * A filter to return only resources that match the given Infrastructure Type.
+     * 
+     */
+    @Import(name="infrastructureType")
+    private @Nullable String infrastructureType;
+
+    /**
+     * @return A filter to return only resources that match the given Infrastructure Type.
+     * 
+     */
+    public Optional<String> infrastructureType() {
+        return Optional.ofNullable(this.infrastructureType);
+    }
+
+    /**
+     * A filter to return only resources that have the given key store id.
+     * 
+     */
+    @Import(name="keyStoreId")
+    private @Nullable String keyStoreId;
+
+    /**
+     * @return A filter to return only resources that have the given key store id.
+     * 
+     */
+    public Optional<String> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
+    }
+
+    /**
      * A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
@@ -102,9 +147,12 @@ public final class GetAutonomousDatabaseBackupsPlainArgs extends com.pulumi.reso
 
     private GetAutonomousDatabaseBackupsPlainArgs(GetAutonomousDatabaseBackupsPlainArgs $) {
         this.autonomousDatabaseId = $.autonomousDatabaseId;
+        this.backupDestinationId = $.backupDestinationId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.infrastructureType = $.infrastructureType;
+        this.keyStoreId = $.keyStoreId;
         this.state = $.state;
         this.type = $.type;
     }
@@ -139,6 +187,17 @@ public final class GetAutonomousDatabaseBackupsPlainArgs extends com.pulumi.reso
         }
 
         /**
+         * @param backupDestinationId A filter to return only resources that have the given backup destination id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupDestinationId(@Nullable String backupDestinationId) {
+            $.backupDestinationId = backupDestinationId;
+            return this;
+        }
+
+        /**
          * @param compartmentId The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
@@ -167,6 +226,28 @@ public final class GetAutonomousDatabaseBackupsPlainArgs extends com.pulumi.reso
 
         public Builder filters(GetAutonomousDatabaseBackupsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param infrastructureType A filter to return only resources that match the given Infrastructure Type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder infrastructureType(@Nullable String infrastructureType) {
+            $.infrastructureType = infrastructureType;
+            return this;
+        }
+
+        /**
+         * @param keyStoreId A filter to return only resources that have the given key store id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(@Nullable String keyStoreId) {
+            $.keyStoreId = keyStoreId;
+            return this;
         }
 
         /**

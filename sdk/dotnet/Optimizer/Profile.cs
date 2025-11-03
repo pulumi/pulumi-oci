@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Optimizer
 {
     /// <summary>
-    /// This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
-    /// 
-    /// Creates a new profile.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

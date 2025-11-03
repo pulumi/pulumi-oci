@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Db System Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Enables Database Management service for all the components of the specified
-// external DB system (except databases).
-//
 // ## Example Usage
 //
 // ```go

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Protected Database resource in Oracle Cloud Infrastructure Recovery service.
-//
-// Creates a new Protected Database.
-//
 // ## Example Usage
 //
 // ```go

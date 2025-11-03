@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
- *
- * Invokes a function
- *
  * ## Example Usage
  *
  * ```typescript

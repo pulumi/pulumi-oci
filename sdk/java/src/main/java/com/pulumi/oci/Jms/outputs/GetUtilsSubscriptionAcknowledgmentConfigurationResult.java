@@ -17,10 +17,6 @@ public final class GetUtilsSubscriptionAcknowledgmentConfigurationResult {
      */
     private String acknowledgedBy;
     private String compartmentId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
     private String id;
     /**
      * @return Flag to determine whether the subscription was acknowledged or not.
@@ -44,10 +40,6 @@ public final class GetUtilsSubscriptionAcknowledgmentConfigurationResult {
     public String compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
     public String id() {
         return this.id;
     }

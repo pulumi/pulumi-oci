@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Creates the Exadata storage server connector after validating the connection information.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

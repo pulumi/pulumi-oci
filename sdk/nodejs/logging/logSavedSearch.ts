@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Log Saved Search resource in Oracle Cloud Infrastructure Logging service.
- *
- * Creates a new LogSavedSearch.
- *
  * ## Example Usage
  *
  * ```typescript

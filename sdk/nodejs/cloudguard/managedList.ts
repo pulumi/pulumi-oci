@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
- *
- * Creates a new ManagedList resource.
+ * ## Example Usage
  *
  * ## Import
  *

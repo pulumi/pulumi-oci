@@ -23,10 +23,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Build Pipeline Stage resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Creates a new stage.
- * 
  * ## Example Usage
  * 
  * <pre>

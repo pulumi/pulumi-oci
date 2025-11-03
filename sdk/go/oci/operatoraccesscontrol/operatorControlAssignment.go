@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
-//
-// Creates an Operator Control Assignment resource. In effect, this brings the target resource under the governance of the Operator Control for specified time duration.
-//
 // ## Example Usage
 //
 // ```go

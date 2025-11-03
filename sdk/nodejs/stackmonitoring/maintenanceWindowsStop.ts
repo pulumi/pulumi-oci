@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Maintenance Windows Stop resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * Stop a maintenance window before the end time is reached.
- *
  * ## Example Usage
  *
  * ```typescript

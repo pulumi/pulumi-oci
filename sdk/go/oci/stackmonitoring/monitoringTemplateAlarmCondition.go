@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Monitoring Template Alarm Condition resource in Oracle Cloud Infrastructure Stack Monitoring service.
-//
-// Create a new alarm condition in same monitoringTemplate compartment.
-//
 // ## Example Usage
 //
 // ```go

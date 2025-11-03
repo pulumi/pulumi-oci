@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Occ Availability Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
- * 
- * Create availability catalog
- * 
  * ## Example Usage
  * 
  * <pre>

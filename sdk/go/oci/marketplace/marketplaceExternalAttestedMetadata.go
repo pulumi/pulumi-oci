@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Marketplace External Attested Metadata resource in Oracle Cloud Infrastructure Marketplace service.
-//
-// # Generates attested marketplace metadata
-//
 // ## Example Usage
 //
 // ```go

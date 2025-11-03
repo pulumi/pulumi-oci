@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-//
-// Creates a Compute Cloud@Customer infrastructure. Once created, Oracle Services
-// must connect the rack in the data center to this Oracle Cloud Infrastructure resource.
-//
 // ## Example Usage
 //
 // ```go

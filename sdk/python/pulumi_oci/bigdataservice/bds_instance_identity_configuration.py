@@ -496,10 +496,6 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
                  upst_configuration_details: Optional[pulumi.Input[Union['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance Identity Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Create an identity configuration for the cluster
-
         ## Example Usage
 
         ```python
@@ -554,10 +550,6 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
                  args: BdsInstanceIdentityConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance Identity Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Create an identity configuration for the cluster
-
         ## Example Usage
 
         ```python

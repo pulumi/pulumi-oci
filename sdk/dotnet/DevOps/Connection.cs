@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
-    /// This resource provides the Connection resource in Oracle Cloud Infrastructure Devops service.
-    /// 
-    /// Creates a new connection.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

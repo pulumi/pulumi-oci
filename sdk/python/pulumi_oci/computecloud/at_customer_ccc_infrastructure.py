@@ -528,11 +528,6 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-
-        Creates a Compute Cloud@Customer infrastructure. Once created, Oracle Services
-        must connect the rack in the data center to this Oracle Cloud Infrastructure resource.
-
         ## Example Usage
 
         ```python
@@ -586,11 +581,6 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
                  args: AtCustomerCccInfrastructureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-
-        Creates a Compute Cloud@Customer infrastructure. Once created, Oracle Services
-        must connect the rack in the data center to this Oracle Cloud Infrastructure resource.
-
         ## Example Usage
 
         ```python

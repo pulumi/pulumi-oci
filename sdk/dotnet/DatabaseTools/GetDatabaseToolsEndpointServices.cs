@@ -106,7 +106,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsEndpointServicesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.DatabaseTools
     public sealed class GetDatabaseToolsEndpointServicesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;

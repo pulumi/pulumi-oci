@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class AutonomousDatabaseResourcePoolSummary
     {
         /// <summary>
-        /// Available capacity left for new elastic pool members provision
+        /// (Updatable) Available capacity left for new elastic pool members provision
         /// </summary>
         public readonly int? AvailableComputeCapacity;
         /// <summary>
-        /// (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+        /// (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
         /// </summary>
         public readonly bool? IsDisabled;
         /// <summary>

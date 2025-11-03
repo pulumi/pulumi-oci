@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns
 {
     /// <summary>
-    /// This resource provides the Tsig Key resource in Oracle Cloud Infrastructure DNS service.
-    /// 
-    /// Creates a new TSIG key in the specified compartment. There is no
-    /// `opc-retry-token` header since TSIG key names must be globally unique.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Functions
 {
     /// <summary>
-    /// This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
-    /// 
-    /// Creates a new function.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -34,6 +30,15 @@ namespace Pulumi.Oci.Functions
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
+    ///         DetachedModeTimeoutInSeconds = functionDetachedModeTimeoutInSeconds,
+    ///         FailureDestination = new Oci.Functions.Inputs.FunctionFailureDestinationArgs
+    ///         {
+    ///             Kind = functionFailureDestinationKind,
+    ///             ChannelId = testChannel.Id,
+    ///             QueueId = testQueue.Id,
+    ///             StreamId = testStream.Id,
+    ///             TopicId = testNotificationTopic.Id,
+    ///         },
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -49,6 +54,14 @@ namespace Pulumi.Oci.Functions
     ///         {
     ///             PbfListingId = testPbfListing.Id,
     ///             SourceType = functionSourceDetailsSourceType,
+    ///         },
+    ///         SuccessDestination = new Oci.Functions.Inputs.FunctionSuccessDestinationArgs
+    ///         {
+    ///             Kind = functionSuccessDestinationKind,
+    ///             ChannelId = testChannel.Id,
+    ///             QueueId = testQueue.Id,
+    ///             StreamId = testStream.Id,
+    ///             TopicId = testNotificationTopic.Id,
     ///         },
     ///         TimeoutInSeconds = functionTimeoutInSeconds,
     ///         TraceConfig = new Oci.Functions.Inputs.FunctionTraceConfigArgs
@@ -98,10 +111,22 @@ namespace Pulumi.Oci.Functions
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Timeout for detached function invocations. Value in seconds.
+        /// </summary>
+        [Output("detachedModeTimeoutInSeconds")]
+        public Output<int> DetachedModeTimeoutInSeconds { get; private set; } = null!;
+
+        /// <summary>
         /// The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+        /// </summary>
+        [Output("failureDestination")]
+        public Output<Outputs.FunctionFailureDestination> FailureDestination { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -156,6 +181,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+        /// </summary>
+        [Output("successDestination")]
+        public Output<Outputs.FunctionSuccessDestination> SuccessDestination { get; private set; } = null!;
 
         /// <summary>
         /// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -260,10 +291,22 @@ namespace Pulumi.Oci.Functions
         }
 
         /// <summary>
+        /// (Updatable) Timeout for detached function invocations. Value in seconds.
+        /// </summary>
+        [Input("detachedModeTimeoutInSeconds")]
+        public Input<int>? DetachedModeTimeoutInSeconds { get; set; }
+
+        /// <summary>
         /// The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+        /// </summary>
+        [Input("failureDestination")]
+        public Input<Inputs.FunctionFailureDestinationArgs>? FailureDestination { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
@@ -306,6 +349,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Input("sourceDetails")]
         public Input<Inputs.FunctionSourceDetailsArgs>? SourceDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+        /// </summary>
+        [Input("successDestination")]
+        public Input<Inputs.FunctionSuccessDestinationArgs>? SuccessDestination { get; set; }
 
         /// <summary>
         /// (Updatable) Timeout for executions of the function. Value in seconds.
@@ -366,10 +415,22 @@ namespace Pulumi.Oci.Functions
         }
 
         /// <summary>
+        /// (Updatable) Timeout for detached function invocations. Value in seconds.
+        /// </summary>
+        [Input("detachedModeTimeoutInSeconds")]
+        public Input<int>? DetachedModeTimeoutInSeconds { get; set; }
+
+        /// <summary>
         /// The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+        /// </summary>
+        [Input("failureDestination")]
+        public Input<Inputs.FunctionFailureDestinationGetArgs>? FailureDestination { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
@@ -430,6 +491,12 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+        /// </summary>
+        [Input("successDestination")]
+        public Input<Inputs.FunctionSuccessDestinationGetArgs>? SuccessDestination { get; set; }
 
         /// <summary>
         /// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`

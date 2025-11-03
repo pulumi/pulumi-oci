@@ -17,14 +17,14 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
     public static final AutonomousDatabaseStandbyDbArgs Empty = new AutonomousDatabaseStandbyDbArgs();
 
     /**
-     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -77,14 +77,14 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
     }
 
     /**
-     * The current state of the Autonomous Database.
+     * The current state of the Autonomous AI Database.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Autonomous Database.
+     * @return The current state of the Autonomous AI Database.
      * 
      */
     public Optional<Output<String>> state() {
@@ -92,14 +92,14 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
     }
 
     /**
-     * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+     * The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
     @Import(name="timeDataGuardRoleChanged")
     private @Nullable Output<String> timeDataGuardRoleChanged;
 
     /**
-     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
     public Optional<Output<String>> timeDataGuardRoleChanged() {
@@ -107,14 +107,14 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
     }
 
     /**
-     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
      * 
      */
     @Import(name="timeDisasterRecoveryRoleChanged")
     private @Nullable Output<String> timeDisasterRecoveryRoleChanged;
 
     /**
-     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
      * 
      */
     public Optional<Output<String>> timeDisasterRecoveryRoleChanged() {
@@ -184,7 +184,7 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param availabilityDomain The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         * @param availabilityDomain The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param availabilityDomain The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+         * @param availabilityDomain The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param state The current state of the Autonomous Database.
+         * @param state The current state of the Autonomous AI Database.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param state The current state of the Autonomous Database.
+         * @param state The current state of the Autonomous AI Database.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param timeDataGuardRoleChanged The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+         * @param timeDataGuardRoleChanged The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param timeDataGuardRoleChanged The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+         * @param timeDataGuardRoleChanged The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param timeDisasterRecoveryRoleChanged The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         * @param timeDisasterRecoveryRoleChanged The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class AutonomousDatabaseStandbyDbArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param timeDisasterRecoveryRoleChanged The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+         * @param timeDisasterRecoveryRoleChanged The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
          * 
          * @return builder
          * 

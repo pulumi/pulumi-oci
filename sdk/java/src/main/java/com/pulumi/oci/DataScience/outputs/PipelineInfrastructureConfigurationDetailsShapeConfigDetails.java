@@ -18,15 +18,25 @@ public final class PipelineInfrastructureConfigurationDetailsShapeConfigDetails 
      */
     private @Nullable String cpuBaseline;
     /**
-     * @return (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return (Updatable) The total amount of memory available to the pipeline step run instance GBs.
      * 
      */
     private @Nullable Double memoryInGbs;
     /**
-     * @return (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    private @Nullable String memoryInGbsParameterized;
+    /**
+     * @return (Updatable) The total number of OCPUs available to the pipeline step run instance.
      * 
      */
     private @Nullable Double ocpus;
+    /**
+     * @return (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    private @Nullable String ocpusParameterized;
 
     private PipelineInfrastructureConfigurationDetailsShapeConfigDetails() {}
     /**
@@ -37,18 +47,32 @@ public final class PipelineInfrastructureConfigurationDetailsShapeConfigDetails 
         return Optional.ofNullable(this.cpuBaseline);
     }
     /**
-     * @return (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return (Updatable) The total amount of memory available to the pipeline step run instance GBs.
      * 
      */
     public Optional<Double> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
     }
     /**
-     * @return (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return (Updatable) The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    public Optional<String> memoryInGbsParameterized() {
+        return Optional.ofNullable(this.memoryInGbsParameterized);
+    }
+    /**
+     * @return (Updatable) The total number of OCPUs available to the pipeline step run instance.
      * 
      */
     public Optional<Double> ocpus() {
         return Optional.ofNullable(this.ocpus);
+    }
+    /**
+     * @return (Updatable) The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    public Optional<String> ocpusParameterized() {
+        return Optional.ofNullable(this.ocpusParameterized);
     }
 
     public static Builder builder() {
@@ -62,13 +86,17 @@ public final class PipelineInfrastructureConfigurationDetailsShapeConfigDetails 
     public static final class Builder {
         private @Nullable String cpuBaseline;
         private @Nullable Double memoryInGbs;
+        private @Nullable String memoryInGbsParameterized;
         private @Nullable Double ocpus;
+        private @Nullable String ocpusParameterized;
         public Builder() {}
         public Builder(PipelineInfrastructureConfigurationDetailsShapeConfigDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cpuBaseline = defaults.cpuBaseline;
     	      this.memoryInGbs = defaults.memoryInGbs;
+    	      this.memoryInGbsParameterized = defaults.memoryInGbsParameterized;
     	      this.ocpus = defaults.ocpus;
+    	      this.ocpusParameterized = defaults.ocpusParameterized;
         }
 
         @CustomType.Setter
@@ -84,16 +112,30 @@ public final class PipelineInfrastructureConfigurationDetailsShapeConfigDetails 
             return this;
         }
         @CustomType.Setter
+        public Builder memoryInGbsParameterized(@Nullable String memoryInGbsParameterized) {
+
+            this.memoryInGbsParameterized = memoryInGbsParameterized;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ocpus(@Nullable Double ocpus) {
 
             this.ocpus = ocpus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ocpusParameterized(@Nullable String ocpusParameterized) {
+
+            this.ocpusParameterized = ocpusParameterized;
             return this;
         }
         public PipelineInfrastructureConfigurationDetailsShapeConfigDetails build() {
             final var _resultValue = new PipelineInfrastructureConfigurationDetailsShapeConfigDetails();
             _resultValue.cpuBaseline = cpuBaseline;
             _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.memoryInGbsParameterized = memoryInGbsParameterized;
             _resultValue.ocpus = ocpus;
+            _resultValue.ocpusParameterized = ocpusParameterized;
             return _resultValue;
         }
     }

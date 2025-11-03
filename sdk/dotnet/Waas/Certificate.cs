@@ -10,12 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waas
 {
     /// <summary>
-    /// This resource provides the Certificate resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
-    /// 
-    /// Allows an SSL certificate to be added to a WAAS policy. The Web Application Firewall terminates SSL connections to inspect requests in runtime, and then re-encrypts requests before sending them to the origin for fulfillment.
-    /// 
-    /// For more information, see [WAF Settings](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

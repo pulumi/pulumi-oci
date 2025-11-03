@@ -120,8 +120,6 @@ class Configuration(pulumi.CustomResource):
                  retention_period_days: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Configuration resource in Oracle Cloud Infrastructure Audit service.
-
         ## Example Usage
 
         ```python
@@ -153,8 +151,6 @@ class Configuration(pulumi.CustomResource):
                  args: ConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Configuration resource in Oracle Cloud Infrastructure Audit service.
-
         ## Example Usage
 
         ```python

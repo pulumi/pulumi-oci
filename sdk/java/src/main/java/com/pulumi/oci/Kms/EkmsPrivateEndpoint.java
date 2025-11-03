@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
- * 
- * Create a new EKMS private endpoint used to connect to external key manager system
- * 
  * ## Example Usage
  * 
  * <pre>

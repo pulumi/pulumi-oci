@@ -16,7 +16,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
      */
     private String arnRole;
     /**
-     * @return The provider for the Autonomous Database encryption key.
+     * @return The provider for the Autonomous AI Database encryption key.
      * 
      */
     private String autonomousDatabaseProvider;
@@ -51,10 +51,25 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
      */
     private String keyName;
     /**
+     * @return GCP key ring
+     * 
+     */
+    private String keyRing;
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     private String kmsKeyId;
+    /**
+     * @return GCP kms REST API endpoint
+     * 
+     */
+    private String kmsRestEndpoint;
+    /**
+     * @return GCP key ring location
+     * 
+     */
+    private String location;
     /**
      * @return UUID of OKV KMS Key
      * 
@@ -66,12 +81,17 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
      */
     private String okvUri;
     /**
+     * @return GCP project name
+     * 
+     */
+    private String project;
+    /**
      * @return AWS key service endpoint URI
      * 
      */
     private String serviceEndpointUri;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     private String vaultId;
@@ -90,7 +110,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
         return this.arnRole;
     }
     /**
-     * @return The provider for the Autonomous Database encryption key.
+     * @return The provider for the Autonomous AI Database encryption key.
      * 
      */
     public String autonomousDatabaseProvider() {
@@ -139,11 +159,32 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
         return this.keyName;
     }
     /**
+     * @return GCP key ring
+     * 
+     */
+    public String keyRing() {
+        return this.keyRing;
+    }
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     public String kmsKeyId() {
         return this.kmsKeyId;
+    }
+    /**
+     * @return GCP kms REST API endpoint
+     * 
+     */
+    public String kmsRestEndpoint() {
+        return this.kmsRestEndpoint;
+    }
+    /**
+     * @return GCP key ring location
+     * 
+     */
+    public String location() {
+        return this.location;
     }
     /**
      * @return UUID of OKV KMS Key
@@ -160,6 +201,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
         return this.okvUri;
     }
     /**
+     * @return GCP project name
+     * 
+     */
+    public String project() {
+        return this.project;
+    }
+    /**
      * @return AWS key service endpoint URI
      * 
      */
@@ -167,7 +215,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
         return this.serviceEndpointUri;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     public String vaultId() {
@@ -198,9 +246,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
         private String externalId;
         private String keyArn;
         private String keyName;
+        private String keyRing;
         private String kmsKeyId;
+        private String kmsRestEndpoint;
+        private String location;
         private String okvKmsKey;
         private String okvUri;
+        private String project;
         private String serviceEndpointUri;
         private String vaultId;
         private String vaultUri;
@@ -215,9 +267,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
     	      this.externalId = defaults.externalId;
     	      this.keyArn = defaults.keyArn;
     	      this.keyName = defaults.keyName;
+    	      this.keyRing = defaults.keyRing;
     	      this.kmsKeyId = defaults.kmsKeyId;
+    	      this.kmsRestEndpoint = defaults.kmsRestEndpoint;
+    	      this.location = defaults.location;
     	      this.okvKmsKey = defaults.okvKmsKey;
     	      this.okvUri = defaults.okvUri;
+    	      this.project = defaults.project;
     	      this.serviceEndpointUri = defaults.serviceEndpointUri;
     	      this.vaultId = defaults.vaultId;
     	      this.vaultUri = defaults.vaultUri;
@@ -288,11 +344,35 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
             return this;
         }
         @CustomType.Setter
+        public Builder keyRing(String keyRing) {
+            if (keyRing == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey", "keyRing");
+            }
+            this.keyRing = keyRing;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             if (kmsKeyId == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey", "kmsKeyId");
             }
             this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder kmsRestEndpoint(String kmsRestEndpoint) {
+            if (kmsRestEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey", "kmsRestEndpoint");
+            }
+            this.kmsRestEndpoint = kmsRestEndpoint;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder location(String location) {
+            if (location == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey", "location");
+            }
+            this.location = location;
             return this;
         }
         @CustomType.Setter
@@ -309,6 +389,14 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey", "okvUri");
             }
             this.okvUri = okvUri;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder project(String project) {
+            if (project == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKey", "project");
+            }
+            this.project = project;
             return this;
         }
         @CustomType.Setter
@@ -345,9 +433,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseEncryptionKeyHistoryE
             _resultValue.externalId = externalId;
             _resultValue.keyArn = keyArn;
             _resultValue.keyName = keyName;
+            _resultValue.keyRing = keyRing;
             _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsRestEndpoint = kmsRestEndpoint;
+            _resultValue.location = location;
             _resultValue.okvKmsKey = okvKmsKey;
             _resultValue.okvUri = okvUri;
+            _resultValue.project = project;
             _resultValue.serviceEndpointUri = serviceEndpointUri;
             _resultValue.vaultId = vaultId;
             _resultValue.vaultUri = vaultUri;

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the External Non Container Database resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates a new ExternalNonContainerDatabase resource
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

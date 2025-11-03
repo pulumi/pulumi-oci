@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a new Data Safe private endpoint.
- * 
  * ## Example Usage
  * 
  * <pre>

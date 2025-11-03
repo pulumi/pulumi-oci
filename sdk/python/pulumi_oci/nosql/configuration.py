@@ -172,27 +172,6 @@ class Configuration(pulumi.CustomResource):
                  kms_key: Optional[pulumi.Input[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Configuration in Oracle Cloud Infrastructure NoSQL Database service.
-
-        Updates the service-level configuration.  The discriminator value
-        `UpdateConfigurationDetails.environment` must match the service's
-        environment type.
-
-        A configuration serves as a centralized repository for global parameters that
-        affect the NoSQL service. Currently, there is only one such parameter: a
-        customer-provided key for encrypting NoSQL data at rest.
-
-        The Customer-Managed Encryption Keys (CMEK) feature is exclusively available
-        in private NoSQL environments dedicated to a single tenancy, where the CMEK
-        option has been enabled. Updating the configuration of the default, regional,
-        multi-tenancy NoSQL service is not supported.
-
-        To specify the dedicated environment, set the environment variable
-        CLIENT_HOST_OVERRIDES=oci_nosql.NosqlClient=$ENDPOINT
-        Where $ENDPOINT is the endpoint of the dedicated NoSQL environment.
-        For example:
-        $ export CLIENT_HOST_OVERRIDES=oci_nosql.NosqlClient=https://acme-widgets.nosql.oci.oraclecloud.com
-
         ## Example Usage
 
         ```python
@@ -231,27 +210,6 @@ class Configuration(pulumi.CustomResource):
                  args: ConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Configuration in Oracle Cloud Infrastructure NoSQL Database service.
-
-        Updates the service-level configuration.  The discriminator value
-        `UpdateConfigurationDetails.environment` must match the service's
-        environment type.
-
-        A configuration serves as a centralized repository for global parameters that
-        affect the NoSQL service. Currently, there is only one such parameter: a
-        customer-provided key for encrypting NoSQL data at rest.
-
-        The Customer-Managed Encryption Keys (CMEK) feature is exclusively available
-        in private NoSQL environments dedicated to a single tenancy, where the CMEK
-        option has been enabled. Updating the configuration of the default, regional,
-        multi-tenancy NoSQL service is not supported.
-
-        To specify the dedicated environment, set the environment variable
-        CLIENT_HOST_OVERRIDES=oci_nosql.NosqlClient=$ENDPOINT
-        Where $ENDPOINT is the endpoint of the dedicated NoSQL environment.
-        For example:
-        $ export CLIENT_HOST_OVERRIDES=oci_nosql.NosqlClient=https://acme-widgets.nosql.oci.oraclecloud.com
-
         ## Example Usage
 
         ```python

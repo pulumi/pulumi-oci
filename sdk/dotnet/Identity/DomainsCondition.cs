@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Condition resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a condition
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

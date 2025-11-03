@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
-//
-// Creates a private application along with a single package to be hosted.
-//
 // ## Example Usage
 //
 // ```go

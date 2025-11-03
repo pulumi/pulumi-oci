@@ -48,6 +48,14 @@ export interface GetKeyStoreResult {
      */
     readonly associatedDatabases: outputs.Database.GetKeyStoreAssociatedDatabase[];
     /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     */
+    readonly associatedLongTermBackupCount: number;
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     */
+    readonly associatedLongTermBackups: outputs.Database.GetKeyStoreAssociatedLongTermBackup[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;

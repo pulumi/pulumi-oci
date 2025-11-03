@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
-//
-// Creates a migration asset.
+// ## Example Usage
 //
 // ## Import
 //

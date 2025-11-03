@@ -27,7 +27,7 @@ class GetAutonomousVmClusterResult:
     """
     A collection of values returned by getAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpu_percentage=None, cpus_enabled=None, cpus_lowest_scaled_value=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, ocpus_enabled=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, system_tags=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, vm_cluster_network_id=None):
+    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpu_percentage=None, cpus_enabled=None, cpus_lowest_scaled_value=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, ocpus_enabled=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, system_tags=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, vm_cluster_network_id=None):
         if autonomous_data_storage_percentage and not isinstance(autonomous_data_storage_percentage, float):
             raise TypeError("Expected argument 'autonomous_data_storage_percentage' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
@@ -121,6 +121,9 @@ class GetAutonomousVmClusterResult:
         if max_acds_lowest_scaled_value and not isinstance(max_acds_lowest_scaled_value, int):
             raise TypeError("Expected argument 'max_acds_lowest_scaled_value' to be a int")
         pulumi.set(__self__, "max_acds_lowest_scaled_value", max_acds_lowest_scaled_value)
+        if memory_per_compute_unit_in_gbs and not isinstance(memory_per_compute_unit_in_gbs, float):
+            raise TypeError("Expected argument 'memory_per_compute_unit_in_gbs' to be a float")
+        pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         if memory_per_oracle_compute_unit_in_gbs and not isinstance(memory_per_oracle_compute_unit_in_gbs, int):
             raise TypeError("Expected argument 'memory_per_oracle_compute_unit_in_gbs' to be a int")
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
@@ -425,10 +428,18 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "max_acds_lowest_scaled_value")
 
     @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> _builtins.int:
         """
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -634,6 +645,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             maintenance_window_details=self.maintenance_window_details,
             maintenance_windows=self.maintenance_windows,
             max_acds_lowest_scaled_value=self.max_acds_lowest_scaled_value,
+            memory_per_compute_unit_in_gbs=self.memory_per_compute_unit_in_gbs,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
             next_maintenance_run_id=self.next_maintenance_run_id,
@@ -714,6 +726,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[_builtins.str] 
         maintenance_window_details=pulumi.get(__ret__, 'maintenance_window_details'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
         max_acds_lowest_scaled_value=pulumi.get(__ret__, 'max_acds_lowest_scaled_value'),
+        memory_per_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_compute_unit_in_gbs'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_oracle_compute_unit_in_gbs'),
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         next_maintenance_run_id=pulumi.get(__ret__, 'next_maintenance_run_id'),
@@ -791,6 +804,7 @@ def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: Optional[pulumi.I
         maintenance_window_details=pulumi.get(__response__, 'maintenance_window_details'),
         maintenance_windows=pulumi.get(__response__, 'maintenance_windows'),
         max_acds_lowest_scaled_value=pulumi.get(__response__, 'max_acds_lowest_scaled_value'),
+        memory_per_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_compute_unit_in_gbs'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_oracle_compute_unit_in_gbs'),
         memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
         next_maintenance_run_id=pulumi.get(__response__, 'next_maintenance_run_id'),

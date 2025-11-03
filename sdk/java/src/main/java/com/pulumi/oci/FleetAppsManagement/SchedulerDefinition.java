@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- * 
- * Create a SchedulerDefinition to perform lifecycle operations.
- * 
  * ## Example Usage
  * 
  * <pre>

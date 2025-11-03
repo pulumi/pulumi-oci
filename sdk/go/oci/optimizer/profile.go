@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Profile resource in Oracle Cloud Infrastructure Optimizer service.
-//
-// Creates a new profile.
-//
 // ## Example Usage
 //
 // ```go

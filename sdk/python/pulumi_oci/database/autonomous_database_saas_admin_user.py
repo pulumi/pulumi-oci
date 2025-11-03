@@ -34,7 +34,7 @@ class AutonomousDatabaseSaasAdminUserArgs:
         :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
         :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
-        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
                
                
                ** IMPORTANT **
@@ -130,7 +130,7 @@ class AutonomousDatabaseSaasAdminUserArgs:
     @pulumi.getter(name="timeSaasAdminUserEnabled")
     def time_saas_admin_user_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 
 
         ** IMPORTANT **
@@ -161,7 +161,7 @@ class _AutonomousDatabaseSaasAdminUserState:
         :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
         :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
-        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
                
                
                ** IMPORTANT **
@@ -258,7 +258,7 @@ class _AutonomousDatabaseSaasAdminUserState:
     @pulumi.getter(name="timeSaasAdminUserEnabled")
     def time_saas_admin_user_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 
 
         ** IMPORTANT **
@@ -288,9 +288,20 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         """
         This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
 
-        This operation updates SaaS administrative user configuration of the Autonomous Database.
+        This operation updates SaaS administrative user configuration of the Autonomous AI Database.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_autonomous_database_saas_admin_user = oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user",
+            autonomous_database_id=test_autonomous_database["id"],
+            password=autonomous_database_saas_admin_user_password,
+            access_type=autonomous_database_saas_admin_user_access_type,
+            duration=autonomous_database_saas_admin_user_duration)
+        ```
 
         ## Import
 
@@ -304,7 +315,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
         :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
-        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
                
                
                ** IMPORTANT **
@@ -319,9 +330,20 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         """
         This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
 
-        This operation updates SaaS administrative user configuration of the Autonomous Database.
+        This operation updates SaaS administrative user configuration of the Autonomous AI Database.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_autonomous_database_saas_admin_user = oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user",
+            autonomous_database_id=test_autonomous_database["id"],
+            password=autonomous_database_saas_admin_user_password,
+            access_type=autonomous_database_saas_admin_user_access_type,
+            duration=autonomous_database_saas_admin_user_duration)
+        ```
 
         ## Import
 
@@ -399,7 +421,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
         :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
-        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
                
                
                ** IMPORTANT **
@@ -470,7 +492,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
     @pulumi.getter(name="timeSaasAdminUserEnabled")
     def time_saas_admin_user_enabled(self) -> pulumi.Output[_builtins.str]:
         """
-        The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 
 
         ** IMPORTANT **

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Attribute Set resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates an attribute set.
- *
  * ## Example Usage
  *
  * ```typescript

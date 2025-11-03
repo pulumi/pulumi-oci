@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
-//
-// Updates the HeatWave cluster.
-//
 // ## Example Usage
 //
 // ```go

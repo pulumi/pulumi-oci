@@ -16,13 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Ping Probe resource in Oracle Cloud Infrastructure Health Checks service.
- * 
- * Creates an on-demand ping probe. The location response header contains the URL for
- * fetching probe results.
- * 
- * *Note:* The on-demand probe configuration is not saved.
- * 
  * ## Example Usage
  * 
  * <pre>

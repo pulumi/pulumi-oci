@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Db Credential resource in Oracle Cloud Infrastructure Identity service.
- * 
- * Creates a new DB credential for the specified user.
- * 
  * ## Example Usage
  * 
  * <pre>

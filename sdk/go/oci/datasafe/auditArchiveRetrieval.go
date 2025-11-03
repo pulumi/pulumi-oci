@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Creates a work request to retrieve archived audit data. This asynchronous process will usually take over an hour to complete.
-// Save the id from the response of this operation. Call GetAuditArchiveRetrieval operation after an hour, passing the id to know the status of
-// this operation.
-//
 // ## Example Usage
 //
 // ```go

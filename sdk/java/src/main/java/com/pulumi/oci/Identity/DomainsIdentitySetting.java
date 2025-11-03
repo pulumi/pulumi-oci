@@ -25,9 +25,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Replace an Identity setting.
+ * ## Example Usage
  * 
  * ## Import
  * 

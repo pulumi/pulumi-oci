@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage
 {
     /// <summary>
-    /// This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
-    /// 
-    /// Creates a new export in the specified export set, path, and
-    /// file system.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

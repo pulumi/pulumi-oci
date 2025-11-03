@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
-//
-// # Create a FusionEnvironment admin user
-//
 // ## Example Usage
 //
 // ```go

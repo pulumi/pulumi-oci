@@ -46,7 +46,7 @@ public final class AutonomousContainerDatabaseSnapshotStandbyState extends com.p
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -56,7 +56,7 @@ public final class AutonomousContainerDatabaseSnapshotStandbyState extends com.p
     private @Nullable Output<String> role;
 
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -135,7 +135,7 @@ public final class AutonomousContainerDatabaseSnapshotStandbyState extends com.p
         }
 
         /**
-         * @param role The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * @param role The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,7 +149,7 @@ public final class AutonomousContainerDatabaseSnapshotStandbyState extends com.p
         }
 
         /**
-         * @param role The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * @param role The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

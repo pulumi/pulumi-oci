@@ -7,13 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a maintenance run with one of the following:
- * The latest available release update patch (RUP) for the Autonomous Container Database.
- * The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
- * Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -84,7 +77,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly customActionTimeoutInMins: pulumi.Output<number>;
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     declare public readonly databaseSoftwareImageId: pulumi.Output<string>;
     /**
@@ -132,7 +125,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly patchFailureCount: pulumi.Output<number>;
     /**
-     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
      */
     declare public /*out*/ readonly patchId: pulumi.Output<string>;
     /**
@@ -166,7 +159,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly peerMaintenanceRunIds: pulumi.Output<string[]>;
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
@@ -329,7 +322,7 @@ export interface MaintenanceRunState {
      */
     customActionTimeoutInMins?: pulumi.Input<number>;
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     databaseSoftwareImageId?: pulumi.Input<string>;
     /**
@@ -377,7 +370,7 @@ export interface MaintenanceRunState {
      */
     patchFailureCount?: pulumi.Input<number>;
     /**
-     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
      */
     patchId?: pulumi.Input<string>;
     /**
@@ -411,7 +404,7 @@ export interface MaintenanceRunState {
      */
     peerMaintenanceRunIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     state?: pulumi.Input<string>;
     /**
@@ -465,7 +458,7 @@ export interface MaintenanceRunArgs {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     databaseSoftwareImageId?: pulumi.Input<string>;
     /**

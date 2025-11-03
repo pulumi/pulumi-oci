@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
-//
-// Adds the list of redeemable user summary for a subscription ID.
-//
 // ## Example Usage
 //
 // ```go

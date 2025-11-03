@@ -12,17 +12,33 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSddcsSddcCollectionDatastore {
+    /**
+     * @return A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+     * 
+     */
     private List<String> blockVolumeIds;
     private Double capacity;
+    /**
+     * @return Type of the datastore.
+     * 
+     */
     private String datastoreType;
 
     private GetSddcsSddcCollectionDatastore() {}
+    /**
+     * @return A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+     * 
+     */
     public List<String> blockVolumeIds() {
         return this.blockVolumeIds;
     }
     public Double capacity() {
         return this.capacity;
     }
+    /**
+     * @return Type of the datastore.
+     * 
+     */
     public String datastoreType() {
         return this.datastoreType;
     }

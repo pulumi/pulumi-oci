@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Replace an Identity setting.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

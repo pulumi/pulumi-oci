@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Scheduled Job resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Creates a new scheduled job.
-//
 // ## Example Usage
 //
 // ```go

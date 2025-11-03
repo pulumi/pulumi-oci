@@ -26,7 +26,7 @@ class GetPrivateEndpointResult:
     """
     A collection of values returned by getPrivateEndpoint.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, dns_zones=None, freeform_tags=None, id=None, is_used_with_configuration_source_provider=None, nsg_id_lists=None, private_endpoint_id=None, source_ips=None, state=None, subnet_id=None, time_created=None, vcn_id=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, dns_zones=None, freeform_tags=None, id=None, is_used_with_configuration_source_provider=None, nsg_id_lists=None, private_endpoint_id=None, security_attributes=None, source_ips=None, state=None, subnet_id=None, system_tags=None, time_created=None, vcn_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -57,6 +57,9 @@ class GetPrivateEndpointResult:
         if private_endpoint_id and not isinstance(private_endpoint_id, str):
             raise TypeError("Expected argument 'private_endpoint_id' to be a str")
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if source_ips and not isinstance(source_ips, list):
             raise TypeError("Expected argument 'source_ips' to be a list")
         pulumi.set(__self__, "source_ips", source_ips)
@@ -66,6 +69,9 @@ class GetPrivateEndpointResult:
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -77,7 +83,7 @@ class GetPrivateEndpointResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -109,7 +115,7 @@ class GetPrivateEndpointResult:
     @pulumi.getter(name="dnsZones")
     def dns_zones(self) -> Sequence[_builtins.str]:
         """
-        DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+        DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
         """
         return pulumi.get(self, "dns_zones")
 
@@ -125,7 +131,7 @@ class GetPrivateEndpointResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "id")
 
@@ -141,7 +147,7 @@ class GetPrivateEndpointResult:
     @pulumi.getter(name="nsgIdLists")
     def nsg_id_lists(self) -> Sequence[_builtins.str]:
         """
-        An array of network security groups (NSG) that the customer can optionally provide.
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
         """
         return pulumi.get(self, "nsg_id_lists")
 
@@ -151,10 +157,18 @@ class GetPrivateEndpointResult:
         return pulumi.get(self, "private_endpoint_id")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter(name="sourceIps")
     def source_ips(self) -> Sequence[_builtins.str]:
         """
-        The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+        The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
         """
         return pulumi.get(self, "source_ips")
 
@@ -173,6 +187,14 @@ class GetPrivateEndpointResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -207,9 +229,11 @@ class AwaitableGetPrivateEndpointResult(GetPrivateEndpointResult):
             is_used_with_configuration_source_provider=self.is_used_with_configuration_source_provider,
             nsg_id_lists=self.nsg_id_lists,
             private_endpoint_id=self.private_endpoint_id,
+            security_attributes=self.security_attributes,
             source_ips=self.source_ips,
             state=self.state,
             subnet_id=self.subnet_id,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             vcn_id=self.vcn_id)
 
@@ -220,6 +244,8 @@ def get_private_endpoint(private_endpoint_id: Optional[_builtins.str] = None,
     This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
 
     Gets the specified private endpoint.
+    For more information, see
+    [Getting a Private Endpoint's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
 
     ## Example Usage
 
@@ -249,9 +275,11 @@ def get_private_endpoint(private_endpoint_id: Optional[_builtins.str] = None,
         is_used_with_configuration_source_provider=pulumi.get(__ret__, 'is_used_with_configuration_source_provider'),
         nsg_id_lists=pulumi.get(__ret__, 'nsg_id_lists'),
         private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         source_ips=pulumi.get(__ret__, 'source_ips'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -260,6 +288,8 @@ def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[_buil
     This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
 
     Gets the specified private endpoint.
+    For more information, see
+    [Getting a Private Endpoint's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
 
     ## Example Usage
 
@@ -288,8 +318,10 @@ def get_private_endpoint_output(private_endpoint_id: Optional[pulumi.Input[_buil
         is_used_with_configuration_source_provider=pulumi.get(__response__, 'is_used_with_configuration_source_provider'),
         nsg_id_lists=pulumi.get(__response__, 'nsg_id_lists'),
         private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         source_ips=pulumi.get(__response__, 'source_ips'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         vcn_id=pulumi.get(__response__, 'vcn_id')))

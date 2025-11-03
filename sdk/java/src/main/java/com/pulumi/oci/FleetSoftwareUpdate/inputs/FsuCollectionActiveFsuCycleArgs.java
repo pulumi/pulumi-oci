@@ -16,14 +16,14 @@ public final class FsuCollectionActiveFsuCycleArgs extends com.pulumi.resources.
     public static final FsuCollectionActiveFsuCycleArgs Empty = new FsuCollectionActiveFsuCycleArgs();
 
     /**
-     * (Updatable) Exadata Fleet Update Collection Identifier.
+     * (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Exadata Fleet Update Collection Identifier.
+     * @return (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -31,14 +31,14 @@ public final class FsuCollectionActiveFsuCycleArgs extends com.pulumi.resources.
     }
 
     /**
-     * OCID identifier for the Exadata Fleet Update Collection.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return OCID identifier for the Exadata Fleet Update Collection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      * 
      */
     public Optional<Output<String>> id() {
@@ -71,7 +71,7 @@ public final class FsuCollectionActiveFsuCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param displayName (Updatable) Exadata Fleet Update Collection Identifier.
+         * @param displayName (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class FsuCollectionActiveFsuCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param displayName (Updatable) Exadata Fleet Update Collection Identifier.
+         * @param displayName (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class FsuCollectionActiveFsuCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param id OCID identifier for the Exadata Fleet Update Collection.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class FsuCollectionActiveFsuCycleArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param id OCID identifier for the Exadata Fleet Update Collection.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
          * 
          * @return builder
          * 

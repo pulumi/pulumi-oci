@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
- * 
- * Creates a new notebook session.
- * 
  * ## Example Usage
  * 
  * <pre>

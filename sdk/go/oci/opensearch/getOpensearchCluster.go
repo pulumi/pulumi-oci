@@ -69,6 +69,8 @@ type GetOpensearchClusterArgs struct {
 type GetOpensearchClusterResult struct {
 	// The availability domains to distribute the cluser nodes across.
 	AvailabilityDomains []string `pulumi:"availabilityDomains"`
+	// Custom certificate config for customer provided certs.
+	CertificateConfigs []GetOpensearchClusterCertificateConfig `pulumi:"certificateConfigs"`
 	// The OCID of the compartment where the cluster is located.
 	CompartmentId                   string `pulumi:"compartmentId"`
 	ConfigureOutboundClusterTrigger int    `pulumi:"configureOutboundClusterTrigger"`
@@ -114,6 +116,8 @@ type GetOpensearchClusterResult struct {
 	MasterNodeHostShape string `pulumi:"masterNodeHostShape"`
 	// The instance type for the cluster's master nodes.
 	MasterNodeHostType string `pulumi:"masterNodeHostType"`
+	// The OCID of the NSG where the private endpoint vnic will be attached.
+	NsgId string `pulumi:"nsgId"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn string `pulumi:"opendashboardFqdn"`
 	// The number of OpenSearch Dashboard nodes configured for the cluster.
@@ -149,6 +153,8 @@ type GetOpensearchClusterResult struct {
 	SearchNodeHostType string `pulumi:"searchNodeHostType"`
 	// The amount of storage in GB, to configure per node for the cluster's search nodes.
 	SearchNodeStorageGb int `pulumi:"searchNodeStorageGb"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName string `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
@@ -218,6 +224,13 @@ func (o GetOpensearchClusterResultOutput) ToGetOpensearchClusterResultOutputWith
 // The availability domains to distribute the cluser nodes across.
 func (o GetOpensearchClusterResultOutput) AvailabilityDomains() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) []string { return v.AvailabilityDomains }).(pulumi.StringArrayOutput)
+}
+
+// Custom certificate config for customer provided certs.
+func (o GetOpensearchClusterResultOutput) CertificateConfigs() GetOpensearchClusterCertificateConfigArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) []GetOpensearchClusterCertificateConfig {
+		return v.CertificateConfigs
+	}).(GetOpensearchClusterCertificateConfigArrayOutput)
 }
 
 // The OCID of the compartment where the cluster is located.
@@ -336,6 +349,11 @@ func (o GetOpensearchClusterResultOutput) MasterNodeHostType() pulumi.StringOutp
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.MasterNodeHostType }).(pulumi.StringOutput)
 }
 
+// The OCID of the NSG where the private endpoint vnic will be attached.
+func (o GetOpensearchClusterResultOutput) NsgId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.NsgId }).(pulumi.StringOutput)
+}
+
 // The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 func (o GetOpensearchClusterResultOutput) OpendashboardFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) string { return v.OpendashboardFqdn }).(pulumi.StringOutput)
@@ -427,6 +445,11 @@ func (o GetOpensearchClusterResultOutput) SearchNodeHostType() pulumi.StringOutp
 // The amount of storage in GB, to configure per node for the cluster's search nodes.
 func (o GetOpensearchClusterResultOutput) SearchNodeStorageGb() pulumi.IntOutput {
 	return o.ApplyT(func(v GetOpensearchClusterResult) int { return v.SearchNodeStorageGb }).(pulumi.IntOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetOpensearchClusterResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpensearchClusterResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The name of the master user that are used to manage security config

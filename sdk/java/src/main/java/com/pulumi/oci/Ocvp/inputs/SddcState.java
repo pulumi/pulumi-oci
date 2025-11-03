@@ -903,6 +903,13 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.state);
     }
 
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
     /**
      * The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -1262,6 +1269,7 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
         this.reservingHcxOnPremiseLicenseKeys = $.reservingHcxOnPremiseLicenseKeys;
         this.sshAuthorizedKeys = $.sshAuthorizedKeys;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeHcxBillingCycleEnd = $.timeHcxBillingCycleEnd;
         this.timeHcxLicenseStatusUpdated = $.timeHcxLicenseStatusUpdated;
@@ -2490,6 +2498,15 @@ public final class SddcState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

@@ -627,10 +627,6 @@ class SqlCollection(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new SQL collection resource.
-
         ## Example Usage
 
         ```python
@@ -689,10 +685,6 @@ class SqlCollection(pulumi.CustomResource):
                  args: SqlCollectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Creates a new SQL collection resource.
-
         ## Example Usage
 
         ```python

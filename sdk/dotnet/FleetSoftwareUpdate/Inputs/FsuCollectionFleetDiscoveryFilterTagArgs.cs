@@ -15,8 +15,8 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         /// <summary>
         /// Freeform tag key.
         /// </summary>
-        [Input("key", required: true)]
-        public Input<string> Key { get; set; } = null!;
+        [Input("key")]
+        public Input<string>? Key { get; set; }
 
         /// <summary>
         /// Defined tag namespace.
@@ -27,8 +27,8 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         /// <summary>
         /// Freeform tag value.
         /// </summary>
-        [Input("value", required: true)]
-        public Input<string> Value { get; set; } = null!;
+        [Input("value")]
+        public Input<string>? Value { get; set; }
 
         public FsuCollectionFleetDiscoveryFilterTagArgs()
         {

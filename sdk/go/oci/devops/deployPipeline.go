@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Deploy Pipeline resource in Oracle Cloud Infrastructure Devops service.
-//
-// Creates a new deployment pipeline.
-//
 // ## Example Usage
 //
 // ```go

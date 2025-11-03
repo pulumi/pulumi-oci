@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Managed Instance Detach Profile Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Detaches profile from a managed instance. After the profile has been removed,
- * the instance cannot be registered as a managed instance.
- *
  * ## Example Usage
  *
  * ```typescript

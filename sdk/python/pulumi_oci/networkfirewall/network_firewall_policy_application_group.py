@@ -185,10 +185,6 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
                  network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new ApplicationGroup inside the Network Firewall Policy.
-
         ## Example Usage
 
         ```python
@@ -226,10 +222,6 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
                  args: NetworkFirewallPolicyApplicationGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new ApplicationGroup inside the Network Firewall Policy.
-
         ## Example Usage
 
         ```python

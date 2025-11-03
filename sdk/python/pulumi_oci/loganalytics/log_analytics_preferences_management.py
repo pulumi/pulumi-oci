@@ -123,10 +123,6 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Updates the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
-
         ## Example Usage
 
         ```python
@@ -161,10 +157,6 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
                  args: LogAnalyticsPreferencesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Updates the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
-
         ## Example Usage
 
         ```python

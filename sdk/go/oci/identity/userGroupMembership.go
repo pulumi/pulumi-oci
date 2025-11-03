@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
-//
-// Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
-//
 // ## Example Usage
 //
 // ```go

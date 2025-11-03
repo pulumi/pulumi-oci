@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
- *
- * Creates an Agent.
- *
  * ## Example Usage
  *
  * ```typescript

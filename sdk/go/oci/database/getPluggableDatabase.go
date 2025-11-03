@@ -73,7 +73,8 @@ type LookupPluggableDatabaseResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
 	Id string `pulumi:"id"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
-	IsRestricted    bool   `pulumi:"isRestricted"`
+	IsRestricted bool `pulumi:"isRestricted"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -182,6 +183,7 @@ func (o LookupPluggableDatabaseResultOutput) IsRestricted() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) bool { return v.IsRestricted }).(pulumi.BoolOutput)
 }
 
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o LookupPluggableDatabaseResultOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }

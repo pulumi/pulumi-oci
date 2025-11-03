@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Remote Peering Connection resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates a new remote peering connection (RPC) for the specified DRG.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

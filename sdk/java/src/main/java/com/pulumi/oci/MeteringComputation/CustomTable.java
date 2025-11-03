@@ -15,10 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
- * 
- * Returns the created custom table.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -12,21 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Compute Cluster resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates an empty [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
-// is a remote direct memory access (RDMA) network group.
-//
-// After the compute cluster is created, you can use the compute cluster's OCID with the
-// [LaunchInstance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstance) operation to create instances in the compute cluster.
-// The instances must be created in the same compartment and availability domain as the cluster.
-//
-// Use compute clusters when you want to manage instances in the cluster individually in the RDMA network group.
-//
-// If you want predictable capacity for a specific number of identical instances that are managed as a group,
-// create a cluster network that uses instance pools by using the
-// [CreateClusterNetwork](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ClusterNetwork/CreateClusterNetwork) operation.
-//
 // ## Example Usage
 //
 // ```go

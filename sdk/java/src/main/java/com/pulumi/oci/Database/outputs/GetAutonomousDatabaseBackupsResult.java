@@ -21,10 +21,11 @@ public final class GetAutonomousDatabaseBackupsResult {
      */
     private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
      * 
      */
     private @Nullable String autonomousDatabaseId;
+    private @Nullable String backupDestinationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -41,6 +42,16 @@ public final class GetAutonomousDatabaseBackupsResult {
      * 
      */
     private String id;
+    /**
+     * @return The infrastructure type this resource belongs to.
+     * 
+     */
+    private @Nullable String infrastructureType;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    private @Nullable String keyStoreId;
     /**
      * @return The current state of the backup.
      * 
@@ -61,11 +72,14 @@ public final class GetAutonomousDatabaseBackupsResult {
         return this.autonomousDatabaseBackups;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
      * 
      */
     public Optional<String> autonomousDatabaseId() {
         return Optional.ofNullable(this.autonomousDatabaseId);
+    }
+    public Optional<String> backupDestinationId() {
+        return Optional.ofNullable(this.backupDestinationId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -90,6 +104,20 @@ public final class GetAutonomousDatabaseBackupsResult {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return The infrastructure type this resource belongs to.
+     * 
+     */
+    public Optional<String> infrastructureType() {
+        return Optional.ofNullable(this.infrastructureType);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    public Optional<String> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
     }
     /**
      * @return The current state of the backup.
@@ -117,10 +145,13 @@ public final class GetAutonomousDatabaseBackupsResult {
     public static final class Builder {
         private List<GetAutonomousDatabaseBackupsAutonomousDatabaseBackup> autonomousDatabaseBackups;
         private @Nullable String autonomousDatabaseId;
+        private @Nullable String backupDestinationId;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetAutonomousDatabaseBackupsFilter> filters;
         private String id;
+        private @Nullable String infrastructureType;
+        private @Nullable String keyStoreId;
         private @Nullable String state;
         private @Nullable String type;
         public Builder() {}
@@ -128,10 +159,13 @@ public final class GetAutonomousDatabaseBackupsResult {
     	      Objects.requireNonNull(defaults);
     	      this.autonomousDatabaseBackups = defaults.autonomousDatabaseBackups;
     	      this.autonomousDatabaseId = defaults.autonomousDatabaseId;
+    	      this.backupDestinationId = defaults.backupDestinationId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.infrastructureType = defaults.infrastructureType;
+    	      this.keyStoreId = defaults.keyStoreId;
     	      this.state = defaults.state;
     	      this.type = defaults.type;
         }
@@ -151,6 +185,12 @@ public final class GetAutonomousDatabaseBackupsResult {
         public Builder autonomousDatabaseId(@Nullable String autonomousDatabaseId) {
 
             this.autonomousDatabaseId = autonomousDatabaseId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupDestinationId(@Nullable String backupDestinationId) {
+
+            this.backupDestinationId = backupDestinationId;
             return this;
         }
         @CustomType.Setter
@@ -183,6 +223,18 @@ public final class GetAutonomousDatabaseBackupsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder infrastructureType(@Nullable String infrastructureType) {
+
+            this.infrastructureType = infrastructureType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyStoreId(@Nullable String keyStoreId) {
+
+            this.keyStoreId = keyStoreId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -198,10 +250,13 @@ public final class GetAutonomousDatabaseBackupsResult {
             final var _resultValue = new GetAutonomousDatabaseBackupsResult();
             _resultValue.autonomousDatabaseBackups = autonomousDatabaseBackups;
             _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.backupDestinationId = backupDestinationId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.infrastructureType = infrastructureType;
+            _resultValue.keyStoreId = keyStoreId;
             _resultValue.state = state;
             _resultValue.type = type;
             return _resultValue;

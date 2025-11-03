@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiDocument
 {
     /// <summary>
-    /// This resource provides the Project resource in Oracle Cloud Infrastructure Ai Document service.
-    /// 
-    /// Create a new project.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

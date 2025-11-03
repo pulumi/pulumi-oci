@@ -94,6 +94,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetReplicasReplicaSecureConnectionResult> SecureConnections;
         /// <summary>
+        /// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
         public readonly string ShapeName;
@@ -152,6 +156,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             ImmutableArray<Outputs.GetReplicasReplicaSecureConnectionResult> secureConnections,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string shapeName,
 
             string state,
@@ -180,6 +186,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             PortX = portX;
             ReplicaOverrides = replicaOverrides;
             SecureConnections = secureConnections;
+            SecurityAttributes = securityAttributes;
             ShapeName = shapeName;
             State = state;
             TimeCreated = timeCreated;

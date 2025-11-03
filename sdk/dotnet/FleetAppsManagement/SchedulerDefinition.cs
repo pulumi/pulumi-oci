@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
-    /// This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-    /// 
-    /// Create a SchedulerDefinition to perform lifecycle operations.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

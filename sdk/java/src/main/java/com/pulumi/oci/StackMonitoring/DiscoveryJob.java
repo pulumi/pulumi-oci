@@ -18,10 +18,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
- * 
- * API to create discovery Job and submit discovery Details to agent.
- * 
  * ## Example Usage
  * 
  * <pre>

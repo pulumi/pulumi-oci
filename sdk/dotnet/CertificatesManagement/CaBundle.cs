@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CertificatesManagement
 {
     /// <summary>
-    /// This resource provides the Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
-    /// 
-    /// Creates a new CA bundle according to the details of the request.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

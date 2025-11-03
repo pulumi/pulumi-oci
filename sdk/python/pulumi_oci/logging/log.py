@@ -399,11 +399,6 @@ class Log(pulumi.CustomResource):
                  retention_duration: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
-
-        Creates a log within the specified log group. This call fails if a log group has already been created
-        with the same displayName or (service, resource, category) triplet.
-
         ## Example Usage
 
         ```python
@@ -464,11 +459,6 @@ class Log(pulumi.CustomResource):
                  args: LogArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log resource in Oracle Cloud Infrastructure Logging service.
-
-        Creates a log within the specified log group. This call fails if a log group has already been created
-        with the same displayName or (service, resource, category) triplet.
-
         ## Example Usage
 
         ```python

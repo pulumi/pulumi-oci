@@ -17,10 +17,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a new referential relation in the specified sensitive data model.
- * 
  * ## Example Usage
  * 
  * <pre>

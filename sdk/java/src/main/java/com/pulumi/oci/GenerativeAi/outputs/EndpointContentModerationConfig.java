@@ -6,7 +6,10 @@ package com.pulumi.oci.GenerativeAi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class EndpointContentModerationConfig {
@@ -15,6 +18,16 @@ public final class EndpointContentModerationConfig {
      * 
      */
     private Boolean isEnabled;
+    /**
+     * @return (Updatable) Enum for the modes of operation for inference protection.
+     * 
+     */
+    private @Nullable String mode;
+    /**
+     * @return (Updatable) The OCID of the model used for the feature.
+     * 
+     */
+    private @Nullable String modelId;
 
     private EndpointContentModerationConfig() {}
     /**
@@ -23,6 +36,20 @@ public final class EndpointContentModerationConfig {
      */
     public Boolean isEnabled() {
         return this.isEnabled;
+    }
+    /**
+     * @return (Updatable) Enum for the modes of operation for inference protection.
+     * 
+     */
+    public Optional<String> mode() {
+        return Optional.ofNullable(this.mode);
+    }
+    /**
+     * @return (Updatable) The OCID of the model used for the feature.
+     * 
+     */
+    public Optional<String> modelId() {
+        return Optional.ofNullable(this.modelId);
     }
 
     public static Builder builder() {
@@ -35,10 +62,14 @@ public final class EndpointContentModerationConfig {
     @CustomType.Builder
     public static final class Builder {
         private Boolean isEnabled;
+        private @Nullable String mode;
+        private @Nullable String modelId;
         public Builder() {}
         public Builder(EndpointContentModerationConfig defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.isEnabled = defaults.isEnabled;
+    	      this.mode = defaults.mode;
+    	      this.modelId = defaults.modelId;
         }
 
         @CustomType.Setter
@@ -49,9 +80,23 @@ public final class EndpointContentModerationConfig {
             this.isEnabled = isEnabled;
             return this;
         }
+        @CustomType.Setter
+        public Builder mode(@Nullable String mode) {
+
+            this.mode = mode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder modelId(@Nullable String modelId) {
+
+            this.modelId = modelId;
+            return this;
+        }
         public EndpointContentModerationConfig build() {
             final var _resultValue = new EndpointContentModerationConfig();
             _resultValue.isEnabled = isEnabled;
+            _resultValue.mode = mode;
+            _resultValue.modelId = modelId;
             return _resultValue;
         }
     }

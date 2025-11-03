@@ -398,10 +398,6 @@ class PrivateApplication(pulumi.CustomResource):
                  short_description: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
-
-        Creates a private application along with a single package to be hosted.
-
         ## Example Usage
 
         ```python
@@ -457,10 +453,6 @@ class PrivateApplication(pulumi.CustomResource):
                  args: PrivateApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
-
-        Creates a private application along with a single package to be hosted.
-
         ## Example Usage
 
         ```python

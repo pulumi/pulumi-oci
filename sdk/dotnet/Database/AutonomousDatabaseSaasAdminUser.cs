@@ -12,9 +12,28 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
     /// 
-    /// This operation updates SaaS administrative user configuration of the Autonomous Database.
+    /// This operation updates SaaS administrative user configuration of the Autonomous AI Database.
     /// 
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAutonomousDatabaseSaasAdminUser = new Oci.Database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user", new()
+    ///     {
+    ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+    ///         Password = autonomousDatabaseSaasAdminUserPassword,
+    ///         AccessType = autonomousDatabaseSaasAdminUserAccessType,
+    ///         Duration = autonomousDatabaseSaasAdminUserDuration,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// 
     /// ## Import
     /// 
@@ -60,7 +79,7 @@ namespace Pulumi.Oci.Database
         public Output<int?> SecretVersionNumber { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        /// The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -166,7 +185,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? SecretVersionNumber { get; set; }
 
         /// <summary>
-        /// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        /// The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -230,7 +249,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? SecretVersionNumber { get; set; }
 
         /// <summary>
-        /// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+        /// The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
         /// 
         /// 
         /// ** IMPORTANT **

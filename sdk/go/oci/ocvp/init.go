@@ -23,6 +23,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Ocvp/cluster:Cluster":
 		r = &Cluster{}
+	case "oci:Ocvp/datastore:Datastore":
+		r = &Datastore{}
+	case "oci:Ocvp/datastoreCluster:DatastoreCluster":
+		r = &DatastoreCluster{}
 	case "oci:Ocvp/esxiHost:EsxiHost":
 		r = &EsxiHost{}
 	case "oci:Ocvp/sddc:Sddc":
@@ -43,6 +47,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Ocvp/cluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Ocvp/datastore",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Ocvp/datastoreCluster",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

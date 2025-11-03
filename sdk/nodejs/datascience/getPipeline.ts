@@ -91,6 +91,10 @@ export interface GetPipelineResult {
      * The pipeline log configuration details.
      */
     readonly logConfigurationDetails: outputs.DataScience.GetPipelineLogConfigurationDetail[];
+    /**
+     * Parameters used in the pipeline.
+     */
+    readonly parameters: {[key: string]: string};
     readonly pipelineId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.

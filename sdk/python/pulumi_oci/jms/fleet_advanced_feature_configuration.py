@@ -354,11 +354,6 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
                  performance_tuning_analysis: Optional[pulumi.Input[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
-
-        Update advanced feature configurations for the Fleet.
-        Ensure that the namespace and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis feature.
-
         ## Example Usage
 
         ```python
@@ -368,59 +363,59 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
         test_fleet_advanced_feature_configuration = oci.jms.FleetAdvancedFeatureConfiguration("test_fleet_advanced_feature_configuration",
             fleet_id=test_fleet["id"],
             advanced_usage_tracking={
-                "is_enabled": fleet_advanced_feature_configuration_advanced_usage_tracking_is_enabled,
+                "is_enabled": True,
             },
             analytic_bucket_name=test_bucket["name"],
-            analytic_namespace=fleet_advanced_feature_configuration_analytic_namespace,
+            analytic_namespace="example-bucket-namespace",
             crypto_event_analysis={
-                "is_enabled": fleet_advanced_feature_configuration_crypto_event_analysis_is_enabled,
+                "is_enabled": True,
                 "summarized_events_log": {
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
             },
             java_migration_analysis={
-                "is_enabled": fleet_advanced_feature_configuration_java_migration_analysis_is_enabled,
+                "is_enabled": True,
             },
             jfr_recording={
-                "is_enabled": fleet_advanced_feature_configuration_jfr_recording_is_enabled,
+                "is_enabled": True,
             },
             lcm={
-                "is_enabled": fleet_advanced_feature_configuration_lcm_is_enabled,
+                "is_enabled": True,
                 "post_installation_actions": {
-                    "add_logging_handler": fleet_advanced_feature_configuration_lcm_post_installation_actions_add_logging_handler,
-                    "disabled_tls_versions": fleet_advanced_feature_configuration_lcm_post_installation_actions_disabled_tls_versions,
-                    "global_logging_level": fleet_advanced_feature_configuration_lcm_post_installation_actions_global_logging_level,
+                    "add_logging_handler": False,
+                    "disabled_tls_versions": ["TLS_1_0"],
+                    "global_logging_level": "ALL",
                     "minimum_key_size_settings": {
                         "certpaths": [{
-                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_key_size,
-                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_name,
+                            "key_size": 2048,
+                            "name": "RSA",
                         }],
                         "jars": [{
-                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_key_size,
-                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_name,
+                            "key_size": 2048,
+                            "name": "RSA",
                         }],
                         "tls": [{
-                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_key_size,
-                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_name,
+                            "key_size": 2048,
+                            "name": "RSA",
                         }],
                     },
                     "proxies": {
-                        "ftp_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_host,
-                        "ftp_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_port,
-                        "http_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_host,
-                        "http_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_port,
-                        "https_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_host,
-                        "https_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_port,
-                        "socks_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_host,
-                        "socks_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_port,
-                        "use_system_proxies": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_use_system_proxies,
+                        "ftp_proxy_host": "example-ftp-proxy-host",
+                        "ftp_proxy_port": 10,
+                        "http_proxy_host": "example-http-proxy-host",
+                        "http_proxy_port": 10,
+                        "https_proxy_host": "example-https-proxy-host",
+                        "https_proxy_port": 10,
+                        "socks_proxy_host": "example-socks-proxy-host",
+                        "socks_proxy_port": 10,
+                        "use_system_proxies": False,
                     },
-                    "should_replace_certificates_operating_system": fleet_advanced_feature_configuration_lcm_post_installation_actions_should_replace_certificates_operating_system,
+                    "should_replace_certificates_operating_system": False,
                 },
             },
             performance_tuning_analysis={
-                "is_enabled": fleet_advanced_feature_configuration_performance_tuning_analysis_is_enabled,
+                "is_enabled": True,
             })
         ```
 
@@ -451,11 +446,6 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
                  args: FleetAdvancedFeatureConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
-
-        Update advanced feature configurations for the Fleet.
-        Ensure that the namespace and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis feature.
-
         ## Example Usage
 
         ```python
@@ -465,59 +455,59 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
         test_fleet_advanced_feature_configuration = oci.jms.FleetAdvancedFeatureConfiguration("test_fleet_advanced_feature_configuration",
             fleet_id=test_fleet["id"],
             advanced_usage_tracking={
-                "is_enabled": fleet_advanced_feature_configuration_advanced_usage_tracking_is_enabled,
+                "is_enabled": True,
             },
             analytic_bucket_name=test_bucket["name"],
-            analytic_namespace=fleet_advanced_feature_configuration_analytic_namespace,
+            analytic_namespace="example-bucket-namespace",
             crypto_event_analysis={
-                "is_enabled": fleet_advanced_feature_configuration_crypto_event_analysis_is_enabled,
+                "is_enabled": True,
                 "summarized_events_log": {
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
             },
             java_migration_analysis={
-                "is_enabled": fleet_advanced_feature_configuration_java_migration_analysis_is_enabled,
+                "is_enabled": True,
             },
             jfr_recording={
-                "is_enabled": fleet_advanced_feature_configuration_jfr_recording_is_enabled,
+                "is_enabled": True,
             },
             lcm={
-                "is_enabled": fleet_advanced_feature_configuration_lcm_is_enabled,
+                "is_enabled": True,
                 "post_installation_actions": {
-                    "add_logging_handler": fleet_advanced_feature_configuration_lcm_post_installation_actions_add_logging_handler,
-                    "disabled_tls_versions": fleet_advanced_feature_configuration_lcm_post_installation_actions_disabled_tls_versions,
-                    "global_logging_level": fleet_advanced_feature_configuration_lcm_post_installation_actions_global_logging_level,
+                    "add_logging_handler": False,
+                    "disabled_tls_versions": ["TLS_1_0"],
+                    "global_logging_level": "ALL",
                     "minimum_key_size_settings": {
                         "certpaths": [{
-                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_key_size,
-                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_certpath_name,
+                            "key_size": 2048,
+                            "name": "RSA",
                         }],
                         "jars": [{
-                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_key_size,
-                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_jar_name,
+                            "key_size": 2048,
+                            "name": "RSA",
                         }],
                         "tls": [{
-                            "key_size": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_key_size,
-                            "name": fleet_advanced_feature_configuration_lcm_post_installation_actions_minimum_key_size_settings_tls_name,
+                            "key_size": 2048,
+                            "name": "RSA",
                         }],
                     },
                     "proxies": {
-                        "ftp_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_host,
-                        "ftp_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_ftp_proxy_port,
-                        "http_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_host,
-                        "http_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_http_proxy_port,
-                        "https_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_host,
-                        "https_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_https_proxy_port,
-                        "socks_proxy_host": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_host,
-                        "socks_proxy_port": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_socks_proxy_port,
-                        "use_system_proxies": fleet_advanced_feature_configuration_lcm_post_installation_actions_proxies_use_system_proxies,
+                        "ftp_proxy_host": "example-ftp-proxy-host",
+                        "ftp_proxy_port": 10,
+                        "http_proxy_host": "example-http-proxy-host",
+                        "http_proxy_port": 10,
+                        "https_proxy_host": "example-https-proxy-host",
+                        "https_proxy_port": 10,
+                        "socks_proxy_host": "example-socks-proxy-host",
+                        "socks_proxy_port": 10,
+                        "use_system_proxies": False,
                     },
-                    "should_replace_certificates_operating_system": fleet_advanced_feature_configuration_lcm_post_installation_actions_should_replace_certificates_operating_system,
+                    "should_replace_certificates_operating_system": False,
                 },
             },
             performance_tuning_analysis={
-                "is_enabled": fleet_advanced_feature_configuration_performance_tuning_analysis_is_enabled,
+                "is_enabled": True,
             })
         ```
 

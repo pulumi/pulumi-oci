@@ -190,11 +190,7 @@ class StreamPoolPrivateEndpointSettings(dict):
         """
         :param Sequence[_builtins.str] nsg_ids: The optional list of network security groups to be used with the private endpoint of the stream pool. That value cannot be changed.
         :param _builtins.str private_endpoint_ip: The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
-        :param _builtins.str subnet_id: If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param _builtins.str subnet_id: If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
         """
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -223,11 +219,7 @@ class StreamPoolPrivateEndpointSettings(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[_builtins.str]:
         """
-        If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -527,6 +519,7 @@ class GetStreamPoolsStreamPoolResult(dict):
                  lifecycle_state_details: _builtins.str,
                  name: _builtins.str,
                  private_endpoint_settings: Sequence['outputs.GetStreamPoolsStreamPoolPrivateEndpointSettingResult'],
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  time_created: _builtins.str):
         """
@@ -541,6 +534,7 @@ class GetStreamPoolsStreamPoolResult(dict):
         :param _builtins.str lifecycle_state_details: Any additional details about the current state of the stream.
         :param _builtins.str name: A filter to return only resources that match the given name exactly.
         :param Sequence['GetStreamPoolsStreamPoolPrivateEndpointSettingArgs'] private_endpoint_settings: Optional settings if the stream pool is private.
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         :param _builtins.str time_created: The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
@@ -555,6 +549,7 @@ class GetStreamPoolsStreamPoolResult(dict):
         pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "private_endpoint_settings", private_endpoint_settings)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
 
@@ -645,6 +640,14 @@ class GetStreamPoolsStreamPoolResult(dict):
         Optional settings if the stream pool is private.
         """
         return pulumi.get(self, "private_endpoint_settings")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

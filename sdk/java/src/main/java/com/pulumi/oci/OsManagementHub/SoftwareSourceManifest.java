@@ -15,10 +15,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Updates the package list document for the software source.
- * 
  * ## Example Usage
  * 
  * <pre>

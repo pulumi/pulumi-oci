@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? ArnRole { get; set; }
 
         /// <summary>
-        /// (Updatable) The provider for the Autonomous Database encryption key.
+        /// (Updatable) The provider for the Autonomous AI Database encryption key.
         /// </summary>
         [Input("autonomousDatabaseProvider")]
         public Input<string>? AutonomousDatabaseProvider { get; set; }
@@ -61,10 +61,28 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? KeyName { get; set; }
 
         /// <summary>
+        /// (Updatable) GCP key ring
+        /// </summary>
+        [Input("keyRing")]
+        public Input<string>? KeyRing { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
+
+        /// <summary>
+        /// (Updatable) GCP kms REST API endpoint
+        /// </summary>
+        [Input("kmsRestEndpoint")]
+        public Input<string>? KmsRestEndpoint { get; set; }
+
+        /// <summary>
+        /// (Updatable) GCP key ring location
+        /// </summary>
+        [Input("location")]
+        public Input<string>? Location { get; set; }
 
         /// <summary>
         /// (Updatable) UUID of OKV KMS Key
@@ -77,6 +95,12 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("okvUri")]
         public Input<string>? OkvUri { get; set; }
+
+        /// <summary>
+        /// (Updatable) GCP project name
+        /// </summary>
+        [Input("project")]
+        public Input<string>? Project { get; set; }
 
         /// <summary>
         /// (Updatable) AWS key service endpoint URI

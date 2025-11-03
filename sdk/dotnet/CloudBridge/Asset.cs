@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudBridge
 {
     /// <summary>
-    /// This resource provides the Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
-    /// 
-    /// Creates an asset.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

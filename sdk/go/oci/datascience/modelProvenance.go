@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
-//
-// Creates provenance information for the specified model.
-//
 // ## Example Usage
 //
 // ```go

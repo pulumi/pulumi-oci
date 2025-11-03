@@ -11,11 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Volume Group Backup resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates a new backup volume group of the specified volume group.
-// For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
-//
 // ## Example Usage
 //
 // ```go

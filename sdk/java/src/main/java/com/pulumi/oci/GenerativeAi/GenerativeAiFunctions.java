@@ -42,6 +42,10 @@ import com.pulumi.oci.GenerativeAi.inputs.GetEndpointArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetEndpointPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetEndpointsArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetEndpointsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
@@ -63,6 +67,8 @@ import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClusterResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClustersResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetEndpointResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetEndpointsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetGenerativeAiPrivateEndpointResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetGenerativeAiPrivateEndpointsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelsResult;
 import com.pulumi.oci.Utilities;
@@ -4150,6 +4156,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -4195,6 +4202,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -4240,6 +4248,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -4285,6 +4294,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -4330,6 +4340,7 @@ public final class GenerativeAiFunctions {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(endpointDisplayName)
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpoint.id())
      *             .id(endpointId)
      *             .state(endpointState)
      *             .build());
@@ -4342,6 +4353,441 @@ public final class GenerativeAiFunctions {
      */
     public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(GetEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Generative Ai Private Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Retrieves an Generative AI private endpoint using a `privateEndpointId`.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerativeAiPrivateEndpoint = GenerativeAiFunctions.getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs.builder()
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGenerativeAiPrivateEndpointResult> getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs args) {
+        return getGenerativeAiPrivateEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Generative Ai Private Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Retrieves an Generative AI private endpoint using a `privateEndpointId`.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerativeAiPrivateEndpoint = GenerativeAiFunctions.getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs.builder()
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGenerativeAiPrivateEndpointResult> getGenerativeAiPrivateEndpointPlain(GetGenerativeAiPrivateEndpointPlainArgs args) {
+        return getGenerativeAiPrivateEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Generative Ai Private Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Retrieves an Generative AI private endpoint using a `privateEndpointId`.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerativeAiPrivateEndpoint = GenerativeAiFunctions.getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs.builder()
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGenerativeAiPrivateEndpointResult> getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getGenerativeAiPrivateEndpoint:getGenerativeAiPrivateEndpoint", TypeShape.of(GetGenerativeAiPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Generative Ai Private Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Retrieves an Generative AI private endpoint using a `privateEndpointId`.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerativeAiPrivateEndpoint = GenerativeAiFunctions.getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs.builder()
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGenerativeAiPrivateEndpointResult> getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getGenerativeAiPrivateEndpoint:getGenerativeAiPrivateEndpoint", TypeShape.of(GetGenerativeAiPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Generative Ai Private Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Retrieves an Generative AI private endpoint using a `privateEndpointId`.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerativeAiPrivateEndpoint = GenerativeAiFunctions.getGenerativeAiPrivateEndpoint(GetGenerativeAiPrivateEndpointArgs.builder()
+     *             .generativeAiPrivateEndpointId(testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGenerativeAiPrivateEndpointResult> getGenerativeAiPrivateEndpointPlain(GetGenerativeAiPrivateEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getGenerativeAiPrivateEndpoint:getGenerativeAiPrivateEndpoint", TypeShape.of(GetGenerativeAiPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Generative Ai Private Endpoints in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists all Generative AI private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerativeAiPrivateEndpoints = GenerativeAiFunctions.getGenerativeAiPrivateEndpoints(GetGenerativeAiPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(generativeAiPrivateEndpointDisplayName)
+     *             .id(generativeAiPrivateEndpointId)
+     *             .state(generativeAiPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGenerativeAiPrivateEndpointsResult> getGenerativeAiPrivateEndpoints(GetGenerativeAiPrivateEndpointsArgs args) {
+        return getGenerativeAiPrivateEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Generative Ai Private Endpoints in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists all Generative AI private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerativeAiPrivateEndpoints = GenerativeAiFunctions.getGenerativeAiPrivateEndpoints(GetGenerativeAiPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(generativeAiPrivateEndpointDisplayName)
+     *             .id(generativeAiPrivateEndpointId)
+     *             .state(generativeAiPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGenerativeAiPrivateEndpointsResult> getGenerativeAiPrivateEndpointsPlain(GetGenerativeAiPrivateEndpointsPlainArgs args) {
+        return getGenerativeAiPrivateEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Generative Ai Private Endpoints in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists all Generative AI private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerativeAiPrivateEndpoints = GenerativeAiFunctions.getGenerativeAiPrivateEndpoints(GetGenerativeAiPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(generativeAiPrivateEndpointDisplayName)
+     *             .id(generativeAiPrivateEndpointId)
+     *             .state(generativeAiPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGenerativeAiPrivateEndpointsResult> getGenerativeAiPrivateEndpoints(GetGenerativeAiPrivateEndpointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getGenerativeAiPrivateEndpoints:getGenerativeAiPrivateEndpoints", TypeShape.of(GetGenerativeAiPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Generative Ai Private Endpoints in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists all Generative AI private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerativeAiPrivateEndpoints = GenerativeAiFunctions.getGenerativeAiPrivateEndpoints(GetGenerativeAiPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(generativeAiPrivateEndpointDisplayName)
+     *             .id(generativeAiPrivateEndpointId)
+     *             .state(generativeAiPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetGenerativeAiPrivateEndpointsResult> getGenerativeAiPrivateEndpoints(GetGenerativeAiPrivateEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getGenerativeAiPrivateEndpoints:getGenerativeAiPrivateEndpoints", TypeShape.of(GetGenerativeAiPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Generative Ai Private Endpoints in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists all Generative AI private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGenerativeAiPrivateEndpoints = GenerativeAiFunctions.getGenerativeAiPrivateEndpoints(GetGenerativeAiPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(generativeAiPrivateEndpointDisplayName)
+     *             .id(generativeAiPrivateEndpointId)
+     *             .state(generativeAiPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetGenerativeAiPrivateEndpointsResult> getGenerativeAiPrivateEndpointsPlain(GetGenerativeAiPrivateEndpointsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getGenerativeAiPrivateEndpoints:getGenerativeAiPrivateEndpoints", TypeShape.of(GetGenerativeAiPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative AI service.

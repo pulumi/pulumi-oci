@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Managed Instance Install Windows Updates Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Installs Windows updates on the specified managed instance.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

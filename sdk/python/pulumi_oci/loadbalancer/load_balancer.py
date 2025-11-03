@@ -56,7 +56,7 @@ class LoadBalancerArgs:
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
-        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: Applies to IPV6 LB creation only. 
+        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only. 
                
                Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
                
@@ -106,7 +106,7 @@ class LoadBalancerArgs:
                **Notes:**
                * Unless the header name is "" it must start with "X-" prefix.
                * Setting the header name to "" will set it to the default: X-Request-Id.
-        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         """
@@ -237,7 +237,7 @@ class LoadBalancerArgs:
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Applies to IPV6 LB creation only. 
+        (Updatable) Applies to IPV6 LB creation only. 
 
         Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 
@@ -353,7 +353,7 @@ class LoadBalancerArgs:
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]:
         """
-        An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
         return pulumi.get(self, "reserved_ips")
 
@@ -426,7 +426,7 @@ class _LoadBalancerState:
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
-        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: Applies to IPV6 LB creation only. 
+        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only. 
                
                Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
                
@@ -476,7 +476,7 @@ class _LoadBalancerState:
                **Notes:**
                * Unless the header name is "" it must start with "X-" prefix.
                * Setting the header name to "" will set it to the default: X-Request-Id.
-        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param pulumi.Input[_builtins.str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
@@ -631,7 +631,7 @@ class _LoadBalancerState:
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Applies to IPV6 LB creation only. 
+        (Updatable) Applies to IPV6 LB creation only. 
 
         Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 
@@ -747,7 +747,7 @@ class _LoadBalancerState:
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]]:
         """
-        An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
         return pulumi.get(self, "reserved_ips")
 
@@ -868,37 +868,6 @@ class LoadBalancer(pulumi.CustomResource):
                  subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Load Balancer resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Creates a new load balancer in the specified compartment. For general information about load balancers,
-        see [Overview of the Load Balancing Service](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
-
-        For the purposes of access control, you must provide the OCID of the compartment where you want
-        the load balancer to reside. Notice that the load balancer doesn't have to be in the same compartment as the VCN
-        or backend set. If you're not sure which compartment to use, put the load balancer in the same compartment as the VCN.
-        For information about access control and compartments, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
-
-        For information about Availability Domains, see
-        [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
-        in the Identity and Access Management Service API.
-
-        All Oracle Cloud Infrastructure resources, including load balancers, get an Oracle-assigned,
-        unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID
-        in the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,
-        or by viewing the resource in the Console. Fore more information, see
-        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        When you create a load balancer, the system assigns an IP address.
-        To get the IP address, use the [GetLoadBalancer](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer) operation.
-
-        ## Supported Aliases
-
-        * `oci_load_balancer`
-
         ## Example Usage
 
         ```python
@@ -954,7 +923,7 @@ class LoadBalancer(pulumi.CustomResource):
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
-        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: Applies to IPV6 LB creation only. 
+        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only. 
                
                Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
                
@@ -1004,7 +973,7 @@ class LoadBalancer(pulumi.CustomResource):
                **Notes:**
                * Unless the header name is "" it must start with "X-" prefix.
                * Setting the header name to "" will set it to the default: X-Request-Id.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]] reserved_ips: (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param pulumi.Input[_builtins.str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
@@ -1021,37 +990,6 @@ class LoadBalancer(pulumi.CustomResource):
                  args: LoadBalancerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Load Balancer resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Creates a new load balancer in the specified compartment. For general information about load balancers,
-        see [Overview of the Load Balancing Service](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm).
-
-        For the purposes of access control, you must provide the OCID of the compartment where you want
-        the load balancer to reside. Notice that the load balancer doesn't have to be in the same compartment as the VCN
-        or backend set. If you're not sure which compartment to use, put the load balancer in the same compartment as the VCN.
-        For information about access control and compartments, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-
-        You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
-
-        For information about Availability Domains, see
-        [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
-        To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
-        in the Identity and Access Management Service API.
-
-        All Oracle Cloud Infrastructure resources, including load balancers, get an Oracle-assigned,
-        unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID
-        in the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,
-        or by viewing the resource in the Console. Fore more information, see
-        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        When you create a load balancer, the system assigns an IP address.
-        To get the IP address, use the [GetLoadBalancer](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancer/GetLoadBalancer) operation.
-
-        ## Supported Aliases
-
-        * `oci_load_balancer`
-
         ## Example Usage
 
         ```python
@@ -1215,7 +1153,7 @@ class LoadBalancer(pulumi.CustomResource):
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
-        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: Applies to IPV6 LB creation only. 
+        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only. 
                
                Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
                
@@ -1265,7 +1203,7 @@ class LoadBalancer(pulumi.CustomResource):
                **Notes:**
                * Unless the header name is "" it must start with "X-" prefix.
                * Setting the header name to "" will set it to the default: X-Request-Id.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict']]]] reserved_ips: (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}`
         :param pulumi.Input[_builtins.str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
@@ -1373,7 +1311,7 @@ class LoadBalancer(pulumi.CustomResource):
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> pulumi.Output[_builtins.str]:
         """
-        Applies to IPV6 LB creation only. 
+        (Updatable) Applies to IPV6 LB creation only. 
 
         Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 
@@ -1465,7 +1403,7 @@ class LoadBalancer(pulumi.CustomResource):
     @pulumi.getter(name="reservedIps")
     def reserved_ips(self) -> pulumi.Output[Optional[Sequence['outputs.LoadBalancerReservedIp']]]:
         """
-        An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
+        (Updatable) An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
         return pulumi.get(self, "reserved_ips")
 

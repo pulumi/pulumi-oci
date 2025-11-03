@@ -17,10 +17,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Managed Databases Reset Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Resets database parameter values to their default or startup values.
- * 
  * ## Example Usage
  * 
  * <pre>

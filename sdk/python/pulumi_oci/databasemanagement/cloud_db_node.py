@@ -427,9 +427,7 @@ class CloudDbNode(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the cloud DB node specified by `cloudDbNodeId`.
+        ## Example Usage
 
         ## Import
 
@@ -457,9 +455,7 @@ class CloudDbNode(pulumi.CustomResource):
                  args: CloudDbNodeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the cloud DB node specified by `cloudDbNodeId`.
+        ## Example Usage
 
         ## Import
 

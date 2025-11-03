@@ -69,6 +69,11 @@ public final class GetInstancesInstanceShapeConfig {
      */
     private String processorDescription;
     /**
+     * @return This field is reserved for internal use.
+     * 
+     */
+    private String resourceManagement;
+    /**
      * @return The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
      * 
      */
@@ -156,6 +161,13 @@ public final class GetInstancesInstanceShapeConfig {
         return this.processorDescription;
     }
     /**
+     * @return This field is reserved for internal use.
+     * 
+     */
+    public String resourceManagement() {
+        return this.resourceManagement;
+    }
+    /**
      * @return The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
      * 
      */
@@ -184,6 +196,7 @@ public final class GetInstancesInstanceShapeConfig {
         private Integer nvmes;
         private Double ocpus;
         private String processorDescription;
+        private String resourceManagement;
         private Integer vcpus;
         public Builder() {}
         public Builder(GetInstancesInstanceShapeConfig defaults) {
@@ -200,6 +213,7 @@ public final class GetInstancesInstanceShapeConfig {
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
     	      this.processorDescription = defaults.processorDescription;
+    	      this.resourceManagement = defaults.resourceManagement;
     	      this.vcpus = defaults.vcpus;
         }
 
@@ -300,6 +314,14 @@ public final class GetInstancesInstanceShapeConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceManagement(String resourceManagement) {
+            if (resourceManagement == null) {
+              throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "resourceManagement");
+            }
+            this.resourceManagement = resourceManagement;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vcpus(Integer vcpus) {
             if (vcpus == null) {
               throw new MissingRequiredPropertyException("GetInstancesInstanceShapeConfig", "vcpus");
@@ -321,6 +343,7 @@ public final class GetInstancesInstanceShapeConfig {
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;
             _resultValue.processorDescription = processorDescription;
+            _resultValue.resourceManagement = resourceManagement;
             _resultValue.vcpus = vcpus;
             return _resultValue;
         }

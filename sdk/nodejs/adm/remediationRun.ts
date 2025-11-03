@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
- *
- * Creates a new remediation run.
- *
  * ## Example Usage
  *
  * ```typescript

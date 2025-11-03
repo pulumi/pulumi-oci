@@ -20,12 +20,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Occ Demand Signal resource in Oracle Cloud Infrastructure Demand Signal service.
- * 
- * Creates a OccDemandSignal.
- * 
- *   Updates the data of an OccDemandSignal.
- * 
  * ## Example Usage
  * 
  * ## Import

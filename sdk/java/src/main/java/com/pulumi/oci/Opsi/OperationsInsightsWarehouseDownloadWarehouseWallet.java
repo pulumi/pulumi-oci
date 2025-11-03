@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Operations Insights Warehouse Download Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
- * 
- * Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
- * 
  * ## Example Usage
  * 
  * <pre>

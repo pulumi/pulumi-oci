@@ -30,6 +30,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///     {
         ///         KubernetesVersion = addonOptionKubernetesVersion,
         ///         AddonName = testAddon.Name,
+        ///         ShouldShowAllVersions = addonOptionShouldShowAllVersions,
         ///     });
         /// 
         /// });
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///     {
         ///         KubernetesVersion = addonOptionKubernetesVersion,
         ///         AddonName = testAddon.Name,
+        ///         ShouldShowAllVersions = addonOptionShouldShowAllVersions,
         ///     });
         /// 
         /// });
@@ -84,6 +86,7 @@ namespace Pulumi.Oci.ContainerEngine
         ///     {
         ///         KubernetesVersion = addonOptionKubernetesVersion,
         ///         AddonName = testAddon.Name,
+        ///         ShouldShowAllVersions = addonOptionShouldShowAllVersions,
         ///     });
         /// 
         /// });
@@ -116,6 +119,12 @@ namespace Pulumi.Oci.ContainerEngine
         [Input("kubernetesVersion", required: true)]
         public string KubernetesVersion { get; set; } = null!;
 
+        /// <summary>
+        /// Whether to show all add-on versions
+        /// </summary>
+        [Input("shouldShowAllVersions")]
+        public bool? ShouldShowAllVersions { get; set; }
+
         public GetAddonOptionsArgs()
         {
         }
@@ -144,6 +153,12 @@ namespace Pulumi.Oci.ContainerEngine
         [Input("kubernetesVersion", required: true)]
         public Input<string> KubernetesVersion { get; set; } = null!;
 
+        /// <summary>
+        /// Whether to show all add-on versions
+        /// </summary>
+        [Input("shouldShowAllVersions")]
+        public Input<bool>? ShouldShowAllVersions { get; set; }
+
         public GetAddonOptionsInvokeArgs()
         {
         }
@@ -165,6 +180,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public readonly string Id;
         public readonly string KubernetesVersion;
+        public readonly bool? ShouldShowAllVersions;
 
         [OutputConstructor]
         private GetAddonOptionsResult(
@@ -176,13 +192,16 @@ namespace Pulumi.Oci.ContainerEngine
 
             string id,
 
-            string kubernetesVersion)
+            string kubernetesVersion,
+
+            bool? shouldShowAllVersions)
         {
             AddonName = addonName;
             AddonOptions = addonOptions;
             Filters = filters;
             Id = id;
             KubernetesVersion = kubernetesVersion;
+            ShouldShowAllVersions = shouldShowAllVersions;
         }
     }
 }

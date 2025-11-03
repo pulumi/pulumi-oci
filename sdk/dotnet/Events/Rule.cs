@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Events
 {
     /// <summary>
-    /// This resource provides the Rule resource in Oracle Cloud Infrastructure Events service.
-    /// 
-    /// Creates a new rule.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Encrypted Data resource in Oracle Cloud Infrastructure Kms service.
- *
- * Encrypts data using the given [EncryptDataDetails](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/datatypes/EncryptDataDetails) resource.
- * Plaintext included in the example request is a base64-encoded value of a UTF-8 string.
- *
  * ## Example Usage
  *
  * ```typescript

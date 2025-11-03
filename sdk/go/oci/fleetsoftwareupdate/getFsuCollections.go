@@ -68,9 +68,9 @@ type GetFsuCollectionsArgs struct {
 
 // A collection of values returned by getFsuCollections.
 type GetFsuCollectionsResult struct {
-	// Compartment Identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Exadata Fleet Update Collection resource display name.
+	// The user-friendly name for the Exadata Fleet Update Collection.
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetFsuCollectionsFilter `pulumi:"filters"`
 	// The list of fsu_collection_summary_collection.
@@ -124,12 +124,12 @@ func (o GetFsuCollectionsResultOutput) ToGetFsuCollectionsResultOutputWithContex
 	return o
 }
 
-// Compartment Identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 func (o GetFsuCollectionsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCollectionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Exadata Fleet Update Collection resource display name.
+// The user-friendly name for the Exadata Fleet Update Collection.
 func (o GetFsuCollectionsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFsuCollectionsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

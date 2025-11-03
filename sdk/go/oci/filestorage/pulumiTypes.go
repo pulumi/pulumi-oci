@@ -4754,6 +4754,8 @@ type GetMountTargetsMountTarget struct {
 	RequestedThroughput string `pulumi:"requestedThroughput"`
 	// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
 	ReservedStorageCapacity string `pulumi:"reservedStorageCapacity"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
@@ -4815,6 +4817,8 @@ type GetMountTargetsMountTargetArgs struct {
 	RequestedThroughput pulumi.StringInput `pulumi:"requestedThroughput"`
 	// * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
 	ReservedStorageCapacity pulumi.StringInput `pulumi:"reservedStorageCapacity"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
@@ -4973,6 +4977,11 @@ func (o GetMountTargetsMountTargetOutput) RequestedThroughput() pulumi.StringOut
 // * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
 func (o GetMountTargetsMountTargetOutput) ReservedStorageCapacity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) string { return v.ReservedStorageCapacity }).(pulumi.StringOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetMountTargetsMountTargetOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ComputeCloud
 {
     /// <summary>
-    /// This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-    /// 
-    /// Creates a new Compute Cloud@Customer upgrade schedule.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

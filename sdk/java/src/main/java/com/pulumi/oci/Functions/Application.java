@@ -58,6 +58,7 @@ import javax.annotation.Nullable;
  *                     .kmsKeyId(testKey.id())
  *                     .build())
  *                 .build())
+ *             .securityAttributes(applicationSecurityAttributes)
  *             .shape(applicationShape)
  *             .syslogUrl(applicationSyslogUrl)
  *             .traceConfig(ApplicationTraceConfigArgs.builder()
@@ -183,6 +184,20 @@ public class Application extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> networkSecurityGroupIds() {
         return this.networkSecurityGroupIds;
+    }
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture. Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture. When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture. Accepted values are: `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`

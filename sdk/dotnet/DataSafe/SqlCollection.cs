@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates a new SQL collection resource.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

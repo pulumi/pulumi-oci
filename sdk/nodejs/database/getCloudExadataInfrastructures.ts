@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+ * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
  *
  * ## Example Usage
  *
@@ -92,7 +92,7 @@ export interface GetCloudExadataInfrastructuresResult {
 /**
  * This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+ * Gets a list of the cloud Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous AI Database on dedicated Exadata infrastructure only.
  *
  * ## Example Usage
  *

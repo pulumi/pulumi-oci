@@ -21,10 +21,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
- * 
- * Creates a new metric extension resource for a given compartment
- * 
  * ## Example Usage
  * 
  * <pre>

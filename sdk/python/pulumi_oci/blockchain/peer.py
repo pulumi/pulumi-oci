@@ -267,10 +267,6 @@ class Peer(pulumi.CustomResource):
                  role: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Create Blockchain Platform Peer
-
         ## Example Usage
 
         ```python
@@ -314,10 +310,6 @@ class Peer(pulumi.CustomResource):
                  args: PeerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
-
-        Create Blockchain Platform Peer
-
         ## Example Usage
 
         ```python

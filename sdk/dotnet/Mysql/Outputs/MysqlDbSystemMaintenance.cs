@@ -14,6 +14,28 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class MysqlDbSystemMaintenance
     {
         /// <summary>
+        /// (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+        /// </summary>
+        public readonly string? MaintenanceScheduleType;
+        /// <summary>
+        /// The version that is expected to be targeted during the next scheduled maintenance run.
+        /// </summary>
+        public readonly string? TargetVersion;
+        /// <summary>
+        /// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// </summary>
+        public readonly string? TimeScheduled;
+        /// <summary>
+        /// (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+        /// 
+        /// OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+        /// </summary>
+        public readonly string? VersionPreference;
+        /// <summary>
+        /// (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+        /// </summary>
+        public readonly string? VersionTrackPreference;
+        /// <summary>
         /// (Updatable) The start of the 2 hour maintenance window.
         /// 
         /// This string is of the format: "{day-of-week} {time-of-day}".
@@ -27,8 +49,24 @@ namespace Pulumi.Oci.Mysql.Outputs
         public readonly string WindowStartTime;
 
         [OutputConstructor]
-        private MysqlDbSystemMaintenance(string windowStartTime)
+        private MysqlDbSystemMaintenance(
+            string? maintenanceScheduleType,
+
+            string? targetVersion,
+
+            string? timeScheduled,
+
+            string? versionPreference,
+
+            string? versionTrackPreference,
+
+            string windowStartTime)
         {
+            MaintenanceScheduleType = maintenanceScheduleType;
+            TargetVersion = targetVersion;
+            TimeScheduled = timeScheduled;
+            VersionPreference = versionPreference;
+            VersionTrackPreference = versionTrackPreference;
             WindowStartTime = windowStartTime;
         }
     }

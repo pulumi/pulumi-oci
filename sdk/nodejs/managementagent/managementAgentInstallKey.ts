@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Management Agent Install Key resource in Oracle Cloud Infrastructure Management Agent service.
- *
- * User creates a new install key as part of this API.
- *
  * ## Example Usage
  *
  * ```typescript

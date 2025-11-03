@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
- *
- * Returns carbon emission usage for the given account.
- *
  * ## Example Usage
  *
  * ```typescript

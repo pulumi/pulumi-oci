@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
- *
- * Creates a migration asset.
+ * ## Example Usage
  *
  * ## Import
  *

@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
-//
-// Adds a routing policy to a load balancer. For more information, see
-// [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
-//
 // ## Example Usage
 //
 // ```go

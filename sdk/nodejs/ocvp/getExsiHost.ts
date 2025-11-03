@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -41,6 +43,7 @@ export interface GetExsiHostArgs {
  * A collection of values returned by getExsiHost.
  */
 export interface GetExsiHostResult {
+    readonly attachDatastoreClusterIds: string[];
     /**
      * Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      */
@@ -82,9 +85,18 @@ export interface GetExsiHostResult {
      */
     readonly currentSku: string;
     /**
+     * List of DatastoreAttachment objects containing information about attachment details
+     */
+    readonly datastoreAttachments: outputs.Ocvp.GetExsiHostDatastoreAttachment[];
+    /**
+     * A list of datastore clusters.
+     */
+    readonly datastoreClusterIds: string[];
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: string};
+    readonly detachDatastoreClusterIds: string[];
     /**
      * A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */

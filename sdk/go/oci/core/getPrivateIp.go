@@ -63,6 +63,8 @@ type LookupPrivateIpArgs struct {
 type LookupPrivateIpResult struct {
 	// The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The secondary IPv4 CIDR prefix length.
+	CidrPrefixLength int `pulumi:"cidrPrefixLength"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -79,6 +81,8 @@ type LookupPrivateIpResult struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
 	IpState string `pulumi:"ipState"`
+	// Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+	Ipv4subnetCidrAtCreation string `pulumi:"ipv4subnetCidrAtCreation"`
 	// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
 	IsPrimary  bool `pulumi:"isPrimary"`
 	IsReserved bool `pulumi:"isReserved"`
@@ -138,6 +142,11 @@ func (o LookupPrivateIpResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// The secondary IPv4 CIDR prefix length.
+func (o LookupPrivateIpResultOutput) CidrPrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) int { return v.CidrPrefixLength }).(pulumi.IntOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
 func (o LookupPrivateIpResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -176,6 +185,11 @@ func (o LookupPrivateIpResultOutput) IpAddress() pulumi.StringOutput {
 // State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
 func (o LookupPrivateIpResultOutput) IpState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.IpState }).(pulumi.StringOutput)
+}
+
+// Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+func (o LookupPrivateIpResultOutput) Ipv4subnetCidrAtCreation() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupPrivateIpResult) string { return v.Ipv4subnetCidrAtCreation }).(pulumi.StringOutput)
 }
 
 // Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataScience
 {
     /// <summary>
-    /// This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
-    /// 
-    /// Creates a new model deployment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

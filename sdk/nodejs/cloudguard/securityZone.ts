@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
- *
- * Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
- * through a CreateSecurityZoneDetails resource.
- *
  * ## Example Usage
  *
  * ```typescript

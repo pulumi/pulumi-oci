@@ -16,7 +16,7 @@ public final class FunctionSourceDetails {
      */
     private String pbfListingId;
     /**
-     * @return Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+     * @return Type of the Function Source. Possible values: PBF.
      * 
      */
     private String sourceType;
@@ -30,7 +30,7 @@ public final class FunctionSourceDetails {
         return this.pbfListingId;
     }
     /**
-     * @return Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+     * @return Type of the Function Source. Possible values: PBF.
      * 
      */
     public String sourceType() {

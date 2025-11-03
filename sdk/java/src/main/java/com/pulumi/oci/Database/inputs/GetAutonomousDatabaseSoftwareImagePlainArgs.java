@@ -14,14 +14,14 @@ public final class GetAutonomousDatabaseSoftwareImagePlainArgs extends com.pulum
     public static final GetAutonomousDatabaseSoftwareImagePlainArgs Empty = new GetAutonomousDatabaseSoftwareImagePlainArgs();
 
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="autonomousDatabaseSoftwareImageId", required=true)
     private String autonomousDatabaseSoftwareImageId;
 
     /**
-     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String autonomousDatabaseSoftwareImageId() {
@@ -53,7 +53,7 @@ public final class GetAutonomousDatabaseSoftwareImagePlainArgs extends com.pulum
         }
 
         /**
-         * @param autonomousDatabaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param autonomousDatabaseSoftwareImageId The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 

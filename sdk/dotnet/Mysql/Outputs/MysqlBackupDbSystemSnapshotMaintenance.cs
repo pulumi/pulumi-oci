@@ -14,13 +14,49 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class MysqlBackupDbSystemSnapshotMaintenance
     {
         /// <summary>
+        /// The maintenance schedule type of the DB system. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+        /// </summary>
+        public readonly string? MaintenanceScheduleType;
+        /// <summary>
+        /// The version that is expected to be targeted during the next scheduled maintenance run.
+        /// </summary>
+        public readonly string? TargetVersion;
+        /// <summary>
+        /// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// </summary>
+        public readonly string? TimeScheduled;
+        /// <summary>
+        /// The preferred version to target when performing an automatic MySQL upgrade.
+        /// </summary>
+        public readonly string? VersionPreference;
+        /// <summary>
+        /// The preferred version track to target when performing an automatic MySQL upgrade. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+        /// </summary>
+        public readonly string? VersionTrackPreference;
+        /// <summary>
         /// The start time of the maintenance window.
         /// </summary>
         public readonly string? WindowStartTime;
 
         [OutputConstructor]
-        private MysqlBackupDbSystemSnapshotMaintenance(string? windowStartTime)
+        private MysqlBackupDbSystemSnapshotMaintenance(
+            string? maintenanceScheduleType,
+
+            string? targetVersion,
+
+            string? timeScheduled,
+
+            string? versionPreference,
+
+            string? versionTrackPreference,
+
+            string? windowStartTime)
         {
+            MaintenanceScheduleType = maintenanceScheduleType;
+            TargetVersion = targetVersion;
+            TimeScheduled = timeScheduled;
+            VersionPreference = versionPreference;
+            VersionTrackPreference = versionTrackPreference;
             WindowStartTime = windowStartTime;
         }
     }

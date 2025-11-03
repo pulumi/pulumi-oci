@@ -22,10 +22,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
- * 
- * Creates a new configuration item.
- * 
  * ## Example Usage
  * 
  * <pre>

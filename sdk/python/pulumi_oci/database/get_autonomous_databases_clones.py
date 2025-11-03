@@ -71,7 +71,7 @@ class GetAutonomousDatabasesClonesResult:
     @pulumi.getter(name="cloneType")
     def clone_type(self) -> Optional[_builtins.str]:
         """
-        The Autonomous Database clone type.
+        The Autonomous AI Database clone type.
         """
         return pulumi.get(self, "clone_type")
 
@@ -87,7 +87,7 @@ class GetAutonomousDatabasesClonesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -108,7 +108,7 @@ class GetAutonomousDatabasesClonesResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "state")
 
@@ -139,7 +139,7 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[_builtins.s
     """
     This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
 
-    Lists the Autonomous Database clones for the specified Autonomous Database.
+    Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
 
     ## Example Usage
 
@@ -190,7 +190,7 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
     """
     This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
 
-    Lists the Autonomous Database clones for the specified Autonomous Database.
+    Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
 
     ## Example Usage
 

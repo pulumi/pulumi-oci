@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Network Address List resource in Oracle Cloud Infrastructure Waf service.
-//
-// Creates a new NetworkAddressList.
-//
 // ## Example Usage
 //
 // ```go

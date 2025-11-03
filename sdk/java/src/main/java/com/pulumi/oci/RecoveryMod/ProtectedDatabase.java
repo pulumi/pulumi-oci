@@ -19,10 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Protected Database resource in Oracle Cloud Infrastructure Recovery service.
- * 
- * Creates a new Protected Database.
- * 
  * ## Example Usage
  * 
  * <pre>

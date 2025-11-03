@@ -23,7 +23,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      */
     private Map<String,String> advancedProperties;
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -83,7 +83,17 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      */
     private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource> relatedResources;
     /**
-     * @return A filter to return only resources with one of the specified runtimeSupport values.
+     * @return Specifies the Database Tools Runtime endpoint.
+     * 
+     */
+    private String runtimeEndpoint;
+    /**
+     * @return A filter to return only resources with one of the specified runtimeIdentity values.
+     * 
+     */
+    private String runtimeIdentity;
+    /**
+     * @return A filter to return only resources with one of the specified type values.
      * 
      */
     private String runtimeSupport;
@@ -103,7 +113,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      */
     private String timeCreated;
     /**
-     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * @return The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      * 
      */
     private String timeUpdated;
@@ -123,7 +133,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      */
     private String userName;
     /**
-     * @return The user password.
+     * @return The database user password.
      * 
      */
     private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword> userPasswords;
@@ -137,7 +147,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         return this.advancedProperties;
     }
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -221,7 +231,21 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         return this.relatedResources;
     }
     /**
-     * @return A filter to return only resources with one of the specified runtimeSupport values.
+     * @return Specifies the Database Tools Runtime endpoint.
+     * 
+     */
+    public String runtimeEndpoint() {
+        return this.runtimeEndpoint;
+    }
+    /**
+     * @return A filter to return only resources with one of the specified runtimeIdentity values.
+     * 
+     */
+    public String runtimeIdentity() {
+        return this.runtimeIdentity;
+    }
+    /**
+     * @return A filter to return only resources with one of the specified type values.
      * 
      */
     public String runtimeSupport() {
@@ -249,7 +273,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         return this.timeCreated;
     }
     /**
-     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * @return The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      * 
      */
     public String timeUpdated() {
@@ -277,7 +301,7 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         return this.userName;
     }
     /**
-     * @return The user password.
+     * @return The database user password.
      * 
      */
     public List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword> userPasswords() {
@@ -306,6 +330,8 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         private String privateEndpointId;
         private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient> proxyClients;
         private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource> relatedResources;
+        private String runtimeEndpoint;
+        private String runtimeIdentity;
         private String runtimeSupport;
         private String state;
         private Map<String,String> systemTags;
@@ -331,6 +357,8 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
     	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.proxyClients = defaults.proxyClients;
     	      this.relatedResources = defaults.relatedResources;
+    	      this.runtimeEndpoint = defaults.runtimeEndpoint;
+    	      this.runtimeIdentity = defaults.runtimeIdentity;
     	      this.runtimeSupport = defaults.runtimeSupport;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -459,6 +487,22 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
             return relatedResources(List.of(relatedResources));
         }
         @CustomType.Setter
+        public Builder runtimeEndpoint(String runtimeEndpoint) {
+            if (runtimeEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "runtimeEndpoint");
+            }
+            this.runtimeEndpoint = runtimeEndpoint;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder runtimeIdentity(String runtimeIdentity) {
+            if (runtimeIdentity == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "runtimeIdentity");
+            }
+            this.runtimeIdentity = runtimeIdentity;
+            return this;
+        }
+        @CustomType.Setter
         public Builder runtimeSupport(String runtimeSupport) {
             if (runtimeSupport == null) {
               throw new MissingRequiredPropertyException("GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem", "runtimeSupport");
@@ -548,6 +592,8 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
             _resultValue.privateEndpointId = privateEndpointId;
             _resultValue.proxyClients = proxyClients;
             _resultValue.relatedResources = relatedResources;
+            _resultValue.runtimeEndpoint = runtimeEndpoint;
+            _resultValue.runtimeIdentity = runtimeIdentity;
             _resultValue.runtimeSupport = runtimeSupport;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

@@ -12,9 +12,38 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Lifecycle Stage Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+// ## Example Usage
 //
-// Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/osmanagementhub"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := osmanagementhub.NewLifecycleStageAttachManagedInstancesManagement(ctx, "test_lifecycle_stage_attach_managed_instances_management", &osmanagementhub.LifecycleStageAttachManagedInstancesManagementArgs{
+//				LifecycleStageId: pulumi.Any(testLifecycleStage.Id),
+//				ManagedInstanceDetails: &osmanagementhub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs{
+//					ManagedInstances: pulumi.Any(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsManagedInstances),
+//					WorkRequestDetails: &osmanagementhub.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs{
+//						Description: pulumi.Any(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription),
+//						DisplayName: pulumi.Any(lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 //
 // ## Import
 //

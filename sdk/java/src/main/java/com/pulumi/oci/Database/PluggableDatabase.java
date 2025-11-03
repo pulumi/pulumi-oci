@@ -24,11 +24,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Pluggable Database resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates and starts a pluggable database in the specified container database.
- * Pluggable Database can be created using different operations (e.g. LocalClone, RemoteClone, Relocate ) with this API.
- * Use the [StartPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StartPluggableDatabase) and [StopPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/PluggableDatabase/StopPluggableDatabase) APIs to start and stop the pluggable database.
+ * ## Example Usage
  * 
  * ## Import
  * 
@@ -153,9 +149,17 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isRestricted() {
         return this.isRestricted;
     }
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     * 
+     */
     @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> kmsKeyVersionId;
 
+    /**
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
+     * 
+     */
     public Output<Optional<String>> kmsKeyVersionId() {
         return Codegen.optional(this.kmsKeyVersionId);
     }

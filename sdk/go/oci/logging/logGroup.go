@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Log Group resource in Oracle Cloud Infrastructure Logging service.
-//
-// Create a new log group with a unique display name. This call fails
-// if the log group is already created with the same displayName in the compartment.
-//
 // ## Example Usage
 //
 // ```go

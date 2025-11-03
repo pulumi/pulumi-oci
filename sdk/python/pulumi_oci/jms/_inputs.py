@@ -41,6 +41,12 @@ __all__ = [
     'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgsDict',
     'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs',
     'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict',
+    'FleetAgentConfigurationLinuxConfigurationArgs',
+    'FleetAgentConfigurationLinuxConfigurationArgsDict',
+    'FleetAgentConfigurationMacOsConfigurationArgs',
+    'FleetAgentConfigurationMacOsConfigurationArgsDict',
+    'FleetAgentConfigurationWindowsConfigurationArgs',
+    'FleetAgentConfigurationWindowsConfigurationArgsDict',
     'FleetInventoryLogArgs',
     'FleetInventoryLogArgsDict',
     'FleetOperationLogArgs',
@@ -1026,6 +1032,156 @@ class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs:
     @is_enabled.setter
     def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
+
+
+if not MYPY:
+    class FleetAgentConfigurationLinuxConfigurationArgsDict(TypedDict):
+        exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+elif False:
+    FleetAgentConfigurationLinuxConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class FleetAgentConfigurationLinuxConfigurationArgs:
+    def __init__(__self__, *,
+                 exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclude_paths: (Updatable) An array of file system paths (environment variables supported).
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] include_paths: (Updatable) An array of file system paths (environment variables supported).
+        """
+        pulumi.set(__self__, "exclude_paths", exclude_paths)
+        pulumi.set(__self__, "include_paths", include_paths)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "exclude_paths")
+
+    @exclude_paths.setter
+    def exclude_paths(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "exclude_paths", value)
+
+    @_builtins.property
+    @pulumi.getter(name="includePaths")
+    def include_paths(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "include_paths")
+
+    @include_paths.setter
+    def include_paths(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "include_paths", value)
+
+
+if not MYPY:
+    class FleetAgentConfigurationMacOsConfigurationArgsDict(TypedDict):
+        exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+elif False:
+    FleetAgentConfigurationMacOsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class FleetAgentConfigurationMacOsConfigurationArgs:
+    def __init__(__self__, *,
+                 exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclude_paths: (Updatable) An array of file system paths (environment variables supported).
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] include_paths: (Updatable) An array of file system paths (environment variables supported).
+        """
+        pulumi.set(__self__, "exclude_paths", exclude_paths)
+        pulumi.set(__self__, "include_paths", include_paths)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "exclude_paths")
+
+    @exclude_paths.setter
+    def exclude_paths(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "exclude_paths", value)
+
+    @_builtins.property
+    @pulumi.getter(name="includePaths")
+    def include_paths(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "include_paths")
+
+    @include_paths.setter
+    def include_paths(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "include_paths", value)
+
+
+if not MYPY:
+    class FleetAgentConfigurationWindowsConfigurationArgsDict(TypedDict):
+        exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+elif False:
+    FleetAgentConfigurationWindowsConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class FleetAgentConfigurationWindowsConfigurationArgs:
+    def __init__(__self__, *,
+                 exclude_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 include_paths: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclude_paths: (Updatable) An array of file system paths (environment variables supported).
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] include_paths: (Updatable) An array of file system paths (environment variables supported).
+        """
+        pulumi.set(__self__, "exclude_paths", exclude_paths)
+        pulumi.set(__self__, "include_paths", include_paths)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "exclude_paths")
+
+    @exclude_paths.setter
+    def exclude_paths(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "exclude_paths", value)
+
+    @_builtins.property
+    @pulumi.getter(name="includePaths")
+    def include_paths(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "include_paths")
+
+    @include_paths.setter
+    def include_paths(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "include_paths", value)
 
 
 if not MYPY:

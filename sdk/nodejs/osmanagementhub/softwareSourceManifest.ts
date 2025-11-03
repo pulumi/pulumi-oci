@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Updates the package list document for the software source.
- *
  * ## Example Usage
  *
  * ```typescript

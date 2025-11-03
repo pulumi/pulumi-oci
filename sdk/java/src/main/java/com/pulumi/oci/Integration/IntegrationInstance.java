@@ -26,10 +26,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Integration Instance resource in Oracle Cloud Infrastructure Integration service.
- * 
- * Creates a new Integration Instance.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -88,6 +84,10 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .isIntegrationVcnAllowlisted(integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted)
  *                 .build())
+ *             .securityAttributes(Map.ofEntries(
+ *                 Map.entry("oracle-zpr.sensitivity.value", "low"),
+ *                 Map.entry("oracle-zpr.sensitivity.mode", "enforce")
+ *             ))
  *             .shape(integrationInstanceShape)
  *             .state(integrationInstanceTargetState)
  *             .build());
@@ -353,14 +353,14 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
         return this.instanceUrl;
     }
     /**
-     * (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     @Export(name="integrationInstanceType", refs={String.class}, tree="[0]")
     private Output<String> integrationInstanceType;
 
     /**
-     * @return (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+     * @return (Updatable) Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      * 
      */
     public Output<String> integrationInstanceType() {
@@ -477,6 +477,26 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<IntegrationInstancePrivateEndpointOutboundConnection>> privateEndpointOutboundConnections() {
         return this.privateEndpointOutboundConnections;
+    }
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+     * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
+     * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
+     * }`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+     * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
+     * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
+     * }`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * Shape

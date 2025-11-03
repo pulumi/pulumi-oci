@@ -399,10 +399,6 @@ class DiscoveryJob(pulumi.CustomResource):
                  should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        API to create discovery Job and submit discovery Details to agent.
-
         ## Example Usage
 
         ```python
@@ -472,10 +468,6 @@ class DiscoveryJob(pulumi.CustomResource):
                  args: DiscoveryJobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
-
-        API to create discovery Job and submit discovery Details to agent.
-
         ## Example Usage
 
         ```python

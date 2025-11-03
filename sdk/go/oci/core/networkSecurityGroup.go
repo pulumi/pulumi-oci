@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Network Security Group resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates a new network security group for the specified VCN.
-//
 // ## Example Usage
 //
 // ```go

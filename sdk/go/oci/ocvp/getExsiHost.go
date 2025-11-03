@@ -58,6 +58,7 @@ type GetExsiHostArgs struct {
 
 // A collection of values returned by getExsiHost.
 type GetExsiHostResult struct {
+	AttachDatastoreClusterIds []string `pulumi:"attachDatastoreClusterIds"`
 	// Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate string `pulumi:"billingContractEndDate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
@@ -80,8 +81,13 @@ type GetExsiHostResult struct {
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 	CurrentSku string `pulumi:"currentSku"`
+	// List of DatastoreAttachment objects containing information about attachment details
+	DatastoreAttachments []GetExsiHostDatastoreAttachment `pulumi:"datastoreAttachments"`
+	// A list of datastore clusters.
+	DatastoreClusterIds []string `pulumi:"datastoreClusterIds"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
+	DefinedTags               map[string]string `pulumi:"definedTags"`
+	DetachDatastoreClusterIds []string          `pulumi:"detachDatastoreClusterIds"`
 	// A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	EsxiHostId  string `pulumi:"esxiHostId"`
@@ -169,6 +175,10 @@ func (o GetExsiHostResultOutput) ToGetExsiHostResultOutputWithContext(ctx contex
 	return o
 }
 
+func (o GetExsiHostResultOutput) AttachDatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExsiHostResult) []string { return v.AttachDatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 func (o GetExsiHostResultOutput) BillingContractEndDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.BillingContractEndDate }).(pulumi.StringOutput)
@@ -218,9 +228,23 @@ func (o GetExsiHostResultOutput) CurrentSku() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.CurrentSku }).(pulumi.StringOutput)
 }
 
+// List of DatastoreAttachment objects containing information about attachment details
+func (o GetExsiHostResultOutput) DatastoreAttachments() GetExsiHostDatastoreAttachmentArrayOutput {
+	return o.ApplyT(func(v GetExsiHostResult) []GetExsiHostDatastoreAttachment { return v.DatastoreAttachments }).(GetExsiHostDatastoreAttachmentArrayOutput)
+}
+
+// A list of datastore clusters.
+func (o GetExsiHostResultOutput) DatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExsiHostResult) []string { return v.DatastoreClusterIds }).(pulumi.StringArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetExsiHostResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetExsiHostResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+func (o GetExsiHostResultOutput) DetachDatastoreClusterIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExsiHostResult) []string { return v.DetachDatastoreClusterIds }).(pulumi.StringArrayOutput)
 }
 
 // A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.

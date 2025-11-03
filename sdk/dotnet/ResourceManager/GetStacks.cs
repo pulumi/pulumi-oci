@@ -14,9 +14,11 @@ namespace Pulumi.Oci.ResourceManager
         /// <summary>
         /// This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
         /// 
-        /// Returns a list of stacks.
+        /// Lists stacks according to the specified filter.
+        /// For more information, see
+        /// [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
         /// - If called using the compartment ID, returns all stacks in the specified compartment.
-        /// - If called using the stack ID, returns the specified stack.
+        /// - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
         /// 
         /// 
         /// ## Example Usage
@@ -46,9 +48,11 @@ namespace Pulumi.Oci.ResourceManager
         /// <summary>
         /// This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
         /// 
-        /// Returns a list of stacks.
+        /// Lists stacks according to the specified filter.
+        /// For more information, see
+        /// [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
         /// - If called using the compartment ID, returns all stacks in the specified compartment.
-        /// - If called using the stack ID, returns the specified stack.
+        /// - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
         /// 
         /// 
         /// ## Example Usage
@@ -78,9 +82,11 @@ namespace Pulumi.Oci.ResourceManager
         /// <summary>
         /// This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
         /// 
-        /// Returns a list of stacks.
+        /// Lists stacks according to the specified filter.
+        /// For more information, see
+        /// [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
         /// - If called using the compartment ID, returns all stacks in the specified compartment.
-        /// - If called using the stack ID, returns the specified stack.
+        /// - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
         /// 
         /// 
         /// ## Example Usage
@@ -138,13 +144,7 @@ namespace Pulumi.Oci.ResourceManager
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-        /// 
-        /// Allowable values:
-        /// * CREATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
+        /// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -184,13 +184,7 @@ namespace Pulumi.Oci.ResourceManager
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-        /// 
-        /// Allowable values:
-        /// * CREATING
-        /// * ACTIVE
-        /// * DELETING
-        /// * DELETED
+        /// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -210,7 +204,7 @@ namespace Pulumi.Oci.ResourceManager
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Human-readable display name for the stack.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetStacksFilterResult> Filters;
@@ -223,7 +217,7 @@ namespace Pulumi.Oci.ResourceManager
         /// </summary>
         public readonly ImmutableArray<Outputs.GetStacksStackResult> Stacks;
         /// <summary>
-        /// The current lifecycle state of the stack.
+        /// The current lifecycle state of the stack. For more information about stack lifecycle states in Resource Manager, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
         /// </summary>
         public readonly string? State;
 

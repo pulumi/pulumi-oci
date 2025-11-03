@@ -19,13 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates a maintenance run with one of the following:
- * The latest available release update patch (RUP) for the Autonomous Container Database.
- * The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
- * Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -133,14 +126,14 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.customActionTimeoutInMins;
     }
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     @Export(name="databaseSoftwareImageId", refs={String.class}, tree="[0]")
     private Output<String> databaseSoftwareImageId;
 
     /**
-     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     public Output<String> databaseSoftwareImageId() {
@@ -301,14 +294,14 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.patchFailureCount;
     }
     /**
-     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     * The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
      * 
      */
     @Export(name="patchId", refs={String.class}, tree="[0]")
     private Output<String> patchId;
 
     /**
-     * @return The unique identifier of the patch. The identifier string includes the patch type, the Oracle Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle Database 19.9.0.0 that was released October 30, 2020.
+     * @return The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
      * 
      */
     public Output<String> patchId() {
@@ -417,14 +410,14 @@ public class MaintenanceRun extends com.pulumi.resources.CustomResource {
         return this.peerMaintenanceRunIds;
     }
     /**
-     * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+     * @return The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      * 
      */
     public Output<String> state() {

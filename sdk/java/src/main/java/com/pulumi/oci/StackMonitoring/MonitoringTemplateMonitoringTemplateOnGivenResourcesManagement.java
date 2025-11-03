@@ -15,10 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Monitoring Template Monitoring Template On Given Resources Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
- * 
- * Apply the Monitoring Template identified by the id
- * 
  * ## Example Usage
  * 
  * <pre>

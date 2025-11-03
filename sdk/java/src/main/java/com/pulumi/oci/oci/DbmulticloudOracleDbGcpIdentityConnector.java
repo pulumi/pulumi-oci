@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
- * 
- * Creates Oracle DB GCP Identity Connector resource.
- * 
  * ## Example Usage
  * 
  * <pre>

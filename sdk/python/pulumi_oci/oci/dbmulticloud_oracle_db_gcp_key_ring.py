@@ -430,10 +430,6 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Oracle Db Gcp Key Ring resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Creates DB GCP Key Rings based on the provided information and retrieves the associated keys.
-
         ## Example Usage
 
         ```python
@@ -487,10 +483,6 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
                  args: DbmulticloudOracleDbGcpKeyRingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oracle Db Gcp Key Ring resource in Oracle Cloud Infrastructure Dbmulticloud service.
-
-        Creates DB GCP Key Rings based on the provided information and retrieves the associated keys.
-
         ## Example Usage
 
         ```python

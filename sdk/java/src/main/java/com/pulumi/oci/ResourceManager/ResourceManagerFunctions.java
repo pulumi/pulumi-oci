@@ -34,6 +34,8 @@ public final class ResourceManagerFunctions {
      * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Gets the specified private endpoint.
+     * For more information, see
+     * [Getting a Private Endpoint&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
      * 
      * ## Example Usage
      * 
@@ -76,6 +78,8 @@ public final class ResourceManagerFunctions {
      * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Gets the specified private endpoint.
+     * For more information, see
+     * [Getting a Private Endpoint&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
      * 
      * ## Example Usage
      * 
@@ -118,6 +122,8 @@ public final class ResourceManagerFunctions {
      * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Gets the specified private endpoint.
+     * For more information, see
+     * [Getting a Private Endpoint&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
      * 
      * ## Example Usage
      * 
@@ -160,6 +166,8 @@ public final class ResourceManagerFunctions {
      * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Gets the specified private endpoint.
+     * For more information, see
+     * [Getting a Private Endpoint&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
      * 
      * ## Example Usage
      * 
@@ -202,6 +210,8 @@ public final class ResourceManagerFunctions {
      * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Gets the specified private endpoint.
+     * For more information, see
+     * [Getting a Private Endpoint&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoints.htm).
      * 
      * ## Example Usage
      * 
@@ -243,7 +253,10 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+     * Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
+     * For more information, see
+     * [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
      * 
      * ## Example Usage
      * 
@@ -286,7 +299,10 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+     * Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
+     * For more information, see
+     * [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
      * 
      * ## Example Usage
      * 
@@ -329,7 +345,10 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+     * Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
+     * For more information, see
+     * [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
      * 
      * ## Example Usage
      * 
@@ -372,7 +391,10 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+     * Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
+     * For more information, see
+     * [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
      * 
      * ## Example Usage
      * 
@@ -415,7 +437,10 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+     * Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+     * Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
+     * For more information, see
+     * [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
      * 
      * ## Example Usage
      * 
@@ -459,7 +484,9 @@ public final class ResourceManagerFunctions {
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Lists private endpoints according to the specified filter.
-     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * For more information, see
+     * [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+     * - For `compartmentId`, lists all private endpoints in the matching compartment.
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
@@ -506,7 +533,9 @@ public final class ResourceManagerFunctions {
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Lists private endpoints according to the specified filter.
-     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * For more information, see
+     * [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+     * - For `compartmentId`, lists all private endpoints in the matching compartment.
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
@@ -553,7 +582,9 @@ public final class ResourceManagerFunctions {
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Lists private endpoints according to the specified filter.
-     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * For more information, see
+     * [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+     * - For `compartmentId`, lists all private endpoints in the matching compartment.
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
@@ -600,7 +631,9 @@ public final class ResourceManagerFunctions {
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Lists private endpoints according to the specified filter.
-     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * For more information, see
+     * [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+     * - For `compartmentId`, lists all private endpoints in the matching compartment.
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
@@ -647,7 +680,9 @@ public final class ResourceManagerFunctions {
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Lists private endpoints according to the specified filter.
-     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * For more information, see
+     * [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+     * - For `compartmentId`, lists all private endpoints in the matching compartment.
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
@@ -694,7 +729,9 @@ public final class ResourceManagerFunctions {
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Lists private endpoints according to the specified filter.
-     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * For more information, see
+     * [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+     * - For `compartmentId`, lists all private endpoints in the matching compartment.
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
@@ -741,7 +778,9 @@ public final class ResourceManagerFunctions {
      * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
      * 
      * Lists private endpoints according to the specified filter.
-     * - For `compartmentId`, lists all private endpoint in the matching compartment.
+     * For more information, see
+     * [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
+     * - For `compartmentId`, lists all private endpoints in the matching compartment.
      * - For `privateEndpointId`, lists the matching private endpoint.
      * 
      * ## Example Usage
@@ -787,7 +826,9 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Gets a stack using the stack ID.
+     * Gets the specified stack.
+     * For more information, see
+     * [Getting a Stack&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
      * 
      * ## Example Usage
      * 
@@ -829,7 +870,9 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Gets a stack using the stack ID.
+     * Gets the specified stack.
+     * For more information, see
+     * [Getting a Stack&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
      * 
      * ## Example Usage
      * 
@@ -871,7 +914,9 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Gets a stack using the stack ID.
+     * Gets the specified stack.
+     * For more information, see
+     * [Getting a Stack&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
      * 
      * ## Example Usage
      * 
@@ -913,7 +958,9 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Gets a stack using the stack ID.
+     * Gets the specified stack.
+     * For more information, see
+     * [Getting a Stack&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
      * 
      * ## Example Usage
      * 
@@ -955,7 +1002,9 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Gets a stack using the stack ID.
+     * Gets the specified stack.
+     * For more information, see
+     * [Getting a Stack&#39;s Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
      * 
      * ## Example Usage
      * 
@@ -1187,9 +1236,11 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Returns a list of stacks.
+     * Lists stacks according to the specified filter.
+     * For more information, see
+     * [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
      * - If called using the compartment ID, returns all stacks in the specified compartment.
-     * - If called using the stack ID, returns the specified stack.
+     * - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
      * 
      * ## Example Usage
      * 
@@ -1234,9 +1285,11 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Returns a list of stacks.
+     * Lists stacks according to the specified filter.
+     * For more information, see
+     * [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
      * - If called using the compartment ID, returns all stacks in the specified compartment.
-     * - If called using the stack ID, returns the specified stack.
+     * - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
      * 
      * ## Example Usage
      * 
@@ -1281,9 +1334,11 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Returns a list of stacks.
+     * Lists stacks according to the specified filter.
+     * For more information, see
+     * [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
      * - If called using the compartment ID, returns all stacks in the specified compartment.
-     * - If called using the stack ID, returns the specified stack.
+     * - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
      * 
      * ## Example Usage
      * 
@@ -1328,9 +1383,11 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Returns a list of stacks.
+     * Lists stacks according to the specified filter.
+     * For more information, see
+     * [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
      * - If called using the compartment ID, returns all stacks in the specified compartment.
-     * - If called using the stack ID, returns the specified stack.
+     * - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
      * 
      * ## Example Usage
      * 
@@ -1375,9 +1432,11 @@ public final class ResourceManagerFunctions {
     /**
      * This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
      * 
-     * Returns a list of stacks.
+     * Lists stacks according to the specified filter.
+     * For more information, see
+     * [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
      * - If called using the compartment ID, returns all stacks in the specified compartment.
-     * - If called using the stack ID, returns the specified stack.
+     * - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
      * 
      * ## Example Usage
      * 

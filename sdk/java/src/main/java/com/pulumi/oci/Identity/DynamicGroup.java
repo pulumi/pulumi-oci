@@ -15,24 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Dynamic Group resource in Oracle Cloud Infrastructure Identity service.
- * 
- * Creates a new dynamic group in your tenancy.
- * 
- * You must specify your tenancy&#39;s OCID as the compartment ID in the request object (remember that the tenancy
- * is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
- * reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
- * reside within compartments inside the tenancy. For information about OCIDs, see
- * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
- * 
- * You must also specify a *name* for the dynamic group, which must be unique across all dynamic groups in your
- * tenancy, and cannot be changed. Note that this name has to be also unique across all groups in your tenancy.
- * You can use this name or the OCID when writing policies that apply to the dynamic group. For more information
- * about policies, see [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm).
- * 
- * You must also specify a *description* for the dynamic group (although it can be an empty string). It does not
- * have to be unique, and you can change it anytime with [UpdateDynamicGroup](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/DynamicGroup/UpdateDynamicGroup).
- * 
  * ## Example Usage
  * 
  * <pre>

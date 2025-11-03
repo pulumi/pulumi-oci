@@ -18,6 +18,18 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Enum for the modes of operation for inference protection.
+        /// </summary>
+        [Input("mode")]
+        public Input<string>? Mode { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the model used for the feature.
+        /// </summary>
+        [Input("modelId")]
+        public Input<string>? ModelId { get; set; }
+
         public EndpointContentModerationConfigArgs()
         {
         }

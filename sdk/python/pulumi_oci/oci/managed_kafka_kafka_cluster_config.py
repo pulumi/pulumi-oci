@@ -285,10 +285,6 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
                  latest_config: Optional[pulumi.Input[Union['ManagedKafkaKafkaClusterConfigLatestConfigArgs', 'ManagedKafkaKafkaClusterConfigLatestConfigArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
-
-        Creates a KafkaClusterConfig.
-
         ## Example Usage
 
         ```python
@@ -335,10 +331,6 @@ class ManagedKafkaKafkaClusterConfig(pulumi.CustomResource):
                  args: ManagedKafkaKafkaClusterConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
-
-        Creates a KafkaClusterConfig.
-
         ## Example Usage
 
         ```python

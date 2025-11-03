@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testEndpoints = oci.GenerativeAi.getEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: endpointDisplayName,
+ *     generativeAiPrivateEndpointId: testGenerativeAiPrivateEndpoint.id,
  *     id: endpointId,
  *     state: endpointState,
  * });
@@ -31,6 +32,7 @@ export function getEndpoints(args: GetEndpointsArgs, opts?: pulumi.InvokeOptions
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "generativeAiPrivateEndpointId": args.generativeAiPrivateEndpointId,
         "id": args.id,
         "state": args.state,
     }, opts);
@@ -50,6 +52,10 @@ export interface GetEndpointsArgs {
     displayName?: string;
     filters?: inputs.GenerativeAi.GetEndpointsFilter[];
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     */
+    generativeAiPrivateEndpointId?: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
      */
     id?: string;
@@ -64,15 +70,13 @@ export interface GetEndpointsArgs {
  */
 export interface GetEndpointsResult {
     readonly compartmentId: string;
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     */
     readonly displayName?: string;
     /**
      * The list of endpoint_collection.
      */
     readonly endpointCollections: outputs.GenerativeAi.GetEndpointsEndpointCollection[];
     readonly filters?: outputs.GenerativeAi.GetEndpointsFilter[];
+    readonly generativeAiPrivateEndpointId?: string;
     readonly id?: string;
     /**
      * The current state of the endpoint.
@@ -93,6 +97,7 @@ export interface GetEndpointsResult {
  * const testEndpoints = oci.GenerativeAi.getEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: endpointDisplayName,
+ *     generativeAiPrivateEndpointId: testGenerativeAiPrivateEndpoint.id,
  *     id: endpointId,
  *     state: endpointState,
  * });
@@ -104,6 +109,7 @@ export function getEndpointsOutput(args: GetEndpointsOutputArgs, opts?: pulumi.I
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "generativeAiPrivateEndpointId": args.generativeAiPrivateEndpointId,
         "id": args.id,
         "state": args.state,
     }, opts);
@@ -122,6 +128,10 @@ export interface GetEndpointsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetEndpointsFilterArgs>[]>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     */
+    generativeAiPrivateEndpointId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
      */

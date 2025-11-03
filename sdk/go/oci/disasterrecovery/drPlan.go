@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
-//
-// Create a DR plan of the specified DR plan type.
-//
 // ## Example Usage
 //
 // ```go

@@ -169,10 +169,6 @@ class CatalogAssociation(pulumi.CustomResource):
                  service_catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
-
-        Creates an association between service catalog and a resource.
-
         ## Example Usage
 
         ```python
@@ -210,10 +206,6 @@ class CatalogAssociation(pulumi.CustomResource):
                  args: CatalogAssociationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
-
-        Creates an association between service catalog and a resource.
-
         ## Example Usage
 
         ```python

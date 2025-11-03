@@ -313,10 +313,6 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
                  service_instance_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Attaches a service instance to the fusion pod.
-
         ## Example Usage
 
         ```python
@@ -355,10 +351,6 @@ class FusionEnvironmentServiceAttachment(pulumi.CustomResource):
                  args: FusionEnvironmentServiceAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
-
-        Attaches a service instance to the fusion pod.
-
         ## Example Usage
 
         ```python

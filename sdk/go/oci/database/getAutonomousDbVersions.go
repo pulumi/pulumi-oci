@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
 //
-// Gets a list of supported Autonomous Database versions.
+// Gets a list of supported Autonomous AI Database versions.
 //
 // ## Example Usage
 //
@@ -55,7 +55,7 @@ func GetAutonomousDbVersions(ctx *pulumi.Context, args *GetAutonomousDbVersionsA
 type GetAutonomousDbVersionsArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
-	// A filter to return only autonomous database resources that match the specified workload type.
+	// A filter to return only Autonomous AI Database resources that match the specified workload type.
 	DbWorkload *string                         `pulumi:"dbWorkload"`
 	Filters    []GetAutonomousDbVersionsFilter `pulumi:"filters"`
 }
@@ -65,11 +65,12 @@ type GetAutonomousDbVersionsResult struct {
 	// The list of autonomous_db_versions.
 	AutonomousDbVersions []GetAutonomousDbVersionsAutonomousDbVersion `pulumi:"autonomousDbVersions"`
 	CompartmentId        string                                       `pulumi:"compartmentId"`
-	// The Autonomous Database workload type. The following values are valid:
-	// * OLTP - indicates an Autonomous Transaction Processing database
-	// * DW - indicates an Autonomous Data Warehouse database
-	// * AJD - indicates an Autonomous JSON Database
-	// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+	// The Autonomous AI Database workload type. The following values are valid:
+	// * OLTP - indicates an Autonomous AI Transaction Processing database
+	// * DW - indicates an Autonomous AI Lakehouse database
+	// * AJD - indicates an Autonomous AI JSON Database
+	// * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+	// * LH - indicates an Oracle Autonomous AI Lakehouse database
 	DbWorkload *string                         `pulumi:"dbWorkload"`
 	Filters    []GetAutonomousDbVersionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -89,7 +90,7 @@ func GetAutonomousDbVersionsOutput(ctx *pulumi.Context, args GetAutonomousDbVers
 type GetAutonomousDbVersionsOutputArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A filter to return only autonomous database resources that match the specified workload type.
+	// A filter to return only Autonomous AI Database resources that match the specified workload type.
 	DbWorkload pulumi.StringPtrInput                   `pulumi:"dbWorkload"`
 	Filters    GetAutonomousDbVersionsFilterArrayInput `pulumi:"filters"`
 }
@@ -124,11 +125,12 @@ func (o GetAutonomousDbVersionsResultOutput) CompartmentId() pulumi.StringOutput
 	return o.ApplyT(func(v GetAutonomousDbVersionsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The Autonomous Database workload type. The following values are valid:
-// * OLTP - indicates an Autonomous Transaction Processing database
-// * DW - indicates an Autonomous Data Warehouse database
-// * AJD - indicates an Autonomous JSON Database
-// * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+// The Autonomous AI Database workload type. The following values are valid:
+// * OLTP - indicates an Autonomous AI Transaction Processing database
+// * DW - indicates an Autonomous AI Lakehouse database
+// * AJD - indicates an Autonomous AI JSON Database
+// * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+// * LH - indicates an Oracle Autonomous AI Lakehouse database
 func (o GetAutonomousDbVersionsResultOutput) DbWorkload() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDbVersionsResult) *string { return v.DbWorkload }).(pulumi.StringPtrOutput)
 }

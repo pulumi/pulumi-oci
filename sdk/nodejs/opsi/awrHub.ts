@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Awr Hub resource in Oracle Cloud Infrastructure Opsi service.
- *
- * Create a AWR hub resource for the tenant in Operations Insights.
- * This resource will be created in root compartment.
- *
  * ## Example Usage
  *
  * ```typescript

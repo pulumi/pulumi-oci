@@ -57,14 +57,14 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Compartment Identifier.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     public Output<String> compartmentId() {
@@ -102,14 +102,14 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Exadata Fleet Update Cycle display name.
+     * (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Exadata Fleet Update Cycle display name.
+     * @return (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -132,14 +132,14 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
      * 
      */
     @Import(name="fsuCollectionId", required=true)
     private Output<String> fsuCollectionId;
 
     /**
-     * @return OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
      * 
      */
     public Output<String> fsuCollectionId() {
@@ -162,14 +162,14 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) List of patch IDs to ignore.
+     * (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     @Import(name="isIgnoreMissingPatches")
     private @Nullable Output<List<String>> isIgnoreMissingPatches;
 
     /**
-     * @return (Updatable) List of patch IDs to ignore.
+     * @return (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     public Optional<Output<List<String>>> isIgnoreMissingPatches() {
@@ -177,14 +177,14 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Ignore all patches between the source and target homes during patching.
+     * (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     @Import(name="isIgnorePatches")
     private @Nullable Output<Boolean> isIgnorePatches;
 
     /**
-     * @return (Updatable) Ignore all patches between the source and target homes during patching.
+     * @return (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      * 
      */
     public Optional<Output<Boolean>> isIgnorePatches() {
@@ -192,14 +192,14 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+     * (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
      * 
      */
     @Import(name="isKeepPlacement")
     private @Nullable Output<Boolean> isKeepPlacement;
 
     /**
-     * @return (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+     * @return (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
      * 
      */
     public Optional<Output<Boolean>> isKeepPlacement() {
@@ -207,14 +207,14 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Service drain timeout specified in seconds.
+     * (Updatable) Timeout for session draining for database services specified in seconds.
      * 
      */
     @Import(name="maxDrainTimeoutInSeconds")
     private @Nullable Output<Integer> maxDrainTimeoutInSeconds;
 
     /**
-     * @return (Updatable) Service drain timeout specified in seconds.
+     * @return (Updatable) Timeout for session draining for database services specified in seconds.
      * 
      */
     public Optional<Output<Integer>> maxDrainTimeoutInSeconds() {
@@ -348,7 +348,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Exadata Fleet Update Cycle display name.
+         * @param displayName (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Exadata Fleet Update Cycle display name.
+         * @param displayName (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
          * 
          * @return builder
          * 
@@ -453,7 +453,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fsuCollectionId OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+         * @param fsuCollectionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
          * 
          * @return builder
          * 
@@ -464,7 +464,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fsuCollectionId OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+         * @param fsuCollectionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
          * 
          * @return builder
          * 
@@ -495,7 +495,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isIgnoreMissingPatches (Updatable) List of patch IDs to ignore.
+         * @param isIgnoreMissingPatches (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
          * 
          * @return builder
          * 
@@ -506,7 +506,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isIgnoreMissingPatches (Updatable) List of patch IDs to ignore.
+         * @param isIgnoreMissingPatches (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
          * 
          * @return builder
          * 
@@ -516,7 +516,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isIgnoreMissingPatches (Updatable) List of patch IDs to ignore.
+         * @param isIgnoreMissingPatches (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
          * 
          * @return builder
          * 
@@ -526,7 +526,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isIgnorePatches (Updatable) Ignore all patches between the source and target homes during patching.
+         * @param isIgnorePatches (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
          * 
          * @return builder
          * 
@@ -537,7 +537,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isIgnorePatches (Updatable) Ignore all patches between the source and target homes during patching.
+         * @param isIgnorePatches (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
          * 
          * @return builder
          * 
@@ -547,7 +547,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isKeepPlacement (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+         * @param isKeepPlacement (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
          * 
          * @return builder
          * 
@@ -558,7 +558,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isKeepPlacement (Updatable) Ensure that services of administrator-managed Oracle RAC or Oracle RAC One databases are running on the same instances before and after the move operation.
+         * @param isKeepPlacement (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
          * 
          * @return builder
          * 
@@ -568,7 +568,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxDrainTimeoutInSeconds (Updatable) Service drain timeout specified in seconds.
+         * @param maxDrainTimeoutInSeconds (Updatable) Timeout for session draining for database services specified in seconds.
          * 
          * @return builder
          * 
@@ -579,7 +579,7 @@ public final class FsuCycleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxDrainTimeoutInSeconds (Updatable) Service drain timeout specified in seconds.
+         * @param maxDrainTimeoutInSeconds (Updatable) Timeout for session draining for database services specified in seconds.
          * 
          * @return builder
          * 

@@ -9,8 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Functions.FunctionArgs;
 import com.pulumi.oci.Functions.inputs.FunctionState;
+import com.pulumi.oci.Functions.outputs.FunctionFailureDestination;
 import com.pulumi.oci.Functions.outputs.FunctionProvisionedConcurrencyConfig;
 import com.pulumi.oci.Functions.outputs.FunctionSourceDetails;
+import com.pulumi.oci.Functions.outputs.FunctionSuccessDestination;
 import com.pulumi.oci.Functions.outputs.FunctionTraceConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
@@ -19,10 +21,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
- * 
- * Creates a new function.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -34,8 +32,10 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Functions.Function;
  * import com.pulumi.oci.Functions.FunctionArgs;
+ * import com.pulumi.oci.Functions.inputs.FunctionFailureDestinationArgs;
  * import com.pulumi.oci.Functions.inputs.FunctionProvisionedConcurrencyConfigArgs;
  * import com.pulumi.oci.Functions.inputs.FunctionSourceDetailsArgs;
+ * import com.pulumi.oci.Functions.inputs.FunctionSuccessDestinationArgs;
  * import com.pulumi.oci.Functions.inputs.FunctionTraceConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -56,6 +56,14 @@ import javax.annotation.Nullable;
  *             .memoryInMbs(functionMemoryInMbs)
  *             .config(functionConfig)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .detachedModeTimeoutInSeconds(functionDetachedModeTimeoutInSeconds)
+ *             .failureDestination(FunctionFailureDestinationArgs.builder()
+ *                 .kind(functionFailureDestinationKind)
+ *                 .channelId(testChannel.id())
+ *                 .queueId(testQueue.id())
+ *                 .streamId(testStream.id())
+ *                 .topicId(testNotificationTopic.id())
+ *                 .build())
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .image(functionImage)
  *             .imageDigest(functionImageDigest)
@@ -66,6 +74,13 @@ import javax.annotation.Nullable;
  *             .sourceDetails(FunctionSourceDetailsArgs.builder()
  *                 .pbfListingId(testPbfListing.id())
  *                 .sourceType(functionSourceDetailsSourceType)
+ *                 .build())
+ *             .successDestination(FunctionSuccessDestinationArgs.builder()
+ *                 .kind(functionSuccessDestinationKind)
+ *                 .channelId(testChannel.id())
+ *                 .queueId(testQueue.id())
+ *                 .streamId(testStream.id())
+ *                 .topicId(testNotificationTopic.id())
  *                 .build())
  *             .timeoutInSeconds(functionTimeoutInSeconds)
  *             .traceConfig(FunctionTraceConfigArgs.builder()
@@ -150,6 +165,20 @@ public class Function extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
+     * (Updatable) Timeout for detached function invocations. Value in seconds.
+     * 
+     */
+    @Export(name="detachedModeTimeoutInSeconds", refs={Integer.class}, tree="[0]")
+    private Output<Integer> detachedModeTimeoutInSeconds;
+
+    /**
+     * @return (Updatable) Timeout for detached function invocations. Value in seconds.
+     * 
+     */
+    public Output<Integer> detachedModeTimeoutInSeconds() {
+        return this.detachedModeTimeoutInSeconds;
+    }
+    /**
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
      * 
      */
@@ -162,6 +191,20 @@ public class Function extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{&#34;kind&#34;: &#34;NOTIFICATION&#34;, &#34;topicId&#34;: &#34;topic_OCID&#34;}`
+     * 
+     */
+    @Export(name="failureDestination", refs={FunctionFailureDestination.class}, tree="[0]")
+    private Output<FunctionFailureDestination> failureDestination;
+
+    /**
+     * @return (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{&#34;kind&#34;: &#34;NOTIFICATION&#34;, &#34;topicId&#34;: &#34;topic_OCID&#34;}`
+     * 
+     */
+    public Output<FunctionFailureDestination> failureDestination() {
+        return this.failureDestination;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -288,6 +331,20 @@ public class Function extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{&#34;kind&#34;: &#34;STREAM&#34;, &#34;streamId&#34;: &#34;stream_OCID&#34;}`
+     * 
+     */
+    @Export(name="successDestination", refs={FunctionSuccessDestination.class}, tree="[0]")
+    private Output<FunctionSuccessDestination> successDestination;
+
+    /**
+     * @return (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{&#34;kind&#34;: &#34;STREAM&#34;, &#34;streamId&#34;: &#34;stream_OCID&#34;}`
+     * 
+     */
+    public Output<FunctionSuccessDestination> successDestination() {
+        return this.successDestination;
     }
     /**
      * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`

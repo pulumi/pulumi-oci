@@ -282,11 +282,6 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
                  public_certificate: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Analytics Instance Vanity Url resource in Oracle Cloud Infrastructure Analytics service.
-
-        Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
-        for this host.
-
         ## Example Usage
 
         ```python
@@ -332,11 +327,6 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
                  args: AnalyticsInstanceVanityUrlArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Analytics Instance Vanity Url resource in Oracle Cloud Infrastructure Analytics service.
-
-        Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
-        for this host.
-
         ## Example Usage
 
         ```python

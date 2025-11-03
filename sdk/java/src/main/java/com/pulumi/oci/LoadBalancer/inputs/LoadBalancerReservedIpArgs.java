@@ -16,7 +16,7 @@ public final class LoadBalancerReservedIpArgs extends com.pulumi.resources.Resou
     public static final LoadBalancerReservedIpArgs Empty = new LoadBalancerReservedIpArgs();
 
     /**
-     * Ocid of the Reserved IP/Public Ip created with VCN.
+     * (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
      * 
      * Reserved IPs are IPs which already registered using VCN API.
      * 
@@ -33,7 +33,7 @@ public final class LoadBalancerReservedIpArgs extends com.pulumi.resources.Resou
     private @Nullable Output<String> id;
 
     /**
-     * @return Ocid of the Reserved IP/Public Ip created with VCN.
+     * @return (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
      * 
      * Reserved IPs are IPs which already registered using VCN API.
      * 
@@ -75,7 +75,7 @@ public final class LoadBalancerReservedIpArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param id Ocid of the Reserved IP/Public Ip created with VCN.
+         * @param id (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
          * 
          * Reserved IPs are IPs which already registered using VCN API.
          * 
@@ -96,7 +96,7 @@ public final class LoadBalancerReservedIpArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param id Ocid of the Reserved IP/Public Ip created with VCN.
+         * @param id (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
          * 
          * Reserved IPs are IPs which already registered using VCN API.
          * 

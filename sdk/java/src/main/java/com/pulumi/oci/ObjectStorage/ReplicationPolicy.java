@@ -15,10 +15,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
- * 
- * Creates a replication policy for the specified bucket.
- * 
  * ## Example Usage
  * 
  * <pre>

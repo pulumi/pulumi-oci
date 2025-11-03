@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
- * 
- * Creates a new OceInstance.
- * 
  * ## Example Usage
  * 
  * <pre>

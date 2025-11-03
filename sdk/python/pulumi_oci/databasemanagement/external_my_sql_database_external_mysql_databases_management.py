@@ -153,10 +153,6 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
                  external_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the External My Sql Database External Mysql Databases Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Database Management for an external MySQL Database.
-
         ## Example Usage
 
         ```python
@@ -186,10 +182,6 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
                  args: ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External My Sql Database External Mysql Databases Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables Database Management for an external MySQL Database.
-
         ## Example Usage
 
         ```python

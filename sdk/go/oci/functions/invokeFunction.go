@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Invoke Function resource in Oracle Cloud Infrastructure Functions service.
-//
-// # Invokes a function
-//
 // ## Example Usage
 //
 // ```go

@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
-//
-// Creates a new secret according to the details of the request.
+// ## Example Usage
 //
 // ## Import
 //

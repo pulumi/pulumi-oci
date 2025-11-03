@@ -22,20 +22,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.
- * 
- * Upgrades the specified Oracle Database instance.
- * 
- * Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
- * 	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
- * 	To avoid a force new create of the dbHome on the next apply, add the following to the resource
- * 	```	lifecycle {
- * 	   	ignore_changes = [
- * 	   		db_home.0.db_version,
- * 	   	]
- * 	}
- * 	```
- * 
  * ## Example Usage
  * 
  * ## Import
@@ -326,14 +312,14 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
         return this.kmsKeyId;
     }
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyVersionId;
 
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public Output<String> kmsKeyVersionId() {

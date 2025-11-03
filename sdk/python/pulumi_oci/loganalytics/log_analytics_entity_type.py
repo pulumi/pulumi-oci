@@ -265,10 +265,6 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Add custom log analytics entity type.
-
         ## Example Usage
 
         ```python
@@ -307,10 +303,6 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
                  args: LogAnalyticsEntityTypeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        Add custom log analytics entity type.
-
         ## Example Usage
 
         ```python

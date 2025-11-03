@@ -119,6 +119,11 @@ public final class GetReplicaResult {
      */
     private List<GetReplicaSecureConnection> secureConnections;
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -284,6 +289,13 @@ public final class GetReplicaResult {
         return this.secureConnections;
     }
     /**
+     * @return Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -342,6 +354,7 @@ public final class GetReplicaResult {
         private String replicaId;
         private List<GetReplicaReplicaOverride> replicaOverrides;
         private List<GetReplicaSecureConnection> secureConnections;
+        private Map<String,String> securityAttributes;
         private String shapeName;
         private String state;
         private String timeCreated;
@@ -370,6 +383,7 @@ public final class GetReplicaResult {
     	      this.replicaId = defaults.replicaId;
     	      this.replicaOverrides = defaults.replicaOverrides;
     	      this.secureConnections = defaults.secureConnections;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.shapeName = defaults.shapeName;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -557,6 +571,14 @@ public final class GetReplicaResult {
             return secureConnections(List.of(secureConnections));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetReplicaResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shapeName(String shapeName) {
             if (shapeName == null) {
               throw new MissingRequiredPropertyException("GetReplicaResult", "shapeName");
@@ -611,6 +633,7 @@ public final class GetReplicaResult {
             _resultValue.replicaId = replicaId;
             _resultValue.replicaOverrides = replicaOverrides;
             _resultValue.secureConnections = secureConnections;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.shapeName = shapeName;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

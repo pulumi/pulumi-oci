@@ -365,10 +365,6 @@ class RemotePeeringConnection(pulumi.CustomResource):
                  peer_region_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Remote Peering Connection resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new remote peering connection (RPC) for the specified DRG.
-
         ## Example Usage
 
         ```python
@@ -418,10 +414,6 @@ class RemotePeeringConnection(pulumi.CustomResource):
                  args: RemotePeeringConnectionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Remote Peering Connection resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new remote peering connection (RPC) for the specified DRG.
-
         ## Example Usage
 
         ```python

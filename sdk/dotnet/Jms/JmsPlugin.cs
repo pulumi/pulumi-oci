@@ -10,12 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Jms
 {
     /// <summary>
-    /// This resource provides the Jms Plugin resource in Oracle Cloud Infrastructure Jms service.
-    /// 
-    /// Registers an agent's JmsPlugin, optionally attaching to an existing fleet of the tenancy.
-    /// JmsPlugins registered fleet-less are created with lifecycle state INACTIVE.
-    /// For the operation to be authorized, the agent must exist, and the authorized user requires JMS_PLUGIN_CREATE permission for the agent's compartment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Integration
         public readonly string InstanceUrl;
         public readonly string IntegrationInstanceId;
         /// <summary>
-        /// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        /// Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
         /// </summary>
         public readonly string IntegrationInstanceType;
         /// <summary>
@@ -218,6 +218,14 @@ namespace Pulumi.Oci.Integration
         /// Base representation for Outbound Connection (Reverse Connection).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstancePrivateEndpointOutboundConnectionResult> PrivateEndpointOutboundConnections;
+        /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+        /// "oracle-zpr.sensitivity.value" = "low"
+        /// "oracle-zpr.sensitivity.mode" = "enforce"
+        /// }
+        /// `
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
         /// <summary>
         /// Shape
         /// </summary>
@@ -303,6 +311,8 @@ namespace Pulumi.Oci.Integration
 
             ImmutableArray<Outputs.GetIntegrationInstancePrivateEndpointOutboundConnectionResult> privateEndpointOutboundConnections,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string shape,
 
             string state,
@@ -344,6 +354,7 @@ namespace Pulumi.Oci.Integration
             MessagePacks = messagePacks;
             NetworkEndpointDetails = networkEndpointDetails;
             PrivateEndpointOutboundConnections = privateEndpointOutboundConnections;
+            SecurityAttributes = securityAttributes;
             Shape = shape;
             State = state;
             StateMessage = stateMessage;

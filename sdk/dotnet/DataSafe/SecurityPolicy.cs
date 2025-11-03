@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates a Data Safe security policy.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

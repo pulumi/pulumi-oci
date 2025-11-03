@@ -13,6 +13,38 @@ namespace Pulumi.Oci.Mysql.Inputs
     public sealed class MysqlDbSystemMaintenanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The maintenance schedule type of the DB system. Defaults to REGULAR. EARLY:   Maintenance schedule follows a cycle where upgrades are performed when versions become deprecated. REGULAR: Maintenance schedule follows the normal cycle where upgrades are performed when versions become unavailable.
+        /// </summary>
+        [Input("maintenanceScheduleType")]
+        public Input<string>? MaintenanceScheduleType { get; set; }
+
+        /// <summary>
+        /// The version that is expected to be targeted during the next scheduled maintenance run.
+        /// </summary>
+        [Input("targetVersion")]
+        public Input<string>? TargetVersion { get; set; }
+
+        /// <summary>
+        /// The time the scheduled maintenance is expected to start, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// </summary>
+        [Input("timeScheduled")]
+        public Input<string>? TimeScheduled { get; set; }
+
+        /// <summary>
+        /// (Updatable) The preferred version to target when performing an automatic MySQL upgrade. Defaults to OLDEST.
+        /// 
+        /// OLDEST: Choose the oldest available MySQL version based on the current version of the DB System. SECOND_NEWEST: Choose the MySQL version before the newest for auto-upgrade. NEWEST: Choose the latest and greatest MySQL version available for auto-upgrade.
+        /// </summary>
+        [Input("versionPreference")]
+        public Input<string>? VersionPreference { get; set; }
+
+        /// <summary>
+        /// (Updatable) The preferred version track to target when performing an automatic MySQL upgrade. Defaults to FOLLOW. LONG_TERM_SUPPORT: No MySQL database behavior changes. INNOVATION:        Provides access to the latest features and all bug fixes. FOLLOW:            Follows the track of the current MySQL version.
+        /// </summary>
+        [Input("versionTrackPreference")]
+        public Input<string>? VersionTrackPreference { get; set; }
+
+        /// <summary>
         /// (Updatable) The start of the 2 hour maintenance window.
         /// 
         /// This string is of the format: "{day-of-week} {time-of-day}".

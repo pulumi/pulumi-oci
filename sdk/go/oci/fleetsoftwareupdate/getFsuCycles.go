@@ -76,12 +76,12 @@ type GetFsuCyclesArgs struct {
 type GetFsuCyclesResult struct {
 	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType *string `pulumi:"collectionType"`
-	// Compartment Identifier.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Exadata Fleet Update Cycle display name.
+	// The user-friendly name for the Exadata Fleet Update Cycle.
 	DisplayName *string              `pulumi:"displayName"`
 	Filters     []GetFsuCyclesFilter `pulumi:"filters"`
-	// OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
 	FsuCollectionId *string `pulumi:"fsuCollectionId"`
 	// The list of fsu_cycle_summary_collection.
 	FsuCycleSummaryCollections []GetFsuCyclesFsuCycleSummaryCollection `pulumi:"fsuCycleSummaryCollections"`
@@ -142,12 +142,12 @@ func (o GetFsuCyclesResultOutput) CollectionType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFsuCyclesResult) *string { return v.CollectionType }).(pulumi.StringPtrOutput)
 }
 
-// Compartment Identifier.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 func (o GetFsuCyclesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFsuCyclesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Exadata Fleet Update Cycle display name.
+// The user-friendly name for the Exadata Fleet Update Cycle.
 func (o GetFsuCyclesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFsuCyclesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -156,7 +156,7 @@ func (o GetFsuCyclesResultOutput) Filters() GetFsuCyclesFilterArrayOutput {
 	return o.ApplyT(func(v GetFsuCyclesResult) []GetFsuCyclesFilter { return v.Filters }).(GetFsuCyclesFilterArrayOutput)
 }
 
-// OCID identifier for the Collection ID the Exadata Fleet Update Cycle is assigned to.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection being updated by this Exadata Fleet Update Cycle.
 func (o GetFsuCyclesResultOutput) FsuCollectionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFsuCyclesResult) *string { return v.FsuCollectionId }).(pulumi.StringPtrOutput)
 }

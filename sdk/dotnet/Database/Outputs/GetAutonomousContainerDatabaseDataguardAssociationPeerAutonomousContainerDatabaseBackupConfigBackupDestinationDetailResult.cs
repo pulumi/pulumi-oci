@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult
     {
+        public readonly string BackupRetentionPolicyOnTerminate;
         public readonly string DbrsPolicyId;
         /// <summary>
         /// The OCID of the Autonomous Data Guard created for a given Autonomous Container Database.
@@ -20,6 +21,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string Id;
         public readonly string InternetProxy;
         public readonly bool IsRemote;
+        public readonly bool IsRetentionLockEnabled;
         public readonly string RemoteRegion;
         public readonly string Type;
         public readonly string VpcPassword;
@@ -27,6 +29,8 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult(
+            string backupRetentionPolicyOnTerminate,
+
             string dbrsPolicyId,
 
             string id,
@@ -34,6 +38,8 @@ namespace Pulumi.Oci.Database.Outputs
             string internetProxy,
 
             bool isRemote,
+
+            bool isRetentionLockEnabled,
 
             string remoteRegion,
 
@@ -43,10 +49,12 @@ namespace Pulumi.Oci.Database.Outputs
 
             string vpcUser)
         {
+            BackupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
             InternetProxy = internetProxy;
             IsRemote = isRemote;
+            IsRetentionLockEnabled = isRetentionLockEnabled;
             RemoteRegion = remoteRegion;
             Type = type;
             VpcPassword = vpcPassword;

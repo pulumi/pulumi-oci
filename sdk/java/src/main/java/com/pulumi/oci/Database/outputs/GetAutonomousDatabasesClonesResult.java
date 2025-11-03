@@ -22,7 +22,7 @@ public final class GetAutonomousDatabasesClonesResult {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases;
     /**
-     * @return The Autonomous Database clone type.
+     * @return The Autonomous AI Database clone type.
      * 
      */
     private @Nullable String cloneType;
@@ -32,7 +32,7 @@ public final class GetAutonomousDatabasesClonesResult {
      */
     private String compartmentId;
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     private @Nullable String displayName;
@@ -43,7 +43,7 @@ public final class GetAutonomousDatabasesClonesResult {
      */
     private String id;
     /**
-     * @return The current state of the Autonomous Database.
+     * @return The current state of the Autonomous AI Database.
      * 
      */
     private @Nullable String state;
@@ -60,7 +60,7 @@ public final class GetAutonomousDatabasesClonesResult {
         return this.autonomousDatabases;
     }
     /**
-     * @return The Autonomous Database clone type.
+     * @return The Autonomous AI Database clone type.
      * 
      */
     public Optional<String> cloneType() {
@@ -74,7 +74,7 @@ public final class GetAutonomousDatabasesClonesResult {
         return this.compartmentId;
     }
     /**
-     * @return The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     public Optional<String> displayName() {
@@ -91,7 +91,7 @@ public final class GetAutonomousDatabasesClonesResult {
         return this.id;
     }
     /**
-     * @return The current state of the Autonomous Database.
+     * @return The current state of the Autonomous AI Database.
      * 
      */
     public Optional<String> state() {

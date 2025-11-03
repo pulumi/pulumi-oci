@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Addon resource in Oracle Cloud Infrastructure Container Engine service.
-//
-// Install the specified addon for a cluster.
+// ## Example Usage
 //
 // ## Import
 //

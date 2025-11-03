@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Software Source Change Availability Management resource in Oracle Cloud Infrastructure Os Management Hub service.
- * 
- * Updates the availability for a list of specified software sources.
- * 
  * ## Example Usage
  * 
  * <pre>

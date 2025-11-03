@@ -28,7 +28,7 @@ public final class GetDatabaseToolsConnectionProxyClient {
      */
     private String userName;
     /**
-     * @return The user password.
+     * @return The database user password.
      * 
      */
     private List<GetDatabaseToolsConnectionProxyClientUserPassword> userPasswords;
@@ -56,7 +56,7 @@ public final class GetDatabaseToolsConnectionProxyClient {
         return this.userName;
     }
     /**
-     * @return The user password.
+     * @return The database user password.
      * 
      */
     public List<GetDatabaseToolsConnectionProxyClientUserPassword> userPasswords() {

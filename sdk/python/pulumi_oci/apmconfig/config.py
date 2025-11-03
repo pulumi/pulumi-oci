@@ -977,10 +977,6 @@ class Config(pulumi.CustomResource):
                  service_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
-
-        Creates a new configuration item.
-
         ## Example Usage
 
         ```python
@@ -1092,10 +1088,6 @@ class Config(pulumi.CustomResource):
                  args: ConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Config resource in Oracle Cloud Infrastructure Apm Config service.
-
-        Creates a new configuration item.
-
         ## Example Usage
 
         ```python

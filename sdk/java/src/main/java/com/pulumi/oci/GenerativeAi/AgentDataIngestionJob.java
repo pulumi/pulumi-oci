@@ -18,12 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- * 
- * **CreateDataIngestionJob**
- * 
- * Creates a data ingestion job.
- * 
  * ## Example Usage
  * 
  * <pre>

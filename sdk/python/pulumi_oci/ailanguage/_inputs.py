@@ -15,6 +15,14 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'JobInputConfigurationArgs',
+    'JobInputConfigurationArgsDict',
+    'JobInputLocationArgs',
+    'JobInputLocationArgsDict',
+    'JobModelMetadataDetailArgs',
+    'JobModelMetadataDetailArgsDict',
+    'JobOutputLocationArgs',
+    'JobOutputLocationArgsDict',
     'ModelEvaluationResultArgs',
     'ModelEvaluationResultArgsDict',
     'ModelEvaluationResultClassMetricArgs',
@@ -43,6 +51,8 @@ __all__ = [
     'ModelTrainingDatasetLocationDetailsArgsDict',
     'GetEndpointsFilterArgs',
     'GetEndpointsFilterArgsDict',
+    'GetJobsFilterArgs',
+    'GetJobsFilterArgsDict',
     'GetModelEvaluationResultsFilterArgs',
     'GetModelEvaluationResultsFilterArgsDict',
     'GetModelsFilterArgs',
@@ -52,6 +62,434 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class JobInputConfigurationArgsDict(TypedDict):
+        configuration: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]
+        """
+        meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
+        """
+        document_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+        """
+elif False:
+    JobInputConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class JobInputConfigurationArgs:
+    def __init__(__self__, *,
+                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+                 document_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]] configuration: meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] document_types: Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+        """
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if document_types is not None:
+            pulumi.set(__self__, "document_types", document_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
+        """
+        meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
+        pulumi.set(self, "configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="documentTypes")
+    def document_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+        """
+        return pulumi.get(self, "document_types")
+
+    @document_types.setter
+    def document_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "document_types", value)
+
+
+if not MYPY:
+    class JobInputLocationArgsDict(TypedDict):
+        bucket: pulumi.Input[_builtins.str]
+        """
+        Object Storage bucket name.
+        """
+        location_type: pulumi.Input[_builtins.str]
+        """
+        locationType
+        """
+        namespace: pulumi.Input[_builtins.str]
+        """
+        Object Storage namespace name.
+        """
+        object_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        List of objects to be processed
+        """
+elif False:
+    JobInputLocationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class JobInputLocationArgs:
+    def __init__(__self__, *,
+                 bucket: pulumi.Input[_builtins.str],
+                 location_type: pulumi.Input[_builtins.str],
+                 namespace: pulumi.Input[_builtins.str],
+                 object_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] bucket: Object Storage bucket name.
+        :param pulumi.Input[_builtins.str] location_type: locationType
+        :param pulumi.Input[_builtins.str] namespace: Object Storage namespace name.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] object_names: List of objects to be processed
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "location_type", location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        if object_names is not None:
+            pulumi.set(__self__, "object_names", object_names)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[_builtins.str]:
+        """
+        Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "bucket", value)
+
+    @_builtins.property
+    @pulumi.getter(name="locationType")
+    def location_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        locationType
+        """
+        return pulumi.get(self, "location_type")
+
+    @location_type.setter
+    def location_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "location_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[_builtins.str]:
+        """
+        Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="objectNames")
+    def object_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of objects to be processed
+        """
+        return pulumi.get(self, "object_names")
+
+    @object_names.setter
+    def object_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "object_names", value)
+
+
+if not MYPY:
+    class JobModelMetadataDetailArgsDict(TypedDict):
+        configuration: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]
+        """
+        model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        """
+        endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Unique identifier endpoint OCID that should be used for inference
+        """
+        language_code: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Language code supported
+        * auto : Automatically detect language
+        * ar : Arabic
+        * pt-BR : Brazilian Portuguese
+        * cs : Czech
+        * da : Danish
+        * nl : Dutch
+        * en : English
+        * fi : Finnish
+        * fr : French
+        * fr-CA : Canadian French
+        * de : German
+        * it : Italian
+        * ja : Japanese
+        * ko : Korean
+        * no : Norwegian
+        * pl : Polish
+        * ro : Romanian
+        * zh-CN : Simplified Chinese
+        * es : Spanish
+        * sv : Swedish
+        * zh-TW : Traditional Chinese
+        * tr : Turkish
+        * el : Greek
+        * he : Hebrew
+        """
+        model_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Unique identifier model OCID that should be used for inference
+        """
+        model_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        model type to used for inference allowed values are
+        * LANGUAGE_SENTIMENT_ANALYSIS
+        * LANGUAGE_DETECTION
+        * TEXT_CLASSIFICATION
+        * NAMED_ENTITY_RECOGNITION
+        * KEY_PHRASE_EXTRACTION
+        * LANGUAGE_PII_ENTITIES
+        * LANGUAGE_TRANSLATION
+        """
+elif False:
+    JobModelMetadataDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class JobModelMetadataDetailArgs:
+    def __init__(__self__, *,
+                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 language_code: Optional[pulumi.Input[_builtins.str]] = None,
+                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 model_type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]] configuration: model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        :param pulumi.Input[_builtins.str] endpoint_id: Unique identifier endpoint OCID that should be used for inference
+        :param pulumi.Input[_builtins.str] language_code: Language code supported
+               * auto : Automatically detect language
+               * ar : Arabic
+               * pt-BR : Brazilian Portuguese
+               * cs : Czech
+               * da : Danish
+               * nl : Dutch
+               * en : English
+               * fi : Finnish
+               * fr : French
+               * fr-CA : Canadian French
+               * de : German
+               * it : Italian
+               * ja : Japanese
+               * ko : Korean
+               * no : Norwegian
+               * pl : Polish
+               * ro : Romanian
+               * zh-CN : Simplified Chinese
+               * es : Spanish
+               * sv : Swedish
+               * zh-TW : Traditional Chinese
+               * tr : Turkish
+               * el : Greek
+               * he : Hebrew
+        :param pulumi.Input[_builtins.str] model_id: Unique identifier model OCID that should be used for inference
+        :param pulumi.Input[_builtins.str] model_type: model type to used for inference allowed values are
+               * LANGUAGE_SENTIMENT_ANALYSIS
+               * LANGUAGE_DETECTION
+               * TEXT_CLASSIFICATION
+               * NAMED_ENTITY_RECOGNITION
+               * KEY_PHRASE_EXTRACTION
+               * LANGUAGE_PII_ENTITIES
+               * LANGUAGE_TRANSLATION
+        """
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if endpoint_id is not None:
+            pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if language_code is not None:
+            pulumi.set(__self__, "language_code", language_code)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if model_type is not None:
+            pulumi.set(__self__, "model_type", model_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def configuration(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
+        """
+        model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+        """
+        return pulumi.get(self, "configuration")
+
+    @configuration.setter
+    def configuration(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
+        pulumi.set(self, "configuration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Unique identifier endpoint OCID that should be used for inference
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @endpoint_id.setter
+    def endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "endpoint_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="languageCode")
+    def language_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Language code supported
+        * auto : Automatically detect language
+        * ar : Arabic
+        * pt-BR : Brazilian Portuguese
+        * cs : Czech
+        * da : Danish
+        * nl : Dutch
+        * en : English
+        * fi : Finnish
+        * fr : French
+        * fr-CA : Canadian French
+        * de : German
+        * it : Italian
+        * ja : Japanese
+        * ko : Korean
+        * no : Norwegian
+        * pl : Polish
+        * ro : Romanian
+        * zh-CN : Simplified Chinese
+        * es : Spanish
+        * sv : Swedish
+        * zh-TW : Traditional Chinese
+        * tr : Turkish
+        * el : Greek
+        * he : Hebrew
+        """
+        return pulumi.get(self, "language_code")
+
+    @language_code.setter
+    def language_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "language_code", value)
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Unique identifier model OCID that should be used for inference
+        """
+        return pulumi.get(self, "model_id")
+
+    @model_id.setter
+    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "model_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        model type to used for inference allowed values are
+        * LANGUAGE_SENTIMENT_ANALYSIS
+        * LANGUAGE_DETECTION
+        * TEXT_CLASSIFICATION
+        * NAMED_ENTITY_RECOGNITION
+        * KEY_PHRASE_EXTRACTION
+        * LANGUAGE_PII_ENTITIES
+        * LANGUAGE_TRANSLATION
+        """
+        return pulumi.get(self, "model_type")
+
+    @model_type.setter
+    def model_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "model_type", value)
+
+
+if not MYPY:
+    class JobOutputLocationArgsDict(TypedDict):
+        bucket: pulumi.Input[_builtins.str]
+        """
+        Object Storage bucket name.
+        """
+        namespace: pulumi.Input[_builtins.str]
+        """
+        Object Storage namespace name.
+        """
+        prefix: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The prefix (directory) in an Object Storage bucket.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    JobOutputLocationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class JobOutputLocationArgs:
+    def __init__(__self__, *,
+                 bucket: pulumi.Input[_builtins.str],
+                 namespace: pulumi.Input[_builtins.str],
+                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] bucket: Object Storage bucket name.
+        :param pulumi.Input[_builtins.str] namespace: Object Storage namespace name.
+        :param pulumi.Input[_builtins.str] prefix: The prefix (directory) in an Object Storage bucket.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[_builtins.str]:
+        """
+        Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "bucket", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[_builtins.str]:
+        """
+        Object Storage namespace name.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "namespace", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The prefix (directory) in an Object Storage bucket.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "prefix", value)
+
 
 if not MYPY:
     class ModelEvaluationResultArgsDict(TypedDict):
@@ -1312,6 +1750,53 @@ elif False:
 
 @pulumi.input_type
 class GetEndpointsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetJobsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetJobsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetJobsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

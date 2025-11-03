@@ -316,10 +316,6 @@ class View(pulumi.CustomResource):
                  scope: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
-
-        Creates a new view in the specified compartment.
-
         ## Example Usage
 
         ```python
@@ -365,10 +361,6 @@ class View(pulumi.CustomResource):
                  args: ViewArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
-
-        Creates a new view in the specified compartment.
-
         ## Example Usage
 
         ```python

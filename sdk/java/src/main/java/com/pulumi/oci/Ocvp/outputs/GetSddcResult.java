@@ -72,7 +72,7 @@ public final class GetSddcResult {
      */
     private Map<String,String> definedTags;
     /**
-     * @return A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * @return A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
     private String displayName;
@@ -336,6 +336,7 @@ public final class GetSddcResult {
      * 
      */
     private String state;
+    private Map<String,String> systemTags;
     /**
      * @return The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -516,7 +517,7 @@ public final class GetSddcResult {
         return this.definedTags;
     }
     /**
-     * @return A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * @return A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
     public String displayName() {
@@ -862,6 +863,9 @@ public final class GetSddcResult {
     public String state() {
         return this.state;
     }
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
     /**
      * @return The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -1064,6 +1068,7 @@ public final class GetSddcResult {
         private String sddcId;
         private String sshAuthorizedKeys;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeHcxBillingCycleEnd;
         private String timeHcxLicenseStatusUpdated;
@@ -1131,6 +1136,7 @@ public final class GetSddcResult {
     	      this.sddcId = defaults.sddcId;
     	      this.sshAuthorizedKeys = defaults.sshAuthorizedKeys;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeHcxBillingCycleEnd = defaults.timeHcxBillingCycleEnd;
     	      this.timeHcxLicenseStatusUpdated = defaults.timeHcxLicenseStatusUpdated;
@@ -1546,6 +1552,14 @@ public final class GetSddcResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSddcResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetSddcResult", "timeCreated");
@@ -1729,6 +1743,7 @@ public final class GetSddcResult {
             _resultValue.sddcId = sddcId;
             _resultValue.sshAuthorizedKeys = sshAuthorizedKeys;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeHcxBillingCycleEnd = timeHcxBillingCycleEnd;
             _resultValue.timeHcxLicenseStatusUpdated = timeHcxLicenseStatusUpdated;

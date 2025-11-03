@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
- * 
- * Creates a new Database Tools private endpoint.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -63,6 +59,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .nsgIds(databaseToolsPrivateEndpointNsgIds)
  *             .privateEndpointIp(databaseToolsPrivateEndpointPrivateEndpointIp)
+ *             .securityAttributes(databaseToolsPrivateEndpointSecurityAttributes)
  *             .build());
  * 
  *     }
@@ -276,6 +273,20 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
      */
     public Output<List<DatabaseToolsPrivateEndpointReverseConnectionConfiguration>> reverseConnectionConfigurations() {
         return this.reverseConnectionConfigurations;
+    }
+    /**
+     * (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;audit&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * The current state of the Database Tools private endpoint.

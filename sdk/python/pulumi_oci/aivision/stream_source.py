@@ -269,10 +269,6 @@ class StreamSource(pulumi.CustomResource):
                  stream_source_details: Optional[pulumi.Input[Union['StreamSourceStreamSourceDetailsArgs', 'StreamSourceStreamSourceDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
-
-        Registration of new streamSource
-
         ## Example Usage
 
         ```python
@@ -318,10 +314,6 @@ class StreamSource(pulumi.CustomResource):
                  args: StreamSourceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
-
-        Registration of new streamSource
-
         ## Example Usage
 
         ```python

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Fleet Resource resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- *
- * Add resource to a fleet in Fleet Application Management.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
-//
-// Adds a listener to a load balancer.
-//
 // ## Example Usage
 //
 // ```go

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
-//
-// Creates a new Compute Cloud@Customer upgrade schedule.
-//
 // ## Example Usage
 //
 // ```go

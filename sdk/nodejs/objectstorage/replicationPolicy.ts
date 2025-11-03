@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
- *
- * Creates a replication policy for the specified bucket.
- *
  * ## Example Usage
  *
  * ```typescript

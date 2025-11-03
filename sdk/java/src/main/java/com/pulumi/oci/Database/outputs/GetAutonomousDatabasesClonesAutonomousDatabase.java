@@ -21,6 +21,8 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDat
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetail;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -37,17 +39,22 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Double actualUsedDataStorageSizeInTbs;
     /**
+     * @return Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ &#34;gcpAccountName&#34;: &#34;gcpName&#34; }`
+     * 
+     */
+    private Map<String,String> additionalAttributes;
+    /**
      * @return The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
      * 
      */
     private Double allocatedStorageSizeInTbs;
     /**
-     * @return Information about Oracle APEX Application Development.
+     * @return Information about Oracle APEX AI Application Development.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseApexDetail> apexDetails;
     /**
-     * @return This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+     * @return This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
      * 
      */
     private Boolean arePrimaryWhitelistedIpsUsed;
@@ -62,47 +69,43 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Integer autoRefreshPointLagInSeconds;
     /**
-     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      */
     private String autonomousContainerDatabaseId;
     /**
-     * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+     * @return The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      * 
      */
     private String autonomousMaintenanceScheduleType;
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * @return The availability domain where the Autonomous AI Database Serverless instance is located.
      * 
      */
     private String availabilityDomain;
     /**
-     * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+     * @return List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */
     private List<String> availableUpgradeVersions;
     /**
-     * @return Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+     * @return Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs;
     /**
-     * @return Retention period, in days, for long-term backups
+     * @return Retention period, in days, for backups.
      * 
      */
     private Integer backupRetentionPeriodInDays;
-    /**
-     * @return The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
-     * 
-     */
     private Double byolComputeCountLimit;
     /**
-     * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+     * @return The character set for the Autonomous AI Database.  The default is AL32UTF8. Allowed values are:
      * 
      */
     private String characterSet;
     /**
-     * @return A list of the source Autonomous Database&#39;s table space number(s) used to create this partial clone from the backup.
+     * @return A list of the source Autonomous AI Database&#39;s table space number(s) used to create this partial clone from the backup.
      * 
      */
     private List<Integer> cloneTableSpaceLists;
@@ -127,12 +130,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Double computeCount;
     /**
-     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * @return The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     private String computeModel;
     /**
-     * @return The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
+     * @return The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString> connectionStrings;
@@ -142,7 +145,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl> connectionUrls;
     /**
-     * @return The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * @return The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
      * 
      */
     private Integer cpuCoreCount;
@@ -152,7 +155,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContact> customerContacts;
     /**
-     * @return Status of the Data Safe registration for this Autonomous Database.
+     * @return Status of the Data Safe registration for this Autonomous AI Database.
      * 
      */
     private String dataSafeStatus;
@@ -167,17 +170,17 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Integer dataStorageSizeInTbs;
     /**
-     * @return The Oracle Database Edition that applies to the Autonomous databases.
+     * @return The Oracle AI Database Edition that applies to the Autonomous AI Databases.
      * 
      */
     private String databaseEdition;
     /**
-     * @return Status of Database Management for this Autonomous Database.
+     * @return Status of Database Management for this Autonomous AI Database.
      * 
      */
     private String databaseManagementStatus;
     /**
-     * @return **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+     * @return **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     private String dataguardRegionType;
@@ -192,16 +195,17 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail> dbToolsDetails;
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     private String dbVersion;
     /**
-     * @return The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * @return The Autonomous AI Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous AI Transaction Processing database
+     * * DW - indicates an Autonomous AI Lakehouse database
+     * * AJD - indicates an Autonomous AI JSON Database
+     * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * * LH - indicates an Oracle Autonomous AI Lakehouse database
      * 
      */
     private String dbWorkload;
@@ -211,7 +215,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Map<String,String> definedTags;
     /**
-     * @return **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     private String disasterRecoveryRegionType;
@@ -226,7 +230,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
     /**
-     * @return Details of the Autonomous Database encryption key.
+     * @return Details of the Autonomous AI Database encryption key.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey> encryptionKeys;
@@ -241,17 +245,17 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+     * @return The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     private String id;
     /**
-     * @return The area assigned to In-Memory tables in Autonomous Database.
+     * @return The area assigned to In-Memory tables in Autonomous AI Database.
      * 
      */
     private Integer inMemoryAreaInGbs;
     /**
-     * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud{@literal @}Customer platform.
+     * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud{@literal @}Customer platform.
      * 
      */
     private Integer inMemoryPercentage;
@@ -266,22 +270,22 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Boolean isAccessControlEnabled;
     /**
-     * @return Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
+     * @return Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
      * 
      */
     private Boolean isAutoScalingEnabled;
     /**
-     * @return Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+     * @return Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
      * 
      */
     private Boolean isAutoScalingForStorageEnabled;
     /**
-     * @return Indicates if the Autonomous Database is backup retention locked.
+     * @return Indicates if the Autonomous AI Database is backup retention locked.
      * 
      */
     private Boolean isBackupRetentionLocked;
     /**
-     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     private Boolean isDataGuardEnabled;
@@ -291,27 +295,27 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Boolean isDedicated;
     /**
-     * @return Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud{@literal @}Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+     * @return Autonomous AI Database for Developers are free Autonomous AI Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
      * 
      */
     private Boolean isDevTier;
     /**
-     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      */
     private Boolean isFreeTier;
     /**
-     * @return Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     private Boolean isLocalDataGuardEnabled;
     /**
-     * @return Specifies if the Autonomous Database requires mTLS connections.
+     * @return Specifies if the Autonomous AI Database requires mTLS connections.
      * 
      */
     private Boolean isMtlsConnectionRequired;
     /**
-     * @return Indicates if the Autonomous Database version is a preview version.
+     * @return Indicates if the Autonomous AI Database version is a preview version.
      * 
      */
     private Boolean isPreview;
@@ -321,12 +325,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Boolean isReconnectCloneEnabled;
     /**
-     * @return Indicates if the Autonomous Database is a refreshable clone.
+     * @return Indicates if the Autonomous AI Database is a refreshable clone.
      * 
      */
     private Boolean isRefreshableClone;
     /**
-     * @return Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     private Boolean isRemoteDataGuardEnabled;
@@ -356,12 +360,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String kmsKeyLifecycleDetails;
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
     private String kmsKeyVersionId;
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+     * @return The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      */
     private String licenseModel;
@@ -376,12 +380,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Integer localAdgAutoFailoverMaxDataLossLimit;
     /**
-     * @return Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     private String localDisasterRecoveryType;
     /**
-     * @return Autonomous Data Guard standby database details.
+     * @return Autonomous Data Guard standby database details.* `availabilityDomain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
@@ -395,14 +399,23 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      * 
      */
     private String maintenanceTargetComponent;
+    /**
+     * @return The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+     * 
+     */
     private Integer maxCpuCoreCount;
     /**
-     * @return The amount of memory (in GBs) enabled per ECPU or OCPU.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    private Double memoryPerComputeUnitInGbs;
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) to be enabled per OCPU or ECPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
     /**
-     * @return The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+     * @return The national character set for the Autonomous AI Database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
      */
     private String ncharacterSet;
@@ -418,7 +431,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     private String nextLongTermBackupTimeStamp;
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     private List<String> nsgIds;
@@ -428,12 +441,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Double ocpuCount;
     /**
-     * @return Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+     * @return Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
     private String openMode;
     /**
-     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
+     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     private List<String> peerDbIds;
@@ -456,7 +469,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String privateEndpointLabel;
     /**
-     * @return An array of CPU values that an Autonomous Database can be scaled to.
+     * @return An array of CPU values that an Autonomous AI Database can be scaled to.
      * 
      */
     private List<Double> provisionableCpuses;
@@ -471,12 +484,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String publicEndpoint;
     /**
-     * @return The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     * @return The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
      * 
      */
     private String refreshableMode;
     /**
-     * @return The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+     * @return The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
      * 
      */
     private String refreshableStatus;
@@ -486,7 +499,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
     /**
-     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String resourcePoolLeaderId;
@@ -496,7 +509,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries;
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     private String role;
@@ -511,22 +524,22 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Map<String,String> securityAttributes;
     /**
-     * @return The URL of the Service Console for the Autonomous Database.
+     * @return The URL of the Service Console for the Autonomous AI Database.
      * 
      */
     private String serviceConsoleUrl;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
      * 
      */
     private String sourceId;
     /**
-     * @return **Deprecated** Autonomous Data Guard standby database details.
+     * @return **Deprecated** Autonomous Data Guard standby database details.* `availabilityDomain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs;
     /**
-     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous AI Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
      */
     private List<String> standbyWhitelistedIps;
@@ -546,7 +559,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String subscriptionId;
     /**
-     * @return The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+     * @return The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
      * 
      */
     private List<String> supportedRegionsToCloneTos;
@@ -556,12 +569,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the Autonomous Database was created.
+     * @return The date and time the Autonomous AI Database was created.
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
     private String timeDataGuardRoleChanged;
@@ -571,22 +584,22 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String timeDeletionOfFreeAutonomousDatabase;
     /**
-     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
      * 
      */
     private String timeDisasterRecoveryRoleChanged;
     /**
-     * @return The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * @return The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     private String timeEarliestAvailableDbVersionUpgrade;
     /**
-     * @return The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * @return The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     private String timeLatestAvailableDbVersionUpgrade;
     /**
-     * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+     * @return The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
      * 
      */
     private String timeLocalDataGuardEnabled;
@@ -601,14 +614,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String timeMaintenanceEnd;
     /**
-     * @return The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     * @return The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
      * 
      */
     private String timeOfAutoRefreshStart;
-    /**
-     * @return The time the member joined the resource pool.
-     * 
-     */
     private String timeOfJoiningResourcePool;
     /**
      * @return The timestamp of the last failover operation.
@@ -626,7 +635,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String timeOfLastRefreshPoint;
     /**
-     * @return The timestamp of the last switchover operation for the Autonomous Database.
+     * @return The timestamp of the last switchover operation for the Autonomous AI Database.
      * 
      */
     private String timeOfLastSwitchover;
@@ -641,12 +650,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String timeReclamationOfFreeAutonomousDatabase;
     /**
-     * @return The date and time the Autonomous Database scheduled to upgrade to 23ai.
+     * @return The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      * 
      */
     private String timeScheduledDbVersionUpgrade;
     /**
-     * @return The date and time the Autonomous Database was most recently undeleted.
+     * @return The date and time the Autonomous AI Database was most recently undeleted.
      * 
      */
     private String timeUndeleted;
@@ -661,22 +670,32 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private Double totalBackupStorageSizeInGbs;
     /**
-     * @return The storage space consumed by Autonomous Database in GBs.
+     * @return The storage space consumed by Autonomous AI Database in GBs.
      * 
      */
     private Integer usedDataStorageSizeInGbs;
     /**
-     * @return The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
+     * @return The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
      * 
      */
     private Integer usedDataStorageSizeInTbs;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+     * @return The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{&#34;sqlDevWebUrl&#34;: &#34;https://&lt;hostname&gt;/ords...&#34;, &#34;apexUrl&#34;, &#34;https://&lt;hostname&gt;/ords...&#34;}`
+     * 
+     */
+    private List<GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl> vanityConnectionUrls;
+    /**
+     * @return Details for api gateway and vanity url(custom url) for dbTools.
+     * 
+     */
+    private List<GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetail> vanityUrlDetails;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     private String vaultId;
     /**
-     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous AI Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
      */
     private List<String> whitelistedIps;
@@ -690,6 +709,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.actualUsedDataStorageSizeInTbs;
     }
     /**
+     * @return Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ &#34;gcpAccountName&#34;: &#34;gcpName&#34; }`
+     * 
+     */
+    public Map<String,String> additionalAttributes() {
+        return this.additionalAttributes;
+    }
+    /**
      * @return The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
      * 
      */
@@ -697,14 +723,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.allocatedStorageSizeInTbs;
     }
     /**
-     * @return Information about Oracle APEX Application Development.
+     * @return Information about Oracle APEX AI Application Development.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseApexDetail> apexDetails() {
         return this.apexDetails;
     }
     /**
-     * @return This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+     * @return This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
      * 
      */
     public Boolean arePrimaryWhitelistedIpsUsed() {
@@ -725,63 +751,59 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.autoRefreshPointLagInSeconds;
     }
     /**
-     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      */
     public String autonomousContainerDatabaseId() {
         return this.autonomousContainerDatabaseId;
     }
     /**
-     * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+     * @return The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      * 
      */
     public String autonomousMaintenanceScheduleType() {
         return this.autonomousMaintenanceScheduleType;
     }
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * @return The availability domain where the Autonomous AI Database Serverless instance is located.
      * 
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+     * @return List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */
     public List<String> availableUpgradeVersions() {
         return this.availableUpgradeVersions;
     }
     /**
-     * @return Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+     * @return Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig> backupConfigs() {
         return this.backupConfigs;
     }
     /**
-     * @return Retention period, in days, for long-term backups
+     * @return Retention period, in days, for backups.
      * 
      */
     public Integer backupRetentionPeriodInDays() {
         return this.backupRetentionPeriodInDays;
     }
-    /**
-     * @return The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
-     * 
-     */
     public Double byolComputeCountLimit() {
         return this.byolComputeCountLimit;
     }
     /**
-     * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+     * @return The character set for the Autonomous AI Database.  The default is AL32UTF8. Allowed values are:
      * 
      */
     public String characterSet() {
         return this.characterSet;
     }
     /**
-     * @return A list of the source Autonomous Database&#39;s table space number(s) used to create this partial clone from the backup.
+     * @return A list of the source Autonomous AI Database&#39;s table space number(s) used to create this partial clone from the backup.
      * 
      */
     public List<Integer> cloneTableSpaceLists() {
@@ -816,14 +838,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.computeCount;
     }
     /**
-     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * @return The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     public String computeModel() {
         return this.computeModel;
     }
     /**
-     * @return The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
+     * @return The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString> connectionStrings() {
@@ -837,7 +859,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.connectionUrls;
     }
     /**
-     * @return The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * @return The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous AI Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
      * 
      */
     public Integer cpuCoreCount() {
@@ -851,7 +873,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.customerContacts;
     }
     /**
-     * @return Status of the Data Safe registration for this Autonomous Database.
+     * @return Status of the Data Safe registration for this Autonomous AI Database.
      * 
      */
     public String dataSafeStatus() {
@@ -872,21 +894,21 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.dataStorageSizeInTbs;
     }
     /**
-     * @return The Oracle Database Edition that applies to the Autonomous databases.
+     * @return The Oracle AI Database Edition that applies to the Autonomous AI Databases.
      * 
      */
     public String databaseEdition() {
         return this.databaseEdition;
     }
     /**
-     * @return Status of Database Management for this Autonomous Database.
+     * @return Status of Database Management for this Autonomous AI Database.
      * 
      */
     public String databaseManagementStatus() {
         return this.databaseManagementStatus;
     }
     /**
-     * @return **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+     * @return **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     public String dataguardRegionType() {
@@ -907,18 +929,19 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.dbToolsDetails;
     }
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     public String dbVersion() {
         return this.dbVersion;
     }
     /**
-     * @return The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * @return The Autonomous AI Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous AI Transaction Processing database
+     * * DW - indicates an Autonomous AI Lakehouse database
+     * * AJD - indicates an Autonomous AI JSON Database
+     * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * * LH - indicates an Oracle Autonomous AI Lakehouse database
      * 
      */
     public String dbWorkload() {
@@ -932,7 +955,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.definedTags;
     }
     /**
-     * @return **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     public String disasterRecoveryRegionType() {
@@ -953,7 +976,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.encryptionKeyHistoryEntries;
     }
     /**
-     * @return Details of the Autonomous Database encryption key.
+     * @return Details of the Autonomous AI Database encryption key.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseEncryptionKey> encryptionKeys() {
@@ -974,21 +997,21 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.freeformTags;
     }
     /**
-     * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+     * @return The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The area assigned to In-Memory tables in Autonomous Database.
+     * @return The area assigned to In-Memory tables in Autonomous AI Database.
      * 
      */
     public Integer inMemoryAreaInGbs() {
         return this.inMemoryAreaInGbs;
     }
     /**
-     * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud{@literal @}Customer platform.
+     * @return The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud{@literal @}Customer platform.
      * 
      */
     public Integer inMemoryPercentage() {
@@ -1009,28 +1032,28 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.isAccessControlEnabled;
     }
     /**
-     * @return Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
+     * @return Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
      * 
      */
     public Boolean isAutoScalingEnabled() {
         return this.isAutoScalingEnabled;
     }
     /**
-     * @return Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+     * @return Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
      * 
      */
     public Boolean isAutoScalingForStorageEnabled() {
         return this.isAutoScalingForStorageEnabled;
     }
     /**
-     * @return Indicates if the Autonomous Database is backup retention locked.
+     * @return Indicates if the Autonomous AI Database is backup retention locked.
      * 
      */
     public Boolean isBackupRetentionLocked() {
         return this.isBackupRetentionLocked;
     }
     /**
-     * @return **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Boolean isDataGuardEnabled() {
@@ -1044,35 +1067,35 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.isDedicated;
     }
     /**
-     * @return Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud{@literal @}Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+     * @return Autonomous AI Database for Developers are free Autonomous AI Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
      * 
      */
     public Boolean isDevTier() {
         return this.isDevTier;
     }
     /**
-     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * @return Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      */
     public Boolean isFreeTier() {
         return this.isFreeTier;
     }
     /**
-     * @return Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Boolean isLocalDataGuardEnabled() {
         return this.isLocalDataGuardEnabled;
     }
     /**
-     * @return Specifies if the Autonomous Database requires mTLS connections.
+     * @return Specifies if the Autonomous AI Database requires mTLS connections.
      * 
      */
     public Boolean isMtlsConnectionRequired() {
         return this.isMtlsConnectionRequired;
     }
     /**
-     * @return Indicates if the Autonomous Database version is a preview version.
+     * @return Indicates if the Autonomous AI Database version is a preview version.
      * 
      */
     public Boolean isPreview() {
@@ -1086,14 +1109,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.isReconnectCloneEnabled;
     }
     /**
-     * @return Indicates if the Autonomous Database is a refreshable clone.
+     * @return Indicates if the Autonomous AI Database is a refreshable clone.
      * 
      */
     public Boolean isRefreshableClone() {
         return this.isRefreshableClone;
     }
     /**
-     * @return Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Boolean isRemoteDataGuardEnabled() {
@@ -1135,14 +1158,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.kmsKeyLifecycleDetails;
     }
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
      * 
      */
     public String kmsKeyVersionId() {
         return this.kmsKeyVersionId;
     }
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+     * @return The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      */
     public String licenseModel() {
@@ -1163,14 +1186,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.localAdgAutoFailoverMaxDataLossLimit;
     }
     /**
-     * @return Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public String localDisasterRecoveryType() {
         return this.localDisasterRecoveryType;
     }
     /**
-     * @return Autonomous Data Guard standby database details.
+     * @return Autonomous Data Guard standby database details.* `availabilityDomain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs() {
@@ -1190,18 +1213,29 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     public String maintenanceTargetComponent() {
         return this.maintenanceTargetComponent;
     }
+    /**
+     * @return The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+     * 
+     */
     public Integer maxCpuCoreCount() {
         return this.maxCpuCoreCount;
     }
     /**
-     * @return The amount of memory (in GBs) enabled per ECPU or OCPU.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    public Double memoryPerComputeUnitInGbs() {
+        return this.memoryPerComputeUnitInGbs;
+    }
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) to be enabled per OCPU or ECPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
         return this.memoryPerOracleComputeUnitInGbs;
     }
     /**
-     * @return The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
+     * @return The national character set for the Autonomous AI Database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
      * 
      */
     public String ncharacterSet() {
@@ -1223,7 +1257,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     }
     /**
      * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     public List<String> nsgIds() {
@@ -1237,14 +1271,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.ocpuCount;
     }
     /**
-     * @return Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+     * @return Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      */
     public String openMode() {
         return this.openMode;
     }
     /**
-     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
+     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     public List<String> peerDbIds() {
@@ -1275,7 +1309,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.privateEndpointLabel;
     }
     /**
-     * @return An array of CPU values that an Autonomous Database can be scaled to.
+     * @return An array of CPU values that an Autonomous AI Database can be scaled to.
      * 
      */
     public List<Double> provisionableCpuses() {
@@ -1296,14 +1330,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.publicEndpoint;
     }
     /**
-     * @return The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     * @return The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
      * 
      */
     public String refreshableMode() {
         return this.refreshableMode;
     }
     /**
-     * @return The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+     * @return The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
      * 
      */
     public String refreshableStatus() {
@@ -1317,7 +1351,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.remoteDisasterRecoveryConfigurations;
     }
     /**
-     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String resourcePoolLeaderId() {
@@ -1331,7 +1365,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.resourcePoolSummaries;
     }
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public String role() {
@@ -1352,28 +1386,28 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.securityAttributes;
     }
     /**
-     * @return The URL of the Service Console for the Autonomous Database.
+     * @return The URL of the Service Console for the Autonomous AI Database.
      * 
      */
     public String serviceConsoleUrl() {
         return this.serviceConsoleUrl;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that was cloned to create the current Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that was cloned to create the current Autonomous AI Database.
      * 
      */
     public String sourceId() {
         return this.sourceId;
     }
     /**
-     * @return **Deprecated** Autonomous Data Guard standby database details.
+     * @return **Deprecated** Autonomous Data Guard standby database details.* `availabilityDomain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs() {
         return this.standbyDbs;
     }
     /**
-     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous AI Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
      */
     public List<String> standbyWhitelistedIps() {
@@ -1401,7 +1435,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.subscriptionId;
     }
     /**
-     * @return The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+     * @return The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
      * 
      */
     public List<String> supportedRegionsToCloneTos() {
@@ -1415,14 +1449,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.systemTags;
     }
     /**
-     * @return The date and time the Autonomous Database was created.
+     * @return The date and time the Autonomous AI Database was created.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
     public String timeDataGuardRoleChanged() {
@@ -1436,28 +1470,28 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.timeDeletionOfFreeAutonomousDatabase;
     }
     /**
-     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
      * 
      */
     public String timeDisasterRecoveryRoleChanged() {
         return this.timeDisasterRecoveryRoleChanged;
     }
     /**
-     * @return The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * @return The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     public String timeEarliestAvailableDbVersionUpgrade() {
         return this.timeEarliestAvailableDbVersionUpgrade;
     }
     /**
-     * @return The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * @return The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     public String timeLatestAvailableDbVersionUpgrade() {
         return this.timeLatestAvailableDbVersionUpgrade;
     }
     /**
-     * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+     * @return The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
      * 
      */
     public String timeLocalDataGuardEnabled() {
@@ -1478,16 +1512,12 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.timeMaintenanceEnd;
     }
     /**
-     * @return The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     * @return The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
      * 
      */
     public String timeOfAutoRefreshStart() {
         return this.timeOfAutoRefreshStart;
     }
-    /**
-     * @return The time the member joined the resource pool.
-     * 
-     */
     public String timeOfJoiningResourcePool() {
         return this.timeOfJoiningResourcePool;
     }
@@ -1513,7 +1543,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.timeOfLastRefreshPoint;
     }
     /**
-     * @return The timestamp of the last switchover operation for the Autonomous Database.
+     * @return The timestamp of the last switchover operation for the Autonomous AI Database.
      * 
      */
     public String timeOfLastSwitchover() {
@@ -1534,14 +1564,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.timeReclamationOfFreeAutonomousDatabase;
     }
     /**
-     * @return The date and time the Autonomous Database scheduled to upgrade to 23ai.
+     * @return The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      * 
      */
     public String timeScheduledDbVersionUpgrade() {
         return this.timeScheduledDbVersionUpgrade;
     }
     /**
-     * @return The date and time the Autonomous Database was most recently undeleted.
+     * @return The date and time the Autonomous AI Database was most recently undeleted.
      * 
      */
     public String timeUndeleted() {
@@ -1562,28 +1592,42 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.totalBackupStorageSizeInGbs;
     }
     /**
-     * @return The storage space consumed by Autonomous Database in GBs.
+     * @return The storage space consumed by Autonomous AI Database in GBs.
      * 
      */
     public Integer usedDataStorageSizeInGbs() {
         return this.usedDataStorageSizeInGbs;
     }
     /**
-     * @return The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
+     * @return The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
      * 
      */
     public Integer usedDataStorageSizeInTbs() {
         return this.usedDataStorageSizeInTbs;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+     * @return The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{&#34;sqlDevWebUrl&#34;: &#34;https://&lt;hostname&gt;/ords...&#34;, &#34;apexUrl&#34;, &#34;https://&lt;hostname&gt;/ords...&#34;}`
+     * 
+     */
+    public List<GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl> vanityConnectionUrls() {
+        return this.vanityConnectionUrls;
+    }
+    /**
+     * @return Details for api gateway and vanity url(custom url) for dbTools.
+     * 
+     */
+    public List<GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetail> vanityUrlDetails() {
+        return this.vanityUrlDetails;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     public String vaultId() {
         return this.vaultId;
     }
     /**
-     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous AI Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
      */
     public List<String> whitelistedIps() {
@@ -1600,6 +1644,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     @CustomType.Builder
     public static final class Builder {
         private Double actualUsedDataStorageSizeInTbs;
+        private Map<String,String> additionalAttributes;
         private Double allocatedStorageSizeInTbs;
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseApexDetail> apexDetails;
         private Boolean arePrimaryWhitelistedIpsUsed;
@@ -1672,6 +1717,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private List<GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupSchedule> longTermBackupSchedules;
         private String maintenanceTargetComponent;
         private Integer maxCpuCoreCount;
+        private Double memoryPerComputeUnitInGbs;
         private Integer memoryPerOracleComputeUnitInGbs;
         private String ncharacterSet;
         private String netServicesArchitecture;
@@ -1726,12 +1772,15 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private Double totalBackupStorageSizeInGbs;
         private Integer usedDataStorageSizeInGbs;
         private Integer usedDataStorageSizeInTbs;
+        private List<GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl> vanityConnectionUrls;
+        private List<GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetail> vanityUrlDetails;
         private String vaultId;
         private List<String> whitelistedIps;
         public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actualUsedDataStorageSizeInTbs = defaults.actualUsedDataStorageSizeInTbs;
+    	      this.additionalAttributes = defaults.additionalAttributes;
     	      this.allocatedStorageSizeInTbs = defaults.allocatedStorageSizeInTbs;
     	      this.apexDetails = defaults.apexDetails;
     	      this.arePrimaryWhitelistedIpsUsed = defaults.arePrimaryWhitelistedIpsUsed;
@@ -1804,6 +1853,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.longTermBackupSchedules = defaults.longTermBackupSchedules;
     	      this.maintenanceTargetComponent = defaults.maintenanceTargetComponent;
     	      this.maxCpuCoreCount = defaults.maxCpuCoreCount;
+    	      this.memoryPerComputeUnitInGbs = defaults.memoryPerComputeUnitInGbs;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.ncharacterSet = defaults.ncharacterSet;
     	      this.netServicesArchitecture = defaults.netServicesArchitecture;
@@ -1858,6 +1908,8 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.totalBackupStorageSizeInGbs = defaults.totalBackupStorageSizeInGbs;
     	      this.usedDataStorageSizeInGbs = defaults.usedDataStorageSizeInGbs;
     	      this.usedDataStorageSizeInTbs = defaults.usedDataStorageSizeInTbs;
+    	      this.vanityConnectionUrls = defaults.vanityConnectionUrls;
+    	      this.vanityUrlDetails = defaults.vanityUrlDetails;
     	      this.vaultId = defaults.vaultId;
     	      this.whitelistedIps = defaults.whitelistedIps;
         }
@@ -1868,6 +1920,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "actualUsedDataStorageSizeInTbs");
             }
             this.actualUsedDataStorageSizeInTbs = actualUsedDataStorageSizeInTbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder additionalAttributes(Map<String,String> additionalAttributes) {
+            if (additionalAttributes == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "additionalAttributes");
+            }
+            this.additionalAttributes = additionalAttributes;
             return this;
         }
         @CustomType.Setter
@@ -2486,6 +2546,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder memoryPerComputeUnitInGbs(Double memoryPerComputeUnitInGbs) {
+            if (memoryPerComputeUnitInGbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "memoryPerComputeUnitInGbs");
+            }
+            this.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             if (memoryPerOracleComputeUnitInGbs == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "memoryPerOracleComputeUnitInGbs");
@@ -2948,6 +3016,28 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder vanityConnectionUrls(List<GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl> vanityConnectionUrls) {
+            if (vanityConnectionUrls == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "vanityConnectionUrls");
+            }
+            this.vanityConnectionUrls = vanityConnectionUrls;
+            return this;
+        }
+        public Builder vanityConnectionUrls(GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl... vanityConnectionUrls) {
+            return vanityConnectionUrls(List.of(vanityConnectionUrls));
+        }
+        @CustomType.Setter
+        public Builder vanityUrlDetails(List<GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetail> vanityUrlDetails) {
+            if (vanityUrlDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "vanityUrlDetails");
+            }
+            this.vanityUrlDetails = vanityUrlDetails;
+            return this;
+        }
+        public Builder vanityUrlDetails(GetAutonomousDatabasesClonesAutonomousDatabaseVanityUrlDetail... vanityUrlDetails) {
+            return vanityUrlDetails(List.of(vanityUrlDetails));
+        }
+        @CustomType.Setter
         public Builder vaultId(String vaultId) {
             if (vaultId == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "vaultId");
@@ -2969,6 +3059,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         public GetAutonomousDatabasesClonesAutonomousDatabase build() {
             final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabase();
             _resultValue.actualUsedDataStorageSizeInTbs = actualUsedDataStorageSizeInTbs;
+            _resultValue.additionalAttributes = additionalAttributes;
             _resultValue.allocatedStorageSizeInTbs = allocatedStorageSizeInTbs;
             _resultValue.apexDetails = apexDetails;
             _resultValue.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
@@ -3041,6 +3132,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.longTermBackupSchedules = longTermBackupSchedules;
             _resultValue.maintenanceTargetComponent = maintenanceTargetComponent;
             _resultValue.maxCpuCoreCount = maxCpuCoreCount;
+            _resultValue.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             _resultValue.ncharacterSet = ncharacterSet;
             _resultValue.netServicesArchitecture = netServicesArchitecture;
@@ -3095,6 +3187,8 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.totalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;
             _resultValue.usedDataStorageSizeInGbs = usedDataStorageSizeInGbs;
             _resultValue.usedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
+            _resultValue.vanityConnectionUrls = vanityConnectionUrls;
+            _resultValue.vanityUrlDetails = vanityUrlDetails;
             _resultValue.vaultId = vaultId;
             _resultValue.whitelistedIps = whitelistedIps;
             return _resultValue;

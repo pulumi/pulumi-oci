@@ -855,30 +855,6 @@ class VirtualCircuit(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Virtual Circuit resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new virtual circuit to use with Oracle Cloud
-        Infrastructure FastConnect. For more information, see
-        [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-
-        For the purposes of access control, you must provide the OCID of the
-        compartment where you want the virtual circuit to reside. If you're
-        not sure which compartment to use, put the virtual circuit in the
-        same compartment with the DRG it's using. For more information about
-        compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-        For information about OCIDs, see
-        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally specify a *display name* for the virtual circuit.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        **Important:** When creating a virtual circuit, you specify a DRG for
-        the traffic to flow through. Make sure you attach the DRG to your
-        VCN and confirm the VCN's routing sends traffic to the DRG. Otherwise
-        traffic will not flow. For more information, see
-        [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
-
         ## Example Usage
 
         ```python
@@ -962,30 +938,6 @@ class VirtualCircuit(pulumi.CustomResource):
                  args: VirtualCircuitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Virtual Circuit resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new virtual circuit to use with Oracle Cloud
-        Infrastructure FastConnect. For more information, see
-        [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
-
-        For the purposes of access control, you must provide the OCID of the
-        compartment where you want the virtual circuit to reside. If you're
-        not sure which compartment to use, put the virtual circuit in the
-        same compartment with the DRG it's using. For more information about
-        compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-        For information about OCIDs, see
-        [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally specify a *display name* for the virtual circuit.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        **Important:** When creating a virtual circuit, you specify a DRG for
-        the traffic to flow through. Make sure you attach the DRG to your
-        VCN and confirm the VCN's routing sends traffic to the DRG. Otherwise
-        traffic will not flow. For more information, see
-        [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
-
         ## Example Usage
 
         ```python

@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? AutomaticFailoverTarget { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         /// </summary>
         [Input("autonomousContainerDatabaseId")]
         public Input<string>? AutonomousContainerDatabaseId { get; set; }
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : IsAutomaticFailoverEnabled = true.
+        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? RedoTransportMode { get; set; }
 
         /// <summary>
-        /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }

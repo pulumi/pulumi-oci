@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Compare User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Compares two user assessments. For this comparison, a user assessment can be a saved, a latest assessment, or a baseline.
- * As an example, it can be used to compare a user assessment saved or a latest assessment with a baseline.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
-    /// 
-    /// Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

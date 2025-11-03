@@ -401,10 +401,6 @@ class AgentAgent(pulumi.CustomResource):
                  welcome_message: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        Creates an agent.
-
         ## Example Usage
 
         ```python
@@ -460,10 +456,6 @@ class AgentAgent(pulumi.CustomResource):
                  args: AgentAgentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        Creates an agent.
-
         ## Example Usage
 
         ```python

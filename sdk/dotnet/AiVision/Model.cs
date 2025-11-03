@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiVision
 {
     /// <summary>
-    /// This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
-    /// 
-    /// Create a new model.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

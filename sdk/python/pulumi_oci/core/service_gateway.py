@@ -358,21 +358,6 @@ class ServiceGateway(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Service Gateway resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new service gateway in the specified compartment.
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
-        the service gateway to reside. For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-        For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        Use the [ListServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/ListServices) operation to find service CIDR labels
-        available in the region.
-
         ## Example Usage
 
         ```python
@@ -430,21 +415,6 @@ class ServiceGateway(pulumi.CustomResource):
                  args: ServiceGatewayArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Service Gateway resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new service gateway in the specified compartment.
-
-        For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want
-        the service gateway to reside. For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
-        For information about OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
-        You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        Use the [ListServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/ListServices) operation to find service CIDR labels
-        available in the region.
-
         ## Example Usage
 
         ```python

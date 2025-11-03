@@ -476,10 +476,6 @@ class TargetAsset(pulumi.CustomResource):
                  user_spec: Optional[pulumi.Input[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a target asset.
-
         ## Example Usage
 
         ```python
@@ -586,10 +582,6 @@ class TargetAsset(pulumi.CustomResource):
                  args: TargetAssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Target Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
-
-        Creates a target asset.
-
         ## Example Usage
 
         ```python

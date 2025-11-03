@@ -45,6 +45,11 @@ export type Endpoint = import("./endpoint").Endpoint;
 export const Endpoint: typeof import("./endpoint").Endpoint = null as any;
 utilities.lazyLoad(exports, ["Endpoint"], () => require("./endpoint"));
 
+export { GenerativeAiPrivateEndpointArgs, GenerativeAiPrivateEndpointState } from "./generativeAiPrivateEndpoint";
+export type GenerativeAiPrivateEndpoint = import("./generativeAiPrivateEndpoint").GenerativeAiPrivateEndpoint;
+export const GenerativeAiPrivateEndpoint: typeof import("./generativeAiPrivateEndpoint").GenerativeAiPrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["GenerativeAiPrivateEndpoint"], () => require("./generativeAiPrivateEndpoint"));
+
 export { GetAgentAgentArgs, GetAgentAgentResult, GetAgentAgentOutputArgs } from "./getAgentAgent";
 export const getAgentAgent: typeof import("./getAgentAgent").getAgentAgent = null as any;
 export const getAgentAgentOutput: typeof import("./getAgentAgent").getAgentAgentOutput = null as any;
@@ -130,6 +135,16 @@ export const getEndpoints: typeof import("./getEndpoints").getEndpoints = null a
 export const getEndpointsOutput: typeof import("./getEndpoints").getEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getEndpoints","getEndpointsOutput"], () => require("./getEndpoints"));
 
+export { GetGenerativeAiPrivateEndpointArgs, GetGenerativeAiPrivateEndpointResult, GetGenerativeAiPrivateEndpointOutputArgs } from "./getGenerativeAiPrivateEndpoint";
+export const getGenerativeAiPrivateEndpoint: typeof import("./getGenerativeAiPrivateEndpoint").getGenerativeAiPrivateEndpoint = null as any;
+export const getGenerativeAiPrivateEndpointOutput: typeof import("./getGenerativeAiPrivateEndpoint").getGenerativeAiPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getGenerativeAiPrivateEndpoint","getGenerativeAiPrivateEndpointOutput"], () => require("./getGenerativeAiPrivateEndpoint"));
+
+export { GetGenerativeAiPrivateEndpointsArgs, GetGenerativeAiPrivateEndpointsResult, GetGenerativeAiPrivateEndpointsOutputArgs } from "./getGenerativeAiPrivateEndpoints";
+export const getGenerativeAiPrivateEndpoints: typeof import("./getGenerativeAiPrivateEndpoints").getGenerativeAiPrivateEndpoints = null as any;
+export const getGenerativeAiPrivateEndpointsOutput: typeof import("./getGenerativeAiPrivateEndpoints").getGenerativeAiPrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getGenerativeAiPrivateEndpoints","getGenerativeAiPrivateEndpointsOutput"], () => require("./getGenerativeAiPrivateEndpoints"));
+
 export { GetModelArgs, GetModelResult, GetModelOutputArgs } from "./getModel";
 export const getModel: typeof import("./getModel").getModel = null as any;
 export const getModelOutput: typeof import("./getModel").getModelOutput = null as any;
@@ -166,6 +181,8 @@ const _module = {
                 return new DedicatedAiCluster(name, <any>undefined, { urn })
             case "oci:GenerativeAi/endpoint:Endpoint":
                 return new Endpoint(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint":
+                return new GenerativeAiPrivateEndpoint(name, <any>undefined, { urn })
             case "oci:GenerativeAi/model:Model":
                 return new Model(name, <any>undefined, { urn })
             default:
@@ -181,4 +198,5 @@ pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentKnowledgeBase", 
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentTool", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/dedicatedAiCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/endpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/generativeAiPrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/model", _module)

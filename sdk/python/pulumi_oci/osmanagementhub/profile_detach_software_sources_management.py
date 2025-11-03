@@ -120,10 +120,6 @@ class ProfileDetachSoftwareSourcesManagement(pulumi.CustomResource):
                  software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Profile Detach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Detaches the specified software sources from a profile.
-
         ## Example Usage
 
         ```python
@@ -159,10 +155,6 @@ class ProfileDetachSoftwareSourcesManagement(pulumi.CustomResource):
                  args: ProfileDetachSoftwareSourcesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Profile Detach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Detaches the specified software sources from a profile.
-
         ## Example Usage
 
         ```python

@@ -610,10 +610,6 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  vendor_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Creates a new managed instance group.
-
         ## Example Usage
 
         ```python
@@ -677,10 +673,6 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  args: ManagedInstanceGroupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Creates a new managed instance group.
-
         ## Example Usage
 
         ```python

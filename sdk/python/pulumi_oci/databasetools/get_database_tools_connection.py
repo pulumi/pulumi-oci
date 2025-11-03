@@ -27,7 +27,7 @@ class GetDatabaseToolsConnectionResult:
     """
     A collection of values returned by getDatabaseToolsConnection.
     """
-    def __init__(__self__, advanced_properties=None, compartment_id=None, connection_string=None, database_tools_connection_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_stores=None, lifecycle_details=None, locks=None, private_endpoint_id=None, proxy_clients=None, related_resources=None, runtime_support=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, url=None, user_name=None, user_passwords=None):
+    def __init__(__self__, advanced_properties=None, compartment_id=None, connection_string=None, database_tools_connection_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_stores=None, lifecycle_details=None, locks=None, private_endpoint_id=None, proxy_clients=None, related_resources=None, runtime_endpoint=None, runtime_identity=None, runtime_support=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, url=None, user_name=None, user_passwords=None):
         if advanced_properties and not isinstance(advanced_properties, dict):
             raise TypeError("Expected argument 'advanced_properties' to be a dict")
         pulumi.set(__self__, "advanced_properties", advanced_properties)
@@ -70,6 +70,12 @@ class GetDatabaseToolsConnectionResult:
         if related_resources and not isinstance(related_resources, list):
             raise TypeError("Expected argument 'related_resources' to be a list")
         pulumi.set(__self__, "related_resources", related_resources)
+        if runtime_endpoint and not isinstance(runtime_endpoint, str):
+            raise TypeError("Expected argument 'runtime_endpoint' to be a str")
+        pulumi.set(__self__, "runtime_endpoint", runtime_endpoint)
+        if runtime_identity and not isinstance(runtime_identity, str):
+            raise TypeError("Expected argument 'runtime_identity' to be a str")
+        pulumi.set(__self__, "runtime_identity", runtime_identity)
         if runtime_support and not isinstance(runtime_support, str):
             raise TypeError("Expected argument 'runtime_support' to be a str")
         pulumi.set(__self__, "runtime_support", runtime_support)
@@ -208,6 +214,22 @@ class GetDatabaseToolsConnectionResult:
         return pulumi.get(self, "related_resources")
 
     @_builtins.property
+    @pulumi.getter(name="runtimeEndpoint")
+    def runtime_endpoint(self) -> _builtins.str:
+        """
+        Specifies the Database Tools Runtime endpoint.
+        """
+        return pulumi.get(self, "runtime_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="runtimeIdentity")
+    def runtime_identity(self) -> _builtins.str:
+        """
+        Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+        """
+        return pulumi.get(self, "runtime_identity")
+
+    @_builtins.property
     @pulumi.getter(name="runtimeSupport")
     def runtime_support(self) -> _builtins.str:
         """
@@ -243,7 +265,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -275,7 +297,7 @@ class GetDatabaseToolsConnectionResult:
     @pulumi.getter(name="userPasswords")
     def user_passwords(self) -> Sequence['outputs.GetDatabaseToolsConnectionUserPasswordResult']:
         """
-        The user password.
+        The database user password.
         """
         return pulumi.get(self, "user_passwords")
 
@@ -300,6 +322,8 @@ class AwaitableGetDatabaseToolsConnectionResult(GetDatabaseToolsConnectionResult
             private_endpoint_id=self.private_endpoint_id,
             proxy_clients=self.proxy_clients,
             related_resources=self.related_resources,
+            runtime_endpoint=self.runtime_endpoint,
+            runtime_identity=self.runtime_identity,
             runtime_support=self.runtime_support,
             state=self.state,
             system_tags=self.system_tags,
@@ -350,6 +374,8 @@ def get_database_tools_connection(database_tools_connection_id: Optional[_builti
         private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
         proxy_clients=pulumi.get(__ret__, 'proxy_clients'),
         related_resources=pulumi.get(__ret__, 'related_resources'),
+        runtime_endpoint=pulumi.get(__ret__, 'runtime_endpoint'),
+        runtime_identity=pulumi.get(__ret__, 'runtime_identity'),
         runtime_support=pulumi.get(__ret__, 'runtime_support'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -397,6 +423,8 @@ def get_database_tools_connection_output(database_tools_connection_id: Optional[
         private_endpoint_id=pulumi.get(__response__, 'private_endpoint_id'),
         proxy_clients=pulumi.get(__response__, 'proxy_clients'),
         related_resources=pulumi.get(__response__, 'related_resources'),
+        runtime_endpoint=pulumi.get(__response__, 'runtime_endpoint'),
+        runtime_identity=pulumi.get(__response__, 'runtime_identity'),
         runtime_support=pulumi.get(__response__, 'runtime_support'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

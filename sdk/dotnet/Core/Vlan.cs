@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Vlan resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates a VLAN in the specified VCN and the specified compartment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

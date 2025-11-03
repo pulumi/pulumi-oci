@@ -85,6 +85,10 @@ type LookupDatabaseToolsConnectionResult struct {
 	ProxyClients []GetDatabaseToolsConnectionProxyClient `pulumi:"proxyClients"`
 	// A related resource
 	RelatedResources []GetDatabaseToolsConnectionRelatedResource `pulumi:"relatedResources"`
+	// Specifies the Database Tools Runtime endpoint.
+	RuntimeEndpoint string `pulumi:"runtimeEndpoint"`
+	// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+	RuntimeIdentity string `pulumi:"runtimeIdentity"`
 	// Specifies whether this connection is supported by the Database Tools Runtime.
 	RuntimeSupport string `pulumi:"runtimeSupport"`
 	// The current state of the Database Tools connection.
@@ -93,7 +97,7 @@ type LookupDatabaseToolsConnectionResult struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+	// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The Database Tools connection type.
 	Type string `pulumi:"type"`
@@ -101,7 +105,7 @@ type LookupDatabaseToolsConnectionResult struct {
 	Url string `pulumi:"url"`
 	// The database user name.
 	UserName string `pulumi:"userName"`
-	// The user password.
+	// The database user password.
 	UserPasswords []GetDatabaseToolsConnectionUserPassword `pulumi:"userPasswords"`
 }
 
@@ -212,6 +216,16 @@ func (o LookupDatabaseToolsConnectionResultOutput) RelatedResources() GetDatabas
 	}).(GetDatabaseToolsConnectionRelatedResourceArrayOutput)
 }
 
+// Specifies the Database Tools Runtime endpoint.
+func (o LookupDatabaseToolsConnectionResultOutput) RuntimeEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.RuntimeEndpoint }).(pulumi.StringOutput)
+}
+
+// Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+func (o LookupDatabaseToolsConnectionResultOutput) RuntimeIdentity() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.RuntimeIdentity }).(pulumi.StringOutput)
+}
+
 // Specifies whether this connection is supported by the Database Tools Runtime.
 func (o LookupDatabaseToolsConnectionResultOutput) RuntimeSupport() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.RuntimeSupport }).(pulumi.StringOutput)
@@ -232,7 +246,7 @@ func (o LookupDatabaseToolsConnectionResultOutput) TimeCreated() pulumi.StringOu
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
 func (o LookupDatabaseToolsConnectionResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -252,7 +266,7 @@ func (o LookupDatabaseToolsConnectionResultOutput) UserName() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.UserName }).(pulumi.StringOutput)
 }
 
-// The user password.
+// The database user password.
 func (o LookupDatabaseToolsConnectionResultOutput) UserPasswords() GetDatabaseToolsConnectionUserPasswordArrayOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) []GetDatabaseToolsConnectionUserPassword {
 		return v.UserPasswords

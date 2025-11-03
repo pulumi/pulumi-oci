@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
- *
- * Updates the enrollment status of the tenancy.
+ * ## Example Usage
  *
  * ## Import
  *

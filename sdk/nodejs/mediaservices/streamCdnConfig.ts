@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Stream Cdn Config resource in Oracle Cloud Infrastructure Media Services service.
- *
- * Creates a new CDN Configuration.
- *
  * ## Example Usage
  *
  * ```typescript

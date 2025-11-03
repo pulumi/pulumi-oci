@@ -14,21 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity service.
- * 
- * Uploads an API signing key for the specified user.
- * 
- * Every user has permission to use this operation to upload a key for *their own user ID*. An
- * administrator in your organization does not need to write a policy to give users this ability.
- * To compare, administrators who have permission to the tenancy can use this operation to upload a
- * key for any user, including themselves.
- * 
- * **Important:** Even though you have permission to upload an API key, you might not yet
- * have permission to do much else. If you try calling an operation unrelated to your own credential
- * management (e.g., `ListUsers`, `LaunchInstance`) and receive an &#34;unauthorized&#34; error,
- * check with an administrator to confirm which IAM Service group(s) you&#39;re in and what access
- * you have. Also confirm you&#39;re working in the correct compartment.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
- *
- * Generates a key that you can use to encrypt or decrypt data.
- *
  * ## Example Usage
  *
  * ```typescript

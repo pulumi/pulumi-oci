@@ -382,10 +382,6 @@ class OciCacheUser(pulumi.CustomResource):
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
-
-        Creates a new Oracle Cloud Infrastructure Cache user. Oracle Cloud Infrastructure Cache user is required to authenticate to Oracle Cloud Infrastructure Cache cluster.
-
         ## Example Usage
 
         ```python
@@ -440,10 +436,6 @@ class OciCacheUser(pulumi.CustomResource):
                  args: OciCacheUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
-
-        Creates a new Oracle Cloud Infrastructure Cache user. Oracle Cloud Infrastructure Cache user is required to authenticate to Oracle Cloud Infrastructure Cache cluster.
-
         ## Example Usage
 
         ```python

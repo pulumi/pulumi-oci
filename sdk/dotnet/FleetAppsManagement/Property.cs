@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
-    /// This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-    /// 
-    /// Create a business-specific metadata property in Fleet Application Management.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

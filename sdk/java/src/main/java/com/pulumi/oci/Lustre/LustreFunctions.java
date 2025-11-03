@@ -12,8 +12,20 @@ import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemArgs;
 import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemPlainArgs;
 import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemsArgs;
 import com.pulumi.oci.Lustre.inputs.GetFileStorageLustreFileSystemsPlainArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkPlainArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobPlainArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsPlainArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
+import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksPlainArgs;
 import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemResult;
 import com.pulumi.oci.Lustre.outputs.GetFileStorageLustreFileSystemsResult;
+import com.pulumi.oci.Lustre.outputs.GetFileStorageObjectStorageLinkResult;
+import com.pulumi.oci.Lustre.outputs.GetFileStorageObjectStorageLinkSyncJobResult;
+import com.pulumi.oci.Lustre.outputs.GetFileStorageObjectStorageLinkSyncJobsResult;
+import com.pulumi.oci.Lustre.outputs.GetFileStorageObjectStorageLinksResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -549,5 +561,974 @@ public final class LustreFunctions {
      */
     public static CompletableFuture<GetFileStorageLustreFileSystemsResult> getFileStorageLustreFileSystemsPlain(GetFileStorageLustreFileSystemsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Lustre/getFileStorageLustreFileSystems:getFileStorageLustreFileSystems", TypeShape.of(GetFileStorageLustreFileSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Object Storage Link resource in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets information about an Object Storage link.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLink = LustreFunctions.getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinkResult> getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs args) {
+        return getFileStorageObjectStorageLink(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Object Storage Link resource in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets information about an Object Storage link.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLink = LustreFunctions.getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageObjectStorageLinkResult> getFileStorageObjectStorageLinkPlain(GetFileStorageObjectStorageLinkPlainArgs args) {
+        return getFileStorageObjectStorageLinkPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Object Storage Link resource in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets information about an Object Storage link.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLink = LustreFunctions.getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinkResult> getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageObjectStorageLink:getFileStorageObjectStorageLink", TypeShape.of(GetFileStorageObjectStorageLinkResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Object Storage Link resource in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets information about an Object Storage link.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLink = LustreFunctions.getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinkResult> getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageObjectStorageLink:getFileStorageObjectStorageLink", TypeShape.of(GetFileStorageObjectStorageLinkResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Object Storage Link resource in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets information about an Object Storage link.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLink = LustreFunctions.getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageObjectStorageLinkResult> getFileStorageObjectStorageLinkPlain(GetFileStorageObjectStorageLinkPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Lustre/getFileStorageObjectStorageLink:getFileStorageObjectStorageLink", TypeShape.of(GetFileStorageObjectStorageLinkResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Object Storage Link Sync Job resource in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets details of a sync job associated with an Object Storage link when `objectStorageLink` and a unique ID are provided.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinkSyncJob = LustreFunctions.getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .syncJobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinkSyncJobResult> getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs args) {
+        return getFileStorageObjectStorageLinkSyncJob(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Object Storage Link Sync Job resource in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets details of a sync job associated with an Object Storage link when `objectStorageLink` and a unique ID are provided.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinkSyncJob = LustreFunctions.getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .syncJobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageObjectStorageLinkSyncJobResult> getFileStorageObjectStorageLinkSyncJobPlain(GetFileStorageObjectStorageLinkSyncJobPlainArgs args) {
+        return getFileStorageObjectStorageLinkSyncJobPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Object Storage Link Sync Job resource in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets details of a sync job associated with an Object Storage link when `objectStorageLink` and a unique ID are provided.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinkSyncJob = LustreFunctions.getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .syncJobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinkSyncJobResult> getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageObjectStorageLinkSyncJob:getFileStorageObjectStorageLinkSyncJob", TypeShape.of(GetFileStorageObjectStorageLinkSyncJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Object Storage Link Sync Job resource in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets details of a sync job associated with an Object Storage link when `objectStorageLink` and a unique ID are provided.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinkSyncJob = LustreFunctions.getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .syncJobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinkSyncJobResult> getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageObjectStorageLinkSyncJob:getFileStorageObjectStorageLinkSyncJob", TypeShape.of(GetFileStorageObjectStorageLinkSyncJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Object Storage Link Sync Job resource in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets details of a sync job associated with an Object Storage link when `objectStorageLink` and a unique ID are provided.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinkSyncJob = LustreFunctions.getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .syncJobId(testJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageObjectStorageLinkSyncJobResult> getFileStorageObjectStorageLinkSyncJobPlain(GetFileStorageObjectStorageLinkSyncJobPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Lustre/getFileStorageObjectStorageLinkSyncJob:getFileStorageObjectStorageLinkSyncJob", TypeShape.of(GetFileStorageObjectStorageLinkSyncJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Object Storage Link Sync Jobs in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Lists all sync jobs associated with the Object Storage link. Contains a unique ID for each sync job.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinkSyncJobs = LustreFunctions.getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .state(objectStorageLinkSyncJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinkSyncJobsResult> getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs args) {
+        return getFileStorageObjectStorageLinkSyncJobs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Object Storage Link Sync Jobs in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Lists all sync jobs associated with the Object Storage link. Contains a unique ID for each sync job.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinkSyncJobs = LustreFunctions.getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .state(objectStorageLinkSyncJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageObjectStorageLinkSyncJobsResult> getFileStorageObjectStorageLinkSyncJobsPlain(GetFileStorageObjectStorageLinkSyncJobsPlainArgs args) {
+        return getFileStorageObjectStorageLinkSyncJobsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Object Storage Link Sync Jobs in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Lists all sync jobs associated with the Object Storage link. Contains a unique ID for each sync job.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinkSyncJobs = LustreFunctions.getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .state(objectStorageLinkSyncJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinkSyncJobsResult> getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageObjectStorageLinkSyncJobs:getFileStorageObjectStorageLinkSyncJobs", TypeShape.of(GetFileStorageObjectStorageLinkSyncJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Object Storage Link Sync Jobs in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Lists all sync jobs associated with the Object Storage link. Contains a unique ID for each sync job.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinkSyncJobs = LustreFunctions.getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .state(objectStorageLinkSyncJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinkSyncJobsResult> getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageObjectStorageLinkSyncJobs:getFileStorageObjectStorageLinkSyncJobs", TypeShape.of(GetFileStorageObjectStorageLinkSyncJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Object Storage Link Sync Jobs in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Lists all sync jobs associated with the Object Storage link. Contains a unique ID for each sync job.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinkSyncJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinkSyncJobs = LustreFunctions.getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs.builder()
+     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .state(objectStorageLinkSyncJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageObjectStorageLinkSyncJobsResult> getFileStorageObjectStorageLinkSyncJobsPlain(GetFileStorageObjectStorageLinkSyncJobsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Lustre/getFileStorageObjectStorageLinkSyncJobs:getFileStorageObjectStorageLinkSyncJobs", TypeShape.of(GetFileStorageObjectStorageLinkSyncJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Object Storage Links in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets a list of Object Storage links.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinks = LustreFunctions.getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs.builder()
+     *             .availabilityDomain(objectStorageLinkAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(objectStorageLinkDisplayName)
+     *             .id(objectStorageLinkId)
+     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .state(objectStorageLinkState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinksResult> getFileStorageObjectStorageLinks() {
+        return getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Object Storage Links in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets a list of Object Storage links.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinks = LustreFunctions.getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs.builder()
+     *             .availabilityDomain(objectStorageLinkAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(objectStorageLinkDisplayName)
+     *             .id(objectStorageLinkId)
+     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .state(objectStorageLinkState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageObjectStorageLinksResult> getFileStorageObjectStorageLinksPlain() {
+        return getFileStorageObjectStorageLinksPlain(GetFileStorageObjectStorageLinksPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Object Storage Links in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets a list of Object Storage links.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinks = LustreFunctions.getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs.builder()
+     *             .availabilityDomain(objectStorageLinkAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(objectStorageLinkDisplayName)
+     *             .id(objectStorageLinkId)
+     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .state(objectStorageLinkState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinksResult> getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs args) {
+        return getFileStorageObjectStorageLinks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Object Storage Links in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets a list of Object Storage links.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinks = LustreFunctions.getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs.builder()
+     *             .availabilityDomain(objectStorageLinkAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(objectStorageLinkDisplayName)
+     *             .id(objectStorageLinkId)
+     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .state(objectStorageLinkState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageObjectStorageLinksResult> getFileStorageObjectStorageLinksPlain(GetFileStorageObjectStorageLinksPlainArgs args) {
+        return getFileStorageObjectStorageLinksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Object Storage Links in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets a list of Object Storage links.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinks = LustreFunctions.getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs.builder()
+     *             .availabilityDomain(objectStorageLinkAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(objectStorageLinkDisplayName)
+     *             .id(objectStorageLinkId)
+     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .state(objectStorageLinkState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinksResult> getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageObjectStorageLinks:getFileStorageObjectStorageLinks", TypeShape.of(GetFileStorageObjectStorageLinksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Object Storage Links in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets a list of Object Storage links.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinks = LustreFunctions.getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs.builder()
+     *             .availabilityDomain(objectStorageLinkAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(objectStorageLinkDisplayName)
+     *             .id(objectStorageLinkId)
+     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .state(objectStorageLinkState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFileStorageObjectStorageLinksResult> getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Lustre/getFileStorageObjectStorageLinks:getFileStorageObjectStorageLinks", TypeShape.of(GetFileStorageObjectStorageLinksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Object Storage Links in Oracle Cloud Infrastructure Lustre File Storage service.
+     * 
+     * Gets a list of Object Storage links.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Lustre.LustreFunctions;
+     * import com.pulumi.oci.Lustre.inputs.GetFileStorageObjectStorageLinksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjectStorageLinks = LustreFunctions.getFileStorageObjectStorageLinks(GetFileStorageObjectStorageLinksArgs.builder()
+     *             .availabilityDomain(objectStorageLinkAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(objectStorageLinkDisplayName)
+     *             .id(objectStorageLinkId)
+     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .state(objectStorageLinkState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFileStorageObjectStorageLinksResult> getFileStorageObjectStorageLinksPlain(GetFileStorageObjectStorageLinksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Lustre/getFileStorageObjectStorageLinks:getFileStorageObjectStorageLinks", TypeShape.of(GetFileStorageObjectStorageLinksResult.class), args, Utilities.withVersion(options));
     }
 }

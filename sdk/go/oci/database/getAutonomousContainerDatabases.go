@@ -75,7 +75,7 @@ type GetAutonomousContainerDatabasesArgs struct {
 	Filters     []GetAutonomousContainerDatabasesFilter `pulumi:"filters"`
 	// A filter to return only resources that match the given Infrastructure Type.
 	InfrastructureType *string `pulumi:"infrastructureType"`
-	// A filter to return only resources that match the given service level agreement type exactly.
+	// A filter to return only resources that match the given service-level agreement type exactly.
 	ServiceLevelAgreementType *string `pulumi:"serviceLevelAgreementType"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State *string `pulumi:"state"`
@@ -85,7 +85,7 @@ type GetAutonomousContainerDatabasesArgs struct {
 type GetAutonomousContainerDatabasesResult struct {
 	// The list of autonomous_container_databases.
 	AutonomousContainerDatabases []GetAutonomousContainerDatabasesAutonomousContainerDatabase `pulumi:"autonomousContainerDatabases"`
-	// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+	// **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 	AutonomousExadataInfrastructureId *string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId *string `pulumi:"autonomousVmClusterId"`
@@ -134,7 +134,7 @@ type GetAutonomousContainerDatabasesOutputArgs struct {
 	Filters     GetAutonomousContainerDatabasesFilterArrayInput `pulumi:"filters"`
 	// A filter to return only resources that match the given Infrastructure Type.
 	InfrastructureType pulumi.StringPtrInput `pulumi:"infrastructureType"`
-	// A filter to return only resources that match the given service level agreement type exactly.
+	// A filter to return only resources that match the given service-level agreement type exactly.
 	ServiceLevelAgreementType pulumi.StringPtrInput `pulumi:"serviceLevelAgreementType"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -166,7 +166,7 @@ func (o GetAutonomousContainerDatabasesResultOutput) AutonomousContainerDatabase
 	}).(GetAutonomousContainerDatabasesAutonomousContainerDatabaseArrayOutput)
 }
 
-// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+// **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 func (o GetAutonomousContainerDatabasesResultOutput) AutonomousExadataInfrastructureId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabasesResult) *string { return v.AutonomousExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }

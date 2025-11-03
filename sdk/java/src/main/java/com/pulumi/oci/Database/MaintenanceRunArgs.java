@@ -33,14 +33,14 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     @Import(name="databaseSoftwareImageId")
     private @Nullable Output<String> databaseSoftwareImageId;
 
     /**
-     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * @return The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     public Optional<Output<String>> databaseSoftwareImageId() {
@@ -184,7 +184,7 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param databaseSoftwareImageId The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class MaintenanceRunArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * @param databaseSoftwareImageId The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * 
          * @return builder
          * 

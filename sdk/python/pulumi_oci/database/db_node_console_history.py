@@ -250,10 +250,6 @@ class DbNodeConsoleHistory(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Db Node Console History resource in Oracle Cloud Infrastructure Database service.
-
-        Captures the most recent serial console data (up to a megabyte) for the specified database node.
-
         ## Example Usage
 
         ```python
@@ -295,10 +291,6 @@ class DbNodeConsoleHistory(pulumi.CustomResource):
                  args: DbNodeConsoleHistoryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Db Node Console History resource in Oracle Cloud Infrastructure Database service.
-
-        Captures the most recent serial console data (up to a megabyte) for the specified database node.
-
         ## Example Usage
 
         ```python

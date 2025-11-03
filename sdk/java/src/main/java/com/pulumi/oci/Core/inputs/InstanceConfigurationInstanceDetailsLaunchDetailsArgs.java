@@ -313,6 +313,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
     }
 
     /**
+     * Whether to enable AI enterprise on the instance.
+     * 
+     */
+    @Import(name="isAiEnterpriseEnabled")
+    private @Nullable Output<Boolean> isAiEnterpriseEnabled;
+
+    /**
+     * @return Whether to enable AI enterprise on the instance.
+     * 
+     */
+    public Optional<Output<Boolean>> isAiEnterpriseEnabled() {
+        return Optional.ofNullable(this.isAiEnterpriseEnabled);
+    }
+
+    /**
      * Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
      * 
      */
@@ -598,6 +613,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
         this.freeformTags = $.freeformTags;
         this.instanceOptions = $.instanceOptions;
         this.ipxeScript = $.ipxeScript;
+        this.isAiEnterpriseEnabled = $.isAiEnterpriseEnabled;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.launchMode = $.launchMode;
         this.launchOptions = $.launchOptions;
@@ -1009,6 +1025,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
          */
         public Builder ipxeScript(String ipxeScript) {
             return ipxeScript(Output.of(ipxeScript));
+        }
+
+        /**
+         * @param isAiEnterpriseEnabled Whether to enable AI enterprise on the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAiEnterpriseEnabled(@Nullable Output<Boolean> isAiEnterpriseEnabled) {
+            $.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAiEnterpriseEnabled Whether to enable AI enterprise on the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAiEnterpriseEnabled(Boolean isAiEnterpriseEnabled) {
+            return isAiEnterpriseEnabled(Output.of(isAiEnterpriseEnabled));
         }
 
         /**

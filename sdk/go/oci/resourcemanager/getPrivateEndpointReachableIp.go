@@ -13,7 +13,10 @@ import (
 
 // This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
 //
-// Gets the alternative IP address of the private resource. This IP will be used by Resource Manager Service to connect to the private resource.
+// Gets the reachable, or alternative, IP address for a nonpublic IP address that is associated with the private endpoint.
+// Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
+// For more information, see
+// [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
 //
 // ## Example Usage
 //
@@ -63,7 +66,7 @@ type GetPrivateEndpointReachableIpArgs struct {
 type GetPrivateEndpointReachableIpResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// An IP address for the Resource Manager service to use for connection to the private resource.
+	// Reachable IP address associated with the private endpoint.
 	IpAddress         string `pulumi:"ipAddress"`
 	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	PrivateIp         string `pulumi:"privateIp"`
@@ -110,7 +113,7 @@ func (o GetPrivateEndpointReachableIpResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointReachableIpResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// An IP address for the Resource Manager service to use for connection to the private resource.
+// Reachable IP address associated with the private endpoint.
 func (o GetPrivateEndpointReachableIpResultOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointReachableIpResult) string { return v.IpAddress }).(pulumi.StringOutput)
 }

@@ -12,40 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Subnet resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
-// so it's important to think about the size of subnets you need before creating them.
-// For more information, see [VCNs and Subnets](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm).
-// For information on the number of subnets you can have in a VCN, see
-// [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
-//
-// For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the subnet
-// to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
-// other Networking Service components. If you're not sure which compartment to use, put the subnet in
-// the same compartment as the VCN. For more information about compartments and access control, see
-// [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about OCIDs,
-// see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-//
-// You may optionally associate a route table with the subnet. If you don't, the subnet will use the
-// VCN's default route table. For more information about route tables, see
-// [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
-//
-// You may optionally associate a security list with the subnet. If you don't, the subnet will use the
-// VCN's default security list. For more information about security lists, see
-// [Security Lists](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm).
-//
-// You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
-// VCN's default set. For more information about DHCP options, see
-// [DHCP Options](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDHCP.htm).
-//
-// You may optionally specify a *display name* for the subnet, otherwise a default is provided.
-// It does not have to be unique, and you can change it. Avoid entering confidential information.
-//
-// You can also add a DNS label for the subnet, which is required if you want the Internet and
-// VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
-// [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-//
 // ## Example Usage
 //
 // ```go
@@ -61,10 +27,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := core.NewSubnet(ctx, "test_subnet", &core.SubnetArgs{
-//				CidrBlock:          pulumi.Any(subnetCidrBlock),
 //				CompartmentId:      pulumi.Any(compartmentId),
 //				VcnId:              pulumi.Any(testVcn.Id),
 //				AvailabilityDomain: pulumi.Any(subnetAvailabilityDomain),
+//				CidrBlock:          pulumi.Any(subnetCidrBlock),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -74,6 +40,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Ipv4cidrBlocks:          pulumi.Any(subnetIpv4cidrBlocks),
 //				Ipv6cidrBlock:           pulumi.Any(subnetIpv6cidrBlock),
 //				Ipv6cidrBlocks:          pulumi.Any(subnetIpv6cidrBlocks),
 //				ProhibitInternetIngress: pulumi.Any(subnetProhibitInternetIngress),
@@ -132,6 +99,11 @@ type Subnet struct {
 	DnsLabel pulumi.StringOutput `pulumi:"dnsLabel"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+	// * Ipv4 CIDR blocks must be valid.
+	// * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+	// * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+	Ipv4cidrBlocks pulumi.StringArrayOutput `pulumi:"ipv4cidrBlocks"`
 	// (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
 	//
 	// For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -187,9 +159,6 @@ func NewSubnet(ctx *pulumi.Context,
 		return nil, errors.New("missing one or more required arguments")
 	}
 
-	if args.CidrBlock == nil {
-		return nil, errors.New("invalid value for required argument 'CidrBlock'")
-	}
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
 	}
@@ -251,6 +220,11 @@ type subnetState struct {
 	DnsLabel *string `pulumi:"dnsLabel"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+	// * Ipv4 CIDR blocks must be valid.
+	// * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+	// * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+	Ipv4cidrBlocks []string `pulumi:"ipv4cidrBlocks"`
 	// (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
 	//
 	// For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -332,6 +306,11 @@ type SubnetState struct {
 	DnsLabel pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+	// * Ipv4 CIDR blocks must be valid.
+	// * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+	// * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+	Ipv4cidrBlocks pulumi.StringArrayInput
 	// (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
 	//
 	// For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -398,7 +377,7 @@ type subnetArgs struct {
 	// a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
 	//
 	// Example: `10.0.1.0/24`
-	CidrBlock string `pulumi:"cidrBlock"`
+	CidrBlock *string `pulumi:"cidrBlock"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -417,6 +396,11 @@ type subnetArgs struct {
 	DnsLabel *string `pulumi:"dnsLabel"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+	// * Ipv4 CIDR blocks must be valid.
+	// * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+	// * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+	Ipv4cidrBlocks []string `pulumi:"ipv4cidrBlocks"`
 	// (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
 	//
 	// For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -468,7 +452,7 @@ type SubnetArgs struct {
 	// a. The CIDR block is valid and correctly formatted. b. The new range is within one of the parent VCN ranges.
 	//
 	// Example: `10.0.1.0/24`
-	CidrBlock pulumi.StringInput
+	CidrBlock pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -487,6 +471,11 @@ type SubnetArgs struct {
 	DnsLabel pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+	// * Ipv4 CIDR blocks must be valid.
+	// * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+	// * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+	Ipv4cidrBlocks pulumi.StringArrayInput
 	// (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
 	//
 	// For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
@@ -664,6 +653,14 @@ func (o SubnetOutput) DnsLabel() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o SubnetOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
+// * Ipv4 CIDR blocks must be valid.
+// * Multiple Ipv4 CIDR blocks must not overlap each other or the on-premises network CIDR block.
+// * The number of prefixes must not exceed the limit of IPv4 prefixes allowed to a subnet.
+func (o SubnetOutput) Ipv4cidrBlocks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Subnet) pulumi.StringArrayOutput { return v.Ipv4cidrBlocks }).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).

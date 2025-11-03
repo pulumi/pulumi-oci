@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Replace Authentication Factor Settings
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

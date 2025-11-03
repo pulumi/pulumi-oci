@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.AiLanguage
 {
     /// <summary>
-    /// This resource provides the Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
-    /// 
-    /// Creates a new endpoint and deploy the trained model
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -28,6 +24,7 @@ namespace Pulumi.Oci.AiLanguage
     ///     {
     ///         CompartmentId = compartmentId,
     ///         ModelId = testModel.Id,
+    ///         Alias = endpointAlias,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -55,6 +52,12 @@ namespace Pulumi.Oci.AiLanguage
     [OciResourceType("oci:AiLanguage/endpoint:Endpoint")]
     public partial class Endpoint : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+        /// </summary>
+        [Output("alias")]
+        public Output<string> Alias { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
         /// </summary>
@@ -184,6 +187,12 @@ namespace Pulumi.Oci.AiLanguage
     public sealed class EndpointArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+        /// </summary>
+        [Input("alias")]
+        public Input<string>? Alias { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -249,6 +258,12 @@ namespace Pulumi.Oci.AiLanguage
 
     public sealed class EndpointState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+        /// </summary>
+        [Input("alias")]
+        public Input<string>? Alias { get; set; }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
         /// </summary>

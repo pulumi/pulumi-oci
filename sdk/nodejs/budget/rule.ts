@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Alert Rule resource in Oracle Cloud Infrastructure Budget service.
- *
- * Creates a new Alert Rule.
- *
  * ## Example Usage
  *
  * ```typescript

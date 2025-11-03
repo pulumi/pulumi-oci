@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
- *
- * Returns the created custom table.
- *
  * ## Example Usage
  *
  * ```typescript

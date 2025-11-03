@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Snapshot resource in Oracle Cloud Infrastructure File Storage service.
-//
-// Creates a new snapshot of the specified file system. You
-// can access the snapshot at `.snapshot/<name>`.
-//
 // ## Example Usage
 //
 // ```go

@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Core
         ///         AvailabilityDomain = computeHostAvailabilityDomain,
         ///         ComputeHostGroupId = testComputeHostGroup.Id,
         ///         ComputeHostHealth = computeHostComputeHostHealth,
+        ///         ComputeHostInSubtree = computeHostComputeHostInSubtree,
         ///         ComputeHostLifecycleState = computeHostComputeHostLifecycleState,
         ///         DisplayName = computeHostDisplayName,
         ///         NetworkResourceId = testResource.Id,
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.Core
         ///         AvailabilityDomain = computeHostAvailabilityDomain,
         ///         ComputeHostGroupId = testComputeHostGroup.Id,
         ///         ComputeHostHealth = computeHostComputeHostHealth,
+        ///         ComputeHostInSubtree = computeHostComputeHostInSubtree,
         ///         ComputeHostLifecycleState = computeHostComputeHostLifecycleState,
         ///         DisplayName = computeHostDisplayName,
         ///         NetworkResourceId = testResource.Id,
@@ -99,6 +101,7 @@ namespace Pulumi.Oci.Core
         ///         AvailabilityDomain = computeHostAvailabilityDomain,
         ///         ComputeHostGroupId = testComputeHostGroup.Id,
         ///         ComputeHostHealth = computeHostComputeHostHealth,
+        ///         ComputeHostInSubtree = computeHostComputeHostInSubtree,
         ///         ComputeHostLifecycleState = computeHostComputeHostLifecycleState,
         ///         DisplayName = computeHostDisplayName,
         ///         NetworkResourceId = testResource.Id,
@@ -137,6 +140,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("computeHostHealth")]
         public string? ComputeHostHealth { get; set; }
+
+        /// <summary>
+        /// When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
+        /// </summary>
+        [Input("computeHostInSubtree")]
+        public bool? ComputeHostInSubtree { get; set; }
 
         /// <summary>
         /// A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
@@ -200,6 +209,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? ComputeHostHealth { get; set; }
 
         /// <summary>
+        /// When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
+        /// </summary>
+        [Input("computeHostInSubtree")]
+        public Input<bool>? ComputeHostInSubtree { get; set; }
+
+        /// <summary>
         /// A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
         /// </summary>
         [Input("computeHostLifecycleState")]
@@ -255,6 +270,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string? ComputeHostGroupId;
         public readonly string? ComputeHostHealth;
+        public readonly bool? ComputeHostInSubtree;
         public readonly string? ComputeHostLifecycleState;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -283,6 +299,8 @@ namespace Pulumi.Oci.Core
 
             string? computeHostHealth,
 
+            bool? computeHostInSubtree,
+
             string? computeHostLifecycleState,
 
             string? displayName,
@@ -300,6 +318,7 @@ namespace Pulumi.Oci.Core
             ComputeHostCollections = computeHostCollections;
             ComputeHostGroupId = computeHostGroupId;
             ComputeHostHealth = computeHostHealth;
+            ComputeHostInSubtree = computeHostInSubtree;
             ComputeHostLifecycleState = computeHostLifecycleState;
             DisplayName = displayName;
             Filters = filters;

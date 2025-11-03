@@ -1541,10 +1541,6 @@ class DomainsAppRole(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an AppRole
-
         ## Example Usage
 
         ## Import
@@ -1699,10 +1695,6 @@ class DomainsAppRole(pulumi.CustomResource):
                  args: DomainsAppRoleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an AppRole
-
         ## Example Usage
 
         ## Import

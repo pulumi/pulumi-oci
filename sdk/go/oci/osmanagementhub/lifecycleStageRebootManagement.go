@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Lifecycle Stage Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Reboots all managed instances in the specified lifecycle stage.
-//
 // ## Example Usage
 //
 // ```go

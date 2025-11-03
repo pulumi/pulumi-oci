@@ -257,10 +257,6 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
                  node_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Bds Instance Node Backup resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Add a node volume backup to the cluster for an indicated node type or node.
-
         ## Example Usage
 
         ```python
@@ -298,10 +294,6 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
                  args: BdsInstanceNodeBackupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Bds Instance Node Backup resource in Oracle Cloud Infrastructure Big Data Service service.
-
-        Add a node volume backup to the cluster for an indicated node type or node.
-
         ## Example Usage
 
         ```python

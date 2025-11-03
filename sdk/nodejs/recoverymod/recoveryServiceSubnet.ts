@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
- *
- * Creates a new Recovery Service Subnet.
- *
  * ## Example Usage
  *
  * ```typescript

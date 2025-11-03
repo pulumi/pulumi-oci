@@ -6,10 +6,12 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseBackupBackupDestinationDetailsArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseBackupSourceDatabaseDetailArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -20,14 +22,14 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
     public static final AutonomousDatabaseBackupState Empty = new AutonomousDatabaseBackupState();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * 
      */
     @Import(name="autonomousDatabaseId")
     private @Nullable Output<String> autonomousDatabaseId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * 
      */
     public Optional<Output<String>> autonomousDatabaseId() {
@@ -80,14 +82,14 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
     }
 
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable Output<String> dbVersion;
 
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     public Optional<Output<String>> dbVersion() {
@@ -107,6 +109,21 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * The infrastructure type this resource belongs to.
+     * 
+     */
+    @Import(name="infrastructureType")
+    private @Nullable Output<String> infrastructureType;
+
+    /**
+     * @return The infrastructure type this resource belongs to.
+     * 
+     */
+    public Optional<Output<String>> infrastructureType() {
+        return Optional.ofNullable(this.infrastructureType);
     }
 
     /**
@@ -140,14 +157,14 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
     }
 
     /**
-     * Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      * 
      */
     @Import(name="isRestorable")
     private @Nullable Output<Boolean> isRestorable;
 
     /**
-     * @return Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * @return Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      * 
      */
     public Optional<Output<Boolean>> isRestorable() {
@@ -200,14 +217,14 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     @Import(name="kmsKeyVersionId")
     private @Nullable Output<String> kmsKeyVersionId;
 
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public Optional<Output<String>> kmsKeyVersionId() {
@@ -227,6 +244,21 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * Name of the region in which backup is taken in.
+     * 
+     */
+    @Import(name="region")
+    private @Nullable Output<String> region;
+
+    /**
+     * @return Name of the region in which backup is taken in.
+     * 
+     */
+    public Optional<Output<String>> region() {
+        return Optional.ofNullable(this.region);
     }
 
     /**
@@ -263,6 +295,21 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
      */
     public Optional<Output<Double>> sizeInTbs() {
         return Optional.ofNullable(this.sizeInTbs);
+    }
+
+    /**
+     * Source Autonomous Database details.
+     * 
+     */
+    @Import(name="sourceDatabaseDetails")
+    private @Nullable Output<List<AutonomousDatabaseBackupSourceDatabaseDetailArgs>> sourceDatabaseDetails;
+
+    /**
+     * @return Source Autonomous Database details.
+     * 
+     */
+    public Optional<Output<List<AutonomousDatabaseBackupSourceDatabaseDetailArgs>>> sourceDatabaseDetails() {
+        return Optional.ofNullable(this.sourceDatabaseDetails);
     }
 
     /**
@@ -364,6 +411,7 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         this.databaseSizeInTbs = $.databaseSizeInTbs;
         this.dbVersion = $.dbVersion;
         this.displayName = $.displayName;
+        this.infrastructureType = $.infrastructureType;
         this.isAutomatic = $.isAutomatic;
         this.isLongTermBackup = $.isLongTermBackup;
         this.isRestorable = $.isRestorable;
@@ -372,8 +420,10 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.region = $.region;
         this.retentionPeriodInDays = $.retentionPeriodInDays;
         this.sizeInTbs = $.sizeInTbs;
+        this.sourceDatabaseDetails = $.sourceDatabaseDetails;
         this.state = $.state;
         this.timeAvailableTill = $.timeAvailableTill;
         this.timeEnded = $.timeEnded;
@@ -401,7 +451,7 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autonomousDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         * @param autonomousDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
          * 
          * @return builder
          * 
@@ -412,7 +462,7 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autonomousDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+         * @param autonomousDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
          * 
          * @return builder
          * 
@@ -485,7 +535,7 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dbVersion A valid Oracle Database version for Autonomous Database.
+         * @param dbVersion A valid Oracle AI Database version for Autonomous AI Database.
          * 
          * @return builder
          * 
@@ -496,7 +546,7 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dbVersion A valid Oracle Database version for Autonomous Database.
+         * @param dbVersion A valid Oracle AI Database version for Autonomous AI Database.
          * 
          * @return builder
          * 
@@ -524,6 +574,27 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param infrastructureType The infrastructure type this resource belongs to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder infrastructureType(@Nullable Output<String> infrastructureType) {
+            $.infrastructureType = infrastructureType;
+            return this;
+        }
+
+        /**
+         * @param infrastructureType The infrastructure type this resource belongs to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder infrastructureType(String infrastructureType) {
+            return infrastructureType(Output.of(infrastructureType));
         }
 
         /**
@@ -569,7 +640,7 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param isRestorable Indicates whether the backup can be used to restore the associated Autonomous Database.
+         * @param isRestorable Indicates whether the backup can be used to restore the associated Autonomous AI Database.
          * 
          * @return builder
          * 
@@ -580,7 +651,7 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param isRestorable Indicates whether the backup can be used to restore the associated Autonomous Database.
+         * @param isRestorable Indicates whether the backup can be used to restore the associated Autonomous AI Database.
          * 
          * @return builder
          * 
@@ -653,7 +724,7 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          * 
          * @return builder
          * 
@@ -664,7 +735,7 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          * 
          * @return builder
          * 
@@ -692,6 +763,27 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param region Name of the region in which backup is taken in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder region(@Nullable Output<String> region) {
+            $.region = region;
+            return this;
+        }
+
+        /**
+         * @param region Name of the region in which backup is taken in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder region(String region) {
+            return region(Output.of(region));
         }
 
         /**
@@ -740,6 +832,37 @@ public final class AutonomousDatabaseBackupState extends com.pulumi.resources.Re
          */
         public Builder sizeInTbs(Double sizeInTbs) {
             return sizeInTbs(Output.of(sizeInTbs));
+        }
+
+        /**
+         * @param sourceDatabaseDetails Source Autonomous Database details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDatabaseDetails(@Nullable Output<List<AutonomousDatabaseBackupSourceDatabaseDetailArgs>> sourceDatabaseDetails) {
+            $.sourceDatabaseDetails = sourceDatabaseDetails;
+            return this;
+        }
+
+        /**
+         * @param sourceDatabaseDetails Source Autonomous Database details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDatabaseDetails(List<AutonomousDatabaseBackupSourceDatabaseDetailArgs> sourceDatabaseDetails) {
+            return sourceDatabaseDetails(Output.of(sourceDatabaseDetails));
+        }
+
+        /**
+         * @param sourceDatabaseDetails Source Autonomous Database details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDatabaseDetails(AutonomousDatabaseBackupSourceDatabaseDetailArgs... sourceDatabaseDetails) {
+            return sourceDatabaseDetails(List.of(sourceDatabaseDetails));
         }
 
         /**

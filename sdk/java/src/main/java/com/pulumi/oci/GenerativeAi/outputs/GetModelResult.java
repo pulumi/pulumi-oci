@@ -15,21 +15,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelResult {
-    /**
-     * @return The OCID of the base model that&#39;s used for fine-tuning. For pretrained models, the value is null.
-     * 
-     */
     private String baseModelId;
-    /**
-     * @return Describes what this model can be used for.
-     * 
-     */
     private List<String> capabilities;
     /**
      * @return The compartment OCID for fine-tuned models. For pretrained models, this value is null.
      * 
      */
     private String compartmentId;
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     private Map<String,String> definedTags;
     /**
      * @return An optional description of the model.
@@ -114,17 +110,9 @@ public final class GetModelResult {
     private String version;
 
     private GetModelResult() {}
-    /**
-     * @return The OCID of the base model that&#39;s used for fine-tuning. For pretrained models, the value is null.
-     * 
-     */
     public String baseModelId() {
         return this.baseModelId;
     }
-    /**
-     * @return Describes what this model can be used for.
-     * 
-     */
     public List<String> capabilities() {
         return this.capabilities;
     }
@@ -135,6 +123,10 @@ public final class GetModelResult {
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     public Map<String,String> definedTags() {
         return this.definedTags;
     }

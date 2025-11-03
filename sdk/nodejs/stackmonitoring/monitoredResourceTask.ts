@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * Create a new stack monitoring resource task.
- *
  * ## Example Usage
  *
  * ```typescript

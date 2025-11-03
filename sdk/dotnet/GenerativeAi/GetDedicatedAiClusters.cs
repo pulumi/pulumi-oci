@@ -189,12 +189,18 @@ namespace Pulumi.Oci.GenerativeAi
         /// The list of dedicated_ai_cluster_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionResult> DedicatedAiClusterCollections;
+        /// <summary>
+        /// A user-friendly name. Does not have to be unique, and it's changeable.
+        /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDedicatedAiClustersFilterResult> Filters;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
         /// </summary>
         public readonly string? Id;
+        /// <summary>
+        /// The current state of the dedicated AI cluster.
+        /// </summary>
         public readonly string? State;
 
         [OutputConstructor]

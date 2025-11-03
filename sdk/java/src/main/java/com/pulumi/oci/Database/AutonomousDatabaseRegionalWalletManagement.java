@@ -17,10 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
- * 
- * Updates the Autonomous Database regional wallet.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -97,14 +93,14 @@ public class AutonomousDatabaseRegionalWalletManagement extends com.pulumi.resou
         return Codegen.optional(this.shouldRotate);
     }
     /**
-     * The current lifecycle state of the Autonomous Database wallet.
+     * The current lifecycle state of the Autonomous AI Database wallet.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current lifecycle state of the Autonomous Database wallet.
+     * @return The current lifecycle state of the Autonomous AI Database wallet.
      * 
      */
     public Output<String> state() {

@@ -14,10 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Alert Policy Rule resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a new rule for the alert policy.
- * 
  * ## Example Usage
  * 
  * <pre>

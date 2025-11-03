@@ -679,11 +679,6 @@ class AnalyticsInstance(pulumi.CustomResource):
                  update_channel: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
-
-        Create a new AnalyticsInstance in the specified compartment. The operation is long-running
-        and creates a new WorkRequest.
-
         ## Example Usage
 
         ```python
@@ -766,11 +761,6 @@ class AnalyticsInstance(pulumi.CustomResource):
                  args: AnalyticsInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
-
-        Create a new AnalyticsInstance in the specified compartment. The operation is long-running
-        and creates a new WorkRequest.
-
         ## Example Usage
 
         ```python

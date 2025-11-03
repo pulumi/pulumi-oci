@@ -678,14 +678,6 @@ class DiscoveryMod(pulumi.CustomResource):
                  tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryModTablesForDiscoveryArgs', 'DiscoveryModTablesForDiscoveryArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Performs incremental data discovery for the specified sensitive data model. It uses the target database associated
-        with the sensitive data model.
-        After performing data discovery, you can use ListDiscoveryJobResults to view the discovery results, PatchDiscoveryJobResults
-        to specify the action you want perform on these results, and then ApplyDiscoveryJobResults to process the results
-        and apply them to the sensitive data model.
-
         ## Example Usage
 
         ```python
@@ -748,14 +740,6 @@ class DiscoveryMod(pulumi.CustomResource):
                  args: DiscoveryModArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Performs incremental data discovery for the specified sensitive data model. It uses the target database associated
-        with the sensitive data model.
-        After performing data discovery, you can use ListDiscoveryJobResults to view the discovery results, PatchDiscoveryJobResults
-        to specify the action you want perform on these results, and then ApplyDiscoveryJobResults to process the results
-        and apply them to the sensitive data model.
-
         ## Example Usage
 
         ```python

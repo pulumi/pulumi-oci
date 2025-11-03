@@ -11,9 +11,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSddcsSddcCollectionInitialConfiguration {
+    /**
+     * @return The configurations for Clusters initially created in the SDDC.
+     * 
+     */
     private List<GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration> initialClusterConfigurations;
 
     private GetSddcsSddcCollectionInitialConfiguration() {}
+    /**
+     * @return The configurations for Clusters initially created in the SDDC.
+     * 
+     */
     public List<GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration> initialClusterConfigurations() {
         return this.initialClusterConfigurations;
     }

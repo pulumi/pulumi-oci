@@ -306,7 +306,7 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
-        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Exadata infrastructure.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_count: The total number of CPU cores allocated.
         :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
@@ -513,7 +513,7 @@ class _CloudExadataInfrastructureState:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The compute model of the Exadata infrastructure.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -932,10 +932,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
-
         ## Example Usage
 
         ```python
@@ -1014,10 +1010,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                  args: CloudExadataInfrastructureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a cloud Exadata infrastructure resource. This resource is used to create either an [Exadata Cloud Service](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm) instance or an Autonomous Database on dedicated Exadata infrastructure.
-
         ## Example Usage
 
         ```python
@@ -1218,7 +1210,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
-        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Exadata infrastructure.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_count: The total number of CPU cores allocated.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[_builtins.float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
@@ -1362,7 +1354,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> pulumi.Output[_builtins.str]:
         """
-        The compute model of the Exadata infrastructure.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 

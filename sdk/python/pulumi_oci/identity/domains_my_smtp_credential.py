@@ -1006,10 +1006,6 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsMySmtpCredentialUserArgs', 'DomainsMySmtpCredentialUserArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the My Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's own SMTP credential.
-
         ## Example Usage
 
         ## Import
@@ -1111,10 +1107,6 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                  args: DomainsMySmtpCredentialArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the My Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's own SMTP credential.
-
         ## Example Usage
 
         ## Import

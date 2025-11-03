@@ -12,13 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
-// Dedicated virtual machine hosts enable you to run your Compute virtual machine (VM) instances on dedicated servers
-// that are a single tenant and not shared with other customers.
-// For more information, see [Dedicated Virtual Machine Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
-//
 // ## Example Usage
 //
 // ```go

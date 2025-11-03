@@ -54,7 +54,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationsResult:
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 

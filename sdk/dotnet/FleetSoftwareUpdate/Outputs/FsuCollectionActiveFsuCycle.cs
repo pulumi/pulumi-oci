@@ -14,11 +14,11 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
     public sealed class FsuCollectionActiveFsuCycle
     {
         /// <summary>
-        /// (Updatable) Exadata Fleet Update Collection Identifier.
+        /// (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// OCID identifier for the Exadata Fleet Update Collection.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
         /// </summary>
         public readonly string? Id;
 

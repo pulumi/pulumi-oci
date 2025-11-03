@@ -67,6 +67,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? ProcessorDescription;
         /// <summary>
+        /// (Updatable) This field is reserved for internal use.
+        /// </summary>
+        public readonly string? ResourceManagement;
+        /// <summary>
         /// (Updatable) The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         /// </summary>
         public readonly int? Vcpus;
@@ -97,6 +101,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? processorDescription,
 
+            string? resourceManagement,
+
             int? vcpus)
         {
             BaselineOcpuUtilization = baselineOcpuUtilization;
@@ -111,6 +117,7 @@ namespace Pulumi.Oci.Core.Outputs
             Nvmes = nvmes;
             Ocpus = ocpus;
             ProcessorDescription = processorDescription;
+            ResourceManagement = resourceManagement;
             Vcpus = vcpus;
         }
     }

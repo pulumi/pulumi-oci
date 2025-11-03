@@ -140,6 +140,8 @@ type LookupMysqlDbSystemResult struct {
 	Rests []GetMysqlDbSystemRest `pulumi:"rests"`
 	// Secure connection configuration details.
 	SecureConnections []GetMysqlDbSystemSecureConnection `pulumi:"secureConnections"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.
 	ShapeName    string `pulumi:"shapeName"`
 	ShutdownType string `pulumi:"shutdownType"`
@@ -393,6 +395,11 @@ func (o LookupMysqlDbSystemResultOutput) Rests() GetMysqlDbSystemRestArrayOutput
 // Secure connection configuration details.
 func (o LookupMysqlDbSystemResultOutput) SecureConnections() GetMysqlDbSystemSecureConnectionArrayOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemSecureConnection { return v.SecureConnections }).(GetMysqlDbSystemSecureConnectionArrayOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o LookupMysqlDbSystemResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The shape of the primary instances of the DB System. The shape determines resources allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20181021/ShapeSummary/ListShapes) operation.

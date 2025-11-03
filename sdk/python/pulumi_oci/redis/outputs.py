@@ -1376,6 +1376,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
                  primary_fqdn: _builtins.str,
                  replicas_endpoint_ip_address: _builtins.str,
                  replicas_fqdn: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  shard_count: _builtins.int,
                  software_version: _builtins.str,
                  state: _builtins.str,
@@ -1402,6 +1403,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         :param _builtins.str primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         :param _builtins.str replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
         :param _builtins.str replicas_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.int shard_count: The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
         :param _builtins.str software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -1428,6 +1430,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         pulumi.set(__self__, "primary_fqdn", primary_fqdn)
         pulumi.set(__self__, "replicas_endpoint_ip_address", replicas_endpoint_ip_address)
         pulumi.set(__self__, "replicas_fqdn", replicas_fqdn)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shard_count", shard_count)
         pulumi.set(__self__, "software_version", software_version)
         pulumi.set(__self__, "state", state)
@@ -1579,6 +1582,14 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
         """
         return pulumi.get(self, "replicas_fqdn")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter(name="shardCount")

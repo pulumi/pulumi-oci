@@ -5,13 +5,20 @@ package com.pulumi.oci.FleetSoftwareUpdate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCycleGoalVersionDetailsComponent;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class FsuCycleGoalVersionDetails {
+    /**
+     * @return (Updatable) Details of goal versions for components in an Exadata software stack.
+     * 
+     */
+    private @Nullable List<FsuCycleGoalVersionDetailsComponent> components;
     /**
      * @return (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
      * 
@@ -23,22 +30,29 @@ public final class FsuCycleGoalVersionDetails {
      */
     private @Nullable String newHomePrefix;
     /**
-     * @return (Updatable) Target database software image OCID.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
      * 
      */
     private @Nullable String softwareImageId;
     /**
-     * @return (Updatable) Type of goal target version specified
+     * @return (Updatable) Type of goal version specified
      * 
      */
     private String type;
     /**
-     * @return (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+     * @return (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
      * 
      */
     private @Nullable String version;
 
     private FsuCycleGoalVersionDetails() {}
+    /**
+     * @return (Updatable) Details of goal versions for components in an Exadata software stack.
+     * 
+     */
+    public List<FsuCycleGoalVersionDetailsComponent> components() {
+        return this.components == null ? List.of() : this.components;
+    }
     /**
      * @return (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
      * 
@@ -54,21 +68,21 @@ public final class FsuCycleGoalVersionDetails {
         return Optional.ofNullable(this.newHomePrefix);
     }
     /**
-     * @return (Updatable) Target database software image OCID.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
      * 
      */
     public Optional<String> softwareImageId() {
         return Optional.ofNullable(this.softwareImageId);
     }
     /**
-     * @return (Updatable) Type of goal target version specified
+     * @return (Updatable) Type of goal version specified
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+     * @return (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
      * 
      */
     public Optional<String> version() {
@@ -84,6 +98,7 @@ public final class FsuCycleGoalVersionDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<FsuCycleGoalVersionDetailsComponent> components;
         private @Nullable String homePolicy;
         private @Nullable String newHomePrefix;
         private @Nullable String softwareImageId;
@@ -92,6 +107,7 @@ public final class FsuCycleGoalVersionDetails {
         public Builder() {}
         public Builder(FsuCycleGoalVersionDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.components = defaults.components;
     	      this.homePolicy = defaults.homePolicy;
     	      this.newHomePrefix = defaults.newHomePrefix;
     	      this.softwareImageId = defaults.softwareImageId;
@@ -99,6 +115,15 @@ public final class FsuCycleGoalVersionDetails {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
+        public Builder components(@Nullable List<FsuCycleGoalVersionDetailsComponent> components) {
+
+            this.components = components;
+            return this;
+        }
+        public Builder components(FsuCycleGoalVersionDetailsComponent... components) {
+            return components(List.of(components));
+        }
         @CustomType.Setter
         public Builder homePolicy(@Nullable String homePolicy) {
 
@@ -133,6 +158,7 @@ public final class FsuCycleGoalVersionDetails {
         }
         public FsuCycleGoalVersionDetails build() {
             final var _resultValue = new FsuCycleGoalVersionDetails();
+            _resultValue.components = components;
             _resultValue.homePolicy = homePolicy;
             _resultValue.newHomePrefix = newHomePrefix;
             _resultValue.softwareImageId = softwareImageId;

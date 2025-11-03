@@ -42,6 +42,18 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("stepName", required: true)]
         public Input<string> StepName { get; set; } = null!;
 
+        [Input("stepStorageMountConfigurationDetailsLists")]
+        private InputList<Inputs.PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListGetArgs>? _stepStorageMountConfigurationDetailsLists;
+
+        /// <summary>
+        /// The storage mount details to mount to the instance running the pipeline step.
+        /// </summary>
+        public InputList<Inputs.PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListGetArgs> StepStorageMountConfigurationDetailsLists
+        {
+            get => _stepStorageMountConfigurationDetailsLists ?? (_stepStorageMountConfigurationDetailsLists = new InputList<Inputs.PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListGetArgs>());
+            set => _stepStorageMountConfigurationDetailsLists = value;
+        }
+
         public PipelineRunStepOverrideDetailGetArgs()
         {
         }

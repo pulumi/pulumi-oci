@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LogAnalytics
 {
     /// <summary>
-    /// This resource provides the Log Analytics Import Custom Content resource in Oracle Cloud Infrastructure Log Analytics service.
-    /// 
-    /// Imports the specified custom content from the input in zip format.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

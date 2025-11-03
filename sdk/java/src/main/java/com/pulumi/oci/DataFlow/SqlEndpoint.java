@@ -19,13 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
- * ## Note
- * 
- * Resource Discovery is not supported for this resource.
- * 
- * Create a new Sql Endpoint.
- * 
  * ## Example Usage
  * 
  * ## Import

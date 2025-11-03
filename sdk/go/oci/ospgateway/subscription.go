@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Subscription resource in Oracle Cloud Infrastructure Osp Gateway service.
-//
-// Update plan of the subscription.
+// ## Example Usage
 //
 // ## Import
 //

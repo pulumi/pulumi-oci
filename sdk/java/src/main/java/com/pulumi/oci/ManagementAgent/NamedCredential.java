@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Named Credential resource in Oracle Cloud Infrastructure Management Agent service.
- * 
- * Named credential creation request to given Management Agent.
- * 
  * ## Example Usage
  * 
  * <pre>

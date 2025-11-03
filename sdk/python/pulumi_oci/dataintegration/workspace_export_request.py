@@ -513,10 +513,6 @@ class WorkspaceExportRequest(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Export Metadata Object
-
         ## Example Usage
 
         ```python
@@ -566,10 +562,6 @@ class WorkspaceExportRequest(pulumi.CustomResource):
                  args: WorkspaceExportRequestArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Export Metadata Object
-
         ## Example Usage
 
         ```python

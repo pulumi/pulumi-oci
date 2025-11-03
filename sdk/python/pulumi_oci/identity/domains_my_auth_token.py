@@ -976,10 +976,6 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['DomainsMyAuthTokenUserArgs', 'DomainsMyAuthTokenUserArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's own Auth token.
-
         ## Example Usage
 
         ## Import
@@ -1083,10 +1079,6 @@ class DomainsMyAuthToken(pulumi.CustomResource):
                  args: DomainsMyAuthTokenArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a user's own Auth token.
-
         ## Example Usage
 
         ## Import

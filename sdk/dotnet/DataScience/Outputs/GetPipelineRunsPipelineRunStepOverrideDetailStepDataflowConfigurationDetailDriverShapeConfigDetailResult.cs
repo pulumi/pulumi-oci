@@ -14,29 +14,36 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailResult
     {
         /// <summary>
-        /// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-        /// </summary>
-        public readonly string CpuBaseline;
-        /// <summary>
-        /// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        /// The total amount of memory available to the pipeline step run instance GBs.
         /// </summary>
         public readonly double MemoryInGbs;
         /// <summary>
-        /// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        /// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+        /// </summary>
+        public readonly string MemoryInGbsParameterized;
+        /// <summary>
+        /// The total number of OCPUs available to the pipeline step run instance.
         /// </summary>
         public readonly double Ocpus;
+        /// <summary>
+        /// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+        /// </summary>
+        public readonly string OcpusParameterized;
 
         [OutputConstructor]
         private GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailResult(
-            string cpuBaseline,
-
             double memoryInGbs,
 
-            double ocpus)
+            string memoryInGbsParameterized,
+
+            double ocpus,
+
+            string ocpusParameterized)
         {
-            CpuBaseline = cpuBaseline;
             MemoryInGbs = memoryInGbs;
+            MemoryInGbsParameterized = memoryInGbsParameterized;
             Ocpus = ocpus;
+            OcpusParameterized = ocpusParameterized;
         }
     }
 }

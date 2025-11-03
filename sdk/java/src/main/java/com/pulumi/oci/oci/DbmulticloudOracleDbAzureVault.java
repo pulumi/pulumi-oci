@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
- * 
- * Creates DB Azure Vault resource.
- * 
  * ## Example Usage
  * 
  * <pre>

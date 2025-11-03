@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
- *
- * Adds the list of redeemable user summary for a subscription ID.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Managed Instance Update Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Updates a package on a managed instance.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

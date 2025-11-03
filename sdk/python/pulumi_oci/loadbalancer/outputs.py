@@ -1192,7 +1192,7 @@ class LoadBalancerReservedIp(dict):
     def __init__(__self__, *,
                  id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str id: Ocid of the Reserved IP/Public Ip created with VCN.
+        :param _builtins.str id: (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
                
                Reserved IPs are IPs which already registered using VCN API.
                
@@ -1211,7 +1211,7 @@ class LoadBalancerReservedIp(dict):
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        Ocid of the Reserved IP/Public Ip created with VCN.
+        (Updatable) Ocid of the Reserved IP/Public Ip created with VCN.
 
         Reserved IPs are IPs which already registered using VCN API.
 

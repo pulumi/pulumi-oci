@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Bds Instance Resource Principal Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
-//
-// Create a resource principal session token configuration.
-//
 // ## Example Usage
 //
 // ```go

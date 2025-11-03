@@ -429,6 +429,21 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
+    @Import(name="memoryPerComputeUnitInGbs")
+    private @Nullable Output<Double> memoryPerComputeUnitInGbs;
+
+    /**
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    public Optional<Output<Double>> memoryPerComputeUnitInGbs() {
+        return Optional.ofNullable(this.memoryPerComputeUnitInGbs);
+    }
+
+    /**
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
     @Import(name="memoryPerOracleComputeUnitInGbs")
     private @Nullable Output<Integer> memoryPerOracleComputeUnitInGbs;
 
@@ -781,6 +796,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.maintenanceWindowDetails = $.maintenanceWindowDetails;
         this.maintenanceWindows = $.maintenanceWindows;
         this.maxAcdsLowestScaledValue = $.maxAcdsLowestScaledValue;
+        this.memoryPerComputeUnitInGbs = $.memoryPerComputeUnitInGbs;
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
@@ -1412,6 +1428,27 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder maxAcdsLowestScaledValue(Integer maxAcdsLowestScaledValue) {
             return maxAcdsLowestScaledValue(Output.of(maxAcdsLowestScaledValue));
+        }
+
+        /**
+         * @param memoryPerComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryPerComputeUnitInGbs(@Nullable Output<Double> memoryPerComputeUnitInGbs) {
+            $.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
+            return this;
+        }
+
+        /**
+         * @param memoryPerComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryPerComputeUnitInGbs(Double memoryPerComputeUnitInGbs) {
+            return memoryPerComputeUnitInGbs(Output.of(memoryPerComputeUnitInGbs));
         }
 
         /**

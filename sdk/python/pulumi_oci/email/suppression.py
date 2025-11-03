@@ -216,13 +216,6 @@ class Suppression(pulumi.CustomResource):
                  email_address: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Suppression resource in Oracle Cloud Infrastructure Email service.
-
-        Adds recipient email addresses to the suppression list for a tenancy.
-        Addresses added to the suppression list via the API are denoted as
-        "MANUAL" in the `reason` field. *Note:* All email addresses added to the
-        suppression list are normalized to include only lowercase letters.
-
         ## Example Usage
 
         ```python
@@ -258,13 +251,6 @@ class Suppression(pulumi.CustomResource):
                  args: SuppressionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Suppression resource in Oracle Cloud Infrastructure Email service.
-
-        Adds recipient email addresses to the suppression list for a tenancy.
-        Addresses added to the suppression list via the API are denoted as
-        "MANUAL" in the `reason` field. *Note:* All email addresses added to the
-        suppression list are normalized to include only lowercase letters.
-
         ## Example Usage
 
         ```python

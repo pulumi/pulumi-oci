@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Unified Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates the specified unified audit policy.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

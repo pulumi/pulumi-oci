@@ -67,9 +67,17 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string ClientId;
         public readonly string ClientSecret;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
         /// </summary>
         public readonly string ClientSecretSecretId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
+        /// </summary>
+        public readonly string ClusterId;
+        /// <summary>
+        /// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud  must not be provided.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
         /// <summary>
         /// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         /// </summary>
@@ -264,6 +272,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string SecretAccessKeySecretId;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// Security Protocol to be provided for the following connection types:
         /// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
         /// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -288,7 +300,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly bool ShouldUseJndi;
         /// <summary>
-        /// Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        /// Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
         /// </summary>
         public readonly bool ShouldUseResourcePrincipal;
         /// <summary>
@@ -356,6 +368,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         /// </summary>
         public readonly string SubnetId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        public readonly string SubscriptionId;
         /// <summary>
         /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
@@ -457,6 +473,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string clientSecret,
 
             string clientSecretSecretId,
+
+            string clusterId,
+
+            string clusterPlacementGroupId,
 
             string compartmentId,
 
@@ -564,6 +584,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string secretAccessKeySecretId,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string securityProtocol,
 
             string servers,
@@ -615,6 +637,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string streamPoolId,
 
             string subnetId,
+
+            string subscriptionId,
 
             ImmutableDictionary<string, string> systemTags,
 
@@ -674,6 +698,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             ClientId = clientId;
             ClientSecret = clientSecret;
             ClientSecretSecretId = clientSecretSecretId;
+            ClusterId = clusterId;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             ConnectionFactory = connectionFactory;
             ConnectionString = connectionString;
@@ -727,6 +753,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             SasTokenSecretId = sasTokenSecretId;
             SecretAccessKey = secretAccessKey;
             SecretAccessKeySecretId = secretAccessKeySecretId;
+            SecurityAttributes = securityAttributes;
             SecurityProtocol = securityProtocol;
             Servers = servers;
             ServiceAccountKeyFile = serviceAccountKeyFile;
@@ -753,6 +780,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             Storages = storages;
             StreamPoolId = streamPoolId;
             SubnetId = subnetId;
+            SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             TechnologyType = technologyType;
             TenancyId = tenancyId;

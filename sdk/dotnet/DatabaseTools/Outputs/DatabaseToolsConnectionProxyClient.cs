@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string? UserName;
         /// <summary>
-        /// (Updatable) The user password.
+        /// (Updatable) The database user password.
         /// </summary>
         public readonly Outputs.DatabaseToolsConnectionProxyClientUserPassword? UserPassword;
 

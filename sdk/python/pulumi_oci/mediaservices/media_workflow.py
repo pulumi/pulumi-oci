@@ -425,10 +425,6 @@ class MediaWorkflow(pulumi.CustomResource):
                  tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MediaWorkflowTaskArgs', 'MediaWorkflowTaskArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
-
-        Creates a new MediaWorkflow.
-
         ## Example Usage
 
         ```python
@@ -490,10 +486,6 @@ class MediaWorkflow(pulumi.CustomResource):
                  args: MediaWorkflowArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
-
-        Creates a new MediaWorkflow.
-
         ## Example Usage
 
         ```python

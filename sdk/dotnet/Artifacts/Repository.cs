@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Artifacts
 {
     /// <summary>
-    /// This resource provides the Repository resource in Oracle Cloud Infrastructure Artifacts service.
-    /// 
-    /// Creates a new repository for storing artifacts.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

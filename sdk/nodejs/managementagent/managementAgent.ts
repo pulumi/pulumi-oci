@@ -7,8 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Management Agent resource in Oracle Cloud Infrastructure Management Agent service.
- *
  * ## Example Usage
  *
  * ```typescript

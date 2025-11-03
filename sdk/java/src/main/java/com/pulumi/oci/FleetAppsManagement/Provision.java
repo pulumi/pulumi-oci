@@ -18,10 +18,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Provision resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- * 
- * Creates a Provision.
- * 
  * ## Example Usage
  * 
  * <pre>

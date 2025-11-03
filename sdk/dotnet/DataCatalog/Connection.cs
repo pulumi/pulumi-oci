@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataCatalog
 {
     /// <summary>
-    /// This resource provides the Connection resource in Oracle Cloud Infrastructure Data Catalog service.
-    /// 
-    /// Creates a new connection.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

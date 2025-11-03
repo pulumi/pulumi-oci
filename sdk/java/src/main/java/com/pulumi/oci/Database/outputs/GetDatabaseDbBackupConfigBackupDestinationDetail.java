@@ -12,6 +12,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
     /**
+     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * 
+     */
+    private String backupRetentionPolicyOnTerminate;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * 
      */
@@ -26,6 +31,7 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
      * 
      */
     private Boolean isRemote;
+    private Boolean isRetentionLockEnabled;
     /**
      * @return The name of the remote region where the remote automatic incremental backups will be stored.
      * 
@@ -49,6 +55,13 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
 
     private GetDatabaseDbBackupConfigBackupDestinationDetail() {}
     /**
+     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * 
+     */
+    public String backupRetentionPolicyOnTerminate() {
+        return this.backupRetentionPolicyOnTerminate;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * 
      */
@@ -68,6 +81,9 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
      */
     public Boolean isRemote() {
         return this.isRemote;
+    }
+    public Boolean isRetentionLockEnabled() {
+        return this.isRetentionLockEnabled;
     }
     /**
      * @return The name of the remote region where the remote automatic incremental backups will be stored.
@@ -107,9 +123,11 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String backupRetentionPolicyOnTerminate;
         private String dbrsPolicyId;
         private String id;
         private Boolean isRemote;
+        private Boolean isRetentionLockEnabled;
         private String remoteRegion;
         private String type;
         private String vpcPassword;
@@ -117,15 +135,25 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
         public Builder() {}
         public Builder(GetDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupRetentionPolicyOnTerminate = defaults.backupRetentionPolicyOnTerminate;
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.isRemote = defaults.isRemote;
+    	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
+        public Builder backupRetentionPolicyOnTerminate(String backupRetentionPolicyOnTerminate) {
+            if (backupRetentionPolicyOnTerminate == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDbBackupConfigBackupDestinationDetail", "backupRetentionPolicyOnTerminate");
+            }
+            this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+            return this;
+        }
         @CustomType.Setter
         public Builder dbrsPolicyId(String dbrsPolicyId) {
             if (dbrsPolicyId == null) {
@@ -148,6 +176,14 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
               throw new MissingRequiredPropertyException("GetDatabaseDbBackupConfigBackupDestinationDetail", "isRemote");
             }
             this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            if (isRetentionLockEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDbBackupConfigBackupDestinationDetail", "isRetentionLockEnabled");
+            }
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
             return this;
         }
         @CustomType.Setter
@@ -184,9 +220,11 @@ public final class GetDatabaseDbBackupConfigBackupDestinationDetail {
         }
         public GetDatabaseDbBackupConfigBackupDestinationDetail build() {
             final var _resultValue = new GetDatabaseDbBackupConfigBackupDestinationDetail();
+            _resultValue.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
             _resultValue.isRemote = isRemote;
+            _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;

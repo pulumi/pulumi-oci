@@ -105,6 +105,10 @@ export interface GetDatabaseToolsPrivateEndpointResult {
      */
     readonly reverseConnectionConfigurations: outputs.DatabaseTools.GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration[];
     /**
+     * Zero trust Packet Routing (ZPR) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
+    /**
      * The current state of the Database Tools private endpoint.
      */
     readonly state: string;

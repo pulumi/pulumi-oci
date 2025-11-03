@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
- *
- * Creates a new MlApplicationImplementation.
- *
  * ## Example Usage
  *
  * ```typescript

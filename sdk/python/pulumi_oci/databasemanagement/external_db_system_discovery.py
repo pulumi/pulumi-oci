@@ -378,12 +378,6 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalDbSystemDiscoveryPatchOperationArgs', 'ExternalDbSystemDiscoveryPatchOperationArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an external DB system discovery resource and initiates the discovery process.
-
-          Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
-
         ## Example Usage
 
         ## Import
@@ -410,12 +404,6 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
                  args: ExternalDbSystemDiscoveryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
-
-        Creates an external DB system discovery resource and initiates the discovery process.
-
-          Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
-
         ## Example Usage
 
         ## Import

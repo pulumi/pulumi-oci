@@ -11,6 +11,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
+    private String backupRetentionPolicyOnTerminate;
     private String dbrsPolicyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
@@ -18,12 +19,16 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
      */
     private String id;
     private Boolean isRemote;
+    private Boolean isRetentionLockEnabled;
     private String remoteRegion;
     private String type;
     private String vpcPassword;
     private String vpcUser;
 
     private GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail() {}
+    public String backupRetentionPolicyOnTerminate() {
+        return this.backupRetentionPolicyOnTerminate;
+    }
     public String dbrsPolicyId() {
         return this.dbrsPolicyId;
     }
@@ -36,6 +41,9 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
     }
     public Boolean isRemote() {
         return this.isRemote;
+    }
+    public Boolean isRetentionLockEnabled() {
+        return this.isRetentionLockEnabled;
     }
     public String remoteRegion() {
         return this.remoteRegion;
@@ -59,9 +67,11 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
     }
     @CustomType.Builder
     public static final class Builder {
+        private String backupRetentionPolicyOnTerminate;
         private String dbrsPolicyId;
         private String id;
         private Boolean isRemote;
+        private Boolean isRetentionLockEnabled;
         private String remoteRegion;
         private String type;
         private String vpcPassword;
@@ -69,15 +79,25 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
         public Builder() {}
         public Builder(GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupRetentionPolicyOnTerminate = defaults.backupRetentionPolicyOnTerminate;
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.isRemote = defaults.isRemote;
+    	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
         }
 
+        @CustomType.Setter
+        public Builder backupRetentionPolicyOnTerminate(String backupRetentionPolicyOnTerminate) {
+            if (backupRetentionPolicyOnTerminate == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "backupRetentionPolicyOnTerminate");
+            }
+            this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+            return this;
+        }
         @CustomType.Setter
         public Builder dbrsPolicyId(String dbrsPolicyId) {
             if (dbrsPolicyId == null) {
@@ -100,6 +120,14 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
               throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "isRemote");
             }
             this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            if (isRetentionLockEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "isRetentionLockEnabled");
+            }
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
             return this;
         }
         @CustomType.Setter
@@ -136,9 +164,11 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
         }
         public GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail build() {
             final var _resultValue = new GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail();
+            _resultValue.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
             _resultValue.isRemote = isRemote;
+            _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;

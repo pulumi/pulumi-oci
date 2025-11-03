@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FusionApps
 {
     /// <summary>
-    /// This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
-    /// 
-    /// Creates a new FusionEnvironment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -48,6 +44,7 @@ namespace Pulumi.Oci.FusionApps
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         IsIpv6dualStackEnabled = fusionEnvironmentIsIpv6dualStackEnabled,
     ///         KmsKeyId = testKey.Id,
     ///         MaintenancePolicy = new Oci.FusionApps.Inputs.FusionEnvironmentMaintenancePolicyArgs
     ///         {
@@ -163,6 +160,12 @@ namespace Pulumi.Oci.FusionApps
         /// </summary>
         [Output("isBreakGlassEnabled")]
         public Output<bool> IsBreakGlassEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        /// </summary>
+        [Output("isIpv6dualStackEnabled")]
+        public Output<bool> IsIpv6dualStackEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) byok kms keyId
@@ -373,6 +376,12 @@ namespace Pulumi.Oci.FusionApps
         public Input<string> FusionEnvironmentType { get; set; } = null!;
 
         /// <summary>
+        /// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        /// </summary>
+        [Input("isIpv6dualStackEnabled")]
+        public Input<bool>? IsIpv6dualStackEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) byok kms keyId
         /// </summary>
         [Input("kmsKeyId")]
@@ -505,6 +514,12 @@ namespace Pulumi.Oci.FusionApps
         /// </summary>
         [Input("isBreakGlassEnabled")]
         public Input<bool>? IsBreakGlassEnabled { get; set; }
+
+        /// <summary>
+        /// Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+        /// </summary>
+        [Input("isIpv6dualStackEnabled")]
+        public Input<bool>? IsIpv6dualStackEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) byok kms keyId

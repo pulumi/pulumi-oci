@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
- *
- * Add custom log analytics entity type.
- *
  * ## Example Usage
  *
  * ```typescript

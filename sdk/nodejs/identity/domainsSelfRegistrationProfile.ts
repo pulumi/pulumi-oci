@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create a self-registration profile.
- *
  * ## Example Usage
  *
  * ## Import

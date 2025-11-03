@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Analytics
 {
     /// <summary>
-    /// This resource provides the Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
-    /// 
-    /// Create a Private access Channel for the Analytics instance. The operation is long-running
-    /// and creates a new WorkRequest.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

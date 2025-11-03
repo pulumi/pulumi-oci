@@ -120,10 +120,6 @@ class ManagementStationMirrorSynchronizeManagement(pulumi.CustomResource):
                  mirror_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Management Station Mirror Synchronize Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Synchronize the specified software source mirrors on the management station.
-
         ## Example Usage
 
         ```python
@@ -159,10 +155,6 @@ class ManagementStationMirrorSynchronizeManagement(pulumi.CustomResource):
                  args: ManagementStationMirrorSynchronizeManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Management Station Mirror Synchronize Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Synchronize the specified software source mirrors on the management station.
-
         ## Example Usage
 
         ```python

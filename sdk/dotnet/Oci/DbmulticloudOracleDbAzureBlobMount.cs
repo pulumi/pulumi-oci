@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Oci
 {
     /// <summary>
-    /// This resource provides the Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
-    /// 
-    /// Creates Oracle DB Azure Blob Mount resource.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

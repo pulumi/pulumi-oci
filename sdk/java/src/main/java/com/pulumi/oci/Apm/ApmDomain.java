@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Apm service.
- * 
- * Creates a new APM domain.
- * 
  * ## Example Usage
  * 
  * <pre>

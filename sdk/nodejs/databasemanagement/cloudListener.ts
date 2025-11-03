@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Cloud Listener resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Updates the cloud listener specified by `cloudListenerId`.
+ * ## Example Usage
  *
  * ## Import
  *

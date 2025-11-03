@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Stream Group resource in Oracle Cloud Infrastructure Ai Vision service.
- *
- * Registration of new streamGroup
- *
  * ## Example Usage
  *
  * ```typescript

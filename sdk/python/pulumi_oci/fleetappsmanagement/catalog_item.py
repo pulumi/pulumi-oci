@@ -659,10 +659,6 @@ class CatalogItem(pulumi.CustomResource):
                  version_description: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Catalog Item resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a CatalogItem.
-
         ## Example Usage
 
         ```python
@@ -742,10 +738,6 @@ class CatalogItem(pulumi.CustomResource):
                  args: CatalogItemArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Catalog Item resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a CatalogItem.
-
         ## Example Usage
 
         ```python

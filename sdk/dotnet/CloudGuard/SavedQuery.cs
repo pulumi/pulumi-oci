@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudGuard
 {
     /// <summary>
-    /// This resource provides the Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
-    /// 
-    /// Creates a SavedQuery resource.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

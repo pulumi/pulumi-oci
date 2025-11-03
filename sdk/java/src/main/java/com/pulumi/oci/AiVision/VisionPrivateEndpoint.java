@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
- * 
- * Create a new visionPrivateEndpoint.
- * 
  * ## Example Usage
  * 
  * <pre>

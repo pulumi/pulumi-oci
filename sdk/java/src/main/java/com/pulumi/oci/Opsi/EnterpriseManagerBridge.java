@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
- * 
- * Create a Enterprise Manager bridge in Operations Insights.
- * 
  * ## Example Usage
  * 
  * <pre>

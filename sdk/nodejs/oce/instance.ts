@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
- *
- * Creates a new OceInstance.
- *
  * ## Example Usage
  *
  * ```typescript

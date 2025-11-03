@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Pluggable Database Management resource in Oracle Cloud Infrastructure Database service.
-//
-// Enable Database Management Service for the external pluggable database.
-// For more information about the Database Management Service, see
-// [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
-//
 // ## Example Usage
 //
 // ```go

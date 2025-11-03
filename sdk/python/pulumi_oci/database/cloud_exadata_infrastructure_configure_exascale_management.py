@@ -714,10 +714,6 @@ class CloudExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResourc
                  total_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Exadata Infrastructure Configure Exascale Management resource in Oracle Cloud Infrastructure Database service.
-
-        Configures Exascale on Cloud exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
-
         ## Example Usage
 
         ```python
@@ -753,10 +749,6 @@ class CloudExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResourc
                  args: CloudExadataInfrastructureConfigureExascaleManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Exadata Infrastructure Configure Exascale Management resource in Oracle Cloud Infrastructure Database service.
-
-        Configures Exascale on Cloud exadata infrastructure resource. Applies to Exadata Cloud Service instances only.
-
         ## Example Usage
 
         ```python

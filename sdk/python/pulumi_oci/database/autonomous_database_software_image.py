@@ -28,9 +28,9 @@ class AutonomousDatabaseSoftwareImageArgs:
         """
         The set of arguments for constructing a AutonomousDatabaseSoftwareImage resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
-        :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+        :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
                
                
                ** IMPORTANT **
@@ -63,7 +63,7 @@ class AutonomousDatabaseSoftwareImageArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
         """
-        The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -87,7 +87,7 @@ class AutonomousDatabaseSoftwareImageArgs:
     @pulumi.getter(name="sourceCdbId")
     def source_cdb_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+        The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
 
 
         ** IMPORTANT **
@@ -142,23 +142,23 @@ class _AutonomousDatabaseSoftwareImageState:
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseSoftwareImage resources.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] autonomous_dsi_one_off_patches: One-off patches included in the Autonomous Database Software Image
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] autonomous_dsi_one_off_patches: One-off patches included in the Autonomous AI Database Software Image
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[_builtins.str] database_version: The database version with which the Autonomous Database Software Image is to be built.
+        :param pulumi.Input[_builtins.str] database_version: The database version with which the Autonomous AI Database Software Image is to be built.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[_builtins.str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[_builtins.str] release_update: The Release Updates.
-        :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+        :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current state of the Autonomous Database Software Image.
+        :param pulumi.Input[_builtins.str] state: The current state of the Autonomous AI Database Software Image.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous Database Software Image was created.
+        :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous AI Database Software Image was created.
         """
         if autonomous_dsi_one_off_patches is not None:
             pulumi.set(__self__, "autonomous_dsi_one_off_patches", autonomous_dsi_one_off_patches)
@@ -191,7 +191,7 @@ class _AutonomousDatabaseSoftwareImageState:
     @pulumi.getter(name="autonomousDsiOneOffPatches")
     def autonomous_dsi_one_off_patches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        One-off patches included in the Autonomous Database Software Image
+        One-off patches included in the Autonomous AI Database Software Image
         """
         return pulumi.get(self, "autonomous_dsi_one_off_patches")
 
@@ -215,7 +215,7 @@ class _AutonomousDatabaseSoftwareImageState:
     @pulumi.getter(name="databaseVersion")
     def database_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The database version with which the Autonomous Database Software Image is to be built.
+        The database version with which the Autonomous AI Database Software Image is to be built.
         """
         return pulumi.get(self, "database_version")
 
@@ -239,7 +239,7 @@ class _AutonomousDatabaseSoftwareImageState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -299,7 +299,7 @@ class _AutonomousDatabaseSoftwareImageState:
     @pulumi.getter(name="sourceCdbId")
     def source_cdb_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+        The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
 
 
         ** IMPORTANT **
@@ -315,7 +315,7 @@ class _AutonomousDatabaseSoftwareImageState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current state of the Autonomous Database Software Image.
+        The current state of the Autonomous AI Database Software Image.
         """
         return pulumi.get(self, "state")
 
@@ -339,7 +339,7 @@ class _AutonomousDatabaseSoftwareImageState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The date and time the Autonomous Database Software Image was created.
+        The date and time the Autonomous AI Database Software Image was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -362,10 +362,6 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
                  source_cdb_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
-
-        create Autonomous Database Software Image in the specified compartment.
-
         ## Example Usage
 
         ```python
@@ -395,10 +391,10 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
-        :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+        :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
                
                
                ** IMPORTANT **
@@ -411,10 +407,6 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
                  args: AutonomousDatabaseSoftwareImageArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
-
-        create Autonomous Database Software Image in the specified compartment.
-
         ## Example Usage
 
         ```python
@@ -521,23 +513,23 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] autonomous_dsi_one_off_patches: One-off patches included in the Autonomous Database Software Image
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] autonomous_dsi_one_off_patches: One-off patches included in the Autonomous AI Database Software Image
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[_builtins.str] database_version: The database version with which the Autonomous Database Software Image is to be built.
+        :param pulumi.Input[_builtins.str] database_version: The database version with which the Autonomous AI Database Software Image is to be built.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[_builtins.str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[_builtins.str] release_update: The Release Updates.
-        :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+        :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current state of the Autonomous Database Software Image.
+        :param pulumi.Input[_builtins.str] state: The current state of the Autonomous AI Database Software Image.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous Database Software Image was created.
+        :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous AI Database Software Image was created.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -562,7 +554,7 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
     @pulumi.getter(name="autonomousDsiOneOffPatches")
     def autonomous_dsi_one_off_patches(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        One-off patches included in the Autonomous Database Software Image
+        One-off patches included in the Autonomous AI Database Software Image
         """
         return pulumi.get(self, "autonomous_dsi_one_off_patches")
 
@@ -578,7 +570,7 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
     @pulumi.getter(name="databaseVersion")
     def database_version(self) -> pulumi.Output[_builtins.str]:
         """
-        The database version with which the Autonomous Database Software Image is to be built.
+        The database version with which the Autonomous AI Database Software Image is to be built.
         """
         return pulumi.get(self, "database_version")
 
@@ -594,7 +586,7 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -634,7 +626,7 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
     @pulumi.getter(name="sourceCdbId")
     def source_cdb_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+        The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
 
 
         ** IMPORTANT **
@@ -646,7 +638,7 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The current state of the Autonomous Database Software Image.
+        The current state of the Autonomous AI Database Software Image.
         """
         return pulumi.get(self, "state")
 
@@ -662,7 +654,7 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
         """
-        The date and time the Autonomous Database Software Image was created.
+        The date and time the Autonomous AI Database Software Image was created.
         """
         return pulumi.get(self, "time_created")
 

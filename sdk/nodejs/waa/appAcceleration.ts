@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
- *
- * Creates a new WebAppAcceleration.
- *
  * ## Example Usage
  *
  * ```typescript

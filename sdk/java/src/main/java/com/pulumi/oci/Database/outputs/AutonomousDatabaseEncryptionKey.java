@@ -17,7 +17,7 @@ public final class AutonomousDatabaseEncryptionKey {
      */
     private @Nullable String arnRole;
     /**
-     * @return (Updatable) The provider for the Autonomous Database encryption key.
+     * @return (Updatable) The provider for the Autonomous AI Database encryption key.
      * 
      */
     private @Nullable String autonomousDatabaseProvider;
@@ -52,10 +52,25 @@ public final class AutonomousDatabaseEncryptionKey {
      */
     private @Nullable String keyName;
     /**
+     * @return (Updatable) GCP key ring
+     * 
+     */
+    private @Nullable String keyRing;
+    /**
      * @return (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     private @Nullable String kmsKeyId;
+    /**
+     * @return (Updatable) GCP kms REST API endpoint
+     * 
+     */
+    private @Nullable String kmsRestEndpoint;
+    /**
+     * @return (Updatable) GCP key ring location
+     * 
+     */
+    private @Nullable String location;
     /**
      * @return (Updatable) UUID of OKV KMS Key
      * 
@@ -66,6 +81,11 @@ public final class AutonomousDatabaseEncryptionKey {
      * 
      */
     private @Nullable String okvUri;
+    /**
+     * @return (Updatable) GCP project name
+     * 
+     */
+    private @Nullable String project;
     /**
      * @return (Updatable) AWS key service endpoint URI
      * 
@@ -91,7 +111,7 @@ public final class AutonomousDatabaseEncryptionKey {
         return Optional.ofNullable(this.arnRole);
     }
     /**
-     * @return (Updatable) The provider for the Autonomous Database encryption key.
+     * @return (Updatable) The provider for the Autonomous AI Database encryption key.
      * 
      */
     public Optional<String> autonomousDatabaseProvider() {
@@ -140,11 +160,32 @@ public final class AutonomousDatabaseEncryptionKey {
         return Optional.ofNullable(this.keyName);
     }
     /**
+     * @return (Updatable) GCP key ring
+     * 
+     */
+    public Optional<String> keyRing() {
+        return Optional.ofNullable(this.keyRing);
+    }
+    /**
      * @return (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     public Optional<String> kmsKeyId() {
         return Optional.ofNullable(this.kmsKeyId);
+    }
+    /**
+     * @return (Updatable) GCP kms REST API endpoint
+     * 
+     */
+    public Optional<String> kmsRestEndpoint() {
+        return Optional.ofNullable(this.kmsRestEndpoint);
+    }
+    /**
+     * @return (Updatable) GCP key ring location
+     * 
+     */
+    public Optional<String> location() {
+        return Optional.ofNullable(this.location);
     }
     /**
      * @return (Updatable) UUID of OKV KMS Key
@@ -159,6 +200,13 @@ public final class AutonomousDatabaseEncryptionKey {
      */
     public Optional<String> okvUri() {
         return Optional.ofNullable(this.okvUri);
+    }
+    /**
+     * @return (Updatable) GCP project name
+     * 
+     */
+    public Optional<String> project() {
+        return Optional.ofNullable(this.project);
     }
     /**
      * @return (Updatable) AWS key service endpoint URI
@@ -199,9 +247,13 @@ public final class AutonomousDatabaseEncryptionKey {
         private @Nullable String externalId;
         private @Nullable String keyArn;
         private @Nullable String keyName;
+        private @Nullable String keyRing;
         private @Nullable String kmsKeyId;
+        private @Nullable String kmsRestEndpoint;
+        private @Nullable String location;
         private @Nullable String okvKmsKey;
         private @Nullable String okvUri;
+        private @Nullable String project;
         private @Nullable String serviceEndpointUri;
         private @Nullable String vaultId;
         private @Nullable String vaultUri;
@@ -216,9 +268,13 @@ public final class AutonomousDatabaseEncryptionKey {
     	      this.externalId = defaults.externalId;
     	      this.keyArn = defaults.keyArn;
     	      this.keyName = defaults.keyName;
+    	      this.keyRing = defaults.keyRing;
     	      this.kmsKeyId = defaults.kmsKeyId;
+    	      this.kmsRestEndpoint = defaults.kmsRestEndpoint;
+    	      this.location = defaults.location;
     	      this.okvKmsKey = defaults.okvKmsKey;
     	      this.okvUri = defaults.okvUri;
+    	      this.project = defaults.project;
     	      this.serviceEndpointUri = defaults.serviceEndpointUri;
     	      this.vaultId = defaults.vaultId;
     	      this.vaultUri = defaults.vaultUri;
@@ -273,9 +329,27 @@ public final class AutonomousDatabaseEncryptionKey {
             return this;
         }
         @CustomType.Setter
+        public Builder keyRing(@Nullable String keyRing) {
+
+            this.keyRing = keyRing;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
 
             this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder kmsRestEndpoint(@Nullable String kmsRestEndpoint) {
+
+            this.kmsRestEndpoint = kmsRestEndpoint;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder location(@Nullable String location) {
+
+            this.location = location;
             return this;
         }
         @CustomType.Setter
@@ -288,6 +362,12 @@ public final class AutonomousDatabaseEncryptionKey {
         public Builder okvUri(@Nullable String okvUri) {
 
             this.okvUri = okvUri;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder project(@Nullable String project) {
+
+            this.project = project;
             return this;
         }
         @CustomType.Setter
@@ -318,9 +398,13 @@ public final class AutonomousDatabaseEncryptionKey {
             _resultValue.externalId = externalId;
             _resultValue.keyArn = keyArn;
             _resultValue.keyName = keyName;
+            _resultValue.keyRing = keyRing;
             _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsRestEndpoint = kmsRestEndpoint;
+            _resultValue.location = location;
             _resultValue.okvKmsKey = okvKmsKey;
             _resultValue.okvUri = okvUri;
+            _resultValue.project = project;
             _resultValue.serviceEndpointUri = serviceEndpointUri;
             _resultValue.vaultId = vaultId;
             _resultValue.vaultUri = vaultUri;

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
- *
- * Creates a new `PathAnalyzerTest` resource.
- *
  * ## Example Usage
  *
  * ```typescript

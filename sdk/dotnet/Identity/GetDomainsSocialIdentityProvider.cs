@@ -180,6 +180,14 @@ namespace Pulumi.Oci.Identity
         /// Admin scope to request
         /// </summary>
         public readonly ImmutableArray<string> AdminScopes;
+        /// <summary>
+        /// Apple Developer ID
+        /// </summary>
+        public readonly string AppleDevId;
+        /// <summary>
+        /// Apple Private Key ID
+        /// </summary>
+        public readonly string AppleKeyId;
         public readonly string? Authorization;
         /// <summary>
         /// Social IDP Authorization URL
@@ -341,6 +349,10 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<string> adminScopes,
 
+            string appleDevId,
+
+            string appleKeyId,
+
             string? authorization,
 
             string authzUrl,
@@ -426,6 +438,8 @@ namespace Pulumi.Oci.Identity
             AccessTokenUrl = accessTokenUrl;
             AccountLinkingEnabled = accountLinkingEnabled;
             AdminScopes = adminScopes;
+            AppleDevId = appleDevId;
+            AppleKeyId = appleKeyId;
             Authorization = authorization;
             AuthzUrl = authzUrl;
             AutoRedirectEnabled = autoRedirectEnabled;

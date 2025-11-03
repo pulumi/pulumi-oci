@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Repository resource in Oracle Cloud Infrastructure Devops service.
-//
-// Creates a new repository.
+// ## Example Usage
 //
 // ## Import
 //

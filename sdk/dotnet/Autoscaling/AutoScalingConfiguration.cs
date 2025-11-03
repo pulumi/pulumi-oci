@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Autoscaling
 {
     /// <summary>
-    /// This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
-    /// 
-    /// Creates an autoscaling configuration.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

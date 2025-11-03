@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Occ Customer Group resource in Oracle Cloud Infrastructure Capacity Management service.
-//
-// Create customer group.
-//
 // ## Example Usage
 //
 // ```go

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
- *
- * Updates the tenant preferences such as DEFAULT_HOMEPAGE and collection properties.
- *
  * ## Example Usage
  *
  * ```typescript

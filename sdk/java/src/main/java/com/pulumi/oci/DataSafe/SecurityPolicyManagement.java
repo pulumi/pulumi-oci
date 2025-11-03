@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Security Policy Management resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a Data Safe security policy.
- * 
  * ## Example Usage
  * 
  * <pre>

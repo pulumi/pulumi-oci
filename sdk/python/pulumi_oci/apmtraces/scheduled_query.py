@@ -583,9 +583,7 @@ class ScheduledQuery(pulumi.CustomResource):
                  scheduled_query_text: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
-
-        Create a scheduled query in the APM Domain.
+        ## Example Usage
 
         ## Import
 
@@ -623,9 +621,7 @@ class ScheduledQuery(pulumi.CustomResource):
                  args: ScheduledQueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
-
-        Create a scheduled query in the APM Domain.
+        ## Example Usage
 
         ## Import
 

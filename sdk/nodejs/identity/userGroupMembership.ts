@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the User Group Membership resource in Oracle Cloud Infrastructure Identity service.
- *
- * Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
- *
  * ## Example Usage
  *
  * ```typescript

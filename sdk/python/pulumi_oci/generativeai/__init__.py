@@ -14,6 +14,7 @@ from .agent_knowledge_base import *
 from .agent_tool import *
 from .dedicated_ai_cluster import *
 from .endpoint import *
+from .generative_ai_private_endpoint import *
 from .get_agent_agent import *
 from .get_agent_agent_endpoint import *
 from .get_agent_agent_endpoints import *
@@ -31,6 +32,8 @@ from .get_dedicated_ai_cluster import *
 from .get_dedicated_ai_clusters import *
 from .get_endpoint import *
 from .get_endpoints import *
+from .get_generative_ai_private_endpoint import *
+from .get_generative_ai_private_endpoints import *
 from .get_model import *
 from .get_models import *
 from .model import *

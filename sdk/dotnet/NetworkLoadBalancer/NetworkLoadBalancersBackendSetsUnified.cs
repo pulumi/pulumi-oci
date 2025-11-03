@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkLoadBalancer
 {
     /// <summary>
-    /// This resource provides the Network Load Balancers Backend Sets Unified resource in Oracle Cloud Infrastructure Network Load Balancer service.
-    /// 
-    /// Adds a backend set to a network load balancer.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

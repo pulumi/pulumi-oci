@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Identity
 {
     /// <summary>
-    /// This resource provides the Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
-    /// 
-    /// Create a Social Identity Provider
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -41,6 +37,8 @@ namespace Pulumi.Oci.Identity
     ///         ShowOnLogin = socialIdentityProviderShowOnLogin,
     ///         AccessTokenUrl = socialIdentityProviderAccessTokenUrl,
     ///         AdminScopes = socialIdentityProviderAdminScope,
+    ///         AppleDevId = testAppleDev.Id,
+    ///         AppleKeyId = testKey.Id,
     ///         Authorization = socialIdentityProviderAuthorization,
     ///         AuthzUrl = socialIdentityProviderAuthzUrl,
     ///         AutoRedirectEnabled = socialIdentityProviderAutoRedirectEnabled,
@@ -145,6 +143,42 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Output("adminScopes")]
         public Output<ImmutableArray<string>> AdminScopes { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Apple Developer ID
+        /// 
+        /// **Added In:** 2311180004
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Output("appleDevId")]
+        public Output<string> AppleDevId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Apple Private Key ID
+        /// 
+        /// **Added In:** 2311180004
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Output("appleKeyId")]
+        public Output<string> AppleKeyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -860,6 +894,42 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
+        /// (Updatable) Apple Developer ID
+        /// 
+        /// **Added In:** 2311180004
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("appleDevId")]
+        public Input<string>? AppleDevId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Apple Private Key ID
+        /// 
+        /// **Added In:** 2311180004
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("appleKeyId")]
+        public Input<string>? AppleKeyId { get; set; }
+
+        /// <summary>
         /// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         /// </summary>
         [Input("authorization")]
@@ -1420,6 +1490,42 @@ namespace Pulumi.Oci.Identity
             get => _adminScopes ?? (_adminScopes = new InputList<string>());
             set => _adminScopes = value;
         }
+
+        /// <summary>
+        /// (Updatable) Apple Developer ID
+        /// 
+        /// **Added In:** 2311180004
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("appleDevId")]
+        public Input<string>? AppleDevId { get; set; }
+
+        /// <summary>
+        /// (Updatable) Apple Private Key ID
+        /// 
+        /// **Added In:** 2311180004
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("appleKeyId")]
+        public Input<string>? AppleKeyId { get; set; }
 
         /// <summary>
         /// (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.

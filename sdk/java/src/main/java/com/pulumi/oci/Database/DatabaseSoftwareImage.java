@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Database Software Image resource in Oracle Cloud Infrastructure Database service.
- * 
- * create database software image in the specified compartment.
- * 
  * ## Example Usage
  * 
  * <pre>

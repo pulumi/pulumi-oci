@@ -14,6 +14,10 @@ namespace Pulumi.Oci.AiLanguage.Outputs
     public sealed class GetEndpointsEndpointCollectionItemResult
     {
         /// <summary>
+        /// Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+        /// </summary>
+        public readonly string Alias;
+        /// <summary>
         /// The ID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -72,6 +76,8 @@ namespace Pulumi.Oci.AiLanguage.Outputs
 
         [OutputConstructor]
         private GetEndpointsEndpointCollectionItemResult(
+            string alias,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -100,6 +106,7 @@ namespace Pulumi.Oci.AiLanguage.Outputs
 
             string timeUpdated)
         {
+            Alias = alias;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;

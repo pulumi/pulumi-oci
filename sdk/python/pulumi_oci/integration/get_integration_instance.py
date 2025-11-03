@@ -27,7 +27,7 @@ class GetIntegrationInstanceResult:
     """
     A collection of values returned by getIntegrationInstance.
     """
-    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, data_retention_period=None, defined_tags=None, disaster_recovery_details=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, extend_data_retention_trigger=None, failover_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_design_time_url=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_disaster_recovery_enabled=None, is_file_server_enabled=None, is_visual_builder_enabled=None, lifecycle_details=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, shape=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, alternate_custom_endpoints=None, attachments=None, compartment_id=None, consumption_model=None, custom_endpoints=None, data_retention_period=None, defined_tags=None, disaster_recovery_details=None, display_name=None, domain_id=None, enable_process_automation_trigger=None, extend_data_retention_trigger=None, failover_trigger=None, freeform_tags=None, id=None, idcs_at=None, idcs_infos=None, instance_design_time_url=None, instance_url=None, integration_instance_id=None, integration_instance_type=None, is_byol=None, is_disaster_recovery_enabled=None, is_file_server_enabled=None, is_visual_builder_enabled=None, lifecycle_details=None, message_packs=None, network_endpoint_details=None, private_endpoint_outbound_connections=None, security_attributes=None, shape=None, state=None, state_message=None, system_tags=None, time_created=None, time_updated=None):
         if alternate_custom_endpoints and not isinstance(alternate_custom_endpoints, list):
             raise TypeError("Expected argument 'alternate_custom_endpoints' to be a list")
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
@@ -115,6 +115,9 @@ class GetIntegrationInstanceResult:
         if private_endpoint_outbound_connections and not isinstance(private_endpoint_outbound_connections, list):
             raise TypeError("Expected argument 'private_endpoint_outbound_connections' to be a list")
         pulumi.set(__self__, "private_endpoint_outbound_connections", private_endpoint_outbound_connections)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -277,7 +280,7 @@ class GetIntegrationInstanceResult:
     @pulumi.getter(name="integrationInstanceType")
     def integration_instance_type(self) -> _builtins.str:
         """
-        Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+        Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD, Oracle Integration 3 uses ENTERPRISEX, STANDARDX and HEALTHCARE
         """
         return pulumi.get(self, "integration_instance_type")
 
@@ -344,6 +347,18 @@ class GetIntegrationInstanceResult:
         Base representation for Outbound Connection (Reverse Connection).
         """
         return pulumi.get(self, "private_endpoint_outbound_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
+        "oracle-zpr.sensitivity.value" = "low"
+        "oracle-zpr.sensitivity.mode" = "enforce"
+        }
+        `
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter
@@ -429,6 +444,7 @@ class AwaitableGetIntegrationInstanceResult(GetIntegrationInstanceResult):
             message_packs=self.message_packs,
             network_endpoint_details=self.network_endpoint_details,
             private_endpoint_outbound_connections=self.private_endpoint_outbound_connections,
+            security_attributes=self.security_attributes,
             shape=self.shape,
             state=self.state,
             state_message=self.state_message,
@@ -491,6 +507,7 @@ def get_integration_instance(integration_instance_id: Optional[_builtins.str] = 
         message_packs=pulumi.get(__ret__, 'message_packs'),
         network_endpoint_details=pulumi.get(__ret__, 'network_endpoint_details'),
         private_endpoint_outbound_connections=pulumi.get(__ret__, 'private_endpoint_outbound_connections'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         state_message=pulumi.get(__ret__, 'state_message'),
@@ -550,6 +567,7 @@ def get_integration_instance_output(integration_instance_id: Optional[pulumi.Inp
         message_packs=pulumi.get(__response__, 'message_packs'),
         network_endpoint_details=pulumi.get(__response__, 'network_endpoint_details'),
         private_endpoint_outbound_connections=pulumi.get(__response__, 'private_endpoint_outbound_connections'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state'),
         state_message=pulumi.get(__response__, 'state_message'),

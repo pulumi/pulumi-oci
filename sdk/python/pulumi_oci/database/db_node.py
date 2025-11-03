@@ -586,9 +586,7 @@ class DbNode(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Db Node resource in Oracle Cloud Infrastructure Database service.
-
-        Updates the specified database node.
+        ## Example Usage
 
         ## Import
 
@@ -615,9 +613,7 @@ class DbNode(pulumi.CustomResource):
                  args: DbNodeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Db Node resource in Oracle Cloud Infrastructure Database service.
-
-        Updates the specified database node.
+        ## Example Usage
 
         ## Import
 

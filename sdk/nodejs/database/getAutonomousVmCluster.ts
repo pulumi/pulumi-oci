@@ -158,6 +158,10 @@ export interface GetAutonomousVmClusterResult {
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
+    readonly memoryPerComputeUnitInGbs: number;
+    /**
+     * The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+     */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**
      * The memory allocated in GBs.

@@ -562,10 +562,6 @@ class OpaInstance(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Opa Instance resource in Oracle Cloud Infrastructure Opa service.
-
-        Creates a new OpaInstance.
-
         ## Example Usage
 
         ```python
@@ -622,10 +618,6 @@ class OpaInstance(pulumi.CustomResource):
                  args: OpaInstanceArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Opa Instance resource in Oracle Cloud Infrastructure Opa service.
-
-        Creates a new OpaInstance.
-
         ## Example Usage
 
         ```python

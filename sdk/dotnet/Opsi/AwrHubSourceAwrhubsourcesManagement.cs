@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
-    /// This resource provides the Awr Hub Source Awrhubsources Management resource in Oracle Cloud Infrastructure Opsi service.
-    /// 
-    /// Enables a Awr Hub source database in Operations Insights. This will resume the Awr data flow for the given Awr Hub source if it was stopped earlier.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
-//
-// Create an OPSI configuration resource.
-//
 // ## Example Usage
 //
 // ```go

@@ -28,21 +28,23 @@ class EndpointArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generative_ai_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Endpoint resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the endpoint in.
         :param pulumi.Input[_builtins.str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which a model will be deployed to.
-        :param pulumi.Input[_builtins.str] model_id: The ID of the model that's used to create this endpoint.
+        :param pulumi.Input[_builtins.str] model_id: The OCID of the model that's used to create this endpoint.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['EndpointContentModerationConfigArgs'] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        :param pulumi.Input['EndpointContentModerationConfigArgs'] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the endpoint.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] generative_ai_private_endpoint_id: (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "dedicated_ai_cluster_id", dedicated_ai_cluster_id)
@@ -57,6 +59,8 @@ class EndpointArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if generative_ai_private_endpoint_id is not None:
+            pulumi.set(__self__, "generative_ai_private_endpoint_id", generative_ai_private_endpoint_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -86,7 +90,7 @@ class EndpointArgs:
     @pulumi.getter(name="modelId")
     def model_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The ID of the model that's used to create this endpoint.
+        The OCID of the model that's used to create this endpoint.
 
 
         ** IMPORTANT **
@@ -102,7 +106,7 @@ class EndpointArgs:
     @pulumi.getter(name="contentModerationConfig")
     def content_moderation_config(self) -> Optional[pulumi.Input['EndpointContentModerationConfigArgs']]:
         """
-        (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         """
         return pulumi.get(self, "content_moderation_config")
 
@@ -158,6 +162,18 @@ class EndpointArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="generativeAiPrivateEndpointId")
+    def generative_ai_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+        """
+        return pulumi.get(self, "generative_ai_private_endpoint_id")
+
+    @generative_ai_private_endpoint_id.setter
+    def generative_ai_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "generative_ai_private_endpoint_id", value)
+
 
 @pulumi.input_type
 class _EndpointState:
@@ -169,6 +185,7 @@ class _EndpointState:
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generative_ai_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  model_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -178,14 +195,15 @@ class _EndpointState:
         """
         Input properties used for looking up and filtering Endpoint resources.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the endpoint in.
-        :param pulumi.Input['EndpointContentModerationConfigArgs'] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        :param pulumi.Input['EndpointContentModerationConfigArgs'] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         :param pulumi.Input[_builtins.str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which a model will be deployed to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the endpoint.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] generative_ai_private_endpoint_id: (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state of the endpoint in more detail that can provide actionable information.
-        :param pulumi.Input[_builtins.str] model_id: The ID of the model that's used to create this endpoint.
+        :param pulumi.Input[_builtins.str] model_id: The OCID of the model that's used to create this endpoint.
                
                
                ** IMPORTANT **
@@ -209,6 +227,8 @@ class _EndpointState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if generative_ai_private_endpoint_id is not None:
+            pulumi.set(__self__, "generative_ai_private_endpoint_id", generative_ai_private_endpoint_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if model_id is not None:
@@ -238,7 +258,7 @@ class _EndpointState:
     @pulumi.getter(name="contentModerationConfig")
     def content_moderation_config(self) -> Optional[pulumi.Input['EndpointContentModerationConfigArgs']]:
         """
-        (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         """
         return pulumi.get(self, "content_moderation_config")
 
@@ -307,6 +327,18 @@ class _EndpointState:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="generativeAiPrivateEndpointId")
+    def generative_ai_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+        """
+        return pulumi.get(self, "generative_ai_private_endpoint_id")
+
+    @generative_ai_private_endpoint_id.setter
+    def generative_ai_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "generative_ai_private_endpoint_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -322,7 +354,7 @@ class _EndpointState:
     @pulumi.getter(name="modelId")
     def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The ID of the model that's used to create this endpoint.
+        The OCID of the model that's used to create this endpoint.
 
 
         ** IMPORTANT **
@@ -396,15 +428,10 @@ class Endpoint(pulumi.CustomResource):
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generative_ai_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  model_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
-
-        Creates an endpoint.
-
-        The header contains an opc-work-request-id, which is the id for the WorkRequest that tracks the endpoint creation progress.
-
         ## Example Usage
 
         ```python
@@ -417,6 +444,8 @@ class Endpoint(pulumi.CustomResource):
             model_id=test_model["id"],
             content_moderation_config={
                 "is_enabled": endpoint_content_moderation_config_is_enabled,
+                "mode": endpoint_content_moderation_config_mode,
+                "model_id": test_model["id"],
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -425,7 +454,8 @@ class Endpoint(pulumi.CustomResource):
             display_name=endpoint_display_name,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            generative_ai_private_endpoint_id=test_generative_ai_private_endpoint["id"])
         ```
 
         ## Import
@@ -439,13 +469,14 @@ class Endpoint(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the endpoint in.
-        :param pulumi.Input[Union['EndpointContentModerationConfigArgs', 'EndpointContentModerationConfigArgsDict']] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        :param pulumi.Input[Union['EndpointContentModerationConfigArgs', 'EndpointContentModerationConfigArgsDict']] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         :param pulumi.Input[_builtins.str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which a model will be deployed to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the endpoint.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] model_id: The ID of the model that's used to create this endpoint.
+        :param pulumi.Input[_builtins.str] generative_ai_private_endpoint_id: (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+        :param pulumi.Input[_builtins.str] model_id: The OCID of the model that's used to create this endpoint.
                
                
                ** IMPORTANT **
@@ -458,12 +489,6 @@ class Endpoint(pulumi.CustomResource):
                  args: EndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
-
-        Creates an endpoint.
-
-        The header contains an opc-work-request-id, which is the id for the WorkRequest that tracks the endpoint creation progress.
-
         ## Example Usage
 
         ```python
@@ -476,6 +501,8 @@ class Endpoint(pulumi.CustomResource):
             model_id=test_model["id"],
             content_moderation_config={
                 "is_enabled": endpoint_content_moderation_config_is_enabled,
+                "mode": endpoint_content_moderation_config_mode,
+                "model_id": test_model["id"],
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -484,7 +511,8 @@ class Endpoint(pulumi.CustomResource):
             display_name=endpoint_display_name,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            generative_ai_private_endpoint_id=test_generative_ai_private_endpoint["id"])
         ```
 
         ## Import
@@ -517,6 +545,7 @@ class Endpoint(pulumi.CustomResource):
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generative_ai_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  model_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -538,6 +567,7 @@ class Endpoint(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["generative_ai_private_endpoint_id"] = generative_ai_private_endpoint_id
             if model_id is None and not opts.urn:
                 raise TypeError("Missing required property 'model_id'")
             __props__.__dict__["model_id"] = model_id
@@ -563,6 +593,7 @@ class Endpoint(pulumi.CustomResource):
             description: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            generative_ai_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             model_id: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -577,14 +608,15 @@ class Endpoint(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the endpoint in.
-        :param pulumi.Input[Union['EndpointContentModerationConfigArgs', 'EndpointContentModerationConfigArgsDict']] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        :param pulumi.Input[Union['EndpointContentModerationConfigArgs', 'EndpointContentModerationConfigArgsDict']] content_moderation_config: (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         :param pulumi.Input[_builtins.str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which a model will be deployed to.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the endpoint.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] generative_ai_private_endpoint_id: (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state of the endpoint in more detail that can provide actionable information.
-        :param pulumi.Input[_builtins.str] model_id: The ID of the model that's used to create this endpoint.
+        :param pulumi.Input[_builtins.str] model_id: The OCID of the model that's used to create this endpoint.
                
                
                ** IMPORTANT **
@@ -605,6 +637,7 @@ class Endpoint(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["generative_ai_private_endpoint_id"] = generative_ai_private_endpoint_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["model_id"] = model_id
         __props__.__dict__["state"] = state
@@ -625,7 +658,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="contentModerationConfig")
     def content_moderation_config(self) -> pulumi.Output['outputs.EndpointContentModerationConfig']:
         """
-        (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+        (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
         """
         return pulumi.get(self, "content_moderation_config")
 
@@ -670,6 +703,14 @@ class Endpoint(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="generativeAiPrivateEndpointId")
+    def generative_ai_private_endpoint_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+        """
+        return pulumi.get(self, "generative_ai_private_endpoint_id")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[_builtins.str]:
         """
@@ -681,7 +722,7 @@ class Endpoint(pulumi.CustomResource):
     @pulumi.getter(name="modelId")
     def model_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The ID of the model that's used to create this endpoint.
+        The OCID of the model that's used to create this endpoint.
 
 
         ** IMPORTANT **

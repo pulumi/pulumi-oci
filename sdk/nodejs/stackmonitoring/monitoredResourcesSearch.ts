@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Monitored Resources Search resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * Gets a list of all monitored resources in a compartment for the given search criteria.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -17,11 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
- * 
- * Create a new report in the specified format containing the download details
- * for the tenancy.
- * 
  * ## Example Usage
  * 
  * <pre>

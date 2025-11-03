@@ -82,7 +82,9 @@ type LookupPipelineResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The pipeline log configuration details.
 	LogConfigurationDetails []GetPipelineLogConfigurationDetail `pulumi:"logConfigurationDetails"`
-	PipelineId              string                              `pulumi:"pipelineId"`
+	// Parameters used in the pipeline.
+	Parameters map[string]string `pulumi:"parameters"`
+	PipelineId string            `pulumi:"pipelineId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId string `pulumi:"projectId"`
 	// The current state of the pipeline.
@@ -194,6 +196,11 @@ func (o LookupPipelineResultOutput) LifecycleDetails() pulumi.StringOutput {
 // The pipeline log configuration details.
 func (o LookupPipelineResultOutput) LogConfigurationDetails() GetPipelineLogConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v LookupPipelineResult) []GetPipelineLogConfigurationDetail { return v.LogConfigurationDetails }).(GetPipelineLogConfigurationDetailArrayOutput)
+}
+
+// Parameters used in the pipeline.
+func (o LookupPipelineResultOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPipelineResult) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
 func (o LookupPipelineResultOutput) PipelineId() pulumi.StringOutput {

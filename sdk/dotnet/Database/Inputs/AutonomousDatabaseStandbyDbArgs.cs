@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousDatabaseStandbyDbArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
@@ -37,19 +37,19 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? MaintenanceTargetComponent { get; set; }
 
         /// <summary>
-        /// The current state of the Autonomous Database.
+        /// The current state of the Autonomous AI Database.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        /// The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         /// </summary>
         [Input("timeDataGuardRoleChanged")]
         public Input<string>? TimeDataGuardRoleChanged { get; set; }
 
         /// <summary>
-        /// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        /// The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         /// </summary>
         [Input("timeDisasterRecoveryRoleChanged")]
         public Input<string>? TimeDisasterRecoveryRoleChanged { get; set; }

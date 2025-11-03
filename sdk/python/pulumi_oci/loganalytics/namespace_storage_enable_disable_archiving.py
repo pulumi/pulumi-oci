@@ -136,10 +136,6 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Namespace Storage Enable Disable Archiving resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        THis API enables archiving.
-
         ## Example Usage
 
         ```python
@@ -167,10 +163,6 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
                  args: NamespaceStorageEnableDisableArchivingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Namespace Storage Enable Disable Archiving resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        THis API enables archiving.
-
         ## Example Usage
 
         ```python

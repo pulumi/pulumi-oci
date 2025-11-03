@@ -85,6 +85,11 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      */
     private Boolean isBreakGlassEnabled;
     /**
+     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * 
+     */
+    private Boolean isIpv6dualStackEnabled;
+    /**
      * @return BYOK key id
      * 
      */
@@ -256,6 +261,13 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         return this.isBreakGlassEnabled;
     }
     /**
+     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * 
+     */
+    public Boolean isIpv6dualStackEnabled() {
+        return this.isIpv6dualStackEnabled;
+    }
+    /**
      * @return BYOK key id
      * 
      */
@@ -384,6 +396,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         private String id;
         private String idcsDomainUrl;
         private Boolean isBreakGlassEnabled;
+        private Boolean isIpv6dualStackEnabled;
         private String kmsKeyId;
         private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos;
         private String lifecycleDetails;
@@ -416,6 +429,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
     	      this.id = defaults.id;
     	      this.idcsDomainUrl = defaults.idcsDomainUrl;
     	      this.isBreakGlassEnabled = defaults.isBreakGlassEnabled;
+    	      this.isIpv6dualStackEnabled = defaults.isIpv6dualStackEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyInfos = defaults.kmsKeyInfos;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -552,6 +566,14 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
               throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "isBreakGlassEnabled");
             }
             this.isBreakGlassEnabled = isBreakGlassEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isIpv6dualStackEnabled(Boolean isIpv6dualStackEnabled) {
+            if (isIpv6dualStackEnabled == null) {
+              throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "isIpv6dualStackEnabled");
+            }
+            this.isIpv6dualStackEnabled = isIpv6dualStackEnabled;
             return this;
         }
         @CustomType.Setter
@@ -705,6 +727,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
             _resultValue.id = id;
             _resultValue.idcsDomainUrl = idcsDomainUrl;
             _resultValue.isBreakGlassEnabled = isBreakGlassEnabled;
+            _resultValue.isIpv6dualStackEnabled = isIpv6dualStackEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyInfos = kmsKeyInfos;
             _resultValue.lifecycleDetails = lifecycleDetails;

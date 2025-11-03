@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Waa
 {
     /// <summary>
-    /// This resource provides the Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
-    /// 
-    /// Creates a new WebAppAcceleration.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

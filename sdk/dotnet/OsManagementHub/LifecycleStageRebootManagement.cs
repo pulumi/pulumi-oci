@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Lifecycle Stage Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Reboots all managed instances in the specified lifecycle stage.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

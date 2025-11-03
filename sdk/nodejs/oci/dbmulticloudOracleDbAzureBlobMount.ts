@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
- *
- * Creates Oracle DB Azure Blob Mount resource.
- *
  * ## Example Usage
  *
  * ```typescript

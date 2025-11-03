@@ -21,10 +21,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Catalog Item resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- * 
- * Creates a CatalogItem.
- * 
  * ## Example Usage
  * 
  * <pre>

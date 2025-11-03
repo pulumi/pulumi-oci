@@ -10,74 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Ocvp
 {
     /// <summary>
-    /// This resource provides the Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-    /// 
-    /// Create a vSphere Cluster in software-defined data center (SDDC).
-    /// 
-    /// Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
-    /// creation of the Cluster.
-    /// 
-    /// **Important:** You must configure the Cluster's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
-    /// 
     /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testCluster = new Oci.Ocvp.Cluster("test_cluster", new()
-    ///     {
-    ///         ComputeAvailabilityDomain = clusterComputeAvailabilityDomain,
-    ///         EsxiHostsCount = clusterEsxiHostsCount,
-    ///         NetworkConfiguration = new Oci.Ocvp.Inputs.ClusterNetworkConfigurationArgs
-    ///         {
-    ///             NsxEdgeVtepVlanId = testVlan.Id,
-    ///             NsxVtepVlanId = testVlan.Id,
-    ///             ProvisioningSubnetId = testSubnet.Id,
-    ///             VmotionVlanId = testVlan.Id,
-    ///             VsanVlanId = testVlan.Id,
-    ///             HcxVlanId = testVlan.Id,
-    ///             NsxEdgeUplink1vlanId = testNsxEdgeUplink1vlan.Id,
-    ///             NsxEdgeUplink2vlanId = testNsxEdgeUplink2vlan.Id,
-    ///             ProvisioningVlanId = testVlan.Id,
-    ///             ReplicationVlanId = testVlan.Id,
-    ///             VsphereVlanId = testVlan.Id,
-    ///         },
-    ///         SddcId = testSddc.Id,
-    ///         CapacityReservationId = testCapacityReservation.Id,
-    ///         Datastores = new[]
-    ///         {
-    ///             new Oci.Ocvp.Inputs.ClusterDatastoreArgs
-    ///             {
-    ///                 BlockVolumeIds = clusterDatastoresBlockVolumeIds,
-    ///                 DatastoreType = clusterDatastoresDatastoreType,
-    ///             },
-    ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         DisplayName = clusterDisplayName,
-    ///         EsxiSoftwareVersion = clusterEsxiSoftwareVersion,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         InitialCommitment = clusterInitialCommitment,
-    ///         InitialHostOcpuCount = clusterInitialHostOcpuCount,
-    ///         InitialHostShapeName = testShape.Name,
-    ///         InstanceDisplayNamePrefix = clusterInstanceDisplayNamePrefix,
-    ///         IsShieldedInstanceEnabled = clusterIsShieldedInstanceEnabled,
-    ///         VmwareSoftwareVersion = clusterVmwareSoftwareVersion,
-    ///         WorkloadNetworkCidr = clusterWorkloadNetworkCidr,
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// 
     /// ## Import
     /// 
@@ -92,6 +25,9 @@ namespace Pulumi.Oci.Ocvp
     {
         [Output("actualEsxiHostsCount")]
         public Output<int> ActualEsxiHostsCount { get; private set; } = null!;
+
+        [Output("attachDatastoreClusterIds")]
+        public Output<ImmutableArray<string>> AttachDatastoreClusterIds { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
@@ -112,6 +48,12 @@ namespace Pulumi.Oci.Ocvp
         public Output<string> ComputeAvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
+        /// A list of datastore clusters.
+        /// </summary>
+        [Output("datastoreClusterIds")]
+        public Output<ImmutableArray<string>> DatastoreClusterIds { get; private set; } = null!;
+
+        /// <summary>
         /// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         /// </summary>
         [Output("datastores")]
@@ -123,8 +65,11 @@ namespace Pulumi.Oci.Ocvp
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
+        [Output("detachDatastoreClusterIds")]
+        public Output<ImmutableArray<string>> DetachDatastoreClusterIds { get; private set; } = null!;
+
         /// <summary>
-        /// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        /// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -291,6 +236,14 @@ namespace Pulumi.Oci.Ocvp
 
     public sealed class ClusterArgs : global::Pulumi.ResourceArgs
     {
+        [Input("attachDatastoreClusterIds")]
+        private InputList<string>? _attachDatastoreClusterIds;
+        public InputList<string> AttachDatastoreClusterIds
+        {
+            get => _attachDatastoreClusterIds ?? (_attachDatastoreClusterIds = new InputList<string>());
+            set => _attachDatastoreClusterIds = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         /// </summary>
@@ -327,8 +280,16 @@ namespace Pulumi.Oci.Ocvp
             set => _definedTags = value;
         }
 
+        [Input("detachDatastoreClusterIds")]
+        private InputList<string>? _detachDatastoreClusterIds;
+        public InputList<string> DetachDatastoreClusterIds
+        {
+            get => _detachDatastoreClusterIds ?? (_detachDatastoreClusterIds = new InputList<string>());
+            set => _detachDatastoreClusterIds = value;
+        }
+
         /// <summary>
-        /// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        /// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -430,6 +391,14 @@ namespace Pulumi.Oci.Ocvp
         [Input("actualEsxiHostsCount")]
         public Input<int>? ActualEsxiHostsCount { get; set; }
 
+        [Input("attachDatastoreClusterIds")]
+        private InputList<string>? _attachDatastoreClusterIds;
+        public InputList<string> AttachDatastoreClusterIds
+        {
+            get => _attachDatastoreClusterIds ?? (_attachDatastoreClusterIds = new InputList<string>());
+            set => _attachDatastoreClusterIds = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
         /// </summary>
@@ -447,6 +416,18 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         [Input("computeAvailabilityDomain")]
         public Input<string>? ComputeAvailabilityDomain { get; set; }
+
+        [Input("datastoreClusterIds")]
+        private InputList<string>? _datastoreClusterIds;
+
+        /// <summary>
+        /// A list of datastore clusters.
+        /// </summary>
+        public InputList<string> DatastoreClusterIds
+        {
+            get => _datastoreClusterIds ?? (_datastoreClusterIds = new InputList<string>());
+            set => _datastoreClusterIds = value;
+        }
 
         [Input("datastores")]
         private InputList<Inputs.ClusterDatastoreGetArgs>? _datastores;
@@ -472,8 +453,16 @@ namespace Pulumi.Oci.Ocvp
             set => _definedTags = value;
         }
 
+        [Input("detachDatastoreClusterIds")]
+        private InputList<string>? _detachDatastoreClusterIds;
+        public InputList<string> DetachDatastoreClusterIds
+        {
+            get => _detachDatastoreClusterIds ?? (_detachDatastoreClusterIds = new InputList<string>());
+            set => _detachDatastoreClusterIds = value;
+        }
+
         /// <summary>
-        /// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        /// (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

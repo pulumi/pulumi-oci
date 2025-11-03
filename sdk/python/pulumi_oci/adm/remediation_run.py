@@ -366,10 +366,6 @@ class RemediationRun(pulumi.CustomResource):
                  remediation_recipe_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
-
-        Creates a new remediation run.
-
         ## Example Usage
 
         ```python
@@ -414,10 +410,6 @@ class RemediationRun(pulumi.CustomResource):
                  args: RemediationRunArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
-
-        Creates a new remediation run.
-
         ## Example Usage
 
         ```python

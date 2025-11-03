@@ -43,7 +43,7 @@ export function getDatabaseToolsPrivateEndpoints(args: GetDatabaseToolsPrivateEn
  */
 export interface GetDatabaseToolsPrivateEndpointsArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
@@ -136,7 +136,7 @@ export function getDatabaseToolsPrivateEndpointsOutput(args: GetDatabaseToolsPri
  */
 export interface GetDatabaseToolsPrivateEndpointsOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**

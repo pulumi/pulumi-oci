@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> AdvancedProperties;
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -66,7 +66,15 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult> RelatedResources;
         /// <summary>
-        /// A filter to return only resources with one of the specified runtimeSupport values.
+        /// Specifies the Database Tools Runtime endpoint.
+        /// </summary>
+        public readonly string RuntimeEndpoint;
+        /// <summary>
+        /// A filter to return only resources with one of the specified runtimeIdentity values.
+        /// </summary>
+        public readonly string RuntimeIdentity;
+        /// <summary>
+        /// A filter to return only resources with one of the specified type values.
         /// </summary>
         public readonly string RuntimeSupport;
         /// <summary>
@@ -82,7 +90,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+        /// The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
@@ -98,7 +106,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string UserName;
         /// <summary>
-        /// The user password.
+        /// The database user password.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult> UserPasswords;
 
@@ -129,6 +137,10 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
             ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientResult> proxyClients,
 
             ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult> relatedResources,
+
+            string runtimeEndpoint,
+
+            string runtimeIdentity,
 
             string runtimeSupport,
 
@@ -161,6 +173,8 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
             PrivateEndpointId = privateEndpointId;
             ProxyClients = proxyClients;
             RelatedResources = relatedResources;
+            RuntimeEndpoint = runtimeEndpoint;
+            RuntimeIdentity = runtimeIdentity;
             RuntimeSupport = runtimeSupport;
             State = state;
             SystemTags = systemTags;

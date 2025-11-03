@@ -19,6 +19,11 @@ public final class GetPipelineRunInfrastructureConfigurationOverrideDetail {
      */
     private Integer blockStorageSizeInGbs;
     /**
+     * @return The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    private String blockStorageSizeInGbsParameterized;
+    /**
      * @return Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
      * 
      */
@@ -41,6 +46,13 @@ public final class GetPipelineRunInfrastructureConfigurationOverrideDetail {
      */
     public Integer blockStorageSizeInGbs() {
         return this.blockStorageSizeInGbs;
+    }
+    /**
+     * @return The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    public String blockStorageSizeInGbsParameterized() {
+        return this.blockStorageSizeInGbsParameterized;
     }
     /**
      * @return Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
@@ -74,6 +86,7 @@ public final class GetPipelineRunInfrastructureConfigurationOverrideDetail {
     @CustomType.Builder
     public static final class Builder {
         private Integer blockStorageSizeInGbs;
+        private String blockStorageSizeInGbsParameterized;
         private List<GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetail> shapeConfigDetails;
         private String shapeName;
         private String subnetId;
@@ -81,6 +94,7 @@ public final class GetPipelineRunInfrastructureConfigurationOverrideDetail {
         public Builder(GetPipelineRunInfrastructureConfigurationOverrideDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
+    	      this.blockStorageSizeInGbsParameterized = defaults.blockStorageSizeInGbsParameterized;
     	      this.shapeConfigDetails = defaults.shapeConfigDetails;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
@@ -92,6 +106,14 @@ public final class GetPipelineRunInfrastructureConfigurationOverrideDetail {
               throw new MissingRequiredPropertyException("GetPipelineRunInfrastructureConfigurationOverrideDetail", "blockStorageSizeInGbs");
             }
             this.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder blockStorageSizeInGbsParameterized(String blockStorageSizeInGbsParameterized) {
+            if (blockStorageSizeInGbsParameterized == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunInfrastructureConfigurationOverrideDetail", "blockStorageSizeInGbsParameterized");
+            }
+            this.blockStorageSizeInGbsParameterized = blockStorageSizeInGbsParameterized;
             return this;
         }
         @CustomType.Setter
@@ -124,6 +146,7 @@ public final class GetPipelineRunInfrastructureConfigurationOverrideDetail {
         public GetPipelineRunInfrastructureConfigurationOverrideDetail build() {
             final var _resultValue = new GetPipelineRunInfrastructureConfigurationOverrideDetail();
             _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.blockStorageSizeInGbsParameterized = blockStorageSizeInGbsParameterized;
             _resultValue.shapeConfigDetails = shapeConfigDetails;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;

@@ -347,11 +347,6 @@ class SecurityRecipe(pulumi.CustomResource):
                  security_policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a security zone recipe (SecurityRecipe resource), using parameters
-        passed in a CreateSecurityRecipeDetails resource.
-
         ## Example Usage
 
         ```python
@@ -403,11 +398,6 @@ class SecurityRecipe(pulumi.CustomResource):
                  args: SecurityRecipeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a security zone recipe (SecurityRecipe resource), using parameters
-        passed in a CreateSecurityRecipeDetails resource.
-
         ## Example Usage
 
         ```python

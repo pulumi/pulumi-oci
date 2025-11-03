@@ -23,9 +23,7 @@ import * as utilities from "../utilities";
 export function getUtilsAnalyzeApplicationsConfiguration(args: GetUtilsAnalyzeApplicationsConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetUtilsAnalyzeApplicationsConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration", {
-        "bucket": args.bucket,
         "compartmentId": args.compartmentId,
-        "namespace": args.namespace,
     }, opts);
 }
 
@@ -34,17 +32,9 @@ export function getUtilsAnalyzeApplicationsConfiguration(args: GetUtilsAnalyzeAp
  */
 export interface GetUtilsAnalyzeApplicationsConfigurationArgs {
     /**
-     * The name of the bucket used for analyzing applications.
-     */
-    bucket?: string;
-    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: string;
-    /**
-     * The Object Storage namespace used for analyzing applications.
-     */
-    namespace?: string;
 }
 
 /**
@@ -56,9 +46,6 @@ export interface GetUtilsAnalyzeApplicationsConfigurationResult {
      */
     readonly bucket: string;
     readonly compartmentId: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
     readonly id: string;
     /**
      * The Object Storage namespace used for analyzing applications.
@@ -84,9 +71,7 @@ export interface GetUtilsAnalyzeApplicationsConfigurationResult {
 export function getUtilsAnalyzeApplicationsConfigurationOutput(args: GetUtilsAnalyzeApplicationsConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetUtilsAnalyzeApplicationsConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration", {
-        "bucket": args.bucket,
         "compartmentId": args.compartmentId,
-        "namespace": args.namespace,
     }, opts);
 }
 
@@ -95,15 +80,7 @@ export function getUtilsAnalyzeApplicationsConfigurationOutput(args: GetUtilsAna
  */
 export interface GetUtilsAnalyzeApplicationsConfigurationOutputArgs {
     /**
-     * The name of the bucket used for analyzing applications.
-     */
-    bucket?: pulumi.Input<string>;
-    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    /**
-     * The Object Storage namespace used for analyzing applications.
-     */
-    namespace?: pulumi.Input<string>;
 }

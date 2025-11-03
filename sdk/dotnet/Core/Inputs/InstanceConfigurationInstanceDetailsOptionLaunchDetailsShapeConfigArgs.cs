@@ -37,6 +37,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<double>? Ocpus { get; set; }
 
         /// <summary>
+        /// This field is reserved for internal use.
+        /// </summary>
+        [Input("resourceManagement")]
+        public Input<string>? ResourceManagement { get; set; }
+
+        /// <summary>
         /// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
         /// </summary>
         [Input("vcpus")]

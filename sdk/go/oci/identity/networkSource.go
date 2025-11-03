@@ -12,26 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Network Source resource in Oracle Cloud Infrastructure Identity service.
-//
-// Creates a new network source in your tenancy.
-//
-// You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
-// is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
-// reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
-// reside within compartments inside the tenancy. For information about OCIDs, see
-// [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-//
-// You must also specify a *name* for the network source, which must be unique across all network sources in your
-// tenancy, and cannot be changed.
-// You can use this name or the OCID when writing policies that apply to the network source. For more information
-// about policies, see [How Policies Work](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policies.htm).
-//
-// You must also specify a *description* for the network source (although it can be an empty string). It does not
-// have to be unique, and you can change it anytime with [UpdateNetworkSource](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/NetworkSource/UpdateNetworkSource).
-// After your network resource is created, you can use it in policy to restrict access to only requests made from an allowed
-// IP address specified in your network source. For more information, see [Managing Network Sources](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingnetworksources.htm).
-//
 // ## Example Usage
 //
 // ```go

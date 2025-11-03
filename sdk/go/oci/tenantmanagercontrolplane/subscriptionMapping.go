@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Subscription Mapping resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
-//
-// Assign the tenancy record identified by the compartment ID to the given subscription ID.
-//
 // ## Example Usage
 //
 // ```go

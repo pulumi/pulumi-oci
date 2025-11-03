@@ -1084,10 +1084,6 @@ class Application(pulumi.CustomResource):
                  warehouse_bucket_uri: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Application resource in Oracle Cloud Infrastructure Data Flow service.
-
-        Creates an application.
-
         ## Example Usage
 
         ```python
@@ -1192,10 +1188,6 @@ class Application(pulumi.CustomResource):
                  args: ApplicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Application resource in Oracle Cloud Infrastructure Data Flow service.
-
-        Creates an application.
-
         ## Example Usage
 
         ```python

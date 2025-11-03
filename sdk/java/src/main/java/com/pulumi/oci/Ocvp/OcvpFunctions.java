@@ -12,6 +12,14 @@ import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
 import com.pulumi.oci.Ocvp.inputs.GetClusterPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
 import com.pulumi.oci.Ocvp.inputs.GetClustersPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
+import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
+import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
+import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetDatastorePlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
+import com.pulumi.oci.Ocvp.inputs.GetDatastoresPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
@@ -32,6 +40,10 @@ import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsPlainArgs;
 import com.pulumi.oci.Ocvp.outputs.GetClusterResult;
 import com.pulumi.oci.Ocvp.outputs.GetClustersResult;
+import com.pulumi.oci.Ocvp.outputs.GetDatastoreClusterResult;
+import com.pulumi.oci.Ocvp.outputs.GetDatastoreClustersResult;
+import com.pulumi.oci.Ocvp.outputs.GetDatastoreResult;
+import com.pulumi.oci.Ocvp.outputs.GetDatastoresResult;
 import com.pulumi.oci.Ocvp.outputs.GetExsiHostResult;
 import com.pulumi.oci.Ocvp.outputs.GetExsiHostsResult;
 import com.pulumi.oci.Ocvp.outputs.GetRetrievePasswordResult;
@@ -569,6 +581,896 @@ public final class OcvpFunctions {
      */
     public static CompletableFuture<GetClustersResult> getClustersPlain(GetClustersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Ocvp/getClusters:getClusters", TypeShape.of(GetClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Datastore resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Get the specified Datastore&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastore = OcvpFunctions.getDatastore(GetDatastoreArgs.builder()
+     *             .datastoreId(testDatastoreOciOcvpDatastore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoreResult> getDatastore(GetDatastoreArgs args) {
+        return getDatastore(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Datastore resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Get the specified Datastore&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastore = OcvpFunctions.getDatastore(GetDatastoreArgs.builder()
+     *             .datastoreId(testDatastoreOciOcvpDatastore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatastoreResult> getDatastorePlain(GetDatastorePlainArgs args) {
+        return getDatastorePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Datastore resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Get the specified Datastore&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastore = OcvpFunctions.getDatastore(GetDatastoreArgs.builder()
+     *             .datastoreId(testDatastoreOciOcvpDatastore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoreResult> getDatastore(GetDatastoreArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getDatastore:getDatastore", TypeShape.of(GetDatastoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Datastore resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Get the specified Datastore&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastore = OcvpFunctions.getDatastore(GetDatastoreArgs.builder()
+     *             .datastoreId(testDatastoreOciOcvpDatastore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoreResult> getDatastore(GetDatastoreArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getDatastore:getDatastore", TypeShape.of(GetDatastoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Datastore resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Get the specified Datastore&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastore = OcvpFunctions.getDatastore(GetDatastoreArgs.builder()
+     *             .datastoreId(testDatastoreOciOcvpDatastore.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatastoreResult> getDatastorePlain(GetDatastorePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getDatastore:getDatastore", TypeShape.of(GetDatastoreResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Datastore Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Get the specified Datastore Cluster information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreCluster = OcvpFunctions.getDatastoreCluster(GetDatastoreClusterArgs.builder()
+     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoreClusterResult> getDatastoreCluster(GetDatastoreClusterArgs args) {
+        return getDatastoreCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Datastore Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Get the specified Datastore Cluster information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreCluster = OcvpFunctions.getDatastoreCluster(GetDatastoreClusterArgs.builder()
+     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatastoreClusterResult> getDatastoreClusterPlain(GetDatastoreClusterPlainArgs args) {
+        return getDatastoreClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Datastore Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Get the specified Datastore Cluster information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreCluster = OcvpFunctions.getDatastoreCluster(GetDatastoreClusterArgs.builder()
+     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoreClusterResult> getDatastoreCluster(GetDatastoreClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getDatastoreCluster:getDatastoreCluster", TypeShape.of(GetDatastoreClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Datastore Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Get the specified Datastore Cluster information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreCluster = OcvpFunctions.getDatastoreCluster(GetDatastoreClusterArgs.builder()
+     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoreClusterResult> getDatastoreCluster(GetDatastoreClusterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getDatastoreCluster:getDatastoreCluster", TypeShape.of(GetDatastoreClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Datastore Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Get the specified Datastore Cluster information.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreCluster = OcvpFunctions.getDatastoreCluster(GetDatastoreClusterArgs.builder()
+     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatastoreClusterResult> getDatastoreClusterPlain(GetDatastoreClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getDatastoreCluster:getDatastoreCluster", TypeShape.of(GetDatastoreClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastore Clusters in the specified compartment. The list can be filtered
+     * by compartment, Datastore Cluster, Display name and Lifecycle state
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .datastoreClusterId(testDatastoreCluster.id())
+     *             .displayName(datastoreClusterDisplayName)
+     *             .state(datastoreClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoreClustersResult> getDatastoreClusters(GetDatastoreClustersArgs args) {
+        return getDatastoreClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastore Clusters in the specified compartment. The list can be filtered
+     * by compartment, Datastore Cluster, Display name and Lifecycle state
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .datastoreClusterId(testDatastoreCluster.id())
+     *             .displayName(datastoreClusterDisplayName)
+     *             .state(datastoreClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatastoreClustersResult> getDatastoreClustersPlain(GetDatastoreClustersPlainArgs args) {
+        return getDatastoreClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastore Clusters in the specified compartment. The list can be filtered
+     * by compartment, Datastore Cluster, Display name and Lifecycle state
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .datastoreClusterId(testDatastoreCluster.id())
+     *             .displayName(datastoreClusterDisplayName)
+     *             .state(datastoreClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoreClustersResult> getDatastoreClusters(GetDatastoreClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getDatastoreClusters:getDatastoreClusters", TypeShape.of(GetDatastoreClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastore Clusters in the specified compartment. The list can be filtered
+     * by compartment, Datastore Cluster, Display name and Lifecycle state
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .datastoreClusterId(testDatastoreCluster.id())
+     *             .displayName(datastoreClusterDisplayName)
+     *             .state(datastoreClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoreClustersResult> getDatastoreClusters(GetDatastoreClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getDatastoreClusters:getDatastoreClusters", TypeShape.of(GetDatastoreClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Datastore Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastore Clusters in the specified compartment. The list can be filtered
+     * by compartment, Datastore Cluster, Display name and Lifecycle state
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .datastoreClusterId(testDatastoreCluster.id())
+     *             .displayName(datastoreClusterDisplayName)
+     *             .state(datastoreClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatastoreClustersResult> getDatastoreClustersPlain(GetDatastoreClustersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getDatastoreClusters:getDatastoreClusters", TypeShape.of(GetDatastoreClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastores in the specified compartment. The list can be filtered
+     * by compartment, datastore id, display name and lifecycle state.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .datastoreId(testDatastore.id())
+     *             .displayName(datastoreDisplayName)
+     *             .state(datastoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoresResult> getDatastores(GetDatastoresArgs args) {
+        return getDatastores(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastores in the specified compartment. The list can be filtered
+     * by compartment, datastore id, display name and lifecycle state.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .datastoreId(testDatastore.id())
+     *             .displayName(datastoreDisplayName)
+     *             .state(datastoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatastoresResult> getDatastoresPlain(GetDatastoresPlainArgs args) {
+        return getDatastoresPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastores in the specified compartment. The list can be filtered
+     * by compartment, datastore id, display name and lifecycle state.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .datastoreId(testDatastore.id())
+     *             .displayName(datastoreDisplayName)
+     *             .state(datastoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoresResult> getDatastores(GetDatastoresArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getDatastores:getDatastores", TypeShape.of(GetDatastoresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastores in the specified compartment. The list can be filtered
+     * by compartment, datastore id, display name and lifecycle state.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .datastoreId(testDatastore.id())
+     *             .displayName(datastoreDisplayName)
+     *             .state(datastoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatastoresResult> getDatastores(GetDatastoresArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getDatastores:getDatastores", TypeShape.of(GetDatastoresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Datastores in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * List the Datastores in the specified compartment. The list can be filtered
+     * by compartment, datastore id, display name and lifecycle state.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.id())
+     *             .datastoreId(testDatastore.id())
+     *             .displayName(datastoreDisplayName)
+     *             .state(datastoreState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatastoresResult> getDatastoresPlain(GetDatastoresPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getDatastores:getDatastores", TypeShape.of(GetDatastoresResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.

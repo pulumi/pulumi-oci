@@ -10,14 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FileStorage
 {
     /// <summary>
-    /// This resource provides the Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
-    /// 
-    /// Creates a new file system snapshot policy in the specified compartment and
-    /// availability domain.
-    /// 
-    /// After you create a file system snapshot policy, you can associate it with
-    /// file systems.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

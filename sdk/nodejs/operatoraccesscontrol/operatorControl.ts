@@ -5,9 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
- *
- * Creates an Operator Control.
+ * ## Example Usage
  *
  * ## Import
  *

@@ -10,9 +10,32 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Lifecycle Stage Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+    /// ## Example Usage
     /// 
-    /// Attaches (adds) managed instances to a lifecycle stage. Once added, you can apply operations to all managed instances in the lifecycle stage.
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testLifecycleStageAttachManagedInstancesManagement = new Oci.OsManagementHub.LifecycleStageAttachManagedInstancesManagement("test_lifecycle_stage_attach_managed_instances_management", new()
+    ///     {
+    ///         LifecycleStageId = testLifecycleStage.Id,
+    ///         ManagedInstanceDetails = new Oci.OsManagementHub.Inputs.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs
+    ///         {
+    ///             ManagedInstances = lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsManagedInstances,
+    ///             WorkRequestDetails = new Oci.OsManagementHub.Inputs.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsArgs
+    ///             {
+    ///                 Description = lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription,
+    ///                 DisplayName = lifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// 
     /// ## Import
     /// 

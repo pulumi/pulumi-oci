@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-//
-// Creates an Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
-// To create an Exadata Cloud Service infrastructure resource, use the  [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) operation.
-//
 // ## Example Usage
 //
 // ```go
@@ -136,7 +131,7 @@ type ExadataInfrastructure struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount pulumi.IntOutput `pulumi:"computeCount"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// (Updatable) The list of contacts for the Exadata infrastructure.
 	Contacts ExadataInfrastructureContactArrayOutput `pulumi:"contacts"`
@@ -314,7 +309,7 @@ type exadataInfrastructureState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount *int `pulumi:"computeCount"`
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel *string `pulumi:"computeModel"`
 	// (Updatable) The list of contacts for the Exadata infrastructure.
 	Contacts []ExadataInfrastructureContact `pulumi:"contacts"`
@@ -427,7 +422,7 @@ type ExadataInfrastructureState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The number of compute servers for the Exadata infrastructure.
 	ComputeCount pulumi.IntPtrInput
-	// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+	// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 	ComputeModel pulumi.StringPtrInput
 	// (Updatable) The list of contacts for the Exadata infrastructure.
 	Contacts ExadataInfrastructureContactArrayInput
@@ -786,7 +781,7 @@ func (o ExadataInfrastructureOutput) ComputeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.IntOutput { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
-// The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+// The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
 func (o ExadataInfrastructureOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }

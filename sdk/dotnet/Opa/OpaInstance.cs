@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opa
 {
     /// <summary>
-    /// This resource provides the Opa Instance resource in Oracle Cloud Infrastructure Opa service.
-    /// 
-    /// Creates a new OpaInstance.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Named Credential resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Creates a named credential.
- *
  * ## Example Usage
  *
  * ```typescript

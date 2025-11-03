@@ -578,10 +578,6 @@ class Runbook(pulumi.CustomResource):
                  runbook_version: Optional[pulumi.Input[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a runbook.
-
         ## Example Usage
 
         ```python
@@ -777,10 +773,6 @@ class Runbook(pulumi.CustomResource):
                  args: RunbookArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a runbook.
-
         ## Example Usage
 
         ```python

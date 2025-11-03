@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// # Create an OAuth Partner Certificate
-//
 // ## Example Usage
 //
 // ```go

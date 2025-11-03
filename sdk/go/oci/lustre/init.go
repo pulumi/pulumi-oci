@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem":
 		r = &FileStorageLustreFileSystem{}
+	case "oci:Lustre/fileStorageObjectStorageLink:FileStorageObjectStorageLink":
+		r = &FileStorageObjectStorageLink{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +41,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Lustre/fileStorageLustreFileSystem",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Lustre/fileStorageObjectStorageLink",
 		&module{version},
 	)
 }

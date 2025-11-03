@@ -78,7 +78,7 @@ class GetAutonomousContainerDatabasesResult:
     @pulumi.getter(name="autonomousExadataInfrastructureId")
     def autonomous_exadata_infrastructure_id(self) -> Optional[_builtins.str]:
         """
-        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+        **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         """
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
@@ -221,7 +221,7 @@ def get_autonomous_container_databases(autonomous_exadata_infrastructure_id: Opt
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param _builtins.str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
-    :param _builtins.str service_level_agreement_type: A filter to return only resources that match the given service level agreement type exactly.
+    :param _builtins.str service_level_agreement_type: A filter to return only resources that match the given service-level agreement type exactly.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     __args__ = dict()
@@ -292,7 +292,7 @@ def get_autonomous_container_databases_output(autonomous_exadata_infrastructure_
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param _builtins.str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
-    :param _builtins.str service_level_agreement_type: A filter to return only resources that match the given service level agreement type exactly.
+    :param _builtins.str service_level_agreement_type: A filter to return only resources that match the given service-level agreement type exactly.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     __args__ = dict()

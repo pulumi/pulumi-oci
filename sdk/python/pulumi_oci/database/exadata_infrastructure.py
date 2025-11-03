@@ -537,7 +537,7 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[_builtins.str] cloud_control_plane_server2: (Updatable) The IP address for the second control plane server.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the Exadata infrastructure.
-        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureContactArgs']]] contacts: (Updatable) The list of contacts for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] corporate_proxy: (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
@@ -828,7 +828,7 @@ class _ExadataInfrastructureState:
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
@@ -1374,11 +1374,6 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-
-        Creates an Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
-        To create an Exadata Cloud Service infrastructure resource, use the  [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) operation.
-
         ## Example Usage
 
         ```python
@@ -1489,11 +1484,6 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  args: ExadataInfrastructureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-
-        Creates an Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
-        To create an Exadata Cloud Service infrastructure resource, use the  [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) operation.
-
         ## Example Usage
 
         ```python
@@ -1779,7 +1769,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cloud_control_plane_server2: (Updatable) The IP address for the second control plane server.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the Exadata infrastructure.
-        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureContactArgs', 'ExadataInfrastructureContactArgsDict']]]] contacts: (Updatable) The list of contacts for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] corporate_proxy: (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
         :param pulumi.Input[_builtins.int] cpus_enabled: The number of enabled CPU cores.
@@ -1977,7 +1967,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> pulumi.Output[_builtins.str]:
         """
-        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+        The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 

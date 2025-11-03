@@ -168,14 +168,14 @@ public final class AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Import(name="role")
     private @Nullable Output<String> role;
 
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public Optional<Output<String>> role() {
@@ -523,7 +523,7 @@ public final class AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs
         }
 
         /**
-         * @param role The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * @param role The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          * 
          * @return builder
          * 
@@ -534,7 +534,7 @@ public final class AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs
         }
 
         /**
-         * @param role The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * @param role The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          * 
          * @return builder
          * 

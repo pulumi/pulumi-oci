@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Import Standard Tags Management resource in Oracle Cloud Infrastructure Identity service.
-//
-// OCI will release Tag Namespaces that our customers can import.
-// These Tag Namespaces will provide Tags for our customers and Partners to provide consistency and enable data reporting.
-//
 // ## Example Usage
 //
 // ```go

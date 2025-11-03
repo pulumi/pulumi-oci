@@ -11,10 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
-//
-// Updates the Autonomous Database regional wallet.
-//
 // ## Example Usage
 //
 // ```go
@@ -55,7 +51,7 @@ type AutonomousDatabaseRegionalWalletManagement struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate pulumi.BoolPtrOutput `pulumi:"shouldRotate"`
-	// The current lifecycle state of the Autonomous Database wallet.
+	// The current lifecycle state of the Autonomous AI Database wallet.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the wallet was last rotated.
 	TimeRotated pulumi.StringOutput `pulumi:"timeRotated"`
@@ -98,7 +94,7 @@ type autonomousDatabaseRegionalWalletManagementState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate *bool `pulumi:"shouldRotate"`
-	// The current lifecycle state of the Autonomous Database wallet.
+	// The current lifecycle state of the Autonomous AI Database wallet.
 	State *string `pulumi:"state"`
 	// The date and time the wallet was last rotated.
 	TimeRotated *string `pulumi:"timeRotated"`
@@ -112,7 +108,7 @@ type AutonomousDatabaseRegionalWalletManagementState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate pulumi.BoolPtrInput
-	// The current lifecycle state of the Autonomous Database wallet.
+	// The current lifecycle state of the Autonomous AI Database wallet.
 	State pulumi.StringPtrInput
 	// The date and time the wallet was last rotated.
 	TimeRotated pulumi.StringPtrInput
@@ -243,7 +239,7 @@ func (o AutonomousDatabaseRegionalWalletManagementOutput) ShouldRotate() pulumi.
 	return o.ApplyT(func(v *AutonomousDatabaseRegionalWalletManagement) pulumi.BoolPtrOutput { return v.ShouldRotate }).(pulumi.BoolPtrOutput)
 }
 
-// The current lifecycle state of the Autonomous Database wallet.
+// The current lifecycle state of the Autonomous AI Database wallet.
 func (o AutonomousDatabaseRegionalWalletManagementOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseRegionalWalletManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
- *
- * Creates a new view in the specified compartment.
- *
  * ## Example Usage
  *
  * ```typescript

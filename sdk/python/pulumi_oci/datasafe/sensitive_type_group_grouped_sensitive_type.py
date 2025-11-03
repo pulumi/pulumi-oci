@@ -127,11 +127,6 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
                  sensitive_type_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Sensitive Type Group Grouped Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
-
-          Patches one or more sensitive types in a sensitive type group. You can use this operation to add or remove
-        sensitive type ids in a sensitive type group.
-
         ## Example Usage
 
         ```python
@@ -168,11 +163,6 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
                  args: SensitiveTypeGroupGroupedSensitiveTypeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sensitive Type Group Grouped Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
-
-          Patches one or more sensitive types in a sensitive type group. You can use this operation to add or remove
-        sensitive type ids in a sensitive type group.
-
         ## Example Usage
 
         ```python

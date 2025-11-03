@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
-//
-// # Creates a new metric extension resource for a given compartment
-//
 // ## Example Usage
 //
 // ```go

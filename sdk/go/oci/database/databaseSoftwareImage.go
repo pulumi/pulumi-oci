@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Database Software Image resource in Oracle Cloud Infrastructure Database service.
-//
-// create database software image in the specified compartment.
-//
 // ## Example Usage
 //
 // ```go

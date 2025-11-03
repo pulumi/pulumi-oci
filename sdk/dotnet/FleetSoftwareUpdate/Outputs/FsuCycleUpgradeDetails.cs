@@ -18,29 +18,50 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly string CollectionType;
         /// <summary>
+        /// (Updatable) Ignore errors during post Oracle Grid Infrastructure upgrade Cluster Verification Utility (CVU) check.
+        /// </summary>
+        public readonly bool? IsIgnorePostUpgradeErrors;
+        /// <summary>
+        /// (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
+        /// </summary>
+        public readonly bool? IsIgnorePrerequisites;
+        /// <summary>
         /// (Updatable) Enables or disables the recompilation of invalid objects.
         /// </summary>
         public readonly bool? IsRecompileInvalidObjects;
         /// <summary>
-        /// (Updatable) Enables or disables time zone upgrade. 
+        /// (Updatable) Enables or disables time zone upgrade.
+        /// </summary>
+        public readonly bool? IsTimeZoneUpgrade;
+        /// <summary>
+        /// (Updatable) Service drain timeout specified in seconds. 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        public readonly bool? IsTimeZoneUpgrade;
+        public readonly int? MaxDrainTimeoutInSeconds;
 
         [OutputConstructor]
         private FsuCycleUpgradeDetails(
             string collectionType,
 
+            bool? isIgnorePostUpgradeErrors,
+
+            bool? isIgnorePrerequisites,
+
             bool? isRecompileInvalidObjects,
 
-            bool? isTimeZoneUpgrade)
+            bool? isTimeZoneUpgrade,
+
+            int? maxDrainTimeoutInSeconds)
         {
             CollectionType = collectionType;
+            IsIgnorePostUpgradeErrors = isIgnorePostUpgradeErrors;
+            IsIgnorePrerequisites = isIgnorePrerequisites;
             IsRecompileInvalidObjects = isRecompileInvalidObjects;
             IsTimeZoneUpgrade = isTimeZoneUpgrade;
+            MaxDrainTimeoutInSeconds = maxDrainTimeoutInSeconds;
         }
     }
 }

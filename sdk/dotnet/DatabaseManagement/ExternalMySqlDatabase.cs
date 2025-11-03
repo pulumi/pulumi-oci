@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Creates an external MySQL database.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

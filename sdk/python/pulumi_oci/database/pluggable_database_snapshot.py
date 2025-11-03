@@ -283,10 +283,6 @@ class PluggableDatabaseSnapshot(pulumi.CustomResource):
                  pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a Pluggable Database Snapshot
-
         ## Example Usage
 
         ```python
@@ -328,10 +324,6 @@ class PluggableDatabaseSnapshot(pulumi.CustomResource):
                  args: PluggableDatabaseSnapshotArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a Pluggable Database Snapshot
-
         ## Example Usage
 
         ```python

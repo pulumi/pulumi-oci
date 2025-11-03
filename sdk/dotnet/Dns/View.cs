@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns
 {
     /// <summary>
-    /// This resource provides the View resource in Oracle Cloud Infrastructure DNS service.
-    /// 
-    /// Creates a new view in the specified compartment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

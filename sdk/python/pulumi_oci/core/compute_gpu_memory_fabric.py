@@ -396,9 +396,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
-
-        Customer can update displayName and tags for compute GPU memory fabric record
+        ## Example Usage
 
         ## Import
 
@@ -427,9 +425,7 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
                  args: ComputeGpuMemoryFabricArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
-
-        Customer can update displayName and tags for compute GPU memory fabric record
+        ## Example Usage
 
         ## Import
 

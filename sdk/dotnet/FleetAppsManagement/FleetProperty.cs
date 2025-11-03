@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FleetAppsManagement
 {
     /// <summary>
-    /// This resource provides the Fleet Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-    /// 
-    /// Add an existing global property to a fleet in Fleet Application Management.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

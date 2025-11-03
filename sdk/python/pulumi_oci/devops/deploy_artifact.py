@@ -414,10 +414,6 @@ class DeployArtifact(pulumi.CustomResource):
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment artifact.
-
         ## Example Usage
 
         ```python
@@ -485,10 +481,6 @@ class DeployArtifact(pulumi.CustomResource):
                  args: DeployArtifactArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
-
-        Creates a new deployment artifact.
-
         ## Example Usage
 
         ```python

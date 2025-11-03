@@ -32,6 +32,7 @@ class RedisClusterArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shard_count: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a RedisCluster resource.
@@ -50,6 +51,7 @@ class RedisClusterArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -68,6 +70,8 @@ class RedisClusterArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if oci_cache_config_set_id is not None:
             pulumi.set(__self__, "oci_cache_config_set_id", oci_cache_config_set_id)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shard_count is not None:
             pulumi.set(__self__, "shard_count", shard_count)
 
@@ -208,6 +212,18 @@ class RedisClusterArgs:
         pulumi.set(self, "oci_cache_config_set_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="shardCount")
     def shard_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -240,6 +256,7 @@ class _RedisClusterState:
                  primary_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
                  replicas_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
                  replicas_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shard_count: Optional[pulumi.Input[_builtins.int]] = None,
                  software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -266,6 +283,7 @@ class _RedisClusterState:
         :param pulumi.Input[_builtins.str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         :param pulumi.Input[_builtins.str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
         :param pulumi.Input[_builtins.str] replicas_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[_builtins.str] state: The current state of the cluster.
@@ -312,6 +330,8 @@ class _RedisClusterState:
             pulumi.set(__self__, "replicas_endpoint_ip_address", replicas_endpoint_ip_address)
         if replicas_fqdn is not None:
             pulumi.set(__self__, "replicas_fqdn", replicas_fqdn)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if shard_count is not None:
             pulumi.set(__self__, "shard_count", shard_count)
         if software_version is not None:
@@ -532,6 +552,18 @@ class _RedisClusterState:
         pulumi.set(self, "replicas_fqdn", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter(name="shardCount")
     def shard_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -635,15 +667,12 @@ class RedisCluster(pulumi.CustomResource):
                  node_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shard_count: Optional[pulumi.Input[_builtins.int]] = None,
                  software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
-
-        Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
-
         ## Example Usage
 
         ```python
@@ -666,6 +695,7 @@ class RedisCluster(pulumi.CustomResource):
             },
             nsg_ids=redis_cluster_nsg_ids,
             oci_cache_config_set_id=test_oci_cache_config_set["id"],
+            security_attributes=redis_cluster_security_attributes,
             shard_count=redis_cluster_shard_count)
         ```
 
@@ -688,6 +718,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
@@ -703,10 +734,6 @@ class RedisCluster(pulumi.CustomResource):
                  args: RedisClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
-
-        Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
-
         ## Example Usage
 
         ```python
@@ -729,6 +756,7 @@ class RedisCluster(pulumi.CustomResource):
             },
             nsg_ids=redis_cluster_nsg_ids,
             oci_cache_config_set_id=test_oci_cache_config_set["id"],
+            security_attributes=redis_cluster_security_attributes,
             shard_count=redis_cluster_shard_count)
         ```
 
@@ -764,6 +792,7 @@ class RedisCluster(pulumi.CustomResource):
                  node_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shard_count: Optional[pulumi.Input[_builtins.int]] = None,
                  software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -793,6 +822,7 @@ class RedisCluster(pulumi.CustomResource):
             __props__.__dict__["node_memory_in_gbs"] = node_memory_in_gbs
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["oci_cache_config_set_id"] = oci_cache_config_set_id
+            __props__.__dict__["security_attributes"] = security_attributes
             __props__.__dict__["shard_count"] = shard_count
             if software_version is None and not opts.urn:
                 raise TypeError("Missing required property 'software_version'")
@@ -839,6 +869,7 @@ class RedisCluster(pulumi.CustomResource):
             primary_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
             replicas_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
             replicas_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
+            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shard_count: Optional[pulumi.Input[_builtins.int]] = None,
             software_version: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
@@ -870,6 +901,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         :param pulumi.Input[_builtins.str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
         :param pulumi.Input[_builtins.str] replicas_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[_builtins.str] state: The current state of the cluster.
@@ -903,6 +935,7 @@ class RedisCluster(pulumi.CustomResource):
         __props__.__dict__["primary_fqdn"] = primary_fqdn
         __props__.__dict__["replicas_endpoint_ip_address"] = replicas_endpoint_ip_address
         __props__.__dict__["replicas_fqdn"] = replicas_fqdn
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shard_count"] = shard_count
         __props__.__dict__["software_version"] = software_version
         __props__.__dict__["state"] = state
@@ -1047,6 +1080,14 @@ class RedisCluster(pulumi.CustomResource):
         The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
         """
         return pulumi.get(self, "replicas_fqdn")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter(name="shardCount")

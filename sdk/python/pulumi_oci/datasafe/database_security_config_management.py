@@ -418,10 +418,6 @@ class DatabaseSecurityConfigManagement(pulumi.CustomResource):
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Database Security Config Management resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the database security configuration.
-
         ## Example Usage
 
         ```python
@@ -472,10 +468,6 @@ class DatabaseSecurityConfigManagement(pulumi.CustomResource):
                  args: Optional[DatabaseSecurityConfigManagementArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database Security Config Management resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the database security configuration.
-
         ## Example Usage
 
         ```python

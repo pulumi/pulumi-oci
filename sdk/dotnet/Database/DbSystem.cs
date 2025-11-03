@@ -10,21 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Db System resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates a new DB system in the specified compartment and availability domain. The Oracle
-    /// Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
-    /// 
-    /// An initial database is created on the DB system based on the request parameters you provide and some default
-    /// options. For detailed information about default options, see [Bare metal and virtual machine DB system default options.](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/creatingDBsystem.htm#Default)
-    /// 
-    /// **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-    /// 
-    /// For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
-    /// 
-    /// Use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure/) and [CreateCloudVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster/) APIs to provision a new Exadata Cloud Service instance.
-    /// 
-    /// **Important:** When `AutoBackupEnabled` is not present in the configuration or set to true, the `AutoBackupWindow` and `AutoFullBackupWindow` will be ignored
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 
@@ -235,7 +221,7 @@ namespace Pulumi.Oci.Database
         public Output<string?> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         /// </summary>
         [Output("kmsKeyVersionId")]
         public Output<string?> KmsKeyVersionId { get; private set; } = null!;
@@ -302,7 +288,7 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        /// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
@@ -708,7 +694,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         /// </summary>
         [Input("kmsKeyVersionId")]
         public Input<string>? KmsKeyVersionId { get; set; }
@@ -736,7 +722,7 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        /// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {
@@ -1053,7 +1039,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         /// </summary>
         [Input("kmsKeyVersionId")]
         public Input<string>? KmsKeyVersionId { get; set; }
@@ -1129,7 +1115,7 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        /// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        /// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         /// </summary>
         public InputList<string> NsgIds
         {

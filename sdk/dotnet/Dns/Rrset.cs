@@ -10,13 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Dns
 {
     /// <summary>
-    /// This resource provides the Rrset resource in Oracle Cloud Infrastructure DNS service.
-    /// 
-    ///   Updates records in the specified RRSet.
-    /// 
-    /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
-    /// parameter then the viewId query parameter is required.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

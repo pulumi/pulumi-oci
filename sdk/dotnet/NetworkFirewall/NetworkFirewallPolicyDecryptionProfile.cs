@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall
 {
     /// <summary>
-    /// This resource provides the Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
-    /// 
-    /// Creates a new Decryption Profile for the Network Firewall Policy.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

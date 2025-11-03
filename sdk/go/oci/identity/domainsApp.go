@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// # Create an App
-//
 // ## Example Usage
 //
 // ## Import

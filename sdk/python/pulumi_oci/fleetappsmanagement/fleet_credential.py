@@ -314,10 +314,6 @@ class FleetCredential(pulumi.CustomResource):
                  user: Optional[pulumi.Input[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Add credentials to a fleet in Fleet Application Management.
-
         ## Example Usage
 
         ```python
@@ -376,10 +372,6 @@ class FleetCredential(pulumi.CustomResource):
                  args: FleetCredentialInitArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Fleet Credential resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Add credentials to a fleet in Fleet Application Management.
-
         ## Example Usage
 
         ```python

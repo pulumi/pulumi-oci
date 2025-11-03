@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- * 
- * Creates a new task record.
- * 
  * ## Example Usage
  * 
  * <pre>

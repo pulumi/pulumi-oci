@@ -368,6 +368,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Whether to enable AI enterprise on the instance.
+     * 
+     */
+    @Import(name="isAiEnterpriseEnabled")
+    private @Nullable Output<Boolean> isAiEnterpriseEnabled;
+
+    /**
+     * @return (Updatable) Whether to enable AI enterprise on the instance.
+     * 
+     */
+    public Optional<Output<Boolean>> isAiEnterpriseEnabled() {
+        return Optional.ofNullable(this.isAiEnterpriseEnabled);
+    }
+
+    /**
      * Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `isPvEncryptionInTransitEnabled` under `launchOptions` instead.
      * 
      */
@@ -719,6 +734,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.instanceConfigurationId = $.instanceConfigurationId;
         this.instanceOptions = $.instanceOptions;
         this.ipxeScript = $.ipxeScript;
+        this.isAiEnterpriseEnabled = $.isAiEnterpriseEnabled;
         this.isPvEncryptionInTransitEnabled = $.isPvEncryptionInTransitEnabled;
         this.launchOptions = $.launchOptions;
         this.launchVolumeAttachments = $.launchVolumeAttachments;
@@ -1202,6 +1218,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipxeScript(String ipxeScript) {
             return ipxeScript(Output.of(ipxeScript));
+        }
+
+        /**
+         * @param isAiEnterpriseEnabled (Updatable) Whether to enable AI enterprise on the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAiEnterpriseEnabled(@Nullable Output<Boolean> isAiEnterpriseEnabled) {
+            $.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAiEnterpriseEnabled (Updatable) Whether to enable AI enterprise on the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAiEnterpriseEnabled(Boolean isAiEnterpriseEnabled) {
+            return isAiEnterpriseEnabled(Output.of(isAiEnterpriseEnabled));
         }
 
         /**

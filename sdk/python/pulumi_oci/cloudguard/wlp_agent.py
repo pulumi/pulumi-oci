@@ -354,11 +354,6 @@ class WlpAgent(pulumi.CustomResource):
                  os_info: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates and registers a WLP agent for an
-        on-premise resource.
-
         ## Example Usage
 
         ```python
@@ -408,11 +403,6 @@ class WlpAgent(pulumi.CustomResource):
                  args: WlpAgentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Wlp Agent resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates and registers a WLP agent for an
-        on-premise resource.
-
         ## Example Usage
 
         ```python

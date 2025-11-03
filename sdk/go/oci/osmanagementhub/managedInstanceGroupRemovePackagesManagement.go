@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Managed Instance Group Remove Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Removes the specified packages from each managed instance in a managed instance group.
-//
 // ## Example Usage
 //
 // ```go

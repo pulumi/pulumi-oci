@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Dr Plan Execution resource in Oracle Cloud Infrastructure Disaster Recovery service.
- *
- * Execute a DR plan for a DR protection group.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -71,6 +67,10 @@ export class DrPlanExecution extends pulumi.CustomResource {
     }
 
     /**
+     * The details of the event that started the automatic DR plan execution.
+     */
+    declare public /*out*/ readonly automaticExecutionDetails: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionAutomaticExecutionDetail[]>;
+    /**
      * The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      */
     declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
@@ -102,6 +102,10 @@ export class DrPlanExecution extends pulumi.CustomResource {
      * A list of groups executed in this DR plan execution.
      */
     declare public /*out*/ readonly groupExecutions: pulumi.Output<outputs.DisasterRecovery.DrPlanExecutionGroupExecution[]>;
+    /**
+     * A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+     */
+    declare public /*out*/ readonly isAutomatic: pulumi.Output<boolean>;
     /**
      * A message describing the DR plan execution's current state in more detail.
      */
@@ -168,6 +172,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DrPlanExecutionState | undefined;
+            resourceInputs["automaticExecutionDetails"] = state?.automaticExecutionDetails;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
@@ -176,6 +181,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
             resourceInputs["executionOptions"] = state?.executionOptions;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["groupExecutions"] = state?.groupExecutions;
+            resourceInputs["isAutomatic"] = state?.isAutomatic;
             resourceInputs["lifeCycleDetails"] = state?.lifeCycleDetails;
             resourceInputs["logLocations"] = state?.logLocations;
             resourceInputs["peerDrProtectionGroupId"] = state?.peerDrProtectionGroupId;
@@ -201,10 +207,12 @@ export class DrPlanExecution extends pulumi.CustomResource {
             resourceInputs["executionOptions"] = args?.executionOptions;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["planId"] = args?.planId;
+            resourceInputs["automaticExecutionDetails"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["drProtectionGroupId"] = undefined /*out*/;
             resourceInputs["executionDurationInSec"] = undefined /*out*/;
             resourceInputs["groupExecutions"] = undefined /*out*/;
+            resourceInputs["isAutomatic"] = undefined /*out*/;
             resourceInputs["lifeCycleDetails"] = undefined /*out*/;
             resourceInputs["logLocations"] = undefined /*out*/;
             resourceInputs["peerDrProtectionGroupId"] = undefined /*out*/;
@@ -226,6 +234,10 @@ export class DrPlanExecution extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DrPlanExecution resources.
  */
 export interface DrPlanExecutionState {
+    /**
+     * The details of the event that started the automatic DR plan execution.
+     */
+    automaticExecutionDetails?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionAutomaticExecutionDetail>[]>;
     /**
      * The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      */
@@ -258,6 +270,10 @@ export interface DrPlanExecutionState {
      * A list of groups executed in this DR plan execution.
      */
     groupExecutions?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrPlanExecutionGroupExecution>[]>;
+    /**
+     * A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+     */
+    isAutomatic?: pulumi.Input<boolean>;
     /**
      * A message describing the DR plan execution's current state in more detail.
      */

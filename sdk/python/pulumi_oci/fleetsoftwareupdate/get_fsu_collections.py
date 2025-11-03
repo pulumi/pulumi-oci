@@ -55,7 +55,7 @@ class GetFsuCollectionsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        Compartment Identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -63,7 +63,7 @@ class GetFsuCollectionsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        Exadata Fleet Update Collection resource display name.
+        The user-friendly name for the Exadata Fleet Update Collection.
         """
         return pulumi.get(self, "display_name")
 

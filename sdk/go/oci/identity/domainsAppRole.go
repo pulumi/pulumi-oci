@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
-//
-// # Create an AppRole
-//
 // ## Example Usage
 //
 // ## Import

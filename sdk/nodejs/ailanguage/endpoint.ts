@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
- *
- * Creates a new endpoint and deploy the trained model
- *
  * ## Example Usage
  *
  * ```typescript
@@ -18,6 +14,7 @@ import * as utilities from "../utilities";
  * const testEndpoint = new oci.ailanguage.Endpoint("test_endpoint", {
  *     compartmentId: compartmentId,
  *     modelId: testModel.id,
+ *     alias: endpointAlias,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -66,6 +63,10 @@ export class Endpoint extends pulumi.CustomResource {
         return obj['__pulumiType'] === Endpoint.__pulumiType;
     }
 
+    /**
+     * (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     */
+    declare public readonly alias: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
      */
@@ -136,6 +137,7 @@ export class Endpoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as EndpointState | undefined;
+            resourceInputs["alias"] = state?.alias;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
@@ -157,6 +159,7 @@ export class Endpoint extends pulumi.CustomResource {
             if (args?.modelId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'modelId'");
             }
+            resourceInputs["alias"] = args?.alias;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
@@ -180,6 +183,10 @@ export class Endpoint extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Endpoint resources.
  */
 export interface EndpointState {
+    /**
+     * (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     */
+    alias?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
      */
@@ -242,6 +249,10 @@ export interface EndpointState {
  * The set of arguments for constructing a Endpoint resource.
  */
 export interface EndpointArgs {
+    /**
+     * (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     */
+    alias?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
      */

@@ -21,8 +21,6 @@ public final class ScheduleResource {
     private String id;
     /**
      * @return (Updatable) This is additional information that helps to identity the resource for the schedule.
-     * 
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
      * 
      */
@@ -45,8 +43,6 @@ public final class ScheduleResource {
     }
     /**
      * @return (Updatable) This is additional information that helps to identity the resource for the schedule.
-     * 
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
      * 
      */

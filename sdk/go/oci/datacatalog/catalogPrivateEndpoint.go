@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Catalog Private Endpoint resource in Oracle Cloud Infrastructure Data Catalog service.
-//
-// Create a new private reverse connection endpoint.
-//
 // ## Example Usage
 //
 // ```go

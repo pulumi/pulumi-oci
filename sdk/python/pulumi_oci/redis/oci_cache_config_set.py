@@ -365,10 +365,6 @@ class OciCacheConfigSet(pulumi.CustomResource):
                  software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
-
-        Create a new Oracle Cloud Infrastructure Cache Config Set for the given Oracle Cloud Infrastructure cache engine version.
-
         ## Example Usage
 
         ```python
@@ -423,10 +419,6 @@ class OciCacheConfigSet(pulumi.CustomResource):
                  args: OciCacheConfigSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
-
-        Create a new Oracle Cloud Infrastructure Cache Config Set for the given Oracle Cloud Infrastructure cache engine version.
-
         ## Example Usage
 
         ```python

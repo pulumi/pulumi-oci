@@ -13,30 +13,38 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult
     {
+        public readonly string BackupRetentionPolicyOnTerminate;
         public readonly string DbrsPolicyId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         /// </summary>
         public readonly string Id;
         public readonly bool IsRemote;
+        public readonly bool IsRetentionLockEnabled;
         public readonly string RemoteRegion;
         public readonly string Type;
 
         [OutputConstructor]
         private GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(
+            string backupRetentionPolicyOnTerminate,
+
             string dbrsPolicyId,
 
             string id,
 
             bool isRemote,
 
+            bool isRetentionLockEnabled,
+
             string remoteRegion,
 
             string type)
         {
+            BackupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
             IsRemote = isRemote;
+            IsRetentionLockEnabled = isRetentionLockEnabled;
             RemoteRegion = remoteRegion;
             Type = type;
         }

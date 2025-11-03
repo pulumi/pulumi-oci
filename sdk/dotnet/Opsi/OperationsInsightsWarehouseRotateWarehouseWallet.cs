@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Opsi
 {
     /// <summary>
-    /// This resource provides the Operations Insights Warehouse Rotate Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
-    /// 
-    /// Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

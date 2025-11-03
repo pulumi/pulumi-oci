@@ -1254,10 +1254,6 @@ class DomainsCondition(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsConditionTagArgs', 'DomainsConditionTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Condition resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a condition
-
         ## Example Usage
 
         ```python
@@ -1418,10 +1414,6 @@ class DomainsCondition(pulumi.CustomResource):
                  args: DomainsConditionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Condition resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a condition
-
         ## Example Usage
 
         ```python

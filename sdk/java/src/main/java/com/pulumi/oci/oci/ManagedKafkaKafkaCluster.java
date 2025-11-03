@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
- * 
- * Creates a KafkaCluster.
- * 
  * ## Example Usage
  * 
  * <pre>

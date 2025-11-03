@@ -21,7 +21,6 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable) This is the action that will be executed by the schedule.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="action")
@@ -29,7 +28,6 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) This is the action that will be executed by the schedule.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<Output<String>> action() {
@@ -37,14 +35,14 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -98,7 +96,6 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Import(name="freeformTags")
@@ -106,7 +103,6 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -129,18 +125,14 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
-     * 
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+     * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      * 
      */
     @Import(name="recurrenceDetails")
     private @Nullable Output<String> recurrenceDetails;
 
     /**
-     * @return (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
-     * 
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+     * @return (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      * 
      */
     public Optional<Output<String>> recurrenceDetails() {
@@ -148,14 +140,14 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
+     * (Updatable) Type of recurrence of a schedule
      * 
      */
     @Import(name="recurrenceType")
     private @Nullable Output<String> recurrenceType;
 
     /**
-     * @return (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
+     * @return (Updatable) Type of recurrence of a schedule
      * 
      */
     public Optional<Output<String>> recurrenceType() {
@@ -362,7 +354,6 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param action (Updatable) This is the action that will be executed by the schedule.
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -374,7 +365,6 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param action (Updatable) This is the action that will be executed by the schedule.
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -384,7 +374,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
          * 
          * @return builder
          * 
@@ -395,7 +385,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
          * 
          * @return builder
          * 
@@ -469,7 +459,6 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param freeformTags (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -481,7 +470,6 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param freeformTags (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -512,9 +500,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recurrenceDetails (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
-         * 
-         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+         * @param recurrenceDetails (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
          * 
          * @return builder
          * 
@@ -525,9 +511,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recurrenceDetails (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field. Example: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1`
-         * 
-         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+         * @param recurrenceDetails (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
          * 
          * @return builder
          * 
@@ -537,7 +521,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recurrenceType (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
+         * @param recurrenceType (Updatable) Type of recurrence of a schedule
          * 
          * @return builder
          * 
@@ -548,7 +532,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recurrenceType (Updatable) Type of recurrence of a schedule. Could be set to `ICAL`, `CRON`
+         * @param recurrenceType (Updatable) Type of recurrence of a schedule
          * 
          * @return builder
          * 

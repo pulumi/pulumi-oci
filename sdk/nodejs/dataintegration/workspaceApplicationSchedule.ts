@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Workspace Application Schedule resource in Oracle Cloud Infrastructure Data Integration service.
- *
- * Endpoint to create a new schedule
- *
  * ## Example Usage
  *
  * ```typescript

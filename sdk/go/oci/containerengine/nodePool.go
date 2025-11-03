@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-//
-// Create a new node pool.
-//
 // ## Example Usage
 //
 // ```go

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Asset Source resource in Oracle Cloud Infrastructure Cloud Bridge service.
- *
- * Creates an asset source.
- *
  * ## Example Usage
  *
  * ```typescript

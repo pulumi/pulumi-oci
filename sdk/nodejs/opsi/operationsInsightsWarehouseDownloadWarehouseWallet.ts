@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Operations Insights Warehouse Download Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
- *
- * Download the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
- *
  * ## Example Usage
  *
  * ```typescript

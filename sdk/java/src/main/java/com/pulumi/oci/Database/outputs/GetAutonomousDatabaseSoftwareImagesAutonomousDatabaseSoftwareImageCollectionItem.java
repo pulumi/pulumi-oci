@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollectionItem {
     /**
-     * @return One-off patches included in the Autonomous Database Software Image
+     * @return One-off patches included in the Autonomous AI Database Software Image
      * 
      */
     private List<String> autonomousDsiOneOffPatches;
@@ -23,7 +23,7 @@ public final class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftware
      */
     private String compartmentId;
     /**
-     * @return The database version with which the Autonomous Database Software Image is to be built.
+     * @return The database version with which the Autonomous AI Database Software Image is to be built.
      * 
      */
     private String databaseVersion;
@@ -43,7 +43,7 @@ public final class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftware
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
      * 
      */
     private String id;
@@ -74,14 +74,14 @@ public final class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftware
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the Autonomous Database Software Image was created.
+     * @return The date and time the Autonomous AI Database Software Image was created.
      * 
      */
     private String timeCreated;
 
     private GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollectionItem() {}
     /**
-     * @return One-off patches included in the Autonomous Database Software Image
+     * @return One-off patches included in the Autonomous AI Database Software Image
      * 
      */
     public List<String> autonomousDsiOneOffPatches() {
@@ -95,7 +95,7 @@ public final class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftware
         return this.compartmentId;
     }
     /**
-     * @return The database version with which the Autonomous Database Software Image is to be built.
+     * @return The database version with which the Autonomous AI Database Software Image is to be built.
      * 
      */
     public String databaseVersion() {
@@ -123,7 +123,7 @@ public final class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftware
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
      * 
      */
     public String id() {
@@ -168,7 +168,7 @@ public final class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftware
         return this.systemTags;
     }
     /**
-     * @return The date and time the Autonomous Database Software Image was created.
+     * @return The date and time the Autonomous AI Database Software Image was created.
      * 
      */
     public String timeCreated() {

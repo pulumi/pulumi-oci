@@ -25,6 +25,12 @@ __all__ = [
     'GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemResult',
     'GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemMaintenanceWindowResult',
     'GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashConfigurationResult',
+    'GetFileStorageObjectStorageLinkSyncJobsFilterResult',
+    'GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionResult',
+    'GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemResult',
+    'GetFileStorageObjectStorageLinksFilterResult',
+    'GetFileStorageObjectStorageLinksObjectStorageLinkCollectionResult',
+    'GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemResult',
 ]
 
 @pulumi.output_type
@@ -634,5 +640,499 @@ class GetFileStorageLustreFileSystemsLustreFileSystemCollectionItemRootSquashCon
         The UID value to remap to when squashing a client UID. See `identitySquash` for more details. If unspecified, defaults to `65534`.
         """
         return pulumi.get(self, "squash_uid")
+
+
+@pulumi.output_type
+class GetFileStorageObjectStorageLinkSyncJobsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFileStorageObjectStorageLinkSyncJobsSyncJobCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 bytes_transferred: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 is_overwrite: _builtins.bool,
+                 job_type: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 lustre_file_system_path: _builtins.str,
+                 object_storage_path: _builtins.str,
+                 objects_transferred: _builtins.str,
+                 parent_id: _builtins.str,
+                 skipped_error_count: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_finished: _builtins.str,
+                 time_started: _builtins.str,
+                 total_objects_scanned: _builtins.str):
+        """
+        :param _builtins.str bytes_transferred: Bytes transferred during the sync. This value changes while the sync is still in progress.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the sync job.
+        :param _builtins.bool is_overwrite: The flag is an identifier to tell whether this specific job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
+        :param _builtins.str job_type: The type of the sync job.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the sync job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str lustre_file_system_path: The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
+        :param _builtins.str object_storage_path: The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
+        :param _builtins.str objects_transferred: Count of total files that transferred successfully.
+        :param _builtins.str parent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
+        :param _builtins.str skipped_error_count: Count of files or objects that failed to export or import due to errors.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_finished: The date and time the job finished, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2020-07-25T21:10:29.600Z`
+        :param _builtins.str time_started: The date and time the job was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2020-07-25T21:10:29.600Z`
+        :param _builtins.str total_objects_scanned: Total object count for scanned files for import or export as part of this sync job.
+        """
+        pulumi.set(__self__, "bytes_transferred", bytes_transferred)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_overwrite", is_overwrite)
+        pulumi.set(__self__, "job_type", job_type)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lustre_file_system_path", lustre_file_system_path)
+        pulumi.set(__self__, "object_storage_path", object_storage_path)
+        pulumi.set(__self__, "objects_transferred", objects_transferred)
+        pulumi.set(__self__, "parent_id", parent_id)
+        pulumi.set(__self__, "skipped_error_count", skipped_error_count)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "total_objects_scanned", total_objects_scanned)
+
+    @_builtins.property
+    @pulumi.getter(name="bytesTransferred")
+    def bytes_transferred(self) -> _builtins.str:
+        """
+        Bytes transferred during the sync. This value changes while the sync is still in progress.
+        """
+        return pulumi.get(self, "bytes_transferred")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the sync job.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isOverwrite")
+    def is_overwrite(self) -> _builtins.bool:
+        """
+        The flag is an identifier to tell whether this specific job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
+        """
+        return pulumi.get(self, "is_overwrite")
+
+    @_builtins.property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> _builtins.str:
+        """
+        The type of the sync job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the sync job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="lustreFileSystemPath")
+    def lustre_file_system_path(self) -> _builtins.str:
+        """
+        The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
+        """
+        return pulumi.get(self, "lustre_file_system_path")
+
+    @_builtins.property
+    @pulumi.getter(name="objectStoragePath")
+    def object_storage_path(self) -> _builtins.str:
+        """
+        The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
+        """
+        return pulumi.get(self, "object_storage_path")
+
+    @_builtins.property
+    @pulumi.getter(name="objectsTransferred")
+    def objects_transferred(self) -> _builtins.str:
+        """
+        Count of total files that transferred successfully.
+        """
+        return pulumi.get(self, "objects_transferred")
+
+    @_builtins.property
+    @pulumi.getter(name="parentId")
+    def parent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
+        """
+        return pulumi.get(self, "parent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="skippedErrorCount")
+    def skipped_error_count(self) -> _builtins.str:
+        """
+        Count of files or objects that failed to export or import due to errors.
+        """
+        return pulumi.get(self, "skipped_error_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> _builtins.str:
+        """
+        The date and time the job finished, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2020-07-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_finished")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The date and time the job was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2020-07-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_started")
+
+    @_builtins.property
+    @pulumi.getter(name="totalObjectsScanned")
+    def total_objects_scanned(self) -> _builtins.str:
+        """
+        Total object count for scanned files for import or export as part of this sync job.
+        """
+        return pulumi.get(self, "total_objects_scanned")
+
+
+@pulumi.output_type
+class GetFileStorageObjectStorageLinksFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFileStorageObjectStorageLinksObjectStorageLinkCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFileStorageObjectStorageLinksObjectStorageLinkCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: _builtins.str,
+                 compartment_id: _builtins.str,
+                 current_job_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 file_system_path: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 is_overwrite: _builtins.bool,
+                 last_job_id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 lustre_file_system_id: _builtins.str,
+                 object_storage_prefix: _builtins.str,
+                 start_export_to_object_trigger: _builtins.int,
+                 start_import_from_object_trigger: _builtins.int,
+                 state: _builtins.str,
+                 stop_export_to_object_trigger: _builtins.int,
+                 stop_import_from_object_trigger: _builtins.int,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str current_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of currently running sync job. If no sync job is running, then this will be empty.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param _builtins.str file_system_path: The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
+        :param _builtins.bool is_overwrite: The flag is an identifier to tell whether the job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
+        :param _builtins.str last_job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last succeeded sync job. If no sync job has previously run, then this will be empty.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the Object Storage link in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str lustre_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
+        :param _builtins.str object_storage_prefix: The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the Object Storage link was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2024-04-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "current_job_id", current_job_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "file_system_path", file_system_path)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_overwrite", is_overwrite)
+        pulumi.set(__self__, "last_job_id", last_job_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lustre_file_system_id", lustre_file_system_id)
+        pulumi.set(__self__, "object_storage_prefix", object_storage_prefix)
+        pulumi.set(__self__, "start_export_to_object_trigger", start_export_to_object_trigger)
+        pulumi.set(__self__, "start_import_from_object_trigger", start_import_from_object_trigger)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "stop_export_to_object_trigger", stop_export_to_object_trigger)
+        pulumi.set(__self__, "stop_import_from_object_trigger", stop_import_from_object_trigger)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> _builtins.str:
+        """
+        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="currentJobId")
+    def current_job_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of currently running sync job. If no sync job is running, then this will be empty.
+        """
+        return pulumi.get(self, "current_job_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="fileSystemPath")
+    def file_system_path(self) -> _builtins.str:
+        """
+        The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
+        """
+        return pulumi.get(self, "file_system_path")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Object Storage link.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isOverwrite")
+    def is_overwrite(self) -> _builtins.bool:
+        """
+        The flag is an identifier to tell whether the job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
+        """
+        return pulumi.get(self, "is_overwrite")
+
+    @_builtins.property
+    @pulumi.getter(name="lastJobId")
+    def last_job_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last succeeded sync job. If no sync job has previously run, then this will be empty.
+        """
+        return pulumi.get(self, "last_job_id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the Object Storage link in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="lustreFileSystemId")
+    def lustre_file_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
+        """
+        return pulumi.get(self, "lustre_file_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="objectStoragePrefix")
+    def object_storage_prefix(self) -> _builtins.str:
+        """
+        The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
+        """
+        return pulumi.get(self, "object_storage_prefix")
+
+    @_builtins.property
+    @pulumi.getter(name="startExportToObjectTrigger")
+    def start_export_to_object_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "start_export_to_object_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="startImportFromObjectTrigger")
+    def start_import_from_object_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "start_import_from_object_trigger")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="stopExportToObjectTrigger")
+    def stop_export_to_object_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "stop_export_to_object_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="stopImportFromObjectTrigger")
+    def stop_import_from_object_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "stop_import_from_object_trigger")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the Object Storage link was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2024-04-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
 
 

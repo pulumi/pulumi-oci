@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Redis
 {
     /// <summary>
-    /// This resource provides the Redis Cluster Detach Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
-    /// 
-    /// Detach existing Oracle Cloud Infrastructure cache users to a redis cluster.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
- *
- * Create a new model.
- *
  * ## Example Usage
  *
  * ```typescript

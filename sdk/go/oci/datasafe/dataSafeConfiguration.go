@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Enables Data Safe in the tenancy and region.
-//
 // ## Example Usage
 //
 // ```go

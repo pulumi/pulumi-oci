@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Replica resource in Oracle Cloud Infrastructure MySQL Database service.
- *
- * Creates a DB System read replica.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -32,6 +28,7 @@ import * as utilities from "../utilities";
  *         configurationId: testMysqlConfiguration.id,
  *         mysqlVersion: replicaReplicaOverridesMysqlVersion,
  *         nsgIds: replicaReplicaOverridesNsgIds,
+ *         securityAttributes: replicaReplicaOverridesSecurityAttributes,
  *         shapeName: testShape.name,
  *     },
  * });
@@ -150,6 +147,10 @@ export class Replica extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly secureConnections: pulumi.Output<outputs.Mysql.ReplicaSecureConnection[]>;
     /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    declare public /*out*/ readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
      * The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
     declare public /*out*/ readonly shapeName: pulumi.Output<string>;
@@ -198,6 +199,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["portX"] = state?.portX;
             resourceInputs["replicaOverrides"] = state?.replicaOverrides;
             resourceInputs["secureConnections"] = state?.secureConnections;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["shapeName"] = state?.shapeName;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -226,6 +228,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["port"] = undefined /*out*/;
             resourceInputs["portX"] = undefined /*out*/;
             resourceInputs["secureConnections"] = undefined /*out*/;
+            resourceInputs["securityAttributes"] = undefined /*out*/;
             resourceInputs["shapeName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -316,6 +319,10 @@ export interface ReplicaState {
      * Secure connection configuration details.
      */
     secureConnections?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaSecureConnection>[]>;
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */

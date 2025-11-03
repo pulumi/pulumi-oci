@@ -461,10 +461,6 @@ class PrivateEndpoint(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
-
-        Creates a PrivateEndpoint.
-
         ## Example Usage
 
         ```python
@@ -515,10 +511,6 @@ class PrivateEndpoint(pulumi.CustomResource):
                  args: PrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
-
-        Creates a PrivateEndpoint.
-
         ## Example Usage
 
         ```python

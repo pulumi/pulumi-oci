@@ -22,10 +22,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Vm Cluster resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates an Exadata Cloud{@literal @}Customer VM cluster.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -158,14 +154,14 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     @Export(name="computeModel", refs={String.class}, tree="[0]")
     private Output<String> computeModel;
 
     /**
-     * @return The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * @return The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     public Output<String> computeModel() {

@@ -217,10 +217,6 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Address List for the Network Firewall Policy.
-
         ## Example Usage
 
         ```python
@@ -260,10 +256,6 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
                  args: NetworkFirewallPolicyAddressListArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new Address List for the Network Firewall Policy.
-
         ## Example Usage
 
         ```python

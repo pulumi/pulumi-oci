@@ -23,10 +23,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Monitor resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
- * 
- * Creates a new monitor.
- * 
  * ## Example Usage
  * 
  * <pre>

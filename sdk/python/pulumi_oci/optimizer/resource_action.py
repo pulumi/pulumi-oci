@@ -403,14 +403,7 @@ class ResourceAction(pulumi.CustomResource):
                  time_status_end: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
-
-        Updates the resource action that corresponds to the specified OCID.
-        Use this operation to implement the following actions:
-
-          * Postpone resource action
-          * Ignore resource action
-          * Reactivate resource action
+        ## Example Usage
 
         ## Import
 
@@ -439,14 +432,7 @@ class ResourceAction(pulumi.CustomResource):
                  args: ResourceActionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
-
-        Updates the resource action that corresponds to the specified OCID.
-        Use this operation to implement the following actions:
-
-          * Postpone resource action
-          * Ignore resource action
-          * Reactivate resource action
+        ## Example Usage
 
         ## Import
 

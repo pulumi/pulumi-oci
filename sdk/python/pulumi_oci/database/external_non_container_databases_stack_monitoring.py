@@ -152,10 +152,6 @@ class ExternalNonContainerDatabasesStackMonitoring(pulumi.CustomResource):
                  external_non_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Externalnoncontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
-
-        Enable Stack Monitoring for the external non-container database.
-
         ## Example Usage
 
         ```python
@@ -189,10 +185,6 @@ class ExternalNonContainerDatabasesStackMonitoring(pulumi.CustomResource):
                  args: ExternalNonContainerDatabasesStackMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Externalnoncontainerdatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
-
-        Enable Stack Monitoring for the external non-container database.
-
         ## Example Usage
 
         ```python

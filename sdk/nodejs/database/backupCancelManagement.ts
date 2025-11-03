@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Backup Cancel Management resource in Oracle Cloud Infrastructure Database service.
- *
- * Cancel automatic full/incremental create backup workrequests specified by the backup Id. This cannot be used on manual backups.
- *
  * ## Example Usage
  *
  * ```typescript

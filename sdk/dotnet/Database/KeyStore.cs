@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource provides the Key Store resource in Oracle Cloud Infrastructure Database service.
-    /// 
-    /// Creates a Key Store.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -62,6 +58,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("associatedDatabases")]
         public Output<ImmutableArray<Outputs.KeyStoreAssociatedDatabase>> AssociatedDatabases { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        /// </summary>
+        [Output("associatedLongTermBackupCount")]
+        public Output<int> AssociatedLongTermBackupCount { get; private set; } = null!;
+
+        /// <summary>
+        /// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        /// </summary>
+        [Output("associatedLongTermBackups")]
+        public Output<ImmutableArray<Outputs.KeyStoreAssociatedLongTermBackup>> AssociatedLongTermBackups { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -229,6 +237,24 @@ namespace Pulumi.Oci.Database
         {
             get => _associatedDatabases ?? (_associatedDatabases = new InputList<Inputs.KeyStoreAssociatedDatabaseGetArgs>());
             set => _associatedDatabases = value;
+        }
+
+        /// <summary>
+        /// Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+        /// </summary>
+        [Input("associatedLongTermBackupCount")]
+        public Input<int>? AssociatedLongTermBackupCount { get; set; }
+
+        [Input("associatedLongTermBackups")]
+        private InputList<Inputs.KeyStoreAssociatedLongTermBackupGetArgs>? _associatedLongTermBackups;
+
+        /// <summary>
+        /// List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+        /// </summary>
+        public InputList<Inputs.KeyStoreAssociatedLongTermBackupGetArgs> AssociatedLongTermBackups
+        {
+            get => _associatedLongTermBackups ?? (_associatedLongTermBackups = new InputList<Inputs.KeyStoreAssociatedLongTermBackupGetArgs>());
+            set => _associatedLongTermBackups = value;
         }
 
         /// <summary>

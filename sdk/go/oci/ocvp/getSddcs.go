@@ -71,9 +71,9 @@ type GetSddcsArgs struct {
 type GetSddcsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`.
+	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 	ComputeAvailabilityDomain *string `pulumi:"computeAvailabilityDomain"`
-	// A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
+	// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 	DisplayName *string          `pulumi:"displayName"`
 	Filters     []GetSddcsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -130,12 +130,12 @@ func (o GetSddcsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`.
+// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
 func (o GetSddcsResultOutput) ComputeAvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSddcsResult) *string { return v.ComputeAvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
-// A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
+// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
 func (o GetSddcsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSddcsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

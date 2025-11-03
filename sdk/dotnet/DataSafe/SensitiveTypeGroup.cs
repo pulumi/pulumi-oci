@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates a new sensitive type group.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

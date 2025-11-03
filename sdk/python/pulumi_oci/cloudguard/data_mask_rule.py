@@ -447,10 +447,6 @@ class DataMaskRule(pulumi.CustomResource):
                  target_selected: Optional[pulumi.Input[Union['DataMaskRuleTargetSelectedArgs', 'DataMaskRuleTargetSelectedArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a new DataMaskRule resource definition.
-
         ## Example Usage
 
         ```python
@@ -509,10 +505,6 @@ class DataMaskRule(pulumi.CustomResource):
                  args: DataMaskRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
-
-        Creates a new DataMaskRule resource definition.
-
         ## Example Usage
 
         ```python

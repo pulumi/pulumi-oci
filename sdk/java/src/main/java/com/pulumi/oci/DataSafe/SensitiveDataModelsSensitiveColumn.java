@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a new sensitive column in the specified sensitive data model.
- * 
  * ## Example Usage
  * 
  * <pre>

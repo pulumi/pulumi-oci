@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
- * 
- * Creates a custom SSL cipher suite.
- * 
  * ## Example Usage
  * 
  * <pre>

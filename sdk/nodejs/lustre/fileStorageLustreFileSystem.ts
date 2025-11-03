@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Lustre File System resource in Oracle Cloud Infrastructure Lustre File Storage service.
- *
- * Creates a Lustre file system.
- *
  * ## Example Usage
  *
  * ```typescript

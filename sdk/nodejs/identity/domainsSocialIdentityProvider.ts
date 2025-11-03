@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Social Identity Provider resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Create a Social Identity Provider
- *
  * ## Example Usage
  *
  * ```typescript
@@ -30,6 +26,8 @@ import * as utilities from "../utilities";
  *     showOnLogin: socialIdentityProviderShowOnLogin,
  *     accessTokenUrl: socialIdentityProviderAccessTokenUrl,
  *     adminScopes: socialIdentityProviderAdminScope,
+ *     appleDevId: testAppleDev.id,
+ *     appleKeyId: testKey.id,
  *     authorization: socialIdentityProviderAuthorization,
  *     authzUrl: socialIdentityProviderAuthzUrl,
  *     autoRedirectEnabled: socialIdentityProviderAutoRedirectEnabled,
@@ -140,6 +138,38 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
      * * uniqueness: none
      */
     declare public readonly adminScopes: pulumi.Output<string[]>;
+    /**
+     * (Updatable) Apple Developer ID
+     *
+     * **Added In:** 2311180004
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    declare public readonly appleDevId: pulumi.Output<string>;
+    /**
+     * (Updatable) Apple Private Key ID
+     *
+     * **Added In:** 2311180004
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    declare public readonly appleKeyId: pulumi.Output<string>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
@@ -692,6 +722,8 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
             resourceInputs["accessTokenUrl"] = state?.accessTokenUrl;
             resourceInputs["accountLinkingEnabled"] = state?.accountLinkingEnabled;
             resourceInputs["adminScopes"] = state?.adminScopes;
+            resourceInputs["appleDevId"] = state?.appleDevId;
+            resourceInputs["appleKeyId"] = state?.appleKeyId;
             resourceInputs["authorization"] = state?.authorization;
             resourceInputs["authzUrl"] = state?.authzUrl;
             resourceInputs["autoRedirectEnabled"] = state?.autoRedirectEnabled;
@@ -763,6 +795,8 @@ export class DomainsSocialIdentityProvider extends pulumi.CustomResource {
             resourceInputs["accessTokenUrl"] = args?.accessTokenUrl;
             resourceInputs["accountLinkingEnabled"] = args?.accountLinkingEnabled;
             resourceInputs["adminScopes"] = args?.adminScopes;
+            resourceInputs["appleDevId"] = args?.appleDevId;
+            resourceInputs["appleKeyId"] = args?.appleKeyId;
             resourceInputs["authorization"] = args?.authorization;
             resourceInputs["authzUrl"] = args?.authzUrl;
             resourceInputs["autoRedirectEnabled"] = args?.autoRedirectEnabled;
@@ -854,6 +888,38 @@ export interface DomainsSocialIdentityProviderState {
      * * uniqueness: none
      */
     adminScopes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) Apple Developer ID
+     *
+     * **Added In:** 2311180004
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    appleDevId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Apple Private Key ID
+     *
+     * **Added In:** 2311180004
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    appleKeyId?: pulumi.Input<string>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
@@ -1437,6 +1503,38 @@ export interface DomainsSocialIdentityProviderArgs {
      * * uniqueness: none
      */
     adminScopes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) Apple Developer ID
+     *
+     * **Added In:** 2311180004
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    appleDevId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Apple Private Key ID
+     *
+     * **Added In:** 2311180004
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    appleKeyId?: pulumi.Input<string>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */

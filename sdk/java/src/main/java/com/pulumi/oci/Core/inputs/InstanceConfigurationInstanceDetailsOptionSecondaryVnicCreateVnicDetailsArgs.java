@@ -192,6 +192,21 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
     }
 
     /**
+     * One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    @Import(name="subnetCidr")
+    private @Nullable Output<String> subnetCidr;
+
+    /**
+     * @return One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+     * 
+     */
+    public Optional<Output<String>> subnetCidr() {
+        return Optional.ofNullable(this.subnetCidr);
+    }
+
+    /**
      * The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
      * 
      */
@@ -221,6 +236,7 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
         this.privateIp = $.privateIp;
         this.securityAttributes = $.securityAttributes;
         this.skipSourceDestCheck = $.skipSourceDestCheck;
+        this.subnetCidr = $.subnetCidr;
         this.subnetId = $.subnetId;
     }
 
@@ -494,6 +510,27 @@ public final class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreate
          */
         public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
             return skipSourceDestCheck(Output.of(skipSourceDestCheck));
+        }
+
+        /**
+         * @param subnetCidr One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetCidr(@Nullable Output<String> subnetCidr) {
+            $.subnetCidr = subnetCidr;
+            return this;
+        }
+
+        /**
+         * @param subnetCidr One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC&#39;s private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetCidr(String subnetCidr) {
+            return subnetCidr(Output.of(subnetCidr));
         }
 
         /**

@@ -12,6 +12,10 @@ import com.pulumi.oci.AiLanguage.inputs.GetEndpointArgs;
 import com.pulumi.oci.AiLanguage.inputs.GetEndpointPlainArgs;
 import com.pulumi.oci.AiLanguage.inputs.GetEndpointsArgs;
 import com.pulumi.oci.AiLanguage.inputs.GetEndpointsPlainArgs;
+import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
+import com.pulumi.oci.AiLanguage.inputs.GetJobPlainArgs;
+import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
+import com.pulumi.oci.AiLanguage.inputs.GetJobsPlainArgs;
 import com.pulumi.oci.AiLanguage.inputs.GetModelArgs;
 import com.pulumi.oci.AiLanguage.inputs.GetModelEvaluationResultsArgs;
 import com.pulumi.oci.AiLanguage.inputs.GetModelEvaluationResultsPlainArgs;
@@ -26,6 +30,8 @@ import com.pulumi.oci.AiLanguage.inputs.GetProjectsArgs;
 import com.pulumi.oci.AiLanguage.inputs.GetProjectsPlainArgs;
 import com.pulumi.oci.AiLanguage.outputs.GetEndpointResult;
 import com.pulumi.oci.AiLanguage.outputs.GetEndpointsResult;
+import com.pulumi.oci.AiLanguage.outputs.GetJobResult;
+import com.pulumi.oci.AiLanguage.outputs.GetJobsResult;
 import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResultsResult;
 import com.pulumi.oci.AiLanguage.outputs.GetModelResult;
 import com.pulumi.oci.AiLanguage.outputs.GetModelTypeResult;
@@ -145,6 +151,441 @@ public final class AiLanguageFunctions {
      */
     public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(GetEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiLanguage/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Job resource in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Gets a language service async job
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJob = AiLanguageFunctions.getJob(GetJobArgs.builder()
+     *             .jobId(testJobOciAiLanguageJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobResult> getJob(GetJobArgs args) {
+        return getJob(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Job resource in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Gets a language service async job
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJob = AiLanguageFunctions.getJob(GetJobArgs.builder()
+     *             .jobId(testJobOciAiLanguageJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetJobResult> getJobPlain(GetJobPlainArgs args) {
+        return getJobPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Job resource in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Gets a language service async job
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJob = AiLanguageFunctions.getJob(GetJobArgs.builder()
+     *             .jobId(testJobOciAiLanguageJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobResult> getJob(GetJobArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getJob:getJob", TypeShape.of(GetJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Job resource in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Gets a language service async job
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJob = AiLanguageFunctions.getJob(GetJobArgs.builder()
+     *             .jobId(testJobOciAiLanguageJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobResult> getJob(GetJobArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getJob:getJob", TypeShape.of(GetJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Job resource in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Gets a language service async job
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJob = AiLanguageFunctions.getJob(GetJobArgs.builder()
+     *             .jobId(testJobOciAiLanguageJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetJobResult> getJobPlain(GetJobPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiLanguage/getJob:getJob", TypeShape.of(GetJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Jobs in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Returns a list of language service async Jobs.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobs = AiLanguageFunctions.getJobs(GetJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(jobDisplayName)
+     *             .id(jobId)
+     *             .state(jobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobsResult> getJobs(GetJobsArgs args) {
+        return getJobs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Jobs in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Returns a list of language service async Jobs.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobs = AiLanguageFunctions.getJobs(GetJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(jobDisplayName)
+     *             .id(jobId)
+     *             .state(jobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetJobsResult> getJobsPlain(GetJobsPlainArgs args) {
+        return getJobsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Jobs in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Returns a list of language service async Jobs.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobs = AiLanguageFunctions.getJobs(GetJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(jobDisplayName)
+     *             .id(jobId)
+     *             .state(jobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobsResult> getJobs(GetJobsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getJobs:getJobs", TypeShape.of(GetJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Jobs in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Returns a list of language service async Jobs.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobs = AiLanguageFunctions.getJobs(GetJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(jobDisplayName)
+     *             .id(jobId)
+     *             .state(jobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetJobsResult> getJobs(GetJobsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiLanguage/getJobs:getJobs", TypeShape.of(GetJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Jobs in Oracle Cloud Infrastructure Ai Language service.
+     * 
+     * Returns a list of language service async Jobs.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
+     * import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJobs = AiLanguageFunctions.getJobs(GetJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(jobDisplayName)
+     *             .id(jobId)
+     *             .state(jobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetJobsResult> getJobsPlain(GetJobsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiLanguage/getJobs:getJobs", TypeShape.of(GetJobsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.

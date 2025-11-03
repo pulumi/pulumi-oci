@@ -35,7 +35,7 @@ public final class GetDatabaseDbBackupConfig {
      */
     private String autoFullBackupWindow;
     /**
-     * @return This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+     * @return This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
      * 
      */
     private String backupDeletionPolicy;
@@ -85,7 +85,7 @@ public final class GetDatabaseDbBackupConfig {
         return this.autoFullBackupWindow;
     }
     /**
-     * @return This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+     * @return This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
      * 
      */
     public String backupDeletionPolicy() {

@@ -27,7 +27,7 @@ class GetCloudAutonomousVmClusterResourceUsageResult:
     """
     A collection of values returned by getCloudAutonomousVmClusterResourceUsage.
     """
-    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_resource_usages=None, available_autonomous_data_storage_size_in_tbs=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, db_node_storage_size_in_gbs=None, display_name=None, exadata_storage_in_tbs=None, id=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, non_provisionable_autonomous_container_databases=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, total_container_databases=None, total_cpus=None, used_autonomous_data_storage_size_in_tbs=None, used_cpus=None):
+    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_resource_usages=None, available_autonomous_data_storage_size_in_tbs=None, available_cpus=None, cloud_autonomous_vm_cluster_id=None, db_node_storage_size_in_gbs=None, display_name=None, exadata_storage_in_tbs=None, id=None, memory_per_compute_unit_in_gbs=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, non_provisionable_autonomous_container_databases=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, total_container_databases=None, total_cpus=None, used_autonomous_data_storage_size_in_tbs=None, used_cpus=None):
         if autonomous_data_storage_size_in_tbs and not isinstance(autonomous_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'autonomous_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
@@ -55,6 +55,9 @@ class GetCloudAutonomousVmClusterResourceUsageResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if memory_per_compute_unit_in_gbs and not isinstance(memory_per_compute_unit_in_gbs, float):
+            raise TypeError("Expected argument 'memory_per_compute_unit_in_gbs' to be a float")
+        pulumi.set(__self__, "memory_per_compute_unit_in_gbs", memory_per_compute_unit_in_gbs)
         if memory_per_oracle_compute_unit_in_gbs and not isinstance(memory_per_oracle_compute_unit_in_gbs, int):
             raise TypeError("Expected argument 'memory_per_oracle_compute_unit_in_gbs' to be a int")
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
@@ -96,7 +99,7 @@ class GetCloudAutonomousVmClusterResourceUsageResult:
     @pulumi.getter(name="autonomousDataStorageSizeInTbs")
     def autonomous_data_storage_size_in_tbs(self) -> _builtins.float:
         """
-        The data disk group size allocated for Autonomous Databases, in TBs.
+        The data disk group size allocated for Autonomous AI Databases, in TBs.
         """
         return pulumi.get(self, "autonomous_data_storage_size_in_tbs")
 
@@ -112,7 +115,7 @@ class GetCloudAutonomousVmClusterResourceUsageResult:
     @pulumi.getter(name="availableAutonomousDataStorageSizeInTbs")
     def available_autonomous_data_storage_size_in_tbs(self) -> _builtins.float:
         """
-        The data disk group size available for Autonomous Databases, in TBs.
+        The data disk group size available for Autonomous AI Databases, in TBs.
         """
         return pulumi.get(self, "available_autonomous_data_storage_size_in_tbs")
 
@@ -162,10 +165,18 @@ class GetCloudAutonomousVmClusterResourceUsageResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="memoryPerComputeUnitInGbs")
+    def memory_per_compute_unit_in_gbs(self) -> _builtins.float:
+        """
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+        """
+        return pulumi.get(self, "memory_per_compute_unit_in_gbs")
+
+    @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> _builtins.int:
         """
-        The amount of memory (in GBs) to be enabled per each CPU core.
+        The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -213,7 +224,7 @@ class GetCloudAutonomousVmClusterResourceUsageResult:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> _builtins.float:
         """
-        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -245,7 +256,7 @@ class GetCloudAutonomousVmClusterResourceUsageResult:
     @pulumi.getter(name="usedAutonomousDataStorageSizeInTbs")
     def used_autonomous_data_storage_size_in_tbs(self) -> _builtins.float:
         """
-        The data disk group size used for Autonomous Databases, in TBs.
+        The data disk group size used for Autonomous AI Databases, in TBs.
         """
         return pulumi.get(self, "used_autonomous_data_storage_size_in_tbs")
 
@@ -273,6 +284,7 @@ class AwaitableGetCloudAutonomousVmClusterResourceUsageResult(GetCloudAutonomous
             display_name=self.display_name,
             exadata_storage_in_tbs=self.exadata_storage_in_tbs,
             id=self.id,
+            memory_per_compute_unit_in_gbs=self.memory_per_compute_unit_in_gbs,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
             non_provisionable_autonomous_container_databases=self.non_provisionable_autonomous_container_databases,
@@ -321,6 +333,7 @@ def get_cloud_autonomous_vm_cluster_resource_usage(cloud_autonomous_vm_cluster_i
         display_name=pulumi.get(__ret__, 'display_name'),
         exadata_storage_in_tbs=pulumi.get(__ret__, 'exadata_storage_in_tbs'),
         id=pulumi.get(__ret__, 'id'),
+        memory_per_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_compute_unit_in_gbs'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_oracle_compute_unit_in_gbs'),
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         non_provisionable_autonomous_container_databases=pulumi.get(__ret__, 'non_provisionable_autonomous_container_databases'),
@@ -366,6 +379,7 @@ def get_cloud_autonomous_vm_cluster_resource_usage_output(cloud_autonomous_vm_cl
         display_name=pulumi.get(__response__, 'display_name'),
         exadata_storage_in_tbs=pulumi.get(__response__, 'exadata_storage_in_tbs'),
         id=pulumi.get(__response__, 'id'),
+        memory_per_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_compute_unit_in_gbs'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_oracle_compute_unit_in_gbs'),
         memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
         non_provisionable_autonomous_container_databases=pulumi.get(__response__, 'non_provisionable_autonomous_container_databases'),

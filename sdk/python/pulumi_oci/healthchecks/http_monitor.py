@@ -569,12 +569,6 @@ class HttpMonitor(pulumi.CustomResource):
                  vantage_point_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
-
-        Creates an HTTP monitor. Vantage points will be automatically selected if not specified,
-        and probes will be initiated from each vantage point to each of the targets at the frequency
-        specified by `intervalInSeconds`.
-
         ## Example Usage
 
         ```python
@@ -640,12 +634,6 @@ class HttpMonitor(pulumi.CustomResource):
                  args: HttpMonitorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
-
-        Creates an HTTP monitor. Vantage points will be automatically selected if not specified,
-        and probes will be initiated from each vantage point to each of the targets at the frequency
-        specified by `intervalInSeconds`.
-
         ## Example Usage
 
         ```python

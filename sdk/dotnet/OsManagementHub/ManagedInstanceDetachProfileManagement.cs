@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Managed Instance Detach Profile Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Detaches profile from a managed instance. After the profile has been removed,
-    /// the instance cannot be registered as a managed instance.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

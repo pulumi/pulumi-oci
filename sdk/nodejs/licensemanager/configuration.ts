@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Configuration resource in Oracle Cloud Infrastructure License Manager service.
- *
- * Updates the configuration for the compartment.
- *
  * ## Example Usage
  *
  * ```typescript

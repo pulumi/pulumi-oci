@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ArnRole;
         /// <summary>
-        /// The provider for the Autonomous Database encryption key.
+        /// The provider for the Autonomous AI Database encryption key.
         /// </summary>
         public readonly string AutonomousDatabasesCloneProvider;
         /// <summary>
@@ -46,9 +46,21 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string KeyName;
         /// <summary>
+        /// GCP key ring
+        /// </summary>
+        public readonly string KeyRing;
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         public readonly string KmsKeyId;
+        /// <summary>
+        /// GCP kms REST API endpoint
+        /// </summary>
+        public readonly string KmsRestEndpoint;
+        /// <summary>
+        /// GCP key ring location
+        /// </summary>
+        public readonly string Location;
         /// <summary>
         /// UUID of OKV KMS Key
         /// </summary>
@@ -58,11 +70,15 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string OkvUri;
         /// <summary>
+        /// GCP project name
+        /// </summary>
+        public readonly string Project;
+        /// <summary>
         /// AWS key service endpoint URI
         /// </summary>
         public readonly string ServiceEndpointUri;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         public readonly string VaultId;
         /// <summary>
@@ -88,11 +104,19 @@ namespace Pulumi.Oci.Database.Outputs
 
             string keyName,
 
+            string keyRing,
+
             string kmsKeyId,
+
+            string kmsRestEndpoint,
+
+            string location,
 
             string okvKmsKey,
 
             string okvUri,
+
+            string project,
 
             string serviceEndpointUri,
 
@@ -108,9 +132,13 @@ namespace Pulumi.Oci.Database.Outputs
             ExternalId = externalId;
             KeyArn = keyArn;
             KeyName = keyName;
+            KeyRing = keyRing;
             KmsKeyId = kmsKeyId;
+            KmsRestEndpoint = kmsRestEndpoint;
+            Location = location;
             OkvKmsKey = okvKmsKey;
             OkvUri = okvUri;
+            Project = project;
             ServiceEndpointUri = serviceEndpointUri;
             VaultId = vaultId;
             VaultUri = vaultUri;

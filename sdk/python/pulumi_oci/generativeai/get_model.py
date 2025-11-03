@@ -95,17 +95,11 @@ class GetModelResult:
     @_builtins.property
     @pulumi.getter(name="baseModelId")
     def base_model_id(self) -> _builtins.str:
-        """
-        The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
-        """
         return pulumi.get(self, "base_model_id")
 
     @_builtins.property
     @pulumi.getter
     def capabilities(self) -> Sequence[_builtins.str]:
-        """
-        Describes what this model can be used for.
-        """
         return pulumi.get(self, "capabilities")
 
     @_builtins.property
@@ -119,6 +113,9 @@ class GetModelResult:
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property

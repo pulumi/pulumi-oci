@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates compute image capability schema.
-    /// 
     /// ## Example Usage
     /// 
     /// ## Import

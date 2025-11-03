@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
- *
- * Create an OPSI configuration resource.
- *
  * ## Example Usage
  *
  * ```typescript

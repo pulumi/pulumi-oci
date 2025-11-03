@@ -397,9 +397,7 @@ class UnifiedAuditPolicyDefinition(pulumi.CustomResource):
                  unified_audit_policy_definition_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the unified audit policy definition.
+        ## Example Usage
 
         ## Import
 
@@ -429,9 +427,7 @@ class UnifiedAuditPolicyDefinition(pulumi.CustomResource):
                  args: UnifiedAuditPolicyDefinitionArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Unified Audit Policy Definition resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the unified audit policy definition.
+        ## Example Usage
 
         ## Import
 

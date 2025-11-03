@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
- *
- * Add a Grantee to an AppRole
- *
  * ## Example Usage
  *
  * ## Import

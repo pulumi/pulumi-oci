@@ -346,9 +346,7 @@ class CloudDbHome(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the cloud DB home specified by `cloudDbHomeId`.
+        ## Example Usage
 
         ## Import
 
@@ -375,9 +373,7 @@ class CloudDbHome(pulumi.CustomResource):
                  args: CloudDbHomeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the cloud DB home specified by `cloudDbHomeId`.
+        ## Example Usage
 
         ## Import
 

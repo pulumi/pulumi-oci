@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Log Analytics Import Custom Content resource in Oracle Cloud Infrastructure Log Analytics service.
- *
- * Imports the specified custom content from the input in zip format.
- *
  * ## Example Usage
  *
  * ```typescript

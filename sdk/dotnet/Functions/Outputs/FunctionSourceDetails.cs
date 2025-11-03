@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly string PbfListingId;
         /// <summary>
-        /// Type of the Function Source. Possible values: PRE_BUILT_FUNCTIONS.
+        /// Type of the Function Source. Possible values: PBF.
         /// </summary>
         public readonly string SourceType;
 

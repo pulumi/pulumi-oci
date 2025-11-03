@@ -689,13 +689,6 @@ class SqlEndpoint(pulumi.CustomResource):
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
-        ## Note
-
-        Resource Discovery is not supported for this resource.
-
-        Create a new Sql Endpoint.
-
         ## Example Usage
 
         ## Import
@@ -736,13 +729,6 @@ class SqlEndpoint(pulumi.CustomResource):
                  args: SqlEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Sql Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
-        ## Note
-
-        Resource Discovery is not supported for this resource.
-
-        Create a new Sql Endpoint.
-
         ## Example Usage
 
         ## Import

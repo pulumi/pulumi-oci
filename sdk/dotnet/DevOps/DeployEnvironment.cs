@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
-    /// This resource provides the Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
-    /// 
-    /// Creates a new deployment environment.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

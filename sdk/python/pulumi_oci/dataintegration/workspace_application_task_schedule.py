@@ -936,10 +936,6 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Endpoint to be used create TaskSchedule.
-
         ## Example Usage
 
         ```python
@@ -1084,10 +1080,6 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                  args: WorkspaceApplicationTaskScheduleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Endpoint to be used create TaskSchedule.
-
         ## Example Usage
 
         ```python

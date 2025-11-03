@@ -16,6 +16,10 @@ import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicePlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesPlainArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
+import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityPlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointPlainArgs;
 import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
@@ -24,6 +28,8 @@ import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsEndpointServiceResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsEndpointServicesResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsIdentitiesResult;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsIdentityResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointResult;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointsResult;
 import com.pulumi.oci.Utilities;
@@ -273,6 +279,7 @@ public final class DatabaseToolsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(databaseToolsConnectionDisplayName)
      *             .relatedResourceIdentifier(databaseToolsConnectionRelatedResourceIdentifier)
+     *             .runtimeIdentities(databaseToolsConnectionRuntimeIdentity)
      *             .runtimeSupports(databaseToolsConnectionRuntimeSupport)
      *             .state(databaseToolsConnectionState)
      *             .types(databaseToolsConnectionType)
@@ -320,6 +327,7 @@ public final class DatabaseToolsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(databaseToolsConnectionDisplayName)
      *             .relatedResourceIdentifier(databaseToolsConnectionRelatedResourceIdentifier)
+     *             .runtimeIdentities(databaseToolsConnectionRuntimeIdentity)
      *             .runtimeSupports(databaseToolsConnectionRuntimeSupport)
      *             .state(databaseToolsConnectionState)
      *             .types(databaseToolsConnectionType)
@@ -367,6 +375,7 @@ public final class DatabaseToolsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(databaseToolsConnectionDisplayName)
      *             .relatedResourceIdentifier(databaseToolsConnectionRelatedResourceIdentifier)
+     *             .runtimeIdentities(databaseToolsConnectionRuntimeIdentity)
      *             .runtimeSupports(databaseToolsConnectionRuntimeSupport)
      *             .state(databaseToolsConnectionState)
      *             .types(databaseToolsConnectionType)
@@ -414,6 +423,7 @@ public final class DatabaseToolsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(databaseToolsConnectionDisplayName)
      *             .relatedResourceIdentifier(databaseToolsConnectionRelatedResourceIdentifier)
+     *             .runtimeIdentities(databaseToolsConnectionRuntimeIdentity)
      *             .runtimeSupports(databaseToolsConnectionRuntimeSupport)
      *             .state(databaseToolsConnectionState)
      *             .types(databaseToolsConnectionType)
@@ -461,6 +471,7 @@ public final class DatabaseToolsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(databaseToolsConnectionDisplayName)
      *             .relatedResourceIdentifier(databaseToolsConnectionRelatedResourceIdentifier)
+     *             .runtimeIdentities(databaseToolsConnectionRuntimeIdentity)
      *             .runtimeSupports(databaseToolsConnectionRuntimeSupport)
      *             .state(databaseToolsConnectionState)
      *             .types(databaseToolsConnectionType)
@@ -909,6 +920,446 @@ public final class DatabaseToolsFunctions {
      */
     public static CompletableFuture<GetDatabaseToolsEndpointServicesResult> getDatabaseToolsEndpointServicesPlain(GetDatabaseToolsEndpointServicesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsEndpointServices:getDatabaseToolsEndpointServices", TypeShape.of(GetDatabaseToolsEndpointServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Identities in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools identities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsIdentities = DatabaseToolsFunctions.getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .displayName(databaseToolsIdentityDisplayName)
+     *             .state(databaseToolsIdentityState)
+     *             .types(databaseToolsIdentityType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsIdentitiesResult> getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs args) {
+        return getDatabaseToolsIdentities(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Identities in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools identities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsIdentities = DatabaseToolsFunctions.getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .displayName(databaseToolsIdentityDisplayName)
+     *             .state(databaseToolsIdentityState)
+     *             .types(databaseToolsIdentityType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsIdentitiesResult> getDatabaseToolsIdentitiesPlain(GetDatabaseToolsIdentitiesPlainArgs args) {
+        return getDatabaseToolsIdentitiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Tools Identities in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools identities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsIdentities = DatabaseToolsFunctions.getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .displayName(databaseToolsIdentityDisplayName)
+     *             .state(databaseToolsIdentityState)
+     *             .types(databaseToolsIdentityType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsIdentitiesResult> getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsIdentities:getDatabaseToolsIdentities", TypeShape.of(GetDatabaseToolsIdentitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Identities in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools identities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsIdentities = DatabaseToolsFunctions.getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .displayName(databaseToolsIdentityDisplayName)
+     *             .state(databaseToolsIdentityState)
+     *             .types(databaseToolsIdentityType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsIdentitiesResult> getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsIdentities:getDatabaseToolsIdentities", TypeShape.of(GetDatabaseToolsIdentitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Tools Identities in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Returns a list of Database Tools identities.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsIdentities = DatabaseToolsFunctions.getDatabaseToolsIdentities(GetDatabaseToolsIdentitiesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+     *             .displayName(databaseToolsIdentityDisplayName)
+     *             .state(databaseToolsIdentityState)
+     *             .types(databaseToolsIdentityType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsIdentitiesResult> getDatabaseToolsIdentitiesPlain(GetDatabaseToolsIdentitiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsIdentities:getDatabaseToolsIdentities", TypeShape.of(GetDatabaseToolsIdentitiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Identity resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools identity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsIdentity = DatabaseToolsFunctions.getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs.builder()
+     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsIdentityResult> getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs args) {
+        return getDatabaseToolsIdentity(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Identity resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools identity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsIdentity = DatabaseToolsFunctions.getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs.builder()
+     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsIdentityResult> getDatabaseToolsIdentityPlain(GetDatabaseToolsIdentityPlainArgs args) {
+        return getDatabaseToolsIdentityPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Tools Identity resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools identity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsIdentity = DatabaseToolsFunctions.getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs.builder()
+     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsIdentityResult> getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsIdentity:getDatabaseToolsIdentity", TypeShape.of(GetDatabaseToolsIdentityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Identity resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools identity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsIdentity = DatabaseToolsFunctions.getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs.builder()
+     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseToolsIdentityResult> getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseTools/getDatabaseToolsIdentity:getDatabaseToolsIdentity", TypeShape.of(GetDatabaseToolsIdentityResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Tools Identity resource in Oracle Cloud Infrastructure Database Tools service.
+     * 
+     * Gets details of the specified Database Tools identity.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
+     * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseToolsIdentity = DatabaseToolsFunctions.getDatabaseToolsIdentity(GetDatabaseToolsIdentityArgs.builder()
+     *             .databaseToolsIdentityId(testDatabaseToolsIdentityOciDatabaseToolsDatabaseToolsIdentity.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseToolsIdentityResult> getDatabaseToolsIdentityPlain(GetDatabaseToolsIdentityPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseTools/getDatabaseToolsIdentity:getDatabaseToolsIdentity", TypeShape.of(GetDatabaseToolsIdentityResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.

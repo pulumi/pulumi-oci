@@ -7244,10 +7244,6 @@ class DomainsApp(pulumi.CustomResource):
                  urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input[Union['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs', 'DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an App
-
         ## Example Usage
 
         ## Import
@@ -8142,10 +8138,6 @@ class DomainsApp(pulumi.CustomResource):
                  args: DomainsAppArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an App
-
         ## Example Usage
 
         ## Import

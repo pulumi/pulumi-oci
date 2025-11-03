@@ -12,17 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Data Guard Association resource in Oracle Cloud Infrastructure Database service.
-//
-// Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
-// specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
-//
-// All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
-// called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
-// You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
-// resource in the Console. For more information, see
-// [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-//
 // ## Example Usage
 //
 // ```go
@@ -158,7 +147,7 @@ type DataGuardAssociation struct {
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrOutput `pulumi:"isActiveDataGuardEnabled"`
-	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 	LicenseModel pulumi.StringPtrOutput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -170,7 +159,7 @@ type DataGuardAssociation struct {
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount pulumi.IntPtrOutput `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
 	PeerDataGuardAssociationId pulumi.StringOutput `pulumi:"peerDataGuardAssociationId"`
@@ -345,7 +334,7 @@ type dataGuardAssociationState struct {
 	Hostname *string `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled *bool `pulumi:"isActiveDataGuardEnabled"`
-	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 	LicenseModel *string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -357,7 +346,7 @@ type dataGuardAssociationState struct {
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount *int `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
 	PeerDataGuardAssociationId *string `pulumi:"peerDataGuardAssociationId"`
@@ -478,7 +467,7 @@ type DataGuardAssociationState struct {
 	Hostname pulumi.StringPtrInput
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrInput
-	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 	LicenseModel pulumi.StringPtrInput
 	// Additional information about the current lifecycleState, if available.
 	LifecycleDetails pulumi.StringPtrInput
@@ -490,7 +479,7 @@ type DataGuardAssociationState struct {
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount pulumi.IntPtrInput
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
 	PeerDataGuardAssociationId pulumi.StringPtrInput
@@ -611,7 +600,7 @@ type dataGuardAssociationArgs struct {
 	Hostname *string `pulumi:"hostname"`
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled *bool `pulumi:"isActiveDataGuardEnabled"`
-	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 	LicenseModel *string `pulumi:"licenseModel"`
 	// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
 	//
@@ -621,7 +610,7 @@ type dataGuardAssociationArgs struct {
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount *int `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
 	PeerDbHomeId *string `pulumi:"peerDbHomeId"`
@@ -727,7 +716,7 @@ type DataGuardAssociationArgs struct {
 	Hostname pulumi.StringPtrInput
 	// (Updatable) True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrInput
-	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+	// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 	LicenseModel pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
 	//
@@ -737,7 +726,7 @@ type DataGuardAssociationArgs struct {
 	// The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
 	NodeCount pulumi.IntPtrInput
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
 	PeerDbHomeId pulumi.StringPtrInput
@@ -1009,7 +998,7 @@ func (o DataGuardAssociationOutput) IsActiveDataGuardEnabled() pulumi.BoolPtrOut
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.BoolPtrOutput { return v.IsActiveDataGuardEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous Database Serverless.
+// The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
 func (o DataGuardAssociationOutput) LicenseModel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringPtrOutput { return v.LicenseModel }).(pulumi.StringPtrOutput)
 }
@@ -1033,7 +1022,7 @@ func (o DataGuardAssociationOutput) NodeCount() pulumi.IntPtrOutput {
 }
 
 // The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 func (o DataGuardAssociationOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }

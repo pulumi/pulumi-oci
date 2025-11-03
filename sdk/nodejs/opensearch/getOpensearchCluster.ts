@@ -57,6 +57,10 @@ export interface GetOpensearchClusterResult {
      */
     readonly availabilityDomains: string[];
     /**
+     * Custom certificate config for customer provided certs.
+     */
+    readonly certificateConfigs: outputs.Opensearch.GetOpensearchClusterCertificateConfig[];
+    /**
      * The OCID of the compartment where the cluster is located.
      */
     readonly compartmentId: string;
@@ -146,6 +150,10 @@ export interface GetOpensearchClusterResult {
      */
     readonly masterNodeHostType: string;
     /**
+     * The OCID of the NSG where the private endpoint vnic will be attached.
+     */
+    readonly nsgId: string;
+    /**
      * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
      */
     readonly opendashboardFqdn: string;
@@ -214,6 +222,10 @@ export interface GetOpensearchClusterResult {
      * The amount of storage in GB, to configure per node for the cluster's search nodes.
      */
     readonly searchNodeStorageGb: number;
+    /**
+     * Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
     /**
      * The name of the master user that are used to manage security config
      */

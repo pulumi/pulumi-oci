@@ -7,28 +7,11 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class GetUtilsAnalyzeApplicationsConfigurationPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetUtilsAnalyzeApplicationsConfigurationPlainArgs Empty = new GetUtilsAnalyzeApplicationsConfigurationPlainArgs();
-
-    /**
-     * The name of the bucket used for analyzing applications.
-     * 
-     */
-    @Import(name="bucket")
-    private @Nullable String bucket;
-
-    /**
-     * @return The name of the bucket used for analyzing applications.
-     * 
-     */
-    public Optional<String> bucket() {
-        return Optional.ofNullable(this.bucket);
-    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -45,27 +28,10 @@ public final class GetUtilsAnalyzeApplicationsConfigurationPlainArgs extends com
         return this.compartmentId;
     }
 
-    /**
-     * The Object Storage namespace used for analyzing applications.
-     * 
-     */
-    @Import(name="namespace")
-    private @Nullable String namespace;
-
-    /**
-     * @return The Object Storage namespace used for analyzing applications.
-     * 
-     */
-    public Optional<String> namespace() {
-        return Optional.ofNullable(this.namespace);
-    }
-
     private GetUtilsAnalyzeApplicationsConfigurationPlainArgs() {}
 
     private GetUtilsAnalyzeApplicationsConfigurationPlainArgs(GetUtilsAnalyzeApplicationsConfigurationPlainArgs $) {
-        this.bucket = $.bucket;
         this.compartmentId = $.compartmentId;
-        this.namespace = $.namespace;
     }
 
     public static Builder builder() {
@@ -87,17 +53,6 @@ public final class GetUtilsAnalyzeApplicationsConfigurationPlainArgs extends com
         }
 
         /**
-         * @param bucket The name of the bucket used for analyzing applications.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder bucket(@Nullable String bucket) {
-            $.bucket = bucket;
-            return this;
-        }
-
-        /**
          * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
@@ -105,17 +60,6 @@ public final class GetUtilsAnalyzeApplicationsConfigurationPlainArgs extends com
          */
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
-            return this;
-        }
-
-        /**
-         * @param namespace The Object Storage namespace used for analyzing applications.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder namespace(@Nullable String namespace) {
-            $.namespace = namespace;
             return this;
         }
 

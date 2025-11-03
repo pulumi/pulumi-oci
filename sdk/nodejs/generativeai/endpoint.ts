@@ -7,12 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
- *
- * Creates an endpoint.
- *
- * The header contains an opc-work-request-id, which is the id for the WorkRequest that tracks the endpoint creation progress.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -25,6 +19,8 @@ import * as utilities from "../utilities";
  *     modelId: testModel.id,
  *     contentModerationConfig: {
  *         isEnabled: endpointContentModerationConfigIsEnabled,
+ *         mode: endpointContentModerationConfigMode,
+ *         modelId: testModel.id,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -34,6 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     generativeAiPrivateEndpointId: testGenerativeAiPrivateEndpoint.id,
  * });
  * ```
  *
@@ -78,7 +75,7 @@ export class Endpoint extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+     * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
      */
     declare public readonly contentModerationConfig: pulumi.Output<outputs.GenerativeAi.EndpointContentModerationConfig>;
     /**
@@ -102,11 +99,15 @@ export class Endpoint extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     */
+    declare public readonly generativeAiPrivateEndpointId: pulumi.Output<string>;
+    /**
      * A message describing the current state of the endpoint in more detail that can provide actionable information.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
-     * The ID of the model that's used to create this endpoint.
+     * The OCID of the model that's used to create this endpoint.
      *
      *
      * ** IMPORTANT **
@@ -150,6 +151,7 @@ export class Endpoint extends pulumi.CustomResource {
             resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["generativeAiPrivateEndpointId"] = state?.generativeAiPrivateEndpointId;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["modelId"] = state?.modelId;
             resourceInputs["state"] = state?.state;
@@ -174,6 +176,7 @@ export class Endpoint extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["generativeAiPrivateEndpointId"] = args?.generativeAiPrivateEndpointId;
             resourceInputs["modelId"] = args?.modelId;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -195,7 +198,7 @@ export interface EndpointState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+     * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
      */
     contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.EndpointContentModerationConfig>;
     /**
@@ -219,11 +222,15 @@ export interface EndpointState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     */
+    generativeAiPrivateEndpointId?: pulumi.Input<string>;
+    /**
      * A message describing the current state of the endpoint in more detail that can provide actionable information.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The ID of the model that's used to create this endpoint.
+     * The OCID of the model that's used to create this endpoint.
      *
      *
      * ** IMPORTANT **
@@ -257,7 +264,7 @@ export interface EndpointArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+     * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
      */
     contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.EndpointContentModerationConfig>;
     /**
@@ -281,7 +288,11 @@ export interface EndpointArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The ID of the model that's used to create this endpoint.
+     * (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
+     */
+    generativeAiPrivateEndpointId?: pulumi.Input<string>;
+    /**
+     * The OCID of the model that's used to create this endpoint.
      *
      *
      * ** IMPORTANT **

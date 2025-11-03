@@ -517,10 +517,6 @@ class OpsiConfiguration(pulumi.CustomResource):
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create an OPSI configuration resource.
-
         ## Example Usage
 
         ```python
@@ -584,10 +580,6 @@ class OpsiConfiguration(pulumi.CustomResource):
                  args: OpsiConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
-
-        Create an OPSI configuration resource.
-
         ## Example Usage
 
         ```python

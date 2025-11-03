@@ -20,14 +20,14 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
     public static final PrivateEndpointArgs Empty = new PrivateEndpointArgs();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
      * 
      */
     public Output<String> compartmentId() {
@@ -65,14 +65,14 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The private endpoint display name. Avoid entering confidential information.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The private endpoint display name. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -125,18 +125,33 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+     * (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
      * 
      */
     @Import(name="nsgIdLists")
     private @Nullable Output<List<String>> nsgIdLists;
 
     /**
-     * @return (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+     * @return (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
      * 
      */
     public Optional<Output<List<String>>> nsgIdLists() {
         return Optional.ofNullable(this.nsgIdLists);
+    }
+
+    /**
+     * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
     }
 
     /**
@@ -186,6 +201,7 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         this.freeformTags = $.freeformTags;
         this.isUsedWithConfigurationSourceProvider = $.isUsedWithConfigurationSourceProvider;
         this.nsgIdLists = $.nsgIdLists;
+        this.securityAttributes = $.securityAttributes;
         this.subnetId = $.subnetId;
         this.vcnId = $.vcnId;
     }
@@ -209,7 +225,7 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
          * 
          * @return builder
          * 
@@ -220,7 +236,7 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
          * 
          * @return builder
          * 
@@ -272,7 +288,7 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) The private endpoint display name. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -283,7 +299,7 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) The private endpoint display name. Avoid entering confidential information.
+         * @param displayName (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -366,7 +382,7 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param nsgIdLists (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+         * @param nsgIdLists (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
          * 
          * @return builder
          * 
@@ -377,7 +393,7 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param nsgIdLists (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+         * @param nsgIdLists (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
          * 
          * @return builder
          * 
@@ -387,13 +403,34 @@ public final class PrivateEndpointArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param nsgIdLists (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+         * @param nsgIdLists (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
          * 
          * @return builder
          * 
          */
         public Builder nsgIdLists(String... nsgIdLists) {
             return nsgIdLists(List.of(nsgIdLists));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

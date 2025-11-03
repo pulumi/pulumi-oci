@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Attaches the specified storage volume to the specified instance.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

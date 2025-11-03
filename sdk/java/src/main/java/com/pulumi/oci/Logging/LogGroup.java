@@ -15,11 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Log Group resource in Oracle Cloud Infrastructure Logging service.
- * 
- * Create a new log group with a unique display name. This call fails
- * if the log group is already created with the same displayName in the compartment.
- * 
  * ## Example Usage
  * 
  * <pre>

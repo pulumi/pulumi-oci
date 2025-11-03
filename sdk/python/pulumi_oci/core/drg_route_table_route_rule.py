@@ -288,10 +288,6 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
                  next_hop_drg_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Drg Route Table Route Rule resource in Oracle Cloud Infrastructure Core service.
-
-        Adds one static route rule to the specified DRG route table.
-
         ## Example Usage
 
         ```python
@@ -337,10 +333,6 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
                  args: DrgRouteTableRouteRuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Drg Route Table Route Rule resource in Oracle Cloud Infrastructure Core service.
-
-        Adds one static route rule to the specified DRG route table.
-
         ## Example Usage
 
         ```python

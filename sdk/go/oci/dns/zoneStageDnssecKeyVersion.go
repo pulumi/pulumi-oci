@@ -12,14 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Zone Stage Dnssec Key Version resource in Oracle Cloud Infrastructure DNS service.
-//
-// Stages a new `DnssecKeyVersion` on the zone. Staging is a process that generates a new "successor" key version
-// that replaces an existing "predecessor" key version.
-// **Note:** A new key-signing key (KSK) version is inert until you update the parent zone DS records.
-//
-// For more information, see the [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm) documentation.
-//
 // ## Example Usage
 //
 // ```go

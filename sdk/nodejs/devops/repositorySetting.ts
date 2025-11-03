@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Repository Setting resource in Oracle Cloud Infrastructure Devops service.
- *
- * Updates the settings for a repository.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Local Peering Gateway resource in Oracle Cloud Infrastructure Core service.
-//
-// Creates a new local peering gateway (LPG) for the specified VCN.
-//
 // ## Example Usage
 //
 // ```go

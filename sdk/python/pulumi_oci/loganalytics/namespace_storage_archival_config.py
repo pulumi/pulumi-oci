@@ -134,10 +134,6 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Namespace Storage Archival Config resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        This API updates the archiving configuration
-
         ## Example Usage
 
         ```python
@@ -167,10 +163,6 @@ class NamespaceStorageArchivalConfig(pulumi.CustomResource):
                  args: NamespaceStorageArchivalConfigArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Namespace Storage Archival Config resource in Oracle Cloud Infrastructure Log Analytics service.
-
-        This API updates the archiving configuration
-
         ## Example Usage
 
         ```python

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of supported Autonomous Database versions.
+ * Gets a list of supported Autonomous AI Database versions.
  *
  * ## Example Usage
  *
@@ -41,7 +41,7 @@ export interface GetAutonomousDbVersionsArgs {
      */
     compartmentId: string;
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      */
     dbWorkload?: string;
     filters?: inputs.Database.GetAutonomousDbVersionsFilter[];
@@ -57,11 +57,12 @@ export interface GetAutonomousDbVersionsResult {
     readonly autonomousDbVersions: outputs.Database.GetAutonomousDbVersionsAutonomousDbVersion[];
     readonly compartmentId: string;
     /**
-     * The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * The Autonomous AI Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous AI Transaction Processing database
+     * * DW - indicates an Autonomous AI Lakehouse database
+     * * AJD - indicates an Autonomous AI JSON Database
+     * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * * LH - indicates an Oracle Autonomous AI Lakehouse database
      */
     readonly dbWorkload?: string;
     readonly filters?: outputs.Database.GetAutonomousDbVersionsFilter[];
@@ -73,7 +74,7 @@ export interface GetAutonomousDbVersionsResult {
 /**
  * This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of supported Autonomous Database versions.
+ * Gets a list of supported Autonomous AI Database versions.
  *
  * ## Example Usage
  *
@@ -105,7 +106,7 @@ export interface GetAutonomousDbVersionsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      */
     dbWorkload?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDbVersionsFilterArgs>[]>;

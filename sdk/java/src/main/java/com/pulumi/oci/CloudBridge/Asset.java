@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
- * 
- * Creates an asset.
- * 
  * ## Example Usage
  * 
  * <pre>

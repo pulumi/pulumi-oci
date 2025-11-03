@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Creates a new target database group.
- * 
  * ## Example Usage
  * 
  * <pre>

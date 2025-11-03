@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate
 {
     /// <summary>
-    /// This resource provides the Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
-    /// 
-    /// Creates a new certificate to truststore.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

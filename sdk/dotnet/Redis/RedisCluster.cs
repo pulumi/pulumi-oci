@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Redis
 {
     /// <summary>
-    /// This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
-    /// 
-    /// Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp
@@ -43,6 +39,7 @@ namespace Pulumi.Oci.Redis
     ///         },
     ///         NsgIds = redisClusterNsgIds,
     ///         OciCacheConfigSetId = testOciCacheConfigSet.Id,
+    ///         SecurityAttributes = redisClusterSecurityAttributes,
     ///         ShardCount = redisClusterShardCount,
     ///     });
     /// 
@@ -161,6 +158,12 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         [Output("replicasFqdn")]
         public Output<string> ReplicasFqdn { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
@@ -326,6 +329,18 @@ namespace Pulumi.Oci.Redis
         [Input("ociCacheConfigSetId")]
         public Input<string>? OciCacheConfigSetId { get; set; }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         /// <summary>
         /// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         /// </summary>
@@ -481,6 +496,18 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         [Input("replicasFqdn")]
         public Input<string>? ReplicasFqdn { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.

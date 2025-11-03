@@ -32,14 +32,14 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
     }
 
     /**
-     * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -107,14 +107,14 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
     }
 
     /**
-     * Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+     * Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
      * 
      */
     @Import(name="syntaxFormat")
     private @Nullable Output<String> syntaxFormat;
 
     /**
-     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+     * @return Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
      * 
      */
     public Optional<Output<String>> syntaxFormat() {
@@ -205,7 +205,7 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
         }
 
         /**
-         * @param displayName (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+         * @param displayName (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
         }
 
         /**
-         * @param displayName (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+         * @param displayName (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
         }
 
         /**
-         * @param syntaxFormat Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+         * @param syntaxFormat Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
         }
 
         /**
-         * @param syntaxFormat Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+         * @param syntaxFormat Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
          * 
          * @return builder
          * 

@@ -301,15 +301,6 @@ class ComputeCapacityTopology(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Compute Capacity Topology resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new compute capacity topology in the specified compartment and availability domain.
-
-        Compute capacity topologies provide the RDMA network topology of your bare metal hosts so that you can launch
-        instances on your bare metal hosts with targeted network locations.
-
-        Compute capacity topologies report the health status of your bare metal hosts.
-
         ## Example Usage
 
         ```python
@@ -360,15 +351,6 @@ class ComputeCapacityTopology(pulumi.CustomResource):
                  args: ComputeCapacityTopologyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Compute Capacity Topology resource in Oracle Cloud Infrastructure Core service.
-
-        Creates a new compute capacity topology in the specified compartment and availability domain.
-
-        Compute capacity topologies provide the RDMA network topology of your bare metal hosts so that you can launch
-        instances on your bare metal hosts with targeted network locations.
-
-        Compute capacity topologies report the health status of your bare metal hosts.
-
         ## Example Usage
 
         ```python

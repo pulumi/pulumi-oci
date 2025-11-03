@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.
- *
- * Creates a new user-defined alert policy.
- *
  * ## Example Usage
  *
  * ```typescript

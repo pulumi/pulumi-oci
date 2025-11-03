@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
-//
-// Creates the discovery schedule.
-//
 // ## Example Usage
 //
 // ```go

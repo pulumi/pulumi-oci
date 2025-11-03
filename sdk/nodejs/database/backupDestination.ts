@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Backup Destination resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates a backup destination in an Exadata Cloud@Customer system.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -77,6 +73,14 @@ export class BackupDestination extends pulumi.CustomResource {
      * List of databases associated with the backup destination.
      */
     declare public /*out*/ readonly associatedDatabases: pulumi.Output<outputs.Database.BackupDestinationAssociatedDatabase[]>;
+    /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     */
+    declare public /*out*/ readonly associatedLongTermBackupCount: pulumi.Output<number>;
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     */
+    declare public /*out*/ readonly associatedLongTermBackups: pulumi.Output<outputs.Database.BackupDestinationAssociatedLongTermBackup[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -174,6 +178,8 @@ export class BackupDestination extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as BackupDestinationState | undefined;
             resourceInputs["associatedDatabases"] = state?.associatedDatabases;
+            resourceInputs["associatedLongTermBackupCount"] = state?.associatedLongTermBackupCount;
+            resourceInputs["associatedLongTermBackups"] = state?.associatedLongTermBackups;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["connectionString"] = state?.connectionString;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -214,6 +220,8 @@ export class BackupDestination extends pulumi.CustomResource {
             resourceInputs["type"] = args?.type;
             resourceInputs["vpcUsers"] = args?.vpcUsers;
             resourceInputs["associatedDatabases"] = undefined /*out*/;
+            resourceInputs["associatedLongTermBackupCount"] = undefined /*out*/;
+            resourceInputs["associatedLongTermBackups"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["nfsMountType"] = undefined /*out*/;
             resourceInputs["nfsServerExport"] = undefined /*out*/;
@@ -238,6 +246,14 @@ export interface BackupDestinationState {
      * List of databases associated with the backup destination.
      */
     associatedDatabases?: pulumi.Input<pulumi.Input<inputs.Database.BackupDestinationAssociatedDatabase>[]>;
+    /**
+     * Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
+     */
+    associatedLongTermBackupCount?: pulumi.Input<number>;
+    /**
+     * List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
+     */
+    associatedLongTermBackups?: pulumi.Input<pulumi.Input<inputs.Database.BackupDestinationAssociatedLongTermBackup>[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */

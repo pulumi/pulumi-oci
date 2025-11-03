@@ -13,6 +13,769 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type JobInputConfiguration struct {
+	// meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
+	Configuration map[string]map[string]string `pulumi:"configuration"`
+	// Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+	DocumentTypes []string `pulumi:"documentTypes"`
+}
+
+// JobInputConfigurationInput is an input type that accepts JobInputConfigurationArgs and JobInputConfigurationOutput values.
+// You can construct a concrete instance of `JobInputConfigurationInput` via:
+//
+//	JobInputConfigurationArgs{...}
+type JobInputConfigurationInput interface {
+	pulumi.Input
+
+	ToJobInputConfigurationOutput() JobInputConfigurationOutput
+	ToJobInputConfigurationOutputWithContext(context.Context) JobInputConfigurationOutput
+}
+
+type JobInputConfigurationArgs struct {
+	// meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
+	Configuration pulumi.StringMapMapInput `pulumi:"configuration"`
+	// Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+	DocumentTypes pulumi.StringArrayInput `pulumi:"documentTypes"`
+}
+
+func (JobInputConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobInputConfiguration)(nil)).Elem()
+}
+
+func (i JobInputConfigurationArgs) ToJobInputConfigurationOutput() JobInputConfigurationOutput {
+	return i.ToJobInputConfigurationOutputWithContext(context.Background())
+}
+
+func (i JobInputConfigurationArgs) ToJobInputConfigurationOutputWithContext(ctx context.Context) JobInputConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobInputConfigurationOutput)
+}
+
+func (i JobInputConfigurationArgs) ToJobInputConfigurationPtrOutput() JobInputConfigurationPtrOutput {
+	return i.ToJobInputConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i JobInputConfigurationArgs) ToJobInputConfigurationPtrOutputWithContext(ctx context.Context) JobInputConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobInputConfigurationOutput).ToJobInputConfigurationPtrOutputWithContext(ctx)
+}
+
+// JobInputConfigurationPtrInput is an input type that accepts JobInputConfigurationArgs, JobInputConfigurationPtr and JobInputConfigurationPtrOutput values.
+// You can construct a concrete instance of `JobInputConfigurationPtrInput` via:
+//
+//	        JobInputConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type JobInputConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToJobInputConfigurationPtrOutput() JobInputConfigurationPtrOutput
+	ToJobInputConfigurationPtrOutputWithContext(context.Context) JobInputConfigurationPtrOutput
+}
+
+type jobInputConfigurationPtrType JobInputConfigurationArgs
+
+func JobInputConfigurationPtr(v *JobInputConfigurationArgs) JobInputConfigurationPtrInput {
+	return (*jobInputConfigurationPtrType)(v)
+}
+
+func (*jobInputConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobInputConfiguration)(nil)).Elem()
+}
+
+func (i *jobInputConfigurationPtrType) ToJobInputConfigurationPtrOutput() JobInputConfigurationPtrOutput {
+	return i.ToJobInputConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *jobInputConfigurationPtrType) ToJobInputConfigurationPtrOutputWithContext(ctx context.Context) JobInputConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobInputConfigurationPtrOutput)
+}
+
+type JobInputConfigurationOutput struct{ *pulumi.OutputState }
+
+func (JobInputConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobInputConfiguration)(nil)).Elem()
+}
+
+func (o JobInputConfigurationOutput) ToJobInputConfigurationOutput() JobInputConfigurationOutput {
+	return o
+}
+
+func (o JobInputConfigurationOutput) ToJobInputConfigurationOutputWithContext(ctx context.Context) JobInputConfigurationOutput {
+	return o
+}
+
+func (o JobInputConfigurationOutput) ToJobInputConfigurationPtrOutput() JobInputConfigurationPtrOutput {
+	return o.ToJobInputConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o JobInputConfigurationOutput) ToJobInputConfigurationPtrOutputWithContext(ctx context.Context) JobInputConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v JobInputConfiguration) *JobInputConfiguration {
+		return &v
+	}).(JobInputConfigurationPtrOutput)
+}
+
+// meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
+func (o JobInputConfigurationOutput) Configuration() pulumi.StringMapMapOutput {
+	return o.ApplyT(func(v JobInputConfiguration) map[string]map[string]string { return v.Configuration }).(pulumi.StringMapMapOutput)
+}
+
+// Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+func (o JobInputConfigurationOutput) DocumentTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v JobInputConfiguration) []string { return v.DocumentTypes }).(pulumi.StringArrayOutput)
+}
+
+type JobInputConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (JobInputConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobInputConfiguration)(nil)).Elem()
+}
+
+func (o JobInputConfigurationPtrOutput) ToJobInputConfigurationPtrOutput() JobInputConfigurationPtrOutput {
+	return o
+}
+
+func (o JobInputConfigurationPtrOutput) ToJobInputConfigurationPtrOutputWithContext(ctx context.Context) JobInputConfigurationPtrOutput {
+	return o
+}
+
+func (o JobInputConfigurationPtrOutput) Elem() JobInputConfigurationOutput {
+	return o.ApplyT(func(v *JobInputConfiguration) JobInputConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret JobInputConfiguration
+		return ret
+	}).(JobInputConfigurationOutput)
+}
+
+// meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
+func (o JobInputConfigurationPtrOutput) Configuration() pulumi.StringMapMapOutput {
+	return o.ApplyT(func(v *JobInputConfiguration) map[string]map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Configuration
+	}).(pulumi.StringMapMapOutput)
+}
+
+// Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+func (o JobInputConfigurationPtrOutput) DocumentTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *JobInputConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DocumentTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+type JobInputLocation struct {
+	// Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// locationType
+	LocationType string `pulumi:"locationType"`
+	// Object Storage namespace name.
+	Namespace string `pulumi:"namespace"`
+	// List of objects to be processed
+	ObjectNames []string `pulumi:"objectNames"`
+}
+
+// JobInputLocationInput is an input type that accepts JobInputLocationArgs and JobInputLocationOutput values.
+// You can construct a concrete instance of `JobInputLocationInput` via:
+//
+//	JobInputLocationArgs{...}
+type JobInputLocationInput interface {
+	pulumi.Input
+
+	ToJobInputLocationOutput() JobInputLocationOutput
+	ToJobInputLocationOutputWithContext(context.Context) JobInputLocationOutput
+}
+
+type JobInputLocationArgs struct {
+	// Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// locationType
+	LocationType pulumi.StringInput `pulumi:"locationType"`
+	// Object Storage namespace name.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// List of objects to be processed
+	ObjectNames pulumi.StringArrayInput `pulumi:"objectNames"`
+}
+
+func (JobInputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobInputLocation)(nil)).Elem()
+}
+
+func (i JobInputLocationArgs) ToJobInputLocationOutput() JobInputLocationOutput {
+	return i.ToJobInputLocationOutputWithContext(context.Background())
+}
+
+func (i JobInputLocationArgs) ToJobInputLocationOutputWithContext(ctx context.Context) JobInputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobInputLocationOutput)
+}
+
+func (i JobInputLocationArgs) ToJobInputLocationPtrOutput() JobInputLocationPtrOutput {
+	return i.ToJobInputLocationPtrOutputWithContext(context.Background())
+}
+
+func (i JobInputLocationArgs) ToJobInputLocationPtrOutputWithContext(ctx context.Context) JobInputLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobInputLocationOutput).ToJobInputLocationPtrOutputWithContext(ctx)
+}
+
+// JobInputLocationPtrInput is an input type that accepts JobInputLocationArgs, JobInputLocationPtr and JobInputLocationPtrOutput values.
+// You can construct a concrete instance of `JobInputLocationPtrInput` via:
+//
+//	        JobInputLocationArgs{...}
+//
+//	or:
+//
+//	        nil
+type JobInputLocationPtrInput interface {
+	pulumi.Input
+
+	ToJobInputLocationPtrOutput() JobInputLocationPtrOutput
+	ToJobInputLocationPtrOutputWithContext(context.Context) JobInputLocationPtrOutput
+}
+
+type jobInputLocationPtrType JobInputLocationArgs
+
+func JobInputLocationPtr(v *JobInputLocationArgs) JobInputLocationPtrInput {
+	return (*jobInputLocationPtrType)(v)
+}
+
+func (*jobInputLocationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobInputLocation)(nil)).Elem()
+}
+
+func (i *jobInputLocationPtrType) ToJobInputLocationPtrOutput() JobInputLocationPtrOutput {
+	return i.ToJobInputLocationPtrOutputWithContext(context.Background())
+}
+
+func (i *jobInputLocationPtrType) ToJobInputLocationPtrOutputWithContext(ctx context.Context) JobInputLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobInputLocationPtrOutput)
+}
+
+type JobInputLocationOutput struct{ *pulumi.OutputState }
+
+func (JobInputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobInputLocation)(nil)).Elem()
+}
+
+func (o JobInputLocationOutput) ToJobInputLocationOutput() JobInputLocationOutput {
+	return o
+}
+
+func (o JobInputLocationOutput) ToJobInputLocationOutputWithContext(ctx context.Context) JobInputLocationOutput {
+	return o
+}
+
+func (o JobInputLocationOutput) ToJobInputLocationPtrOutput() JobInputLocationPtrOutput {
+	return o.ToJobInputLocationPtrOutputWithContext(context.Background())
+}
+
+func (o JobInputLocationOutput) ToJobInputLocationPtrOutputWithContext(ctx context.Context) JobInputLocationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v JobInputLocation) *JobInputLocation {
+		return &v
+	}).(JobInputLocationPtrOutput)
+}
+
+// Object Storage bucket name.
+func (o JobInputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v JobInputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// locationType
+func (o JobInputLocationOutput) LocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v JobInputLocation) string { return v.LocationType }).(pulumi.StringOutput)
+}
+
+// Object Storage namespace name.
+func (o JobInputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v JobInputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// List of objects to be processed
+func (o JobInputLocationOutput) ObjectNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v JobInputLocation) []string { return v.ObjectNames }).(pulumi.StringArrayOutput)
+}
+
+type JobInputLocationPtrOutput struct{ *pulumi.OutputState }
+
+func (JobInputLocationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobInputLocation)(nil)).Elem()
+}
+
+func (o JobInputLocationPtrOutput) ToJobInputLocationPtrOutput() JobInputLocationPtrOutput {
+	return o
+}
+
+func (o JobInputLocationPtrOutput) ToJobInputLocationPtrOutputWithContext(ctx context.Context) JobInputLocationPtrOutput {
+	return o
+}
+
+func (o JobInputLocationPtrOutput) Elem() JobInputLocationOutput {
+	return o.ApplyT(func(v *JobInputLocation) JobInputLocation {
+		if v != nil {
+			return *v
+		}
+		var ret JobInputLocation
+		return ret
+	}).(JobInputLocationOutput)
+}
+
+// Object Storage bucket name.
+func (o JobInputLocationPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobInputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// locationType
+func (o JobInputLocationPtrOutput) LocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobInputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LocationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Object Storage namespace name.
+func (o JobInputLocationPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobInputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// List of objects to be processed
+func (o JobInputLocationPtrOutput) ObjectNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *JobInputLocation) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ObjectNames
+	}).(pulumi.StringArrayOutput)
+}
+
+type JobModelMetadataDetail struct {
+	// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+	Configuration map[string]map[string]string `pulumi:"configuration"`
+	// Unique identifier endpoint OCID that should be used for inference
+	EndpointId *string `pulumi:"endpointId"`
+	// Language code supported
+	// * auto : Automatically detect language
+	// * ar : Arabic
+	// * pt-BR : Brazilian Portuguese
+	// * cs : Czech
+	// * da : Danish
+	// * nl : Dutch
+	// * en : English
+	// * fi : Finnish
+	// * fr : French
+	// * fr-CA : Canadian French
+	// * de : German
+	// * it : Italian
+	// * ja : Japanese
+	// * ko : Korean
+	// * no : Norwegian
+	// * pl : Polish
+	// * ro : Romanian
+	// * zh-CN : Simplified Chinese
+	// * es : Spanish
+	// * sv : Swedish
+	// * zh-TW : Traditional Chinese
+	// * tr : Turkish
+	// * el : Greek
+	// * he : Hebrew
+	LanguageCode *string `pulumi:"languageCode"`
+	// Unique identifier model OCID that should be used for inference
+	ModelId *string `pulumi:"modelId"`
+	// model type to used for inference allowed values are
+	// * LANGUAGE_SENTIMENT_ANALYSIS
+	// * LANGUAGE_DETECTION
+	// * TEXT_CLASSIFICATION
+	// * NAMED_ENTITY_RECOGNITION
+	// * KEY_PHRASE_EXTRACTION
+	// * LANGUAGE_PII_ENTITIES
+	// * LANGUAGE_TRANSLATION
+	ModelType *string `pulumi:"modelType"`
+}
+
+// JobModelMetadataDetailInput is an input type that accepts JobModelMetadataDetailArgs and JobModelMetadataDetailOutput values.
+// You can construct a concrete instance of `JobModelMetadataDetailInput` via:
+//
+//	JobModelMetadataDetailArgs{...}
+type JobModelMetadataDetailInput interface {
+	pulumi.Input
+
+	ToJobModelMetadataDetailOutput() JobModelMetadataDetailOutput
+	ToJobModelMetadataDetailOutputWithContext(context.Context) JobModelMetadataDetailOutput
+}
+
+type JobModelMetadataDetailArgs struct {
+	// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+	Configuration pulumi.StringMapMapInput `pulumi:"configuration"`
+	// Unique identifier endpoint OCID that should be used for inference
+	EndpointId pulumi.StringPtrInput `pulumi:"endpointId"`
+	// Language code supported
+	// * auto : Automatically detect language
+	// * ar : Arabic
+	// * pt-BR : Brazilian Portuguese
+	// * cs : Czech
+	// * da : Danish
+	// * nl : Dutch
+	// * en : English
+	// * fi : Finnish
+	// * fr : French
+	// * fr-CA : Canadian French
+	// * de : German
+	// * it : Italian
+	// * ja : Japanese
+	// * ko : Korean
+	// * no : Norwegian
+	// * pl : Polish
+	// * ro : Romanian
+	// * zh-CN : Simplified Chinese
+	// * es : Spanish
+	// * sv : Swedish
+	// * zh-TW : Traditional Chinese
+	// * tr : Turkish
+	// * el : Greek
+	// * he : Hebrew
+	LanguageCode pulumi.StringPtrInput `pulumi:"languageCode"`
+	// Unique identifier model OCID that should be used for inference
+	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
+	// model type to used for inference allowed values are
+	// * LANGUAGE_SENTIMENT_ANALYSIS
+	// * LANGUAGE_DETECTION
+	// * TEXT_CLASSIFICATION
+	// * NAMED_ENTITY_RECOGNITION
+	// * KEY_PHRASE_EXTRACTION
+	// * LANGUAGE_PII_ENTITIES
+	// * LANGUAGE_TRANSLATION
+	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
+}
+
+func (JobModelMetadataDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobModelMetadataDetail)(nil)).Elem()
+}
+
+func (i JobModelMetadataDetailArgs) ToJobModelMetadataDetailOutput() JobModelMetadataDetailOutput {
+	return i.ToJobModelMetadataDetailOutputWithContext(context.Background())
+}
+
+func (i JobModelMetadataDetailArgs) ToJobModelMetadataDetailOutputWithContext(ctx context.Context) JobModelMetadataDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobModelMetadataDetailOutput)
+}
+
+// JobModelMetadataDetailArrayInput is an input type that accepts JobModelMetadataDetailArray and JobModelMetadataDetailArrayOutput values.
+// You can construct a concrete instance of `JobModelMetadataDetailArrayInput` via:
+//
+//	JobModelMetadataDetailArray{ JobModelMetadataDetailArgs{...} }
+type JobModelMetadataDetailArrayInput interface {
+	pulumi.Input
+
+	ToJobModelMetadataDetailArrayOutput() JobModelMetadataDetailArrayOutput
+	ToJobModelMetadataDetailArrayOutputWithContext(context.Context) JobModelMetadataDetailArrayOutput
+}
+
+type JobModelMetadataDetailArray []JobModelMetadataDetailInput
+
+func (JobModelMetadataDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobModelMetadataDetail)(nil)).Elem()
+}
+
+func (i JobModelMetadataDetailArray) ToJobModelMetadataDetailArrayOutput() JobModelMetadataDetailArrayOutput {
+	return i.ToJobModelMetadataDetailArrayOutputWithContext(context.Background())
+}
+
+func (i JobModelMetadataDetailArray) ToJobModelMetadataDetailArrayOutputWithContext(ctx context.Context) JobModelMetadataDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobModelMetadataDetailArrayOutput)
+}
+
+type JobModelMetadataDetailOutput struct{ *pulumi.OutputState }
+
+func (JobModelMetadataDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobModelMetadataDetail)(nil)).Elem()
+}
+
+func (o JobModelMetadataDetailOutput) ToJobModelMetadataDetailOutput() JobModelMetadataDetailOutput {
+	return o
+}
+
+func (o JobModelMetadataDetailOutput) ToJobModelMetadataDetailOutputWithContext(ctx context.Context) JobModelMetadataDetailOutput {
+	return o
+}
+
+// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+func (o JobModelMetadataDetailOutput) Configuration() pulumi.StringMapMapOutput {
+	return o.ApplyT(func(v JobModelMetadataDetail) map[string]map[string]string { return v.Configuration }).(pulumi.StringMapMapOutput)
+}
+
+// Unique identifier endpoint OCID that should be used for inference
+func (o JobModelMetadataDetailOutput) EndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobModelMetadataDetail) *string { return v.EndpointId }).(pulumi.StringPtrOutput)
+}
+
+// Language code supported
+// * auto : Automatically detect language
+// * ar : Arabic
+// * pt-BR : Brazilian Portuguese
+// * cs : Czech
+// * da : Danish
+// * nl : Dutch
+// * en : English
+// * fi : Finnish
+// * fr : French
+// * fr-CA : Canadian French
+// * de : German
+// * it : Italian
+// * ja : Japanese
+// * ko : Korean
+// * no : Norwegian
+// * pl : Polish
+// * ro : Romanian
+// * zh-CN : Simplified Chinese
+// * es : Spanish
+// * sv : Swedish
+// * zh-TW : Traditional Chinese
+// * tr : Turkish
+// * el : Greek
+// * he : Hebrew
+func (o JobModelMetadataDetailOutput) LanguageCode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobModelMetadataDetail) *string { return v.LanguageCode }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier model OCID that should be used for inference
+func (o JobModelMetadataDetailOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobModelMetadataDetail) *string { return v.ModelId }).(pulumi.StringPtrOutput)
+}
+
+// model type to used for inference allowed values are
+// * LANGUAGE_SENTIMENT_ANALYSIS
+// * LANGUAGE_DETECTION
+// * TEXT_CLASSIFICATION
+// * NAMED_ENTITY_RECOGNITION
+// * KEY_PHRASE_EXTRACTION
+// * LANGUAGE_PII_ENTITIES
+// * LANGUAGE_TRANSLATION
+func (o JobModelMetadataDetailOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobModelMetadataDetail) *string { return v.ModelType }).(pulumi.StringPtrOutput)
+}
+
+type JobModelMetadataDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (JobModelMetadataDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobModelMetadataDetail)(nil)).Elem()
+}
+
+func (o JobModelMetadataDetailArrayOutput) ToJobModelMetadataDetailArrayOutput() JobModelMetadataDetailArrayOutput {
+	return o
+}
+
+func (o JobModelMetadataDetailArrayOutput) ToJobModelMetadataDetailArrayOutputWithContext(ctx context.Context) JobModelMetadataDetailArrayOutput {
+	return o
+}
+
+func (o JobModelMetadataDetailArrayOutput) Index(i pulumi.IntInput) JobModelMetadataDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobModelMetadataDetail {
+		return vs[0].([]JobModelMetadataDetail)[vs[1].(int)]
+	}).(JobModelMetadataDetailOutput)
+}
+
+type JobOutputLocation struct {
+	// Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// Object Storage namespace name.
+	Namespace string `pulumi:"namespace"`
+	// The prefix (directory) in an Object Storage bucket.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Prefix *string `pulumi:"prefix"`
+}
+
+// JobOutputLocationInput is an input type that accepts JobOutputLocationArgs and JobOutputLocationOutput values.
+// You can construct a concrete instance of `JobOutputLocationInput` via:
+//
+//	JobOutputLocationArgs{...}
+type JobOutputLocationInput interface {
+	pulumi.Input
+
+	ToJobOutputLocationOutput() JobOutputLocationOutput
+	ToJobOutputLocationOutputWithContext(context.Context) JobOutputLocationOutput
+}
+
+type JobOutputLocationArgs struct {
+	// Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Object Storage namespace name.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The prefix (directory) in an Object Storage bucket.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+}
+
+func (JobOutputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobOutputLocation)(nil)).Elem()
+}
+
+func (i JobOutputLocationArgs) ToJobOutputLocationOutput() JobOutputLocationOutput {
+	return i.ToJobOutputLocationOutputWithContext(context.Background())
+}
+
+func (i JobOutputLocationArgs) ToJobOutputLocationOutputWithContext(ctx context.Context) JobOutputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobOutputLocationOutput)
+}
+
+func (i JobOutputLocationArgs) ToJobOutputLocationPtrOutput() JobOutputLocationPtrOutput {
+	return i.ToJobOutputLocationPtrOutputWithContext(context.Background())
+}
+
+func (i JobOutputLocationArgs) ToJobOutputLocationPtrOutputWithContext(ctx context.Context) JobOutputLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobOutputLocationOutput).ToJobOutputLocationPtrOutputWithContext(ctx)
+}
+
+// JobOutputLocationPtrInput is an input type that accepts JobOutputLocationArgs, JobOutputLocationPtr and JobOutputLocationPtrOutput values.
+// You can construct a concrete instance of `JobOutputLocationPtrInput` via:
+//
+//	        JobOutputLocationArgs{...}
+//
+//	or:
+//
+//	        nil
+type JobOutputLocationPtrInput interface {
+	pulumi.Input
+
+	ToJobOutputLocationPtrOutput() JobOutputLocationPtrOutput
+	ToJobOutputLocationPtrOutputWithContext(context.Context) JobOutputLocationPtrOutput
+}
+
+type jobOutputLocationPtrType JobOutputLocationArgs
+
+func JobOutputLocationPtr(v *JobOutputLocationArgs) JobOutputLocationPtrInput {
+	return (*jobOutputLocationPtrType)(v)
+}
+
+func (*jobOutputLocationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobOutputLocation)(nil)).Elem()
+}
+
+func (i *jobOutputLocationPtrType) ToJobOutputLocationPtrOutput() JobOutputLocationPtrOutput {
+	return i.ToJobOutputLocationPtrOutputWithContext(context.Background())
+}
+
+func (i *jobOutputLocationPtrType) ToJobOutputLocationPtrOutputWithContext(ctx context.Context) JobOutputLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobOutputLocationPtrOutput)
+}
+
+type JobOutputLocationOutput struct{ *pulumi.OutputState }
+
+func (JobOutputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobOutputLocation)(nil)).Elem()
+}
+
+func (o JobOutputLocationOutput) ToJobOutputLocationOutput() JobOutputLocationOutput {
+	return o
+}
+
+func (o JobOutputLocationOutput) ToJobOutputLocationOutputWithContext(ctx context.Context) JobOutputLocationOutput {
+	return o
+}
+
+func (o JobOutputLocationOutput) ToJobOutputLocationPtrOutput() JobOutputLocationPtrOutput {
+	return o.ToJobOutputLocationPtrOutputWithContext(context.Background())
+}
+
+func (o JobOutputLocationOutput) ToJobOutputLocationPtrOutputWithContext(ctx context.Context) JobOutputLocationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v JobOutputLocation) *JobOutputLocation {
+		return &v
+	}).(JobOutputLocationPtrOutput)
+}
+
+// Object Storage bucket name.
+func (o JobOutputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v JobOutputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Object Storage namespace name.
+func (o JobOutputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v JobOutputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The prefix (directory) in an Object Storage bucket.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o JobOutputLocationOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobOutputLocation) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+type JobOutputLocationPtrOutput struct{ *pulumi.OutputState }
+
+func (JobOutputLocationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**JobOutputLocation)(nil)).Elem()
+}
+
+func (o JobOutputLocationPtrOutput) ToJobOutputLocationPtrOutput() JobOutputLocationPtrOutput {
+	return o
+}
+
+func (o JobOutputLocationPtrOutput) ToJobOutputLocationPtrOutputWithContext(ctx context.Context) JobOutputLocationPtrOutput {
+	return o
+}
+
+func (o JobOutputLocationPtrOutput) Elem() JobOutputLocationOutput {
+	return o.ApplyT(func(v *JobOutputLocation) JobOutputLocation {
+		if v != nil {
+			return *v
+		}
+		var ret JobOutputLocation
+		return ret
+	}).(JobOutputLocationOutput)
+}
+
+// Object Storage bucket name.
+func (o JobOutputLocationPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// Object Storage namespace name.
+func (o JobOutputLocationPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// The prefix (directory) in an Object Storage bucket.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o JobOutputLocationPtrOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Prefix
+	}).(pulumi.StringPtrOutput)
+}
+
 type ModelEvaluationResult struct {
 	// List of text classification metrics
 	ClassMetrics []ModelEvaluationResultClassMetric `pulumi:"classMetrics"`
@@ -2333,6 +3096,8 @@ func (o GetEndpointsEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetE
 }
 
 type GetEndpointsEndpointCollectionItem struct {
+	// Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+	Alias string `pulumi:"alias"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2375,6 +3140,8 @@ type GetEndpointsEndpointCollectionItemInput interface {
 }
 
 type GetEndpointsEndpointCollectionItemArgs struct {
+	// Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+	Alias pulumi.StringInput `pulumi:"alias"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2454,6 +3221,11 @@ func (o GetEndpointsEndpointCollectionItemOutput) ToGetEndpointsEndpointCollecti
 
 func (o GetEndpointsEndpointCollectionItemOutput) ToGetEndpointsEndpointCollectionItemOutputWithContext(ctx context.Context) GetEndpointsEndpointCollectionItemOutput {
 	return o
+}
+
+// Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+func (o GetEndpointsEndpointCollectionItemOutput) Alias() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.Alias }).(pulumi.StringOutput)
 }
 
 // The ID of the compartment in which to list resources.
@@ -2650,6 +3422,1633 @@ func (o GetEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetEndpointsFilt
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEndpointsFilter {
 		return vs[0].([]GetEndpointsFilter)[vs[1].(int)]
 	}).(GetEndpointsFilterOutput)
+}
+
+type GetJobInputConfiguration struct {
+	// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+	Configuration map[string]map[string]string `pulumi:"configuration"`
+	// Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+	DocumentTypes []string `pulumi:"documentTypes"`
+}
+
+// GetJobInputConfigurationInput is an input type that accepts GetJobInputConfigurationArgs and GetJobInputConfigurationOutput values.
+// You can construct a concrete instance of `GetJobInputConfigurationInput` via:
+//
+//	GetJobInputConfigurationArgs{...}
+type GetJobInputConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobInputConfigurationOutput() GetJobInputConfigurationOutput
+	ToGetJobInputConfigurationOutputWithContext(context.Context) GetJobInputConfigurationOutput
+}
+
+type GetJobInputConfigurationArgs struct {
+	// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+	Configuration pulumi.StringMapMapInput `pulumi:"configuration"`
+	// Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+	DocumentTypes pulumi.StringArrayInput `pulumi:"documentTypes"`
+}
+
+func (GetJobInputConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobInputConfiguration)(nil)).Elem()
+}
+
+func (i GetJobInputConfigurationArgs) ToGetJobInputConfigurationOutput() GetJobInputConfigurationOutput {
+	return i.ToGetJobInputConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobInputConfigurationArgs) ToGetJobInputConfigurationOutputWithContext(ctx context.Context) GetJobInputConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobInputConfigurationOutput)
+}
+
+// GetJobInputConfigurationArrayInput is an input type that accepts GetJobInputConfigurationArray and GetJobInputConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobInputConfigurationArrayInput` via:
+//
+//	GetJobInputConfigurationArray{ GetJobInputConfigurationArgs{...} }
+type GetJobInputConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobInputConfigurationArrayOutput() GetJobInputConfigurationArrayOutput
+	ToGetJobInputConfigurationArrayOutputWithContext(context.Context) GetJobInputConfigurationArrayOutput
+}
+
+type GetJobInputConfigurationArray []GetJobInputConfigurationInput
+
+func (GetJobInputConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobInputConfiguration)(nil)).Elem()
+}
+
+func (i GetJobInputConfigurationArray) ToGetJobInputConfigurationArrayOutput() GetJobInputConfigurationArrayOutput {
+	return i.ToGetJobInputConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobInputConfigurationArray) ToGetJobInputConfigurationArrayOutputWithContext(ctx context.Context) GetJobInputConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobInputConfigurationArrayOutput)
+}
+
+type GetJobInputConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobInputConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobInputConfiguration)(nil)).Elem()
+}
+
+func (o GetJobInputConfigurationOutput) ToGetJobInputConfigurationOutput() GetJobInputConfigurationOutput {
+	return o
+}
+
+func (o GetJobInputConfigurationOutput) ToGetJobInputConfigurationOutputWithContext(ctx context.Context) GetJobInputConfigurationOutput {
+	return o
+}
+
+// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+func (o GetJobInputConfigurationOutput) Configuration() pulumi.StringMapMapOutput {
+	return o.ApplyT(func(v GetJobInputConfiguration) map[string]map[string]string { return v.Configuration }).(pulumi.StringMapMapOutput)
+}
+
+// Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+func (o GetJobInputConfigurationOutput) DocumentTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobInputConfiguration) []string { return v.DocumentTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetJobInputConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobInputConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobInputConfiguration)(nil)).Elem()
+}
+
+func (o GetJobInputConfigurationArrayOutput) ToGetJobInputConfigurationArrayOutput() GetJobInputConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobInputConfigurationArrayOutput) ToGetJobInputConfigurationArrayOutputWithContext(ctx context.Context) GetJobInputConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobInputConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobInputConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobInputConfiguration {
+		return vs[0].([]GetJobInputConfiguration)[vs[1].(int)]
+	}).(GetJobInputConfigurationOutput)
+}
+
+type GetJobInputLocation struct {
+	// Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// locationType
+	LocationType string `pulumi:"locationType"`
+	// Object Storage namespace name.
+	Namespace string `pulumi:"namespace"`
+	// List of objects to be processed
+	ObjectNames []string `pulumi:"objectNames"`
+}
+
+// GetJobInputLocationInput is an input type that accepts GetJobInputLocationArgs and GetJobInputLocationOutput values.
+// You can construct a concrete instance of `GetJobInputLocationInput` via:
+//
+//	GetJobInputLocationArgs{...}
+type GetJobInputLocationInput interface {
+	pulumi.Input
+
+	ToGetJobInputLocationOutput() GetJobInputLocationOutput
+	ToGetJobInputLocationOutputWithContext(context.Context) GetJobInputLocationOutput
+}
+
+type GetJobInputLocationArgs struct {
+	// Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// locationType
+	LocationType pulumi.StringInput `pulumi:"locationType"`
+	// Object Storage namespace name.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// List of objects to be processed
+	ObjectNames pulumi.StringArrayInput `pulumi:"objectNames"`
+}
+
+func (GetJobInputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobInputLocation)(nil)).Elem()
+}
+
+func (i GetJobInputLocationArgs) ToGetJobInputLocationOutput() GetJobInputLocationOutput {
+	return i.ToGetJobInputLocationOutputWithContext(context.Background())
+}
+
+func (i GetJobInputLocationArgs) ToGetJobInputLocationOutputWithContext(ctx context.Context) GetJobInputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobInputLocationOutput)
+}
+
+// GetJobInputLocationArrayInput is an input type that accepts GetJobInputLocationArray and GetJobInputLocationArrayOutput values.
+// You can construct a concrete instance of `GetJobInputLocationArrayInput` via:
+//
+//	GetJobInputLocationArray{ GetJobInputLocationArgs{...} }
+type GetJobInputLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobInputLocationArrayOutput() GetJobInputLocationArrayOutput
+	ToGetJobInputLocationArrayOutputWithContext(context.Context) GetJobInputLocationArrayOutput
+}
+
+type GetJobInputLocationArray []GetJobInputLocationInput
+
+func (GetJobInputLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobInputLocation)(nil)).Elem()
+}
+
+func (i GetJobInputLocationArray) ToGetJobInputLocationArrayOutput() GetJobInputLocationArrayOutput {
+	return i.ToGetJobInputLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobInputLocationArray) ToGetJobInputLocationArrayOutputWithContext(ctx context.Context) GetJobInputLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobInputLocationArrayOutput)
+}
+
+type GetJobInputLocationOutput struct{ *pulumi.OutputState }
+
+func (GetJobInputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobInputLocation)(nil)).Elem()
+}
+
+func (o GetJobInputLocationOutput) ToGetJobInputLocationOutput() GetJobInputLocationOutput {
+	return o
+}
+
+func (o GetJobInputLocationOutput) ToGetJobInputLocationOutputWithContext(ctx context.Context) GetJobInputLocationOutput {
+	return o
+}
+
+// Object Storage bucket name.
+func (o GetJobInputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobInputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// locationType
+func (o GetJobInputLocationOutput) LocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobInputLocation) string { return v.LocationType }).(pulumi.StringOutput)
+}
+
+// Object Storage namespace name.
+func (o GetJobInputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobInputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// List of objects to be processed
+func (o GetJobInputLocationOutput) ObjectNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobInputLocation) []string { return v.ObjectNames }).(pulumi.StringArrayOutput)
+}
+
+type GetJobInputLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobInputLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobInputLocation)(nil)).Elem()
+}
+
+func (o GetJobInputLocationArrayOutput) ToGetJobInputLocationArrayOutput() GetJobInputLocationArrayOutput {
+	return o
+}
+
+func (o GetJobInputLocationArrayOutput) ToGetJobInputLocationArrayOutputWithContext(ctx context.Context) GetJobInputLocationArrayOutput {
+	return o
+}
+
+func (o GetJobInputLocationArrayOutput) Index(i pulumi.IntInput) GetJobInputLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobInputLocation {
+		return vs[0].([]GetJobInputLocation)[vs[1].(int)]
+	}).(GetJobInputLocationOutput)
+}
+
+type GetJobModelMetadataDetail struct {
+	// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+	Configuration map[string]map[string]string `pulumi:"configuration"`
+	// Unique identifier endpoint OCID that should be used for inference
+	EndpointId string `pulumi:"endpointId"`
+	// Language code supported
+	// * auto : Automatically detect language
+	// * ar : Arabic
+	// * pt-BR : Brazilian Portuguese
+	// * cs : Czech
+	// * da : Danish
+	// * nl : Dutch
+	// * en : English
+	// * fi : Finnish
+	// * fr : French
+	// * fr-CA : Canadian French
+	// * de : German
+	// * it : Italian
+	// * ja : Japanese
+	// * ko : Korean
+	// * no : Norwegian
+	// * pl : Polish
+	// * ro : Romanian
+	// * zh-CN : Simplified Chinese
+	// * es : Spanish
+	// * sv : Swedish
+	// * zh-TW : Traditional Chinese
+	// * tr : Turkish
+	// * el : Greek
+	// * he : Hebrew
+	LanguageCode string `pulumi:"languageCode"`
+	// Unique identifier model OCID that should be used for inference
+	ModelId string `pulumi:"modelId"`
+	// model type to used for inference allowed values are
+	// * LANGUAGE_SENTIMENT_ANALYSIS
+	// * LANGUAGE_DETECTION
+	// * TEXT_CLASSIFICATION
+	// * NAMED_ENTITY_RECOGNITION
+	// * KEY_PHRASE_EXTRACTION
+	// * LANGUAGE_PII_ENTITIES
+	// * LANGUAGE_TRANSLATION
+	ModelType string `pulumi:"modelType"`
+}
+
+// GetJobModelMetadataDetailInput is an input type that accepts GetJobModelMetadataDetailArgs and GetJobModelMetadataDetailOutput values.
+// You can construct a concrete instance of `GetJobModelMetadataDetailInput` via:
+//
+//	GetJobModelMetadataDetailArgs{...}
+type GetJobModelMetadataDetailInput interface {
+	pulumi.Input
+
+	ToGetJobModelMetadataDetailOutput() GetJobModelMetadataDetailOutput
+	ToGetJobModelMetadataDetailOutputWithContext(context.Context) GetJobModelMetadataDetailOutput
+}
+
+type GetJobModelMetadataDetailArgs struct {
+	// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+	Configuration pulumi.StringMapMapInput `pulumi:"configuration"`
+	// Unique identifier endpoint OCID that should be used for inference
+	EndpointId pulumi.StringInput `pulumi:"endpointId"`
+	// Language code supported
+	// * auto : Automatically detect language
+	// * ar : Arabic
+	// * pt-BR : Brazilian Portuguese
+	// * cs : Czech
+	// * da : Danish
+	// * nl : Dutch
+	// * en : English
+	// * fi : Finnish
+	// * fr : French
+	// * fr-CA : Canadian French
+	// * de : German
+	// * it : Italian
+	// * ja : Japanese
+	// * ko : Korean
+	// * no : Norwegian
+	// * pl : Polish
+	// * ro : Romanian
+	// * zh-CN : Simplified Chinese
+	// * es : Spanish
+	// * sv : Swedish
+	// * zh-TW : Traditional Chinese
+	// * tr : Turkish
+	// * el : Greek
+	// * he : Hebrew
+	LanguageCode pulumi.StringInput `pulumi:"languageCode"`
+	// Unique identifier model OCID that should be used for inference
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// model type to used for inference allowed values are
+	// * LANGUAGE_SENTIMENT_ANALYSIS
+	// * LANGUAGE_DETECTION
+	// * TEXT_CLASSIFICATION
+	// * NAMED_ENTITY_RECOGNITION
+	// * KEY_PHRASE_EXTRACTION
+	// * LANGUAGE_PII_ENTITIES
+	// * LANGUAGE_TRANSLATION
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+}
+
+func (GetJobModelMetadataDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobModelMetadataDetail)(nil)).Elem()
+}
+
+func (i GetJobModelMetadataDetailArgs) ToGetJobModelMetadataDetailOutput() GetJobModelMetadataDetailOutput {
+	return i.ToGetJobModelMetadataDetailOutputWithContext(context.Background())
+}
+
+func (i GetJobModelMetadataDetailArgs) ToGetJobModelMetadataDetailOutputWithContext(ctx context.Context) GetJobModelMetadataDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobModelMetadataDetailOutput)
+}
+
+// GetJobModelMetadataDetailArrayInput is an input type that accepts GetJobModelMetadataDetailArray and GetJobModelMetadataDetailArrayOutput values.
+// You can construct a concrete instance of `GetJobModelMetadataDetailArrayInput` via:
+//
+//	GetJobModelMetadataDetailArray{ GetJobModelMetadataDetailArgs{...} }
+type GetJobModelMetadataDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetJobModelMetadataDetailArrayOutput() GetJobModelMetadataDetailArrayOutput
+	ToGetJobModelMetadataDetailArrayOutputWithContext(context.Context) GetJobModelMetadataDetailArrayOutput
+}
+
+type GetJobModelMetadataDetailArray []GetJobModelMetadataDetailInput
+
+func (GetJobModelMetadataDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobModelMetadataDetail)(nil)).Elem()
+}
+
+func (i GetJobModelMetadataDetailArray) ToGetJobModelMetadataDetailArrayOutput() GetJobModelMetadataDetailArrayOutput {
+	return i.ToGetJobModelMetadataDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobModelMetadataDetailArray) ToGetJobModelMetadataDetailArrayOutputWithContext(ctx context.Context) GetJobModelMetadataDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobModelMetadataDetailArrayOutput)
+}
+
+type GetJobModelMetadataDetailOutput struct{ *pulumi.OutputState }
+
+func (GetJobModelMetadataDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobModelMetadataDetail)(nil)).Elem()
+}
+
+func (o GetJobModelMetadataDetailOutput) ToGetJobModelMetadataDetailOutput() GetJobModelMetadataDetailOutput {
+	return o
+}
+
+func (o GetJobModelMetadataDetailOutput) ToGetJobModelMetadataDetailOutputWithContext(ctx context.Context) GetJobModelMetadataDetailOutput {
+	return o
+}
+
+// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+func (o GetJobModelMetadataDetailOutput) Configuration() pulumi.StringMapMapOutput {
+	return o.ApplyT(func(v GetJobModelMetadataDetail) map[string]map[string]string { return v.Configuration }).(pulumi.StringMapMapOutput)
+}
+
+// Unique identifier endpoint OCID that should be used for inference
+func (o GetJobModelMetadataDetailOutput) EndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobModelMetadataDetail) string { return v.EndpointId }).(pulumi.StringOutput)
+}
+
+// Language code supported
+// * auto : Automatically detect language
+// * ar : Arabic
+// * pt-BR : Brazilian Portuguese
+// * cs : Czech
+// * da : Danish
+// * nl : Dutch
+// * en : English
+// * fi : Finnish
+// * fr : French
+// * fr-CA : Canadian French
+// * de : German
+// * it : Italian
+// * ja : Japanese
+// * ko : Korean
+// * no : Norwegian
+// * pl : Polish
+// * ro : Romanian
+// * zh-CN : Simplified Chinese
+// * es : Spanish
+// * sv : Swedish
+// * zh-TW : Traditional Chinese
+// * tr : Turkish
+// * el : Greek
+// * he : Hebrew
+func (o GetJobModelMetadataDetailOutput) LanguageCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobModelMetadataDetail) string { return v.LanguageCode }).(pulumi.StringOutput)
+}
+
+// Unique identifier model OCID that should be used for inference
+func (o GetJobModelMetadataDetailOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobModelMetadataDetail) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// model type to used for inference allowed values are
+// * LANGUAGE_SENTIMENT_ANALYSIS
+// * LANGUAGE_DETECTION
+// * TEXT_CLASSIFICATION
+// * NAMED_ENTITY_RECOGNITION
+// * KEY_PHRASE_EXTRACTION
+// * LANGUAGE_PII_ENTITIES
+// * LANGUAGE_TRANSLATION
+func (o GetJobModelMetadataDetailOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobModelMetadataDetail) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+type GetJobModelMetadataDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobModelMetadataDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobModelMetadataDetail)(nil)).Elem()
+}
+
+func (o GetJobModelMetadataDetailArrayOutput) ToGetJobModelMetadataDetailArrayOutput() GetJobModelMetadataDetailArrayOutput {
+	return o
+}
+
+func (o GetJobModelMetadataDetailArrayOutput) ToGetJobModelMetadataDetailArrayOutputWithContext(ctx context.Context) GetJobModelMetadataDetailArrayOutput {
+	return o
+}
+
+func (o GetJobModelMetadataDetailArrayOutput) Index(i pulumi.IntInput) GetJobModelMetadataDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobModelMetadataDetail {
+		return vs[0].([]GetJobModelMetadataDetail)[vs[1].(int)]
+	}).(GetJobModelMetadataDetailOutput)
+}
+
+type GetJobOutputLocation struct {
+	// Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// Object Storage namespace name.
+	Namespace string `pulumi:"namespace"`
+	// The prefix (directory) in an Object Storage bucket.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetJobOutputLocationInput is an input type that accepts GetJobOutputLocationArgs and GetJobOutputLocationOutput values.
+// You can construct a concrete instance of `GetJobOutputLocationInput` via:
+//
+//	GetJobOutputLocationArgs{...}
+type GetJobOutputLocationInput interface {
+	pulumi.Input
+
+	ToGetJobOutputLocationOutput() GetJobOutputLocationOutput
+	ToGetJobOutputLocationOutputWithContext(context.Context) GetJobOutputLocationOutput
+}
+
+type GetJobOutputLocationArgs struct {
+	// Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Object Storage namespace name.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The prefix (directory) in an Object Storage bucket.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetJobOutputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobOutputLocation)(nil)).Elem()
+}
+
+func (i GetJobOutputLocationArgs) ToGetJobOutputLocationOutput() GetJobOutputLocationOutput {
+	return i.ToGetJobOutputLocationOutputWithContext(context.Background())
+}
+
+func (i GetJobOutputLocationArgs) ToGetJobOutputLocationOutputWithContext(ctx context.Context) GetJobOutputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobOutputLocationOutput)
+}
+
+// GetJobOutputLocationArrayInput is an input type that accepts GetJobOutputLocationArray and GetJobOutputLocationArrayOutput values.
+// You can construct a concrete instance of `GetJobOutputLocationArrayInput` via:
+//
+//	GetJobOutputLocationArray{ GetJobOutputLocationArgs{...} }
+type GetJobOutputLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobOutputLocationArrayOutput() GetJobOutputLocationArrayOutput
+	ToGetJobOutputLocationArrayOutputWithContext(context.Context) GetJobOutputLocationArrayOutput
+}
+
+type GetJobOutputLocationArray []GetJobOutputLocationInput
+
+func (GetJobOutputLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobOutputLocation)(nil)).Elem()
+}
+
+func (i GetJobOutputLocationArray) ToGetJobOutputLocationArrayOutput() GetJobOutputLocationArrayOutput {
+	return i.ToGetJobOutputLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobOutputLocationArray) ToGetJobOutputLocationArrayOutputWithContext(ctx context.Context) GetJobOutputLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobOutputLocationArrayOutput)
+}
+
+type GetJobOutputLocationOutput struct{ *pulumi.OutputState }
+
+func (GetJobOutputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobOutputLocation)(nil)).Elem()
+}
+
+func (o GetJobOutputLocationOutput) ToGetJobOutputLocationOutput() GetJobOutputLocationOutput {
+	return o
+}
+
+func (o GetJobOutputLocationOutput) ToGetJobOutputLocationOutputWithContext(ctx context.Context) GetJobOutputLocationOutput {
+	return o
+}
+
+// Object Storage bucket name.
+func (o GetJobOutputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobOutputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Object Storage namespace name.
+func (o GetJobOutputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobOutputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The prefix (directory) in an Object Storage bucket.
+func (o GetJobOutputLocationOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobOutputLocation) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetJobOutputLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobOutputLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobOutputLocation)(nil)).Elem()
+}
+
+func (o GetJobOutputLocationArrayOutput) ToGetJobOutputLocationArrayOutput() GetJobOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetJobOutputLocationArrayOutput) ToGetJobOutputLocationArrayOutputWithContext(ctx context.Context) GetJobOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetJobOutputLocationArrayOutput) Index(i pulumi.IntInput) GetJobOutputLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobOutputLocation {
+		return vs[0].([]GetJobOutputLocation)[vs[1].(int)]
+	}).(GetJobOutputLocationOutput)
+}
+
+type GetJobsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJobsFilterInput is an input type that accepts GetJobsFilterArgs and GetJobsFilterOutput values.
+// You can construct a concrete instance of `GetJobsFilterInput` via:
+//
+//	GetJobsFilterArgs{...}
+type GetJobsFilterInput interface {
+	pulumi.Input
+
+	ToGetJobsFilterOutput() GetJobsFilterOutput
+	ToGetJobsFilterOutputWithContext(context.Context) GetJobsFilterOutput
+}
+
+type GetJobsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJobsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsFilter)(nil)).Elem()
+}
+
+func (i GetJobsFilterArgs) ToGetJobsFilterOutput() GetJobsFilterOutput {
+	return i.ToGetJobsFilterOutputWithContext(context.Background())
+}
+
+func (i GetJobsFilterArgs) ToGetJobsFilterOutputWithContext(ctx context.Context) GetJobsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsFilterOutput)
+}
+
+// GetJobsFilterArrayInput is an input type that accepts GetJobsFilterArray and GetJobsFilterArrayOutput values.
+// You can construct a concrete instance of `GetJobsFilterArrayInput` via:
+//
+//	GetJobsFilterArray{ GetJobsFilterArgs{...} }
+type GetJobsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsFilterArrayOutput() GetJobsFilterArrayOutput
+	ToGetJobsFilterArrayOutputWithContext(context.Context) GetJobsFilterArrayOutput
+}
+
+type GetJobsFilterArray []GetJobsFilterInput
+
+func (GetJobsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsFilter)(nil)).Elem()
+}
+
+func (i GetJobsFilterArray) ToGetJobsFilterArrayOutput() GetJobsFilterArrayOutput {
+	return i.ToGetJobsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsFilterArray) ToGetJobsFilterArrayOutputWithContext(ctx context.Context) GetJobsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsFilterArrayOutput)
+}
+
+type GetJobsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJobsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsFilter)(nil)).Elem()
+}
+
+func (o GetJobsFilterOutput) ToGetJobsFilterOutput() GetJobsFilterOutput {
+	return o
+}
+
+func (o GetJobsFilterOutput) ToGetJobsFilterOutputWithContext(ctx context.Context) GetJobsFilterOutput {
+	return o
+}
+
+func (o GetJobsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJobsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJobsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJobsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJobsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsFilter)(nil)).Elem()
+}
+
+func (o GetJobsFilterArrayOutput) ToGetJobsFilterArrayOutput() GetJobsFilterArrayOutput {
+	return o
+}
+
+func (o GetJobsFilterArrayOutput) ToGetJobsFilterArrayOutputWithContext(ctx context.Context) GetJobsFilterArrayOutput {
+	return o
+}
+
+func (o GetJobsFilterArrayOutput) Index(i pulumi.IntInput) GetJobsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsFilter {
+		return vs[0].([]GetJobsFilter)[vs[1].(int)]
+	}).(GetJobsFilterOutput)
+}
+
+type GetJobsJobCollection struct {
+	Items []GetJobsJobCollectionItem `pulumi:"items"`
+}
+
+// GetJobsJobCollectionInput is an input type that accepts GetJobsJobCollectionArgs and GetJobsJobCollectionOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionInput` via:
+//
+//	GetJobsJobCollectionArgs{...}
+type GetJobsJobCollectionInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionOutput() GetJobsJobCollectionOutput
+	ToGetJobsJobCollectionOutputWithContext(context.Context) GetJobsJobCollectionOutput
+}
+
+type GetJobsJobCollectionArgs struct {
+	Items GetJobsJobCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetJobsJobCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollection)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionArgs) ToGetJobsJobCollectionOutput() GetJobsJobCollectionOutput {
+	return i.ToGetJobsJobCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionArgs) ToGetJobsJobCollectionOutputWithContext(ctx context.Context) GetJobsJobCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionOutput)
+}
+
+// GetJobsJobCollectionArrayInput is an input type that accepts GetJobsJobCollectionArray and GetJobsJobCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionArrayInput` via:
+//
+//	GetJobsJobCollectionArray{ GetJobsJobCollectionArgs{...} }
+type GetJobsJobCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionArrayOutput() GetJobsJobCollectionArrayOutput
+	ToGetJobsJobCollectionArrayOutputWithContext(context.Context) GetJobsJobCollectionArrayOutput
+}
+
+type GetJobsJobCollectionArray []GetJobsJobCollectionInput
+
+func (GetJobsJobCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollection)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionArray) ToGetJobsJobCollectionArrayOutput() GetJobsJobCollectionArrayOutput {
+	return i.ToGetJobsJobCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionArray) ToGetJobsJobCollectionArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionArrayOutput)
+}
+
+type GetJobsJobCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollection)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionOutput) ToGetJobsJobCollectionOutput() GetJobsJobCollectionOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionOutput) ToGetJobsJobCollectionOutputWithContext(ctx context.Context) GetJobsJobCollectionOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionOutput) Items() GetJobsJobCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJobsJobCollection) []GetJobsJobCollectionItem { return v.Items }).(GetJobsJobCollectionItemArrayOutput)
+}
+
+type GetJobsJobCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollection)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionArrayOutput) ToGetJobsJobCollectionArrayOutput() GetJobsJobCollectionArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionArrayOutput) ToGetJobsJobCollectionArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionArrayOutput) Index(i pulumi.IntInput) GetJobsJobCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobCollection {
+		return vs[0].([]GetJobsJobCollection)[vs[1].(int)]
+	}).(GetJobsJobCollectionOutput)
+}
+
+type GetJobsJobCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+	CompletedDocuments int `pulumi:"completedDocuments"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
+	CreatedBy string `pulumi:"createdBy"`
+	// A short description of the job.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+	FailedDocuments int `pulumi:"failedDocuments"`
+	// Unique identifier(OCID).
+	Id string `pulumi:"id"`
+	// input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
+	InputConfigurations []GetJobsJobCollectionItemInputConfiguration `pulumi:"inputConfigurations"`
+	// document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
+	InputLocations []GetJobsJobCollectionItemInputLocation `pulumi:"inputLocations"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
+	ModelMetadataDetails []GetJobsJobCollectionItemModelMetadataDetail `pulumi:"modelMetadataDetails"`
+	// Object storage output location to write inference results
+	OutputLocations []GetJobsJobCollectionItemOutputLocation `pulumi:"outputLocations"`
+	// Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
+	PendingDocuments int `pulumi:"pendingDocuments"`
+	// How much progress the operation has made, vs the total amount of work that must be performed.
+	PercentComplete int `pulumi:"percentComplete"`
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// Job accepted time.
+	TimeAccepted string `pulumi:"timeAccepted"`
+	// Job finished time.
+	TimeCompleted string `pulumi:"timeCompleted"`
+	// Job started time.
+	TimeStarted string `pulumi:"timeStarted"`
+	// Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+	TotalDocuments int `pulumi:"totalDocuments"`
+	// Time to live duration in days for Job. Job will be available till max 90 days.
+	TtlInDays int `pulumi:"ttlInDays"`
+	// warnings count
+	WarningsCount int `pulumi:"warningsCount"`
+}
+
+// GetJobsJobCollectionItemInput is an input type that accepts GetJobsJobCollectionItemArgs and GetJobsJobCollectionItemOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionItemInput` via:
+//
+//	GetJobsJobCollectionItemArgs{...}
+type GetJobsJobCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionItemOutput() GetJobsJobCollectionItemOutput
+	ToGetJobsJobCollectionItemOutputWithContext(context.Context) GetJobsJobCollectionItemOutput
+}
+
+type GetJobsJobCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+	CompletedDocuments pulumi.IntInput `pulumi:"completedDocuments"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// A short description of the job.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+	FailedDocuments pulumi.IntInput `pulumi:"failedDocuments"`
+	// Unique identifier(OCID).
+	Id pulumi.StringInput `pulumi:"id"`
+	// input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
+	InputConfigurations GetJobsJobCollectionItemInputConfigurationArrayInput `pulumi:"inputConfigurations"`
+	// document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
+	InputLocations GetJobsJobCollectionItemInputLocationArrayInput `pulumi:"inputLocations"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
+	ModelMetadataDetails GetJobsJobCollectionItemModelMetadataDetailArrayInput `pulumi:"modelMetadataDetails"`
+	// Object storage output location to write inference results
+	OutputLocations GetJobsJobCollectionItemOutputLocationArrayInput `pulumi:"outputLocations"`
+	// Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
+	PendingDocuments pulumi.IntInput `pulumi:"pendingDocuments"`
+	// How much progress the operation has made, vs the total amount of work that must be performed.
+	PercentComplete pulumi.IntInput `pulumi:"percentComplete"`
+	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Job accepted time.
+	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
+	// Job finished time.
+	TimeCompleted pulumi.StringInput `pulumi:"timeCompleted"`
+	// Job started time.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+	TotalDocuments pulumi.IntInput `pulumi:"totalDocuments"`
+	// Time to live duration in days for Job. Job will be available till max 90 days.
+	TtlInDays pulumi.IntInput `pulumi:"ttlInDays"`
+	// warnings count
+	WarningsCount pulumi.IntInput `pulumi:"warningsCount"`
+}
+
+func (GetJobsJobCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollectionItem)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionItemArgs) ToGetJobsJobCollectionItemOutput() GetJobsJobCollectionItemOutput {
+	return i.ToGetJobsJobCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionItemArgs) ToGetJobsJobCollectionItemOutputWithContext(ctx context.Context) GetJobsJobCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionItemOutput)
+}
+
+// GetJobsJobCollectionItemArrayInput is an input type that accepts GetJobsJobCollectionItemArray and GetJobsJobCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionItemArrayInput` via:
+//
+//	GetJobsJobCollectionItemArray{ GetJobsJobCollectionItemArgs{...} }
+type GetJobsJobCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionItemArrayOutput() GetJobsJobCollectionItemArrayOutput
+	ToGetJobsJobCollectionItemArrayOutputWithContext(context.Context) GetJobsJobCollectionItemArrayOutput
+}
+
+type GetJobsJobCollectionItemArray []GetJobsJobCollectionItemInput
+
+func (GetJobsJobCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollectionItem)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionItemArray) ToGetJobsJobCollectionItemArrayOutput() GetJobsJobCollectionItemArrayOutput {
+	return i.ToGetJobsJobCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionItemArray) ToGetJobsJobCollectionItemArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionItemArrayOutput)
+}
+
+type GetJobsJobCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollectionItem)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionItemOutput) ToGetJobsJobCollectionItemOutput() GetJobsJobCollectionItemOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemOutput) ToGetJobsJobCollectionItemOutputWithContext(ctx context.Context) GetJobsJobCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetJobsJobCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+func (o GetJobsJobCollectionItemOutput) CompletedDocuments() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) int { return v.CompletedDocuments }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
+func (o GetJobsJobCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// A short description of the job.
+func (o GetJobsJobCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetJobsJobCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+func (o GetJobsJobCollectionItemOutput) FailedDocuments() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) int { return v.FailedDocuments }).(pulumi.IntOutput)
+}
+
+// Unique identifier(OCID).
+func (o GetJobsJobCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
+func (o GetJobsJobCollectionItemOutput) InputConfigurations() GetJobsJobCollectionItemInputConfigurationArrayOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) []GetJobsJobCollectionItemInputConfiguration {
+		return v.InputConfigurations
+	}).(GetJobsJobCollectionItemInputConfigurationArrayOutput)
+}
+
+// document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
+func (o GetJobsJobCollectionItemOutput) InputLocations() GetJobsJobCollectionItemInputLocationArrayOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) []GetJobsJobCollectionItemInputLocation { return v.InputLocations }).(GetJobsJobCollectionItemInputLocationArrayOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+func (o GetJobsJobCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
+func (o GetJobsJobCollectionItemOutput) ModelMetadataDetails() GetJobsJobCollectionItemModelMetadataDetailArrayOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) []GetJobsJobCollectionItemModelMetadataDetail {
+		return v.ModelMetadataDetails
+	}).(GetJobsJobCollectionItemModelMetadataDetailArrayOutput)
+}
+
+// Object storage output location to write inference results
+func (o GetJobsJobCollectionItemOutput) OutputLocations() GetJobsJobCollectionItemOutputLocationArrayOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) []GetJobsJobCollectionItemOutputLocation { return v.OutputLocations }).(GetJobsJobCollectionItemOutputLocationArrayOutput)
+}
+
+// Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
+func (o GetJobsJobCollectionItemOutput) PendingDocuments() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) int { return v.PendingDocuments }).(pulumi.IntOutput)
+}
+
+// How much progress the operation has made, vs the total amount of work that must be performed.
+func (o GetJobsJobCollectionItemOutput) PercentComplete() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) int { return v.PercentComplete }).(pulumi.IntOutput)
+}
+
+// A filter to return only resources whose lifecycleState matches the given lifecycleState.
+func (o GetJobsJobCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Job accepted time.
+func (o GetJobsJobCollectionItemOutput) TimeAccepted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) string { return v.TimeAccepted }).(pulumi.StringOutput)
+}
+
+// Job finished time.
+func (o GetJobsJobCollectionItemOutput) TimeCompleted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) string { return v.TimeCompleted }).(pulumi.StringOutput)
+}
+
+// Job started time.
+func (o GetJobsJobCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
+func (o GetJobsJobCollectionItemOutput) TotalDocuments() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) int { return v.TotalDocuments }).(pulumi.IntOutput)
+}
+
+// Time to live duration in days for Job. Job will be available till max 90 days.
+func (o GetJobsJobCollectionItemOutput) TtlInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) int { return v.TtlInDays }).(pulumi.IntOutput)
+}
+
+// warnings count
+func (o GetJobsJobCollectionItemOutput) WarningsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItem) int { return v.WarningsCount }).(pulumi.IntOutput)
+}
+
+type GetJobsJobCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollectionItem)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionItemArrayOutput) ToGetJobsJobCollectionItemArrayOutput() GetJobsJobCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemArrayOutput) ToGetJobsJobCollectionItemArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJobsJobCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobCollectionItem {
+		return vs[0].([]GetJobsJobCollectionItem)[vs[1].(int)]
+	}).(GetJobsJobCollectionItemOutput)
+}
+
+type GetJobsJobCollectionItemInputConfiguration struct {
+	// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+	Configuration map[string]map[string]string `pulumi:"configuration"`
+	// Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+	DocumentTypes []string `pulumi:"documentTypes"`
+}
+
+// GetJobsJobCollectionItemInputConfigurationInput is an input type that accepts GetJobsJobCollectionItemInputConfigurationArgs and GetJobsJobCollectionItemInputConfigurationOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionItemInputConfigurationInput` via:
+//
+//	GetJobsJobCollectionItemInputConfigurationArgs{...}
+type GetJobsJobCollectionItemInputConfigurationInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionItemInputConfigurationOutput() GetJobsJobCollectionItemInputConfigurationOutput
+	ToGetJobsJobCollectionItemInputConfigurationOutputWithContext(context.Context) GetJobsJobCollectionItemInputConfigurationOutput
+}
+
+type GetJobsJobCollectionItemInputConfigurationArgs struct {
+	// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+	Configuration pulumi.StringMapMapInput `pulumi:"configuration"`
+	// Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+	DocumentTypes pulumi.StringArrayInput `pulumi:"documentTypes"`
+}
+
+func (GetJobsJobCollectionItemInputConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollectionItemInputConfiguration)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionItemInputConfigurationArgs) ToGetJobsJobCollectionItemInputConfigurationOutput() GetJobsJobCollectionItemInputConfigurationOutput {
+	return i.ToGetJobsJobCollectionItemInputConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionItemInputConfigurationArgs) ToGetJobsJobCollectionItemInputConfigurationOutputWithContext(ctx context.Context) GetJobsJobCollectionItemInputConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionItemInputConfigurationOutput)
+}
+
+// GetJobsJobCollectionItemInputConfigurationArrayInput is an input type that accepts GetJobsJobCollectionItemInputConfigurationArray and GetJobsJobCollectionItemInputConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionItemInputConfigurationArrayInput` via:
+//
+//	GetJobsJobCollectionItemInputConfigurationArray{ GetJobsJobCollectionItemInputConfigurationArgs{...} }
+type GetJobsJobCollectionItemInputConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionItemInputConfigurationArrayOutput() GetJobsJobCollectionItemInputConfigurationArrayOutput
+	ToGetJobsJobCollectionItemInputConfigurationArrayOutputWithContext(context.Context) GetJobsJobCollectionItemInputConfigurationArrayOutput
+}
+
+type GetJobsJobCollectionItemInputConfigurationArray []GetJobsJobCollectionItemInputConfigurationInput
+
+func (GetJobsJobCollectionItemInputConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollectionItemInputConfiguration)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionItemInputConfigurationArray) ToGetJobsJobCollectionItemInputConfigurationArrayOutput() GetJobsJobCollectionItemInputConfigurationArrayOutput {
+	return i.ToGetJobsJobCollectionItemInputConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionItemInputConfigurationArray) ToGetJobsJobCollectionItemInputConfigurationArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionItemInputConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionItemInputConfigurationArrayOutput)
+}
+
+type GetJobsJobCollectionItemInputConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionItemInputConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollectionItemInputConfiguration)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionItemInputConfigurationOutput) ToGetJobsJobCollectionItemInputConfigurationOutput() GetJobsJobCollectionItemInputConfigurationOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemInputConfigurationOutput) ToGetJobsJobCollectionItemInputConfigurationOutputWithContext(ctx context.Context) GetJobsJobCollectionItemInputConfigurationOutput {
+	return o
+}
+
+// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+func (o GetJobsJobCollectionItemInputConfigurationOutput) Configuration() pulumi.StringMapMapOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemInputConfiguration) map[string]map[string]string {
+		return v.Configuration
+	}).(pulumi.StringMapMapOutput)
+}
+
+// Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
+func (o GetJobsJobCollectionItemInputConfigurationOutput) DocumentTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemInputConfiguration) []string { return v.DocumentTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetJobsJobCollectionItemInputConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionItemInputConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollectionItemInputConfiguration)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionItemInputConfigurationArrayOutput) ToGetJobsJobCollectionItemInputConfigurationArrayOutput() GetJobsJobCollectionItemInputConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemInputConfigurationArrayOutput) ToGetJobsJobCollectionItemInputConfigurationArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionItemInputConfigurationArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemInputConfigurationArrayOutput) Index(i pulumi.IntInput) GetJobsJobCollectionItemInputConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobCollectionItemInputConfiguration {
+		return vs[0].([]GetJobsJobCollectionItemInputConfiguration)[vs[1].(int)]
+	}).(GetJobsJobCollectionItemInputConfigurationOutput)
+}
+
+type GetJobsJobCollectionItemInputLocation struct {
+	// Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// locationType
+	LocationType string `pulumi:"locationType"`
+	// Object Storage namespace name.
+	Namespace string `pulumi:"namespace"`
+	// List of objects to be processed
+	ObjectNames []string `pulumi:"objectNames"`
+}
+
+// GetJobsJobCollectionItemInputLocationInput is an input type that accepts GetJobsJobCollectionItemInputLocationArgs and GetJobsJobCollectionItemInputLocationOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionItemInputLocationInput` via:
+//
+//	GetJobsJobCollectionItemInputLocationArgs{...}
+type GetJobsJobCollectionItemInputLocationInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionItemInputLocationOutput() GetJobsJobCollectionItemInputLocationOutput
+	ToGetJobsJobCollectionItemInputLocationOutputWithContext(context.Context) GetJobsJobCollectionItemInputLocationOutput
+}
+
+type GetJobsJobCollectionItemInputLocationArgs struct {
+	// Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// locationType
+	LocationType pulumi.StringInput `pulumi:"locationType"`
+	// Object Storage namespace name.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// List of objects to be processed
+	ObjectNames pulumi.StringArrayInput `pulumi:"objectNames"`
+}
+
+func (GetJobsJobCollectionItemInputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollectionItemInputLocation)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionItemInputLocationArgs) ToGetJobsJobCollectionItemInputLocationOutput() GetJobsJobCollectionItemInputLocationOutput {
+	return i.ToGetJobsJobCollectionItemInputLocationOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionItemInputLocationArgs) ToGetJobsJobCollectionItemInputLocationOutputWithContext(ctx context.Context) GetJobsJobCollectionItemInputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionItemInputLocationOutput)
+}
+
+// GetJobsJobCollectionItemInputLocationArrayInput is an input type that accepts GetJobsJobCollectionItemInputLocationArray and GetJobsJobCollectionItemInputLocationArrayOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionItemInputLocationArrayInput` via:
+//
+//	GetJobsJobCollectionItemInputLocationArray{ GetJobsJobCollectionItemInputLocationArgs{...} }
+type GetJobsJobCollectionItemInputLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionItemInputLocationArrayOutput() GetJobsJobCollectionItemInputLocationArrayOutput
+	ToGetJobsJobCollectionItemInputLocationArrayOutputWithContext(context.Context) GetJobsJobCollectionItemInputLocationArrayOutput
+}
+
+type GetJobsJobCollectionItemInputLocationArray []GetJobsJobCollectionItemInputLocationInput
+
+func (GetJobsJobCollectionItemInputLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollectionItemInputLocation)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionItemInputLocationArray) ToGetJobsJobCollectionItemInputLocationArrayOutput() GetJobsJobCollectionItemInputLocationArrayOutput {
+	return i.ToGetJobsJobCollectionItemInputLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionItemInputLocationArray) ToGetJobsJobCollectionItemInputLocationArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionItemInputLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionItemInputLocationArrayOutput)
+}
+
+type GetJobsJobCollectionItemInputLocationOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionItemInputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollectionItemInputLocation)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionItemInputLocationOutput) ToGetJobsJobCollectionItemInputLocationOutput() GetJobsJobCollectionItemInputLocationOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemInputLocationOutput) ToGetJobsJobCollectionItemInputLocationOutputWithContext(ctx context.Context) GetJobsJobCollectionItemInputLocationOutput {
+	return o
+}
+
+// Object Storage bucket name.
+func (o GetJobsJobCollectionItemInputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemInputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// locationType
+func (o GetJobsJobCollectionItemInputLocationOutput) LocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemInputLocation) string { return v.LocationType }).(pulumi.StringOutput)
+}
+
+// Object Storage namespace name.
+func (o GetJobsJobCollectionItemInputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemInputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// List of objects to be processed
+func (o GetJobsJobCollectionItemInputLocationOutput) ObjectNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemInputLocation) []string { return v.ObjectNames }).(pulumi.StringArrayOutput)
+}
+
+type GetJobsJobCollectionItemInputLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionItemInputLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollectionItemInputLocation)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionItemInputLocationArrayOutput) ToGetJobsJobCollectionItemInputLocationArrayOutput() GetJobsJobCollectionItemInputLocationArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemInputLocationArrayOutput) ToGetJobsJobCollectionItemInputLocationArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionItemInputLocationArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemInputLocationArrayOutput) Index(i pulumi.IntInput) GetJobsJobCollectionItemInputLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobCollectionItemInputLocation {
+		return vs[0].([]GetJobsJobCollectionItemInputLocation)[vs[1].(int)]
+	}).(GetJobsJobCollectionItemInputLocationOutput)
+}
+
+type GetJobsJobCollectionItemModelMetadataDetail struct {
+	// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+	Configuration map[string]map[string]string `pulumi:"configuration"`
+	// Unique identifier endpoint OCID that should be used for inference
+	EndpointId string `pulumi:"endpointId"`
+	// Language code supported
+	// * auto : Automatically detect language
+	// * ar : Arabic
+	// * pt-BR : Brazilian Portuguese
+	// * cs : Czech
+	// * da : Danish
+	// * nl : Dutch
+	// * en : English
+	// * fi : Finnish
+	// * fr : French
+	// * fr-CA : Canadian French
+	// * de : German
+	// * it : Italian
+	// * ja : Japanese
+	// * ko : Korean
+	// * no : Norwegian
+	// * pl : Polish
+	// * ro : Romanian
+	// * zh-CN : Simplified Chinese
+	// * es : Spanish
+	// * sv : Swedish
+	// * zh-TW : Traditional Chinese
+	// * tr : Turkish
+	// * el : Greek
+	// * he : Hebrew
+	LanguageCode string `pulumi:"languageCode"`
+	// Unique identifier model OCID that should be used for inference
+	ModelId string `pulumi:"modelId"`
+	// model type to used for inference allowed values are
+	// * LANGUAGE_SENTIMENT_ANALYSIS
+	// * LANGUAGE_DETECTION
+	// * TEXT_CLASSIFICATION
+	// * NAMED_ENTITY_RECOGNITION
+	// * KEY_PHRASE_EXTRACTION
+	// * LANGUAGE_PII_ENTITIES
+	// * LANGUAGE_TRANSLATION
+	ModelType string `pulumi:"modelType"`
+}
+
+// GetJobsJobCollectionItemModelMetadataDetailInput is an input type that accepts GetJobsJobCollectionItemModelMetadataDetailArgs and GetJobsJobCollectionItemModelMetadataDetailOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionItemModelMetadataDetailInput` via:
+//
+//	GetJobsJobCollectionItemModelMetadataDetailArgs{...}
+type GetJobsJobCollectionItemModelMetadataDetailInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionItemModelMetadataDetailOutput() GetJobsJobCollectionItemModelMetadataDetailOutput
+	ToGetJobsJobCollectionItemModelMetadataDetailOutputWithContext(context.Context) GetJobsJobCollectionItemModelMetadataDetailOutput
+}
+
+type GetJobsJobCollectionItemModelMetadataDetailArgs struct {
+	// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+	Configuration pulumi.StringMapMapInput `pulumi:"configuration"`
+	// Unique identifier endpoint OCID that should be used for inference
+	EndpointId pulumi.StringInput `pulumi:"endpointId"`
+	// Language code supported
+	// * auto : Automatically detect language
+	// * ar : Arabic
+	// * pt-BR : Brazilian Portuguese
+	// * cs : Czech
+	// * da : Danish
+	// * nl : Dutch
+	// * en : English
+	// * fi : Finnish
+	// * fr : French
+	// * fr-CA : Canadian French
+	// * de : German
+	// * it : Italian
+	// * ja : Japanese
+	// * ko : Korean
+	// * no : Norwegian
+	// * pl : Polish
+	// * ro : Romanian
+	// * zh-CN : Simplified Chinese
+	// * es : Spanish
+	// * sv : Swedish
+	// * zh-TW : Traditional Chinese
+	// * tr : Turkish
+	// * el : Greek
+	// * he : Hebrew
+	LanguageCode pulumi.StringInput `pulumi:"languageCode"`
+	// Unique identifier model OCID that should be used for inference
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// model type to used for inference allowed values are
+	// * LANGUAGE_SENTIMENT_ANALYSIS
+	// * LANGUAGE_DETECTION
+	// * TEXT_CLASSIFICATION
+	// * NAMED_ENTITY_RECOGNITION
+	// * KEY_PHRASE_EXTRACTION
+	// * LANGUAGE_PII_ENTITIES
+	// * LANGUAGE_TRANSLATION
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+}
+
+func (GetJobsJobCollectionItemModelMetadataDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollectionItemModelMetadataDetail)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionItemModelMetadataDetailArgs) ToGetJobsJobCollectionItemModelMetadataDetailOutput() GetJobsJobCollectionItemModelMetadataDetailOutput {
+	return i.ToGetJobsJobCollectionItemModelMetadataDetailOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionItemModelMetadataDetailArgs) ToGetJobsJobCollectionItemModelMetadataDetailOutputWithContext(ctx context.Context) GetJobsJobCollectionItemModelMetadataDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionItemModelMetadataDetailOutput)
+}
+
+// GetJobsJobCollectionItemModelMetadataDetailArrayInput is an input type that accepts GetJobsJobCollectionItemModelMetadataDetailArray and GetJobsJobCollectionItemModelMetadataDetailArrayOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionItemModelMetadataDetailArrayInput` via:
+//
+//	GetJobsJobCollectionItemModelMetadataDetailArray{ GetJobsJobCollectionItemModelMetadataDetailArgs{...} }
+type GetJobsJobCollectionItemModelMetadataDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionItemModelMetadataDetailArrayOutput() GetJobsJobCollectionItemModelMetadataDetailArrayOutput
+	ToGetJobsJobCollectionItemModelMetadataDetailArrayOutputWithContext(context.Context) GetJobsJobCollectionItemModelMetadataDetailArrayOutput
+}
+
+type GetJobsJobCollectionItemModelMetadataDetailArray []GetJobsJobCollectionItemModelMetadataDetailInput
+
+func (GetJobsJobCollectionItemModelMetadataDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollectionItemModelMetadataDetail)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionItemModelMetadataDetailArray) ToGetJobsJobCollectionItemModelMetadataDetailArrayOutput() GetJobsJobCollectionItemModelMetadataDetailArrayOutput {
+	return i.ToGetJobsJobCollectionItemModelMetadataDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionItemModelMetadataDetailArray) ToGetJobsJobCollectionItemModelMetadataDetailArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionItemModelMetadataDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionItemModelMetadataDetailArrayOutput)
+}
+
+type GetJobsJobCollectionItemModelMetadataDetailOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionItemModelMetadataDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollectionItemModelMetadataDetail)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionItemModelMetadataDetailOutput) ToGetJobsJobCollectionItemModelMetadataDetailOutput() GetJobsJobCollectionItemModelMetadataDetailOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemModelMetadataDetailOutput) ToGetJobsJobCollectionItemModelMetadataDetailOutputWithContext(ctx context.Context) GetJobsJobCollectionItemModelMetadataDetailOutput {
+	return o
+}
+
+// model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
+func (o GetJobsJobCollectionItemModelMetadataDetailOutput) Configuration() pulumi.StringMapMapOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemModelMetadataDetail) map[string]map[string]string {
+		return v.Configuration
+	}).(pulumi.StringMapMapOutput)
+}
+
+// Unique identifier endpoint OCID that should be used for inference
+func (o GetJobsJobCollectionItemModelMetadataDetailOutput) EndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemModelMetadataDetail) string { return v.EndpointId }).(pulumi.StringOutput)
+}
+
+// Language code supported
+// * auto : Automatically detect language
+// * ar : Arabic
+// * pt-BR : Brazilian Portuguese
+// * cs : Czech
+// * da : Danish
+// * nl : Dutch
+// * en : English
+// * fi : Finnish
+// * fr : French
+// * fr-CA : Canadian French
+// * de : German
+// * it : Italian
+// * ja : Japanese
+// * ko : Korean
+// * no : Norwegian
+// * pl : Polish
+// * ro : Romanian
+// * zh-CN : Simplified Chinese
+// * es : Spanish
+// * sv : Swedish
+// * zh-TW : Traditional Chinese
+// * tr : Turkish
+// * el : Greek
+// * he : Hebrew
+func (o GetJobsJobCollectionItemModelMetadataDetailOutput) LanguageCode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemModelMetadataDetail) string { return v.LanguageCode }).(pulumi.StringOutput)
+}
+
+// Unique identifier model OCID that should be used for inference
+func (o GetJobsJobCollectionItemModelMetadataDetailOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemModelMetadataDetail) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// model type to used for inference allowed values are
+// * LANGUAGE_SENTIMENT_ANALYSIS
+// * LANGUAGE_DETECTION
+// * TEXT_CLASSIFICATION
+// * NAMED_ENTITY_RECOGNITION
+// * KEY_PHRASE_EXTRACTION
+// * LANGUAGE_PII_ENTITIES
+// * LANGUAGE_TRANSLATION
+func (o GetJobsJobCollectionItemModelMetadataDetailOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemModelMetadataDetail) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+type GetJobsJobCollectionItemModelMetadataDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionItemModelMetadataDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollectionItemModelMetadataDetail)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionItemModelMetadataDetailArrayOutput) ToGetJobsJobCollectionItemModelMetadataDetailArrayOutput() GetJobsJobCollectionItemModelMetadataDetailArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemModelMetadataDetailArrayOutput) ToGetJobsJobCollectionItemModelMetadataDetailArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionItemModelMetadataDetailArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemModelMetadataDetailArrayOutput) Index(i pulumi.IntInput) GetJobsJobCollectionItemModelMetadataDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobCollectionItemModelMetadataDetail {
+		return vs[0].([]GetJobsJobCollectionItemModelMetadataDetail)[vs[1].(int)]
+	}).(GetJobsJobCollectionItemModelMetadataDetailOutput)
+}
+
+type GetJobsJobCollectionItemOutputLocation struct {
+	// Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// Object Storage namespace name.
+	Namespace string `pulumi:"namespace"`
+	// The prefix (directory) in an Object Storage bucket.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetJobsJobCollectionItemOutputLocationInput is an input type that accepts GetJobsJobCollectionItemOutputLocationArgs and GetJobsJobCollectionItemOutputLocationOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionItemOutputLocationInput` via:
+//
+//	GetJobsJobCollectionItemOutputLocationArgs{...}
+type GetJobsJobCollectionItemOutputLocationInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionItemOutputLocationOutput() GetJobsJobCollectionItemOutputLocationOutput
+	ToGetJobsJobCollectionItemOutputLocationOutputWithContext(context.Context) GetJobsJobCollectionItemOutputLocationOutput
+}
+
+type GetJobsJobCollectionItemOutputLocationArgs struct {
+	// Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Object Storage namespace name.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The prefix (directory) in an Object Storage bucket.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetJobsJobCollectionItemOutputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollectionItemOutputLocation)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionItemOutputLocationArgs) ToGetJobsJobCollectionItemOutputLocationOutput() GetJobsJobCollectionItemOutputLocationOutput {
+	return i.ToGetJobsJobCollectionItemOutputLocationOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionItemOutputLocationArgs) ToGetJobsJobCollectionItemOutputLocationOutputWithContext(ctx context.Context) GetJobsJobCollectionItemOutputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionItemOutputLocationOutput)
+}
+
+// GetJobsJobCollectionItemOutputLocationArrayInput is an input type that accepts GetJobsJobCollectionItemOutputLocationArray and GetJobsJobCollectionItemOutputLocationArrayOutput values.
+// You can construct a concrete instance of `GetJobsJobCollectionItemOutputLocationArrayInput` via:
+//
+//	GetJobsJobCollectionItemOutputLocationArray{ GetJobsJobCollectionItemOutputLocationArgs{...} }
+type GetJobsJobCollectionItemOutputLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetJobsJobCollectionItemOutputLocationArrayOutput() GetJobsJobCollectionItemOutputLocationArrayOutput
+	ToGetJobsJobCollectionItemOutputLocationArrayOutputWithContext(context.Context) GetJobsJobCollectionItemOutputLocationArrayOutput
+}
+
+type GetJobsJobCollectionItemOutputLocationArray []GetJobsJobCollectionItemOutputLocationInput
+
+func (GetJobsJobCollectionItemOutputLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollectionItemOutputLocation)(nil)).Elem()
+}
+
+func (i GetJobsJobCollectionItemOutputLocationArray) ToGetJobsJobCollectionItemOutputLocationArrayOutput() GetJobsJobCollectionItemOutputLocationArrayOutput {
+	return i.ToGetJobsJobCollectionItemOutputLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetJobsJobCollectionItemOutputLocationArray) ToGetJobsJobCollectionItemOutputLocationArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionItemOutputLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJobsJobCollectionItemOutputLocationArrayOutput)
+}
+
+type GetJobsJobCollectionItemOutputLocationOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionItemOutputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJobsJobCollectionItemOutputLocation)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionItemOutputLocationOutput) ToGetJobsJobCollectionItemOutputLocationOutput() GetJobsJobCollectionItemOutputLocationOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemOutputLocationOutput) ToGetJobsJobCollectionItemOutputLocationOutputWithContext(ctx context.Context) GetJobsJobCollectionItemOutputLocationOutput {
+	return o
+}
+
+// Object Storage bucket name.
+func (o GetJobsJobCollectionItemOutputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemOutputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Object Storage namespace name.
+func (o GetJobsJobCollectionItemOutputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemOutputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The prefix (directory) in an Object Storage bucket.
+func (o GetJobsJobCollectionItemOutputLocationOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobsJobCollectionItemOutputLocation) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetJobsJobCollectionItemOutputLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJobsJobCollectionItemOutputLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJobsJobCollectionItemOutputLocation)(nil)).Elem()
+}
+
+func (o GetJobsJobCollectionItemOutputLocationArrayOutput) ToGetJobsJobCollectionItemOutputLocationArrayOutput() GetJobsJobCollectionItemOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemOutputLocationArrayOutput) ToGetJobsJobCollectionItemOutputLocationArrayOutputWithContext(ctx context.Context) GetJobsJobCollectionItemOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetJobsJobCollectionItemOutputLocationArrayOutput) Index(i pulumi.IntInput) GetJobsJobCollectionItemOutputLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobsJobCollectionItemOutputLocation {
+		return vs[0].([]GetJobsJobCollectionItemOutputLocation)[vs[1].(int)]
+	}).(GetJobsJobCollectionItemOutputLocationOutput)
 }
 
 type GetModelEvaluationResult struct {
@@ -3848,7 +6247,7 @@ type GetModelModelDetail struct {
 	LanguageCode string `pulumi:"languageCode"`
 	// Model type
 	ModelType string `pulumi:"modelType"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version string `pulumi:"version"`
 }
 
@@ -3870,7 +6269,7 @@ type GetModelModelDetailArgs struct {
 	LanguageCode pulumi.StringInput `pulumi:"languageCode"`
 	// Model type
 	ModelType pulumi.StringInput `pulumi:"modelType"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -3940,7 +6339,7 @@ func (o GetModelModelDetailOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelModelDetail) string { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 func (o GetModelModelDetailOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelModelDetail) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -3968,7 +6367,7 @@ func (o GetModelModelDetailArrayOutput) Index(i pulumi.IntInput) GetModelModelDe
 type GetModelModelDetailClassificationMode struct {
 	// classification Modes
 	ClassificationMode string `pulumi:"classificationMode"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version string `pulumi:"version"`
 }
 
@@ -3986,7 +6385,7 @@ type GetModelModelDetailClassificationModeInput interface {
 type GetModelModelDetailClassificationModeArgs struct {
 	// classification Modes
 	ClassificationMode pulumi.StringInput `pulumi:"classificationMode"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -4046,7 +6445,7 @@ func (o GetModelModelDetailClassificationModeOutput) ClassificationMode() pulumi
 	return o.ApplyT(func(v GetModelModelDetailClassificationMode) string { return v.ClassificationMode }).(pulumi.StringOutput)
 }
 
-// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 func (o GetModelModelDetailClassificationModeOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelModelDetailClassificationMode) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -5140,7 +7539,7 @@ type GetModelsModelCollectionItem struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Possible data set type
 	TrainingDatasets []GetModelsModelCollectionItemTrainingDataset `pulumi:"trainingDatasets"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version string `pulumi:"version"`
 }
 
@@ -5188,7 +7587,7 @@ type GetModelsModelCollectionItemArgs struct {
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// Possible data set type
 	TrainingDatasets GetModelsModelCollectionItemTrainingDatasetArrayInput `pulumi:"trainingDatasets"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -5329,7 +7728,7 @@ func (o GetModelsModelCollectionItemOutput) TrainingDatasets() GetModelsModelCol
 	}).(GetModelsModelCollectionItemTrainingDatasetArrayOutput)
 }
 
-// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 func (o GetModelsModelCollectionItemOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -5944,7 +8343,7 @@ type GetModelsModelCollectionItemModelDetail struct {
 	LanguageCode string `pulumi:"languageCode"`
 	// Model type
 	ModelType string `pulumi:"modelType"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version string `pulumi:"version"`
 }
 
@@ -5966,7 +8365,7 @@ type GetModelsModelCollectionItemModelDetailArgs struct {
 	LanguageCode pulumi.StringInput `pulumi:"languageCode"`
 	// Model type
 	ModelType pulumi.StringInput `pulumi:"modelType"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -6038,7 +8437,7 @@ func (o GetModelsModelCollectionItemModelDetailOutput) ModelType() pulumi.String
 	return o.ApplyT(func(v GetModelsModelCollectionItemModelDetail) string { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 func (o GetModelsModelCollectionItemModelDetailOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemModelDetail) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -6066,7 +8465,7 @@ func (o GetModelsModelCollectionItemModelDetailArrayOutput) Index(i pulumi.IntIn
 type GetModelsModelCollectionItemModelDetailClassificationMode struct {
 	// classification Modes
 	ClassificationMode string `pulumi:"classificationMode"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version string `pulumi:"version"`
 }
 
@@ -6084,7 +8483,7 @@ type GetModelsModelCollectionItemModelDetailClassificationModeInput interface {
 type GetModelsModelCollectionItemModelDetailClassificationModeArgs struct {
 	// classification Modes
 	ClassificationMode pulumi.StringInput `pulumi:"classificationMode"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -6144,7 +8543,7 @@ func (o GetModelsModelCollectionItemModelDetailClassificationModeOutput) Classif
 	return o.ApplyT(func(v GetModelsModelCollectionItemModelDetailClassificationMode) string { return v.ClassificationMode }).(pulumi.StringOutput)
 }
 
-// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 func (o GetModelsModelCollectionItemModelDetailClassificationModeOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemModelDetailClassificationMode) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -7413,6 +9812,14 @@ func (o GetProjectsProjectCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*JobInputConfigurationInput)(nil)).Elem(), JobInputConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobInputConfigurationPtrInput)(nil)).Elem(), JobInputConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobInputLocationInput)(nil)).Elem(), JobInputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobInputLocationPtrInput)(nil)).Elem(), JobInputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobModelMetadataDetailInput)(nil)).Elem(), JobModelMetadataDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobModelMetadataDetailArrayInput)(nil)).Elem(), JobModelMetadataDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobOutputLocationInput)(nil)).Elem(), JobOutputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobOutputLocationPtrInput)(nil)).Elem(), JobOutputLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelEvaluationResultInput)(nil)).Elem(), ModelEvaluationResultArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelEvaluationResultArrayInput)(nil)).Elem(), ModelEvaluationResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelEvaluationResultClassMetricInput)(nil)).Elem(), ModelEvaluationResultClassMetricArgs{})
@@ -7445,6 +9852,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointsEndpointCollectionItemArrayInput)(nil)).Elem(), GetEndpointsEndpointCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointsFilterInput)(nil)).Elem(), GetEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEndpointsFilterArrayInput)(nil)).Elem(), GetEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobInputConfigurationInput)(nil)).Elem(), GetJobInputConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobInputConfigurationArrayInput)(nil)).Elem(), GetJobInputConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobInputLocationInput)(nil)).Elem(), GetJobInputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobInputLocationArrayInput)(nil)).Elem(), GetJobInputLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobModelMetadataDetailInput)(nil)).Elem(), GetJobModelMetadataDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobModelMetadataDetailArrayInput)(nil)).Elem(), GetJobModelMetadataDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobOutputLocationInput)(nil)).Elem(), GetJobOutputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobOutputLocationArrayInput)(nil)).Elem(), GetJobOutputLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsFilterInput)(nil)).Elem(), GetJobsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsFilterArrayInput)(nil)).Elem(), GetJobsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionInput)(nil)).Elem(), GetJobsJobCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionArrayInput)(nil)).Elem(), GetJobsJobCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionItemInput)(nil)).Elem(), GetJobsJobCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionItemArrayInput)(nil)).Elem(), GetJobsJobCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionItemInputConfigurationInput)(nil)).Elem(), GetJobsJobCollectionItemInputConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionItemInputConfigurationArrayInput)(nil)).Elem(), GetJobsJobCollectionItemInputConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionItemInputLocationInput)(nil)).Elem(), GetJobsJobCollectionItemInputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionItemInputLocationArrayInput)(nil)).Elem(), GetJobsJobCollectionItemInputLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionItemModelMetadataDetailInput)(nil)).Elem(), GetJobsJobCollectionItemModelMetadataDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionItemModelMetadataDetailArrayInput)(nil)).Elem(), GetJobsJobCollectionItemModelMetadataDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionItemOutputLocationInput)(nil)).Elem(), GetJobsJobCollectionItemOutputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJobsJobCollectionItemOutputLocationArrayInput)(nil)).Elem(), GetJobsJobCollectionItemOutputLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelEvaluationResultInput)(nil)).Elem(), GetModelEvaluationResultArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelEvaluationResultArrayInput)(nil)).Elem(), GetModelEvaluationResultArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelEvaluationResultClassMetricInput)(nil)).Elem(), GetModelEvaluationResultClassMetricArgs{})
@@ -7519,6 +9948,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionArrayInput)(nil)).Elem(), GetProjectsProjectCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemInput)(nil)).Elem(), GetProjectsProjectCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemArrayInput)(nil)).Elem(), GetProjectsProjectCollectionItemArray{})
+	pulumi.RegisterOutputType(JobInputConfigurationOutput{})
+	pulumi.RegisterOutputType(JobInputConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(JobInputLocationOutput{})
+	pulumi.RegisterOutputType(JobInputLocationPtrOutput{})
+	pulumi.RegisterOutputType(JobModelMetadataDetailOutput{})
+	pulumi.RegisterOutputType(JobModelMetadataDetailArrayOutput{})
+	pulumi.RegisterOutputType(JobOutputLocationOutput{})
+	pulumi.RegisterOutputType(JobOutputLocationPtrOutput{})
 	pulumi.RegisterOutputType(ModelEvaluationResultOutput{})
 	pulumi.RegisterOutputType(ModelEvaluationResultArrayOutput{})
 	pulumi.RegisterOutputType(ModelEvaluationResultClassMetricOutput{})
@@ -7551,6 +9988,28 @@ func init() {
 	pulumi.RegisterOutputType(GetEndpointsEndpointCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJobInputConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobInputConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetJobInputLocationOutput{})
+	pulumi.RegisterOutputType(GetJobInputLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetJobModelMetadataDetailOutput{})
+	pulumi.RegisterOutputType(GetJobModelMetadataDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobOutputLocationOutput{})
+	pulumi.RegisterOutputType(GetJobOutputLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsFilterOutput{})
+	pulumi.RegisterOutputType(GetJobsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionItemInputConfigurationOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionItemInputConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionItemInputLocationOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionItemInputLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionItemModelMetadataDetailOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionItemModelMetadataDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionItemOutputLocationOutput{})
+	pulumi.RegisterOutputType(GetJobsJobCollectionItemOutputLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetModelEvaluationResultOutput{})
 	pulumi.RegisterOutputType(GetModelEvaluationResultArrayOutput{})
 	pulumi.RegisterOutputType(GetModelEvaluationResultClassMetricOutput{})

@@ -51,16 +51,14 @@ public final class AutonomousContainerDatabaseMaintenanceWindowArgs extends com.
     }
 
     /**
-     * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-     * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+     * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
     @Import(name="hoursOfDays")
     private @Nullable Output<List<Integer>> hoursOfDays;
 
     /**
-     * @return The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-     * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+     * @return The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
     public Optional<Output<List<Integer>>> hoursOfDays() {
@@ -158,14 +156,14 @@ public final class AutonomousContainerDatabaseMaintenanceWindowArgs extends com.
     }
 
     /**
-     * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+     * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
      * 
      */
     @Import(name="skipRus")
     private @Nullable Output<List<Boolean>> skipRus;
 
     /**
-     * @return (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+     * @return If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
      * 
      */
     public Optional<Output<List<Boolean>>> skipRus() {
@@ -274,8 +272,7 @@ public final class AutonomousContainerDatabaseMaintenanceWindowArgs extends com.
         }
 
         /**
-         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-         * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          * 
          * @return builder
          * 
@@ -286,8 +283,7 @@ public final class AutonomousContainerDatabaseMaintenanceWindowArgs extends com.
         }
 
         /**
-         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-         * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          * 
          * @return builder
          * 
@@ -297,8 +293,7 @@ public final class AutonomousContainerDatabaseMaintenanceWindowArgs extends com.
         }
 
         /**
-         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-         * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          * 
          * @return builder
          * 
@@ -444,7 +439,7 @@ public final class AutonomousContainerDatabaseMaintenanceWindowArgs extends com.
         }
 
         /**
-         * @param skipRus (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         * @param skipRus If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
          * 
          * @return builder
          * 
@@ -455,7 +450,7 @@ public final class AutonomousContainerDatabaseMaintenanceWindowArgs extends com.
         }
 
         /**
-         * @param skipRus (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         * @param skipRus If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
          * 
          * @return builder
          * 
@@ -465,7 +460,7 @@ public final class AutonomousContainerDatabaseMaintenanceWindowArgs extends com.
         }
 
         /**
-         * @param skipRus (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         * @param skipRus If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
          * 
          * @return builder
          * 

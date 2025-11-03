@@ -81,7 +81,11 @@ export interface GetAutonomousVmClusterResourceUsageResult {
      */
     readonly isLocalBackupEnabled: boolean;
     /**
-     * The amount of memory (in GBs) to be enabled per each CPU core.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     */
+    readonly memoryPerComputeUnitInGbs: number;
+    /**
+     * The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
     /**

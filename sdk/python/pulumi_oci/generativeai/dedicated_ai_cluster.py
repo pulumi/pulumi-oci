@@ -53,6 +53,9 @@ class DedicatedAiClusterArgs:
                * LARGE_GENERIC_4
                * SMALL_GENERIC_V2
                * LARGE_GENERIC_2
+               * SMALL_GENERIC_V1
+               * MEDIUM_GENERIC_V1
+               * LARGE_GENERIC_V1
                
                
                ** IMPORTANT **
@@ -134,6 +137,9 @@ class DedicatedAiClusterArgs:
         * LARGE_GENERIC_4
         * SMALL_GENERIC_V2
         * LARGE_GENERIC_2
+        * SMALL_GENERIC_V1
+        * MEDIUM_GENERIC_V1
+        * LARGE_GENERIC_V1
 
 
         ** IMPORTANT **
@@ -245,6 +251,9 @@ class _DedicatedAiClusterState:
                * LARGE_GENERIC_4
                * SMALL_GENERIC_V2
                * LARGE_GENERIC_2
+               * SMALL_GENERIC_V1
+               * MEDIUM_GENERIC_V1
+               * LARGE_GENERIC_V1
                
                
                ** IMPORTANT **
@@ -458,6 +467,9 @@ class _DedicatedAiClusterState:
         * LARGE_GENERIC_4
         * SMALL_GENERIC_V2
         * LARGE_GENERIC_2
+        * SMALL_GENERIC_V1
+        * MEDIUM_GENERIC_V1
+        * LARGE_GENERIC_V1
 
 
         ** IMPORTANT **
@@ -486,10 +498,6 @@ class DedicatedAiCluster(pulumi.CustomResource):
                  unit_shape: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
-
-        Creates a dedicated AI cluster.
-
         ## Example Usage
 
         ```python
@@ -547,6 +555,9 @@ class DedicatedAiCluster(pulumi.CustomResource):
                * LARGE_GENERIC_4
                * SMALL_GENERIC_V2
                * LARGE_GENERIC_2
+               * SMALL_GENERIC_V1
+               * MEDIUM_GENERIC_V1
+               * LARGE_GENERIC_V1
                
                
                ** IMPORTANT **
@@ -559,10 +570,6 @@ class DedicatedAiCluster(pulumi.CustomResource):
                  args: DedicatedAiClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
-
-        Creates a dedicated AI cluster.
-
         ## Example Usage
 
         ```python
@@ -709,6 +716,9 @@ class DedicatedAiCluster(pulumi.CustomResource):
                * LARGE_GENERIC_4
                * SMALL_GENERIC_V2
                * LARGE_GENERIC_2
+               * SMALL_GENERIC_V1
+               * MEDIUM_GENERIC_V1
+               * LARGE_GENERIC_V1
                
                
                ** IMPORTANT **
@@ -861,6 +871,9 @@ class DedicatedAiCluster(pulumi.CustomResource):
         * LARGE_GENERIC_4
         * SMALL_GENERIC_V2
         * LARGE_GENERIC_2
+        * SMALL_GENERIC_V1
+        * MEDIUM_GENERIC_V1
+        * LARGE_GENERIC_V1
 
 
         ** IMPORTANT **

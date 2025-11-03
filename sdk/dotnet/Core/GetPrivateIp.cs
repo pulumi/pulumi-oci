@@ -140,6 +140,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// The secondary IPv4 CIDR prefix length.
+        /// </summary>
+        public readonly int CidrPrefixLength;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
         /// </summary>
         public readonly string CompartmentId;
@@ -171,6 +175,10 @@ namespace Pulumi.Oci.Core
         /// State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
         /// </summary>
         public readonly string IpState;
+        /// <summary>
+        /// Ipv4 Subnet CIDR specified whn creating the PrivateIP.
+        /// </summary>
+        public readonly string Ipv4subnetCidrAtCreation;
         /// <summary>
         /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `True`
         /// </summary>
@@ -208,6 +216,8 @@ namespace Pulumi.Oci.Core
         private GetPrivateIpResult(
             string availabilityDomain,
 
+            int cidrPrefixLength,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -223,6 +233,8 @@ namespace Pulumi.Oci.Core
             string ipAddress,
 
             string ipState,
+
+            string ipv4subnetCidrAtCreation,
 
             bool isPrimary,
 
@@ -243,6 +255,7 @@ namespace Pulumi.Oci.Core
             string vnicId)
         {
             AvailabilityDomain = availabilityDomain;
+            CidrPrefixLength = cidrPrefixLength;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             DisplayName = displayName;
@@ -251,6 +264,7 @@ namespace Pulumi.Oci.Core
             Id = id;
             IpAddress = ipAddress;
             IpState = ipState;
+            Ipv4subnetCidrAtCreation = ipv4subnetCidrAtCreation;
             IsPrimary = isPrimary;
             IsReserved = isReserved;
             Lifetime = lifetime;

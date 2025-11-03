@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Managed Instance Group resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Creates a new managed instance group.
- *
  * ## Example Usage
  *
  * ```typescript

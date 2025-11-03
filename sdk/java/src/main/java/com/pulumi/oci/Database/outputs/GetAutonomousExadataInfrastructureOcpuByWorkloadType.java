@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousExadataInfrastructureOcpuByWorkloadType {
     /**
-     * @return The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+     * @return The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
      * 
      */
     private Double adw;
     /**
-     * @return The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+     * @return The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
      * 
      */
     private Double atp;
 
     private GetAutonomousExadataInfrastructureOcpuByWorkloadType() {}
     /**
-     * @return The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
+     * @return The total number of OCPU cores in use for Autonomous AI Lakehouse databases in the infrastructure instance.
      * 
      */
     public Double adw() {
         return this.adw;
     }
     /**
-     * @return The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
+     * @return The total number of OCPU cores in use for Autonomous AI Transaction Processing databases in the infrastructure instance.
      * 
      */
     public Double atp() {

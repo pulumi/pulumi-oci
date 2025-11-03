@@ -120,14 +120,6 @@ class SoftwareSourceReplacePackagesManagement(pulumi.CustomResource):
                  software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Software Source Replace Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Replaces packages in a software source with the provided list of packages. This operation can only be done for custom software sources that are not created using filters.
-        Packages can be of the format:
-         * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
-         * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
-         * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
-
         ## Example Usage
 
         ```python
@@ -163,14 +155,6 @@ class SoftwareSourceReplacePackagesManagement(pulumi.CustomResource):
                  args: SoftwareSourceReplacePackagesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Software Source Replace Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Replaces packages in a software source with the provided list of packages. This operation can only be done for custom software sources that are not created using filters.
-        Packages can be of the format:
-         * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
-         * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
-         * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
-
         ## Example Usage
 
         ```python

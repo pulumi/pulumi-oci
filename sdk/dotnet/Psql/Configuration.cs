@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Psql
 {
     /// <summary>
-    /// This resource provides the Configuration resource in Oracle Cloud Infrastructure Psql service.
-    /// 
-    /// Creates a new configuration.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

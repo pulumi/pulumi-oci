@@ -594,10 +594,6 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
                  workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates a patch in an application.
-
         ## Example Usage
 
         ```python
@@ -657,10 +653,6 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
                  args: WorkspaceApplicationPatchArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
-
-        Creates a patch in an application.
-
         ## Example Usage
 
         ```python

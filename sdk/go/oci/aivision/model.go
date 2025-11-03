@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
-//
-// Create a new model.
-//
 // ## Example Usage
 //
 // ```go

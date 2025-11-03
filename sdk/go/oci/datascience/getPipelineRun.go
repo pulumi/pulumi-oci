@@ -85,6 +85,8 @@ type LookupPipelineRunResult struct {
 	// Customer logging details for pipeline run.
 	LogDetails      []GetPipelineRunLogDetail `pulumi:"logDetails"`
 	OpcParentRptUrl string                    `pulumi:"opcParentRptUrl"`
+	// Parameters override used in the pipeline run.
+	ParametersOverride map[string]string `pulumi:"parametersOverride"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId    string `pulumi:"pipelineId"`
 	PipelineRunId string `pulumi:"pipelineRunId"`
@@ -96,6 +98,8 @@ type LookupPipelineRunResult struct {
 	StepOverrideDetails []GetPipelineRunStepOverrideDetail `pulumi:"stepOverrideDetails"`
 	// Array of StepRun object for each step.
 	StepRuns []GetPipelineRunStepRun `pulumi:"stepRuns"`
+	// The storage mount override details to mount to the instance running the pipeline step.
+	StorageMountConfigurationOverrideDetailsLists []GetPipelineRunStorageMountConfigurationOverrideDetailsList `pulumi:"storageMountConfigurationOverrideDetailsLists"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -217,6 +221,11 @@ func (o LookupPipelineRunResultOutput) OpcParentRptUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPipelineRunResult) string { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
+// Parameters override used in the pipeline run.
+func (o LookupPipelineRunResultOutput) ParametersOverride() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPipelineRunResult) map[string]string { return v.ParametersOverride }).(pulumi.StringMapOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 func (o LookupPipelineRunResultOutput) PipelineId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPipelineRunResult) string { return v.PipelineId }).(pulumi.StringOutput)
@@ -244,6 +253,13 @@ func (o LookupPipelineRunResultOutput) StepOverrideDetails() GetPipelineRunStepO
 // Array of StepRun object for each step.
 func (o LookupPipelineRunResultOutput) StepRuns() GetPipelineRunStepRunArrayOutput {
 	return o.ApplyT(func(v LookupPipelineRunResult) []GetPipelineRunStepRun { return v.StepRuns }).(GetPipelineRunStepRunArrayOutput)
+}
+
+// The storage mount override details to mount to the instance running the pipeline step.
+func (o LookupPipelineRunResultOutput) StorageMountConfigurationOverrideDetailsLists() GetPipelineRunStorageMountConfigurationOverrideDetailsListArrayOutput {
+	return o.ApplyT(func(v LookupPipelineRunResult) []GetPipelineRunStorageMountConfigurationOverrideDetailsList {
+		return v.StorageMountConfigurationOverrideDetailsLists
+	}).(GetPipelineRunStorageMountConfigurationOverrideDetailsListArrayOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`

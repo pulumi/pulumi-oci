@@ -140,10 +140,6 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
                  work_request_details: Optional[pulumi.Input[Union['LifecycleStageRebootManagementWorkRequestDetailsArgs', 'LifecycleStageRebootManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Lifecycle Stage Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Reboots all managed instances in the specified lifecycle stage.
-
         ## Example Usage
 
         ```python
@@ -180,10 +176,6 @@ class LifecycleStageRebootManagement(pulumi.CustomResource):
                  args: LifecycleStageRebootManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Lifecycle Stage Reboot Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Reboots all managed instances in the specified lifecycle stage.
-
         ## Example Usage
 
         ```python

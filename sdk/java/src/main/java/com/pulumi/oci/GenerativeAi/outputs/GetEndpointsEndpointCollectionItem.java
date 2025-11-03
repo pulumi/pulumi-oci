@@ -18,13 +18,21 @@ public final class GetEndpointsEndpointCollectionItem {
      * 
      */
     private String compartmentId;
-    private List<GetEndpointsEndpointCollectionItemContentModerationConfig> contentModerationConfigs;
-    private String dedicatedAiClusterId;
-    private Map<String,String> definedTags;
     /**
-     * @return An optional description of the endpoint.
+     * @return The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
      * 
      */
+    private List<GetEndpointsEndpointCollectionItemContentModerationConfig> contentModerationConfigs;
+    /**
+     * @return The OCID of the dedicated AI cluster on which the model will be deployed to.
+     * 
+     */
+    private String dedicatedAiClusterId;
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
+    private Map<String,String> definedTags;
     private String description;
     /**
      * @return A filter to return only resources that match the given display name exactly.
@@ -33,13 +41,22 @@ public final class GetEndpointsEndpointCollectionItem {
     private String displayName;
     private Map<String,String> freeformTags;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     * 
+     */
+    private String generativeAiPrivateEndpointId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
      * 
      */
     private String id;
+    /**
+     * @return A message describing the current state of the endpoint in more detail that can provide actionable information.
+     * 
+     */
     private String lifecycleDetails;
     /**
-     * @return The OCID of the model that&#39;s used to create this endpoint.
+     * @return The OCID of the model used for the feature.
      * 
      */
     private String modelId;
@@ -48,12 +65,12 @@ public final class GetEndpointsEndpointCollectionItem {
      * 
      */
     private String state;
-    private Map<String,String> systemTags;
-    private String timeCreated;
     /**
-     * @return The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
+    private Map<String,String> systemTags;
+    private String timeCreated;
     private String timeUpdated;
 
     private GetEndpointsEndpointCollectionItem() {}
@@ -64,19 +81,27 @@ public final class GetEndpointsEndpointCollectionItem {
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
+     * 
+     */
     public List<GetEndpointsEndpointCollectionItemContentModerationConfig> contentModerationConfigs() {
         return this.contentModerationConfigs;
     }
+    /**
+     * @return The OCID of the dedicated AI cluster on which the model will be deployed to.
+     * 
+     */
     public String dedicatedAiClusterId() {
         return this.dedicatedAiClusterId;
     }
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
-    /**
-     * @return An optional description of the endpoint.
-     * 
-     */
     public String description() {
         return this.description;
     }
@@ -91,17 +116,28 @@ public final class GetEndpointsEndpointCollectionItem {
         return this.freeformTags;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     * 
+     */
+    public String generativeAiPrivateEndpointId() {
+        return this.generativeAiPrivateEndpointId;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
      * 
      */
     public String id() {
         return this.id;
     }
+    /**
+     * @return A message describing the current state of the endpoint in more detail that can provide actionable information.
+     * 
+     */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * @return The OCID of the model that&#39;s used to create this endpoint.
+     * @return The OCID of the model used for the feature.
      * 
      */
     public String modelId() {
@@ -114,16 +150,16 @@ public final class GetEndpointsEndpointCollectionItem {
     public String state() {
         return this.state;
     }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
     public String timeCreated() {
         return this.timeCreated;
     }
-    /**
-     * @return The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
-     * 
-     */
     public String timeUpdated() {
         return this.timeUpdated;
     }
@@ -144,6 +180,7 @@ public final class GetEndpointsEndpointCollectionItem {
         private String description;
         private String displayName;
         private Map<String,String> freeformTags;
+        private String generativeAiPrivateEndpointId;
         private String id;
         private String lifecycleDetails;
         private String modelId;
@@ -161,6 +198,7 @@ public final class GetEndpointsEndpointCollectionItem {
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.generativeAiPrivateEndpointId = defaults.generativeAiPrivateEndpointId;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.modelId = defaults.modelId;
@@ -230,6 +268,14 @@ public final class GetEndpointsEndpointCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder generativeAiPrivateEndpointId(String generativeAiPrivateEndpointId) {
+            if (generativeAiPrivateEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetEndpointsEndpointCollectionItem", "generativeAiPrivateEndpointId");
+            }
+            this.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetEndpointsEndpointCollectionItem", "id");
@@ -294,6 +340,7 @@ public final class GetEndpointsEndpointCollectionItem {
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.modelId = modelId;

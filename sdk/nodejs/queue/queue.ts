@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
- *
- * Creates a new queue.
- *
  * ## Example Usage
  *
  * ```typescript

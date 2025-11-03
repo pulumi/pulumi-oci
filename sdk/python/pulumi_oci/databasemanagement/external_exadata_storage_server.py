@@ -508,9 +508,7 @@ class ExternalExadataStorageServer(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the Exadata storage server specified by exadataStorageServerId.
+        ## Example Usage
 
         ## Import
 
@@ -537,9 +535,7 @@ class ExternalExadataStorageServer(pulumi.CustomResource):
                  args: ExternalExadataStorageServerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the Exadata storage server specified by exadataStorageServerId.
+        ## Example Usage
 
         ## Import
 

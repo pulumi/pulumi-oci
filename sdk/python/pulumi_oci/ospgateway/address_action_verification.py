@@ -1028,10 +1028,6 @@ class AddressActionVerification(pulumi.CustomResource):
                  street_number: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Address Action Verification resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-        Verify address
-
         ## Example Usage
 
         ```python
@@ -1119,10 +1115,6 @@ class AddressActionVerification(pulumi.CustomResource):
                  args: AddressActionVerificationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Address Action Verification resource in Oracle Cloud Infrastructure Osp Gateway service.
-
-        Verify address
-
         ## Example Usage
 
         ```python

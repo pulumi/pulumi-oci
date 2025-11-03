@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class FsuCollectionActiveFsuCycle {
     /**
-     * @return (Updatable) Exadata Fleet Update Collection Identifier.
+     * @return (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return OCID identifier for the Exadata Fleet Update Collection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      * 
      */
     private @Nullable String id;
 
     private FsuCollectionActiveFsuCycle() {}
     /**
-     * @return (Updatable) Exadata Fleet Update Collection Identifier.
+     * @return (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return OCID identifier for the Exadata Fleet Update Collection.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      * 
      */
     public Optional<String> id() {

@@ -33,14 +33,14 @@ public final class GetAutonomousDbVersionsPlainArgs extends com.pulumi.resources
     }
 
     /**
-     * A filter to return only autonomous database resources that match the specified workload type.
+     * A filter to return only Autonomous AI Database resources that match the specified workload type.
      * 
      */
     @Import(name="dbWorkload")
     private @Nullable String dbWorkload;
 
     /**
-     * @return A filter to return only autonomous database resources that match the specified workload type.
+     * @return A filter to return only Autonomous AI Database resources that match the specified workload type.
      * 
      */
     public Optional<String> dbWorkload() {
@@ -92,7 +92,7 @@ public final class GetAutonomousDbVersionsPlainArgs extends com.pulumi.resources
         }
 
         /**
-         * @param dbWorkload A filter to return only autonomous database resources that match the specified workload type.
+         * @param dbWorkload A filter to return only Autonomous AI Database resources that match the specified workload type.
          * 
          * @return builder
          * 

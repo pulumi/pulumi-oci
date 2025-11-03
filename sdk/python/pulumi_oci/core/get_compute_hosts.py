@@ -28,7 +28,7 @@ class GetComputeHostsResult:
     """
     A collection of values returned by getComputeHosts.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, compute_host_collections=None, compute_host_group_id=None, compute_host_health=None, compute_host_lifecycle_state=None, display_name=None, filters=None, id=None, lifecycle_details=None, network_resource_id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, compute_host_collections=None, compute_host_group_id=None, compute_host_health=None, compute_host_in_subtree=None, compute_host_lifecycle_state=None, display_name=None, filters=None, id=None, lifecycle_details=None, network_resource_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -44,6 +44,9 @@ class GetComputeHostsResult:
         if compute_host_health and not isinstance(compute_host_health, str):
             raise TypeError("Expected argument 'compute_host_health' to be a str")
         pulumi.set(__self__, "compute_host_health", compute_host_health)
+        if compute_host_in_subtree and not isinstance(compute_host_in_subtree, bool):
+            raise TypeError("Expected argument 'compute_host_in_subtree' to be a bool")
+        pulumi.set(__self__, "compute_host_in_subtree", compute_host_in_subtree)
         if compute_host_lifecycle_state and not isinstance(compute_host_lifecycle_state, str):
             raise TypeError("Expected argument 'compute_host_lifecycle_state' to be a str")
         pulumi.set(__self__, "compute_host_lifecycle_state", compute_host_lifecycle_state)
@@ -101,6 +104,11 @@ class GetComputeHostsResult:
         return pulumi.get(self, "compute_host_health")
 
     @_builtins.property
+    @pulumi.getter(name="computeHostInSubtree")
+    def compute_host_in_subtree(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "compute_host_in_subtree")
+
+    @_builtins.property
     @pulumi.getter(name="computeHostLifecycleState")
     def compute_host_lifecycle_state(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "compute_host_lifecycle_state")
@@ -151,6 +159,7 @@ class AwaitableGetComputeHostsResult(GetComputeHostsResult):
             compute_host_collections=self.compute_host_collections,
             compute_host_group_id=self.compute_host_group_id,
             compute_host_health=self.compute_host_health,
+            compute_host_in_subtree=self.compute_host_in_subtree,
             compute_host_lifecycle_state=self.compute_host_lifecycle_state,
             display_name=self.display_name,
             filters=self.filters,
@@ -163,6 +172,7 @@ def get_compute_hosts(availability_domain: Optional[_builtins.str] = None,
                       compartment_id: Optional[_builtins.str] = None,
                       compute_host_group_id: Optional[_builtins.str] = None,
                       compute_host_health: Optional[_builtins.str] = None,
+                      compute_host_in_subtree: Optional[_builtins.bool] = None,
                       compute_host_lifecycle_state: Optional[_builtins.str] = None,
                       display_name: Optional[_builtins.str] = None,
                       filters: Optional[Sequence[Union['GetComputeHostsFilterArgs', 'GetComputeHostsFilterArgsDict']]] = None,
@@ -183,6 +193,7 @@ def get_compute_hosts(availability_domain: Optional[_builtins.str] = None,
         availability_domain=compute_host_availability_domain,
         compute_host_group_id=test_compute_host_group["id"],
         compute_host_health=compute_host_compute_host_health,
+        compute_host_in_subtree=compute_host_compute_host_in_subtree,
         compute_host_lifecycle_state=compute_host_compute_host_lifecycle_state,
         display_name=compute_host_display_name,
         network_resource_id=test_resource["id"])
@@ -193,6 +204,7 @@ def get_compute_hosts(availability_domain: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
     :param _builtins.str compute_host_health: A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
+    :param _builtins.bool compute_host_in_subtree: When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
     :param _builtins.str compute_host_lifecycle_state: A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str network_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host network resoruce.
@@ -205,6 +217,7 @@ def get_compute_hosts(availability_domain: Optional[_builtins.str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['computeHostGroupId'] = compute_host_group_id
     __args__['computeHostHealth'] = compute_host_health
+    __args__['computeHostInSubtree'] = compute_host_in_subtree
     __args__['computeHostLifecycleState'] = compute_host_lifecycle_state
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -218,6 +231,7 @@ def get_compute_hosts(availability_domain: Optional[_builtins.str] = None,
         compute_host_collections=pulumi.get(__ret__, 'compute_host_collections'),
         compute_host_group_id=pulumi.get(__ret__, 'compute_host_group_id'),
         compute_host_health=pulumi.get(__ret__, 'compute_host_health'),
+        compute_host_in_subtree=pulumi.get(__ret__, 'compute_host_in_subtree'),
         compute_host_lifecycle_state=pulumi.get(__ret__, 'compute_host_lifecycle_state'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
@@ -228,6 +242,7 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
                              compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                              compute_host_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              compute_host_health: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                             compute_host_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                              compute_host_lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeHostsFilterArgs', 'GetComputeHostsFilterArgsDict']]]]] = None,
@@ -248,6 +263,7 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
         availability_domain=compute_host_availability_domain,
         compute_host_group_id=test_compute_host_group["id"],
         compute_host_health=compute_host_compute_host_health,
+        compute_host_in_subtree=compute_host_compute_host_in_subtree,
         compute_host_lifecycle_state=compute_host_compute_host_lifecycle_state,
         display_name=compute_host_display_name,
         network_resource_id=test_resource["id"])
@@ -258,6 +274,7 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
     :param _builtins.str compute_host_health: A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
+    :param _builtins.bool compute_host_in_subtree: When set to true, all the compartments in the tenancy are traversed and the hosts in the specified tenancy and its compartments are fetched. Default is false.
     :param _builtins.str compute_host_lifecycle_state: A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str network_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host network resoruce.
@@ -270,6 +287,7 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
     __args__['compartmentId'] = compartment_id
     __args__['computeHostGroupId'] = compute_host_group_id
     __args__['computeHostHealth'] = compute_host_health
+    __args__['computeHostInSubtree'] = compute_host_in_subtree
     __args__['computeHostLifecycleState'] = compute_host_lifecycle_state
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -282,6 +300,7 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
         compute_host_collections=pulumi.get(__response__, 'compute_host_collections'),
         compute_host_group_id=pulumi.get(__response__, 'compute_host_group_id'),
         compute_host_health=pulumi.get(__response__, 'compute_host_health'),
+        compute_host_in_subtree=pulumi.get(__response__, 'compute_host_in_subtree'),
         compute_host_lifecycle_state=pulumi.get(__response__, 'compute_host_lifecycle_state'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),

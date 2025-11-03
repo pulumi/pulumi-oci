@@ -446,10 +446,6 @@ class Rule(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Alert Rule resource in Oracle Cloud Infrastructure Budget service.
-
-        Creates a new Alert Rule.
-
         ## Example Usage
 
         ```python
@@ -505,10 +501,6 @@ class Rule(pulumi.CustomResource):
                  args: RuleArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Alert Rule resource in Oracle Cloud Infrastructure Budget service.
-
-        Creates a new Alert Rule.
-
         ## Example Usage
 
         ```python

@@ -5,8 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
- *
  * ## Example Usage
  *
  * ```typescript

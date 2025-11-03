@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.FusionApps
 {
     /// <summary>
-    /// This resource provides the Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
-    /// 
-    /// Create a FusionEnvironment admin user
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

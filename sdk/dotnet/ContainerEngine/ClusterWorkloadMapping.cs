@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.ContainerEngine
 {
     /// <summary>
-    /// This resource provides the Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
-    /// 
-    /// Create the specified workloadMapping for a cluster.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

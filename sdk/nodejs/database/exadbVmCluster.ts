@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
- *
- * Creates an Exadata VM cluster on Exascale Infrastructure
- *
  * ## Example Usage
  *
  * ```typescript
@@ -202,7 +198,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
     declare public readonly nodeResources: pulumi.Output<outputs.Database.ExadbVmClusterNodeResource[]>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
     declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
@@ -530,7 +526,7 @@ export interface ExadbVmClusterState {
     nodeResources?: pulumi.Input<pulumi.Input<inputs.Database.ExadbVmClusterNodeResource>[]>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -691,7 +687,7 @@ export interface ExadbVmClusterArgs {
     nodeResources?: pulumi.Input<pulumi.Input<inputs.Database.ExadbVmClusterNodeResource>[]>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**

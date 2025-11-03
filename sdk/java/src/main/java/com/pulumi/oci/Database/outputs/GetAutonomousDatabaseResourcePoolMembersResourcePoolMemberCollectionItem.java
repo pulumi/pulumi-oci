@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabaseResourcePoolMembersResourcePoolMemberCollectionItem {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
      * 
      */
     private String id;
 
     private GetAutonomousDatabaseResourcePoolMembersResourcePoolMemberCollectionItem() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database.
      * 
      */
     public String id() {

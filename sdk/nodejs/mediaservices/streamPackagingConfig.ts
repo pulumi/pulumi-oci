@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
- *
- * Creates a new Packaging Configuration.
- *
  * ## Example Usage
  *
  * ```typescript

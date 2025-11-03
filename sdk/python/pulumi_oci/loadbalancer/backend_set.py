@@ -475,14 +475,6 @@ class BackendSet(pulumi.CustomResource):
                  ssl_configuration: Optional[pulumi.Input[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Adds a backend set to a load balancer.
-
-        ## Supported Aliases
-
-        * `oci_load_balancer_backendset`
-
         ## Example Usage
 
         ```python
@@ -595,14 +587,6 @@ class BackendSet(pulumi.CustomResource):
                  args: BackendSetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Backend Set resource in Oracle Cloud Infrastructure Load Balancer service.
-
-        Adds a backend set to a load balancer.
-
-        ## Supported Aliases
-
-        * `oci_load_balancer_backendset`
-
         ## Example Usage
 
         ```python

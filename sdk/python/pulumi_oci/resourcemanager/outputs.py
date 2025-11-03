@@ -76,9 +76,11 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
                  id: _builtins.str,
                  is_used_with_configuration_source_provider: _builtins.bool,
                  nsg_id_lists: Sequence[_builtins.str],
+                 security_attributes: Mapping[str, _builtins.str],
                  source_ips: Sequence[_builtins.str],
                  state: _builtins.str,
                  subnet_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  vcn_id: _builtins.str):
         """
@@ -86,14 +88,16 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: Description of the private endpoint. Avoid entering confidential information.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
-        :param Sequence[_builtins.str] dns_zones: DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+        :param Sequence[_builtins.str] dns_zones: DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param _builtins.str id: Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         :param _builtins.bool is_used_with_configuration_source_provider: When `true`, allows the private endpoint to be used with a configuration source provider.
-        :param Sequence[_builtins.str] nsg_id_lists: An array of network security groups (NSG) that the customer can optionally provide.
-        :param Sequence[_builtins.str] source_ips: The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+        :param Sequence[_builtins.str] nsg_id_lists: The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        :param Sequence[_builtins.str] source_ips: The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
         :param _builtins.str state: The current lifecycle state of the private endpoint.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
+        :param Mapping[str, _builtins.str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param _builtins.str time_created: The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
         :param _builtins.str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
@@ -106,9 +110,11 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_used_with_configuration_source_provider", is_used_with_configuration_source_provider)
         pulumi.set(__self__, "nsg_id_lists", nsg_id_lists)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "source_ips", source_ips)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "vcn_id", vcn_id)
 
@@ -148,7 +154,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
     @pulumi.getter(name="dnsZones")
     def dns_zones(self) -> Sequence[_builtins.str]:
         """
-        DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
+        DNS zones to use for accessing private Git servers. For private Git server instructions, see [Private Git Server](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/private-endpoints.htm#private-git). Specify DNS fully qualified domain names (FQDNs); DNS Proxy forwards related DNS FQDN queries to the consumer DNS resolver. For DNS FQDNs not specified, queries go to service provider VCN resolver. Example: `abc.oraclevcn.com`
         """
         return pulumi.get(self, "dns_zones")
 
@@ -164,7 +170,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "id")
 
@@ -180,15 +186,23 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
     @pulumi.getter(name="nsgIdLists")
     def nsg_id_lists(self) -> Sequence[_builtins.str]:
         """
-        An array of network security groups (NSG) that the customer can optionally provide.
+        The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
         """
         return pulumi.get(self, "nsg_id_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter(name="sourceIps")
     def source_ips(self) -> Sequence[_builtins.str]:
         """
-        The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+        The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
         """
         return pulumi.get(self, "source_ips")
 
@@ -207,6 +221,14 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -289,6 +311,8 @@ class GetStacksStackResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 terraform_version: _builtins.str,
                  time_created: _builtins.str,
                  variables: Mapping[str, _builtins.str]):
         """
@@ -296,16 +320,11 @@ class GetStacksStackResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: General description of the stack.
         :param _builtins.str display_name: Display name on which to query.
-        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
-        :param _builtins.str state: A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-               
-               Allowable values:
-               * CREATING
-               * ACTIVE
-               * DELETING
-               * DELETED
-        :param _builtins.str time_created: The date and time at which the stack was created.
+        :param _builtins.str state: A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
+        :param Mapping[str, _builtins.str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param _builtins.str time_created: The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "config_source", config_source)
@@ -315,6 +334,8 @@ class GetStacksStackResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "terraform_version", terraform_version)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "variables", variables)
 
@@ -359,7 +380,7 @@ class GetStacksStackResult(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -375,21 +396,28 @@ class GetStacksStackResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
-
-        Allowable values:
-        * CREATING
-        * ACTIVE
-        * DELETING
-        * DELETED
+        A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive. For more information about stack lifecycle states, see [Key Concepts](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates).
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="terraformVersion")
+    def terraform_version(self) -> _builtins.str:
+        return pulumi.get(self, "terraform_version")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time at which the stack was created.
+        The date and time at which the stack was created. Format is defined by RFC3339. Example: `2020-01-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 

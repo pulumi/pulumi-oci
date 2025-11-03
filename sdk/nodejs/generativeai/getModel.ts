@@ -43,18 +43,15 @@ export interface GetModelArgs {
  * A collection of values returned by getModel.
  */
 export interface GetModelResult {
-    /**
-     * The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
-     */
     readonly baseModelId: string;
-    /**
-     * Describes what this model can be used for.
-     */
     readonly capabilities: string[];
     /**
      * The compartment OCID for fine-tuned models. For pretrained models, this value is null.
      */
     readonly compartmentId: string;
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+     */
     readonly definedTags: {[key: string]: string};
     /**
      * An optional description of the model.

@@ -180,10 +180,6 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
                  feature_details: Optional[pulumi.Input[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Externalpluggabledatabase External Pluggable Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables a Database Management feature for the specified external pluggable database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.
@@ -203,10 +199,6 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
                  args: ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Externalpluggabledatabase External Pluggable Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
-
-        Enables a Database Management feature for the specified external pluggable database.
-
         ## Example Usage
 
         :param str resource_name: The name of the resource.

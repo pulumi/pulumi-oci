@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GoldenGate
 {
     /// <summary>
-    /// This resource provides the Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
-    /// 
-    /// Creates a new DeploymentBackup.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

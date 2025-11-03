@@ -5,6 +5,7 @@ package com.pulumi.oci.Opensearch.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterCertificateConfig;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterMaintenanceDetail;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterOutboundClusterConfig;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClusterReverseConnectionEndpoint;
@@ -22,6 +23,11 @@ public final class GetOpensearchClusterResult {
      * 
      */
     private List<String> availabilityDomains;
+    /**
+     * @return Custom certificate config for customer provided certs.
+     * 
+     */
+    private List<GetOpensearchClusterCertificateConfig> certificateConfigs;
     /**
      * @return The OCID of the compartment where the cluster is located.
      * 
@@ -134,6 +140,11 @@ public final class GetOpensearchClusterResult {
      */
     private String masterNodeHostType;
     /**
+     * @return The OCID of the NSG where the private endpoint vnic will be attached.
+     * 
+     */
+    private String nsgId;
+    /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.
      * 
      */
@@ -220,6 +231,11 @@ public final class GetOpensearchClusterResult {
      */
     private Integer searchNodeStorageGb;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return The name of the master user that are used to manage security config
      * 
      */
@@ -299,6 +315,13 @@ public final class GetOpensearchClusterResult {
      */
     public List<String> availabilityDomains() {
         return this.availabilityDomains;
+    }
+    /**
+     * @return Custom certificate config for customer provided certs.
+     * 
+     */
+    public List<GetOpensearchClusterCertificateConfig> certificateConfigs() {
+        return this.certificateConfigs;
     }
     /**
      * @return The OCID of the compartment where the cluster is located.
@@ -458,6 +481,13 @@ public final class GetOpensearchClusterResult {
         return this.masterNodeHostType;
     }
     /**
+     * @return The OCID of the NSG where the private endpoint vnic will be attached.
+     * 
+     */
+    public String nsgId() {
+        return this.nsgId;
+    }
+    /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.
      * 
      */
@@ -580,6 +610,13 @@ public final class GetOpensearchClusterResult {
         return this.searchNodeStorageGb;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return The name of the master user that are used to manage security config
      * 
      */
@@ -694,6 +731,7 @@ public final class GetOpensearchClusterResult {
     @CustomType.Builder
     public static final class Builder {
         private List<String> availabilityDomains;
+        private List<GetOpensearchClusterCertificateConfig> certificateConfigs;
         private String compartmentId;
         private Integer configureOutboundClusterTrigger;
         private Integer dataNodeCount;
@@ -717,6 +755,7 @@ public final class GetOpensearchClusterResult {
         private Integer masterNodeHostOcpuCount;
         private String masterNodeHostShape;
         private String masterNodeHostType;
+        private String nsgId;
         private String opendashboardFqdn;
         private Integer opendashboardNodeCount;
         private Integer opendashboardNodeHostMemoryGb;
@@ -735,6 +774,7 @@ public final class GetOpensearchClusterResult {
         private String searchNodeHostShape;
         private String searchNodeHostType;
         private Integer searchNodeStorageGb;
+        private Map<String,String> securityAttributes;
         private String securityMasterUserName;
         private String securityMasterUserPasswordHash;
         private String securityMode;
@@ -755,6 +795,7 @@ public final class GetOpensearchClusterResult {
         public Builder(GetOpensearchClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomains = defaults.availabilityDomains;
+    	      this.certificateConfigs = defaults.certificateConfigs;
     	      this.compartmentId = defaults.compartmentId;
     	      this.configureOutboundClusterTrigger = defaults.configureOutboundClusterTrigger;
     	      this.dataNodeCount = defaults.dataNodeCount;
@@ -778,6 +819,7 @@ public final class GetOpensearchClusterResult {
     	      this.masterNodeHostOcpuCount = defaults.masterNodeHostOcpuCount;
     	      this.masterNodeHostShape = defaults.masterNodeHostShape;
     	      this.masterNodeHostType = defaults.masterNodeHostType;
+    	      this.nsgId = defaults.nsgId;
     	      this.opendashboardFqdn = defaults.opendashboardFqdn;
     	      this.opendashboardNodeCount = defaults.opendashboardNodeCount;
     	      this.opendashboardNodeHostMemoryGb = defaults.opendashboardNodeHostMemoryGb;
@@ -796,6 +838,7 @@ public final class GetOpensearchClusterResult {
     	      this.searchNodeHostShape = defaults.searchNodeHostShape;
     	      this.searchNodeHostType = defaults.searchNodeHostType;
     	      this.searchNodeStorageGb = defaults.searchNodeStorageGb;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.securityMasterUserName = defaults.securityMasterUserName;
     	      this.securityMasterUserPasswordHash = defaults.securityMasterUserPasswordHash;
     	      this.securityMode = defaults.securityMode;
@@ -824,6 +867,17 @@ public final class GetOpensearchClusterResult {
         }
         public Builder availabilityDomains(String... availabilityDomains) {
             return availabilityDomains(List.of(availabilityDomains));
+        }
+        @CustomType.Setter
+        public Builder certificateConfigs(List<GetOpensearchClusterCertificateConfig> certificateConfigs) {
+            if (certificateConfigs == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "certificateConfigs");
+            }
+            this.certificateConfigs = certificateConfigs;
+            return this;
+        }
+        public Builder certificateConfigs(GetOpensearchClusterCertificateConfig... certificateConfigs) {
+            return certificateConfigs(List.of(certificateConfigs));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -1016,6 +1070,14 @@ public final class GetOpensearchClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder nsgId(String nsgId) {
+            if (nsgId == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "nsgId");
+            }
+            this.nsgId = nsgId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder opendashboardFqdn(String opendashboardFqdn) {
             if (opendashboardFqdn == null) {
               throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "opendashboardFqdn");
@@ -1169,6 +1231,14 @@ public final class GetOpensearchClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityMasterUserName(String securityMasterUserName) {
             if (securityMasterUserName == null) {
               throw new MissingRequiredPropertyException("GetOpensearchClusterResult", "securityMasterUserName");
@@ -1302,6 +1372,7 @@ public final class GetOpensearchClusterResult {
         public GetOpensearchClusterResult build() {
             final var _resultValue = new GetOpensearchClusterResult();
             _resultValue.availabilityDomains = availabilityDomains;
+            _resultValue.certificateConfigs = certificateConfigs;
             _resultValue.compartmentId = compartmentId;
             _resultValue.configureOutboundClusterTrigger = configureOutboundClusterTrigger;
             _resultValue.dataNodeCount = dataNodeCount;
@@ -1325,6 +1396,7 @@ public final class GetOpensearchClusterResult {
             _resultValue.masterNodeHostOcpuCount = masterNodeHostOcpuCount;
             _resultValue.masterNodeHostShape = masterNodeHostShape;
             _resultValue.masterNodeHostType = masterNodeHostType;
+            _resultValue.nsgId = nsgId;
             _resultValue.opendashboardFqdn = opendashboardFqdn;
             _resultValue.opendashboardNodeCount = opendashboardNodeCount;
             _resultValue.opendashboardNodeHostMemoryGb = opendashboardNodeHostMemoryGb;
@@ -1343,6 +1415,7 @@ public final class GetOpensearchClusterResult {
             _resultValue.searchNodeHostShape = searchNodeHostShape;
             _resultValue.searchNodeHostType = searchNodeHostType;
             _resultValue.searchNodeStorageGb = searchNodeStorageGb;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.securityMasterUserName = securityMasterUserName;
             _resultValue.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
             _resultValue.securityMode = securityMode;

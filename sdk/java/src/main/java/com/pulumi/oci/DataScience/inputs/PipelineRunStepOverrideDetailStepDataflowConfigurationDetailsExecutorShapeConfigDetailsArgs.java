@@ -17,29 +17,14 @@ public final class PipelineRunStepOverrideDetailStepDataflowConfigurationDetails
     public static final PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs Empty = new PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs();
 
     /**
-     * The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-     * 
-     */
-    @Import(name="cpuBaseline")
-    private @Nullable Output<String> cpuBaseline;
-
-    /**
-     * @return The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-     * 
-     */
-    public Optional<Output<String>> cpuBaseline() {
-        return Optional.ofNullable(this.cpuBaseline);
-    }
-
-    /**
-     * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * The total amount of memory available to the pipeline step run instance GBs.
      * 
      */
     @Import(name="memoryInGbs")
     private @Nullable Output<Double> memoryInGbs;
 
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return The total amount of memory available to the pipeline step run instance GBs.
      * 
      */
     public Optional<Output<Double>> memoryInGbs() {
@@ -47,26 +32,57 @@ public final class PipelineRunStepOverrideDetailStepDataflowConfigurationDetails
     }
 
     /**
-     * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    @Import(name="memoryInGbsParameterized")
+    private @Nullable Output<String> memoryInGbsParameterized;
+
+    /**
+     * @return The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    public Optional<Output<String>> memoryInGbsParameterized() {
+        return Optional.ofNullable(this.memoryInGbsParameterized);
+    }
+
+    /**
+     * The total number of OCPUs available to the pipeline step run instance.
      * 
      */
     @Import(name="ocpus")
     private @Nullable Output<Double> ocpus;
 
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return The total number of OCPUs available to the pipeline step run instance.
      * 
      */
     public Optional<Output<Double>> ocpus() {
         return Optional.ofNullable(this.ocpus);
     }
 
+    /**
+     * The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    @Import(name="ocpusParameterized")
+    private @Nullable Output<String> ocpusParameterized;
+
+    /**
+     * @return The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+     * 
+     */
+    public Optional<Output<String>> ocpusParameterized() {
+        return Optional.ofNullable(this.ocpusParameterized);
+    }
+
     private PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs() {}
 
     private PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs $) {
-        this.cpuBaseline = $.cpuBaseline;
         this.memoryInGbs = $.memoryInGbs;
+        this.memoryInGbsParameterized = $.memoryInGbsParameterized;
         this.ocpus = $.ocpus;
+        this.ocpusParameterized = $.ocpusParameterized;
     }
 
     public static Builder builder() {
@@ -88,28 +104,7 @@ public final class PipelineRunStepOverrideDetailStepDataflowConfigurationDetails
         }
 
         /**
-         * @param cpuBaseline The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder cpuBaseline(@Nullable Output<String> cpuBaseline) {
-            $.cpuBaseline = cpuBaseline;
-            return this;
-        }
-
-        /**
-         * @param cpuBaseline The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder cpuBaseline(String cpuBaseline) {
-            return cpuBaseline(Output.of(cpuBaseline));
-        }
-
-        /**
-         * @param memoryInGbs A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * @param memoryInGbs The total amount of memory available to the pipeline step run instance GBs.
          * 
          * @return builder
          * 
@@ -120,7 +115,7 @@ public final class PipelineRunStepOverrideDetailStepDataflowConfigurationDetails
         }
 
         /**
-         * @param memoryInGbs A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * @param memoryInGbs The total amount of memory available to the pipeline step run instance GBs.
          * 
          * @return builder
          * 
@@ -130,7 +125,28 @@ public final class PipelineRunStepOverrideDetailStepDataflowConfigurationDetails
         }
 
         /**
-         * @param ocpus A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * @param memoryInGbsParameterized The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryInGbsParameterized(@Nullable Output<String> memoryInGbsParameterized) {
+            $.memoryInGbsParameterized = memoryInGbsParameterized;
+            return this;
+        }
+
+        /**
+         * @param memoryInGbsParameterized The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryInGbsParameterized(String memoryInGbsParameterized) {
+            return memoryInGbsParameterized(Output.of(memoryInGbsParameterized));
+        }
+
+        /**
+         * @param ocpus The total number of OCPUs available to the pipeline step run instance.
          * 
          * @return builder
          * 
@@ -141,13 +157,34 @@ public final class PipelineRunStepOverrideDetailStepDataflowConfigurationDetails
         }
 
         /**
-         * @param ocpus A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * @param ocpus The total number of OCPUs available to the pipeline step run instance.
          * 
          * @return builder
          * 
          */
         public Builder ocpus(Double ocpus) {
             return ocpus(Output.of(ocpus));
+        }
+
+        /**
+         * @param ocpusParameterized The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ocpusParameterized(@Nullable Output<String> ocpusParameterized) {
+            $.ocpusParameterized = ocpusParameterized;
+            return this;
+        }
+
+        /**
+         * @param ocpusParameterized The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ocpusParameterized(String ocpusParameterized) {
+            return ocpusParameterized(Output.of(ocpusParameterized));
         }
 
         public PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs build() {

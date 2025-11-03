@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
- *
- * Creates a new metric extension resource for a given compartment
- *
  * ## Example Usage
  *
  * ```typescript

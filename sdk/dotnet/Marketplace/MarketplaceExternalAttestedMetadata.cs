@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Marketplace
 {
     /// <summary>
-    /// This resource provides the Marketplace External Attested Metadata resource in Oracle Cloud Infrastructure Marketplace service.
-    /// 
-    /// Generates attested marketplace metadata
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

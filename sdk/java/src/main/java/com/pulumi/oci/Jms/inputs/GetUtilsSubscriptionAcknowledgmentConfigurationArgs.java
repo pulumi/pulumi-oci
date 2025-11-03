@@ -5,11 +5,9 @@ package com.pulumi.oci.Jms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Boolean;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 
 public final class GetUtilsSubscriptionAcknowledgmentConfigurationArgs extends com.pulumi.resources.InvokeArgs {
@@ -20,37 +18,21 @@ public final class GetUtilsSubscriptionAcknowledgmentConfigurationArgs extends c
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    @Import(name="compartmentId")
-    private @Nullable Output<String> compartmentId;
+    @Import(name="compartmentId", required=true)
+    private Output<String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    public Optional<Output<String>> compartmentId() {
-        return Optional.ofNullable(this.compartmentId);
-    }
-
-    /**
-     * Flag to determine whether the subscription was acknowledged or not.
-     * 
-     */
-    @Import(name="isAcknowledged")
-    private @Nullable Output<Boolean> isAcknowledged;
-
-    /**
-     * @return Flag to determine whether the subscription was acknowledged or not.
-     * 
-     */
-    public Optional<Output<Boolean>> isAcknowledged() {
-        return Optional.ofNullable(this.isAcknowledged);
+    public Output<String> compartmentId() {
+        return this.compartmentId;
     }
 
     private GetUtilsSubscriptionAcknowledgmentConfigurationArgs() {}
 
     private GetUtilsSubscriptionAcknowledgmentConfigurationArgs(GetUtilsSubscriptionAcknowledgmentConfigurationArgs $) {
         this.compartmentId = $.compartmentId;
-        this.isAcknowledged = $.isAcknowledged;
     }
 
     public static Builder builder() {
@@ -77,7 +59,7 @@ public final class GetUtilsSubscriptionAcknowledgmentConfigurationArgs extends c
          * @return builder
          * 
          */
-        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+        public Builder compartmentId(Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -92,28 +74,10 @@ public final class GetUtilsSubscriptionAcknowledgmentConfigurationArgs extends c
             return compartmentId(Output.of(compartmentId));
         }
 
-        /**
-         * @param isAcknowledged Flag to determine whether the subscription was acknowledged or not.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isAcknowledged(@Nullable Output<Boolean> isAcknowledged) {
-            $.isAcknowledged = isAcknowledged;
-            return this;
-        }
-
-        /**
-         * @param isAcknowledged Flag to determine whether the subscription was acknowledged or not.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder isAcknowledged(Boolean isAcknowledged) {
-            return isAcknowledged(Output.of(isAcknowledged));
-        }
-
         public GetUtilsSubscriptionAcknowledgmentConfigurationArgs build() {
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetUtilsSubscriptionAcknowledgmentConfigurationArgs", "compartmentId");
+            }
             return $;
         }
     }

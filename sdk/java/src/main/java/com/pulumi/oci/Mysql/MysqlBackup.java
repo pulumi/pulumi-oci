@@ -24,10 +24,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
- * 
- * Create a backup of a DB System.
- * 
  * ## Example Usage
  * 
  * <pre>

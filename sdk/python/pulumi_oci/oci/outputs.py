@@ -24,10 +24,22 @@ __all__ = [
     'DbmulticloudMultiCloudResourceDiscoveryResource',
     'DbmulticloudOracleDbAzureConnectorArcAgentNode',
     'DbmulticloudOracleDbGcpIdentityConnectorGcpNode',
+    'IotDigitalTwinAdapterInboundEnvelope',
+    'IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping',
+    'IotDigitalTwinAdapterInboundEnvelopeReferencePayload',
+    'IotDigitalTwinAdapterInboundRoute',
+    'IotDigitalTwinAdapterInboundRouteReferencePayload',
+    'IotIotDomainDataRetentionPeriodsInDay',
     'ManagedKafkaKafkaClusterAccessSubnet',
     'ManagedKafkaKafkaClusterBrokerShape',
     'ManagedKafkaKafkaClusterConfigLatestConfig',
     'ManagedKafkaKafkaClusterKafkaBootstrapUrl',
+    'ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword',
+    'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails',
+    'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails',
+    'GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionResult',
+    'GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemResult',
+    'GetAiDataPlatformAiDataPlatformsFilterResult',
     'GetApiPlatformApiPlatformInstanceIdcsAppResult',
     'GetApiPlatformApiPlatformInstanceUriResult',
     'GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionResult',
@@ -90,6 +102,36 @@ __all__ = [
     'GetDbmulticloudOracleDbGcpKeysFilterResult',
     'GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionResult',
     'GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemResult',
+    'GetIotDigitalTwinAdapterInboundEnvelopeResult',
+    'GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingResult',
+    'GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadResult',
+    'GetIotDigitalTwinAdapterInboundRouteResult',
+    'GetIotDigitalTwinAdapterInboundRouteReferencePayloadResult',
+    'GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionResult',
+    'GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemResult',
+    'GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeResult',
+    'GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingResult',
+    'GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadResult',
+    'GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteResult',
+    'GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadResult',
+    'GetIotDigitalTwinAdaptersFilterResult',
+    'GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionResult',
+    'GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult',
+    'GetIotDigitalTwinInstancesFilterResult',
+    'GetIotDigitalTwinModelsDigitalTwinModelCollectionResult',
+    'GetIotDigitalTwinModelsDigitalTwinModelCollectionItemResult',
+    'GetIotDigitalTwinModelsFilterResult',
+    'GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionResult',
+    'GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemResult',
+    'GetIotDigitalTwinRelationshipsFilterResult',
+    'GetIotIotDomainDataRetentionPeriodsInDayResult',
+    'GetIotIotDomainGroupsFilterResult',
+    'GetIotIotDomainGroupsIotDomainGroupCollectionResult',
+    'GetIotIotDomainGroupsIotDomainGroupCollectionItemResult',
+    'GetIotIotDomainsFilterResult',
+    'GetIotIotDomainsIotDomainCollectionResult',
+    'GetIotIotDomainsIotDomainCollectionItemResult',
+    'GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayResult',
     'GetManagedKafkaKafkaClusterAccessSubnetResult',
     'GetManagedKafkaKafkaClusterBrokerShapeResult',
     'GetManagedKafkaKafkaClusterConfigLatestConfigResult',
@@ -107,6 +149,43 @@ __all__ = [
     'GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetResult',
     'GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeResult',
     'GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlResult',
+    'GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionResult',
+    'GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemResult',
+    'GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationResult',
+    'GetMulticloudExternalLocationMappingMetadataFilterResult',
+    'GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionResult',
+    'GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemResult',
+    'GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationResult',
+    'GetMulticloudExternalLocationSummariesMetadataFilterResult',
+    'GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionResult',
+    'GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemResult',
+    'GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult',
+    'GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdResult',
+    'GetMulticloudExternalLocationsMetadataFilterResult',
+    'GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemResult',
+    'GetMulticloudNetworkAnchorOciMetadataItemResult',
+    'GetMulticloudNetworkAnchorOciMetadataItemDnResult',
+    'GetMulticloudNetworkAnchorOciMetadataItemSubnetResult',
+    'GetMulticloudNetworkAnchorOciMetadataItemVcnResult',
+    'GetMulticloudNetworkAnchorsNetworkAnchorCollectionResult',
+    'GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult',
+    'GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionResult',
+    'GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemResult',
+    'GetMulticloudResourceAnchorCloudServiceProviderMetadataItemResult',
+    'GetMulticloudResourceAnchorsFilterResult',
+    'GetMulticloudResourceAnchorsResourceAnchorCollectionResult',
+    'GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult',
+    'GetResourceAnalyticsMonitoredRegionsFilterResult',
+    'GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionResult',
+    'GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemResult',
+    'GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordResult',
+    'GetResourceAnalyticsResourceAnalyticsInstancesFilterResult',
+    'GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionResult',
+    'GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemResult',
+    'GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordResult',
+    'GetResourceAnalyticsTenancyAttachmentsFilterResult',
+    'GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionResult',
+    'GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemResult',
     'GetWlmsManagedInstanceConfigurationResult',
     'GetWlmsManagedInstanceScanResultsFilterResult',
     'GetWlmsManagedInstanceScanResultsScanResultCollectionResult',
@@ -684,6 +763,356 @@ class DbmulticloudOracleDbGcpIdentityConnectorGcpNode(dict):
 
 
 @pulumi.output_type
+class IotDigitalTwinAdapterInboundEnvelope(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "referenceEndpoint":
+            suggest = "reference_endpoint"
+        elif key == "envelopeMapping":
+            suggest = "envelope_mapping"
+        elif key == "referencePayload":
+            suggest = "reference_payload"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IotDigitalTwinAdapterInboundEnvelope. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IotDigitalTwinAdapterInboundEnvelope.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IotDigitalTwinAdapterInboundEnvelope.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 reference_endpoint: _builtins.str,
+                 envelope_mapping: Optional['outputs.IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping'] = None,
+                 reference_payload: Optional['outputs.IotDigitalTwinAdapterInboundEnvelopeReferencePayload'] = None):
+        """
+        :param _builtins.str reference_endpoint: (Updatable) The device endpoint.
+        :param 'IotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs' envelope_mapping: (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+        :param 'IotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs' reference_payload: (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        pulumi.set(__self__, "reference_endpoint", reference_endpoint)
+        if envelope_mapping is not None:
+            pulumi.set(__self__, "envelope_mapping", envelope_mapping)
+        if reference_payload is not None:
+            pulumi.set(__self__, "reference_payload", reference_payload)
+
+    @_builtins.property
+    @pulumi.getter(name="referenceEndpoint")
+    def reference_endpoint(self) -> _builtins.str:
+        """
+        (Updatable) The device endpoint.
+        """
+        return pulumi.get(self, "reference_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="envelopeMapping")
+    def envelope_mapping(self) -> Optional['outputs.IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping']:
+        """
+        (Updatable) Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+        """
+        return pulumi.get(self, "envelope_mapping")
+
+    @_builtins.property
+    @pulumi.getter(name="referencePayload")
+    def reference_payload(self) -> Optional['outputs.IotDigitalTwinAdapterInboundEnvelopeReferencePayload']:
+        """
+        (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        return pulumi.get(self, "reference_payload")
+
+
+@pulumi.output_type
+class IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeObserved":
+            suggest = "time_observed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IotDigitalTwinAdapterInboundEnvelopeEnvelopeMapping.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 time_observed: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str time_observed: (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+        """
+        if time_observed is not None:
+            pulumi.set(__self__, "time_observed", time_observed)
+
+    @_builtins.property
+    @pulumi.getter(name="timeObserved")
+    def time_observed(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+        """
+        return pulumi.get(self, "time_observed")
+
+
+@pulumi.output_type
+class IotDigitalTwinAdapterInboundEnvelopeReferencePayload(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataFormat":
+            suggest = "data_format"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IotDigitalTwinAdapterInboundEnvelopeReferencePayload. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IotDigitalTwinAdapterInboundEnvelopeReferencePayload.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IotDigitalTwinAdapterInboundEnvelopeReferencePayload.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data: Mapping[str, _builtins.str],
+                 data_format: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] data: (Updatable) JSON raw data.
+        :param _builtins.str data_format: (Updatable) Data format of the payload.
+        """
+        pulumi.set(__self__, "data", data)
+        pulumi.set(__self__, "data_format", data_format)
+
+    @_builtins.property
+    @pulumi.getter
+    def data(self) -> Mapping[str, _builtins.str]:
+        """
+        (Updatable) JSON raw data.
+        """
+        return pulumi.get(self, "data")
+
+    @_builtins.property
+    @pulumi.getter(name="dataFormat")
+    def data_format(self) -> _builtins.str:
+        """
+        (Updatable) Data format of the payload.
+        """
+        return pulumi.get(self, "data_format")
+
+
+@pulumi.output_type
+class IotDigitalTwinAdapterInboundRoute(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "payloadMapping":
+            suggest = "payload_mapping"
+        elif key == "referencePayload":
+            suggest = "reference_payload"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IotDigitalTwinAdapterInboundRoute. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IotDigitalTwinAdapterInboundRoute.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IotDigitalTwinAdapterInboundRoute.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 condition: _builtins.str,
+                 description: Optional[_builtins.str] = None,
+                 payload_mapping: Optional[Mapping[str, _builtins.str]] = None,
+                 reference_payload: Optional['outputs.IotDigitalTwinAdapterInboundRouteReferencePayload'] = None):
+        """
+        :param _builtins.str condition: (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+        :param _builtins.str description: (Updatable) Meaningful write up about the inbound route.
+        :param Mapping[str, _builtins.str] payload_mapping: (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+               
+               The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
+               
+               Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
+        :param 'IotDigitalTwinAdapterInboundRouteReferencePayloadArgs' reference_payload: (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        pulumi.set(__self__, "condition", condition)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if payload_mapping is not None:
+            pulumi.set(__self__, "payload_mapping", payload_mapping)
+        if reference_payload is not None:
+            pulumi.set(__self__, "reference_payload", reference_payload)
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> _builtins.str:
+        """
+        (Updatable) A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+        """
+        return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Meaningful write up about the inbound route.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="payloadMapping")
+    def payload_mapping(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+
+        The keys are target fields (in the digital twin model), and values are JQ expressions pointing to data in the reference payload.
+
+        Example: Given payload: { "time": "<timestamp>", "temp": 65, "hum": 55 } And mapping: { "temperature": "$.temp", "humidity": "$.hum", "timeObserved": "$.time" } The output will be: { "temperature": 65, "humidity": 55, "timeObserved": "<timestamp>" }
+        """
+        return pulumi.get(self, "payload_mapping")
+
+    @_builtins.property
+    @pulumi.getter(name="referencePayload")
+    def reference_payload(self) -> Optional['outputs.IotDigitalTwinAdapterInboundRouteReferencePayload']:
+        """
+        (Updatable) Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        return pulumi.get(self, "reference_payload")
+
+
+@pulumi.output_type
+class IotDigitalTwinAdapterInboundRouteReferencePayload(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataFormat":
+            suggest = "data_format"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IotDigitalTwinAdapterInboundRouteReferencePayload. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IotDigitalTwinAdapterInboundRouteReferencePayload.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IotDigitalTwinAdapterInboundRouteReferencePayload.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data: Mapping[str, _builtins.str],
+                 data_format: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] data: (Updatable) JSON raw data.
+        :param _builtins.str data_format: (Updatable) Data format of the payload.
+        """
+        pulumi.set(__self__, "data", data)
+        pulumi.set(__self__, "data_format", data_format)
+
+    @_builtins.property
+    @pulumi.getter
+    def data(self) -> Mapping[str, _builtins.str]:
+        """
+        (Updatable) JSON raw data.
+        """
+        return pulumi.get(self, "data")
+
+    @_builtins.property
+    @pulumi.getter(name="dataFormat")
+    def data_format(self) -> _builtins.str:
+        """
+        (Updatable) Data format of the payload.
+        """
+        return pulumi.get(self, "data_format")
+
+
+@pulumi.output_type
+class IotIotDomainDataRetentionPeriodsInDay(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "historizedData":
+            suggest = "historized_data"
+        elif key == "rawCommandData":
+            suggest = "raw_command_data"
+        elif key == "rawData":
+            suggest = "raw_data"
+        elif key == "rejectedData":
+            suggest = "rejected_data"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IotIotDomainDataRetentionPeriodsInDay. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IotIotDomainDataRetentionPeriodsInDay.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IotIotDomainDataRetentionPeriodsInDay.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 historized_data: Optional[_builtins.int] = None,
+                 raw_command_data: Optional[_builtins.int] = None,
+                 raw_data: Optional[_builtins.int] = None,
+                 rejected_data: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int historized_data: Number of days for which any normalized data sent to IoT devices would be retained for.
+        :param _builtins.int raw_command_data: Number of days for which any raw command data sent to IoT devices would be retained for.
+        :param _builtins.int raw_data: Number of days for which any raw data sent to IoT devices would be retained for.
+        :param _builtins.int rejected_data: Number of days for which any data sent to IoT devices would be retained for.
+        """
+        if historized_data is not None:
+            pulumi.set(__self__, "historized_data", historized_data)
+        if raw_command_data is not None:
+            pulumi.set(__self__, "raw_command_data", raw_command_data)
+        if raw_data is not None:
+            pulumi.set(__self__, "raw_data", raw_data)
+        if rejected_data is not None:
+            pulumi.set(__self__, "rejected_data", rejected_data)
+
+    @_builtins.property
+    @pulumi.getter(name="historizedData")
+    def historized_data(self) -> Optional[_builtins.int]:
+        """
+        Number of days for which any normalized data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "historized_data")
+
+    @_builtins.property
+    @pulumi.getter(name="rawCommandData")
+    def raw_command_data(self) -> Optional[_builtins.int]:
+        """
+        Number of days for which any raw command data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "raw_command_data")
+
+    @_builtins.property
+    @pulumi.getter(name="rawData")
+    def raw_data(self) -> Optional[_builtins.int]:
+        """
+        Number of days for which any raw data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "raw_data")
+
+    @_builtins.property
+    @pulumi.getter(name="rejectedData")
+    def rejected_data(self) -> Optional[_builtins.int]:
+        """
+        Number of days for which any data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "rejected_data")
+
+
+@pulumi.output_type
 class ManagedKafkaKafkaClusterAccessSubnet(dict):
     def __init__(__self__, *,
                  subnets: Sequence[_builtins.str]):
@@ -875,6 +1304,384 @@ class ManagedKafkaKafkaClusterKafkaBootstrapUrl(dict):
         Bootstrap URL
         """
         return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "passwordType":
+            suggest = "password_type"
+        elif key == "secretId":
+            suggest = "secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password_type: _builtins.str,
+                 password: Optional[_builtins.str] = None,
+                 secret_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str password_type: Password type
+        :param _builtins.str password: Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+        :param _builtins.str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+        """
+        pulumi.set(__self__, "password_type", password_type)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> _builtins.str:
+        """
+        Password type
+        """
+        return pulumi.get(self, "password_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> Optional[_builtins.str]:
+        """
+        Password for the ADW to be created in User Tenancy. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
+        """
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault secret to use as the ADW admin password.
+        """
+        return pulumi.get(self, "secret_id")
+
+
+@pulumi.output_type
+class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "idcsDomainId":
+            suggest = "idcs_domain_id"
+        elif key == "licenseModel":
+            suggest = "license_model"
+        elif key == "networkDetails":
+            suggest = "network_details"
+        elif key == "nsgIds":
+            suggest = "nsg_ids"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 idcs_domain_id: Optional[_builtins.str] = None,
+                 license_model: Optional[_builtins.str] = None,
+                 network_details: Optional['outputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails'] = None,
+                 nsg_ids: Optional[Sequence[_builtins.str]] = None,
+                 subnet_id: Optional[_builtins.str] = None):
+        if idcs_domain_id is not None:
+            pulumi.set(__self__, "idcs_domain_id", idcs_domain_id)
+        if license_model is not None:
+            pulumi.set(__self__, "license_model", license_model)
+        if network_details is not None:
+            pulumi.set(__self__, "network_details", network_details)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="idcsDomainId")
+    def idcs_domain_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "idcs_domain_id")
+
+    @_builtins.property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "license_model")
+
+    @_builtins.property
+    @pulumi.getter(name="networkDetails")
+    def network_details(self) -> Optional['outputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails']:
+        return pulumi.get(self, "network_details")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nsgIds":
+            suggest = "nsg_ids"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 nsg_ids: Optional[Sequence[_builtins.str]] = None,
+                 subnet_id: Optional[_builtins.str] = None):
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAiDataPlatformAiDataPlatformsAiDataPlatformCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 ai_data_platform_type: _builtins.str,
+                 alias_key: _builtins.str,
+                 compartment_id: _builtins.str,
+                 created_by: _builtins.str,
+                 default_workspace_name: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 web_socket_endpoint: _builtins.str):
+        """
+        :param _builtins.str ai_data_platform_type: The AiDataPlatform type.
+        :param _builtins.str alias_key: The alias Id of the AiDataPlatform which is the short form of OCID.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IAM user.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AiDataPlatform.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the AiDataPlatform was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str web_socket_endpoint: The WebSocket URL of the AiDataPlatform.
+        """
+        pulumi.set(__self__, "ai_data_platform_type", ai_data_platform_type)
+        pulumi.set(__self__, "alias_key", alias_key)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "default_workspace_name", default_workspace_name)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "web_socket_endpoint", web_socket_endpoint)
+
+    @_builtins.property
+    @pulumi.getter(name="aiDataPlatformType")
+    def ai_data_platform_type(self) -> _builtins.str:
+        """
+        The AiDataPlatform type.
+        """
+        return pulumi.get(self, "ai_data_platform_type")
+
+    @_builtins.property
+    @pulumi.getter(name="aliasKey")
+    def alias_key(self) -> _builtins.str:
+        """
+        The alias Id of the AiDataPlatform which is the short form of OCID.
+        """
+        return pulumi.get(self, "alias_key")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IAM user.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultWorkspaceName")
+    def default_workspace_name(self) -> _builtins.str:
+        return pulumi.get(self, "default_workspace_name")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AiDataPlatform.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the AiDataPlatform was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="webSocketEndpoint")
+    def web_socket_endpoint(self) -> _builtins.str:
+        """
+        The WebSocket URL of the AiDataPlatform.
+        """
+        return pulumi.get(self, "web_socket_endpoint")
+
+
+@pulumi.output_type
+class GetAiDataPlatformAiDataPlatformsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -5071,6 +5878,1638 @@ class GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemResult(di
 
 
 @pulumi.output_type
+class GetIotDigitalTwinAdapterInboundEnvelopeResult(dict):
+    def __init__(__self__, *,
+                 envelope_mappings: Sequence['outputs.GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingResult'],
+                 reference_endpoint: _builtins.str,
+                 reference_payloads: Sequence['outputs.GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadResult']):
+        """
+        :param Sequence['GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingArgs'] envelope_mappings: Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+        :param _builtins.str reference_endpoint: The device endpoint.
+        :param Sequence['GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadArgs'] reference_payloads: Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        pulumi.set(__self__, "envelope_mappings", envelope_mappings)
+        pulumi.set(__self__, "reference_endpoint", reference_endpoint)
+        pulumi.set(__self__, "reference_payloads", reference_payloads)
+
+    @_builtins.property
+    @pulumi.getter(name="envelopeMappings")
+    def envelope_mappings(self) -> Sequence['outputs.GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingResult']:
+        """
+        Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+        """
+        return pulumi.get(self, "envelope_mappings")
+
+    @_builtins.property
+    @pulumi.getter(name="referenceEndpoint")
+    def reference_endpoint(self) -> _builtins.str:
+        """
+        The device endpoint.
+        """
+        return pulumi.get(self, "reference_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="referencePayloads")
+    def reference_payloads(self) -> Sequence['outputs.GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadResult']:
+        """
+        Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        return pulumi.get(self, "reference_payloads")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdapterInboundEnvelopeEnvelopeMappingResult(dict):
+    def __init__(__self__, *,
+                 time_observed: _builtins.str):
+        """
+        :param _builtins.str time_observed: JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+        """
+        pulumi.set(__self__, "time_observed", time_observed)
+
+    @_builtins.property
+    @pulumi.getter(name="timeObserved")
+    def time_observed(self) -> _builtins.str:
+        """
+        JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+        """
+        return pulumi.get(self, "time_observed")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdapterInboundEnvelopeReferencePayloadResult(dict):
+    def __init__(__self__, *,
+                 data: Mapping[str, _builtins.str],
+                 data_format: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] data: JSON raw data.
+        :param _builtins.str data_format: Data format of the payload.
+        """
+        pulumi.set(__self__, "data", data)
+        pulumi.set(__self__, "data_format", data_format)
+
+    @_builtins.property
+    @pulumi.getter
+    def data(self) -> Mapping[str, _builtins.str]:
+        """
+        JSON raw data.
+        """
+        return pulumi.get(self, "data")
+
+    @_builtins.property
+    @pulumi.getter(name="dataFormat")
+    def data_format(self) -> _builtins.str:
+        """
+        Data format of the payload.
+        """
+        return pulumi.get(self, "data_format")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdapterInboundRouteResult(dict):
+    def __init__(__self__, *,
+                 condition: _builtins.str,
+                 description: _builtins.str,
+                 payload_mapping: Mapping[str, _builtins.str],
+                 reference_payloads: Sequence['outputs.GetIotDigitalTwinAdapterInboundRouteReferencePayloadResult']):
+        """
+        :param _builtins.str condition: A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+        :param _builtins.str description: Meaningful write up about the inbound route.
+        :param Mapping[str, _builtins.str] payload_mapping: A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+        :param Sequence['GetIotDigitalTwinAdapterInboundRouteReferencePayloadArgs'] reference_payloads: Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "payload_mapping", payload_mapping)
+        pulumi.set(__self__, "reference_payloads", reference_payloads)
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> _builtins.str:
+        """
+        A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+        """
+        return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Meaningful write up about the inbound route.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="payloadMapping")
+    def payload_mapping(self) -> Mapping[str, _builtins.str]:
+        """
+        A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+        """
+        return pulumi.get(self, "payload_mapping")
+
+    @_builtins.property
+    @pulumi.getter(name="referencePayloads")
+    def reference_payloads(self) -> Sequence['outputs.GetIotDigitalTwinAdapterInboundRouteReferencePayloadResult']:
+        """
+        Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        return pulumi.get(self, "reference_payloads")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdapterInboundRouteReferencePayloadResult(dict):
+    def __init__(__self__, *,
+                 data: Mapping[str, _builtins.str],
+                 data_format: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] data: JSON raw data.
+        :param _builtins.str data_format: Data format of the payload.
+        """
+        pulumi.set(__self__, "data", data)
+        pulumi.set(__self__, "data_format", data_format)
+
+    @_builtins.property
+    @pulumi.getter
+    def data(self) -> Mapping[str, _builtins.str]:
+        """
+        JSON raw data.
+        """
+        return pulumi.get(self, "data")
+
+    @_builtins.property
+    @pulumi.getter(name="dataFormat")
+    def data_format(self) -> _builtins.str:
+        """
+        Data format of the payload.
+        """
+        return pulumi.get(self, "data_format")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 digital_twin_model_id: _builtins.str,
+                 digital_twin_model_spec_uri: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 inbound_envelopes: Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeResult'],
+                 inbound_routes: Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteResult'],
+                 iot_domain_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: Meaningful write up about the inbound route.
+        :param _builtins.str digital_twin_model_id: Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        :param _builtins.str digital_twin_model_spec_uri: Filter resources that match the specified URI (DTMI) of the digital twin model.
+        :param _builtins.str display_name: Filter resources whose display name matches the specified value.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        :param Sequence['GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeArgs'] inbound_envelopes: Payload containing device-specific metadata and optional value mappings used to interpret or transform that metadata. This structure includes the device endpoint, the actual payload, and an optional envelope mapping that applies [JQ](https://stedolan.github.io/jq/) expressions to extract or reshape the data as needed.
+        :param Sequence['GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteArgs'] inbound_routes: list of routes
+        :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "digital_twin_model_id", digital_twin_model_id)
+        pulumi.set(__self__, "digital_twin_model_spec_uri", digital_twin_model_spec_uri)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "inbound_envelopes", inbound_envelopes)
+        pulumi.set(__self__, "inbound_routes", inbound_routes)
+        pulumi.set(__self__, "iot_domain_id", iot_domain_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Meaningful write up about the inbound route.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="digitalTwinModelId")
+    def digital_twin_model_id(self) -> _builtins.str:
+        """
+        Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        """
+        return pulumi.get(self, "digital_twin_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="digitalTwinModelSpecUri")
+    def digital_twin_model_spec_uri(self) -> _builtins.str:
+        """
+        Filter resources that match the specified URI (DTMI) of the digital twin model.
+        """
+        return pulumi.get(self, "digital_twin_model_spec_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Filter resources whose display name matches the specified value.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="inboundEnvelopes")
+    def inbound_envelopes(self) -> Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeResult']:
+        """
+        Payload containing device-specific metadata and optional value mappings used to interpret or transform that metadata. This structure includes the device endpoint, the actual payload, and an optional envelope mapping that applies [JQ](https://stedolan.github.io/jq/) expressions to extract or reshape the data as needed.
+        """
+        return pulumi.get(self, "inbound_envelopes")
+
+    @_builtins.property
+    @pulumi.getter(name="inboundRoutes")
+    def inbound_routes(self) -> Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteResult']:
+        """
+        list of routes
+        """
+        return pulumi.get(self, "inbound_routes")
+
+    @_builtins.property
+    @pulumi.getter(name="iotDomainId")
+    def iot_domain_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        """
+        return pulumi.get(self, "iot_domain_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter resources whose lifecycleState matches the specified value.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeResult(dict):
+    def __init__(__self__, *,
+                 envelope_mappings: Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingResult'],
+                 reference_endpoint: _builtins.str,
+                 reference_payloads: Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadResult']):
+        """
+        :param Sequence['GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingArgs'] envelope_mappings: Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+        :param _builtins.str reference_endpoint: The device endpoint.
+        :param Sequence['GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadArgs'] reference_payloads: Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        pulumi.set(__self__, "envelope_mappings", envelope_mappings)
+        pulumi.set(__self__, "reference_endpoint", reference_endpoint)
+        pulumi.set(__self__, "reference_payloads", reference_payloads)
+
+    @_builtins.property
+    @pulumi.getter(name="envelopeMappings")
+    def envelope_mappings(self) -> Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingResult']:
+        """
+        Maps the metadata fields from the inbound payload using JQ. These mappings allow you to extract specific metadata such as timestamps using JQ expressions.
+        """
+        return pulumi.get(self, "envelope_mappings")
+
+    @_builtins.property
+    @pulumi.getter(name="referenceEndpoint")
+    def reference_endpoint(self) -> _builtins.str:
+        """
+        The device endpoint.
+        """
+        return pulumi.get(self, "reference_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="referencePayloads")
+    def reference_payloads(self) -> Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadResult']:
+        """
+        Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        return pulumi.get(self, "reference_payloads")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeEnvelopeMappingResult(dict):
+    def __init__(__self__, *,
+                 time_observed: _builtins.str):
+        """
+        :param _builtins.str time_observed: JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+        """
+        pulumi.set(__self__, "time_observed", time_observed)
+
+    @_builtins.property
+    @pulumi.getter(name="timeObserved")
+    def time_observed(self) -> _builtins.str:
+        """
+        JQ expression to extract the observation timestamp from the payload. If not specified, the system will default to using `timeReceived` as the timestamp.  Example: For payload `{"time": "<timestamp>","temp": 65,"hum": 55}` 'timeObserved' can be mapped as [JQ Expression](https://jqplay.org/) `$.time`.
+        """
+        return pulumi.get(self, "time_observed")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundEnvelopeReferencePayloadResult(dict):
+    def __init__(__self__, *,
+                 data: Mapping[str, _builtins.str],
+                 data_format: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] data: JSON raw data.
+        :param _builtins.str data_format: Data format of the payload.
+        """
+        pulumi.set(__self__, "data", data)
+        pulumi.set(__self__, "data_format", data_format)
+
+    @_builtins.property
+    @pulumi.getter
+    def data(self) -> Mapping[str, _builtins.str]:
+        """
+        JSON raw data.
+        """
+        return pulumi.get(self, "data")
+
+    @_builtins.property
+    @pulumi.getter(name="dataFormat")
+    def data_format(self) -> _builtins.str:
+        """
+        Data format of the payload.
+        """
+        return pulumi.get(self, "data_format")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteResult(dict):
+    def __init__(__self__, *,
+                 condition: _builtins.str,
+                 description: _builtins.str,
+                 payload_mapping: Mapping[str, _builtins.str],
+                 reference_payloads: Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadResult']):
+        """
+        :param _builtins.str condition: A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+        :param _builtins.str description: Meaningful write up about the inbound route.
+        :param Mapping[str, _builtins.str] payload_mapping: A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+        :param Sequence['GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadArgs'] reference_payloads: Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        pulumi.set(__self__, "condition", condition)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "payload_mapping", payload_mapping)
+        pulumi.set(__self__, "reference_payloads", reference_payloads)
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> _builtins.str:
+        """
+        A boolean expression used to determine whether the following transformation should be processed for the incoming payload. This expression is typically based on fields defined at the inbound Envelope and is evaluated before applying the `payloadMapping`.
+        """
+        return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Meaningful write up about the inbound route.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="payloadMapping")
+    def payload_mapping(self) -> Mapping[str, _builtins.str]:
+        """
+        A set of key-value JQ expressions used to transform the incoming payload into a shape compatible with the digital twin model's context or schema.
+        """
+        return pulumi.get(self, "payload_mapping")
+
+    @_builtins.property
+    @pulumi.getter(name="referencePayloads")
+    def reference_payloads(self) -> Sequence['outputs.GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadResult']:
+        """
+        Reference payload structure template received from IoT device. This payload must specify its content type using the `dataFormat` property.
+        """
+        return pulumi.get(self, "reference_payloads")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdaptersDigitalTwinAdapterCollectionItemInboundRouteReferencePayloadResult(dict):
+    def __init__(__self__, *,
+                 data: Mapping[str, _builtins.str],
+                 data_format: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] data: JSON raw data.
+        :param _builtins.str data_format: Data format of the payload.
+        """
+        pulumi.set(__self__, "data", data)
+        pulumi.set(__self__, "data_format", data_format)
+
+    @_builtins.property
+    @pulumi.getter
+    def data(self) -> Mapping[str, _builtins.str]:
+        """
+        JSON raw data.
+        """
+        return pulumi.get(self, "data")
+
+    @_builtins.property
+    @pulumi.getter(name="dataFormat")
+    def data_format(self) -> _builtins.str:
+        """
+        Data format of the payload.
+        """
+        return pulumi.get(self, "data_format")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinAdaptersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 auth_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 digital_twin_adapter_id: _builtins.str,
+                 digital_twin_model_id: _builtins.str,
+                 digital_twin_model_spec_uri: _builtins.str,
+                 display_name: _builtins.str,
+                 external_key: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 iot_domain_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str auth_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: A short description of the resource.
+        :param _builtins.str digital_twin_adapter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
+        :param _builtins.str digital_twin_model_id: Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        :param _builtins.str digital_twin_model_spec_uri: Filter resources that match the specified URI (DTMI) of the digital twin model.
+        :param _builtins.str display_name: Filter resources whose display name matches the specified value.
+        :param _builtins.str external_key: A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "auth_id", auth_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "digital_twin_adapter_id", digital_twin_adapter_id)
+        pulumi.set(__self__, "digital_twin_model_id", digital_twin_model_id)
+        pulumi.set(__self__, "digital_twin_model_spec_uri", digital_twin_model_spec_uri)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "external_key", external_key)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "iot_domain_id", iot_domain_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="authId")
+    def auth_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
+        """
+        return pulumi.get(self, "auth_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A short description of the resource.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="digitalTwinAdapterId")
+    def digital_twin_adapter_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin adapter.
+        """
+        return pulumi.get(self, "digital_twin_adapter_id")
+
+    @_builtins.property
+    @pulumi.getter(name="digitalTwinModelId")
+    def digital_twin_model_id(self) -> _builtins.str:
+        """
+        Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the digital twin model.
+        """
+        return pulumi.get(self, "digital_twin_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="digitalTwinModelSpecUri")
+    def digital_twin_model_spec_uri(self) -> _builtins.str:
+        """
+        Filter resources that match the specified URI (DTMI) of the digital twin model.
+        """
+        return pulumi.get(self, "digital_twin_model_spec_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Filter resources whose display name matches the specified value.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="externalKey")
+    def external_key(self) -> _builtins.str:
+        """
+        A unique identifier for the physical entity (typically an IoT device) represented by the digital twin instance. This could be a Bluetooth address, Ethernet MAC address, or serial number, depending on the use case. If not provided, the system will automatically generate one.
+        """
+        return pulumi.get(self, "external_key")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="iotDomainId")
+    def iot_domain_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        """
+        return pulumi.get(self, "iot_domain_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter resources whose lifecycleState matches the specified value.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinModelsDigitalTwinModelCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetIotDigitalTwinModelsDigitalTwinModelCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetIotDigitalTwinModelsDigitalTwinModelCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinModelsDigitalTwinModelCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 iot_domain_id: _builtins.str,
+                 spec: _builtins.str,
+                 spec_uri: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: A short description of the resource. If left blank, the description will be derived from the spec.
+        :param _builtins.str display_name: Filter resources whose display name matches the specified value.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        :param _builtins.str spec_uri: This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
+        :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "iot_domain_id", iot_domain_id)
+        pulumi.set(__self__, "spec", spec)
+        pulumi.set(__self__, "spec_uri", spec_uri)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A short description of the resource. If left blank, the description will be derived from the spec.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Filter resources whose display name matches the specified value.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="iotDomainId")
+    def iot_domain_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        """
+        return pulumi.get(self, "iot_domain_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def spec(self) -> _builtins.str:
+        return pulumi.get(self, "spec")
+
+    @_builtins.property
+    @pulumi.getter(name="specUri")
+    def spec_uri(self) -> _builtins.str:
+        """
+        This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
+        """
+        return pulumi.get(self, "spec_uri")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter resources whose lifecycleState matches the specified value.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinModelsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 content: _builtins.str,
+                 content_path: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 iot_domain_id: _builtins.str,
+                 source_digital_twin_instance_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 target_digital_twin_instance_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str content: The value(s) of the relationship properties defined in the source digital twin model.
+        :param _builtins.str content_path: Filters resources that match the content path of the digital twin relationship.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: A short description of the resource.
+        :param _builtins.str display_name: Filter resources whose display name matches the specified value.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        :param _builtins.str iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        :param _builtins.str source_digital_twin_instance_id: Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
+        :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str target_digital_twin_instance_id: Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
+        :param _builtins.str time_created: The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "content_path", content_path)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "iot_domain_id", iot_domain_id)
+        pulumi.set(__self__, "source_digital_twin_instance_id", source_digital_twin_instance_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_digital_twin_instance_id", target_digital_twin_instance_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> _builtins.str:
+        """
+        The value(s) of the relationship properties defined in the source digital twin model.
+        """
+        return pulumi.get(self, "content")
+
+    @_builtins.property
+    @pulumi.getter(name="contentPath")
+    def content_path(self) -> _builtins.str:
+        """
+        Filters resources that match the content path of the digital twin relationship.
+        """
+        return pulumi.get(self, "content_path")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A short description of the resource.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Filter resources whose display name matches the specified value.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="iotDomainId")
+    def iot_domain_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+        """
+        return pulumi.get(self, "iot_domain_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceDigitalTwinInstanceId")
+    def source_digital_twin_instance_id(self) -> _builtins.str:
+        """
+        Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
+        """
+        return pulumi.get(self, "source_digital_twin_instance_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter resources whose lifecycleState matches the specified value.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetDigitalTwinInstanceId")
+    def target_digital_twin_instance_id(self) -> _builtins.str:
+        """
+        Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
+        """
+        return pulumi.get(self, "target_digital_twin_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetIotDigitalTwinRelationshipsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetIotIotDomainDataRetentionPeriodsInDayResult(dict):
+    def __init__(__self__, *,
+                 historized_data: _builtins.int,
+                 raw_command_data: _builtins.int,
+                 raw_data: _builtins.int,
+                 rejected_data: _builtins.int):
+        """
+        :param _builtins.int historized_data: Number of days for which any normalized data sent to IoT devices would be retained for.
+        :param _builtins.int raw_command_data: Number of days for which any raw command data sent to IoT devices would be retained for.
+        :param _builtins.int raw_data: Number of days for which any raw data sent to IoT devices would be retained for.
+        :param _builtins.int rejected_data: Number of days for which any data sent to IoT devices would be retained for.
+        """
+        pulumi.set(__self__, "historized_data", historized_data)
+        pulumi.set(__self__, "raw_command_data", raw_command_data)
+        pulumi.set(__self__, "raw_data", raw_data)
+        pulumi.set(__self__, "rejected_data", rejected_data)
+
+    @_builtins.property
+    @pulumi.getter(name="historizedData")
+    def historized_data(self) -> _builtins.int:
+        """
+        Number of days for which any normalized data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "historized_data")
+
+    @_builtins.property
+    @pulumi.getter(name="rawCommandData")
+    def raw_command_data(self) -> _builtins.int:
+        """
+        Number of days for which any raw command data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "raw_command_data")
+
+    @_builtins.property
+    @pulumi.getter(name="rawData")
+    def raw_data(self) -> _builtins.int:
+        """
+        Number of days for which any raw data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "raw_data")
+
+    @_builtins.property
+    @pulumi.getter(name="rejectedData")
+    def rejected_data(self) -> _builtins.int:
+        """
+        Number of days for which any data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "rejected_data")
+
+
+@pulumi.output_type
+class GetIotIotDomainGroupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetIotIotDomainGroupsIotDomainGroupCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetIotIotDomainGroupsIotDomainGroupCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetIotIotDomainGroupsIotDomainGroupCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetIotIotDomainGroupsIotDomainGroupCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 data_host: _builtins.str,
+                 db_allow_listed_vcn_ids: Sequence[_builtins.str],
+                 db_connection_string: _builtins.str,
+                 db_token_scope: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str data_host: The host name of the database corresponding to the IoT Domain group.
+        :param Sequence[_builtins.str] db_allow_listed_vcn_ids: This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
+        :param _builtins.str db_connection_string: The connection string used to connect to the data host associated with the IoT domain group.
+        :param _builtins.str db_token_scope: The token scope used to connect to the data host associated with the IoT domain group.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: A short description of the resource.
+        :param _builtins.str display_name: Filter resources whose display name matches the specified value.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_host", data_host)
+        pulumi.set(__self__, "db_allow_listed_vcn_ids", db_allow_listed_vcn_ids)
+        pulumi.set(__self__, "db_connection_string", db_connection_string)
+        pulumi.set(__self__, "db_token_scope", db_token_scope)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dataHost")
+    def data_host(self) -> _builtins.str:
+        """
+        The host name of the database corresponding to the IoT Domain group.
+        """
+        return pulumi.get(self, "data_host")
+
+    @_builtins.property
+    @pulumi.getter(name="dbAllowListedVcnIds")
+    def db_allow_listed_vcn_ids(self) -> Sequence[_builtins.str]:
+        """
+        This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
+        """
+        return pulumi.get(self, "db_allow_listed_vcn_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="dbConnectionString")
+    def db_connection_string(self) -> _builtins.str:
+        """
+        The connection string used to connect to the data host associated with the IoT domain group.
+        """
+        return pulumi.get(self, "db_connection_string")
+
+    @_builtins.property
+    @pulumi.getter(name="dbTokenScope")
+    def db_token_scope(self) -> _builtins.str:
+        """
+        The token scope used to connect to the data host associated with the IoT domain group.
+        """
+        return pulumi.get(self, "db_token_scope")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A short description of the resource.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Filter resources whose display name matches the specified value.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter resources whose lifecycleState matches the specified value.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetIotIotDomainsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetIotIotDomainsIotDomainCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetIotIotDomainsIotDomainCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetIotIotDomainsIotDomainCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetIotIotDomainsIotDomainCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 data_retention_periods_in_days: Sequence['outputs.GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayResult'],
+                 db_allow_listed_identity_group_names: Sequence[_builtins.str],
+                 db_allowed_identity_domain_host: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 device_host: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 iot_domain_group_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs'] data_retention_periods_in_days: Data Retention periods
+        :param Sequence[_builtins.str] db_allow_listed_identity_group_names: List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
+        :param _builtins.str db_allowed_identity_domain_host: Host name of identity domain that is used for authenticating connect to data host via ORDS.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: A short description of the resource.
+        :param _builtins.str device_host: Host name of an IoT domain, where IoT devices can connect to.
+        :param _builtins.str display_name: Filter resources whose display name matches the specified value.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        :param _builtins.str iot_domain_group_id: Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain group.
+        :param _builtins.str state: Filter resources whose lifecycleState matches the specified value.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_retention_periods_in_days", data_retention_periods_in_days)
+        pulumi.set(__self__, "db_allow_listed_identity_group_names", db_allow_listed_identity_group_names)
+        pulumi.set(__self__, "db_allowed_identity_domain_host", db_allowed_identity_domain_host)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "device_host", device_host)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "iot_domain_group_id", iot_domain_group_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dataRetentionPeriodsInDays")
+    def data_retention_periods_in_days(self) -> Sequence['outputs.GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayResult']:
+        """
+        Data Retention periods
+        """
+        return pulumi.get(self, "data_retention_periods_in_days")
+
+    @_builtins.property
+    @pulumi.getter(name="dbAllowListedIdentityGroupNames")
+    def db_allow_listed_identity_group_names(self) -> Sequence[_builtins.str]:
+        """
+        List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
+        """
+        return pulumi.get(self, "db_allow_listed_identity_group_names")
+
+    @_builtins.property
+    @pulumi.getter(name="dbAllowedIdentityDomainHost")
+    def db_allowed_identity_domain_host(self) -> _builtins.str:
+        """
+        Host name of identity domain that is used for authenticating connect to data host via ORDS.
+        """
+        return pulumi.get(self, "db_allowed_identity_domain_host")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A short description of the resource.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="deviceHost")
+    def device_host(self) -> _builtins.str:
+        """
+        Host name of an IoT domain, where IoT devices can connect to.
+        """
+        return pulumi.get(self, "device_host")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Filter resources whose display name matches the specified value.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="iotDomainGroupId")
+    def iot_domain_group_id(self) -> _builtins.str:
+        """
+        Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain group.
+        """
+        return pulumi.get(self, "iot_domain_group_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter resources whose lifecycleState matches the specified value.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayResult(dict):
+    def __init__(__self__, *,
+                 historized_data: _builtins.int,
+                 raw_command_data: _builtins.int,
+                 raw_data: _builtins.int,
+                 rejected_data: _builtins.int):
+        """
+        :param _builtins.int historized_data: Number of days for which any normalized data sent to IoT devices would be retained for.
+        :param _builtins.int raw_command_data: Number of days for which any raw command data sent to IoT devices would be retained for.
+        :param _builtins.int raw_data: Number of days for which any raw data sent to IoT devices would be retained for.
+        :param _builtins.int rejected_data: Number of days for which any data sent to IoT devices would be retained for.
+        """
+        pulumi.set(__self__, "historized_data", historized_data)
+        pulumi.set(__self__, "raw_command_data", raw_command_data)
+        pulumi.set(__self__, "raw_data", raw_data)
+        pulumi.set(__self__, "rejected_data", rejected_data)
+
+    @_builtins.property
+    @pulumi.getter(name="historizedData")
+    def historized_data(self) -> _builtins.int:
+        """
+        Number of days for which any normalized data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "historized_data")
+
+    @_builtins.property
+    @pulumi.getter(name="rawCommandData")
+    def raw_command_data(self) -> _builtins.int:
+        """
+        Number of days for which any raw command data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "raw_command_data")
+
+    @_builtins.property
+    @pulumi.getter(name="rawData")
+    def raw_data(self) -> _builtins.int:
+        """
+        Number of days for which any raw data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "raw_data")
+
+    @_builtins.property
+    @pulumi.getter(name="rejectedData")
+    def rejected_data(self) -> _builtins.int:
+        """
+        Number of days for which any data sent to IoT devices would be retained for.
+        """
+        return pulumi.get(self, "rejected_data")
+
+
+@pulumi.output_type
 class GetManagedKafkaKafkaClusterAccessSubnetResult(dict):
     def __init__(__self__, *,
                  subnets: Sequence[_builtins.str]):
@@ -5862,6 +8301,1938 @@ class GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlRes
         Bootstrap URL
         """
         return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemResult']):
+        """
+        :param Sequence['GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs'] items: List of ExternalLocationMappingMetadatumSummary
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemResult']:
+        """
+        List of ExternalLocationMappingMetadatumSummary
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 external_locations: Sequence['outputs.GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationResult'],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 oci_logical_ad: _builtins.str,
+                 oci_physical_ad: _builtins.str,
+                 oci_region: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Sequence['GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs'] external_locations: External location for CSP Region, CSP-Physical-AZ
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str oci_logical_ad: Oracle Cloud Infrastructure logical ad name
+        :param _builtins.str oci_physical_ad: Oracle Cloud Infrastructure physical ad name
+        :param _builtins.str oci_region: Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "external_locations", external_locations)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "oci_logical_ad", oci_logical_ad)
+        pulumi.set(__self__, "oci_physical_ad", oci_physical_ad)
+        pulumi.set(__self__, "oci_region", oci_region)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocations")
+    def external_locations(self) -> Sequence['outputs.GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationResult']:
+        """
+        External location for CSP Region, CSP-Physical-AZ
+        """
+        return pulumi.get(self, "external_locations")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="ociLogicalAd")
+    def oci_logical_ad(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure logical ad name
+        """
+        return pulumi.get(self, "oci_logical_ad")
+
+    @_builtins.property
+    @pulumi.getter(name="ociPhysicalAd")
+    def oci_physical_ad(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure physical ad name
+        """
+        return pulumi.get(self, "oci_physical_ad")
+
+    @_builtins.property
+    @pulumi.getter(name="ociRegion")
+    def oci_region(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        """
+        return pulumi.get(self, "oci_region")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationResult(dict):
+    def __init__(__self__, *,
+                 csp_physical_az: _builtins.str,
+                 csp_physical_az_display_name: _builtins.str,
+                 csp_region: _builtins.str,
+                 csp_region_display_name: _builtins.str,
+                 service_name: _builtins.str):
+        """
+        :param _builtins.str csp_physical_az: A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+        :param _builtins.str csp_physical_az_display_name: User friendly display name for cspPhysicalAZ
+        :param _builtins.str csp_region: CSP region corresponding to the given Oracle Cloud Infrastructure region
+        :param _builtins.str csp_region_display_name: CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+        :param _builtins.str service_name: The serviceName that externalLocation map object belongs to
+        """
+        pulumi.set(__self__, "csp_physical_az", csp_physical_az)
+        pulumi.set(__self__, "csp_physical_az_display_name", csp_physical_az_display_name)
+        pulumi.set(__self__, "csp_region", csp_region)
+        pulumi.set(__self__, "csp_region_display_name", csp_region_display_name)
+        pulumi.set(__self__, "service_name", service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="cspPhysicalAz")
+    def csp_physical_az(self) -> _builtins.str:
+        """
+        A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+        """
+        return pulumi.get(self, "csp_physical_az")
+
+    @_builtins.property
+    @pulumi.getter(name="cspPhysicalAzDisplayName")
+    def csp_physical_az_display_name(self) -> _builtins.str:
+        """
+        User friendly display name for cspPhysicalAZ
+        """
+        return pulumi.get(self, "csp_physical_az_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="cspRegion")
+    def csp_region(self) -> _builtins.str:
+        """
+        CSP region corresponding to the given Oracle Cloud Infrastructure region
+        """
+        return pulumi.get(self, "csp_region")
+
+    @_builtins.property
+    @pulumi.getter(name="cspRegionDisplayName")
+    def csp_region_display_name(self) -> _builtins.str:
+        """
+        CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+        """
+        return pulumi.get(self, "csp_region_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> _builtins.str:
+        """
+        The serviceName that externalLocation map object belongs to
+        """
+        return pulumi.get(self, "service_name")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationMappingMetadataFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemResult']):
+        """
+        :param Sequence['GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs'] items: List of ExternalLocationSummariesMetadatumSummary
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemResult']:
+        """
+        List of ExternalLocationSummariesMetadatumSummary
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 external_locations: Sequence['outputs.GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationResult'],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 oci_region: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Sequence['GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs'] external_locations: External location for CSP Region
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str oci_region: Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "external_locations", external_locations)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "oci_region", oci_region)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocations")
+    def external_locations(self) -> Sequence['outputs.GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationResult']:
+        """
+        External location for CSP Region
+        """
+        return pulumi.get(self, "external_locations")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="ociRegion")
+    def oci_region(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        """
+        return pulumi.get(self, "oci_region")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationResult(dict):
+    def __init__(__self__, *,
+                 csp_region: _builtins.str,
+                 csp_region_display_name: _builtins.str):
+        """
+        :param _builtins.str csp_region: CSP region corresponding to the given Oracle Cloud Infrastructure region
+        :param _builtins.str csp_region_display_name: CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+        """
+        pulumi.set(__self__, "csp_region", csp_region)
+        pulumi.set(__self__, "csp_region_display_name", csp_region_display_name)
+
+    @_builtins.property
+    @pulumi.getter(name="cspRegion")
+    def csp_region(self) -> _builtins.str:
+        """
+        CSP region corresponding to the given Oracle Cloud Infrastructure region
+        """
+        return pulumi.get(self, "csp_region")
+
+    @_builtins.property
+    @pulumi.getter(name="cspRegionDisplayName")
+    def csp_region_display_name(self) -> _builtins.str:
+        """
+        CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+        """
+        return pulumi.get(self, "csp_region_display_name")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationSummariesMetadataFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemResult']):
+        """
+        :param Sequence['GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs'] items: List of ExternalLocationsMetadatumSummary
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemResult']:
+        """
+        List of ExternalLocationsMetadatumSummary
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 cpg_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 external_locations: Sequence['outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult'],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 oci_logical_ad: _builtins.str,
+                 oci_physical_ad: _builtins.str,
+                 oci_region: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param _builtins.str cpg_id: Cluster Placement Group OCID
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Sequence['GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs'] external_locations: External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str oci_logical_ad: Oracle Cloud Infrastructure logical ad name
+        :param _builtins.str oci_physical_ad: Oracle Cloud Infrastructure physical ad name
+        :param _builtins.str oci_region: Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "cpg_id", cpg_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "external_locations", external_locations)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "oci_logical_ad", oci_logical_ad)
+        pulumi.set(__self__, "oci_physical_ad", oci_physical_ad)
+        pulumi.set(__self__, "oci_region", oci_region)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="cpgId")
+    def cpg_id(self) -> _builtins.str:
+        """
+        Cluster Placement Group OCID
+        """
+        return pulumi.get(self, "cpg_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocations")
+    def external_locations(self) -> Sequence['outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult']:
+        """
+        External location for CSP Region, CSP-Physical-AZ, CSP-Logical-AZ
+        """
+        return pulumi.get(self, "external_locations")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="ociLogicalAd")
+    def oci_logical_ad(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure logical ad name
+        """
+        return pulumi.get(self, "oci_logical_ad")
+
+    @_builtins.property
+    @pulumi.getter(name="ociPhysicalAd")
+    def oci_physical_ad(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure physical ad name
+        """
+        return pulumi.get(self, "oci_physical_ad")
+
+    @_builtins.property
+    @pulumi.getter(name="ociRegion")
+    def oci_region(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+        """
+        return pulumi.get(self, "oci_region")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationResult(dict):
+    def __init__(__self__, *,
+                 csp_logical_az: _builtins.str,
+                 csp_physical_az: _builtins.str,
+                 csp_physical_az_display_name: _builtins.str,
+                 csp_region: _builtins.str,
+                 csp_region_display_name: _builtins.str,
+                 csp_zone_key_reference_ids: Sequence['outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdResult'],
+                 service_name: _builtins.str):
+        """
+        :param _builtins.str csp_logical_az: A mapping of CSP physical availability zone to CSP logical availability zone.
+        :param _builtins.str csp_physical_az: A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+        :param _builtins.str csp_physical_az_display_name: User friendly display name for cspPhysicalAZ
+        :param _builtins.str csp_region: CSP region corresponding to the given Oracle Cloud Infrastructure region
+        :param _builtins.str csp_region_display_name: CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+        :param Sequence['GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs'] csp_zone_key_reference_ids: This is CSP zone key reference
+        :param _builtins.str service_name: The serviceName that externalLocation map object belongs to.
+        """
+        pulumi.set(__self__, "csp_logical_az", csp_logical_az)
+        pulumi.set(__self__, "csp_physical_az", csp_physical_az)
+        pulumi.set(__self__, "csp_physical_az_display_name", csp_physical_az_display_name)
+        pulumi.set(__self__, "csp_region", csp_region)
+        pulumi.set(__self__, "csp_region_display_name", csp_region_display_name)
+        pulumi.set(__self__, "csp_zone_key_reference_ids", csp_zone_key_reference_ids)
+        pulumi.set(__self__, "service_name", service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="cspLogicalAz")
+    def csp_logical_az(self) -> _builtins.str:
+        """
+        A mapping of CSP physical availability zone to CSP logical availability zone.
+        """
+        return pulumi.get(self, "csp_logical_az")
+
+    @_builtins.property
+    @pulumi.getter(name="cspPhysicalAz")
+    def csp_physical_az(self) -> _builtins.str:
+        """
+        A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+        """
+        return pulumi.get(self, "csp_physical_az")
+
+    @_builtins.property
+    @pulumi.getter(name="cspPhysicalAzDisplayName")
+    def csp_physical_az_display_name(self) -> _builtins.str:
+        """
+        User friendly display name for cspPhysicalAZ
+        """
+        return pulumi.get(self, "csp_physical_az_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="cspRegion")
+    def csp_region(self) -> _builtins.str:
+        """
+        CSP region corresponding to the given Oracle Cloud Infrastructure region
+        """
+        return pulumi.get(self, "csp_region")
+
+    @_builtins.property
+    @pulumi.getter(name="cspRegionDisplayName")
+    def csp_region_display_name(self) -> _builtins.str:
+        """
+        CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+        """
+        return pulumi.get(self, "csp_region_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="cspZoneKeyReferenceIds")
+    def csp_zone_key_reference_ids(self) -> Sequence['outputs.GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdResult']:
+        """
+        This is CSP zone key reference
+        """
+        return pulumi.get(self, "csp_zone_key_reference_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> _builtins.str:
+        """
+        The serviceName that externalLocation map object belongs to.
+        """
+        return pulumi.get(self, "service_name")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdResult(dict):
+    def __init__(__self__, *,
+                 key_name: _builtins.str,
+                 key_value: _builtins.str):
+        """
+        :param _builtins.str key_name: KeyName for Azure=AzureSubscriptionId Aws=AwsAccountId GCP=GcpProjectName
+        :param _builtins.str key_value: Value of keyName GcpProjectName: A human-readable name for your project. The project name isn't used by any Google APIs. You can edit the project name at any time during or after project creation. Project names do not need to be unique. AzureSubscriptionId: A unique alphanumeric string that identifies your Azure subscription. AwsAccountId: a unique 12-digit number that identifies an Amazon Web Services (AWS) account
+        """
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "key_value", key_value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> _builtins.str:
+        """
+        KeyName for Azure=AzureSubscriptionId Aws=AwsAccountId GCP=GcpProjectName
+        """
+        return pulumi.get(self, "key_name")
+
+    @_builtins.property
+    @pulumi.getter(name="keyValue")
+    def key_value(self) -> _builtins.str:
+        """
+        Value of keyName GcpProjectName: A human-readable name for your project. The project name isn't used by any Google APIs. You can edit the project name at any time during or after project creation. Project names do not need to be unique. AzureSubscriptionId: A unique alphanumeric string that identifies your Azure subscription. AwsAccountId: a unique 12-digit number that identifies an Amazon Web Services (AWS) account
+        """
+        return pulumi.get(self, "key_value")
+
+
+@pulumi.output_type
+class GetMulticloudExternalLocationsMetadataFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMulticloudNetworkAnchorCloudServiceProviderMetadataItemResult(dict):
+    def __init__(__self__, *,
+                 cidr_blocks: Sequence[_builtins.str],
+                 dns_forwarding_configs: Sequence[Any],
+                 network_anchor_uri: _builtins.str,
+                 odb_network_id: _builtins.str,
+                 region: _builtins.str):
+        """
+        :param Sequence[_builtins.str] cidr_blocks: An Azure/GCP/AWS cidrBlocks
+        :param Sequence[Any] dns_forwarding_configs: DNS domain ip mapping forwarding configuration
+        :param _builtins.str network_anchor_uri: CSP network anchor Uri
+        :param _builtins.str odb_network_id: CSP oracle database network anchor unique ID/name
+        :param _builtins.str region: Azure/GCP/AWS region
+        """
+        pulumi.set(__self__, "cidr_blocks", cidr_blocks)
+        pulumi.set(__self__, "dns_forwarding_configs", dns_forwarding_configs)
+        pulumi.set(__self__, "network_anchor_uri", network_anchor_uri)
+        pulumi.set(__self__, "odb_network_id", odb_network_id)
+        pulumi.set(__self__, "region", region)
+
+    @_builtins.property
+    @pulumi.getter(name="cidrBlocks")
+    def cidr_blocks(self) -> Sequence[_builtins.str]:
+        """
+        An Azure/GCP/AWS cidrBlocks
+        """
+        return pulumi.get(self, "cidr_blocks")
+
+    @_builtins.property
+    @pulumi.getter(name="dnsForwardingConfigs")
+    def dns_forwarding_configs(self) -> Sequence[Any]:
+        """
+        DNS domain ip mapping forwarding configuration
+        """
+        return pulumi.get(self, "dns_forwarding_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAnchorUri")
+    def network_anchor_uri(self) -> _builtins.str:
+        """
+        CSP network anchor Uri
+        """
+        return pulumi.get(self, "network_anchor_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="odbNetworkId")
+    def odb_network_id(self) -> _builtins.str:
+        """
+        CSP oracle database network anchor unique ID/name
+        """
+        return pulumi.get(self, "odb_network_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        """
+        Azure/GCP/AWS region
+        """
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetMulticloudNetworkAnchorOciMetadataItemResult(dict):
+    def __init__(__self__, *,
+                 dns: Sequence['outputs.GetMulticloudNetworkAnchorOciMetadataItemDnResult'],
+                 dns_forwarding_configs: Sequence[Any],
+                 dns_forwarding_endpoint_ip_address: _builtins.str,
+                 dns_listening_endpoint_ip_address: _builtins.str,
+                 network_anchor_connection_status: _builtins.str,
+                 subnets: Sequence['outputs.GetMulticloudNetworkAnchorOciMetadataItemSubnetResult'],
+                 vcns: Sequence['outputs.GetMulticloudNetworkAnchorOciMetadataItemVcnResult']):
+        """
+        :param Sequence['GetMulticloudNetworkAnchorOciMetadataItemDnArgs'] dns: Oracle Cloud Infrastructure network anchor related meta data items
+        :param Sequence[Any] dns_forwarding_configs: DNS domain ip mapping forwarding configuration
+        :param _builtins.str dns_forwarding_endpoint_ip_address: The DNS Listener Forwarding Address.
+        :param _builtins.str dns_listening_endpoint_ip_address: The DNS Listener Endpoint Address.
+        :param _builtins.str network_anchor_connection_status: This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned. CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected network anchor is deleted.
+        :param Sequence['GetMulticloudNetworkAnchorOciMetadataItemSubnetArgs'] subnets: Network subnets
+        :param Sequence['GetMulticloudNetworkAnchorOciMetadataItemVcnArgs'] vcns: Oracle Cloud Infrastructure VCN basic information object. It is optional and planned to used for future for network anchor
+        """
+        pulumi.set(__self__, "dns", dns)
+        pulumi.set(__self__, "dns_forwarding_configs", dns_forwarding_configs)
+        pulumi.set(__self__, "dns_forwarding_endpoint_ip_address", dns_forwarding_endpoint_ip_address)
+        pulumi.set(__self__, "dns_listening_endpoint_ip_address", dns_listening_endpoint_ip_address)
+        pulumi.set(__self__, "network_anchor_connection_status", network_anchor_connection_status)
+        pulumi.set(__self__, "subnets", subnets)
+        pulumi.set(__self__, "vcns", vcns)
+
+    @_builtins.property
+    @pulumi.getter
+    def dns(self) -> Sequence['outputs.GetMulticloudNetworkAnchorOciMetadataItemDnResult']:
+        """
+        Oracle Cloud Infrastructure network anchor related meta data items
+        """
+        return pulumi.get(self, "dns")
+
+    @_builtins.property
+    @pulumi.getter(name="dnsForwardingConfigs")
+    def dns_forwarding_configs(self) -> Sequence[Any]:
+        """
+        DNS domain ip mapping forwarding configuration
+        """
+        return pulumi.get(self, "dns_forwarding_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="dnsForwardingEndpointIpAddress")
+    def dns_forwarding_endpoint_ip_address(self) -> _builtins.str:
+        """
+        The DNS Listener Forwarding Address.
+        """
+        return pulumi.get(self, "dns_forwarding_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="dnsListeningEndpointIpAddress")
+    def dns_listening_endpoint_ip_address(self) -> _builtins.str:
+        """
+        The DNS Listener Endpoint Address.
+        """
+        return pulumi.get(self, "dns_listening_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAnchorConnectionStatus")
+    def network_anchor_connection_status(self) -> _builtins.str:
+        """
+        This can be merge to lifecycleState CONNECTED - Partner and CSI information is assigned and MulticloudLink provisioned. DISCONNECTED - Only partner cloud information is assigned. CONNECTING - Oracle Cloud Infrastructure information is assigned and the control plane is provisioning resources. ACTIVE - Network anchor is connected and resources (VNICs) exist within a subnet. ERROR - DRG attach fails during connection. FAILED - Network anchor creation failed NEEDS_ATTENTION - Network anchor is in temporary bad state UPDATING - Network anchor is getting updated. DELETING - Network anchor is getting deleted DELETED - A connected network anchor is deleted.
+        """
+        return pulumi.get(self, "network_anchor_connection_status")
+
+    @_builtins.property
+    @pulumi.getter
+    def subnets(self) -> Sequence['outputs.GetMulticloudNetworkAnchorOciMetadataItemSubnetResult']:
+        """
+        Network subnets
+        """
+        return pulumi.get(self, "subnets")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcns(self) -> Sequence['outputs.GetMulticloudNetworkAnchorOciMetadataItemVcnResult']:
+        """
+        Oracle Cloud Infrastructure VCN basic information object. It is optional and planned to used for future for network anchor
+        """
+        return pulumi.get(self, "vcns")
+
+
+@pulumi.output_type
+class GetMulticloudNetworkAnchorOciMetadataItemDnResult(dict):
+    def __init__(__self__, *,
+                 custom_domain_name: _builtins.str):
+        """
+        :param _builtins.str custom_domain_name: Full custom domain name. If this field is passed dnsLabel will be ignored
+        """
+        pulumi.set(__self__, "custom_domain_name", custom_domain_name)
+
+    @_builtins.property
+    @pulumi.getter(name="customDomainName")
+    def custom_domain_name(self) -> _builtins.str:
+        """
+        Full custom domain name. If this field is passed dnsLabel will be ignored
+        """
+        return pulumi.get(self, "custom_domain_name")
+
+
+@pulumi.output_type
+class GetMulticloudNetworkAnchorOciMetadataItemSubnetResult(dict):
+    def __init__(__self__, *,
+                 label: _builtins.str,
+                 subnet_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str label: Subnet label. CSP can set this property
+        :param _builtins.str subnet_id: OCID for existing the subnet. CSP can not set this property.
+        :param _builtins.str type: Defines if the subnet is the primary or backup for the network
+        """
+        pulumi.set(__self__, "label", label)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def label(self) -> _builtins.str:
+        """
+        Subnet label. CSP can set this property
+        """
+        return pulumi.get(self, "label")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        OCID for existing the subnet. CSP can not set this property.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Defines if the subnet is the primary or backup for the network
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMulticloudNetworkAnchorOciMetadataItemVcnResult(dict):
+    def __init__(__self__, *,
+                 backup_cidr_blocks: Sequence[_builtins.str],
+                 cidr_blocks: Sequence[_builtins.str],
+                 dns_label: _builtins.str,
+                 vcn_id: _builtins.str):
+        """
+        :param Sequence[_builtins.str] backup_cidr_blocks: Oracle Cloud Infrastructure backup cidr block. CSP can set this property It's optional only if disconnect anchor is allowed. IPv4 CIDR blocks for the VCN that meet the following criteria Type: [string (length: 1–32), ...] The CIDR blocks must be valid. They must not overlap with each other or with the on-premises network CIDR block.
+        :param Sequence[_builtins.str] cidr_blocks: An Azure/GCP/AWS cidrBlocks
+        :param _builtins.str dns_label: Oracle Cloud Infrastructure DNS label. This is optional if DNS config is provided.
+        :param _builtins.str vcn_id: Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+        """
+        pulumi.set(__self__, "backup_cidr_blocks", backup_cidr_blocks)
+        pulumi.set(__self__, "cidr_blocks", cidr_blocks)
+        pulumi.set(__self__, "dns_label", dns_label)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @_builtins.property
+    @pulumi.getter(name="backupCidrBlocks")
+    def backup_cidr_blocks(self) -> Sequence[_builtins.str]:
+        """
+        Oracle Cloud Infrastructure backup cidr block. CSP can set this property It's optional only if disconnect anchor is allowed. IPv4 CIDR blocks for the VCN that meet the following criteria Type: [string (length: 1–32), ...] The CIDR blocks must be valid. They must not overlap with each other or with the on-premises network CIDR block.
+        """
+        return pulumi.get(self, "backup_cidr_blocks")
+
+    @_builtins.property
+    @pulumi.getter(name="cidrBlocks")
+    def cidr_blocks(self) -> Sequence[_builtins.str]:
+        """
+        An Azure/GCP/AWS cidrBlocks
+        """
+        return pulumi.get(self, "cidr_blocks")
+
+    @_builtins.property
+    @pulumi.getter(name="dnsLabel")
+    def dns_label(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure DNS label. This is optional if DNS config is provided.
+        """
+        return pulumi.get(self, "dns_label")
+
+    @_builtins.property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+        """
+        return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetMulticloudNetworkAnchorsNetworkAnchorCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult']):
+        """
+        :param Sequence['GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemArgs'] items: List of NetworkAnchorSummary
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult']:
+        """
+        List of NetworkAnchorSummary
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMulticloudNetworkAnchorsNetworkAnchorCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 cluster_placement_group_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 network_anchor_lifecycle_state: _builtins.str,
+                 resource_anchor_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 vcn_id: _builtins.str):
+        """
+        :param _builtins.str cluster_placement_group_id: The CPG ID in which Network Anchor will be created.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
+               
+               Note: one of the arguments `compartment_id` or `id` must be specified.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str network_anchor_lifecycle_state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param _builtins.str resource_anchor_id: Oracle Cloud Infrastructure resource anchor Id (OCID).
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the NetworkAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str vcn_id: Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+        """
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "network_anchor_lifecycle_state", network_anchor_lifecycle_state)
+        pulumi.set(__self__, "resource_anchor_id", resource_anchor_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vcn_id", vcn_id)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> _builtins.str:
+        """
+        The CPG ID in which Network Anchor will be created.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
+
+        Note: one of the arguments `compartment_id` or `id` must be specified.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the NetworkAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkAnchorLifecycleState")
+    def network_anchor_lifecycle_state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "network_anchor_lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceAnchorId")
+    def resource_anchor_id(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure resource anchor Id (OCID).
+        """
+        return pulumi.get(self, "resource_anchor_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the NetworkAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the NetworkAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="vcnId")
+    def vcn_id(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure VCN OCID. CSP can not set this property.
+        """
+        return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemResult']):
+        """
+        :param Sequence['GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemArgs'] items: List of MultiCloudMetadataSummary
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemResult']:
+        """
+        List of MultiCloudMetadataSummary
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMulticloudOmHubMultiCloudsMetadataMultiCloudMetadataCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 subscription_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str subscription_id: Oracle Cloud Infrastructure subscriptionId.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the multicloud compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "subscription_id", subscription_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure subscriptionId.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the multicloud compartment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetMulticloudResourceAnchorCloudServiceProviderMetadataItemResult(dict):
+    def __init__(__self__, *,
+                 account_id: _builtins.str,
+                 project_number: _builtins.str,
+                 region: _builtins.str,
+                 resource_anchor_name: _builtins.str,
+                 resource_anchor_uri: _builtins.str,
+                 resource_group: _builtins.str,
+                 subscription: _builtins.str,
+                 subscription_type: _builtins.str):
+        """
+        :param _builtins.str account_id: AWS accountId that was used for creating this resource anchor resource.
+        :param _builtins.str project_number: GCP project number that was used for creating this resource anchor resource.
+        :param _builtins.str region: Oracle Cloud Infrastructure Region that resource is created.
+        :param _builtins.str resource_anchor_name: CSP resource anchor ID or name.
+        :param _builtins.str resource_anchor_uri: CSP resource anchor Uri.
+        :param _builtins.str resource_group: Azure resource group that was used for creating this resource.
+        :param _builtins.str subscription: Azure subscription that was used for creating this resource.
+        :param _builtins.str subscription_type: subscription type
+        """
+        pulumi.set(__self__, "account_id", account_id)
+        pulumi.set(__self__, "project_number", project_number)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "resource_anchor_name", resource_anchor_name)
+        pulumi.set(__self__, "resource_anchor_uri", resource_anchor_uri)
+        pulumi.set(__self__, "resource_group", resource_group)
+        pulumi.set(__self__, "subscription", subscription)
+        pulumi.set(__self__, "subscription_type", subscription_type)
+
+    @_builtins.property
+    @pulumi.getter(name="accountId")
+    def account_id(self) -> _builtins.str:
+        """
+        AWS accountId that was used for creating this resource anchor resource.
+        """
+        return pulumi.get(self, "account_id")
+
+    @_builtins.property
+    @pulumi.getter(name="projectNumber")
+    def project_number(self) -> _builtins.str:
+        """
+        GCP project number that was used for creating this resource anchor resource.
+        """
+        return pulumi.get(self, "project_number")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        """
+        Oracle Cloud Infrastructure Region that resource is created.
+        """
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceAnchorName")
+    def resource_anchor_name(self) -> _builtins.str:
+        """
+        CSP resource anchor ID or name.
+        """
+        return pulumi.get(self, "resource_anchor_name")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceAnchorUri")
+    def resource_anchor_uri(self) -> _builtins.str:
+        """
+        CSP resource anchor Uri.
+        """
+        return pulumi.get(self, "resource_anchor_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> _builtins.str:
+        """
+        Azure resource group that was used for creating this resource.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @_builtins.property
+    @pulumi.getter
+    def subscription(self) -> _builtins.str:
+        """
+        Azure subscription that was used for creating this resource.
+        """
+        return pulumi.get(self, "subscription")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionType")
+    def subscription_type(self) -> _builtins.str:
+        """
+        subscription type
+        """
+        return pulumi.get(self, "subscription_type")
+
+
+@pulumi.output_type
+class GetMulticloudResourceAnchorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMulticloudResourceAnchorsResourceAnchorCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult']):
+        """
+        :param Sequence['GetMulticloudResourceAnchorsResourceAnchorCollectionItemArgs'] items: List of ResourceAnchorSummary
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult']:
+        """
+        List of ResourceAnchorSummary
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMulticloudResourceAnchorsResourceAnchorCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 lifecycle_state: _builtins.str,
+                 subscription_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str lifecycle_state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+        pulumi.set(__self__, "subscription_id", subscription_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnchor.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the ResourceAnchor in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleState")
+    def lifecycle_state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "lifecycle_state")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the ResourceAnchor was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the ResourceAnchor was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsMonitoredRegionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 region_id: _builtins.str,
+                 resource_analytics_instance_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MonitoredRegion.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the MonitoredRegion in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str region_id: The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
+        :param _builtins.str resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the MonitoredRegion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the MonitoredRegion was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "region_id", region_id)
+        pulumi.set(__self__, "resource_analytics_instance_id", resource_analytics_instance_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MonitoredRegion.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the MonitoredRegion in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="regionId")
+    def region_id(self) -> _builtins.str:
+        """
+        The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
+        """
+        return pulumi.get(self, "region_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceAnalyticsInstanceId")
+    def resource_analytics_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+        """
+        return pulumi.get(self, "resource_analytics_instance_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the MonitoredRegion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the MonitoredRegion was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordResult(dict):
+    def __init__(__self__, *,
+                 password: _builtins.str,
+                 password_type: _builtins.str,
+                 secret_id: _builtins.str):
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "password_type", password_type)
+        pulumi.set(__self__, "secret_id", secret_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> _builtins.str:
+        return pulumi.get(self, "password_type")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "secret_id")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsResourceAnalyticsInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 adw_admin_passwords: Sequence['outputs.GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordResult'],
+                 adw_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 is_mutual_tls_required: _builtins.bool,
+                 license_model: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 nsg_ids: Sequence[_builtins.str],
+                 oac_id: _builtins.str,
+                 state: _builtins.str,
+                 subnet_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str adw_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: A description of the ResourceAnalyticsInstance instance.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str oac_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "adw_admin_passwords", adw_admin_passwords)
+        pulumi.set(__self__, "adw_id", adw_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_mutual_tls_required", is_mutual_tls_required)
+        pulumi.set(__self__, "license_model", license_model)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "oac_id", oac_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="adwAdminPasswords")
+    def adw_admin_passwords(self) -> Sequence['outputs.GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordResult']:
+        return pulumi.get(self, "adw_admin_passwords")
+
+    @_builtins.property
+    @pulumi.getter(name="adwId")
+    def adw_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
+        """
+        return pulumi.get(self, "adw_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A description of the ResourceAnalyticsInstance instance.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isMutualTlsRequired")
+    def is_mutual_tls_required(self) -> _builtins.bool:
+        return pulumi.get(self, "is_mutual_tls_required")
+
+    @_builtins.property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> _builtins.str:
+        return pulumi.get(self, "license_model")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="oacId")
+    def oac_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
+        """
+        return pulumi.get(self, "oac_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordResult(dict):
+    def __init__(__self__, *,
+                 password: _builtins.str,
+                 password_type: _builtins.str,
+                 secret_id: _builtins.str):
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "password_type", password_type)
+        pulumi.set(__self__, "secret_id", secret_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> _builtins.str:
+        return pulumi.get(self, "password_type")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "secret_id")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsTenancyAttachmentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 description: _builtins.str,
+                 id: _builtins.str,
+                 is_reporting_tenancy: _builtins.bool,
+                 lifecycle_details: _builtins.str,
+                 resource_analytics_instance_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 tenancy_id: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str description: A description of the tenancy.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
+        :param _builtins.bool is_reporting_tenancy: Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str resource_analytics_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
+        :param _builtins.str time_created: The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_reporting_tenancy", is_reporting_tenancy)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "resource_analytics_instance_id", resource_analytics_instance_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A description of the tenancy.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isReportingTenancy")
+    def is_reporting_tenancy(self) -> _builtins.bool:
+        """
+        Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
+        """
+        return pulumi.get(self, "is_reporting_tenancy")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceAnalyticsInstanceId")
+    def resource_analytics_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+        """
+        return pulumi.get(self, "resource_analytics_instance_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type

@@ -7,9 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
- *
- * Creates a new Pipeline.
+ * ## Example Usage
  *
  * ## Import
  *
@@ -89,6 +87,10 @@ export class Pipeline extends pulumi.CustomResource {
      */
     declare public readonly logConfigurationDetails: pulumi.Output<outputs.DataScience.PipelineLogConfigurationDetails>;
     /**
+     * (Updatable) Parameters used in the pipeline.
+     */
+    declare public readonly parameters: pulumi.Output<{[key: string]: string}>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */
     declare public readonly projectId: pulumi.Output<string>;
@@ -142,6 +144,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["infrastructureConfigurationDetails"] = state?.infrastructureConfigurationDetails;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["logConfigurationDetails"] = state?.logConfigurationDetails;
+            resourceInputs["parameters"] = state?.parameters;
             resourceInputs["projectId"] = state?.projectId;
             resourceInputs["state"] = state?.state;
             resourceInputs["stepArtifacts"] = state?.stepArtifacts;
@@ -170,6 +173,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["infrastructureConfigurationDetails"] = args?.infrastructureConfigurationDetails;
             resourceInputs["logConfigurationDetails"] = args?.logConfigurationDetails;
+            resourceInputs["parameters"] = args?.parameters;
             resourceInputs["projectId"] = args?.projectId;
             resourceInputs["stepArtifacts"] = args?.stepArtifacts;
             resourceInputs["stepDetails"] = args?.stepDetails;
@@ -231,6 +235,10 @@ export interface PipelineState {
      * (Updatable) The pipeline log configuration details.
      */
     logConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineLogConfigurationDetails>;
+    /**
+     * (Updatable) Parameters used in the pipeline.
+     */
+    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */
@@ -299,6 +307,10 @@ export interface PipelineArgs {
      * (Updatable) The pipeline log configuration details.
      */
     logConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineLogConfigurationDetails>;
+    /**
+     * (Updatable) Parameters used in the pipeline.
+     */
+    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */

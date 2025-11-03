@@ -15,15 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the External Exadata Infrastructure Exadata Management resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Enables Database Management for the Exadata infrastructure specified by externalExadataInfrastructureId. It covers the following
- * components:
- * 
- * - Exadata infrastructure
- * - Exadata storage grid
- * - Exadata storage server
- * 
  * ## Example Usage
  * 
  * <pre>

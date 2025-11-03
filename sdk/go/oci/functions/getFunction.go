@@ -66,8 +66,12 @@ type LookupFunctionResult struct {
 	Config map[string]string `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Timeout for detached function invocations. Value in seconds.  Example: `{"detachedModeTimeoutInSeconds": 900}`
+	DetachedModeTimeoutInSeconds int `pulumi:"detachedModeTimeoutInSeconds"`
 	// The display name of the function. The display name is unique within the application containing the function.
 	DisplayName string `pulumi:"displayName"`
+	// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+	FailureDestinations []GetFunctionFailureDestination `pulumi:"failureDestinations"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	FunctionId   string            `pulumi:"functionId"`
@@ -89,6 +93,8 @@ type LookupFunctionResult struct {
 	SourceDetails []GetFunctionSourceDetail `pulumi:"sourceDetails"`
 	// The current state of the function.
 	State string `pulumi:"state"`
+	// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+	SuccessDestinations []GetFunctionSuccessDestination `pulumi:"successDestinations"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
@@ -153,9 +159,19 @@ func (o LookupFunctionResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupFunctionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// Timeout for detached function invocations. Value in seconds.  Example: `{"detachedModeTimeoutInSeconds": 900}`
+func (o LookupFunctionResultOutput) DetachedModeTimeoutInSeconds() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupFunctionResult) int { return v.DetachedModeTimeoutInSeconds }).(pulumi.IntOutput)
+}
+
 // The display name of the function. The display name is unique within the application containing the function.
 func (o LookupFunctionResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFunctionResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
+func (o LookupFunctionResultOutput) FailureDestinations() GetFunctionFailureDestinationArrayOutput {
+	return o.ApplyT(func(v LookupFunctionResult) []GetFunctionFailureDestination { return v.FailureDestinations }).(GetFunctionFailureDestinationArrayOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -212,6 +228,11 @@ func (o LookupFunctionResultOutput) SourceDetails() GetFunctionSourceDetailArray
 // The current state of the function.
 func (o LookupFunctionResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFunctionResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
+func (o LookupFunctionResultOutput) SuccessDestinations() GetFunctionSuccessDestinationArrayOutput {
+	return o.ApplyT(func(v LookupFunctionResult) []GetFunctionSuccessDestination { return v.SuccessDestinations }).(GetFunctionSuccessDestinationArrayOutput)
 }
 
 // The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`

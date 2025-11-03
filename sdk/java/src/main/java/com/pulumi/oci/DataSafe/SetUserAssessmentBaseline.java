@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Set User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
- * 
- * Sets the saved user assessment as the baseline in the compartment where the specified assessment resides. The user assessment needs to be of type &#39;SAVED&#39;.
- * 
  * ## Example Usage
  * 
  * <pre>

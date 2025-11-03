@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
- *
- * Creates an inventory.
- *
  * ## Example Usage
  *
  * ```typescript

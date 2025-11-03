@@ -10,11 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
-    /// This resource provides the Maintenance Window resource in Oracle Cloud Infrastructure Stack Monitoring service.
-    /// 
-    /// Creates a new Maintenance Window for the given resources. It will create also the
-    /// Alarms Suppression for each alarm that the resource migth trigger.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

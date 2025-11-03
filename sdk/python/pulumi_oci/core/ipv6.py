@@ -458,10 +458,6 @@ class Ipv6(pulumi.CustomResource):
                  vnic_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
-
-        Creates an IPv6 for the specified VNIC.
-
         ## Example Usage
 
         ```python
@@ -519,10 +515,6 @@ class Ipv6(pulumi.CustomResource):
                  args: Optional[Ipv6Args] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Ipv6 resource in Oracle Cloud Infrastructure Core service.
-
-        Creates an IPv6 for the specified VNIC.
-
         ## Example Usage
 
         ```python

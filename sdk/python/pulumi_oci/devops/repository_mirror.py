@@ -88,10 +88,6 @@ class RepositoryMirror(pulumi.CustomResource):
                  repository_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Repository Mirror resource in Oracle Cloud Infrastructure Devops service.
-
-        Synchronize a mirrored repository to the latest version from external providers.
-
         ## Example Usage
 
         ```python
@@ -124,10 +120,6 @@ class RepositoryMirror(pulumi.CustomResource):
                  args: RepositoryMirrorArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Repository Mirror resource in Oracle Cloud Infrastructure Devops service.
-
-        Synchronize a mirrored repository to the latest version from external providers.
-
         ## Example Usage
 
         ```python

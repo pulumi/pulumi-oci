@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetSoftwareUpdate.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCollectionActiveFsuCycleArgs;
+import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCollectionComponentArgs;
 import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCollectionFleetDiscoveryArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -36,18 +37,33 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * Details of components in an Exadata software stack.
+     * 
+     */
+    @Import(name="components")
+    private @Nullable Output<List<FsuCollectionComponentArgs>> components;
+
+    /**
+     * @return Details of components in an Exadata software stack.
+     * 
+     */
+    public Optional<Output<List<FsuCollectionComponentArgs>>> components() {
+        return Optional.ofNullable(this.components);
     }
 
     /**
@@ -66,14 +82,14 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Exadata Fleet Update Collection Identifier.
+     * (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Exadata Fleet Update Collection Identifier.
+     * @return (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -81,14 +97,14 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+     * Fleet discovery strategies for a &#39;GUEST_OS&#39; collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      * 
      */
     @Import(name="fleetDiscovery")
     private @Nullable Output<FsuCollectionFleetDiscoveryArgs> fleetDiscovery;
 
     /**
-     * @return Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+     * @return Fleet discovery strategies for a &#39;GUEST_OS&#39; collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      * 
      */
     public Optional<Output<FsuCollectionFleetDiscoveryArgs>> fleetDiscovery() {
@@ -156,14 +172,14 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+     * Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose &#39;systemVersion&#39; is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
      * 
      */
     @Import(name="sourceMajorVersion")
     private @Nullable Output<String> sourceMajorVersion;
 
     /**
-     * @return Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+     * @return Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose &#39;systemVersion&#39; is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
      * 
      */
     public Optional<Output<String>> sourceMajorVersion() {
@@ -246,7 +262,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed.
+     * Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -256,7 +272,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
     private @Nullable Output<String> type;
 
     /**
-     * @return Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed.
+     * @return Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -271,6 +287,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
     private FsuCollectionState(FsuCollectionState $) {
         this.activeFsuCycles = $.activeFsuCycles;
         this.compartmentId = $.compartmentId;
+        this.components = $.components;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.fleetDiscovery = $.fleetDiscovery;
@@ -337,7 +354,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
          * 
          * @return builder
          * 
@@ -348,13 +365,44 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
          * 
          * @return builder
          * 
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param components Details of components in an Exadata software stack.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder components(@Nullable Output<List<FsuCollectionComponentArgs>> components) {
+            $.components = components;
+            return this;
+        }
+
+        /**
+         * @param components Details of components in an Exadata software stack.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder components(List<FsuCollectionComponentArgs> components) {
+            return components(Output.of(components));
+        }
+
+        /**
+         * @param components Details of components in an Exadata software stack.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder components(FsuCollectionComponentArgs... components) {
+            return components(List.of(components));
         }
 
         /**
@@ -379,7 +427,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName (Updatable) Exadata Fleet Update Collection Identifier.
+         * @param displayName (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
          * 
          * @return builder
          * 
@@ -390,7 +438,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName (Updatable) Exadata Fleet Update Collection Identifier.
+         * @param displayName (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
          * 
          * @return builder
          * 
@@ -400,7 +448,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param fleetDiscovery Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+         * @param fleetDiscovery Fleet discovery strategies for a &#39;GUEST_OS&#39; collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
          * 
          * @return builder
          * 
@@ -411,7 +459,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param fleetDiscovery Supported fleet discovery strategies for DB Collections. If specified on an Update Collection request, this will re-discover the targets of the Collection.
+         * @param fleetDiscovery Fleet discovery strategies for a &#39;GUEST_OS&#39; collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
          * 
          * @return builder
          * 
@@ -505,7 +553,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sourceMajorVersion Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+         * @param sourceMajorVersion Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose &#39;systemVersion&#39; is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
          * 
          * @return builder
          * 
@@ -516,7 +564,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sourceMajorVersion Database Major Version of targets to be included in the Exadata Fleet Update Collection. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/DbVersionSummary/ListDbVersions Only Database targets that match the version specified in this value would be added to the Exadata Fleet Update Collection.
+         * @param sourceMajorVersion Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose &#39;systemVersion&#39; is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
          * 
          * @return builder
          * 
@@ -631,7 +679,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param type Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed.
+         * @param type Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -645,7 +693,7 @@ public final class FsuCollectionState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param type Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed.
+         * @param type Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

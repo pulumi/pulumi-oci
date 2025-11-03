@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Table resource in Oracle Cloud Infrastructure NoSQL Database service.
- *
- * Create a new table.
- *
  * ## Example Usage
  *
  * ```typescript

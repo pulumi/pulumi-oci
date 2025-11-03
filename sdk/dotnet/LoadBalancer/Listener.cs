@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LoadBalancer
 {
     /// <summary>
-    /// This resource provides the Listener resource in Oracle Cloud Infrastructure Load Balancer service.
-    /// 
-    /// Adds a listener to a load balancer.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

@@ -233,10 +233,6 @@ class ConnectionAssignment(pulumi.CustomResource):
                  is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Connection Assignment.
-
         ## Example Usage
 
         ```python
@@ -274,10 +270,6 @@ class ConnectionAssignment(pulumi.CustomResource):
                  args: ConnectionAssignmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new Connection Assignment.
-
         ## Example Usage
 
         ```python

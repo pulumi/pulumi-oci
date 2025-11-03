@@ -219,6 +219,21 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * 
+     */
+    @Import(name="isIpv6dualStackEnabled")
+    private @Nullable Output<Boolean> isIpv6dualStackEnabled;
+
+    /**
+     * @return Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     * 
+     */
+    public Optional<Output<Boolean>> isIpv6dualStackEnabled() {
+        return Optional.ofNullable(this.isIpv6dualStackEnabled);
+    }
+
+    /**
      * (Updatable) byok kms keyId
      * 
      */
@@ -459,6 +474,7 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
         this.fusionEnvironmentType = $.fusionEnvironmentType;
         this.idcsDomainUrl = $.idcsDomainUrl;
         this.isBreakGlassEnabled = $.isBreakGlassEnabled;
+        this.isIpv6dualStackEnabled = $.isIpv6dualStackEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyInfos = $.kmsKeyInfos;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -785,6 +801,27 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
          */
         public Builder isBreakGlassEnabled(Boolean isBreakGlassEnabled) {
             return isBreakGlassEnabled(Output.of(isBreakGlassEnabled));
+        }
+
+        /**
+         * @param isIpv6dualStackEnabled Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIpv6dualStackEnabled(@Nullable Output<Boolean> isIpv6dualStackEnabled) {
+            $.isIpv6dualStackEnabled = isIpv6dualStackEnabled;
+            return this;
+        }
+
+        /**
+         * @param isIpv6dualStackEnabled Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIpv6dualStackEnabled(Boolean isIpv6dualStackEnabled) {
+            return isIpv6dualStackEnabled(Output.of(isIpv6dualStackEnabled));
         }
 
         /**

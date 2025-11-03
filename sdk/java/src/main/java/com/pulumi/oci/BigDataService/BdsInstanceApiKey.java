@@ -15,10 +15,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
- * 
- * Create an API key on behalf of the specified user.
- * 
  * ## Example Usage
  * 
  * <pre>

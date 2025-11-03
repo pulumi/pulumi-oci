@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Non Container Database resource in Oracle Cloud Infrastructure Database service.
-//
-// # Creates a new ExternalNonContainerDatabase resource
-//
 // ## Example Usage
 //
 // ```go

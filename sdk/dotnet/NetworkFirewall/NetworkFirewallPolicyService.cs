@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.NetworkFirewall
 {
     /// <summary>
-    /// This resource provides the Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
-    /// 
-    /// Creates a new Service for the Network Firewall Policy.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

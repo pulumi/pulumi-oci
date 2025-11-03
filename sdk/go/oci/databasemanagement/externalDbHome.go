@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Db Home resource in Oracle Cloud Infrastructure Database Management service.
-//
-// Updates the external DB home specified by `externalDbHomeId`.
+// ## Example Usage
 //
 // ## Import
 //

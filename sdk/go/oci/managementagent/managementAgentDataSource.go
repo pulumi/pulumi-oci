@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
-//
-// Datasource creation request to given Management Agent.
-//
 // ## Example Usage
 //
 // ```go

@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AiDataPlatformAiDataPlatformArgs, AiDataPlatformAiDataPlatformState } from "./aiDataPlatformAiDataPlatform";
+export type AiDataPlatformAiDataPlatform = import("./aiDataPlatformAiDataPlatform").AiDataPlatformAiDataPlatform;
+export const AiDataPlatformAiDataPlatform: typeof import("./aiDataPlatformAiDataPlatform").AiDataPlatformAiDataPlatform = null as any;
+utilities.lazyLoad(exports, ["AiDataPlatformAiDataPlatform"], () => require("./aiDataPlatformAiDataPlatform"));
+
 export { ApiPlatformApiPlatformInstanceArgs, ApiPlatformApiPlatformInstanceState } from "./apiPlatformApiPlatformInstance";
 export type ApiPlatformApiPlatformInstance = import("./apiPlatformApiPlatformInstance").ApiPlatformApiPlatformInstance;
 export const ApiPlatformApiPlatformInstance: typeof import("./apiPlatformApiPlatformInstance").ApiPlatformApiPlatformInstance = null as any;
@@ -59,6 +64,16 @@ export { DbmulticloudOracleDbGcpKeyRingArgs, DbmulticloudOracleDbGcpKeyRingState
 export type DbmulticloudOracleDbGcpKeyRing = import("./dbmulticloudOracleDbGcpKeyRing").DbmulticloudOracleDbGcpKeyRing;
 export const DbmulticloudOracleDbGcpKeyRing: typeof import("./dbmulticloudOracleDbGcpKeyRing").DbmulticloudOracleDbGcpKeyRing = null as any;
 utilities.lazyLoad(exports, ["DbmulticloudOracleDbGcpKeyRing"], () => require("./dbmulticloudOracleDbGcpKeyRing"));
+
+export { GetAiDataPlatformAiDataPlatformArgs, GetAiDataPlatformAiDataPlatformResult, GetAiDataPlatformAiDataPlatformOutputArgs } from "./getAiDataPlatformAiDataPlatform";
+export const getAiDataPlatformAiDataPlatform: typeof import("./getAiDataPlatformAiDataPlatform").getAiDataPlatformAiDataPlatform = null as any;
+export const getAiDataPlatformAiDataPlatformOutput: typeof import("./getAiDataPlatformAiDataPlatform").getAiDataPlatformAiDataPlatformOutput = null as any;
+utilities.lazyLoad(exports, ["getAiDataPlatformAiDataPlatform","getAiDataPlatformAiDataPlatformOutput"], () => require("./getAiDataPlatformAiDataPlatform"));
+
+export { GetAiDataPlatformAiDataPlatformsArgs, GetAiDataPlatformAiDataPlatformsResult, GetAiDataPlatformAiDataPlatformsOutputArgs } from "./getAiDataPlatformAiDataPlatforms";
+export const getAiDataPlatformAiDataPlatforms: typeof import("./getAiDataPlatformAiDataPlatforms").getAiDataPlatformAiDataPlatforms = null as any;
+export const getAiDataPlatformAiDataPlatformsOutput: typeof import("./getAiDataPlatformAiDataPlatforms").getAiDataPlatformAiDataPlatformsOutput = null as any;
+utilities.lazyLoad(exports, ["getAiDataPlatformAiDataPlatforms","getAiDataPlatformAiDataPlatformsOutput"], () => require("./getAiDataPlatformAiDataPlatforms"));
 
 export { GetApiPlatformApiPlatformInstanceArgs, GetApiPlatformApiPlatformInstanceResult, GetApiPlatformApiPlatformInstanceOutputArgs } from "./getApiPlatformApiPlatformInstance";
 export const getApiPlatformApiPlatformInstance: typeof import("./getApiPlatformApiPlatformInstance").getApiPlatformApiPlatformInstance = null as any;
@@ -205,6 +220,76 @@ export const getDbmulticloudOracleDbGcpKeys: typeof import("./getDbmulticloudOra
 export const getDbmulticloudOracleDbGcpKeysOutput: typeof import("./getDbmulticloudOracleDbGcpKeys").getDbmulticloudOracleDbGcpKeysOutput = null as any;
 utilities.lazyLoad(exports, ["getDbmulticloudOracleDbGcpKeys","getDbmulticloudOracleDbGcpKeysOutput"], () => require("./getDbmulticloudOracleDbGcpKeys"));
 
+export { GetIotDigitalTwinAdapterArgs, GetIotDigitalTwinAdapterResult, GetIotDigitalTwinAdapterOutputArgs } from "./getIotDigitalTwinAdapter";
+export const getIotDigitalTwinAdapter: typeof import("./getIotDigitalTwinAdapter").getIotDigitalTwinAdapter = null as any;
+export const getIotDigitalTwinAdapterOutput: typeof import("./getIotDigitalTwinAdapter").getIotDigitalTwinAdapterOutput = null as any;
+utilities.lazyLoad(exports, ["getIotDigitalTwinAdapter","getIotDigitalTwinAdapterOutput"], () => require("./getIotDigitalTwinAdapter"));
+
+export { GetIotDigitalTwinAdaptersArgs, GetIotDigitalTwinAdaptersResult, GetIotDigitalTwinAdaptersOutputArgs } from "./getIotDigitalTwinAdapters";
+export const getIotDigitalTwinAdapters: typeof import("./getIotDigitalTwinAdapters").getIotDigitalTwinAdapters = null as any;
+export const getIotDigitalTwinAdaptersOutput: typeof import("./getIotDigitalTwinAdapters").getIotDigitalTwinAdaptersOutput = null as any;
+utilities.lazyLoad(exports, ["getIotDigitalTwinAdapters","getIotDigitalTwinAdaptersOutput"], () => require("./getIotDigitalTwinAdapters"));
+
+export { GetIotDigitalTwinInstanceArgs, GetIotDigitalTwinInstanceResult, GetIotDigitalTwinInstanceOutputArgs } from "./getIotDigitalTwinInstance";
+export const getIotDigitalTwinInstance: typeof import("./getIotDigitalTwinInstance").getIotDigitalTwinInstance = null as any;
+export const getIotDigitalTwinInstanceOutput: typeof import("./getIotDigitalTwinInstance").getIotDigitalTwinInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getIotDigitalTwinInstance","getIotDigitalTwinInstanceOutput"], () => require("./getIotDigitalTwinInstance"));
+
+export { GetIotDigitalTwinInstanceContentArgs, GetIotDigitalTwinInstanceContentResult, GetIotDigitalTwinInstanceContentOutputArgs } from "./getIotDigitalTwinInstanceContent";
+export const getIotDigitalTwinInstanceContent: typeof import("./getIotDigitalTwinInstanceContent").getIotDigitalTwinInstanceContent = null as any;
+export const getIotDigitalTwinInstanceContentOutput: typeof import("./getIotDigitalTwinInstanceContent").getIotDigitalTwinInstanceContentOutput = null as any;
+utilities.lazyLoad(exports, ["getIotDigitalTwinInstanceContent","getIotDigitalTwinInstanceContentOutput"], () => require("./getIotDigitalTwinInstanceContent"));
+
+export { GetIotDigitalTwinInstancesArgs, GetIotDigitalTwinInstancesResult, GetIotDigitalTwinInstancesOutputArgs } from "./getIotDigitalTwinInstances";
+export const getIotDigitalTwinInstances: typeof import("./getIotDigitalTwinInstances").getIotDigitalTwinInstances = null as any;
+export const getIotDigitalTwinInstancesOutput: typeof import("./getIotDigitalTwinInstances").getIotDigitalTwinInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getIotDigitalTwinInstances","getIotDigitalTwinInstancesOutput"], () => require("./getIotDigitalTwinInstances"));
+
+export { GetIotDigitalTwinModelArgs, GetIotDigitalTwinModelResult, GetIotDigitalTwinModelOutputArgs } from "./getIotDigitalTwinModel";
+export const getIotDigitalTwinModel: typeof import("./getIotDigitalTwinModel").getIotDigitalTwinModel = null as any;
+export const getIotDigitalTwinModelOutput: typeof import("./getIotDigitalTwinModel").getIotDigitalTwinModelOutput = null as any;
+utilities.lazyLoad(exports, ["getIotDigitalTwinModel","getIotDigitalTwinModelOutput"], () => require("./getIotDigitalTwinModel"));
+
+export { GetIotDigitalTwinModelSpecArgs, GetIotDigitalTwinModelSpecResult, GetIotDigitalTwinModelSpecOutputArgs } from "./getIotDigitalTwinModelSpec";
+export const getIotDigitalTwinModelSpec: typeof import("./getIotDigitalTwinModelSpec").getIotDigitalTwinModelSpec = null as any;
+export const getIotDigitalTwinModelSpecOutput: typeof import("./getIotDigitalTwinModelSpec").getIotDigitalTwinModelSpecOutput = null as any;
+utilities.lazyLoad(exports, ["getIotDigitalTwinModelSpec","getIotDigitalTwinModelSpecOutput"], () => require("./getIotDigitalTwinModelSpec"));
+
+export { GetIotDigitalTwinModelsArgs, GetIotDigitalTwinModelsResult, GetIotDigitalTwinModelsOutputArgs } from "./getIotDigitalTwinModels";
+export const getIotDigitalTwinModels: typeof import("./getIotDigitalTwinModels").getIotDigitalTwinModels = null as any;
+export const getIotDigitalTwinModelsOutput: typeof import("./getIotDigitalTwinModels").getIotDigitalTwinModelsOutput = null as any;
+utilities.lazyLoad(exports, ["getIotDigitalTwinModels","getIotDigitalTwinModelsOutput"], () => require("./getIotDigitalTwinModels"));
+
+export { GetIotDigitalTwinRelationshipArgs, GetIotDigitalTwinRelationshipResult, GetIotDigitalTwinRelationshipOutputArgs } from "./getIotDigitalTwinRelationship";
+export const getIotDigitalTwinRelationship: typeof import("./getIotDigitalTwinRelationship").getIotDigitalTwinRelationship = null as any;
+export const getIotDigitalTwinRelationshipOutput: typeof import("./getIotDigitalTwinRelationship").getIotDigitalTwinRelationshipOutput = null as any;
+utilities.lazyLoad(exports, ["getIotDigitalTwinRelationship","getIotDigitalTwinRelationshipOutput"], () => require("./getIotDigitalTwinRelationship"));
+
+export { GetIotDigitalTwinRelationshipsArgs, GetIotDigitalTwinRelationshipsResult, GetIotDigitalTwinRelationshipsOutputArgs } from "./getIotDigitalTwinRelationships";
+export const getIotDigitalTwinRelationships: typeof import("./getIotDigitalTwinRelationships").getIotDigitalTwinRelationships = null as any;
+export const getIotDigitalTwinRelationshipsOutput: typeof import("./getIotDigitalTwinRelationships").getIotDigitalTwinRelationshipsOutput = null as any;
+utilities.lazyLoad(exports, ["getIotDigitalTwinRelationships","getIotDigitalTwinRelationshipsOutput"], () => require("./getIotDigitalTwinRelationships"));
+
+export { GetIotIotDomainArgs, GetIotIotDomainResult, GetIotIotDomainOutputArgs } from "./getIotIotDomain";
+export const getIotIotDomain: typeof import("./getIotIotDomain").getIotIotDomain = null as any;
+export const getIotIotDomainOutput: typeof import("./getIotIotDomain").getIotIotDomainOutput = null as any;
+utilities.lazyLoad(exports, ["getIotIotDomain","getIotIotDomainOutput"], () => require("./getIotIotDomain"));
+
+export { GetIotIotDomainGroupArgs, GetIotIotDomainGroupResult, GetIotIotDomainGroupOutputArgs } from "./getIotIotDomainGroup";
+export const getIotIotDomainGroup: typeof import("./getIotIotDomainGroup").getIotIotDomainGroup = null as any;
+export const getIotIotDomainGroupOutput: typeof import("./getIotIotDomainGroup").getIotIotDomainGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getIotIotDomainGroup","getIotIotDomainGroupOutput"], () => require("./getIotIotDomainGroup"));
+
+export { GetIotIotDomainGroupsArgs, GetIotIotDomainGroupsResult, GetIotIotDomainGroupsOutputArgs } from "./getIotIotDomainGroups";
+export const getIotIotDomainGroups: typeof import("./getIotIotDomainGroups").getIotIotDomainGroups = null as any;
+export const getIotIotDomainGroupsOutput: typeof import("./getIotIotDomainGroups").getIotIotDomainGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getIotIotDomainGroups","getIotIotDomainGroupsOutput"], () => require("./getIotIotDomainGroups"));
+
+export { GetIotIotDomainsArgs, GetIotIotDomainsResult, GetIotIotDomainsOutputArgs } from "./getIotIotDomains";
+export const getIotIotDomains: typeof import("./getIotIotDomains").getIotIotDomains = null as any;
+export const getIotIotDomainsOutput: typeof import("./getIotIotDomains").getIotIotDomainsOutput = null as any;
+utilities.lazyLoad(exports, ["getIotIotDomains","getIotIotDomainsOutput"], () => require("./getIotIotDomains"));
+
 export { GetManagedKafkaKafkaClusterArgs, GetManagedKafkaKafkaClusterResult, GetManagedKafkaKafkaClusterOutputArgs } from "./getManagedKafkaKafkaCluster";
 export const getManagedKafkaKafkaCluster: typeof import("./getManagedKafkaKafkaCluster").getManagedKafkaKafkaCluster = null as any;
 export const getManagedKafkaKafkaClusterOutput: typeof import("./getManagedKafkaKafkaCluster").getManagedKafkaKafkaClusterOutput = null as any;
@@ -234,6 +319,81 @@ export { GetManagedKafkaKafkaClustersArgs, GetManagedKafkaKafkaClustersResult, G
 export const getManagedKafkaKafkaClusters: typeof import("./getManagedKafkaKafkaClusters").getManagedKafkaKafkaClusters = null as any;
 export const getManagedKafkaKafkaClustersOutput: typeof import("./getManagedKafkaKafkaClusters").getManagedKafkaKafkaClustersOutput = null as any;
 utilities.lazyLoad(exports, ["getManagedKafkaKafkaClusters","getManagedKafkaKafkaClustersOutput"], () => require("./getManagedKafkaKafkaClusters"));
+
+export { GetMulticloudExternalLocationMappingMetadataArgs, GetMulticloudExternalLocationMappingMetadataResult, GetMulticloudExternalLocationMappingMetadataOutputArgs } from "./getMulticloudExternalLocationMappingMetadata";
+export const getMulticloudExternalLocationMappingMetadata: typeof import("./getMulticloudExternalLocationMappingMetadata").getMulticloudExternalLocationMappingMetadata = null as any;
+export const getMulticloudExternalLocationMappingMetadataOutput: typeof import("./getMulticloudExternalLocationMappingMetadata").getMulticloudExternalLocationMappingMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudExternalLocationMappingMetadata","getMulticloudExternalLocationMappingMetadataOutput"], () => require("./getMulticloudExternalLocationMappingMetadata"));
+
+export { GetMulticloudExternalLocationSummariesMetadataArgs, GetMulticloudExternalLocationSummariesMetadataResult, GetMulticloudExternalLocationSummariesMetadataOutputArgs } from "./getMulticloudExternalLocationSummariesMetadata";
+export const getMulticloudExternalLocationSummariesMetadata: typeof import("./getMulticloudExternalLocationSummariesMetadata").getMulticloudExternalLocationSummariesMetadata = null as any;
+export const getMulticloudExternalLocationSummariesMetadataOutput: typeof import("./getMulticloudExternalLocationSummariesMetadata").getMulticloudExternalLocationSummariesMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudExternalLocationSummariesMetadata","getMulticloudExternalLocationSummariesMetadataOutput"], () => require("./getMulticloudExternalLocationSummariesMetadata"));
+
+export { GetMulticloudExternalLocationsMetadataArgs, GetMulticloudExternalLocationsMetadataResult, GetMulticloudExternalLocationsMetadataOutputArgs } from "./getMulticloudExternalLocationsMetadata";
+export const getMulticloudExternalLocationsMetadata: typeof import("./getMulticloudExternalLocationsMetadata").getMulticloudExternalLocationsMetadata = null as any;
+export const getMulticloudExternalLocationsMetadataOutput: typeof import("./getMulticloudExternalLocationsMetadata").getMulticloudExternalLocationsMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudExternalLocationsMetadata","getMulticloudExternalLocationsMetadataOutput"], () => require("./getMulticloudExternalLocationsMetadata"));
+
+export { GetMulticloudNetworkAnchorArgs, GetMulticloudNetworkAnchorResult, GetMulticloudNetworkAnchorOutputArgs } from "./getMulticloudNetworkAnchor";
+export const getMulticloudNetworkAnchor: typeof import("./getMulticloudNetworkAnchor").getMulticloudNetworkAnchor = null as any;
+export const getMulticloudNetworkAnchorOutput: typeof import("./getMulticloudNetworkAnchor").getMulticloudNetworkAnchorOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudNetworkAnchor","getMulticloudNetworkAnchorOutput"], () => require("./getMulticloudNetworkAnchor"));
+
+export { GetMulticloudNetworkAnchorsArgs, GetMulticloudNetworkAnchorsResult, GetMulticloudNetworkAnchorsOutputArgs } from "./getMulticloudNetworkAnchors";
+export const getMulticloudNetworkAnchors: typeof import("./getMulticloudNetworkAnchors").getMulticloudNetworkAnchors = null as any;
+export const getMulticloudNetworkAnchorsOutput: typeof import("./getMulticloudNetworkAnchors").getMulticloudNetworkAnchorsOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudNetworkAnchors","getMulticloudNetworkAnchorsOutput"], () => require("./getMulticloudNetworkAnchors"));
+
+export { GetMulticloudOmHubMultiCloudMetadataArgs, GetMulticloudOmHubMultiCloudMetadataResult, GetMulticloudOmHubMultiCloudMetadataOutputArgs } from "./getMulticloudOmHubMultiCloudMetadata";
+export const getMulticloudOmHubMultiCloudMetadata: typeof import("./getMulticloudOmHubMultiCloudMetadata").getMulticloudOmHubMultiCloudMetadata = null as any;
+export const getMulticloudOmHubMultiCloudMetadataOutput: typeof import("./getMulticloudOmHubMultiCloudMetadata").getMulticloudOmHubMultiCloudMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudOmHubMultiCloudMetadata","getMulticloudOmHubMultiCloudMetadataOutput"], () => require("./getMulticloudOmHubMultiCloudMetadata"));
+
+export { GetMulticloudOmHubMultiCloudsMetadataArgs, GetMulticloudOmHubMultiCloudsMetadataResult, GetMulticloudOmHubMultiCloudsMetadataOutputArgs } from "./getMulticloudOmHubMultiCloudsMetadata";
+export const getMulticloudOmHubMultiCloudsMetadata: typeof import("./getMulticloudOmHubMultiCloudsMetadata").getMulticloudOmHubMultiCloudsMetadata = null as any;
+export const getMulticloudOmHubMultiCloudsMetadataOutput: typeof import("./getMulticloudOmHubMultiCloudsMetadata").getMulticloudOmHubMultiCloudsMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudOmHubMultiCloudsMetadata","getMulticloudOmHubMultiCloudsMetadataOutput"], () => require("./getMulticloudOmHubMultiCloudsMetadata"));
+
+export { GetMulticloudResourceAnchorArgs, GetMulticloudResourceAnchorResult, GetMulticloudResourceAnchorOutputArgs } from "./getMulticloudResourceAnchor";
+export const getMulticloudResourceAnchor: typeof import("./getMulticloudResourceAnchor").getMulticloudResourceAnchor = null as any;
+export const getMulticloudResourceAnchorOutput: typeof import("./getMulticloudResourceAnchor").getMulticloudResourceAnchorOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudResourceAnchor","getMulticloudResourceAnchorOutput"], () => require("./getMulticloudResourceAnchor"));
+
+export { GetMulticloudResourceAnchorsArgs, GetMulticloudResourceAnchorsResult, GetMulticloudResourceAnchorsOutputArgs } from "./getMulticloudResourceAnchors";
+export const getMulticloudResourceAnchors: typeof import("./getMulticloudResourceAnchors").getMulticloudResourceAnchors = null as any;
+export const getMulticloudResourceAnchorsOutput: typeof import("./getMulticloudResourceAnchors").getMulticloudResourceAnchorsOutput = null as any;
+utilities.lazyLoad(exports, ["getMulticloudResourceAnchors","getMulticloudResourceAnchorsOutput"], () => require("./getMulticloudResourceAnchors"));
+
+export { GetResourceAnalyticsMonitoredRegionArgs, GetResourceAnalyticsMonitoredRegionResult, GetResourceAnalyticsMonitoredRegionOutputArgs } from "./getResourceAnalyticsMonitoredRegion";
+export const getResourceAnalyticsMonitoredRegion: typeof import("./getResourceAnalyticsMonitoredRegion").getResourceAnalyticsMonitoredRegion = null as any;
+export const getResourceAnalyticsMonitoredRegionOutput: typeof import("./getResourceAnalyticsMonitoredRegion").getResourceAnalyticsMonitoredRegionOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceAnalyticsMonitoredRegion","getResourceAnalyticsMonitoredRegionOutput"], () => require("./getResourceAnalyticsMonitoredRegion"));
+
+export { GetResourceAnalyticsMonitoredRegionsArgs, GetResourceAnalyticsMonitoredRegionsResult, GetResourceAnalyticsMonitoredRegionsOutputArgs } from "./getResourceAnalyticsMonitoredRegions";
+export const getResourceAnalyticsMonitoredRegions: typeof import("./getResourceAnalyticsMonitoredRegions").getResourceAnalyticsMonitoredRegions = null as any;
+export const getResourceAnalyticsMonitoredRegionsOutput: typeof import("./getResourceAnalyticsMonitoredRegions").getResourceAnalyticsMonitoredRegionsOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceAnalyticsMonitoredRegions","getResourceAnalyticsMonitoredRegionsOutput"], () => require("./getResourceAnalyticsMonitoredRegions"));
+
+export { GetResourceAnalyticsResourceAnalyticsInstanceArgs, GetResourceAnalyticsResourceAnalyticsInstanceResult, GetResourceAnalyticsResourceAnalyticsInstanceOutputArgs } from "./getResourceAnalyticsResourceAnalyticsInstance";
+export const getResourceAnalyticsResourceAnalyticsInstance: typeof import("./getResourceAnalyticsResourceAnalyticsInstance").getResourceAnalyticsResourceAnalyticsInstance = null as any;
+export const getResourceAnalyticsResourceAnalyticsInstanceOutput: typeof import("./getResourceAnalyticsResourceAnalyticsInstance").getResourceAnalyticsResourceAnalyticsInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceAnalyticsResourceAnalyticsInstance","getResourceAnalyticsResourceAnalyticsInstanceOutput"], () => require("./getResourceAnalyticsResourceAnalyticsInstance"));
+
+export { GetResourceAnalyticsResourceAnalyticsInstancesArgs, GetResourceAnalyticsResourceAnalyticsInstancesResult, GetResourceAnalyticsResourceAnalyticsInstancesOutputArgs } from "./getResourceAnalyticsResourceAnalyticsInstances";
+export const getResourceAnalyticsResourceAnalyticsInstances: typeof import("./getResourceAnalyticsResourceAnalyticsInstances").getResourceAnalyticsResourceAnalyticsInstances = null as any;
+export const getResourceAnalyticsResourceAnalyticsInstancesOutput: typeof import("./getResourceAnalyticsResourceAnalyticsInstances").getResourceAnalyticsResourceAnalyticsInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceAnalyticsResourceAnalyticsInstances","getResourceAnalyticsResourceAnalyticsInstancesOutput"], () => require("./getResourceAnalyticsResourceAnalyticsInstances"));
+
+export { GetResourceAnalyticsTenancyAttachmentArgs, GetResourceAnalyticsTenancyAttachmentResult, GetResourceAnalyticsTenancyAttachmentOutputArgs } from "./getResourceAnalyticsTenancyAttachment";
+export const getResourceAnalyticsTenancyAttachment: typeof import("./getResourceAnalyticsTenancyAttachment").getResourceAnalyticsTenancyAttachment = null as any;
+export const getResourceAnalyticsTenancyAttachmentOutput: typeof import("./getResourceAnalyticsTenancyAttachment").getResourceAnalyticsTenancyAttachmentOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceAnalyticsTenancyAttachment","getResourceAnalyticsTenancyAttachmentOutput"], () => require("./getResourceAnalyticsTenancyAttachment"));
+
+export { GetResourceAnalyticsTenancyAttachmentsArgs, GetResourceAnalyticsTenancyAttachmentsResult, GetResourceAnalyticsTenancyAttachmentsOutputArgs } from "./getResourceAnalyticsTenancyAttachments";
+export const getResourceAnalyticsTenancyAttachments: typeof import("./getResourceAnalyticsTenancyAttachments").getResourceAnalyticsTenancyAttachments = null as any;
+export const getResourceAnalyticsTenancyAttachmentsOutput: typeof import("./getResourceAnalyticsTenancyAttachments").getResourceAnalyticsTenancyAttachmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getResourceAnalyticsTenancyAttachments","getResourceAnalyticsTenancyAttachmentsOutput"], () => require("./getResourceAnalyticsTenancyAttachments"));
 
 export { GetWlmsManagedInstanceArgs, GetWlmsManagedInstanceResult, GetWlmsManagedInstanceOutputArgs } from "./getWlmsManagedInstance";
 export const getWlmsManagedInstance: typeof import("./getWlmsManagedInstance").getWlmsManagedInstance = null as any;
@@ -320,6 +480,36 @@ export const getWlmsWlsDomains: typeof import("./getWlmsWlsDomains").getWlmsWlsD
 export const getWlmsWlsDomainsOutput: typeof import("./getWlmsWlsDomains").getWlmsWlsDomainsOutput = null as any;
 utilities.lazyLoad(exports, ["getWlmsWlsDomains","getWlmsWlsDomainsOutput"], () => require("./getWlmsWlsDomains"));
 
+export { IotDigitalTwinAdapterArgs, IotDigitalTwinAdapterState } from "./iotDigitalTwinAdapter";
+export type IotDigitalTwinAdapter = import("./iotDigitalTwinAdapter").IotDigitalTwinAdapter;
+export const IotDigitalTwinAdapter: typeof import("./iotDigitalTwinAdapter").IotDigitalTwinAdapter = null as any;
+utilities.lazyLoad(exports, ["IotDigitalTwinAdapter"], () => require("./iotDigitalTwinAdapter"));
+
+export { IotDigitalTwinInstanceArgs, IotDigitalTwinInstanceState } from "./iotDigitalTwinInstance";
+export type IotDigitalTwinInstance = import("./iotDigitalTwinInstance").IotDigitalTwinInstance;
+export const IotDigitalTwinInstance: typeof import("./iotDigitalTwinInstance").IotDigitalTwinInstance = null as any;
+utilities.lazyLoad(exports, ["IotDigitalTwinInstance"], () => require("./iotDigitalTwinInstance"));
+
+export { IotDigitalTwinModelArgs, IotDigitalTwinModelState } from "./iotDigitalTwinModel";
+export type IotDigitalTwinModel = import("./iotDigitalTwinModel").IotDigitalTwinModel;
+export const IotDigitalTwinModel: typeof import("./iotDigitalTwinModel").IotDigitalTwinModel = null as any;
+utilities.lazyLoad(exports, ["IotDigitalTwinModel"], () => require("./iotDigitalTwinModel"));
+
+export { IotDigitalTwinRelationshipArgs, IotDigitalTwinRelationshipState } from "./iotDigitalTwinRelationship";
+export type IotDigitalTwinRelationship = import("./iotDigitalTwinRelationship").IotDigitalTwinRelationship;
+export const IotDigitalTwinRelationship: typeof import("./iotDigitalTwinRelationship").IotDigitalTwinRelationship = null as any;
+utilities.lazyLoad(exports, ["IotDigitalTwinRelationship"], () => require("./iotDigitalTwinRelationship"));
+
+export { IotIotDomainArgs, IotIotDomainState } from "./iotIotDomain";
+export type IotIotDomain = import("./iotIotDomain").IotIotDomain;
+export const IotIotDomain: typeof import("./iotIotDomain").IotIotDomain = null as any;
+utilities.lazyLoad(exports, ["IotIotDomain"], () => require("./iotIotDomain"));
+
+export { IotIotDomainGroupArgs, IotIotDomainGroupState } from "./iotIotDomainGroup";
+export type IotIotDomainGroup = import("./iotIotDomainGroup").IotIotDomainGroup;
+export const IotIotDomainGroup: typeof import("./iotIotDomainGroup").IotIotDomainGroup = null as any;
+utilities.lazyLoad(exports, ["IotIotDomainGroup"], () => require("./iotIotDomainGroup"));
+
 export { ManagedKafkaKafkaClusterArgs, ManagedKafkaKafkaClusterState } from "./managedKafkaKafkaCluster";
 export type ManagedKafkaKafkaCluster = import("./managedKafkaKafkaCluster").ManagedKafkaKafkaCluster;
 export const ManagedKafkaKafkaCluster: typeof import("./managedKafkaKafkaCluster").ManagedKafkaKafkaCluster = null as any;
@@ -335,11 +525,33 @@ export type ManagedKafkaKafkaClusterSuperusersManagement = import("./managedKafk
 export const ManagedKafkaKafkaClusterSuperusersManagement: typeof import("./managedKafkaKafkaClusterSuperusersManagement").ManagedKafkaKafkaClusterSuperusersManagement = null as any;
 utilities.lazyLoad(exports, ["ManagedKafkaKafkaClusterSuperusersManagement"], () => require("./managedKafkaKafkaClusterSuperusersManagement"));
 
+export { ResourceAnalyticsMonitoredRegionArgs, ResourceAnalyticsMonitoredRegionState } from "./resourceAnalyticsMonitoredRegion";
+export type ResourceAnalyticsMonitoredRegion = import("./resourceAnalyticsMonitoredRegion").ResourceAnalyticsMonitoredRegion;
+export const ResourceAnalyticsMonitoredRegion: typeof import("./resourceAnalyticsMonitoredRegion").ResourceAnalyticsMonitoredRegion = null as any;
+utilities.lazyLoad(exports, ["ResourceAnalyticsMonitoredRegion"], () => require("./resourceAnalyticsMonitoredRegion"));
+
+export { ResourceAnalyticsResourceAnalyticsInstanceArgs, ResourceAnalyticsResourceAnalyticsInstanceState } from "./resourceAnalyticsResourceAnalyticsInstance";
+export type ResourceAnalyticsResourceAnalyticsInstance = import("./resourceAnalyticsResourceAnalyticsInstance").ResourceAnalyticsResourceAnalyticsInstance;
+export const ResourceAnalyticsResourceAnalyticsInstance: typeof import("./resourceAnalyticsResourceAnalyticsInstance").ResourceAnalyticsResourceAnalyticsInstance = null as any;
+utilities.lazyLoad(exports, ["ResourceAnalyticsResourceAnalyticsInstance"], () => require("./resourceAnalyticsResourceAnalyticsInstance"));
+
+export { ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs, ResourceAnalyticsResourceAnalyticsInstanceOacManagementState } from "./resourceAnalyticsResourceAnalyticsInstanceOacManagement";
+export type ResourceAnalyticsResourceAnalyticsInstanceOacManagement = import("./resourceAnalyticsResourceAnalyticsInstanceOacManagement").ResourceAnalyticsResourceAnalyticsInstanceOacManagement;
+export const ResourceAnalyticsResourceAnalyticsInstanceOacManagement: typeof import("./resourceAnalyticsResourceAnalyticsInstanceOacManagement").ResourceAnalyticsResourceAnalyticsInstanceOacManagement = null as any;
+utilities.lazyLoad(exports, ["ResourceAnalyticsResourceAnalyticsInstanceOacManagement"], () => require("./resourceAnalyticsResourceAnalyticsInstanceOacManagement"));
+
+export { ResourceAnalyticsTenancyAttachmentArgs, ResourceAnalyticsTenancyAttachmentState } from "./resourceAnalyticsTenancyAttachment";
+export type ResourceAnalyticsTenancyAttachment = import("./resourceAnalyticsTenancyAttachment").ResourceAnalyticsTenancyAttachment;
+export const ResourceAnalyticsTenancyAttachment: typeof import("./resourceAnalyticsTenancyAttachment").ResourceAnalyticsTenancyAttachment = null as any;
+utilities.lazyLoad(exports, ["ResourceAnalyticsTenancyAttachment"], () => require("./resourceAnalyticsTenancyAttachment"));
+
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:oci/aiDataPlatformAiDataPlatform:AiDataPlatformAiDataPlatform":
+                return new AiDataPlatformAiDataPlatform(name, <any>undefined, { urn })
             case "oci:oci/apiPlatformApiPlatformInstance:ApiPlatformApiPlatformInstance":
                 return new ApiPlatformApiPlatformInstance(name, <any>undefined, { urn })
             case "oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl":
@@ -362,17 +574,38 @@ const _module = {
                 return new DbmulticloudOracleDbGcpIdentityConnector(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing":
                 return new DbmulticloudOracleDbGcpKeyRing(name, <any>undefined, { urn })
+            case "oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter":
+                return new IotDigitalTwinAdapter(name, <any>undefined, { urn })
+            case "oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance":
+                return new IotDigitalTwinInstance(name, <any>undefined, { urn })
+            case "oci:oci/iotDigitalTwinModel:IotDigitalTwinModel":
+                return new IotDigitalTwinModel(name, <any>undefined, { urn })
+            case "oci:oci/iotDigitalTwinRelationship:IotDigitalTwinRelationship":
+                return new IotDigitalTwinRelationship(name, <any>undefined, { urn })
+            case "oci:oci/iotIotDomain:IotIotDomain":
+                return new IotIotDomain(name, <any>undefined, { urn })
+            case "oci:oci/iotIotDomainGroup:IotIotDomainGroup":
+                return new IotIotDomainGroup(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
                 return new ManagedKafkaKafkaCluster(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig":
                 return new ManagedKafkaKafkaClusterConfig(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement":
                 return new ManagedKafkaKafkaClusterSuperusersManagement(name, <any>undefined, { urn })
+            case "oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion":
+                return new ResourceAnalyticsMonitoredRegion(name, <any>undefined, { urn })
+            case "oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance":
+                return new ResourceAnalyticsResourceAnalyticsInstance(name, <any>undefined, { urn })
+            case "oci:oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement:ResourceAnalyticsResourceAnalyticsInstanceOacManagement":
+                return new ResourceAnalyticsResourceAnalyticsInstanceOacManagement(name, <any>undefined, { urn })
+            case "oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment":
+                return new ResourceAnalyticsTenancyAttachment(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "oci/aiDataPlatformAiDataPlatform", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/apiPlatformApiPlatformInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/apiaccesscontrolPrivilegedApiControl", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/apiaccesscontrolPrivilegedApiRequest", _module)
@@ -384,6 +617,16 @@ pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVault
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVaultAssociation", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpIdentityConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpKeyRing", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinAdapter", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinInstance", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinModel", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotDigitalTwinRelationship", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomain", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/iotIotDomainGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterSuperusersManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsMonitoredRegion", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsResourceAnalyticsInstance", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsTenancyAttachment", _module)

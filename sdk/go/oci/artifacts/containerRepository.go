@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
-//
-// Create a new empty container repository. Avoid entering confidential information.
-//
 // ## Example Usage
 //
 // ```go

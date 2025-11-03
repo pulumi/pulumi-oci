@@ -62,7 +62,12 @@ public final class GetAutonomousVmClusterResourceUsageResult {
      */
     private Boolean isLocalBackupEnabled;
     /**
-     * @return The amount of memory (in GBs) to be enabled per each CPU core.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    private Double memoryPerComputeUnitInGbs;
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
@@ -190,7 +195,14 @@ public final class GetAutonomousVmClusterResourceUsageResult {
         return this.isLocalBackupEnabled;
     }
     /**
-     * @return The amount of memory (in GBs) to be enabled per each CPU core.
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    public Double memoryPerComputeUnitInGbs() {
+        return this.memoryPerComputeUnitInGbs;
+    }
+    /**
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -293,6 +305,7 @@ public final class GetAutonomousVmClusterResourceUsageResult {
         private Double exadataStorageInTbs;
         private String id;
         private Boolean isLocalBackupEnabled;
+        private Double memoryPerComputeUnitInGbs;
         private Integer memoryPerOracleComputeUnitInGbs;
         private Integer memorySizeInGbs;
         private Integer nonProvisionableAutonomousContainerDatabases;
@@ -318,6 +331,7 @@ public final class GetAutonomousVmClusterResourceUsageResult {
     	      this.exadataStorageInTbs = defaults.exadataStorageInTbs;
     	      this.id = defaults.id;
     	      this.isLocalBackupEnabled = defaults.isLocalBackupEnabled;
+    	      this.memoryPerComputeUnitInGbs = defaults.memoryPerComputeUnitInGbs;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nonProvisionableAutonomousContainerDatabases = defaults.nonProvisionableAutonomousContainerDatabases;
@@ -413,6 +427,14 @@ public final class GetAutonomousVmClusterResourceUsageResult {
               throw new MissingRequiredPropertyException("GetAutonomousVmClusterResourceUsageResult", "isLocalBackupEnabled");
             }
             this.isLocalBackupEnabled = isLocalBackupEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder memoryPerComputeUnitInGbs(Double memoryPerComputeUnitInGbs) {
+            if (memoryPerComputeUnitInGbs == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousVmClusterResourceUsageResult", "memoryPerComputeUnitInGbs");
+            }
+            this.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             return this;
         }
         @CustomType.Setter
@@ -523,6 +545,7 @@ public final class GetAutonomousVmClusterResourceUsageResult {
             _resultValue.exadataStorageInTbs = exadataStorageInTbs;
             _resultValue.id = id;
             _resultValue.isLocalBackupEnabled = isLocalBackupEnabled;
+            _resultValue.memoryPerComputeUnitInGbs = memoryPerComputeUnitInGbs;
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;

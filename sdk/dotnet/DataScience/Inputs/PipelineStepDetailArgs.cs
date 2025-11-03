@@ -78,6 +78,18 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("stepName", required: true)]
         public Input<string> StepName { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Pipeline step parameter details
+        /// </summary>
+        [Input("stepParameters")]
+        public Input<Inputs.PipelineStepDetailStepParametersArgs>? StepParameters { get; set; }
+
+        /// <summary>
+        /// (Updatable) Name used when creating the steprun.
+        /// </summary>
+        [Input("stepRunName")]
+        public Input<string>? StepRunName { get; set; }
+
         [Input("stepStorageMountConfigurationDetailsLists")]
         private InputList<Inputs.PipelineStepDetailStepStorageMountConfigurationDetailsListArgs>? _stepStorageMountConfigurationDetailsLists;
 

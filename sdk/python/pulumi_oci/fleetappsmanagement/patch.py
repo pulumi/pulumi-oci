@@ -527,10 +527,6 @@ class Patch(pulumi.CustomResource):
                  time_released: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Patch resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a new Patch.
-
         ## Example Usage
 
         ```python
@@ -617,10 +613,6 @@ class Patch(pulumi.CustomResource):
                  args: PatchArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Patch resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a new Patch.
-
         ## Example Usage
 
         ```python

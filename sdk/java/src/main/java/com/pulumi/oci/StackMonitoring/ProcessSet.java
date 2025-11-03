@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Process Set resource in Oracle Cloud Infrastructure Stack Monitoring service.
- * 
- * API to create Process Set.
- * 
  * ## Example Usage
  * 
  * <pre>

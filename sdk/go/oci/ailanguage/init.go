@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:AiLanguage/endpoint:Endpoint":
 		r = &Endpoint{}
+	case "oci:AiLanguage/job:Job":
+		r = &Job{}
 	case "oci:AiLanguage/model:Model":
 		r = &Model{}
 	case "oci:AiLanguage/project:Project":
@@ -43,6 +45,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"AiLanguage/endpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"AiLanguage/job",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

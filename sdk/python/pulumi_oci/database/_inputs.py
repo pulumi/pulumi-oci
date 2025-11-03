@@ -79,6 +79,12 @@ __all__ = [
     'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict',
     'AutonomousDatabaseBackupConfigArgs',
     'AutonomousDatabaseBackupConfigArgsDict',
+    'AutonomousDatabaseBackupSourceDatabaseDetailArgs',
+    'AutonomousDatabaseBackupSourceDatabaseDetailArgsDict',
+    'AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs',
+    'AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgsDict',
+    'AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs',
+    'AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgsDict',
     'AutonomousDatabaseConnectionStringArgs',
     'AutonomousDatabaseConnectionStringArgsDict',
     'AutonomousDatabaseConnectionStringProfileArgs',
@@ -113,6 +119,10 @@ __all__ = [
     'AutonomousDatabaseScheduledOperationDayOfWeekArgsDict',
     'AutonomousDatabaseStandbyDbArgs',
     'AutonomousDatabaseStandbyDbArgsDict',
+    'AutonomousDatabaseVanityConnectionUrlArgs',
+    'AutonomousDatabaseVanityConnectionUrlArgsDict',
+    'AutonomousDatabaseVanityUrlDetailArgs',
+    'AutonomousDatabaseVanityUrlDetailArgsDict',
     'AutonomousExadataInfrastructureMaintenanceWindowArgs',
     'AutonomousExadataInfrastructureMaintenanceWindowArgsDict',
     'AutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekArgs',
@@ -139,6 +149,8 @@ __all__ = [
     'AutonomousVmClusterMaintenanceWindowMonthArgsDict',
     'BackupDestinationAssociatedDatabaseArgs',
     'BackupDestinationAssociatedDatabaseArgsDict',
+    'BackupDestinationAssociatedLongTermBackupArgs',
+    'BackupDestinationAssociatedLongTermBackupArgsDict',
     'BackupDestinationMountTypeDetailsArgs',
     'BackupDestinationMountTypeDetailsArgsDict',
     'BackupEncryptionKeyLocationDetailArgs',
@@ -225,6 +237,18 @@ __all__ = [
     'DatabaseDbBackupConfigArgsDict',
     'DatabaseDbBackupConfigBackupDestinationDetailArgs',
     'DatabaseDbBackupConfigBackupDestinationDetailArgsDict',
+    'DatabaseSnapshotStandbyConnectionStringArgs',
+    'DatabaseSnapshotStandbyConnectionStringArgsDict',
+    'DatabaseSnapshotStandbyDataGuardGroupArgs',
+    'DatabaseSnapshotStandbyDataGuardGroupArgsDict',
+    'DatabaseSnapshotStandbyDataGuardGroupMemberArgs',
+    'DatabaseSnapshotStandbyDataGuardGroupMemberArgsDict',
+    'DatabaseSnapshotStandbyDatabaseManagementConfigArgs',
+    'DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict',
+    'DatabaseSnapshotStandbyDbBackupConfigArgs',
+    'DatabaseSnapshotStandbyDbBackupConfigArgsDict',
+    'DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs',
+    'DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgsDict',
     'DatabaseStorageSizeDetailArgs',
     'DatabaseStorageSizeDetailArgsDict',
     'DatabaseUpgradeConnectionStringArgs',
@@ -375,6 +399,8 @@ __all__ = [
     'ExternalPluggableDatabaseStackMonitoringConfigArgsDict',
     'KeyStoreAssociatedDatabaseArgs',
     'KeyStoreAssociatedDatabaseArgsDict',
+    'KeyStoreAssociatedLongTermBackupArgs',
+    'KeyStoreAssociatedLongTermBackupArgsDict',
     'KeyStoreTypeDetailsArgs',
     'KeyStoreTypeDetailsArgsDict',
     'MaintenanceRunEstimatedPatchingTimeArgs',
@@ -645,7 +671,7 @@ if not MYPY:
         """
         recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
         """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        Number of days between the current and earliest point of recoverability covered by automatic backups.
         """
 elif False:
     AutonomousContainerDatabaseAddStandbyBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
@@ -657,7 +683,7 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigArgs:
                  recovery_window_in_days: Optional[pulumi.Input[_builtins.int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
-        :param pulumi.Input[_builtins.int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        :param pulumi.Input[_builtins.int] recovery_window_in_days: Number of days between the current and earliest point of recoverability covered by automatic backups.
         """
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
@@ -680,7 +706,7 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigArgs:
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
+        Number of days between the current and earliest point of recoverability covered by automatic backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
 
@@ -691,17 +717,25 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigArgs:
 
 if not MYPY:
     class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
         dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         """
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
         """
         Proxy URL to connect to object store.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -721,32 +755,52 @@ elif False:
 @pulumi.input_type
 class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param pulumi.Input[_builtins.str] id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param pulumi.Input[_builtins.str] id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param pulumi.Input[_builtins.str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
         :param pulumi.Input[_builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[_builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if vpc_password is not None:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -764,7 +818,7 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailAr
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -783,6 +837,18 @@ class AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailAr
     @internet_proxy.setter
     def internet_proxy(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "internet_proxy", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
 
     @_builtins.property
     @pulumi.getter
@@ -865,7 +931,7 @@ if not MYPY:
         """
         role: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         state: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -925,7 +991,7 @@ class AutonomousContainerDatabaseAddStandbyDataguardArgs:
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[_builtins.str] redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous Container Database was created.
         :param pulumi.Input[_builtins.str] time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -1092,7 +1158,7 @@ class AutonomousContainerDatabaseAddStandbyDataguardArgs:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -1217,7 +1283,7 @@ if not MYPY:
         """
         role: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         state: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1277,7 +1343,7 @@ class AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs:
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[_builtins.str] redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous Container Database was created.
         :param pulumi.Input[_builtins.str] time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -1444,7 +1510,7 @@ class AutonomousContainerDatabaseAddStandbyDataguardGroupMemberArgs:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -1529,11 +1595,11 @@ if not MYPY:
     class AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgsDict(TypedDict):
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         time_activated: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1554,8 +1620,8 @@ class AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs:
                  time_activated: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param pulumi.Input[_builtins.str] id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] time_activated: The date and time the kms key activated.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
@@ -1572,7 +1638,7 @@ class AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -1584,7 +1650,7 @@ class AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -1971,6 +2037,10 @@ if not MYPY:
         """
         Type of the database backup destination.
         """
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
         dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
@@ -1982,6 +2052,10 @@ if not MYPY:
         internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
         """
         Proxy URL to connect to object store.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         vpc_password: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1998,26 +2072,34 @@ elif False:
 class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[_builtins.str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         :param pulumi.Input[_builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[_builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "type", type)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if vpc_password is not None:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
@@ -2034,6 +2116,18 @@ class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackup
     @type.setter
     def type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -2070,6 +2164,18 @@ class AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackup
     @internet_proxy.setter
     def internet_proxy(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "internet_proxy", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcPassword")
@@ -2102,17 +2208,25 @@ if not MYPY:
         """
         The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
         """
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
         dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         """
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
         """
         Proxy URL to connect to object store.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
         """
@@ -2145,9 +2259,11 @@ elif False:
 class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs:
     def __init__(__self__, *,
                  backup_destination_attach_histories: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  recovery_window_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  space_utilized_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  time_at_which_storage_details_are_updated: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2156,9 +2272,11 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs:
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_destination_attach_histories: The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
-        :param pulumi.Input[_builtins.str] id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param pulumi.Input[_builtins.str] id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param pulumi.Input[_builtins.str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         :param pulumi.Input[_builtins.int] recovery_window_in_days: Number of days between the current and earliest point of recoverability covered by automatic backups.
         :param pulumi.Input[_builtins.int] space_utilized_in_gbs: The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
         :param pulumi.Input[_builtins.str] time_at_which_storage_details_are_updated: The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
@@ -2168,12 +2286,16 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs:
         """
         if backup_destination_attach_histories is not None:
             pulumi.set(__self__, "backup_destination_attach_histories", backup_destination_attach_histories)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if recovery_window_in_days is not None:
             pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
         if space_utilized_in_gbs is not None:
@@ -2200,6 +2322,18 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs:
         pulumi.set(self, "backup_destination_attach_histories", value)
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
+
+    @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
     def dbrs_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -2215,7 +2349,7 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -2234,6 +2368,18 @@ class AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs:
     @internet_proxy.setter
     def internet_proxy(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "internet_proxy", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryWindowInDays")
@@ -2366,6 +2512,10 @@ if not MYPY:
         """
         (Updatable) Type of the database backup destination.
         """
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
@@ -2376,13 +2526,15 @@ if not MYPY:
         """
         is_remote: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        (Updatable) Indicates whether the backup destination is cross-region or local region.
+        (Updatable) Indicates whether the backup destination is cross-region or local.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         remote_region: NotRequired[pulumi.Input[_builtins.str]]
         """
-        (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         vpc_password: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -2399,30 +2551,36 @@ elif False:
 class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
                  is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  remote_region: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of the database backup destination.
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: (Updatable) Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[_builtins.str] internet_proxy: (Updatable) Proxy URL to connect to object store.
-        :param pulumi.Input[_builtins.bool] is_remote: (Updatable) Indicates whether the backup destination is cross-region or local region.
-        :param pulumi.Input[_builtins.str] remote_region: (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param pulumi.Input[_builtins.bool] is_remote: (Updatable) Indicates whether the backup destination is cross-region or local.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param pulumi.Input[_builtins.str] remote_region: (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[_builtins.str] vpc_password: (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[_builtins.str] vpc_user: (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "type", type)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
@@ -2441,6 +2599,18 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     @type.setter
     def type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
 
     @_builtins.property
     @pulumi.getter
@@ -2470,7 +2640,7 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Indicates whether the backup destination is cross-region or local region.
+        (Updatable) Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
 
@@ -2479,12 +2649,22 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
         pulumi.set(self, "is_remote", value)
 
     @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        (Updatable) The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -2637,7 +2817,7 @@ if not MYPY:
         """
         autonomous_container_database_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         availability_domain: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -2649,7 +2829,7 @@ if not MYPY:
         """
         is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         """
         lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -2665,7 +2845,7 @@ if not MYPY:
         """
         role: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         state: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -2718,14 +2898,14 @@ class AutonomousContainerDatabaseDataguardArgs:
         :param pulumi.Input[_builtins.str] apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
         :param pulumi.Input[_builtins.str] apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
         :param pulumi.Input[_builtins.str] automatic_failover_target: Automatically selected by backend when observer is enabled.
-        :param pulumi.Input[_builtins.str] autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param pulumi.Input[_builtins.str] autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] availability_domain: The domain of the Autonomous Container Database
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
-        :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[_builtins.str] redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous Container Database was created.
         :param pulumi.Input[_builtins.str] time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -2808,7 +2988,7 @@ class AutonomousContainerDatabaseDataguardArgs:
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -2844,7 +3024,7 @@ class AutonomousContainerDatabaseDataguardArgs:
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -2892,7 +3072,7 @@ class AutonomousContainerDatabaseDataguardArgs:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -3031,6 +3211,10 @@ if not MYPY:
         """
         Type of the database backup destination.
         """
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
         dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
@@ -3045,13 +3229,15 @@ if not MYPY:
         """
         is_remote: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         remote_region: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         vpc_password: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -3068,26 +3254,30 @@ elif False:
 class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
                  is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  remote_region: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[_builtins.str] internet_proxy: Proxy URL to connect to object store.
-        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[_builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[_builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "type", type)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
@@ -3096,6 +3286,8 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
             pulumi.set(__self__, "internet_proxy", internet_proxy)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
@@ -3114,6 +3306,18 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
     @type.setter
     def type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -3155,7 +3359,7 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
 
@@ -3164,12 +3368,22 @@ class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerData
         pulumi.set(self, "is_remote", value)
 
     @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -3218,7 +3432,7 @@ if not MYPY:
         """
         autonomous_container_database_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         availability_domain: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -3230,7 +3444,7 @@ if not MYPY:
         """
         is_automatic_failover_enabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         """
         lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -3246,7 +3460,7 @@ if not MYPY:
         """
         role: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         state: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -3299,14 +3513,14 @@ class AutonomousContainerDatabaseDataguardGroupMemberArgs:
         :param pulumi.Input[_builtins.str] apply_lag: The lag time between updates to the primary Autonomous Container Database and application of the redo data on the standby Autonomous Container Database, as computed by the reporting database. Example: `9 seconds`
         :param pulumi.Input[_builtins.str] apply_rate: The rate at which redo logs are synchronized between the associated Autonomous Container Databases. Example: `180 Mb per second`
         :param pulumi.Input[_builtins.str] automatic_failover_target: Automatically selected by backend when observer is enabled.
-        :param pulumi.Input[_builtins.str] autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        :param pulumi.Input[_builtins.str] autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] availability_domain: The domain of the Autonomous Container Database
         :param pulumi.Input[_builtins.int] fast_start_fail_over_lag_limit_in_seconds: (Updatable) The lag time for my preference based on data loss tolerance in seconds.
-        :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        :param pulumi.Input[_builtins.bool] is_automatic_failover_enabled: (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[_builtins.str] redo_transport_mode: Automatically selected by backend based on the protection mode.
-        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous Container Database was created.
         :param pulumi.Input[_builtins.str] time_lag_refreshed_on: Timestamp when the lags were last calculated for a standby.
@@ -3389,7 +3603,7 @@ class AutonomousContainerDatabaseDataguardGroupMemberArgs:
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
@@ -3425,7 +3639,7 @@ class AutonomousContainerDatabaseDataguardGroupMemberArgs:
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
@@ -3473,7 +3687,7 @@ class AutonomousContainerDatabaseDataguardGroupMemberArgs:
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+        The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -3558,11 +3772,11 @@ if not MYPY:
     class AutonomousContainerDatabaseKeyHistoryEntryArgsDict(TypedDict):
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         time_activated: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -3583,8 +3797,8 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
                  time_activated: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param pulumi.Input[_builtins.str] id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] time_activated: The date and time the kms key activated.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
@@ -3601,7 +3815,7 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -3613,7 +3827,7 @@ class AutonomousContainerDatabaseKeyHistoryEntryArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -3658,8 +3872,7 @@ if not MYPY:
         """
         hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
         """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
@@ -3687,7 +3900,7 @@ if not MYPY:
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
         """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
         """
@@ -3713,15 +3926,14 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
         """
         :param pulumi.Input[_builtins.int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[_builtins.bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param pulumi.Input[_builtins.bool] is_monthly_patching_enabled: If true, enables the monthly patching option.
         :param pulumi.Input[_builtins.int] lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
         :param pulumi.Input[_builtins.str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param pulumi.Input[_builtins.str] preference: The maintenance window scheduling preference.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -3775,8 +3987,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
         """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -3860,7 +4071,7 @@ class AutonomousContainerDatabaseMaintenanceWindowArgs:
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]:
         """
-        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         """
         return pulumi.get(self, "skip_rus")
 
@@ -3925,8 +4136,7 @@ if not MYPY:
         """
         hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
         """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
@@ -3960,7 +4170,7 @@ if not MYPY:
         """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
         """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
 elif False:
     AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -3982,8 +4192,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
         """
         :param pulumi.Input[_builtins.int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[_builtins.bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param pulumi.Input[_builtins.bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param pulumi.Input[_builtins.int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -3993,7 +4202,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[_builtins.str] preference: (Updatable) The maintenance window scheduling preference.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
             pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -4046,8 +4255,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
         """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -4145,7 +4353,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetailsArgs:
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
         """
-        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         return pulumi.get(self, "weeks_of_months")
 
@@ -4306,6 +4514,10 @@ if not MYPY:
         """
         Type of the database backup destination.
         """
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
@@ -4316,13 +4528,15 @@ if not MYPY:
         """
         is_remote: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         remote_region: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         vpc_password: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -4339,30 +4553,36 @@ elif False:
 class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
                  is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  remote_region: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[_builtins.str] internet_proxy: Proxy URL to connect to object store.
-        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[_builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[_builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "type", type)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
@@ -4381,6 +4601,18 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
     @type.setter
     def type(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
 
     @_builtins.property
     @pulumi.getter
@@ -4410,7 +4642,7 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
 
@@ -4419,12 +4651,22 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBack
         pulumi.set(self, "is_remote", value)
 
     @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -4533,7 +4775,7 @@ if not MYPY:
     class AutonomousDatabaseApexDetailArgsDict(TypedDict):
         apex_version: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The Oracle APEX Application Development version.
+        The Oracle APEX AI Application Development version.
         """
         ords_version: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -4548,7 +4790,7 @@ class AutonomousDatabaseApexDetailArgs:
                  apex_version: Optional[pulumi.Input[_builtins.str]] = None,
                  ords_version: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] apex_version: The Oracle APEX Application Development version.
+        :param pulumi.Input[_builtins.str] apex_version: The Oracle APEX AI Application Development version.
         :param pulumi.Input[_builtins.str] ords_version: The Oracle REST Data Services (ORDS) version.
         """
         if apex_version is not None:
@@ -4560,7 +4802,7 @@ class AutonomousDatabaseApexDetailArgs:
     @pulumi.getter(name="apexVersion")
     def apex_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The Oracle APEX Application Development version.
+        The Oracle APEX AI Application Development version.
         """
         return pulumi.get(self, "apex_version")
 
@@ -4585,11 +4827,15 @@ if not MYPY:
     class AutonomousDatabaseBackupBackupDestinationDetailsArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
         """
-        The type of backup.
+        Type of the database backup destination.
+        """
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         """
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         """
         internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -4597,11 +4843,15 @@ if not MYPY:
         """
         is_remote: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         remote_region: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         vpc_password: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -4618,28 +4868,36 @@ elif False:
 class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
                  is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  remote_region: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] type: The type of backup.
-        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[_builtins.str] internet_proxy: Proxy URL to connect to object store.
-        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[_builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[_builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         pulumi.set(__self__, "type", type)
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if internet_proxy is not None:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if vpc_password is not None:
@@ -4651,7 +4909,7 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        The type of backup.
+        Type of the database backup destination.
         """
         return pulumi.get(self, "type")
 
@@ -4660,10 +4918,22 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
         pulumi.set(self, "type", value)
 
     @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         """
         return pulumi.get(self, "id")
 
@@ -4687,7 +4957,7 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
 
@@ -4696,10 +4966,22 @@ class AutonomousDatabaseBackupBackupDestinationDetailsArgs:
         pulumi.set(self, "is_remote", value)
 
     @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -4785,10 +5067,258 @@ class AutonomousDatabaseBackupConfigArgs:
 
 
 if not MYPY:
+    class AutonomousDatabaseBackupSourceDatabaseDetailArgsDict(TypedDict):
+        autonomous_container_database_customer_contacts: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgsDict']]]]
+        """
+        Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+        """
+        autonomous_container_database_display_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The user-provided name for the Autonomous Container Database.
+        """
+        autonomous_container_database_dst_file_version: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        DST Time-Zone File version of the Autonomous Container Database.
+        """
+        autonomous_container_database_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Autonomous Container Database name.
+        """
+        autonomous_database_customer_contacts: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgsDict']]]]
+        """
+        Customer Contacts for the Autonomous database.
+        """
+        autonomous_database_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Autonomous Database's name.
+        """
+        autonomous_vm_cluster_display_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Autonomous VM cluster's user-friendly name.
+        """
+        db_workload: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The Autonomous Database workload type. The following values are valid:
+        * OLTP - indicates an Autonomous Transaction Processing database
+        * DW - indicates an Autonomous Data Warehouse database
+        * AJD - indicates an Autonomous JSON Database
+        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        """
+elif False:
+    AutonomousDatabaseBackupSourceDatabaseDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseBackupSourceDatabaseDetailArgs:
+    def __init__(__self__, *,
+                 autonomous_container_database_customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs']]]] = None,
+                 autonomous_container_database_display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_container_database_dst_file_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_container_database_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_database_customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs']]]] = None,
+                 autonomous_database_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_vm_cluster_display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_workload: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs']]] autonomous_container_database_customer_contacts: Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+        :param pulumi.Input[_builtins.str] autonomous_container_database_display_name: The user-provided name for the Autonomous Container Database.
+        :param pulumi.Input[_builtins.str] autonomous_container_database_dst_file_version: DST Time-Zone File version of the Autonomous Container Database.
+        :param pulumi.Input[_builtins.str] autonomous_container_database_name: Autonomous Container Database name.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs']]] autonomous_database_customer_contacts: Customer Contacts for the Autonomous database.
+        :param pulumi.Input[_builtins.str] autonomous_database_name: Autonomous Database's name.
+        :param pulumi.Input[_builtins.str] autonomous_vm_cluster_display_name: Autonomous VM cluster's user-friendly name.
+        :param pulumi.Input[_builtins.str] db_workload: The Autonomous Database workload type. The following values are valid:
+               * OLTP - indicates an Autonomous Transaction Processing database
+               * DW - indicates an Autonomous Data Warehouse database
+               * AJD - indicates an Autonomous JSON Database
+               * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        """
+        if autonomous_container_database_customer_contacts is not None:
+            pulumi.set(__self__, "autonomous_container_database_customer_contacts", autonomous_container_database_customer_contacts)
+        if autonomous_container_database_display_name is not None:
+            pulumi.set(__self__, "autonomous_container_database_display_name", autonomous_container_database_display_name)
+        if autonomous_container_database_dst_file_version is not None:
+            pulumi.set(__self__, "autonomous_container_database_dst_file_version", autonomous_container_database_dst_file_version)
+        if autonomous_container_database_name is not None:
+            pulumi.set(__self__, "autonomous_container_database_name", autonomous_container_database_name)
+        if autonomous_database_customer_contacts is not None:
+            pulumi.set(__self__, "autonomous_database_customer_contacts", autonomous_database_customer_contacts)
+        if autonomous_database_name is not None:
+            pulumi.set(__self__, "autonomous_database_name", autonomous_database_name)
+        if autonomous_vm_cluster_display_name is not None:
+            pulumi.set(__self__, "autonomous_vm_cluster_display_name", autonomous_vm_cluster_display_name)
+        if db_workload is not None:
+            pulumi.set(__self__, "db_workload", db_workload)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseCustomerContacts")
+    def autonomous_container_database_customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs']]]]:
+        """
+        Customer Contacts for the Autonomous Container Database. Setting this to an empty list removes all customer contacts.
+        """
+        return pulumi.get(self, "autonomous_container_database_customer_contacts")
+
+    @autonomous_container_database_customer_contacts.setter
+    def autonomous_container_database_customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs']]]]):
+        pulumi.set(self, "autonomous_container_database_customer_contacts", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseDisplayName")
+    def autonomous_container_database_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The user-provided name for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_container_database_display_name")
+
+    @autonomous_container_database_display_name.setter
+    def autonomous_container_database_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "autonomous_container_database_display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseDstFileVersion")
+    def autonomous_container_database_dst_file_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        DST Time-Zone File version of the Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_container_database_dst_file_version")
+
+    @autonomous_container_database_dst_file_version.setter
+    def autonomous_container_database_dst_file_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "autonomous_container_database_dst_file_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousContainerDatabaseName")
+    def autonomous_container_database_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Autonomous Container Database name.
+        """
+        return pulumi.get(self, "autonomous_container_database_name")
+
+    @autonomous_container_database_name.setter
+    def autonomous_container_database_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "autonomous_container_database_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseCustomerContacts")
+    def autonomous_database_customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs']]]]:
+        """
+        Customer Contacts for the Autonomous database.
+        """
+        return pulumi.get(self, "autonomous_database_customer_contacts")
+
+    @autonomous_database_customer_contacts.setter
+    def autonomous_database_customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs']]]]):
+        pulumi.set(self, "autonomous_database_customer_contacts", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabaseName")
+    def autonomous_database_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Autonomous Database's name.
+        """
+        return pulumi.get(self, "autonomous_database_name")
+
+    @autonomous_database_name.setter
+    def autonomous_database_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "autonomous_database_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousVmClusterDisplayName")
+    def autonomous_vm_cluster_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Autonomous VM cluster's user-friendly name.
+        """
+        return pulumi.get(self, "autonomous_vm_cluster_display_name")
+
+    @autonomous_vm_cluster_display_name.setter
+    def autonomous_vm_cluster_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "autonomous_vm_cluster_display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbWorkload")
+    def db_workload(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Autonomous Database workload type. The following values are valid:
+        * OLTP - indicates an Autonomous Transaction Processing database
+        * DW - indicates an Autonomous Data Warehouse database
+        * AJD - indicates an Autonomous JSON Database
+        * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+        """
+        return pulumi.get(self, "db_workload")
+
+    @db_workload.setter
+    def db_workload(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_workload", value)
+
+
+if not MYPY:
+    class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgsDict(TypedDict):
+        email: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+elif False:
+    AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousContainerDatabaseCustomerContactArgs:
+    def __init__(__self__, *,
+                 email: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] email: The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "email", value)
+
+
+if not MYPY:
+    class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgsDict(TypedDict):
+        email: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+elif False:
+    AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseBackupSourceDatabaseDetailAutonomousDatabaseCustomerContactArgs:
+    def __init__(__self__, *,
+                 email: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] email: The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "email", value)
+
+
+if not MYPY:
     class AutonomousDatabaseConnectionStringArgsDict(TypedDict):
         all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
         """
-        Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
         dedicated: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -4823,7 +5353,7 @@ class AutonomousDatabaseConnectionStringArgs:
                  medium: Optional[pulumi.Input[_builtins.str]] = None,
                  profiles: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgs']]]] = None):
         """
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         :param pulumi.Input[_builtins.str] dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         :param pulumi.Input[_builtins.str] high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         :param pulumi.Input[_builtins.str] low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -4847,7 +5377,7 @@ class AutonomousDatabaseConnectionStringArgs:
     @pulumi.getter(name="allConnectionStrings")
     def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        Returns all connection strings that can be used to connect to the Autonomous AI Database. For more information, please see [Predefined Database Service Names for Autonomous AI Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
         return pulumi.get(self, "all_connection_strings")
 
@@ -4924,7 +5454,7 @@ if not MYPY:
         """
         display_name: NotRequired[pulumi.Input[_builtins.str]]
         """
-        (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         """
         host_format: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -4944,7 +5474,7 @@ if not MYPY:
         """
         syntax_format: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         """
         tls_authentication: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -4971,12 +5501,12 @@ class AutonomousDatabaseConnectionStringProfileArgs:
                  value: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] consumer_group: Consumer group used by the connection.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         :param pulumi.Input[_builtins.str] host_format: Host format used in connection string.
         :param pulumi.Input[_builtins.bool] is_regional: True for a regional connection string, applicable to cross-region DG only.
         :param pulumi.Input[_builtins.str] protocol: Protocol used by the connection.
         :param pulumi.Input[_builtins.str] session_mode: Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use `DIRECT` for direct hand-offs. Use `REDIRECT` to redirect the session.
-        :param pulumi.Input[_builtins.str] syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        :param pulumi.Input[_builtins.str] syntax_format: Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         :param pulumi.Input[_builtins.str] tls_authentication: Specifies whether the TLS handshake is using one-way (`SERVER`) or mutual (`MUTUAL`) authentication.
         :param pulumi.Input[_builtins.str] value: Connection string value.
         """
@@ -5015,7 +5545,7 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -5075,7 +5605,7 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @pulumi.getter(name="syntaxFormat")
     def syntax_format(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
+        Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous AI Database Serverless instances always use the long format.
         """
         return pulumi.get(self, "syntax_format")
 
@@ -5411,7 +5941,7 @@ if not MYPY:
         """
         autonomous_database_provider: NotRequired[pulumi.Input[_builtins.str]]
         """
-        (Updatable) The provider for the Autonomous Database encryption key.
+        (Updatable) The provider for the Autonomous AI Database encryption key.
         """
         certificate_directory_name: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -5437,9 +5967,21 @@ if not MYPY:
         """
         (Updatable) Azure key name
         """
+        key_ring: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) GCP key ring
+        """
         kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        kms_rest_endpoint: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) GCP kms REST API endpoint
+        """
+        location: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) GCP key ring location
         """
         okv_kms_key: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -5448,6 +5990,10 @@ if not MYPY:
         okv_uri: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) URI of OKV server
+        """
+        project: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) GCP project name
         """
         service_endpoint_uri: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -5475,24 +6021,32 @@ class AutonomousDatabaseEncryptionKeyArgs:
                  external_id: Optional[pulumi.Input[_builtins.str]] = None,
                  key_arn: Optional[pulumi.Input[_builtins.str]] = None,
                  key_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 key_ring: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 kms_rest_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 location: Optional[pulumi.Input[_builtins.str]] = None,
                  okv_kms_key: Optional[pulumi.Input[_builtins.str]] = None,
                  okv_uri: Optional[pulumi.Input[_builtins.str]] = None,
+                 project: Optional[pulumi.Input[_builtins.str]] = None,
                  service_endpoint_uri: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] arn_role: (Updatable) AWS ARN role
-        :param pulumi.Input[_builtins.str] autonomous_database_provider: (Updatable) The provider for the Autonomous Database encryption key.
+        :param pulumi.Input[_builtins.str] autonomous_database_provider: (Updatable) The provider for the Autonomous AI Database encryption key.
         :param pulumi.Input[_builtins.str] certificate_directory_name: (Updatable) OKV certificate directory name
         :param pulumi.Input[_builtins.str] certificate_id: (Updatable) OKV certificate id
         :param pulumi.Input[_builtins.str] directory_name: (Updatable) OKV wallet directory name
         :param pulumi.Input[_builtins.str] external_id: (Updatable) AWS external ID
         :param pulumi.Input[_builtins.str] key_arn: (Updatable) AWS key ARN
         :param pulumi.Input[_builtins.str] key_name: (Updatable) Azure key name
+        :param pulumi.Input[_builtins.str] key_ring: (Updatable) GCP key ring
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param pulumi.Input[_builtins.str] kms_rest_endpoint: (Updatable) GCP kms REST API endpoint
+        :param pulumi.Input[_builtins.str] location: (Updatable) GCP key ring location
         :param pulumi.Input[_builtins.str] okv_kms_key: (Updatable) UUID of OKV KMS Key
         :param pulumi.Input[_builtins.str] okv_uri: (Updatable) URI of OKV server
+        :param pulumi.Input[_builtins.str] project: (Updatable) GCP project name
         :param pulumi.Input[_builtins.str] service_endpoint_uri: (Updatable) AWS key service endpoint URI
         :param pulumi.Input[_builtins.str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param pulumi.Input[_builtins.str] vault_uri: (Updatable) Azure vault URI
@@ -5513,12 +6067,20 @@ class AutonomousDatabaseEncryptionKeyArgs:
             pulumi.set(__self__, "key_arn", key_arn)
         if key_name is not None:
             pulumi.set(__self__, "key_name", key_name)
+        if key_ring is not None:
+            pulumi.set(__self__, "key_ring", key_ring)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if kms_rest_endpoint is not None:
+            pulumi.set(__self__, "kms_rest_endpoint", kms_rest_endpoint)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
         if okv_kms_key is not None:
             pulumi.set(__self__, "okv_kms_key", okv_kms_key)
         if okv_uri is not None:
             pulumi.set(__self__, "okv_uri", okv_uri)
+        if project is not None:
+            pulumi.set(__self__, "project", project)
         if service_endpoint_uri is not None:
             pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
         if vault_id is not None:
@@ -5542,7 +6104,7 @@ class AutonomousDatabaseEncryptionKeyArgs:
     @pulumi.getter(name="autonomousDatabaseProvider")
     def autonomous_database_provider(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The provider for the Autonomous Database encryption key.
+        (Updatable) The provider for the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "autonomous_database_provider")
 
@@ -5623,6 +6185,18 @@ class AutonomousDatabaseEncryptionKeyArgs:
         pulumi.set(self, "key_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="keyRing")
+    def key_ring(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) GCP key ring
+        """
+        return pulumi.get(self, "key_ring")
+
+    @key_ring.setter
+    def key_ring(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key_ring", value)
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -5633,6 +6207,30 @@ class AutonomousDatabaseEncryptionKeyArgs:
     @kms_key_id.setter
     def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsRestEndpoint")
+    def kms_rest_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) GCP kms REST API endpoint
+        """
+        return pulumi.get(self, "kms_rest_endpoint")
+
+    @kms_rest_endpoint.setter
+    def kms_rest_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_rest_endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) GCP key ring location
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter(name="okvKmsKey")
@@ -5657,6 +6255,18 @@ class AutonomousDatabaseEncryptionKeyArgs:
     @okv_uri.setter
     def okv_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "okv_uri", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def project(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) GCP project name
+        """
+        return pulumi.get(self, "project")
+
+    @project.setter
+    def project(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "project", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceEndpointUri")
@@ -5699,7 +6309,7 @@ if not MYPY:
     class AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict(TypedDict):
         encryption_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgsDict']]]]
         """
-        (Updatable) Details of the Autonomous Database encryption key.
+        (Updatable) Details of the Autonomous AI Database encryption key.
         """
         time_activated: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -5714,7 +6324,7 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryArgs:
                  encryption_keys: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs']]]] = None,
                  time_activated: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs']]] encryption_keys: (Updatable) Details of the Autonomous Database encryption key.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs']]] encryption_keys: (Updatable) Details of the Autonomous AI Database encryption key.
         :param pulumi.Input[_builtins.str] time_activated: The date and time the kms key activated.
         """
         if encryption_keys is not None:
@@ -5726,7 +6336,7 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryArgs:
     @pulumi.getter(name="encryptionKeys")
     def encryption_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs']]]]:
         """
-        (Updatable) Details of the Autonomous Database encryption key.
+        (Updatable) Details of the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "encryption_keys")
 
@@ -5755,7 +6365,7 @@ if not MYPY:
         """
         autonomous_database_provider: NotRequired[pulumi.Input[_builtins.str]]
         """
-        (Updatable) The provider for the Autonomous Database encryption key.
+        (Updatable) The provider for the Autonomous AI Database encryption key.
         """
         certificate_directory_name: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -5781,9 +6391,21 @@ if not MYPY:
         """
         (Updatable) Azure key name
         """
+        key_ring: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) GCP key ring
+        """
         kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        """
+        kms_rest_endpoint: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) GCP kms REST API endpoint
+        """
+        location: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) GCP key ring location
         """
         okv_kms_key: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -5792,6 +6414,10 @@ if not MYPY:
         okv_uri: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) URI of OKV server
+        """
+        project: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) GCP project name
         """
         service_endpoint_uri: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -5819,24 +6445,32 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs:
                  external_id: Optional[pulumi.Input[_builtins.str]] = None,
                  key_arn: Optional[pulumi.Input[_builtins.str]] = None,
                  key_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 key_ring: Optional[pulumi.Input[_builtins.str]] = None,
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 kms_rest_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 location: Optional[pulumi.Input[_builtins.str]] = None,
                  okv_kms_key: Optional[pulumi.Input[_builtins.str]] = None,
                  okv_uri: Optional[pulumi.Input[_builtins.str]] = None,
+                 project: Optional[pulumi.Input[_builtins.str]] = None,
                  service_endpoint_uri: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_uri: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] arn_role: (Updatable) AWS ARN role
-        :param pulumi.Input[_builtins.str] autonomous_database_provider: (Updatable) The provider for the Autonomous Database encryption key.
+        :param pulumi.Input[_builtins.str] autonomous_database_provider: (Updatable) The provider for the Autonomous AI Database encryption key.
         :param pulumi.Input[_builtins.str] certificate_directory_name: (Updatable) OKV certificate directory name
         :param pulumi.Input[_builtins.str] certificate_id: (Updatable) OKV certificate id
         :param pulumi.Input[_builtins.str] directory_name: (Updatable) OKV wallet directory name
         :param pulumi.Input[_builtins.str] external_id: (Updatable) AWS external ID
         :param pulumi.Input[_builtins.str] key_arn: (Updatable) AWS key ARN
         :param pulumi.Input[_builtins.str] key_name: (Updatable) Azure key name
+        :param pulumi.Input[_builtins.str] key_ring: (Updatable) GCP key ring
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param pulumi.Input[_builtins.str] kms_rest_endpoint: (Updatable) GCP kms REST API endpoint
+        :param pulumi.Input[_builtins.str] location: (Updatable) GCP key ring location
         :param pulumi.Input[_builtins.str] okv_kms_key: (Updatable) UUID of OKV KMS Key
         :param pulumi.Input[_builtins.str] okv_uri: (Updatable) URI of OKV server
+        :param pulumi.Input[_builtins.str] project: (Updatable) GCP project name
         :param pulumi.Input[_builtins.str] service_endpoint_uri: (Updatable) AWS key service endpoint URI
         :param pulumi.Input[_builtins.str] vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param pulumi.Input[_builtins.str] vault_uri: (Updatable) Azure vault URI
@@ -5857,12 +6491,20 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs:
             pulumi.set(__self__, "key_arn", key_arn)
         if key_name is not None:
             pulumi.set(__self__, "key_name", key_name)
+        if key_ring is not None:
+            pulumi.set(__self__, "key_ring", key_ring)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if kms_rest_endpoint is not None:
+            pulumi.set(__self__, "kms_rest_endpoint", kms_rest_endpoint)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
         if okv_kms_key is not None:
             pulumi.set(__self__, "okv_kms_key", okv_kms_key)
         if okv_uri is not None:
             pulumi.set(__self__, "okv_uri", okv_uri)
+        if project is not None:
+            pulumi.set(__self__, "project", project)
         if service_endpoint_uri is not None:
             pulumi.set(__self__, "service_endpoint_uri", service_endpoint_uri)
         if vault_id is not None:
@@ -5886,7 +6528,7 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs:
     @pulumi.getter(name="autonomousDatabaseProvider")
     def autonomous_database_provider(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The provider for the Autonomous Database encryption key.
+        (Updatable) The provider for the Autonomous AI Database encryption key.
         """
         return pulumi.get(self, "autonomous_database_provider")
 
@@ -5967,6 +6609,18 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs:
         pulumi.set(self, "key_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="keyRing")
+    def key_ring(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) GCP key ring
+        """
+        return pulumi.get(self, "key_ring")
+
+    @key_ring.setter
+    def key_ring(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key_ring", value)
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -5977,6 +6631,30 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs:
     @kms_key_id.setter
     def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kmsRestEndpoint")
+    def kms_rest_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) GCP kms REST API endpoint
+        """
+        return pulumi.get(self, "kms_rest_endpoint")
+
+    @kms_rest_endpoint.setter
+    def kms_rest_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "kms_rest_endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) GCP key ring location
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter(name="okvKmsKey")
@@ -6001,6 +6679,18 @@ class AutonomousDatabaseEncryptionKeyHistoryEntryEncryptionKeyArgs:
     @okv_uri.setter
     def okv_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "okv_uri", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def project(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) GCP project name
+        """
+        return pulumi.get(self, "project")
+
+    @project.setter
+    def project(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "project", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceEndpointUri")
@@ -6043,11 +6733,11 @@ if not MYPY:
     class AutonomousDatabaseKeyHistoryEntryArgsDict(TypedDict):
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         time_activated: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -6068,8 +6758,8 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
                  time_activated: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param pulumi.Input[_builtins.str] id: The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] time_activated: The date and time the kms key activated.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
@@ -6086,7 +6776,7 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
+        The id of the Autonomous AI Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         """
         return pulumi.get(self, "id")
 
@@ -6098,7 +6788,7 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -6135,7 +6825,7 @@ if not MYPY:
     class AutonomousDatabaseLocalStandbyDbArgsDict(TypedDict):
         availability_domain: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         lag_time_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
         """
@@ -6151,15 +6841,15 @@ if not MYPY:
         """
         state: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         time_data_guard_role_changed: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         time_disaster_recovery_role_changed: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         time_maintenance_begin: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -6185,13 +6875,13 @@ class AutonomousDatabaseLocalStandbyDbArgs:
                  time_maintenance_begin: Optional[pulumi.Input[_builtins.str]] = None,
                  time_maintenance_end: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param pulumi.Input[_builtins.int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] maintenance_target_component: The component chosen for maintenance.
-        :param pulumi.Input[_builtins.str] state: The current state of the Autonomous Database.
-        :param pulumi.Input[_builtins.str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param pulumi.Input[_builtins.str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param pulumi.Input[_builtins.str] state: The current state of the Autonomous AI Database.
+        :param pulumi.Input[_builtins.str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param pulumi.Input[_builtins.str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         :param pulumi.Input[_builtins.str] time_maintenance_begin: The date and time when maintenance will begin.
         :param pulumi.Input[_builtins.str] time_maintenance_end: The date and time when maintenance will end.
         """
@@ -6218,7 +6908,7 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -6266,7 +6956,7 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "state")
 
@@ -6278,7 +6968,7 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -6290,7 +6980,7 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -6327,7 +7017,7 @@ if not MYPY:
     class AutonomousDatabaseLongTermBackupScheduleArgsDict(TypedDict):
         is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
         """
         repeat_cadence: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -6352,7 +7042,7 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
                  retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  time_of_backup: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.bool] is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param pulumi.Input[_builtins.bool] is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
         :param pulumi.Input[_builtins.str] repeat_cadence: The frequency of the long-term backup schedule
         :param pulumi.Input[_builtins.int] retention_period_in_days: Retention period, in days, for long-term backups
         :param pulumi.Input[_builtins.str] time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
@@ -6370,7 +7060,7 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates if the resource pool should be deleted for the Autonomous Database.
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -6591,7 +7281,7 @@ if not MYPY:
     class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgsDict(TypedDict):
         disaster_recovery_type: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         is_replicate_automatic_backups: NotRequired[pulumi.Input[_builtins.bool]]
         """
@@ -6616,7 +7306,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
                  is_snapshot_standby: Optional[pulumi.Input[_builtins.bool]] = None,
                  time_snapshot_standby_enabled_till: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param pulumi.Input[_builtins.str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[_builtins.bool] is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param pulumi.Input[_builtins.bool] is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
         :param pulumi.Input[_builtins.str] time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
@@ -6634,7 +7324,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -6683,11 +7373,11 @@ if not MYPY:
     class AutonomousDatabaseResourcePoolSummaryArgsDict(TypedDict):
         available_compute_capacity: NotRequired[pulumi.Input[_builtins.int]]
         """
-        Available capacity left for new elastic pool members provision
+        (Updatable) Available capacity left for new elastic pool members provision
         """
         is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+        (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
         """
         pool_size: NotRequired[pulumi.Input[_builtins.int]]
         """
@@ -6708,8 +7398,8 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
                  pool_size: Optional[pulumi.Input[_builtins.int]] = None,
                  total_compute_capacity: Optional[pulumi.Input[_builtins.int]] = None):
         """
-        :param pulumi.Input[_builtins.int] available_compute_capacity: Available capacity left for new elastic pool members provision
-        :param pulumi.Input[_builtins.bool] is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+        :param pulumi.Input[_builtins.int] available_compute_capacity: (Updatable) Available capacity left for new elastic pool members provision
+        :param pulumi.Input[_builtins.bool] is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
         :param pulumi.Input[_builtins.int] pool_size: (Updatable) Resource pool size.
         :param pulumi.Input[_builtins.int] total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
@@ -6726,7 +7416,7 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
     @pulumi.getter(name="availableComputeCapacity")
     def available_compute_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Available capacity left for new elastic pool members provision
+        (Updatable) Available capacity left for new elastic pool members provision
         """
         return pulumi.get(self, "available_compute_capacity")
 
@@ -6738,7 +7428,7 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
+        (Updatable) Indicates if the resource pool should be deleted for the Autonomous AI Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -6878,7 +7568,7 @@ if not MYPY:
     class AutonomousDatabaseStandbyDbArgsDict(TypedDict):
         availability_domain: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         lag_time_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
         """
@@ -6894,15 +7584,15 @@ if not MYPY:
         """
         state: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         time_data_guard_role_changed: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         time_disaster_recovery_role_changed: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         time_maintenance_begin: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -6928,13 +7618,13 @@ class AutonomousDatabaseStandbyDbArgs:
                  time_maintenance_begin: Optional[pulumi.Input[_builtins.str]] = None,
                  time_maintenance_end: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         :param pulumi.Input[_builtins.int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] maintenance_target_component: The component chosen for maintenance.
-        :param pulumi.Input[_builtins.str] state: The current state of the Autonomous Database.
-        :param pulumi.Input[_builtins.str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
-        :param pulumi.Input[_builtins.str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        :param pulumi.Input[_builtins.str] state: The current state of the Autonomous AI Database.
+        :param pulumi.Input[_builtins.str] time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        :param pulumi.Input[_builtins.str] time_disaster_recovery_role_changed: The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         :param pulumi.Input[_builtins.str] time_maintenance_begin: The date and time when maintenance will begin.
         :param pulumi.Input[_builtins.str] time_maintenance_end: The date and time when maintenance will end.
         """
@@ -6961,7 +7651,7 @@ class AutonomousDatabaseStandbyDbArgs:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -7009,7 +7699,7 @@ class AutonomousDatabaseStandbyDbArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current state of the Autonomous Database.
+        The current state of the Autonomous AI Database.
         """
         return pulumi.get(self, "state")
 
@@ -7021,7 +7711,7 @@ class AutonomousDatabaseStandbyDbArgs:
     @pulumi.getter(name="timeDataGuardRoleChanged")
     def time_data_guard_role_changed(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+        The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
 
@@ -7033,7 +7723,7 @@ class AutonomousDatabaseStandbyDbArgs:
     @pulumi.getter(name="timeDisasterRecoveryRoleChanged")
     def time_disaster_recovery_role_changed(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+        The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
         """
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
@@ -7064,6 +7754,250 @@ class AutonomousDatabaseStandbyDbArgs:
     @time_maintenance_end.setter
     def time_maintenance_end(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_maintenance_end", value)
+
+
+if not MYPY:
+    class AutonomousDatabaseVanityConnectionUrlArgsDict(TypedDict):
+        apex_url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        database_transforms_url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        graph_studio_url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        machine_learning_notebook_url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        machine_learning_user_management_url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Oracle Machine Learning user management URL.
+        """
+        mongo_db_url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        ords_url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        sql_dev_web_url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Oracle SQL Developer Web URL.
+        """
+elif False:
+    AutonomousDatabaseVanityConnectionUrlArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseVanityConnectionUrlArgs:
+    def __init__(__self__, *,
+                 apex_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 database_transforms_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 graph_studio_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 machine_learning_notebook_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 machine_learning_user_management_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 mongo_db_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 ords_url: Optional[pulumi.Input[_builtins.str]] = None,
+                 sql_dev_web_url: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] apex_url: Oracle Application Express (APEX) URL.
+        :param pulumi.Input[_builtins.str] database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param pulumi.Input[_builtins.str] mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] sql_dev_web_url: Oracle SQL Developer Web URL.
+        """
+        if apex_url is not None:
+            pulumi.set(__self__, "apex_url", apex_url)
+        if database_transforms_url is not None:
+            pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        if graph_studio_url is not None:
+            pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        if machine_learning_notebook_url is not None:
+            pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
+        if machine_learning_user_management_url is not None:
+            pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        if mongo_db_url is not None:
+            pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        if ords_url is not None:
+            pulumi.set(__self__, "ords_url", ords_url)
+        if sql_dev_web_url is not None:
+            pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @_builtins.property
+    @pulumi.getter(name="apexUrl")
+    def apex_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        return pulumi.get(self, "apex_url")
+
+    @apex_url.setter
+    def apex_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "apex_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @database_transforms_url.setter
+    def database_transforms_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "database_transforms_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="graphStudioUrl")
+    def graph_studio_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        return pulumi.get(self, "graph_studio_url")
+
+    @graph_studio_url.setter
+    def graph_studio_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "graph_studio_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @machine_learning_notebook_url.setter
+    def machine_learning_notebook_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "machine_learning_notebook_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="machineLearningUserManagementUrl")
+    def machine_learning_user_management_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Oracle Machine Learning user management URL.
+        """
+        return pulumi.get(self, "machine_learning_user_management_url")
+
+    @machine_learning_user_management_url.setter
+    def machine_learning_user_management_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "machine_learning_user_management_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @mongo_db_url.setter
+    def mongo_db_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "mongo_db_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @ords_url.setter
+    def ords_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "ords_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sqlDevWebUrl")
+    def sql_dev_web_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Oracle SQL Developer Web URL.
+        """
+        return pulumi.get(self, "sql_dev_web_url")
+
+    @sql_dev_web_url.setter
+    def sql_dev_web_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "sql_dev_web_url", value)
+
+
+if not MYPY:
+    class AutonomousDatabaseVanityUrlDetailArgsDict(TypedDict):
+        api_gateway_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        API Gateway ID.
+        """
+        is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
+        """
+        vanity_url_host_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Custom URL prefix provided by the customer to access dbTools.
+        """
+elif False:
+    AutonomousDatabaseVanityUrlDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousDatabaseVanityUrlDetailArgs:
+    def __init__(__self__, *,
+                 api_gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 vanity_url_host_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] api_gateway_id: API Gateway ID.
+        :param pulumi.Input[_builtins.bool] is_disabled: Indicates if the vanity url details should be deleted for the Autonomous Database.
+        :param pulumi.Input[_builtins.str] vanity_url_host_name: Custom URL prefix provided by the customer to access dbTools.
+        """
+        if api_gateway_id is not None:
+            pulumi.set(__self__, "api_gateway_id", api_gateway_id)
+        if is_disabled is not None:
+            pulumi.set(__self__, "is_disabled", is_disabled)
+        if vanity_url_host_name is not None:
+            pulumi.set(__self__, "vanity_url_host_name", vanity_url_host_name)
+
+    @_builtins.property
+    @pulumi.getter(name="apiGatewayId")
+    def api_gateway_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        API Gateway ID.
+        """
+        return pulumi.get(self, "api_gateway_id")
+
+    @api_gateway_id.setter
+    def api_gateway_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "api_gateway_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDisabled")
+    def is_disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if the vanity url details should be deleted for the Autonomous Database.
+        """
+        return pulumi.get(self, "is_disabled")
+
+    @is_disabled.setter
+    def is_disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_disabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vanityUrlHostName")
+    def vanity_url_host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Custom URL prefix provided by the customer to access dbTools.
+        """
+        return pulumi.get(self, "vanity_url_host_name")
+
+    @vanity_url_host_name.setter
+    def vanity_url_host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vanity_url_host_name", value)
 
 
 if not MYPY:
@@ -8244,6 +9178,58 @@ class BackupDestinationAssociatedDatabaseArgs:
     @db_name.setter
     def db_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "db_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+
+if not MYPY:
+    class BackupDestinationAssociatedLongTermBackupArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The user-provided name of the backup destination.
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+elif False:
+    BackupDestinationAssociatedLongTermBackupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BackupDestinationAssociatedLongTermBackupArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] display_name: The user-provided name of the backup destination.
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The user-provided name of the backup destination.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
@@ -11102,7 +12088,7 @@ if not MYPY:
         """
         kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         ncharacter_set: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -11215,7 +12201,7 @@ class DatabaseDatabaseArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[_builtins.str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
@@ -11483,7 +12469,7 @@ class DatabaseDatabaseArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -11663,7 +12649,7 @@ if not MYPY:
         """
         backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
         """
@@ -11696,7 +12682,7 @@ class DatabaseDatabaseDbBackupConfigArgs:
         :param pulumi.Input[_builtins.str] auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param pulumi.Input[_builtins.str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param pulumi.Input[_builtins.str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
         :param pulumi.Input[_builtins.int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param pulumi.Input[_builtins.bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -11770,7 +12756,7 @@ class DatabaseDatabaseDbBackupConfigArgs:
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -11817,6 +12803,10 @@ class DatabaseDatabaseDbBackupConfigArgs:
 
 if not MYPY:
     class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
         dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
@@ -11827,56 +12817,56 @@ if not MYPY:
         """
         is_remote: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         remote_region: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         type: NotRequired[pulumi.Input[_builtins.str]]
         """
         Type of the database backup destination.
         """
         vpc_password: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
         vpc_user: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
 elif False:
     DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  remote_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
-        :param pulumi.Input[_builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        :param pulumi.Input[_builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
@@ -11885,6 +12875,18 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -11914,7 +12916,7 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
 
@@ -11923,12 +12925,22 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "is_remote", value)
 
     @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -11951,9 +12963,6 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @_builtins.property
     @pulumi.getter(name="vpcPassword")
     def vpc_password(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_password")
 
     @vpc_password.setter
@@ -11963,9 +12972,6 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @_builtins.property
     @pulumi.getter(name="vpcUser")
     def vpc_user(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        """
         return pulumi.get(self, "vpc_user")
 
     @vpc_user.setter
@@ -12236,7 +13242,7 @@ if not MYPY:
         """
         backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
         """
@@ -12269,8 +13275,735 @@ class DatabaseDbBackupConfigArgs:
         :param pulumi.Input[_builtins.str] auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param pulumi.Input[_builtins.str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param pulumi.Input[_builtins.str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
+        :param pulumi.Input[_builtins.int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param pulumi.Input[_builtins.bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        if auto_backup_enabled is not None:
+            pulumi.set(__self__, "auto_backup_enabled", auto_backup_enabled)
+        if auto_backup_window is not None:
+            pulumi.set(__self__, "auto_backup_window", auto_backup_window)
+        if auto_full_backup_day is not None:
+            pulumi.set(__self__, "auto_full_backup_day", auto_full_backup_day)
+        if auto_full_backup_window is not None:
+            pulumi.set(__self__, "auto_full_backup_window", auto_full_backup_window)
+        if backup_deletion_policy is not None:
+            pulumi.set(__self__, "backup_deletion_policy", backup_deletion_policy)
+        if backup_destination_details is not None:
+            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+        if recovery_window_in_days is not None:
+            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+        if run_immediate_full_backup is not None:
+            pulumi.set(__self__, "run_immediate_full_backup", run_immediate_full_backup)
+
+    @_builtins.property
+    @pulumi.getter(name="autoBackupEnabled")
+    def auto_backup_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+        """
+        return pulumi.get(self, "auto_backup_enabled")
+
+    @auto_backup_enabled.setter
+    def auto_backup_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "auto_backup_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoBackupWindow")
+    def auto_backup_window(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_backup_window")
+
+    @auto_backup_window.setter
+    def auto_backup_window(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "auto_backup_window", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoFullBackupDay")
+    def auto_full_backup_day(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        return pulumi.get(self, "auto_full_backup_day")
+
+    @auto_full_backup_day.setter
+    def auto_full_backup_day(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "auto_full_backup_day", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoFullBackupWindow")
+    def auto_full_backup_window(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        return pulumi.get(self, "auto_full_backup_window")
+
+    @auto_full_backup_window.setter
+    def auto_full_backup_window(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "auto_full_backup_window", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupDeletionPolicy")
+    def backup_deletion_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
+        """
+        return pulumi.get(self, "backup_deletion_policy")
+
+    @backup_deletion_policy.setter
+    def backup_deletion_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_deletion_policy", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgs']]]]:
+        """
+        Backup destination details.
+        """
+        return pulumi.get(self, "backup_destination_details")
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgs']]]]):
+        pulumi.set(self, "backup_destination_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="recoveryWindowInDays")
+    def recovery_window_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        """
+        return pulumi.get(self, "recovery_window_in_days")
+
+    @recovery_window_in_days.setter
+    def recovery_window_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "recovery_window_in_days", value)
+
+    @_builtins.property
+    @pulumi.getter(name="runImmediateFullBackup")
+    def run_immediate_full_backup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+        return pulumi.get(self, "run_immediate_full_backup")
+
+    @run_immediate_full_backup.setter
+    def run_immediate_full_backup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "run_immediate_full_backup", value)
+
+
+if not MYPY:
+    class DatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        """
+        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates whether the backup destination is cross-region or local.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        remote_region: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Type of the database backup destination.
+        """
+        vpc_password: NotRequired[pulumi.Input[_builtins.str]]
+        vpc_user: NotRequired[pulumi.Input[_builtins.str]]
+elif False:
+    DatabaseDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseDbBackupConfigBackupDestinationDetailArgs:
+    def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
+                 dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 remote_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
+        """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_remote is not None:
+            pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
+        if remote_region is not None:
+            pulumi.set(__self__, "remote_region", remote_region)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
+
+    @dbrs_policy_id.setter
+    def dbrs_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "dbrs_policy_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates whether the backup destination is cross-region or local.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @is_remote.setter
+    def is_remote(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_remote", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @remote_region.setter
+    def remote_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "remote_region", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Type of the database backup destination.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "vpc_password")
+
+    @vpc_password.setter
+    def vpc_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vpc_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "vpc_user")
+
+    @vpc_user.setter
+    def vpc_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "vpc_user", value)
+
+
+if not MYPY:
+    class DatabaseSnapshotStandbyConnectionStringArgsDict(TypedDict):
+        all_connection_strings: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        All connection strings to use to connect to the Database.
+        """
+        cdb_default: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Host name based CDB Connection String.
+        """
+        cdb_ip_default: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        IP based CDB Connection String.
+        """
+elif False:
+    DatabaseSnapshotStandbyConnectionStringArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseSnapshotStandbyConnectionStringArgs:
+    def __init__(__self__, *,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 cdb_default: Optional[pulumi.Input[_builtins.str]] = None,
+                 cdb_ip_default: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] all_connection_strings: All connection strings to use to connect to the Database.
+        :param pulumi.Input[_builtins.str] cdb_default: Host name based CDB Connection String.
+        :param pulumi.Input[_builtins.str] cdb_ip_default: IP based CDB Connection String.
+        """
+        if all_connection_strings is not None:
+            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+        if cdb_default is not None:
+            pulumi.set(__self__, "cdb_default", cdb_default)
+        if cdb_ip_default is not None:
+            pulumi.set(__self__, "cdb_ip_default", cdb_ip_default)
+
+    @_builtins.property
+    @pulumi.getter(name="allConnectionStrings")
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        All connection strings to use to connect to the Database.
+        """
+        return pulumi.get(self, "all_connection_strings")
+
+    @all_connection_strings.setter
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "all_connection_strings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cdbDefault")
+    def cdb_default(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Host name based CDB Connection String.
+        """
+        return pulumi.get(self, "cdb_default")
+
+    @cdb_default.setter
+    def cdb_default(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cdb_default", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cdbIpDefault")
+    def cdb_ip_default(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        IP based CDB Connection String.
+        """
+        return pulumi.get(self, "cdb_ip_default")
+
+    @cdb_ip_default.setter
+    def cdb_ip_default(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cdb_ip_default", value)
+
+
+if not MYPY:
+    class DatabaseSnapshotStandbyDataGuardGroupArgsDict(TypedDict):
+        members: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupMemberArgsDict']]]]
+        """
+        List of Data Guard members, representing each database that is part of Data Guard.
+        """
+        protection_mode: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+elif False:
+    DatabaseSnapshotStandbyDataGuardGroupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseSnapshotStandbyDataGuardGroupArgs:
+    def __init__(__self__, *,
+                 members: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupMemberArgs']]]] = None,
+                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupMemberArgs']]] members: List of Data Guard members, representing each database that is part of Data Guard.
+        :param pulumi.Input[_builtins.str] protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        if members is not None:
+            pulumi.set(__self__, "members", members)
+        if protection_mode is not None:
+            pulumi.set(__self__, "protection_mode", protection_mode)
+
+    @_builtins.property
+    @pulumi.getter
+    def members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupMemberArgs']]]]:
+        """
+        List of Data Guard members, representing each database that is part of Data Guard.
+        """
+        return pulumi.get(self, "members")
+
+    @members.setter
+    def members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDataGuardGroupMemberArgs']]]]):
+        pulumi.set(self, "members", value)
+
+    @_builtins.property
+    @pulumi.getter(name="protectionMode")
+    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        """
+        return pulumi.get(self, "protection_mode")
+
+    @protection_mode.setter
+    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "protection_mode", value)
+
+
+if not MYPY:
+    class DatabaseSnapshotStandbyDataGuardGroupMemberArgsDict(TypedDict):
+        apply_lag: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        """
+        apply_rate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        """
+        database_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        db_system_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        """
+        is_active_data_guard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        True if active Data Guard is enabled.
+        """
+        role: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The role of the reporting database in this Data Guard association.
+        """
+        transport_lag: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        """
+        transport_lag_refresh: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date and time when last redo transport has been done.
+        """
+        transport_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+        """
+elif False:
+    DatabaseSnapshotStandbyDataGuardGroupMemberArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseSnapshotStandbyDataGuardGroupMemberArgs:
+    def __init__(__self__, *,
+                 apply_lag: Optional[pulumi.Input[_builtins.str]] = None,
+                 apply_rate: Optional[pulumi.Input[_builtins.str]] = None,
+                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_active_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 role: Optional[pulumi.Input[_builtins.str]] = None,
+                 transport_lag: Optional[pulumi.Input[_builtins.str]] = None,
+                 transport_lag_refresh: Optional[pulumi.Input[_builtins.str]] = None,
+                 transport_type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] apply_lag: The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        :param pulumi.Input[_builtins.str] apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        :param pulumi.Input[_builtins.str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[_builtins.str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] role: The role of the reporting database in this Data Guard association.
+        :param pulumi.Input[_builtins.str] transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        :param pulumi.Input[_builtins.str] transport_lag_refresh: The date and time when last redo transport has been done.
+        :param pulumi.Input[_builtins.str] transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+               * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+               * MAXIMUM_PERFORMANCE - ASYNC
+               * MAXIMUM_PROTECTION - SYNC
+        """
+        if apply_lag is not None:
+            pulumi.set(__self__, "apply_lag", apply_lag)
+        if apply_rate is not None:
+            pulumi.set(__self__, "apply_rate", apply_rate)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
+        if is_active_data_guard_enabled is not None:
+            pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if transport_lag is not None:
+            pulumi.set(__self__, "transport_lag", transport_lag)
+        if transport_lag_refresh is not None:
+            pulumi.set(__self__, "transport_lag_refresh", transport_lag_refresh)
+        if transport_type is not None:
+            pulumi.set(__self__, "transport_type", transport_type)
+
+    @_builtins.property
+    @pulumi.getter(name="applyLag")
+    def apply_lag(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `1 second`
+        """
+        return pulumi.get(self, "apply_lag")
+
+    @apply_lag.setter
+    def apply_lag(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "apply_lag", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applyRate")
+    def apply_rate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The rate at which redo logs are synced between the associated databases.  Example: `102.96 MByte/s`
+        """
+        return pulumi.get(self, "apply_rate")
+
+    @apply_rate.setter
+    def apply_rate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "apply_rate", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "database_id")
+
+    @database_id.setter
+    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @db_system_id.setter
+    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_system_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isActiveDataGuardEnabled")
+    def is_active_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        True if active Data Guard is enabled.
+        """
+        return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @is_active_data_guard_enabled.setter
+    def is_active_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_active_data_guard_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The role of the reporting database in this Data Guard association.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "role", value)
+
+    @_builtins.property
+    @pulumi.getter(name="transportLag")
+    def transport_lag(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The rate at which redo logs are transported between the associated databases.  Example: `1 second`
+        """
+        return pulumi.get(self, "transport_lag")
+
+    @transport_lag.setter
+    def transport_lag(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "transport_lag", value)
+
+    @_builtins.property
+    @pulumi.getter(name="transportLagRefresh")
+    def transport_lag_refresh(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time when last redo transport has been done.
+        """
+        return pulumi.get(self, "transport_lag_refresh")
+
+    @transport_lag_refresh.setter
+    def transport_lag_refresh(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "transport_lag_refresh", value)
+
+    @_builtins.property
+    @pulumi.getter(name="transportType")
+    def transport_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
+        * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+        * MAXIMUM_PERFORMANCE - ASYNC
+        * MAXIMUM_PROTECTION - SYNC
+        """
+        return pulumi.get(self, "transport_type")
+
+    @transport_type.setter
+    def transport_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "transport_type", value)
+
+
+if not MYPY:
+    class DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict(TypedDict):
+        management_status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The status of the Database Management service.
+        """
+        management_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The Database Management type.
+        """
+elif False:
+    DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseSnapshotStandbyDatabaseManagementConfigArgs:
+    def __init__(__self__, *,
+                 management_status: Optional[pulumi.Input[_builtins.str]] = None,
+                 management_type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] management_status: The status of the Database Management service.
+        :param pulumi.Input[_builtins.str] management_type: The Database Management type.
+        """
+        if management_status is not None:
+            pulumi.set(__self__, "management_status", management_status)
+        if management_type is not None:
+            pulumi.set(__self__, "management_type", management_type)
+
+    @_builtins.property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The status of the Database Management service.
+        """
+        return pulumi.get(self, "management_status")
+
+    @management_status.setter
+    def management_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "management_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managementType")
+    def management_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Database Management type.
+        """
+        return pulumi.get(self, "management_type")
+
+    @management_type.setter
+    def management_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "management_type", value)
+
+
+if not MYPY:
+    class DatabaseSnapshotStandbyDbBackupConfigArgsDict(TypedDict):
+        auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+        """
+        auto_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        auto_full_backup_day: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        """
+        auto_full_backup_window: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        """
+        backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        """
+        backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgsDict']]]]
+        """
+        Backup destination details.
+        """
+        recovery_window_in_days: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        """
+        run_immediate_full_backup: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+        """
+elif False:
+    DatabaseSnapshotStandbyDbBackupConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseSnapshotStandbyDbBackupConfigArgs:
+    def __init__(__self__, *,
+                 auto_backup_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 auto_backup_window: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_full_backup_day: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_full_backup_window: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_deletion_policy: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs']]]] = None,
+                 recovery_window_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 run_immediate_full_backup: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] auto_backup_enabled: If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+        :param pulumi.Input[_builtins.str] auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param pulumi.Input[_builtins.str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+        :param pulumi.Input[_builtins.str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
         :param pulumi.Input[_builtins.int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param pulumi.Input[_builtins.bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
         """
@@ -12353,14 +14086,14 @@ class DatabaseDbBackupConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupDestinationDetails")
-    def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgs']]]]:
+    def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs']]]]:
         """
         Backup destination details.
         """
         return pulumi.get(self, "backup_destination_details")
 
     @backup_destination_details.setter
-    def backup_destination_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigBackupDestinationDetailArgs']]]]):
+    def backup_destination_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs']]]]):
         pulumi.set(self, "backup_destination_details", value)
 
     @_builtins.property
@@ -12389,7 +14122,7 @@ class DatabaseDbBackupConfigArgs:
 
 
 if not MYPY:
-    class DatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+    class DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
         dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
@@ -12398,13 +14131,9 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         """
-        is_remote: NotRequired[pulumi.Input[_builtins.bool]]
+        internet_proxy: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Indicates whether the backup destination is cross-region or local region.
-        """
-        remote_region: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        Proxy URL to connect to object store.
         """
         type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -12419,23 +14148,21 @@ if not MYPY:
         For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
 elif False:
-    DatabaseDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
+    DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
-class DatabaseDbBackupConfigBackupDestinationDetailArgs:
+class DatabaseSnapshotStandbyDbBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
                  dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remote_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
-        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param pulumi.Input[_builtins.str] internet_proxy: Proxy URL to connect to object store.
         :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
         :param pulumi.Input[_builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[_builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
@@ -12444,10 +14171,8 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
-        if is_remote is not None:
-            pulumi.set(__self__, "is_remote", is_remote)
-        if remote_region is not None:
-            pulumi.set(__self__, "remote_region", remote_region)
+        if internet_proxy is not None:
+            pulumi.set(__self__, "internet_proxy", internet_proxy)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if vpc_password is not None:
@@ -12480,28 +14205,16 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "id", value)
 
     @_builtins.property
-    @pulumi.getter(name="isRemote")
-    def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Proxy URL to connect to object store.
         """
-        return pulumi.get(self, "is_remote")
+        return pulumi.get(self, "internet_proxy")
 
-    @is_remote.setter
-    def is_remote(self, value: Optional[pulumi.Input[_builtins.bool]]):
-        pulumi.set(self, "is_remote", value)
-
-    @_builtins.property
-    @pulumi.getter(name="remoteRegion")
-    def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-        """
-        return pulumi.get(self, "remote_region")
-
-    @remote_region.setter
-    def remote_region(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "remote_region", value)
+    @internet_proxy.setter
+    def internet_proxy(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "internet_proxy", value)
 
     @_builtins.property
     @pulumi.getter
@@ -13073,7 +14786,7 @@ if not MYPY:
         """
         backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgsDict']]]]
         """
@@ -13106,7 +14819,7 @@ class DatabaseUpgradeDbBackupConfigArgs:
         :param pulumi.Input[_builtins.str] auto_backup_window: Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param pulumi.Input[_builtins.str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param pulumi.Input[_builtins.str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
         :param pulumi.Input[_builtins.int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param pulumi.Input[_builtins.bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -13180,7 +14893,7 @@ class DatabaseUpgradeDbBackupConfigArgs:
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -13227,6 +14940,10 @@ class DatabaseUpgradeDbBackupConfigArgs:
 
 if not MYPY:
     class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
         dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
@@ -13241,11 +14958,15 @@ if not MYPY:
         """
         is_remote: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         remote_region: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -13265,24 +14986,30 @@ elif False:
 @pulumi.input_type
 class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  internet_proxy: Optional[pulumi.Input[_builtins.str]] = None,
                  is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  remote_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[_builtins.str] internet_proxy: Proxy URL to connect to object store.
-        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
+        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
         :param pulumi.Input[_builtins.str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         :param pulumi.Input[_builtins.str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
@@ -13291,6 +15018,8 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
             pulumi.set(__self__, "internet_proxy", internet_proxy)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
@@ -13299,6 +15028,18 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -13340,7 +15081,7 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
 
@@ -13349,10 +15090,22 @@ class DatabaseUpgradeDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "is_remote", value)
 
     @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -13467,7 +15220,7 @@ if not MYPY:
         """
         kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -13573,7 +15326,7 @@ class DbHomeDatabaseArgs:
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] one_off_patches: List of one-off patches for Database Homes.
@@ -13853,7 +15606,7 @@ class DbHomeDatabaseArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -14075,7 +15828,7 @@ if not MYPY:
         """
         backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
         """
@@ -14108,7 +15861,7 @@ class DbHomeDatabaseDbBackupConfigArgs:
         :param pulumi.Input[_builtins.str] auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param pulumi.Input[_builtins.str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param pulumi.Input[_builtins.str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param pulumi.Input[Sequence[pulumi.Input['DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
         :param pulumi.Input[_builtins.int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param pulumi.Input[_builtins.bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -14182,7 +15935,7 @@ class DbHomeDatabaseDbBackupConfigArgs:
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -14229,6 +15982,10 @@ class DbHomeDatabaseDbBackupConfigArgs:
 
 if not MYPY:
     class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
         dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
@@ -14239,13 +15996,15 @@ if not MYPY:
         """
         is_remote: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         remote_region: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -14259,28 +16018,34 @@ elif False:
 @pulumi.input_type
 class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  remote_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_password: Optional[pulumi.Input[_builtins.str]] = None,
                  vpc_user: Optional[pulumi.Input[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[_builtins.str] type: Type of the database backup destination. Supported values: `NFS`.
         """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
@@ -14289,6 +16054,18 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
             pulumi.set(__self__, "vpc_password", vpc_password)
         if vpc_user is not None:
             pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -14318,7 +16095,7 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
 
@@ -14327,12 +16104,22 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
         pulumi.set(self, "is_remote", value)
 
     @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -14908,9 +16695,6 @@ if not MYPY:
         The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         """
         db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
-        """
-        The `DB_UNIQUE_NAME` of the Oracle Database.
-        """
         db_workload: NotRequired[pulumi.Input[_builtins.str]]
         """
         **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
@@ -14935,7 +16719,7 @@ if not MYPY:
         """
         kms_key_version_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -15017,7 +16801,6 @@ class DbSystemDbHomeDatabaseArgs:
         :param pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigArgs'] db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param pulumi.Input[_builtins.str] db_domain: The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
         :param pulumi.Input[_builtins.str] db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
-        :param pulumi.Input[_builtins.str] db_unique_name: The `DB_UNIQUE_NAME` of the Oracle Database.
         :param pulumi.Input[_builtins.str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
@@ -15025,7 +16808,7 @@ class DbSystemDbHomeDatabaseArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[_builtins.str] pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
@@ -15210,9 +16993,6 @@ class DbSystemDbHomeDatabaseArgs:
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        The `DB_UNIQUE_NAME` of the Oracle Database.
-        """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
@@ -15285,7 +17065,7 @@ class DbSystemDbHomeDatabaseArgs:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -15471,7 +17251,7 @@ if not MYPY:
         """
         backup_deletion_policy: NotRequired[pulumi.Input[_builtins.str]]
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         backup_destination_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict']]]]
         """
@@ -15504,7 +17284,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
         :param pulumi.Input[_builtins.str] auto_backup_window: (Updatable) Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
         :param pulumi.Input[_builtins.str] auto_full_backup_day: Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
         :param pulumi.Input[_builtins.str] auto_full_backup_window: Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
-        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        :param pulumi.Input[_builtins.str] backup_deletion_policy: This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: (Updatable) Backup destination details.
         :param pulumi.Input[_builtins.int] recovery_window_in_days: (Updatable) Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
         :param pulumi.Input[_builtins.bool] run_immediate_full_backup: If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
@@ -15578,7 +17358,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
     @pulumi.getter(name="backupDeletionPolicy")
     def backup_deletion_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+        This defines when the backups will be deleted. - DELETE_IMMEDIATELY option keep the backup for predefined time i.e 72 hours and then delete permanently... - DELETE_AFTER_RETENTION_PERIOD will keep the backups as per the policy defined for database backups.
         """
         return pulumi.get(self, "backup_deletion_policy")
 
@@ -15625,6 +17405,10 @@ class DbSystemDbHomeDatabaseDbBackupConfigArgs:
 
 if not MYPY:
     class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict(TypedDict):
+        backup_retention_policy_on_terminate: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
         dbrs_policy_id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
@@ -15636,6 +17420,10 @@ if not MYPY:
         is_remote: NotRequired[pulumi.Input[_builtins.bool]]
         """
         Indicates whether the backup destination is cross-region or local.
+        """
+        is_retention_lock_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         """
         remote_region: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -15651,28 +17439,48 @@ elif False:
 @pulumi.input_type
 class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: Optional[pulumi.Input[_builtins.str]] = None,
                  dbrs_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  is_remote: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_retention_lock_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  remote_region: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
         :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
         """
+        if backup_retention_policy_on_terminate is not None:
+            pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
         if dbrs_policy_id is not None:
             pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
         if id is not None:
             pulumi.set(__self__, "id", id)
         if is_remote is not None:
             pulumi.set(__self__, "is_remote", is_remote)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if remote_region is not None:
             pulumi.set(__self__, "remote_region", remote_region)
         if type is not None:
             pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @backup_retention_policy_on_terminate.setter
+    def backup_retention_policy_on_terminate(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_retention_policy_on_terminate", value)
 
     @_builtins.property
     @pulumi.getter(name="dbrsPolicyId")
@@ -15709,6 +17517,18 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @is_remote.setter
     def is_remote(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_remote", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteRegion")
@@ -15956,8 +17776,7 @@ if not MYPY:
         """
         hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
         """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
@@ -15984,6 +17803,9 @@ if not MYPY:
         The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
         """
         Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -16008,14 +17830,14 @@ class DbSystemMaintenanceWindowArgs:
         """
         :param pulumi.Input[_builtins.int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[_builtins.bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param pulumi.Input[_builtins.bool] is_monthly_patching_enabled: If true, enables the monthly patching option.
         :param pulumi.Input[_builtins.int] lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
         :param pulumi.Input[_builtins.str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param pulumi.Input[_builtins.str] preference: The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -16069,8 +17891,7 @@ class DbSystemMaintenanceWindowArgs:
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
         """
-        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -16153,6 +17974,9 @@ class DbSystemMaintenanceWindowArgs:
     @_builtins.property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -16216,8 +18040,7 @@ if not MYPY:
         """
         hours_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
         """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         is_custom_action_timeout_enabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
@@ -16246,6 +18069,9 @@ if not MYPY:
         (Updatable) The maintenance window scheduling preference.
         """
         skip_rus: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         weeks_of_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
         """
         (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -16270,8 +18096,7 @@ class DbSystemMaintenanceWindowDetailsArgs:
         """
         :param pulumi.Input[_builtins.int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemMaintenanceWindowDetailsDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param pulumi.Input[_builtins.bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
         :param pulumi.Input[_builtins.bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
         :param pulumi.Input[_builtins.int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
@@ -16280,6 +18105,7 @@ class DbSystemMaintenanceWindowDetailsArgs:
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[_builtins.str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -16333,8 +18159,7 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @pulumi.getter(name="hoursOfDays")
     def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
         """
-        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
-        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         """
         return pulumi.get(self, "hours_of_days")
 
@@ -16419,6 +18244,9 @@ class DbSystemMaintenanceWindowDetailsArgs:
     @_builtins.property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.bool]]]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @skip_rus.setter
@@ -20241,6 +22069,58 @@ class KeyStoreAssociatedDatabaseArgs:
     @db_unique_name.setter
     def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+
+if not MYPY:
+    class KeyStoreAssociatedLongTermBackupArgsDict(TypedDict):
+        display_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+elif False:
+    KeyStoreAssociatedLongTermBackupArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class KeyStoreAssociatedLongTermBackupArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the key store. The name does not need to be unique.
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The user-friendly name for the key store. The name does not need to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter

@@ -18,22 +18,22 @@ public final class GetFsuCollectionFleetDiscovery {
      */
     private List<GetFsuCollectionFleetDiscoveryFilter> filters;
     /**
-     * @return OCIDs of Fleet Software Update Discovery.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
      * 
      */
     private String fsuDiscoveryId;
     /**
-     * @return Oracle Cloud Infrastructure Search Service query string.
+     * @return [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
      * 
      */
     private String query;
     /**
-     * @return Possible fleet discovery strategies.
+     * @return Supported fleet discovery strategies.
      * 
      */
     private String strategy;
     /**
-     * @return OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
      * 
      */
     private List<String> targets;
@@ -47,28 +47,28 @@ public final class GetFsuCollectionFleetDiscovery {
         return this.filters;
     }
     /**
-     * @return OCIDs of Fleet Software Update Discovery.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Discovery.
      * 
      */
     public String fsuDiscoveryId() {
         return this.fsuDiscoveryId;
     }
     /**
-     * @return Oracle Cloud Infrastructure Search Service query string.
+     * @return [OCI Search Service](https://docs.cloud.oracle.com/iaas/Content/Search/Concepts/queryoverview.htm) query string.
      * 
      */
     public String query() {
         return this.query;
     }
     /**
-     * @return Possible fleet discovery strategies.
+     * @return Supported fleet discovery strategies.
      * 
      */
     public String strategy() {
         return this.strategy;
     }
     /**
-     * @return OCIDs of target resources to include. For EXACC service type Collections only VMClusters are allowed. For EXACS service type Collections only CloudVMClusters are allowed.
+     * @return The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Exadata VM Cluster targets. Only Exadata VM Cluster targets associated with the specified &#39;serviceType&#39; are allowed.
      * 
      */
     public List<String> targets() {

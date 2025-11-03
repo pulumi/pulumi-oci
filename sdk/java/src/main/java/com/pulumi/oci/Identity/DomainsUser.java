@@ -51,10 +51,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create a user.
- * 
  * ## Example Usage
  * 
  * ## Import

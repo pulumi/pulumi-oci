@@ -13,18 +13,15 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetModelsModelCollectionItemResult
     {
-        /// <summary>
-        /// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
-        /// </summary>
         public readonly string BaseModelId;
-        /// <summary>
-        /// Describes what this model can be used for.
-        /// </summary>
         public readonly ImmutableArray<string> Capabilities;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// An optional description of the model.

@@ -80,6 +80,8 @@ type LookupStreamPoolResult struct {
 	Name string `pulumi:"name"`
 	// Optional settings if the stream pool is private.
 	PrivateEndpointSettings []GetStreamPoolPrivateEndpointSetting `pulumi:"privateEndpointSettings"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the stream pool.
 	State        string `pulumi:"state"`
 	StreamPoolId string `pulumi:"streamPoolId"`
@@ -174,6 +176,11 @@ func (o LookupStreamPoolResultOutput) Name() pulumi.StringOutput {
 // Optional settings if the stream pool is private.
 func (o LookupStreamPoolResultOutput) PrivateEndpointSettings() GetStreamPoolPrivateEndpointSettingArrayOutput {
 	return o.ApplyT(func(v LookupStreamPoolResult) []GetStreamPoolPrivateEndpointSetting { return v.PrivateEndpointSettings }).(GetStreamPoolPrivateEndpointSettingArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o LookupStreamPoolResultOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupStreamPoolResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the stream pool.

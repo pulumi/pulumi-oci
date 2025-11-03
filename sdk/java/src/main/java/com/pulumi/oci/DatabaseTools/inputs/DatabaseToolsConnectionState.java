@@ -203,6 +203,36 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
+     * Specifies the Database Tools Runtime endpoint.
+     * 
+     */
+    @Import(name="runtimeEndpoint")
+    private @Nullable Output<String> runtimeEndpoint;
+
+    /**
+     * @return Specifies the Database Tools Runtime endpoint.
+     * 
+     */
+    public Optional<Output<String>> runtimeEndpoint() {
+        return Optional.ofNullable(this.runtimeEndpoint);
+    }
+
+    /**
+     * Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * 
+     */
+    @Import(name="runtimeIdentity")
+    private @Nullable Output<String> runtimeIdentity;
+
+    /**
+     * @return Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+     * 
+     */
+    public Optional<Output<String>> runtimeIdentity() {
+        return Optional.ofNullable(this.runtimeIdentity);
+    }
+
+    /**
      * Specifies whether this connection is supported by the Database Tools Runtime.
      * 
      */
@@ -263,14 +293,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+     * @return The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -278,14 +308,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The DatabaseToolsConnection type.
+     * (Updatable) The Database Tools connection type.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The DatabaseToolsConnection type.
+     * @return (Updatable) The Database Tools connection type.
      * 
      */
     public Optional<Output<String>> type() {
@@ -323,14 +353,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The user password.
+     * (Updatable) The database user password.
      * 
      */
     @Import(name="userPassword")
     private @Nullable Output<DatabaseToolsConnectionUserPasswordArgs> userPassword;
 
     /**
-     * @return (Updatable) The user password.
+     * @return (Updatable) The database user password.
      * 
      */
     public Optional<Output<DatabaseToolsConnectionUserPasswordArgs>> userPassword() {
@@ -352,6 +382,8 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         this.privateEndpointId = $.privateEndpointId;
         this.proxyClient = $.proxyClient;
         this.relatedResource = $.relatedResource;
+        this.runtimeEndpoint = $.runtimeEndpoint;
+        this.runtimeIdentity = $.runtimeIdentity;
         this.runtimeSupport = $.runtimeSupport;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -654,6 +686,48 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
+         * @param runtimeEndpoint Specifies the Database Tools Runtime endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeEndpoint(@Nullable Output<String> runtimeEndpoint) {
+            $.runtimeEndpoint = runtimeEndpoint;
+            return this;
+        }
+
+        /**
+         * @param runtimeEndpoint Specifies the Database Tools Runtime endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeEndpoint(String runtimeEndpoint) {
+            return runtimeEndpoint(Output.of(runtimeEndpoint));
+        }
+
+        /**
+         * @param runtimeIdentity Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeIdentity(@Nullable Output<String> runtimeIdentity) {
+            $.runtimeIdentity = runtimeIdentity;
+            return this;
+        }
+
+        /**
+         * @param runtimeIdentity Specifies the identity used by the Database Tools service to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeIdentity(String runtimeIdentity) {
+            return runtimeIdentity(Output.of(runtimeIdentity));
+        }
+
+        /**
          * @param runtimeSupport Specifies whether this connection is supported by the Database Tools Runtime.
          * 
          * @return builder
@@ -738,7 +812,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeUpdated The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+         * @param timeUpdated The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -749,7 +823,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeUpdated The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
+         * @param timeUpdated The time the Database Tools connection was updated. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -759,7 +833,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type (Updatable) The DatabaseToolsConnection type.
+         * @param type (Updatable) The Database Tools connection type.
          * 
          * @return builder
          * 
@@ -770,7 +844,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type (Updatable) The DatabaseToolsConnection type.
+         * @param type (Updatable) The Database Tools connection type.
          * 
          * @return builder
          * 
@@ -822,7 +896,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param userPassword (Updatable) The user password.
+         * @param userPassword (Updatable) The database user password.
          * 
          * @return builder
          * 
@@ -833,7 +907,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param userPassword (Updatable) The user password.
+         * @param userPassword (Updatable) The database user password.
          * 
          * @return builder
          * 

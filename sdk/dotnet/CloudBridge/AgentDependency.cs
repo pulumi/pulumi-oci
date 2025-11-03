@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.CloudBridge
 {
     /// <summary>
-    /// This resource provides the Agent Dependency resource in Oracle Cloud Infrastructure Cloud Bridge service.
-    /// 
-    /// Creates an AgentDependency.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

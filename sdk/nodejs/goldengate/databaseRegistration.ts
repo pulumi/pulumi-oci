@@ -5,11 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
- *
- * Note: Deprecated. Use the /connections API instead.
- * Creates a new DatabaseRegistration.
- *
  * ## Example Usage
  *
  * ```typescript

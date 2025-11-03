@@ -42,6 +42,17 @@ Object.defineProperty(exports, "disableAutoRetries", {
 });
 
 /**
+ * (Optional) flags to enable Dual Stack endpoint.
+ */
+export declare const dualStackEndpointEnabled: boolean | undefined;
+Object.defineProperty(exports, "dualStackEndpointEnabled", {
+    get() {
+        return __config.getObject<boolean>("dualStackEndpointEnabled");
+    },
+    enumerable: true,
+});
+
+/**
  * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
  */
 export declare const fingerprint: string | undefined;

@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
- *
- * Creates a new FusionEnvironment.
- *
  * ## Example Usage
  *
  * ```typescript
@@ -37,6 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     isIpv6dualStackEnabled: fusionEnvironmentIsIpv6dualStackEnabled,
  *     kmsKeyId: testKey.id,
  *     maintenancePolicy: {
  *         environmentMaintenanceOverride: fusionEnvironmentMaintenancePolicyEnvironmentMaintenanceOverride,
@@ -142,6 +139,10 @@ export class FusionEnvironment extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly isBreakGlassEnabled: pulumi.Output<boolean>;
     /**
+     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     */
+    declare public readonly isIpv6dualStackEnabled: pulumi.Output<boolean>;
+    /**
      * (Updatable) byok kms keyId
      */
     declare public readonly kmsKeyId: pulumi.Output<string>;
@@ -228,6 +229,7 @@ export class FusionEnvironment extends pulumi.CustomResource {
             resourceInputs["fusionEnvironmentType"] = state?.fusionEnvironmentType;
             resourceInputs["idcsDomainUrl"] = state?.idcsDomainUrl;
             resourceInputs["isBreakGlassEnabled"] = state?.isBreakGlassEnabled;
+            resourceInputs["isIpv6dualStackEnabled"] = state?.isIpv6dualStackEnabled;
             resourceInputs["kmsKeyId"] = state?.kmsKeyId;
             resourceInputs["kmsKeyInfos"] = state?.kmsKeyInfos;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
@@ -269,6 +271,7 @@ export class FusionEnvironment extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["fusionEnvironmentFamilyId"] = args?.fusionEnvironmentFamilyId;
             resourceInputs["fusionEnvironmentType"] = args?.fusionEnvironmentType;
+            resourceInputs["isIpv6dualStackEnabled"] = args?.isIpv6dualStackEnabled;
             resourceInputs["kmsKeyId"] = args?.kmsKeyId;
             resourceInputs["maintenancePolicy"] = args?.maintenancePolicy;
             resourceInputs["rules"] = args?.rules;
@@ -350,6 +353,10 @@ export interface FusionEnvironmentState {
      * If it's true, then the Break Glass feature is enabled
      */
     isBreakGlassEnabled?: pulumi.Input<boolean>;
+    /**
+     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     */
+    isIpv6dualStackEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) byok kms keyId
      */
@@ -452,6 +459,10 @@ export interface FusionEnvironmentArgs {
      * The type of environment. Valid values are Production, Test, or Development.
      */
     fusionEnvironmentType: pulumi.Input<string>;
+    /**
+     * Enable IPv4/IPv6 dual stack support for the environment.  Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address.
+     */
+    isIpv6dualStackEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) byok kms keyId
      */

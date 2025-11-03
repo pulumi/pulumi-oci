@@ -20,6 +20,16 @@ export const getEndpoints: typeof import("./getEndpoints").getEndpoints = null a
 export const getEndpointsOutput: typeof import("./getEndpoints").getEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getEndpoints","getEndpointsOutput"], () => require("./getEndpoints"));
 
+export { GetJobArgs, GetJobResult, GetJobOutputArgs } from "./getJob";
+export const getJob: typeof import("./getJob").getJob = null as any;
+export const getJobOutput: typeof import("./getJob").getJobOutput = null as any;
+utilities.lazyLoad(exports, ["getJob","getJobOutput"], () => require("./getJob"));
+
+export { GetJobsArgs, GetJobsResult, GetJobsOutputArgs } from "./getJobs";
+export const getJobs: typeof import("./getJobs").getJobs = null as any;
+export const getJobsOutput: typeof import("./getJobs").getJobsOutput = null as any;
+utilities.lazyLoad(exports, ["getJobs","getJobsOutput"], () => require("./getJobs"));
+
 export { GetModelArgs, GetModelResult, GetModelOutputArgs } from "./getModel";
 export const getModel: typeof import("./getModel").getModel = null as any;
 export const getModelOutput: typeof import("./getModel").getModelOutput = null as any;
@@ -50,6 +60,11 @@ export const getProjects: typeof import("./getProjects").getProjects = null as a
 export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
 utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
 
+export { JobArgs, JobState } from "./job";
+export type Job = import("./job").Job;
+export const Job: typeof import("./job").Job = null as any;
+utilities.lazyLoad(exports, ["Job"], () => require("./job"));
+
 export { ModelArgs, ModelState } from "./model";
 export type Model = import("./model").Model;
 export const Model: typeof import("./model").Model = null as any;
@@ -67,6 +82,8 @@ const _module = {
         switch (type) {
             case "oci:AiLanguage/endpoint:Endpoint":
                 return new Endpoint(name, <any>undefined, { urn })
+            case "oci:AiLanguage/job:Job":
+                return new Job(name, <any>undefined, { urn })
             case "oci:AiLanguage/model:Model":
                 return new Model(name, <any>undefined, { urn })
             case "oci:AiLanguage/project:Project":
@@ -77,5 +94,6 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "AiLanguage/endpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "AiLanguage/job", _module)
 pulumi.runtime.registerResourceModule("oci", "AiLanguage/model", _module)
 pulumi.runtime.registerResourceModule("oci", "AiLanguage/project", _module)

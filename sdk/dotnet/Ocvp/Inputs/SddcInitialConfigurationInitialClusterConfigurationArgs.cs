@@ -30,6 +30,18 @@ namespace Pulumi.Oci.Ocvp.Inputs
         [Input("computeAvailabilityDomain", required: true)]
         public Input<string> ComputeAvailabilityDomain { get; set; } = null!;
 
+        [Input("datastoreClusterIds")]
+        private InputList<string>? _datastoreClusterIds;
+
+        /// <summary>
+        /// A list of datastore clusters.
+        /// </summary>
+        public InputList<string> DatastoreClusterIds
+        {
+            get => _datastoreClusterIds ?? (_datastoreClusterIds = new InputList<string>());
+            set => _datastoreClusterIds = value;
+        }
+
         [Input("datastores")]
         private InputList<Inputs.SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs>? _datastores;
 
@@ -43,7 +55,7 @@ namespace Pulumi.Oci.Ocvp.Inputs
         }
 
         /// <summary>
-        /// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+        /// A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

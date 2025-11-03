@@ -17,11 +17,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Drg Route Table resource in Oracle Cloud Infrastructure Core service.
- * 
- * Creates a new DRG route table for the specified DRG. Assign the DRG route table to a DRG attachment
- * using the `UpdateDrgAttachment` or `CreateDrgAttachment` operations.
- * 
  * ## Example Usage
  * 
  * <pre>

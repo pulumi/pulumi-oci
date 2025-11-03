@@ -44,6 +44,10 @@ export interface GetDrPlanExecutionArgs {
  */
 export interface GetDrPlanExecutionResult {
     /**
+     * The details of the event that started the automatic DR plan execution.
+     */
+    readonly automaticExecutionDetails: outputs.DisasterRecovery.GetDrPlanExecutionAutomaticExecutionDetail[];
+    /**
      * The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
      */
     readonly compartmentId: string;
@@ -80,6 +84,10 @@ export interface GetDrPlanExecutionResult {
      * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      */
     readonly id: string;
+    /**
+     * A flag indicating whether execution was submitted automatically by Automatic DR Configuration.  Example: `false`
+     */
+    readonly isAutomatic: boolean;
     /**
      * A message describing the DR plan execution's current state in more detail.
      */

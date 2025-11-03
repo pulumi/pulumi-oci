@@ -23,10 +23,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create Approval Workflow Assignment
- * 
  * ## Example Usage
  * 
  * ## Import

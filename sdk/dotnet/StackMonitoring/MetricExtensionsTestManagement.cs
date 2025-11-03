@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.StackMonitoring
 {
     /// <summary>
-    /// This resource provides the Metric Extensions Test Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
-    /// 
-    /// Performs test of Metric Extension on a specific resource Id
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

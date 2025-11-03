@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string RouteTableId;
         public readonly ImmutableDictionary<string, string> SecurityAttributes;
         public readonly bool SkipSourceDestCheck;
+        public readonly string SubnetCidr;
         /// <summary>
         /// The OCID of the subnet to create the VNIC in.
         /// </summary>
@@ -66,6 +67,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool skipSourceDestCheck,
 
+            string subnetCidr,
+
             string subnetId,
 
             string vlanId)
@@ -83,6 +86,7 @@ namespace Pulumi.Oci.Core.Outputs
             RouteTableId = routeTableId;
             SecurityAttributes = securityAttributes;
             SkipSourceDestCheck = skipSourceDestCheck;
+            SubnetCidr = subnetCidr;
             SubnetId = subnetId;
             VlanId = vlanId;
         }

@@ -1310,10 +1310,6 @@ class DomainsGrant(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsGrantTagArgs', 'DomainsGrantTagArgsDict']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Add a Grantee to an AppRole
-
         ## Example Usage
 
         ## Import
@@ -1443,10 +1439,6 @@ class DomainsGrant(pulumi.CustomResource):
                  args: DomainsGrantArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Grant resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Add a Grantee to an AppRole
-
         ## Example Usage
 
         ## Import

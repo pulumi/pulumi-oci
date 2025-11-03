@@ -479,19 +479,7 @@ class DrgAttachment(pulumi.CustomResource):
                  vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Drg Attachment resource in Oracle Cloud Infrastructure Core service.
-
-        Attaches the specified DRG to the specified network resource. A VCN can be attached to only one DRG
-        at a time, but a DRG can be attached to more than one VCN. The response includes a `DrgAttachment`
-        object with its own [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For more information about DRGs, see
-        [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
-
-        You may optionally specify a *display name* for the attachment, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        For the purposes of access control, the DRG attachment is automatically placed into the currently selected compartment.
-        For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+        ## Example Usage
 
         ## Import
 
@@ -532,19 +520,7 @@ class DrgAttachment(pulumi.CustomResource):
                  args: DrgAttachmentArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Drg Attachment resource in Oracle Cloud Infrastructure Core service.
-
-        Attaches the specified DRG to the specified network resource. A VCN can be attached to only one DRG
-        at a time, but a DRG can be attached to more than one VCN. The response includes a `DrgAttachment`
-        object with its own [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For more information about DRGs, see
-        [Dynamic Routing Gateways (DRGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm).
-
-        You may optionally specify a *display name* for the attachment, otherwise a default is provided.
-        It does not have to be unique, and you can change it. Avoid entering confidential information.
-
-        For the purposes of access control, the DRG attachment is automatically placed into the currently selected compartment.
-        For more information about compartments and access control, see
-        [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+        ## Example Usage
 
         ## Import
 

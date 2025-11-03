@@ -31,14 +31,14 @@ public final class AutonomousDatabaseEncryptionKeyArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) The provider for the Autonomous Database encryption key.
+     * (Updatable) The provider for the Autonomous AI Database encryption key.
      * 
      */
     @Import(name="autonomousDatabaseProvider")
     private @Nullable Output<String> autonomousDatabaseProvider;
 
     /**
-     * @return (Updatable) The provider for the Autonomous Database encryption key.
+     * @return (Updatable) The provider for the Autonomous AI Database encryption key.
      * 
      */
     public Optional<Output<String>> autonomousDatabaseProvider() {
@@ -136,6 +136,21 @@ public final class AutonomousDatabaseEncryptionKeyArgs extends com.pulumi.resour
     }
 
     /**
+     * (Updatable) GCP key ring
+     * 
+     */
+    @Import(name="keyRing")
+    private @Nullable Output<String> keyRing;
+
+    /**
+     * @return (Updatable) GCP key ring
+     * 
+     */
+    public Optional<Output<String>> keyRing() {
+        return Optional.ofNullable(this.keyRing);
+    }
+
+    /**
      * (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -148,6 +163,36 @@ public final class AutonomousDatabaseEncryptionKeyArgs extends com.pulumi.resour
      */
     public Optional<Output<String>> kmsKeyId() {
         return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
+     * (Updatable) GCP kms REST API endpoint
+     * 
+     */
+    @Import(name="kmsRestEndpoint")
+    private @Nullable Output<String> kmsRestEndpoint;
+
+    /**
+     * @return (Updatable) GCP kms REST API endpoint
+     * 
+     */
+    public Optional<Output<String>> kmsRestEndpoint() {
+        return Optional.ofNullable(this.kmsRestEndpoint);
+    }
+
+    /**
+     * (Updatable) GCP key ring location
+     * 
+     */
+    @Import(name="location")
+    private @Nullable Output<String> location;
+
+    /**
+     * @return (Updatable) GCP key ring location
+     * 
+     */
+    public Optional<Output<String>> location() {
+        return Optional.ofNullable(this.location);
     }
 
     /**
@@ -178,6 +223,21 @@ public final class AutonomousDatabaseEncryptionKeyArgs extends com.pulumi.resour
      */
     public Optional<Output<String>> okvUri() {
         return Optional.ofNullable(this.okvUri);
+    }
+
+    /**
+     * (Updatable) GCP project name
+     * 
+     */
+    @Import(name="project")
+    private @Nullable Output<String> project;
+
+    /**
+     * @return (Updatable) GCP project name
+     * 
+     */
+    public Optional<Output<String>> project() {
+        return Optional.ofNullable(this.project);
     }
 
     /**
@@ -236,9 +296,13 @@ public final class AutonomousDatabaseEncryptionKeyArgs extends com.pulumi.resour
         this.externalId = $.externalId;
         this.keyArn = $.keyArn;
         this.keyName = $.keyName;
+        this.keyRing = $.keyRing;
         this.kmsKeyId = $.kmsKeyId;
+        this.kmsRestEndpoint = $.kmsRestEndpoint;
+        this.location = $.location;
         this.okvKmsKey = $.okvKmsKey;
         this.okvUri = $.okvUri;
+        this.project = $.project;
         this.serviceEndpointUri = $.serviceEndpointUri;
         this.vaultId = $.vaultId;
         this.vaultUri = $.vaultUri;
@@ -284,7 +348,7 @@ public final class AutonomousDatabaseEncryptionKeyArgs extends com.pulumi.resour
         }
 
         /**
-         * @param autonomousDatabaseProvider (Updatable) The provider for the Autonomous Database encryption key.
+         * @param autonomousDatabaseProvider (Updatable) The provider for the Autonomous AI Database encryption key.
          * 
          * @return builder
          * 
@@ -295,7 +359,7 @@ public final class AutonomousDatabaseEncryptionKeyArgs extends com.pulumi.resour
         }
 
         /**
-         * @param autonomousDatabaseProvider (Updatable) The provider for the Autonomous Database encryption key.
+         * @param autonomousDatabaseProvider (Updatable) The provider for the Autonomous AI Database encryption key.
          * 
          * @return builder
          * 
@@ -431,6 +495,27 @@ public final class AutonomousDatabaseEncryptionKeyArgs extends com.pulumi.resour
         }
 
         /**
+         * @param keyRing (Updatable) GCP key ring
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyRing(@Nullable Output<String> keyRing) {
+            $.keyRing = keyRing;
+            return this;
+        }
+
+        /**
+         * @param keyRing (Updatable) GCP key ring
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyRing(String keyRing) {
+            return keyRing(Output.of(keyRing));
+        }
+
+        /**
          * @param kmsKeyId (Updatable) The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          * 
          * @return builder
@@ -449,6 +534,48 @@ public final class AutonomousDatabaseEncryptionKeyArgs extends com.pulumi.resour
          */
         public Builder kmsKeyId(String kmsKeyId) {
             return kmsKeyId(Output.of(kmsKeyId));
+        }
+
+        /**
+         * @param kmsRestEndpoint (Updatable) GCP kms REST API endpoint
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsRestEndpoint(@Nullable Output<String> kmsRestEndpoint) {
+            $.kmsRestEndpoint = kmsRestEndpoint;
+            return this;
+        }
+
+        /**
+         * @param kmsRestEndpoint (Updatable) GCP kms REST API endpoint
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsRestEndpoint(String kmsRestEndpoint) {
+            return kmsRestEndpoint(Output.of(kmsRestEndpoint));
+        }
+
+        /**
+         * @param location (Updatable) GCP key ring location
+         * 
+         * @return builder
+         * 
+         */
+        public Builder location(@Nullable Output<String> location) {
+            $.location = location;
+            return this;
+        }
+
+        /**
+         * @param location (Updatable) GCP key ring location
+         * 
+         * @return builder
+         * 
+         */
+        public Builder location(String location) {
+            return location(Output.of(location));
         }
 
         /**
@@ -491,6 +618,27 @@ public final class AutonomousDatabaseEncryptionKeyArgs extends com.pulumi.resour
          */
         public Builder okvUri(String okvUri) {
             return okvUri(Output.of(okvUri));
+        }
+
+        /**
+         * @param project (Updatable) GCP project name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder project(@Nullable Output<String> project) {
+            $.project = project;
+            return this;
+        }
+
+        /**
+         * @param project (Updatable) GCP project name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder project(String project) {
+            return project(Output.of(project));
         }
 
         /**

@@ -152,10 +152,6 @@ class ExternalPluggableDatabasesStackMonitoring(pulumi.CustomResource):
                  external_pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Externalpluggabledatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
-
-        Enable Stack Monitoring for the external pluggable database.
-
         ## Example Usage
 
         ```python
@@ -189,10 +185,6 @@ class ExternalPluggableDatabasesStackMonitoring(pulumi.CustomResource):
                  args: ExternalPluggableDatabasesStackMonitoringArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Externalpluggabledatabases Stack Monitoring resource in Oracle Cloud Infrastructure Database service.
-
-        Enable Stack Monitoring for the external pluggable database.
-
         ## Example Usage
 
         ```python

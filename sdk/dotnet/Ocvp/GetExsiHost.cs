@@ -123,6 +123,7 @@ namespace Pulumi.Oci.Ocvp
     [OutputType]
     public sealed class GetExsiHostResult
     {
+        public readonly ImmutableArray<string> AttachDatastoreClusterIds;
         /// <summary>
         /// Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
@@ -160,9 +161,18 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string CurrentSku;
         /// <summary>
+        /// List of DatastoreAttachment objects containing information about attachment details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExsiHostDatastoreAttachmentResult> DatastoreAttachments;
+        /// <summary>
+        /// A list of datastore clusters.
+        /// </summary>
+        public readonly ImmutableArray<string> DatastoreClusterIds;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        public readonly ImmutableArray<string> DetachDatastoreClusterIds;
         /// <summary>
         /// A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
@@ -251,6 +261,8 @@ namespace Pulumi.Oci.Ocvp
 
         [OutputConstructor]
         private GetExsiHostResult(
+            ImmutableArray<string> attachDatastoreClusterIds,
+
             string billingContractEndDate,
 
             string billingDonorHostId,
@@ -269,7 +281,13 @@ namespace Pulumi.Oci.Ocvp
 
             string currentSku,
 
+            ImmutableArray<Outputs.GetExsiHostDatastoreAttachmentResult> datastoreAttachments,
+
+            ImmutableArray<string> datastoreClusterIds,
+
             ImmutableDictionary<string, string> definedTags,
+
+            ImmutableArray<string> detachDatastoreClusterIds,
 
             string displayName,
 
@@ -315,6 +333,7 @@ namespace Pulumi.Oci.Ocvp
 
             string vmwareSoftwareVersion)
         {
+            AttachDatastoreClusterIds = attachDatastoreClusterIds;
             BillingContractEndDate = billingContractEndDate;
             BillingDonorHostId = billingDonorHostId;
             CapacityReservationId = capacityReservationId;
@@ -324,7 +343,10 @@ namespace Pulumi.Oci.Ocvp
             ComputeInstanceId = computeInstanceId;
             CurrentCommitment = currentCommitment;
             CurrentSku = currentSku;
+            DatastoreAttachments = datastoreAttachments;
+            DatastoreClusterIds = datastoreClusterIds;
             DefinedTags = definedTags;
+            DetachDatastoreClusterIds = detachDatastoreClusterIds;
             DisplayName = displayName;
             EsxiHostId = esxiHostId;
             EsxiSoftwareVersion = esxiSoftwareVersion;

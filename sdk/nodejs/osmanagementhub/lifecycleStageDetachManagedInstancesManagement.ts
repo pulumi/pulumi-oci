@@ -7,9 +7,23 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Lifecycle Stage Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
+ * ## Example Usage
  *
- * Detaches (removes) a managed instance from a lifecycle stage.
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLifecycleStageDetachManagedInstancesManagement = new oci.osmanagementhub.LifecycleStageDetachManagedInstancesManagement("test_lifecycle_stage_detach_managed_instances_management", {
+ *     lifecycleStageId: testLifecycleStage.id,
+ *     managedInstanceDetails: {
+ *         managedInstances: lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsManagedInstances,
+ *         workRequestDetails: {
+ *             description: lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDescription,
+ *             displayName: lifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsDisplayName,
+ *         },
+ *     },
+ * });
+ * ```
  *
  * ## Import
  *

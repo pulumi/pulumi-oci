@@ -26,10 +26,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cloud Gate resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create a Cloud Gate
- * 
  * ## Example Usage
  * 
  * <pre>

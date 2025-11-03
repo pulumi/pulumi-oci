@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Pipeline resource in Oracle Cloud Infrastructure Data Science service.
-//
-// Creates a new Pipeline.
+// ## Example Usage
 //
 // ## Import
 //
@@ -47,6 +45,8 @@ type Pipeline struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The pipeline log configuration details.
 	LogConfigurationDetails PipelineLogConfigurationDetailsOutput `pulumi:"logConfigurationDetails"`
+	// (Updatable) Parameters used in the pipeline.
+	Parameters pulumi.StringMapOutput `pulumi:"parameters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The current state of the pipeline.
@@ -124,6 +124,8 @@ type pipelineState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The pipeline log configuration details.
 	LogConfigurationDetails *PipelineLogConfigurationDetails `pulumi:"logConfigurationDetails"`
+	// (Updatable) Parameters used in the pipeline.
+	Parameters map[string]string `pulumi:"parameters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId *string `pulumi:"projectId"`
 	// The current state of the pipeline.
@@ -163,6 +165,8 @@ type PipelineState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The pipeline log configuration details.
 	LogConfigurationDetails PipelineLogConfigurationDetailsPtrInput
+	// (Updatable) Parameters used in the pipeline.
+	Parameters pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId pulumi.StringPtrInput
 	// The current state of the pipeline.
@@ -202,6 +206,8 @@ type pipelineArgs struct {
 	InfrastructureConfigurationDetails *PipelineInfrastructureConfigurationDetails `pulumi:"infrastructureConfigurationDetails"`
 	// (Updatable) The pipeline log configuration details.
 	LogConfigurationDetails *PipelineLogConfigurationDetails `pulumi:"logConfigurationDetails"`
+	// (Updatable) Parameters used in the pipeline.
+	Parameters map[string]string `pulumi:"parameters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId     string                 `pulumi:"projectId"`
 	StepArtifacts []PipelineStepArtifact `pulumi:"stepArtifacts"`
@@ -230,6 +236,8 @@ type PipelineArgs struct {
 	InfrastructureConfigurationDetails PipelineInfrastructureConfigurationDetailsPtrInput
 	// (Updatable) The pipeline log configuration details.
 	LogConfigurationDetails PipelineLogConfigurationDetailsPtrInput
+	// (Updatable) Parameters used in the pipeline.
+	Parameters pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId     pulumi.StringInput
 	StepArtifacts PipelineStepArtifactArrayInput
@@ -380,6 +388,11 @@ func (o PipelineOutput) LifecycleDetails() pulumi.StringOutput {
 // (Updatable) The pipeline log configuration details.
 func (o PipelineOutput) LogConfigurationDetails() PipelineLogConfigurationDetailsOutput {
 	return o.ApplyT(func(v *Pipeline) PipelineLogConfigurationDetailsOutput { return v.LogConfigurationDetails }).(PipelineLogConfigurationDetailsOutput)
+}
+
+// (Updatable) Parameters used in the pipeline.
+func (o PipelineOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringMapOutput { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.

@@ -152,6 +152,9 @@ __all__ = [
     'GetEndpointsEndpointCollectionItemResult',
     'GetEndpointsEndpointCollectionItemContentModerationConfigResult',
     'GetEndpointsFilterResult',
+    'GetGenerativeAiPrivateEndpointsFilterResult',
+    'GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionResult',
+    'GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemResult',
     'GetModelFineTuneDetailResult',
     'GetModelFineTuneDetailTrainingConfigResult',
     'GetModelFineTuneDetailTrainingDatasetResult',
@@ -2311,6 +2314,8 @@ class EndpointContentModerationConfig(dict):
         suggest = None
         if key == "isEnabled":
             suggest = "is_enabled"
+        elif key == "modelId":
+            suggest = "model_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in EndpointContentModerationConfig. Access the value via the '{suggest}' property getter instead.")
@@ -2324,11 +2329,19 @@ class EndpointContentModerationConfig(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 is_enabled: _builtins.bool):
+                 is_enabled: _builtins.bool,
+                 mode: Optional[_builtins.str] = None,
+                 model_id: Optional[_builtins.str] = None):
         """
         :param _builtins.bool is_enabled: (Updatable) Whether to enable the content moderation feature.
+        :param _builtins.str mode: (Updatable) Enum for the modes of operation for inference protection.
+        :param _builtins.str model_id: (Updatable) The OCID of the model used for the feature.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
+        if mode is not None:
+            pulumi.set(__self__, "mode", mode)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
@@ -2337,6 +2350,22 @@ class EndpointContentModerationConfig(dict):
         (Updatable) Whether to enable the content moderation feature.
         """
         return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Enum for the modes of operation for inference protection.
+        """
+        return pulumi.get(self, "mode")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the model used for the feature.
+        """
+        return pulumi.get(self, "model_id")
 
 
 @pulumi.output_type
@@ -6915,9 +6944,16 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
                  unit_shape: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: An optional description of the dedicated AI cluster.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
+        :param _builtins.str lifecycle_details: A message describing the current state with detail that can provide actionable information.
         :param _builtins.str state: A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_updated: The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
+        :param _builtins.int unit_count: The number of dedicated units in this AI cluster.
+        :param _builtins.str unit_shape: The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
         """
         pulumi.set(__self__, "capacities", capacities)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -6951,11 +6987,17 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
+        """
+        An optional description of the dedicated AI cluster.
+        """
         return pulumi.get(self, "description")
 
     @_builtins.property
@@ -6982,6 +7024,9 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state with detail that can provide actionable information.
+        """
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
@@ -6995,6 +7040,9 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -7005,6 +7053,9 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
+        """
+        The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
+        """
         return pulumi.get(self, "time_updated")
 
     @_builtins.property
@@ -7015,11 +7066,17 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="unitCount")
     def unit_count(self) -> _builtins.int:
+        """
+        The number of dedicated units in this AI cluster.
+        """
         return pulumi.get(self, "unit_count")
 
     @_builtins.property
     @pulumi.getter(name="unitShape")
     def unit_shape(self) -> _builtins.str:
+        """
+        The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
+        """
         return pulumi.get(self, "unit_shape")
 
 
@@ -7079,13 +7136,41 @@ class GetDedicatedAiClustersFilterResult(dict):
 @pulumi.output_type
 class GetEndpointContentModerationConfigResult(dict):
     def __init__(__self__, *,
-                 is_enabled: _builtins.bool):
+                 is_enabled: _builtins.bool,
+                 mode: _builtins.str,
+                 model_id: _builtins.str):
+        """
+        :param _builtins.bool is_enabled: Whether to enable the content moderation feature.
+        :param _builtins.str mode: Enum for the modes of operation for inference protection.
+        :param _builtins.str model_id: The OCID of the model used for the feature.
+        """
         pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "model_id", model_id)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> _builtins.bool:
+        """
+        Whether to enable the content moderation feature.
+        """
         return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> _builtins.str:
+        """
+        Enum for the modes of operation for inference protection.
+        """
+        return pulumi.get(self, "mode")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        The OCID of the model used for the feature.
+        """
+        return pulumi.get(self, "model_id")
 
 
 @pulumi.output_type
@@ -7110,6 +7195,7 @@ class GetEndpointsEndpointCollectionItemResult(dict):
                  description: _builtins.str,
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
+                 generative_ai_private_endpoint_id: _builtins.str,
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
                  model_id: _builtins.str,
@@ -7119,12 +7205,16 @@ class GetEndpointsEndpointCollectionItemResult(dict):
                  time_updated: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param _builtins.str description: An optional description of the endpoint.
+        :param Sequence['GetEndpointsEndpointCollectionItemContentModerationConfigArgs'] content_moderation_configs: The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
+        :param _builtins.str dedicated_ai_cluster_id: The OCID of the dedicated AI cluster on which the model will be deployed to.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param _builtins.str generative_ai_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
-        :param _builtins.str model_id: The OCID of the model that's used to create this endpoint.
+        :param _builtins.str lifecycle_details: A message describing the current state of the endpoint in more detail that can provide actionable information.
+        :param _builtins.str model_id: The OCID of the model used for the feature.
         :param _builtins.str state: A filter to return only resources that their lifecycle state matches the given lifecycle state.
-        :param _builtins.str time_updated: The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "content_moderation_configs", content_moderation_configs)
@@ -7133,6 +7223,7 @@ class GetEndpointsEndpointCollectionItemResult(dict):
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "generative_ai_private_endpoint_id", generative_ai_private_endpoint_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "model_id", model_id)
@@ -7152,24 +7243,30 @@ class GetEndpointsEndpointCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="contentModerationConfigs")
     def content_moderation_configs(self) -> Sequence['outputs.GetEndpointsEndpointCollectionItemContentModerationConfigResult']:
+        """
+        The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
+        """
         return pulumi.get(self, "content_moderation_configs")
 
     @_builtins.property
     @pulumi.getter(name="dedicatedAiClusterId")
     def dedicated_ai_cluster_id(self) -> _builtins.str:
+        """
+        The OCID of the dedicated AI cluster on which the model will be deployed to.
+        """
         return pulumi.get(self, "dedicated_ai_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
-        """
-        An optional description of the endpoint.
-        """
         return pulumi.get(self, "description")
 
     @_builtins.property
@@ -7186,6 +7283,14 @@ class GetEndpointsEndpointCollectionItemResult(dict):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="generativeAiPrivateEndpointId")
+    def generative_ai_private_endpoint_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "generative_ai_private_endpoint_id")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
@@ -7196,13 +7301,16 @@ class GetEndpointsEndpointCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state of the endpoint in more detail that can provide actionable information.
+        """
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
     @pulumi.getter(name="modelId")
     def model_id(self) -> _builtins.str:
         """
-        The OCID of the model that's used to create this endpoint.
+        The OCID of the model used for the feature.
         """
         return pulumi.get(self, "model_id")
 
@@ -7217,6 +7325,9 @@ class GetEndpointsEndpointCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -7227,22 +7338,47 @@ class GetEndpointsEndpointCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
-        """
-        The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
-        """
         return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
 class GetEndpointsEndpointCollectionItemContentModerationConfigResult(dict):
     def __init__(__self__, *,
-                 is_enabled: _builtins.bool):
+                 is_enabled: _builtins.bool,
+                 mode: _builtins.str,
+                 model_id: _builtins.str):
+        """
+        :param _builtins.bool is_enabled: Whether to enable the content moderation feature.
+        :param _builtins.str mode: Enum for the modes of operation for inference protection.
+        :param _builtins.str model_id: The OCID of the model used for the feature.
+        """
         pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "mode", mode)
+        pulumi.set(__self__, "model_id", model_id)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> _builtins.bool:
+        """
+        Whether to enable the content moderation feature.
+        """
         return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def mode(self) -> _builtins.str:
+        """
+        Enum for the modes of operation for inference protection.
+        """
+        return pulumi.get(self, "mode")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        The OCID of the model used for the feature.
+        """
+        return pulumi.get(self, "model_id")
 
 
 @pulumi.output_type
@@ -7270,6 +7406,207 @@ class GetEndpointsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetGenerativeAiPrivateEndpointsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 dns_prefix: _builtins.str,
+                 fqdn: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 nsg_ids: Sequence[_builtins.str],
+                 previous_state: _builtins.str,
+                 private_endpoint_ip: _builtins.str,
+                 state: _builtins.str,
+                 subnet_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str description: A description of this private endpoint.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param _builtins.str fqdn: Fully qualified domain name the customer will use for access (for eg: xyz.oraclecloud.com)
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+        :param _builtins.str private_endpoint_ip: The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
+        :param _builtins.str state: The lifecycle state of Generative AI private endpoints.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "dns_prefix", dns_prefix)
+        pulumi.set(__self__, "fqdn", fqdn)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "previous_state", previous_state)
+        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A description of this private endpoint.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dnsPrefix")
+    def dns_prefix(self) -> _builtins.str:
+        return pulumi.get(self, "dns_prefix")
+
+    @_builtins.property
+    @pulumi.getter
+    def fqdn(self) -> _builtins.str:
+        """
+        Fully qualified domain name the customer will use for access (for eg: xyz.oraclecloud.com)
+        """
+        return pulumi.get(self, "fqdn")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="previousState")
+    def previous_state(self) -> _builtins.str:
+        return pulumi.get(self, "previous_state")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointIp")
+    def private_endpoint_ip(self) -> _builtins.str:
+        """
+        The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
+        """
+        return pulumi.get(self, "private_endpoint_ip")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of Generative AI private endpoints.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
@@ -7594,9 +7931,8 @@ class GetModelsModelCollectionItemResult(dict):
                  vendor: _builtins.str,
                  version: _builtins.str):
         """
-        :param _builtins.str base_model_id: The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
-        :param Sequence[_builtins.str] capabilities: Describes what this model can be used for.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: An optional description of the model.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Sequence['GetModelsModelCollectionItemFineTuneDetailArgs'] fine_tune_details: Details about fine-tuning a custom model.
@@ -7638,17 +7974,11 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="baseModelId")
     def base_model_id(self) -> _builtins.str:
-        """
-        The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
-        """
         return pulumi.get(self, "base_model_id")
 
     @_builtins.property
     @pulumi.getter
     def capabilities(self) -> Sequence[_builtins.str]:
-        """
-        Describes what this model can be used for.
-        """
         return pulumi.get(self, "capabilities")
 
     @_builtins.property
@@ -7662,6 +7992,9 @@ class GetModelsModelCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property

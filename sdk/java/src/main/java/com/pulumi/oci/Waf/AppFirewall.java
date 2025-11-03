@@ -15,10 +15,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
- * 
- * Creates a new WebAppFirewall.
- * 
  * ## Example Usage
  * 
  * <pre>

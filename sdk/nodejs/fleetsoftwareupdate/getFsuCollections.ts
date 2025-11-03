@@ -64,11 +64,11 @@ export interface GetFsuCollectionsArgs {
  */
 export interface GetFsuCollectionsResult {
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      */
     readonly compartmentId: string;
     /**
-     * Exadata Fleet Update Collection resource display name.
+     * The user-friendly name for the Exadata Fleet Update Collection.
      */
     readonly displayName?: string;
     readonly filters?: outputs.FleetSoftwareUpdate.GetFsuCollectionsFilter[];

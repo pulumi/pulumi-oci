@@ -460,9 +460,7 @@ class ManagedDatabase(pulumi.CustomResource):
                  managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Database resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the Managed Database specified by managedDatabaseId.
+        ## Example Usage
 
         ## Import
 
@@ -489,9 +487,7 @@ class ManagedDatabase(pulumi.CustomResource):
                  args: ManagedDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Database resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the Managed Database specified by managedDatabaseId.
+        ## Example Usage
 
         ## Import
 

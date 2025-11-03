@@ -381,10 +381,6 @@ class TaskRecord(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a new task record.
-
         ## Example Usage
 
         ```python
@@ -474,10 +470,6 @@ class TaskRecord(pulumi.CustomResource):
                  args: TaskRecordArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Task Record resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Creates a new task record.
-
         ## Example Usage
 
         ```python

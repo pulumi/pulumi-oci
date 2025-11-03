@@ -615,10 +615,6 @@ class DeploymentBackup(pulumi.CustomResource):
                  object: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new DeploymentBackup.
-
         ## Example Usage
 
         ```python
@@ -677,10 +673,6 @@ class DeploymentBackup(pulumi.CustomResource):
                  args: DeploymentBackupArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
-
-        Creates a new DeploymentBackup.
-
         ## Example Usage
 
         ```python

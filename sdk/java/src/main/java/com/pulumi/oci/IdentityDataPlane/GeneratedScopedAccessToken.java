@@ -14,10 +14,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Generate Scoped Access Token resource in Oracle Cloud Infrastructure Identity Data Plane service.
- * 
- * Based on the calling principal and the input payload, derive the claims and create a security token.
- * 
  * ## Example Usage
  * 
  * <pre>

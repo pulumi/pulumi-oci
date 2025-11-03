@@ -5,11 +5,18 @@ package com.pulumi.oci.FleetSoftwareUpdate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
+    /**
+     * @return Details of goal versions for components in an Exadata software stack.
+     * 
+     */
+    private List<GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent> components;
     /**
      * @return Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
      * 
@@ -21,7 +28,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
      */
     private String newHomePrefix;
     /**
-     * @return Target database software image OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
      * 
      */
     private String softwareImageId;
@@ -31,12 +38,19 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
      */
     private String type;
     /**
-     * @return Target DB or GI version string for the Exadata Fleet Update Cycle.
+     * @return Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
      * 
      */
     private String version;
 
     private GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail() {}
+    /**
+     * @return Details of goal versions for components in an Exadata software stack.
+     * 
+     */
+    public List<GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent> components() {
+        return this.components;
+    }
     /**
      * @return Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
      * 
@@ -52,7 +66,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
         return this.newHomePrefix;
     }
     /**
-     * @return Target database software image OCID.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
      * 
      */
     public String softwareImageId() {
@@ -66,7 +80,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
         return this.type;
     }
     /**
-     * @return Target DB or GI version string for the Exadata Fleet Update Cycle.
+     * @return Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
      * 
      */
     public String version() {
@@ -82,6 +96,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent> components;
         private String homePolicy;
         private String newHomePrefix;
         private String softwareImageId;
@@ -90,6 +105,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
         public Builder() {}
         public Builder(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.components = defaults.components;
     	      this.homePolicy = defaults.homePolicy;
     	      this.newHomePrefix = defaults.newHomePrefix;
     	      this.softwareImageId = defaults.softwareImageId;
@@ -97,6 +113,17 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
     	      this.version = defaults.version;
         }
 
+        @CustomType.Setter
+        public Builder components(List<GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent> components) {
+            if (components == null) {
+              throw new MissingRequiredPropertyException("GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail", "components");
+            }
+            this.components = components;
+            return this;
+        }
+        public Builder components(GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailComponent... components) {
+            return components(List.of(components));
+        }
         @CustomType.Setter
         public Builder homePolicy(String homePolicy) {
             if (homePolicy == null) {
@@ -139,6 +166,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail {
         }
         public GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail build() {
             final var _resultValue = new GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail();
+            _resultValue.components = components;
             _resultValue.homePolicy = homePolicy;
             _resultValue.newHomePrefix = newHomePrefix;
             _resultValue.softwareImageId = softwareImageId;

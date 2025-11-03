@@ -297,10 +297,6 @@ class AgentPlugin(pulumi.CustomResource):
                  plugin_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Updates the plugin.
-
         ## Example Usage
 
         ```python
@@ -338,10 +334,6 @@ class AgentPlugin(pulumi.CustomResource):
                  args: AgentPluginArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Updates the plugin.
-
         ## Example Usage
 
         ```python

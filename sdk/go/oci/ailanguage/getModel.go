@@ -66,7 +66,7 @@ type LookupModelResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Possible data set type
 	TrainingDatasets []GetModelTrainingDataset `pulumi:"trainingDatasets"`
-	// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+	// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 	Version string `pulumi:"version"`
 }
 
@@ -184,7 +184,7 @@ func (o LookupModelResultOutput) TrainingDatasets() GetModelTrainingDatasetArray
 	return o.ApplyT(func(v LookupModelResult) []GetModelTrainingDataset { return v.TrainingDatasets }).(GetModelTrainingDatasetArrayOutput)
 }
 
-// For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
+// For pre trained models this will identify model type version used for model creation For custom this will identify model type version used for model creation and custom model on which training has to be done <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
 func (o LookupModelResultOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Version }).(pulumi.StringOutput)
 }

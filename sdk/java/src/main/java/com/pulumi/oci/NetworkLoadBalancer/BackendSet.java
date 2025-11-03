@@ -18,10 +18,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
- * 
- * Adds a backend set to a network load balancer.
- * 
  * ## Example Usage
  * 
  * <pre>

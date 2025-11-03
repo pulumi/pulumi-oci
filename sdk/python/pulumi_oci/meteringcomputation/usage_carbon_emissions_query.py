@@ -106,10 +106,6 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                  query_definition: Optional[pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
-
-        Returns the created carbon emissions usage query.
-
         ## Example Usage
 
         ```python
@@ -166,10 +162,6 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                  args: UsageCarbonEmissionsQueryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
-
-        Returns the created carbon emissions usage query.
-
         ## Example Usage
 
         ```python

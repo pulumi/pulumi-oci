@@ -133,6 +133,11 @@ public final class GetInstanceResult {
      */
     private String ipxeScript;
     /**
+     * @return Whether AI enterprise is enabled on the instance.
+     * 
+     */
+    private Boolean isAiEnterpriseEnabled;
+    /**
      * @return Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
      * 
      */
@@ -408,6 +413,13 @@ public final class GetInstanceResult {
         return this.ipxeScript;
     }
     /**
+     * @return Whether AI enterprise is enabled on the instance.
+     * 
+     */
+    public Boolean isAiEnterpriseEnabled() {
+        return this.isAiEnterpriseEnabled;
+    }
+    /**
      * @return Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
      * 
      */
@@ -612,6 +624,7 @@ public final class GetInstanceResult {
         private String instanceId;
         private List<GetInstanceInstanceOption> instanceOptions;
         private String ipxeScript;
+        private Boolean isAiEnterpriseEnabled;
         private Boolean isCrossNumaNode;
         private Boolean isPvEncryptionInTransitEnabled;
         private String launchMode;
@@ -664,6 +677,7 @@ public final class GetInstanceResult {
     	      this.instanceId = defaults.instanceId;
     	      this.instanceOptions = defaults.instanceOptions;
     	      this.ipxeScript = defaults.ipxeScript;
+    	      this.isAiEnterpriseEnabled = defaults.isAiEnterpriseEnabled;
     	      this.isCrossNumaNode = defaults.isCrossNumaNode;
     	      this.isPvEncryptionInTransitEnabled = defaults.isPvEncryptionInTransitEnabled;
     	      this.launchMode = defaults.launchMode;
@@ -886,6 +900,14 @@ public final class GetInstanceResult {
               throw new MissingRequiredPropertyException("GetInstanceResult", "ipxeScript");
             }
             this.ipxeScript = ipxeScript;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isAiEnterpriseEnabled(Boolean isAiEnterpriseEnabled) {
+            if (isAiEnterpriseEnabled == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "isAiEnterpriseEnabled");
+            }
+            this.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
             return this;
         }
         @CustomType.Setter
@@ -1145,6 +1167,7 @@ public final class GetInstanceResult {
             _resultValue.instanceId = instanceId;
             _resultValue.instanceOptions = instanceOptions;
             _resultValue.ipxeScript = ipxeScript;
+            _resultValue.isAiEnterpriseEnabled = isAiEnterpriseEnabled;
             _resultValue.isCrossNumaNode = isCrossNumaNode;
             _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             _resultValue.launchMode = launchMode;

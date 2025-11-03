@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.OsManagementHub
 {
     /// <summary>
-    /// This resource provides the Event resource in Oracle Cloud Infrastructure Os Management Hub service.
-    /// 
-    /// Updates the tags for an event.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

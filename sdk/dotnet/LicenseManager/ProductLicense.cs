@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.LicenseManager
 {
     /// <summary>
-    /// This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
-    /// 
-    /// Creates a new product license.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

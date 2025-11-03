@@ -33,7 +33,6 @@ public final class ScheduleResourceParameterArgs extends com.pulumi.resources.Re
 
     /**
      * (Updatable) This is the HTTP request header value.
-     * ===
      * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
      * 
      */
@@ -42,7 +41,6 @@ public final class ScheduleResourceParameterArgs extends com.pulumi.resources.Re
 
     /**
      * @return (Updatable) This is the HTTP request header value.
-     * ===
      * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
      * 
      */
@@ -98,7 +96,6 @@ public final class ScheduleResourceParameterArgs extends com.pulumi.resources.Re
 
         /**
          * @param value (Updatable) This is the HTTP request header value.
-         * ===
          * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
          * 
          * @return builder
@@ -111,7 +108,6 @@ public final class ScheduleResourceParameterArgs extends com.pulumi.resources.Re
 
         /**
          * @param value (Updatable) This is the HTTP request header value.
-         * ===
          * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
          * 
          * @return builder

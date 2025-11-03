@@ -14,7 +14,7 @@ import java.util.Objects;
 public final class GetAutonomousDatabaseSoftwareImageResult {
     private String autonomousDatabaseSoftwareImageId;
     /**
-     * @return One-off patches included in the Autonomous Database Software Image
+     * @return One-off patches included in the Autonomous AI Database Software Image
      * 
      */
     private List<String> autonomousDsiOneOffPatches;
@@ -24,7 +24,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
      */
     private String compartmentId;
     /**
-     * @return The database version with which the Autonomous Database Software Image is to be built.
+     * @return The database version with which the Autonomous AI Database Software Image is to be built.
      * 
      */
     private String databaseVersion;
@@ -34,7 +34,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
      */
     private Map<String,String> definedTags;
     /**
-     * @return The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * 
      */
     private String displayName;
@@ -44,7 +44,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
      * 
      */
     private String id;
@@ -65,7 +65,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
     private String releaseUpdate;
     private String sourceCdbId;
     /**
-     * @return The current state of the Autonomous Database Software Image.
+     * @return The current state of the Autonomous AI Database Software Image.
      * 
      */
     private String state;
@@ -75,7 +75,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the Autonomous Database Software Image was created.
+     * @return The date and time the Autonomous AI Database Software Image was created.
      * 
      */
     private String timeCreated;
@@ -85,7 +85,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
         return this.autonomousDatabaseSoftwareImageId;
     }
     /**
-     * @return One-off patches included in the Autonomous Database Software Image
+     * @return One-off patches included in the Autonomous AI Database Software Image
      * 
      */
     public List<String> autonomousDsiOneOffPatches() {
@@ -99,7 +99,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
         return this.compartmentId;
     }
     /**
-     * @return The database version with which the Autonomous Database Software Image is to be built.
+     * @return The database version with which the Autonomous AI Database Software Image is to be built.
      * 
      */
     public String databaseVersion() {
@@ -113,7 +113,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
         return this.definedTags;
     }
     /**
-     * @return The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * 
      */
     public String displayName() {
@@ -127,7 +127,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
      * 
      */
     public String id() {
@@ -158,7 +158,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
         return this.sourceCdbId;
     }
     /**
-     * @return The current state of the Autonomous Database Software Image.
+     * @return The current state of the Autonomous AI Database Software Image.
      * 
      */
     public String state() {
@@ -172,7 +172,7 @@ public final class GetAutonomousDatabaseSoftwareImageResult {
         return this.systemTags;
     }
     /**
-     * @return The date and time the Autonomous Database Software Image was created.
+     * @return The date and time the Autonomous AI Database Software Image was created.
      * 
      */
     public String timeCreated() {

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Task Schedule resource in Oracle Cloud Infrastructure Jms service.
-//
-// Create a task schedule using the information provided.
-//
 // ## Example Usage
 //
 // ```go
@@ -31,105 +27,105 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := jms.NewTaskSchedule(ctx, "test_task_schedule", &jms.TaskScheduleArgs{
-//				ExecutionRecurrences: pulumi.Any(taskScheduleExecutionRecurrences),
-//				FleetId:              pulumi.Any(testFleet.Id),
+//				FleetId:              pulumi.Any(fleetOcid),
+//				ExecutionRecurrences: pulumi.String("DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z"),
 //				TaskDetails: &jms.TaskScheduleTaskDetailsArgs{
-//					TaskType: pulumi.Any(taskScheduleTaskDetailsTaskType),
+//					TaskType: pulumi.String("ADD_INSTALLATION_SITE"),
 //					AddInstallationSiteTaskRequest: &jms.TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs{
 //						InstallationSites: jms.TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArray{
 //							&jms.TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs{
-//								ArtifactContentType: pulumi.Any(taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesArtifactContentType),
-//								ForceInstall:        pulumi.Any(taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesForceInstall),
-//								HeadlessMode:        pulumi.Any(taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesHeadlessMode),
-//								InstallationPath:    pulumi.Any(taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesInstallationPath),
-//								ManagedInstanceId:   pulumi.Any(testManagedInstance.Id),
-//								ReleaseVersion:      pulumi.Any(taskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSitesReleaseVersion),
+//								ArtifactContentType: pulumi.String("JDK"),
+//								ForceInstall:        pulumi.Bool(false),
+//								HeadlessMode:        pulumi.Bool(false),
+//								InstallationPath:    pulumi.String("/example/install/path"),
+//								ManagedInstanceId:   pulumi.String("example-managed-instance-ocid"),
+//								ReleaseVersion:      pulumi.String("17.0.0"),
 //							},
 //						},
-//						PostInstallationActions: pulumi.Any(taskScheduleTaskDetailsAddInstallationSiteTaskRequestPostInstallationActions),
+//						PostInstallationActions: pulumi.StringArray{},
 //					},
 //					CryptoTaskRequest: &jms.TaskScheduleTaskDetailsCryptoTaskRequestArgs{
-//						RecordingDurationInMinutes: pulumi.Any(taskScheduleTaskDetailsCryptoTaskRequestRecordingDurationInMinutes),
+//						RecordingDurationInMinutes: pulumi.Int(10),
 //						Targets: jms.TaskScheduleTaskDetailsCryptoTaskRequestTargetArray{
 //							&jms.TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs{
-//								ApplicationInstallationKey: pulumi.Any(taskScheduleTaskDetailsCryptoTaskRequestTargetsApplicationInstallationKey),
-//								ApplicationKey:             pulumi.Any(taskScheduleTaskDetailsCryptoTaskRequestTargetsApplicationKey),
-//								ContainerKey:               pulumi.Any(taskScheduleTaskDetailsCryptoTaskRequestTargetsContainerKey),
-//								JreKey:                     pulumi.Any(taskScheduleTaskDetailsCryptoTaskRequestTargetsJreKey),
-//								ManagedInstanceId:          pulumi.Any(testManagedInstance.Id),
+//								ApplicationInstallationKey: pulumi.String("example-application-installation-key"),
+//								ApplicationKey:             pulumi.String("example-application-key"),
+//								ContainerKey:               pulumi.String("example-container-key"),
+//								JreKey:                     pulumi.String("example-jre-key"),
+//								ManagedInstanceId:          pulumi.String("example-managed-instance-ocid"),
 //							},
 //						},
-//						WaitingPeriodInMinutes: pulumi.Any(taskScheduleTaskDetailsCryptoTaskRequestWaitingPeriodInMinutes),
+//						WaitingPeriodInMinutes: pulumi.Int(10),
 //					},
 //					DeployedApplicationMigrationTaskRequest: &jms.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs{
 //						Targets: jms.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArray{
 //							&jms.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs{
-//								DeployedApplicationInstallationKey: pulumi.Any(taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsDeployedApplicationInstallationKey),
-//								ExcludePackagePrefixes:             pulumi.Any(taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsExcludePackagePrefixes),
-//								IncludePackagePrefixes:             pulumi.Any(taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsIncludePackagePrefixes),
-//								ManagedInstanceId:                  pulumi.Any(testManagedInstance.Id),
-//								SourceJdkVersion:                   pulumi.Any(taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsSourceJdkVersion),
-//								TargetJdkVersion:                   pulumi.Any(taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetsTargetJdkVersion),
+//								DeployedApplicationInstallationKey: pulumi.String("example-application-installation-key"),
+//								ExcludePackagePrefixes:             pulumi.StringArray{},
+//								IncludePackagePrefixes:             pulumi.StringArray{},
+//								ManagedInstanceId:                  pulumi.String("example-managed-instance-ocid"),
+//								SourceJdkVersion:                   pulumi.String("11"),
+//								TargetJdkVersion:                   pulumi.String("21"),
 //							},
 //						},
 //					},
 //					JavaMigrationTaskRequest: &jms.TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs{
 //						Targets: jms.TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArray{
 //							&jms.TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs{
-//								ApplicationInstallationKey: pulumi.Any(taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsApplicationInstallationKey),
-//								ExcludePackagePrefixes:     pulumi.Any(taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsExcludePackagePrefixes),
-//								IncludePackagePrefixes:     pulumi.Any(taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsIncludePackagePrefixes),
-//								ManagedInstanceId:          pulumi.Any(testManagedInstance.Id),
-//								SourceJdkVersion:           pulumi.Any(taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsSourceJdkVersion),
-//								TargetJdkVersion:           pulumi.Any(taskScheduleTaskDetailsJavaMigrationTaskRequestTargetsTargetJdkVersion),
+//								ApplicationInstallationKey: pulumi.String("example-application-installation-key"),
+//								ExcludePackagePrefixes:     pulumi.StringArray{},
+//								IncludePackagePrefixes:     pulumi.StringArray{},
+//								ManagedInstanceId:          pulumi.String("example-managed-instance-ocid"),
+//								SourceJdkVersion:           pulumi.String("11"),
+//								TargetJdkVersion:           pulumi.String("21"),
 //							},
 //						},
 //					},
 //					JfrTaskRequest: &jms.TaskScheduleTaskDetailsJfrTaskRequestArgs{
-//						JfcProfileName:             pulumi.Any(testProfile.Name),
-//						JfcV1:                      pulumi.Any(taskScheduleTaskDetailsJfrTaskRequestJfcV1),
-//						JfcV2:                      pulumi.Any(taskScheduleTaskDetailsJfrTaskRequestJfcV2),
-//						RecordingDurationInMinutes: pulumi.Any(taskScheduleTaskDetailsJfrTaskRequestRecordingDurationInMinutes),
-//						RecordingSizeInMb:          pulumi.Any(taskScheduleTaskDetailsJfrTaskRequestRecordingSizeInMb),
+//						JfcProfileName:             pulumi.String("jfcV1"),
+//						JfcV1:                      pulumi.String("jfcV1"),
+//						JfcV2:                      pulumi.String("jfvV2"),
+//						RecordingDurationInMinutes: pulumi.Int(10),
+//						RecordingSizeInMb:          pulumi.Int(10),
 //						Targets: jms.TaskScheduleTaskDetailsJfrTaskRequestTargetArray{
 //							&jms.TaskScheduleTaskDetailsJfrTaskRequestTargetArgs{
-//								ApplicationInstallationKey: pulumi.Any(taskScheduleTaskDetailsJfrTaskRequestTargetsApplicationInstallationKey),
-//								ApplicationKey:             pulumi.Any(taskScheduleTaskDetailsJfrTaskRequestTargetsApplicationKey),
-//								ContainerKey:               pulumi.Any(taskScheduleTaskDetailsJfrTaskRequestTargetsContainerKey),
-//								JreKey:                     pulumi.Any(taskScheduleTaskDetailsJfrTaskRequestTargetsJreKey),
-//								ManagedInstanceId:          pulumi.Any(testManagedInstance.Id),
+//								ApplicationInstallationKey: pulumi.String("example-application-installation-key"),
+//								ApplicationKey:             pulumi.String("example-application-key"),
+//								ContainerKey:               pulumi.String("example-container-key"),
+//								JreKey:                     pulumi.String("example-jre-key"),
+//								ManagedInstanceId:          pulumi.String("example-managed-instance-ocid"),
 //							},
 //						},
-//						WaitingPeriodInMinutes: pulumi.Any(taskScheduleTaskDetailsJfrTaskRequestWaitingPeriodInMinutes),
+//						WaitingPeriodInMinutes: pulumi.Int(10),
 //					},
 //					PerformanceTuningTaskRequest: &jms.TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs{
-//						RecordingDurationInMinutes: pulumi.Any(taskScheduleTaskDetailsPerformanceTuningTaskRequestRecordingDurationInMinutes),
+//						RecordingDurationInMinutes: pulumi.Int(10),
 //						Targets: jms.TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArray{
 //							&jms.TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs{
-//								ApplicationInstallationKey: pulumi.Any(taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsApplicationInstallationKey),
-//								ApplicationKey:             pulumi.Any(taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsApplicationKey),
-//								ContainerKey:               pulumi.Any(taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsContainerKey),
-//								JreKey:                     pulumi.Any(taskScheduleTaskDetailsPerformanceTuningTaskRequestTargetsJreKey),
-//								ManagedInstanceId:          pulumi.Any(testManagedInstance.Id),
+//								ApplicationInstallationKey: pulumi.String("example-application-installation-key"),
+//								ApplicationKey:             pulumi.String("example-application-key"),
+//								ContainerKey:               pulumi.String("example-container-key"),
+//								JreKey:                     pulumi.String("example-jre-key"),
+//								ManagedInstanceId:          pulumi.String("example-managed-instance-ocid"),
 //							},
 //						},
-//						WaitingPeriodInMinutes: pulumi.Any(taskScheduleTaskDetailsPerformanceTuningTaskRequestWaitingPeriodInMinutes),
+//						WaitingPeriodInMinutes: pulumi.Int(10),
 //					},
 //					RemoveInstallationSiteTaskRequest: &jms.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs{
 //						InstallationSites: jms.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArray{
 //							&jms.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs{
-//								InstallationKey:   pulumi.Any(taskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSitesInstallationKey),
-//								ManagedInstanceId: pulumi.Any(testManagedInstance.Id),
+//								InstallationKey:   pulumi.String("example-jvm-installation-key"),
+//								ManagedInstanceId: pulumi.String("example-managed-instance-ocid"),
 //							},
 //						},
 //					},
 //					ScanJavaServerTaskRequest: &jms.TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs{
-//						ManagedInstanceIds: pulumi.Any(taskScheduleTaskDetailsScanJavaServerTaskRequestManagedInstanceIds),
+//						ManagedInstanceIds: pulumi.StringArray{},
 //					},
 //					ScanLibraryTaskRequest: &jms.TaskScheduleTaskDetailsScanLibraryTaskRequestArgs{
-//						DynamicScanDurationInMinutes: pulumi.Any(taskScheduleTaskDetailsScanLibraryTaskRequestDynamicScanDurationInMinutes),
-//						IsDynamicScan:                pulumi.Any(taskScheduleTaskDetailsScanLibraryTaskRequestIsDynamicScan),
-//						ManagedInstanceIds:           pulumi.Any(taskScheduleTaskDetailsScanLibraryTaskRequestManagedInstanceIds),
+//						DynamicScanDurationInMinutes: pulumi.Int(10),
+//						IsDynamicScan:                pulumi.Bool(false),
+//						ManagedInstanceIds:           pulumi.StringArray{},
 //					},
 //				},
 //			})

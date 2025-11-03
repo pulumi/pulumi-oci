@@ -29,6 +29,9 @@ __all__ = [
     'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl',
     'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies',
     'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis',
+    'FleetAgentConfigurationLinuxConfiguration',
+    'FleetAgentConfigurationMacOsConfiguration',
+    'FleetAgentConfigurationWindowsConfiguration',
     'FleetInventoryLog',
     'FleetOperationLog',
     'JavaDownloadsJavaDownloadReportCreatedBy',
@@ -72,6 +75,9 @@ __all__ = [
     'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult',
     'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult',
     'GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult',
+    'GetFleetAgentConfigurationLinuxConfigurationResult',
+    'GetFleetAgentConfigurationMacOsConfigurationResult',
+    'GetFleetAgentConfigurationWindowsConfigurationResult',
     'GetFleetBlocklistsFilterResult',
     'GetFleetBlocklistsItemResult',
     'GetFleetBlocklistsItemTargetResult',
@@ -994,6 +1000,150 @@ class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
+
+
+@pulumi.output_type
+class FleetAgentConfigurationLinuxConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "excludePaths":
+            suggest = "exclude_paths"
+        elif key == "includePaths":
+            suggest = "include_paths"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FleetAgentConfigurationLinuxConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FleetAgentConfigurationLinuxConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FleetAgentConfigurationLinuxConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 exclude_paths: Sequence[_builtins.str],
+                 include_paths: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] exclude_paths: (Updatable) An array of file system paths (environment variables supported).
+        :param Sequence[_builtins.str] include_paths: (Updatable) An array of file system paths (environment variables supported).
+        """
+        pulumi.set(__self__, "exclude_paths", exclude_paths)
+        pulumi.set(__self__, "include_paths", include_paths)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> Sequence[_builtins.str]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "exclude_paths")
+
+    @_builtins.property
+    @pulumi.getter(name="includePaths")
+    def include_paths(self) -> Sequence[_builtins.str]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "include_paths")
+
+
+@pulumi.output_type
+class FleetAgentConfigurationMacOsConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "excludePaths":
+            suggest = "exclude_paths"
+        elif key == "includePaths":
+            suggest = "include_paths"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FleetAgentConfigurationMacOsConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FleetAgentConfigurationMacOsConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FleetAgentConfigurationMacOsConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 exclude_paths: Sequence[_builtins.str],
+                 include_paths: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] exclude_paths: (Updatable) An array of file system paths (environment variables supported).
+        :param Sequence[_builtins.str] include_paths: (Updatable) An array of file system paths (environment variables supported).
+        """
+        pulumi.set(__self__, "exclude_paths", exclude_paths)
+        pulumi.set(__self__, "include_paths", include_paths)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> Sequence[_builtins.str]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "exclude_paths")
+
+    @_builtins.property
+    @pulumi.getter(name="includePaths")
+    def include_paths(self) -> Sequence[_builtins.str]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "include_paths")
+
+
+@pulumi.output_type
+class FleetAgentConfigurationWindowsConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "excludePaths":
+            suggest = "exclude_paths"
+        elif key == "includePaths":
+            suggest = "include_paths"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in FleetAgentConfigurationWindowsConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        FleetAgentConfigurationWindowsConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        FleetAgentConfigurationWindowsConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 exclude_paths: Sequence[_builtins.str],
+                 include_paths: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] exclude_paths: (Updatable) An array of file system paths (environment variables supported).
+        :param Sequence[_builtins.str] include_paths: (Updatable) An array of file system paths (environment variables supported).
+        """
+        pulumi.set(__self__, "exclude_paths", exclude_paths)
+        pulumi.set(__self__, "include_paths", include_paths)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> Sequence[_builtins.str]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "exclude_paths")
+
+    @_builtins.property
+    @pulumi.getter(name="includePaths")
+    def include_paths(self) -> Sequence[_builtins.str]:
+        """
+        (Updatable) An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "include_paths")
 
 
 @pulumi.output_type
@@ -3418,6 +3568,93 @@ class GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult(dict):
         PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         return pulumi.get(self, "is_enabled")
+
+
+@pulumi.output_type
+class GetFleetAgentConfigurationLinuxConfigurationResult(dict):
+    def __init__(__self__, *,
+                 exclude_paths: Sequence[_builtins.str],
+                 include_paths: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] exclude_paths: An array of file system paths (environment variables supported).
+        :param Sequence[_builtins.str] include_paths: An array of file system paths (environment variables supported).
+        """
+        pulumi.set(__self__, "exclude_paths", exclude_paths)
+        pulumi.set(__self__, "include_paths", include_paths)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> Sequence[_builtins.str]:
+        """
+        An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "exclude_paths")
+
+    @_builtins.property
+    @pulumi.getter(name="includePaths")
+    def include_paths(self) -> Sequence[_builtins.str]:
+        """
+        An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "include_paths")
+
+
+@pulumi.output_type
+class GetFleetAgentConfigurationMacOsConfigurationResult(dict):
+    def __init__(__self__, *,
+                 exclude_paths: Sequence[_builtins.str],
+                 include_paths: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] exclude_paths: An array of file system paths (environment variables supported).
+        :param Sequence[_builtins.str] include_paths: An array of file system paths (environment variables supported).
+        """
+        pulumi.set(__self__, "exclude_paths", exclude_paths)
+        pulumi.set(__self__, "include_paths", include_paths)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> Sequence[_builtins.str]:
+        """
+        An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "exclude_paths")
+
+    @_builtins.property
+    @pulumi.getter(name="includePaths")
+    def include_paths(self) -> Sequence[_builtins.str]:
+        """
+        An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "include_paths")
+
+
+@pulumi.output_type
+class GetFleetAgentConfigurationWindowsConfigurationResult(dict):
+    def __init__(__self__, *,
+                 exclude_paths: Sequence[_builtins.str],
+                 include_paths: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] exclude_paths: An array of file system paths (environment variables supported).
+        :param Sequence[_builtins.str] include_paths: An array of file system paths (environment variables supported).
+        """
+        pulumi.set(__self__, "exclude_paths", exclude_paths)
+        pulumi.set(__self__, "include_paths", include_paths)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePaths")
+    def exclude_paths(self) -> Sequence[_builtins.str]:
+        """
+        An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "exclude_paths")
+
+    @_builtins.property
+    @pulumi.getter(name="includePaths")
+    def include_paths(self) -> Sequence[_builtins.str]:
+        """
+        An array of file system paths (environment variables supported).
+        """
+        return pulumi.get(self, "include_paths")
 
 
 @pulumi.output_type

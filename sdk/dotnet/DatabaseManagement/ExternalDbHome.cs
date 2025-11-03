@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseManagement
 {
     /// <summary>
-    /// This resource provides the External Db Home resource in Oracle Cloud Infrastructure Database Management service.
-    /// 
-    /// Updates the external DB home specified by `externalDbHomeId`.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

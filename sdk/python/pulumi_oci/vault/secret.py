@@ -708,9 +708,7 @@ class Secret(pulumi.CustomResource):
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
-
-        Creates a new secret according to the details of the request.
+        ## Example Usage
 
         ## Import
 
@@ -748,9 +746,7 @@ class Secret(pulumi.CustomResource):
                  args: SecretArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Secret resource in Oracle Cloud Infrastructure Vault service.
-
-        Creates a new secret according to the details of the request.
+        ## Example Usage
 
         ## Import
 

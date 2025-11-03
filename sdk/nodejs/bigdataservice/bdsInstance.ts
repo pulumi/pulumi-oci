@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
- *
- * Creates a new BDS instance.
- *
  * ## Example Usage
  *
  * ## Import

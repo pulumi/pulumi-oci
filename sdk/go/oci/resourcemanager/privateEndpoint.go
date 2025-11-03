@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Resource Manager service.
-//
-// Creates a a private endpoint in the specified compartment.
-//
 // ## Example Usage
 //
 // ```go
@@ -45,6 +41,7 @@ import (
 //				},
 //				IsUsedWithConfigurationSourceProvider: pulumi.Any(privateEndpointIsUsedWithConfigurationSourceProvider),
 //				NsgIdLists:                            pulumi.Any(privateEndpointNsgIdList),
+//				SecurityAttributes:                    pulumi.Any(privateEndpointSecurityAttributes),
 //			})
 //			if err != nil {
 //				return err
@@ -65,13 +62,13 @@ import (
 type PrivateEndpoint struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the private endpoint. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) The private endpoint display name. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
 	DnsZones pulumi.StringArrayOutput `pulumi:"dnsZones"`
@@ -79,14 +76,18 @@ type PrivateEndpoint struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
 	IsUsedWithConfigurationSourceProvider pulumi.BoolOutput `pulumi:"isUsedWithConfigurationSourceProvider"`
-	// (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+	// (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 	NsgIdLists pulumi.StringArrayOutput `pulumi:"nsgIdLists"`
-	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
+	// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 	SourceIps pulumi.StringArrayOutput `pulumi:"sourceIps"`
 	// The current lifecycle state of the private endpoint.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
@@ -138,13 +139,13 @@ func GetPrivateEndpoint(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PrivateEndpoint resources.
 type privateEndpointState struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the private endpoint. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) The private endpoint display name. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
 	DnsZones []string `pulumi:"dnsZones"`
@@ -152,14 +153,18 @@ type privateEndpointState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
 	IsUsedWithConfigurationSourceProvider *bool `pulumi:"isUsedWithConfigurationSourceProvider"`
-	// (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+	// (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 	NsgIdLists []string `pulumi:"nsgIdLists"`
-	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 	SourceIps []string `pulumi:"sourceIps"`
 	// The current lifecycle state of the private endpoint.
 	State *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 	SubnetId *string `pulumi:"subnetId"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
@@ -170,13 +175,13 @@ type privateEndpointState struct {
 }
 
 type PrivateEndpointState struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the private endpoint. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) The private endpoint display name. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
 	DnsZones pulumi.StringArrayInput
@@ -184,14 +189,18 @@ type PrivateEndpointState struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
 	IsUsedWithConfigurationSourceProvider pulumi.BoolPtrInput
-	// (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+	// (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 	NsgIdLists pulumi.StringArrayInput
-	// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
+	// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 	SourceIps pulumi.StringArrayInput
 	// The current lifecycle state of the private endpoint.
 	State pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 	SubnetId pulumi.StringPtrInput
+	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.StringMapInput
 	// The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
@@ -206,13 +215,13 @@ func (PrivateEndpointState) ElementType() reflect.Type {
 }
 
 type privateEndpointArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the private endpoint. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) The private endpoint display name. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
 	DnsZones []string `pulumi:"dnsZones"`
@@ -220,8 +229,10 @@ type privateEndpointArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
 	IsUsedWithConfigurationSourceProvider *bool `pulumi:"isUsedWithConfigurationSourceProvider"`
-	// (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+	// (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 	NsgIdLists []string `pulumi:"nsgIdLists"`
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 	SubnetId string `pulumi:"subnetId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
@@ -233,13 +244,13 @@ type privateEndpointArgs struct {
 
 // The set of arguments for constructing a PrivateEndpoint resource.
 type PrivateEndpointArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the private endpoint. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) The private endpoint display name. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
 	DnsZones pulumi.StringArrayInput
@@ -247,8 +258,10 @@ type PrivateEndpointArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
 	IsUsedWithConfigurationSourceProvider pulumi.BoolPtrInput
-	// (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+	// (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 	NsgIdLists pulumi.StringArrayInput
+	// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 	SubnetId pulumi.StringInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN for the private endpoint.
@@ -345,7 +358,7 @@ func (o PrivateEndpointOutput) ToPrivateEndpointOutputWithContext(ctx context.Co
 	return o
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint details.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this private endpoint.
 func (o PrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -360,7 +373,7 @@ func (o PrivateEndpointOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) The private endpoint display name. Avoid entering confidential information.
+// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o PrivateEndpointOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -380,12 +393,17 @@ func (o PrivateEndpointOutput) IsUsedWithConfigurationSourceProvider() pulumi.Bo
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.BoolOutput { return v.IsUsedWithConfigurationSourceProvider }).(pulumi.BoolOutput)
 }
 
-// (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
+// (Updatable) The [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups (NSGs)](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) for the private endpoint. Order does not matter.
 func (o PrivateEndpointOutput) NsgIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringArrayOutput { return v.NsgIdLists }).(pulumi.StringArrayOutput)
 }
 
-// The source IPs which resource manager service will use to connect to customer's network. Automatically assigned by Resource Manager Service.
+// (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o PrivateEndpointOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// The source IP addresses that Resource Manager uses to connect to your network. Automatically assigned by Resource Manager.
 func (o PrivateEndpointOutput) SourceIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringArrayOutput { return v.SourceIps }).(pulumi.StringArrayOutput)
 }
@@ -398,6 +416,11 @@ func (o PrivateEndpointOutput) State() pulumi.StringOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet within the VCN for the private endpoint.
 func (o PrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o PrivateEndpointOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`

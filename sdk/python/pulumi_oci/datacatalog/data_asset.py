@@ -370,10 +370,6 @@ class DataAsset(pulumi.CustomResource):
                  type_key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Create a new data asset.
-
         ## Example Usage
 
         ```python
@@ -414,10 +410,6 @@ class DataAsset(pulumi.CustomResource):
                  args: DataAssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
-
-        Create a new data asset.
-
         ## Example Usage
 
         ```python

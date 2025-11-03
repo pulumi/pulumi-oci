@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Work Request Rerun Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-//
-// Reruns a failed work for the specified work request [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Rerunning restarts the work on failed targets.
-//
 // ## Example Usage
 //
 // ```go

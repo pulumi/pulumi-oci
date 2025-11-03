@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
- *
- * Creates a new Dataset.
- *
  * ## Example Usage
  *
  * ```typescript

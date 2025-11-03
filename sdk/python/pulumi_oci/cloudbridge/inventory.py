@@ -266,10 +266,6 @@ class Inventory(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an inventory.
-
         ## Example Usage
 
         ```python
@@ -313,10 +309,6 @@ class Inventory(pulumi.CustomResource):
                  args: InventoryArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
-
-        Creates an inventory.
-
         ## Example Usage
 
         ```python

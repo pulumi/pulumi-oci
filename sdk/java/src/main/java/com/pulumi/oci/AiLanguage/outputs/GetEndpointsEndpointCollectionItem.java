@@ -13,6 +13,11 @@ import java.util.Objects;
 @CustomType
 public final class GetEndpointsEndpointCollectionItem {
     /**
+     * @return Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     * 
+     */
+    private String alias;
+    /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
@@ -84,6 +89,13 @@ public final class GetEndpointsEndpointCollectionItem {
     private String timeUpdated;
 
     private GetEndpointsEndpointCollectionItem() {}
+    /**
+     * @return Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     * 
+     */
+    public String alias() {
+        return this.alias;
+    }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
@@ -192,6 +204,7 @@ public final class GetEndpointsEndpointCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String alias;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -209,6 +222,7 @@ public final class GetEndpointsEndpointCollectionItem {
         public Builder() {}
         public Builder(GetEndpointsEndpointCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alias = defaults.alias;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -225,6 +239,14 @@ public final class GetEndpointsEndpointCollectionItem {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder alias(String alias) {
+            if (alias == null) {
+              throw new MissingRequiredPropertyException("GetEndpointsEndpointCollectionItem", "alias");
+            }
+            this.alias = alias;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -339,6 +361,7 @@ public final class GetEndpointsEndpointCollectionItem {
         }
         public GetEndpointsEndpointCollectionItem build() {
             final var _resultValue = new GetEndpointsEndpointCollectionItem();
+            _resultValue.alias = alias;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;

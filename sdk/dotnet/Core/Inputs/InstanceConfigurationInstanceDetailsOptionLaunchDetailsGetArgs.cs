@@ -127,6 +127,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? IpxeScript { get; set; }
 
         /// <summary>
+        /// Whether to enable AI enterprise on the instance.
+        /// </summary>
+        [Input("isAiEnterpriseEnabled")]
+        public Input<bool>? IsAiEnterpriseEnabled { get; set; }
+
+        /// <summary>
         /// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]

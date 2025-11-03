@@ -23,10 +23,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Application resource in Oracle Cloud Infrastructure Data Flow service.
- * 
- * Creates an application.
- * 
  * ## Example Usage
  * 
  * <pre>

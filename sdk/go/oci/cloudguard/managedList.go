@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
-//
-// Creates a new ManagedList resource.
+// ## Example Usage
 //
 // ## Import
 //

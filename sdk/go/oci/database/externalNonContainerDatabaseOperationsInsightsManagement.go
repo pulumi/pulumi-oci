@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Non Container Database Operations Insights Management resource in Oracle Cloud Infrastructure Database service.
-//
-// Enable Operations Insights for the external non-container database.
-// When deleting this resource block , we call disable if it was in enabled state .
-//
 // ## Example Usage
 //
 // ```go

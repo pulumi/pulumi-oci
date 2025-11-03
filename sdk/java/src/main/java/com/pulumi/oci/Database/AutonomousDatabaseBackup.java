@@ -10,53 +10,17 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.AutonomousDatabaseBackupArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseBackupState;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseBackupBackupDestinationDetails;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseBackupSourceDatabaseDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Autonomous Database Backup resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
- * 
  * ## Example Usage
- * 
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Database.AutonomousDatabaseBackup;
- * import com.pulumi.oci.Database.AutonomousDatabaseBackupArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testAutonomousDatabaseBackup = new AutonomousDatabaseBackup("testAutonomousDatabaseBackup", AutonomousDatabaseBackupArgs.builder()
- *             .autonomousDatabaseId(testAutonomousDatabase.id())
- *             .displayName(autonomousDatabaseBackupDisplayName)
- *             .isLongTermBackup(autonomousDatabaseBackupIsLongTermBackup)
- *             .retentionPeriodInDays(autonomousDatabaseBackupRetentionPeriodInDays)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * 
  * ## Import
  * 
@@ -70,14 +34,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup")
 public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResource {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * 
      */
     @Export(name="autonomousDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousDatabaseId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
      * 
      */
     public Output<String> autonomousDatabaseId() {
@@ -126,14 +90,14 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
         return this.databaseSizeInTbs;
     }
     /**
-     * A valid Oracle Database version for Autonomous Database.
+     * A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
-     * @return A valid Oracle Database version for Autonomous Database.
+     * @return A valid Oracle AI Database version for Autonomous AI Database.
      * 
      */
     public Output<String> dbVersion() {
@@ -152,6 +116,20 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * The infrastructure type this resource belongs to.
+     * 
+     */
+    @Export(name="infrastructureType", refs={String.class}, tree="[0]")
+    private Output<String> infrastructureType;
+
+    /**
+     * @return The infrastructure type this resource belongs to.
+     * 
+     */
+    public Output<String> infrastructureType() {
+        return this.infrastructureType;
     }
     /**
      * Indicates whether the backup is user-initiated or automatic.
@@ -182,14 +160,14 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
         return this.isLongTermBackup;
     }
     /**
-     * Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      * 
      */
     @Export(name="isRestorable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRestorable;
 
     /**
-     * @return Indicates whether the backup can be used to restore the associated Autonomous Database.
+     * @return Indicates whether the backup can be used to restore the associated Autonomous AI Database.
      * 
      */
     public Output<Boolean> isRestorable() {
@@ -238,14 +216,14 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
         return this.kmsKeyId;
     }
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyVersionId;
 
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public Output<String> kmsKeyVersionId() {
@@ -264,6 +242,20 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Name of the region in which backup is taken in.
+     * 
+     */
+    @Export(name="region", refs={String.class}, tree="[0]")
+    private Output<String> region;
+
+    /**
+     * @return Name of the region in which backup is taken in.
+     * 
+     */
+    public Output<String> region() {
+        return this.region;
     }
     /**
      * (Updatable) Retention period, in days, for long-term backups
@@ -298,6 +290,20 @@ public class AutonomousDatabaseBackup extends com.pulumi.resources.CustomResourc
      */
     public Output<Double> sizeInTbs() {
         return this.sizeInTbs;
+    }
+    /**
+     * Source Autonomous Database details.
+     * 
+     */
+    @Export(name="sourceDatabaseDetails", refs={List.class,AutonomousDatabaseBackupSourceDatabaseDetail.class}, tree="[0,1]")
+    private Output<List<AutonomousDatabaseBackupSourceDatabaseDetail>> sourceDatabaseDetails;
+
+    /**
+     * @return Source Autonomous Database details.
+     * 
+     */
+    public Output<List<AutonomousDatabaseBackupSourceDatabaseDetail>> sourceDatabaseDetails() {
+        return this.sourceDatabaseDetails;
     }
     /**
      * The current state of the backup.

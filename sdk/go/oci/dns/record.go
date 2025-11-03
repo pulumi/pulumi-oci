@@ -12,17 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// **Deprecated. Use Dns.Rrset instead.**
-//
-// This resource provides the Record resource in Oracle Cloud Infrastructure DNS service.
-//
-//	Updates a collection of records in the specified zone.
-//
-// You can update one record or all records for the specified zone depending on the changes provided in the
-// request body. You can also add or remove records using this function. When the zone name is provided as
-// a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
-// required.
-//
 // ## Example Usage
 //
 // ```go

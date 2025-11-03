@@ -15,14 +15,14 @@ public final class GetAutonomousDatabaseSoftwareImageArgs extends com.pulumi.res
     public static final GetAutonomousDatabaseSoftwareImageArgs Empty = new GetAutonomousDatabaseSoftwareImageArgs();
 
     /**
-     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="autonomousDatabaseSoftwareImageId", required=true)
     private Output<String> autonomousDatabaseSoftwareImageId;
 
     /**
-     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> autonomousDatabaseSoftwareImageId() {
@@ -54,7 +54,7 @@ public final class GetAutonomousDatabaseSoftwareImageArgs extends com.pulumi.res
         }
 
         /**
-         * @param autonomousDatabaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param autonomousDatabaseSoftwareImageId The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetAutonomousDatabaseSoftwareImageArgs extends com.pulumi.res
         }
 
         /**
-         * @param autonomousDatabaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param autonomousDatabaseSoftwareImageId The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 

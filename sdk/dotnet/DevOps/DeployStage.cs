@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
-    /// This resource provides the Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
-    /// 
-    /// Creates a new deployment stage.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 

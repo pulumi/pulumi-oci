@@ -30,6 +30,16 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
      */
     private List<String> adminScopes;
     /**
+     * @return Apple Developer ID
+     * 
+     */
+    private String appleDevId;
+    /**
+     * @return Apple Private Key ID
+     * 
+     */
+    private String appleKeyId;
+    /**
      * @return Social IDP Authorization URL
      * 
      */
@@ -136,6 +146,20 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
      */
     public List<String> adminScopes() {
         return this.adminScopes;
+    }
+    /**
+     * @return Apple Developer ID
+     * 
+     */
+    public String appleDevId() {
+        return this.appleDevId;
+    }
+    /**
+     * @return Apple Private Key ID
+     * 
+     */
+    public String appleKeyId() {
+        return this.appleKeyId;
     }
     /**
      * @return Social IDP Authorization URL
@@ -269,6 +293,8 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
         private String accessTokenUrl;
         private Boolean accountLinkingEnabled;
         private List<String> adminScopes;
+        private String appleDevId;
+        private String appleKeyId;
         private String authzUrl;
         private Boolean autoRedirectEnabled;
         private Boolean clientCredentialInPayload;
@@ -292,6 +318,8 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
     	      this.accessTokenUrl = defaults.accessTokenUrl;
     	      this.accountLinkingEnabled = defaults.accountLinkingEnabled;
     	      this.adminScopes = defaults.adminScopes;
+    	      this.appleDevId = defaults.appleDevId;
+    	      this.appleKeyId = defaults.appleKeyId;
     	      this.authzUrl = defaults.authzUrl;
     	      this.autoRedirectEnabled = defaults.autoRedirectEnabled;
     	      this.clientCredentialInPayload = defaults.clientCredentialInPayload;
@@ -337,6 +365,22 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
         }
         public Builder adminScopes(String... adminScopes) {
             return adminScopes(List.of(adminScopes));
+        }
+        @CustomType.Setter
+        public Builder appleDevId(String appleDevId) {
+            if (appleDevId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "appleDevId");
+            }
+            this.appleDevId = appleDevId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder appleKeyId(String appleKeyId) {
+            if (appleKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProvider", "appleKeyId");
+            }
+            this.appleKeyId = appleKeyId;
+            return this;
         }
         @CustomType.Setter
         public Builder authzUrl(String authzUrl) {
@@ -485,6 +529,8 @@ public final class GetDomainsIdentityProvidersIdentityProviderUrnietfparamsscims
             _resultValue.accessTokenUrl = accessTokenUrl;
             _resultValue.accountLinkingEnabled = accountLinkingEnabled;
             _resultValue.adminScopes = adminScopes;
+            _resultValue.appleDevId = appleDevId;
+            _resultValue.appleKeyId = appleKeyId;
             _resultValue.authzUrl = authzUrl;
             _resultValue.autoRedirectEnabled = autoRedirectEnabled;
             _resultValue.clientCredentialInPayload = clientCredentialInPayload;

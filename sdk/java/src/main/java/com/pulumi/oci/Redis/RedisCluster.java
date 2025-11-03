@@ -19,10 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
- * 
- * Creates a new Oracle Cloud Infrastructure Cache cluster. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -59,6 +55,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .nsgIds(redisClusterNsgIds)
  *             .ociCacheConfigSetId(testOciCacheConfigSet.id())
+ *             .securityAttributes(redisClusterSecurityAttributes)
  *             .shardCount(redisClusterShardCount)
  *             .build());
  * 
@@ -315,6 +312,20 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> replicasFqdn() {
         return this.replicasFqdn;
+    }
+    /**
+     * (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.

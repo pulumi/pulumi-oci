@@ -23,10 +23,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
- * 
- * Create a user&#39;s own OAuth2 client credential.
- * 
  * ## Example Usage
  * 
  * ## Import

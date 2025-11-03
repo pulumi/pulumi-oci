@@ -25,11 +25,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Database resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
- * 
- * **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
+ * ## Example Usage
  * 
  * ## Import
  * 
@@ -42,17 +38,9 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/database:Database")
 public class Database extends com.pulumi.resources.CustomResource {
-    /**
-     * (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-     * 
-     */
     @Export(name="actionTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> actionTrigger;
 
-    /**
-     * @return (Applicable when source=DATAGUARD)  An optional property when incremented triggers Data Guard operations such as Failover, Switchover, Reinstate, Data Guard Configuration Update and Convert Standby Database to Standalone . Could be set to any integer value.
-     * 
-     */
     public Output<Optional<Integer>> actionTrigger() {
         return Codegen.optional(this.actionTrigger);
     }
@@ -98,23 +86,9 @@ public class Database extends com.pulumi.resources.CustomResource {
     public Output<List<DatabaseConnectionString>> connectionStrings() {
         return this.connectionStrings;
     }
-    /**
-     * Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     @Export(name="dataGuardAction", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> dataGuardAction;
 
-    /**
-     * @return Describes the Data Guard operation to be triggered. Could be set to a string value (&#39;Switchover&#39;, &#39;Failover&#39;, &#39;Reinstate&#39;, &#39;DgConfig&#39;, &#34;ConvertToStandalone&#39;).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
     public Output<Optional<String>> dataGuardAction() {
         return Codegen.optional(this.dataGuardAction);
     }
@@ -364,43 +338,27 @@ public class Database extends com.pulumi.resources.CustomResource {
     public Output<String> kmsKeyId() {
         return this.kmsKeyId;
     }
-    /**
-     * The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-     * 
-     */
     @Export(name="kmsKeyMigration", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> kmsKeyMigration;
 
-    /**
-     * @return The value to migrate to the kms version from none. Can only use once by setting value to true. You can not switch back to non-kms once you created or migrated.(https://www.oracle.com/security/cloud-security/key-management/faq/)
-     * 
-     */
     public Output<Optional<Boolean>> kmsKeyMigration() {
         return Codegen.optional(this.kmsKeyMigration);
     }
-    /**
-     * The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-     * 
-     */
     @Export(name="kmsKeyRotation", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> kmsKeyRotation;
 
-    /**
-     * @return The value to rotate the key version of current kms_key. Just change this value will trigger the rotation.
-     * 
-     */
     public Output<Optional<Integer>> kmsKeyRotation() {
         return Codegen.optional(this.kmsKeyRotation);
     }
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> kmsKeyVersionId;
 
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public Output<Optional<String>> kmsKeyVersionId() {
@@ -505,14 +463,14 @@ public class Database extends com.pulumi.resources.CustomResource {
         return this.sidPrefix;
     }
     /**
-     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
-     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup. The default is `NONE`.
+     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      * 
      */
     public Output<String> source() {

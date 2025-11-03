@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
-//
-// Creates a network load balancer.
+// ## Example Usage
 //
 // ## Import
 //

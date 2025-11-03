@@ -12,12 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Monitor Plugin Management resource in Oracle Cloud Infrastructure Appmgmt Control service.
-//
-// Activates Resource Plugin for compute instance identified by the instance ocid.
-// Stores monitored instances Id and its state. Tries to enable Resource Monitoring plugin by making
-// remote calls to Oracle Cloud Agent and Management Agent Cloud Service.
-//
 // ## Example Usage
 //
 // ```go

@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Creates a new sensitive type group.
-//
 // ## Example Usage
 //
 // ```go

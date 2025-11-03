@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
-    /// This resource provides the Target Database Group resource in Oracle Cloud Infrastructure Data Safe service.
-    /// 
-    /// Creates a new target database group.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

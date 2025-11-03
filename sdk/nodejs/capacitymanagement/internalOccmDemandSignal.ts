@@ -5,10 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Internal Occm Demand Signal resource in Oracle Cloud Infrastructure Capacity Management service.
- *
- * This is a internal PUT API which shall be used to update the metadata of the demand signal.
- *
  * ## Example Usage
  *
  * ```typescript

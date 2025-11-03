@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
-//
-// Creates a new referential relation in the specified sensitive data model.
-//
 // ## Example Usage
 //
 // ```go

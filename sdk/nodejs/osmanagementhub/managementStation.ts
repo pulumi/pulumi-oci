@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
- *
- * Creates a management station using the proxy and mirror configuration information provided.
- *
  * ## Example Usage
  *
  * ```typescript

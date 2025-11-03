@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
-//
-// Creates a new Application inside the Network Firewall Policy.
-//
 // ## Example Usage
 //
 // ```go

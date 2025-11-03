@@ -772,9 +772,7 @@ class MediaAsset(pulumi.CustomResource):
                  type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Media Asset resource in Oracle Cloud Infrastructure Media Services service.
-
-        Creates a new MediaAsset.
+        ## Example Usage
 
         ## Import
 
@@ -817,9 +815,7 @@ class MediaAsset(pulumi.CustomResource):
                  args: MediaAssetArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Media Asset resource in Oracle Cloud Infrastructure Media Services service.
-
-        Creates a new MediaAsset.
+        ## Example Usage
 
         ## Import
 

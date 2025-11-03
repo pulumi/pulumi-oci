@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the External Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
- * 
- * Creates the Exadata storage server connector after validating the connection information.
- * 
  * ## Example Usage
  * 
  * <pre>

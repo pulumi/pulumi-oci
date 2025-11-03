@@ -25,6 +25,8 @@ import com.pulumi.oci.Database.outputs.AutonomousDatabaseRemoteDisasterRecoveryC
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseResourcePoolSummary;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseStandbyDb;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseVanityConnectionUrl;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseVanityUrlDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -36,9 +38,7 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Autonomous Database resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates a new Autonomous Database.
+ * ## Example Usage
  * 
  * ## Import
  * 
@@ -64,6 +64,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<Double> actualUsedDataStorageSizeInTbs() {
         return this.actualUsedDataStorageSizeInTbs;
+    }
+    /**
+     * Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ &#34;gcpAccountName&#34;: &#34;gcpName&#34; }`
+     * 
+     */
+    @Export(name="additionalAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> additionalAttributes;
+
+    /**
+     * @return Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ &#34;gcpAccountName&#34;: &#34;gcpName&#34; }`
+     * 
+     */
+    public Output<Map<String,String>> additionalAttributes() {
+        return this.additionalAttributes;
     }
     /**
      * (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (&#34;) or the username &#34;admin&#34;, regardless of casing. The password is mandatory if source value is &#34;BACKUP_FROM_ID&#34;, &#34;BACKUP_FROM_TIMESTAMP&#34;, &#34;DATABASE&#34; or &#34;NONE&#34;.
@@ -94,28 +108,28 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.allocatedStorageSizeInTbs;
     }
     /**
-     * Information about Oracle APEX Application Development.
+     * Information about Oracle APEX AI Application Development.
      * 
      */
     @Export(name="apexDetails", refs={List.class,AutonomousDatabaseApexDetail.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseApexDetail>> apexDetails;
 
     /**
-     * @return Information about Oracle APEX Application Development.
+     * @return Information about Oracle APEX AI Application Development.
      * 
      */
     public Output<List<AutonomousDatabaseApexDetail>> apexDetails() {
         return this.apexDetails;
     }
     /**
-     * (Updatable) This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+     * (Updatable) This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
      * 
      */
     @Export(name="arePrimaryWhitelistedIpsUsed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> arePrimaryWhitelistedIpsUsed;
 
     /**
-     * @return (Updatable) This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+     * @return (Updatable) This field will be null if the Autonomous AI Database is not Data Guard enabled or Access Control is disabled. It&#39;s value would be `TRUE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses primary IP access control list (ACL) for standby. It&#39;s value would be `FALSE` if Autonomous AI Database is Data Guard enabled and Access Control is enabled and if the Autonomous AI Database uses different IP access control list (ACL) for standby compared to primary.
      * 
      */
     public Output<Boolean> arePrimaryWhitelistedIpsUsed() {
@@ -150,98 +164,98 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.autoRefreshPointLagInSeconds;
     }
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      */
     @Export(name="autonomousContainerDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousContainerDatabaseId;
 
     /**
-     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      * 
      */
     public Output<String> autonomousContainerDatabaseId() {
         return this.autonomousContainerDatabaseId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
      * 
      */
     @Export(name="autonomousDatabaseBackupId", refs={String.class}, tree="[0]")
     private Output<String> autonomousDatabaseBackupId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database Backup that you will clone to create a new Autonomous AI Database.
      * 
      */
     public Output<String> autonomousDatabaseBackupId() {
         return this.autonomousDatabaseBackupId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
      * 
      */
     @Export(name="autonomousDatabaseId", refs={String.class}, tree="[0]")
     private Output<String> autonomousDatabaseId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that you will clone to create a new Autonomous AI Database.
      * 
      */
     public Output<String> autonomousDatabaseId() {
         return this.autonomousDatabaseId;
     }
     /**
-     * (Updatable) The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+     * (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      * 
      */
     @Export(name="autonomousMaintenanceScheduleType", refs={String.class}, tree="[0]")
     private Output<String> autonomousMaintenanceScheduleType;
 
     /**
-     * @return (Updatable) The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
+     * @return (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      * 
      */
     public Output<String> autonomousMaintenanceScheduleType() {
         return this.autonomousMaintenanceScheduleType;
     }
     /**
-     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+     * List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */
     @Export(name="availableUpgradeVersions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> availableUpgradeVersions;
 
     /**
-     * @return List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
+     * @return List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      * 
      */
     public Output<List<String>> availableUpgradeVersions() {
         return this.availableUpgradeVersions;
     }
     /**
-     * Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+     * Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      * 
      */
     @Export(name="backupConfigs", refs={List.class,AutonomousDatabaseBackupConfig.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseBackupConfig>> backupConfigs;
 
     /**
-     * @return Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
+     * @return Autonomous AI Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
      * 
      */
     public Output<List<AutonomousDatabaseBackupConfig>> backupConfigs() {
@@ -276,9 +290,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.byolComputeCountLimit;
     }
     /**
-     * The character set for the autonomous database. The default is AL32UTF8. Allowed values for an Autonomous Database Serverless instance as as returned by [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
+     * The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values for an Autonomous AI Database Serverless instance as as returned by [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
      * 
-     * For an Autonomous Database on dedicated infrastructure, the allowed values are:
+     * For an Autonomous AI Database on dedicated infrastructure, the allowed values are:
      * 
      * AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
      * 
@@ -287,9 +301,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<String> characterSet;
 
     /**
-     * @return The character set for the autonomous database. The default is AL32UTF8. Allowed values for an Autonomous Database Serverless instance as as returned by [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
+     * @return The character set for the Autonomous AI Database. The default is AL32UTF8. Allowed values for an Autonomous AI Database Serverless instance as as returned by [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html)
      * 
-     * For an Autonomous Database on dedicated infrastructure, the allowed values are:
+     * For an Autonomous AI Database on dedicated infrastructure, the allowed values are:
      * 
      * AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
      * 
@@ -298,21 +312,21 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.characterSet;
     }
     /**
-     * A list of the source Autonomous Database&#39;s table space number(s) used to create this partial clone from the backup.
+     * A list of the source Autonomous AI Database&#39;s table space number(s) used to create this partial clone from the backup.
      * 
      */
     @Export(name="cloneTableSpaceLists", refs={List.class,Integer.class}, tree="[0,1]")
     private Output<List<Integer>> cloneTableSpaceLists;
 
     /**
-     * @return A list of the source Autonomous Database&#39;s table space number(s) used to create this partial clone from the backup.
+     * @return A list of the source Autonomous AI Database&#39;s table space number(s) used to create this partial clone from the backup.
      * 
      */
     public Output<List<Integer>> cloneTableSpaceLists() {
         return this.cloneTableSpaceLists;
     }
     /**
-     * The Autonomous Database clone type.
+     * The Autonomous AI Database clone type.
      * * `FULL` - This option creates a new database that includes all source database data.
      * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      * 
@@ -321,7 +335,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<String> cloneType;
 
     /**
-     * @return The Autonomous Database clone type.
+     * @return The Autonomous AI Database clone type.
      * * `FULL` - This option creates a new database that includes all source database data.
      * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      * 
@@ -344,56 +358,56 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.clusterPlacementGroupId;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous AI Database.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous AI Database.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. The &#39;ECPU&#39; compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
+     * (Updatable) The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous AI Database Serverless instance or an Autonomous AI Database on Dedicated Exadata Infrastructure. The &#39;ECPU&#39; compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
      * 
      */
     @Export(name="computeCount", refs={Double.class}, tree="[0]")
     private Output<Double> computeCount;
 
     /**
-     * @return (Updatable) The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. The &#39;ECPU&#39; compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
+     * @return (Updatable) The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous AI Database Serverless instance or an Autonomous AI Database on Dedicated Exadata Infrastructure. The &#39;ECPU&#39; compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
      * 
      */
     public Output<Double> computeCount() {
         return this.computeCount;
     }
     /**
-     * (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * (Updatable) The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     @Export(name="computeModel", refs={String.class}, tree="[0]")
     private Output<String> computeModel;
 
     /**
-     * @return (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * @return (Updatable) The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * 
      */
     public Output<String> computeModel() {
         return this.computeModel;
     }
     /**
-     * The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
+     * The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
      * 
      */
     @Export(name="connectionStrings", refs={List.class,AutonomousDatabaseConnectionString.class}, tree="[0,1]")
     private Output<List<AutonomousDatabaseConnectionString>> connectionStrings;
 
     /**
-     * @return The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
+     * @return The connection string used to connect to the Autonomous AI Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous AI Database for the password value.
      * 
      */
     public Output<List<AutonomousDatabaseConnectionString>> connectionStrings() {
@@ -414,7 +428,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.connectionUrls;
     }
     /**
-     * (Updatable) The number of CPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * (Updatable) The number of CPU cores to be made available to the database. For Autonomous AI Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
      * 
      * **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
      * 
@@ -423,7 +437,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<Integer> cpuCoreCount;
 
     /**
-     * @return (Updatable) The number of CPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * @return (Updatable) The number of CPU cores to be made available to the database. For Autonomous AI Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
      * 
      * **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
      * 
@@ -460,7 +474,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.dataSafeStatus;
     }
     /**
-     * (Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * (Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
      * 
      * **Notes**
      * * This parameter is only supported for dedicated Exadata infrastructure.
@@ -471,7 +485,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<Integer> dataStorageSizeInGb;
 
     /**
-     * @return (Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * @return (Updatable) The size, in gigabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. The maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
      * 
      * **Notes**
      * * This parameter is only supported for dedicated Exadata infrastructure.
@@ -482,7 +496,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.dataStorageSizeInGb;
     }
     /**
-     * (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details. A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
+     * (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous AI Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details. A full Exadata service is allocated when the Autonomous AI Database size is set to the upper limit (384 TB).
      * 
      * **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter. This input is ignored for Always Free resources.
      * 
@@ -491,7 +505,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<Integer> dataStorageSizeInTbs;
 
     /**
-     * @return (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details. A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
+     * @return (Updatable) The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous AI Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details. A full Exadata service is allocated when the Autonomous AI Database size is set to the upper limit (384 TB).
      * 
      * **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter. This input is ignored for Always Free resources.
      * 
@@ -500,42 +514,42 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.dataStorageSizeInTbs;
     }
     /**
-     * (Updatable) The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
+     * (Updatable) The Oracle AI Database Edition that applies to the Autonomous AI Databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
      * 
      */
     @Export(name="databaseEdition", refs={String.class}, tree="[0]")
     private Output<String> databaseEdition;
 
     /**
-     * @return (Updatable) The Oracle Database Edition that applies to the Autonomous databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
+     * @return (Updatable) The Oracle AI Database Edition that applies to the Autonomous AI Databases. This parameter accepts options `STANDARD_EDITION` and `ENTERPRISE_EDITION`.
      * 
      */
     public Output<String> databaseEdition() {
         return this.databaseEdition;
     }
     /**
-     * Status of Database Management for this Autonomous Database.
+     * Status of Database Management for this Autonomous AI Database.
      * 
      */
     @Export(name="databaseManagementStatus", refs={String.class}, tree="[0]")
     private Output<String> databaseManagementStatus;
 
     /**
-     * @return Status of Database Management for this Autonomous Database.
+     * @return Status of Database Management for this Autonomous AI Database.
      * 
      */
     public Output<String> databaseManagementStatus() {
         return this.databaseManagementStatus;
     }
     /**
-     * **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+     * **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     @Export(name="dataguardRegionType", refs={String.class}, tree="[0]")
     private Output<String> dataguardRegionType;
 
     /**
-     * @return **Deprecated.** The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
+     * @return **Deprecated.** The Autonomous Data Guard region type of the Autonomous AI Database. For Autonomous AI Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     public Output<String> dataguardRegionType() {
@@ -574,25 +588,26 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.dbToolsDetails;
     }
     /**
-     * (Updatable) A valid Oracle Database version for Autonomous Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+     * (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      * 
      */
     @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
-     * @return (Updatable) A valid Oracle Database version for Autonomous Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
+     * @return (Updatable) A valid Oracle AI Database version for Autonomous AI Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      * 
      */
     public Output<String> dbVersion() {
         return this.dbVersion;
     }
     /**
-     * (Updatable) The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * (Updatable) The Autonomous AI Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous AI Transaction Processing database
+     * * DW - indicates an Autonomous AI Lakehouse database
+     * * AJD - indicates an Autonomous AI JSON Database
+     * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * * LH - indicates an Oracle Autonomous AI Lakehouse database
      * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      * 
@@ -601,11 +616,12 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<String> dbWorkload;
 
     /**
-     * @return (Updatable) The Autonomous Database workload type. The following values are valid:
-     * * OLTP - indicates an Autonomous Transaction Processing database
-     * * DW - indicates an Autonomous Data Warehouse database
-     * * AJD - indicates an Autonomous JSON Database
-     * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
+     * @return (Updatable) The Autonomous AI Database workload type. The following values are valid:
+     * * OLTP - indicates an Autonomous AI Transaction Processing database
+     * * DW - indicates an Autonomous AI Lakehouse database
+     * * AJD - indicates an Autonomous AI JSON Database
+     * * APEX - indicates an Autonomous AI Database with the Oracle APEX AI Application Development workload type.
+     * * LH - indicates an Oracle Autonomous AI Lakehouse database
      * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      * 
@@ -628,42 +644,42 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     @Export(name="disasterRecoveryRegionType", refs={String.class}, tree="[0]")
     private Output<String> disasterRecoveryRegionType;
 
     /**
-     * @return **Deprecated.** The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return **Deprecated.** The disaster recovery (DR) region type of the Autonomous AI Database. For Autonomous AI Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     public Output<String> disasterRecoveryRegionType() {
         return this.disasterRecoveryRegionType;
     }
     /**
-     * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     @Export(name="disasterRecoveryType", refs={String.class}, tree="[0]")
     private Output<String> disasterRecoveryType;
 
     /**
-     * @return Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public Output<String> disasterRecoveryType() {
         return this.disasterRecoveryType;
     }
     /**
-     * (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The user-friendly name for the Autonomous Database. The name does not have to be unique.
+     * @return (Updatable) The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
      * 
      */
     public Output<String> displayName() {
@@ -676,14 +692,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.enableDeleteScheduledOperations);
     }
     /**
-     * (Updatable) Details of the Autonomous Database encryption key.
+     * (Updatable) Details of the Autonomous AI Database encryption key.
      * 
      */
     @Export(name="encryptionKey", refs={AutonomousDatabaseEncryptionKey.class}, tree="[0]")
     private Output<AutonomousDatabaseEncryptionKey> encryptionKey;
 
     /**
-     * @return (Updatable) Details of the Autonomous Database encryption key.
+     * @return (Updatable) Details of the Autonomous AI Database encryption key.
      * 
      */
     public Output<AutonomousDatabaseEncryptionKey> encryptionKey() {
@@ -732,28 +748,28 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * The area assigned to In-Memory tables in Autonomous Database.
+     * The area assigned to In-Memory tables in Autonomous AI Database.
      * 
      */
     @Export(name="inMemoryAreaInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> inMemoryAreaInGbs;
 
     /**
-     * @return The area assigned to In-Memory tables in Autonomous Database.
+     * @return The area assigned to In-Memory tables in Autonomous AI Database.
      * 
      */
     public Output<Integer> inMemoryAreaInGbs() {
         return this.inMemoryAreaInGbs;
     }
     /**
-     * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud{@literal @}Customer platform.
+     * (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud{@literal @}Customer platform.
      * 
      */
     @Export(name="inMemoryPercentage", refs={Integer.class}, tree="[0]")
     private Output<Integer> inMemoryPercentage;
 
     /**
-     * @return (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud{@literal @}Customer platform.
+     * @return (Updatable) The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous AI Database. This property is applicable only to Autonomous AI Databases on the Exadata Cloud{@literal @}Customer platform.
      * 
      */
     public Output<Integer> inMemoryPercentage() {
@@ -776,7 +792,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      * 
-     * This property is applicable only to Autonomous Databases on the Exadata Cloud{@literal @}Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
+     * This property is applicable only to Autonomous AI Databases on the Exadata Cloud{@literal @}Customer platform. For Autonomous AI Database Serverless instances, `whitelistedIps` is used.
      * 
      */
     @Export(name="isAccessControlEnabled", refs={Boolean.class}, tree="[0]")
@@ -785,63 +801,63 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Indicates if the database-level access control is enabled. If disabled, database access is defined by the network security rules. If enabled, database access is restricted to the IP addresses defined by the rules specified with the `whitelistedIps` property. While specifying `whitelistedIps` rules is optional, if database-level access control is enabled and no rules are specified, the database will become inaccessible. The rules can be added later using the `UpdateAutonomousDatabase` API operation or edit option in console. When creating a database clone, the desired access control setting should be specified. By default, database-level access control will be disabled for the clone.
      * 
-     * This property is applicable only to Autonomous Databases on the Exadata Cloud{@literal @}Customer platform. For Autonomous Database Serverless instances, `whitelistedIps` is used.
+     * This property is applicable only to Autonomous AI Databases on the Exadata Cloud{@literal @}Customer platform. For Autonomous AI Database Serverless instances, `whitelistedIps` is used.
      * 
      */
     public Output<Boolean> isAccessControlEnabled() {
         return this.isAccessControlEnabled;
     }
     /**
-     * (Updatable) Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
+     * (Updatable) Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
      * 
      */
     @Export(name="isAutoScalingEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoScalingEnabled;
 
     /**
-     * @return (Updatable) Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is `TRUE`.
+     * @return (Updatable) Indicates if auto scaling is enabled for the Autonomous AI Database CPU core count. The default value is `TRUE`.
      * 
      */
     public Output<Boolean> isAutoScalingEnabled() {
         return this.isAutoScalingEnabled;
     }
     /**
-     * (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+     * (Updatable) Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
      * 
      */
     @Export(name="isAutoScalingForStorageEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutoScalingForStorageEnabled;
 
     /**
-     * @return (Updatable) Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+     * @return (Updatable) Indicates if auto scaling is enabled for the Autonomous AI Database storage. The default value is `FALSE`.
      * 
      */
     public Output<Boolean> isAutoScalingForStorageEnabled() {
         return this.isAutoScalingForStorageEnabled;
     }
     /**
-     * (Updatable) True if the Autonomous Database is backup retention locked.
+     * (Updatable) True if the Autonomous AI Database is backup retention locked.
      * 
      */
     @Export(name="isBackupRetentionLocked", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBackupRetentionLocked;
 
     /**
-     * @return (Updatable) True if the Autonomous Database is backup retention locked.
+     * @return (Updatable) True if the Autonomous AI Database is backup retention locked.
      * 
      */
     public Output<Boolean> isBackupRetentionLocked() {
         return this.isBackupRetentionLocked;
     }
     /**
-     * (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * (Updatable) **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     @Export(name="isDataGuardEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDataGuardEnabled;
 
     /**
-     * @return (Updatable) **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return (Updatable) **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Output<Boolean> isDataGuardEnabled() {
@@ -862,14 +878,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.isDedicated;
     }
     /**
-     * (Updatable) Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud{@literal @}Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+     * (Updatable) Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud{@literal @}Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      * 
      */
     @Export(name="isDevTier", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDevTier;
 
     /**
-     * @return (Updatable) Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud{@literal @}Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
+     * @return (Updatable) Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud{@literal @}Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      * 
      */
     public Output<Boolean> isDevTier() {
@@ -888,7 +904,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.isDisconnectPeer);
     }
     /**
-     * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled When `dbWorkload` is `AJD` it cannot be `true`.
      * 
@@ -897,7 +913,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<Boolean> isFreeTier;
 
     /**
-     * @return (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
+     * @return (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled When `dbWorkload` is `AJD` it cannot be `true`.
      * 
@@ -906,14 +922,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.isFreeTier;
     }
     /**
-     * (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * (Updatable) Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     @Export(name="isLocalDataGuardEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLocalDataGuardEnabled;
 
     /**
-     * @return (Updatable) Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return (Updatable) Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Output<Boolean> isLocalDataGuardEnabled() {
@@ -926,28 +942,28 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.isMtlsConnectionRequired;
     }
     /**
-     * Indicates if the Autonomous Database version is a preview version.
+     * Indicates if the Autonomous AI Database version is a preview version.
      * 
      */
     @Export(name="isPreview", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPreview;
 
     /**
-     * @return Indicates if the Autonomous Database version is a preview version.
+     * @return Indicates if the Autonomous AI Database version is a preview version.
      * 
      */
     public Output<Boolean> isPreview() {
         return this.isPreview;
     }
     /**
-     * If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version&#39;s terms of service have been accepted. Note that preview version software is only available for Autonomous Database Serverless instances (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
+     * If set to `TRUE`, indicates that an Autonomous AI Database preview version is being provisioned, and that the preview version&#39;s terms of service have been accepted. Note that preview version software is only available for Autonomous AI Database Serverless instances (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
      * 
      */
     @Export(name="isPreviewVersionWithServiceTermsAccepted", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPreviewVersionWithServiceTermsAccepted;
 
     /**
-     * @return If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version&#39;s terms of service have been accepted. Note that preview version software is only available for Autonomous Database Serverless instances (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
+     * @return If set to `TRUE`, indicates that an Autonomous AI Database preview version is being provisioned, and that the preview version&#39;s terms of service have been accepted. Note that preview version software is only available for Autonomous AI Database Serverless instances (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
      * 
      */
     public Output<Boolean> isPreviewVersionWithServiceTermsAccepted() {
@@ -968,28 +984,28 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.isReconnectCloneEnabled;
     }
     /**
-     * Indicates if the Autonomous Database is a refreshable clone.
+     * Indicates if the Autonomous AI Database is a refreshable clone.
      * 
      */
     @Export(name="isRefreshableClone", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRefreshableClone;
 
     /**
-     * @return Indicates if the Autonomous Database is a refreshable clone.
+     * @return Indicates if the Autonomous AI Database is a refreshable clone.
      * 
      */
     public Output<Boolean> isRefreshableClone() {
         return this.isRefreshableClone;
     }
     /**
-     * Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     @Export(name="isRemoteDataGuardEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isRemoteDataGuardEnabled;
 
     /**
-     * @return Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
+     * @return Indicates whether the Autonomous AI Database has Cross Region Data Guard enabled. Not applicable to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud{@literal @}Customer infrastructure.
      * 
      */
     public Output<Boolean> isRemoteDataGuardEnabled() {
@@ -1104,21 +1120,21 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.kmsKeyLifecycleDetails;
     }
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
     private Output<String> kmsKeyVersionId;
 
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public Output<String> kmsKeyVersionId() {
         return this.kmsKeyVersionId;
     }
     /**
-     * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+     * (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `dbWorkload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `licenseModel` value `BRING_YOUR_OWN_LICENSE`.
      * 
@@ -1127,7 +1143,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<String> licenseModel;
 
     /**
-     * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+     * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `dbWorkload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `licenseModel` value `BRING_YOUR_OWN_LICENSE`.
      * 
@@ -1164,14 +1180,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.localAdgAutoFailoverMaxDataLossLimit;
     }
     /**
-     * Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     @Export(name="localDisasterRecoveryType", refs={String.class}, tree="[0]")
     private Output<String> localDisasterRecoveryType;
 
     /**
-     * @return Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the local disaster recovery (DR) type of the Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public Output<String> localDisasterRecoveryType() {
@@ -1226,28 +1242,42 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.maxCpuCoreCount;
     }
     /**
-     * The amount of memory (in GBs) enabled per ECPU or OCPU.
+     * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    @Export(name="memoryPerComputeUnitInGbs", refs={Double.class}, tree="[0]")
+    private Output<Double> memoryPerComputeUnitInGbs;
+
+    /**
+     * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+     * 
+     */
+    public Output<Double> memoryPerComputeUnitInGbs() {
+        return this.memoryPerComputeUnitInGbs;
+    }
+    /**
+     * The amount of memory (in GBs, rounded off to nearest integer value) to be enabled per OCPU or ECPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     @Export(name="memoryPerOracleComputeUnitInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) enabled per ECPU or OCPU.
+     * @return The amount of memory (in GBs, rounded off to nearest integer value) to be enabled per OCPU or ECPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      * 
      */
     public Output<Integer> memoryPerOracleComputeUnitInGbs() {
         return this.memoryPerOracleComputeUnitInGbs;
     }
     /**
-     * The character set for the Autonomous Database. The default is AL32UTF8. Use [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous Database Serverless instance. For an Autonomous Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
+     * The character set for the Autonomous AI Database. The default is AL32UTF8. Use [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous AI Database Serverless instance. For an Autonomous AI Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
      * 
      */
     @Export(name="ncharacterSet", refs={String.class}, tree="[0]")
     private Output<String> ncharacterSet;
 
     /**
-     * @return The character set for the Autonomous Database. The default is AL32UTF8. Use [List Autonomous Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous Database Serverless instance. For an Autonomous Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
+     * @return The character set for the Autonomous AI Database. The default is AL32UTF8. Use [List Autonomous AI Database Character Sets](https://docs.oracle.com/iaas/autonomous-database-serverless/doc/autonomous-character-set-selection.html) to list the allowed values for an Autonomous AI Database Serverless instance. For an Autonomous AI Database on dedicated Exadata infrastructure, the allowed values are: AL16UTF16 or UTF8.
      * 
      */
     public Output<String> ncharacterSet() {
@@ -1283,7 +1313,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
@@ -1291,7 +1321,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-     * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
      */
     public Output<List<String>> nsgIds() {
@@ -1301,11 +1331,11 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * (Updatable) The number of OCPU cores to be made available to the database.
      * 
      * The following points apply:
-     * * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-     * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-     * * For Autonomous Database Serverless instances, this parameter is not used.
+     * * For Autonomous AI Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous AI Database Serverless instances.)
+     * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous AI Database Serverless instance or an Autonomous AI Database on Dedicated Exadata Infrastructure.
+     * * For Autonomous AI Database Serverless instances, this parameter is not used.
      * 
-     * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * For Autonomous AI Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
      * 
      * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
      * 
@@ -1317,11 +1347,11 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * @return (Updatable) The number of OCPU cores to be made available to the database.
      * 
      * The following points apply:
-     * * For Autonomous Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous Database Serverless instances.)
-     * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-     * * For Autonomous Database Serverless instances, this parameter is not used.
+     * * For Autonomous AI Databases on Dedicated Exadata infrastructure, to provision less than 1 core, enter a fractional value in an increment of 0.1. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. (Note that fractional OCPU values are not supported for Autonomous AI Database Serverless instances.)
+     * * To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available for the infrastructure shape. For example, you can provision 2 cores or 3 cores, but not 2.5 cores. This applies to an Autonomous AI Database Serverless instance or an Autonomous AI Database on Dedicated Exadata Infrastructure.
+     * * For Autonomous AI Database Serverless instances, this parameter is not used.
      * 
-     * For Autonomous Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * For Autonomous AI Databases on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbde/) for shape details.
      * 
      * **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
      * 
@@ -1330,7 +1360,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.ocpuCount;
     }
     /**
-     * (Updatable) Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+     * (Updatable) Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      * 
@@ -1339,7 +1369,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<String> openMode;
 
     /**
-     * @return (Updatable) Indicates the Autonomous Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
+     * @return (Updatable) Indicates the Autonomous AI Database mode. The database can be opened in `READ_ONLY` or `READ_WRITE` mode.
      * 
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      * 
@@ -1348,14 +1378,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.openMode;
     }
     /**
-     * Status of Operations Insights for this Autonomous Database.
+     * Status of Operations Insights for this Autonomous AI Database.
      * 
      */
     @Export(name="operationsInsightsStatus", refs={String.class}, tree="[0]")
     private Output<String> operationsInsightsStatus;
 
     /**
-     * @return Status of Operations Insights for this Autonomous Database.
+     * @return Status of Operations Insights for this Autonomous AI Database.
      * 
      */
     public Output<String> operationsInsightsStatus() {
@@ -1368,28 +1398,28 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.peerDbId;
     }
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     @Export(name="peerDbIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> peerDbIds;
 
     /**
-     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
+     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous AI Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     public Output<List<String>> peerDbIds() {
         return this.peerDbIds;
     }
     /**
-     * The Autonomous Database permission level. Restricted mode allows access only by admin users.
+     * The Autonomous AI Database permission level. Restricted mode allows access only by admin users.
      * 
      */
     @Export(name="permissionLevel", refs={String.class}, tree="[0]")
     private Output<String> permissionLevel;
 
     /**
-     * @return The Autonomous Database permission level. Restricted mode allows access only by admin users.
+     * @return The Autonomous AI Database permission level. Restricted mode allows access only by admin users.
      * 
      */
     public Output<String> permissionLevel() {
@@ -1438,14 +1468,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.privateEndpointLabel;
     }
     /**
-     * An array of CPU values that an Autonomous Database can be scaled to.
+     * An array of CPU values that an Autonomous AI Database can be scaled to.
      * 
      */
     @Export(name="provisionableCpuses", refs={List.class,Double.class}, tree="[0,1]")
     private Output<List<Double>> provisionableCpuses;
 
     /**
-     * @return An array of CPU values that an Autonomous Database can be scaled to.
+     * @return An array of CPU values that an Autonomous AI Database can be scaled to.
      * 
      */
     public Output<List<Double>> provisionableCpuses() {
@@ -1480,28 +1510,28 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.publicEndpoint;
     }
     /**
-     * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
      * 
      */
     @Export(name="refreshableMode", refs={String.class}, tree="[0]")
     private Output<String> refreshableMode;
 
     /**
-     * @return (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+     * @return (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous AI Database.
      * 
      */
     public Output<String> refreshableMode() {
         return this.refreshableMode;
     }
     /**
-     * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+     * The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
      * 
      */
     @Export(name="refreshableStatus", refs={String.class}, tree="[0]")
     private Output<String> refreshableStatus;
 
     /**
-     * @return The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+     * @return The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous AI Database.
      * 
      */
     public Output<String> refreshableStatus() {
@@ -1522,28 +1552,28 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.remoteDisasterRecoveryConfigurations;
     }
     /**
-     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     @Export(name="remoteDisasterRecoveryType", refs={String.class}, tree="[0]")
     private Output<String> remoteDisasterRecoveryType;
 
     /**
-     * @return Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the cross-region disaster recovery (DR) type of the standby Autonomous AI Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public Output<String> remoteDisasterRecoveryType() {
         return this.remoteDisasterRecoveryType;
     }
     /**
-     * (Updatable) The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * (Updatable) The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="resourcePoolLeaderId", refs={String.class}, tree="[0]")
     private Output<String> resourcePoolLeaderId;
 
     /**
-     * @return (Updatable) The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return (Updatable) The unique identifier for leader Autonomous AI Database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> resourcePoolLeaderId() {
@@ -1564,14 +1594,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.resourcePoolSummary;
     }
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public Output<String> role() {
@@ -1648,14 +1678,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.securityAttributes;
     }
     /**
-     * The URL of the Service Console for the Autonomous Database.
+     * The URL of the Service Console for the Autonomous AI Database.
      * 
      */
     @Export(name="serviceConsoleUrl", refs={String.class}, tree="[0]")
     private Output<String> serviceConsoleUrl;
 
     /**
-     * @return The URL of the Service Console for the Autonomous Database.
+     * @return The URL of the Service Console for the Autonomous AI Database.
      * 
      */
     public Output<String> serviceConsoleUrl() {
@@ -1668,32 +1698,32 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.shrinkAdbTrigger;
     }
     /**
-     * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
+     * The source of the database: Use `NONE` for creating a new Autonomous AI Database. Use `DATABASE` for creating a new Autonomous AI Database by cloning an existing Autonomous AI Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
      * 
-     * For [Autonomous Database Serverless instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
+     * For [Autonomous AI Database Serverless instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous AI Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous AI Database clone using backups. For more information, see [Cloning and Moving an Autonomous AI Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
-     * @return The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
+     * @return The source of the database: Use `NONE` for creating a new Autonomous AI Database. Use `DATABASE` for creating a new Autonomous AI Database by cloning an existing Autonomous AI Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
      * 
-     * For [Autonomous Database Serverless instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning and Moving an Autonomous Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
+     * For [Autonomous AI Database Serverless instances](https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous AI Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous AI Database clone using backups. For more information, see [Cloning and Moving an Autonomous AI Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC).
      * 
      */
     public Output<String> source() {
         return this.source;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the Data Guard association.
      * 
      */
     @Export(name="sourceId", refs={String.class}, tree="[0]")
     private Output<String> sourceId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the Data Guard association.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous AI Database that will be used to create a new peer database for the Data Guard association.
      * 
      */
     public Output<String> sourceId() {
@@ -1714,9 +1744,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.standbyDbs;
     }
     /**
-     * (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+     * (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous AI Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
-     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it’s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud{@literal @}Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
+     * For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it’s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud{@literal @}Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      * 
@@ -1727,9 +1757,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output<List<String>> standbyWhitelistedIps;
 
     /**
-     * @return (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+     * @return (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous AI Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
-     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it’s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud{@literal @}Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
+     * For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it’s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud{@literal @}Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      * 
@@ -1740,14 +1770,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.standbyWhitelistedIps;
     }
     /**
-     * The current state of the Autonomous Database.
+     * The current state of the Autonomous AI Database.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Autonomous Database.
+     * @return The current state of the Autonomous AI Database.
      * 
      */
     public Output<String> state() {
@@ -1759,7 +1789,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * **Subnet Restrictions:**
      * * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
      * * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
-     * * For Autonomous Database, setting this will disable public secure access to the database.
+     * * For Autonomous AI Database, setting this will disable public secure access to the database.
      * 
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      * 
@@ -1773,7 +1803,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * **Subnet Restrictions:**
      * * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
      * * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
-     * * For Autonomous Database, setting this will disable public secure access to the database.
+     * * For Autonomous AI Database, setting this will disable public secure access to the database.
      * 
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      * 
@@ -1796,14 +1826,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.subscriptionId;
     }
     /**
-     * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+     * The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
      * 
      */
     @Export(name="supportedRegionsToCloneTos", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> supportedRegionsToCloneTos;
 
     /**
-     * @return The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
+     * @return The list of regions that support the creation of an Autonomous AI Database clone or an Autonomous Data Guard standby database.
      * 
      */
     public Output<List<String>> supportedRegionsToCloneTos() {
@@ -1836,28 +1866,28 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The date and time the Autonomous Database was created.
+     * The date and time the Autonomous AI Database was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the Autonomous Database was created.
+     * @return The date and time the Autonomous AI Database was created.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+     * The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
     @Export(name="timeDataGuardRoleChanged", refs={String.class}, tree="[0]")
     private Output<String> timeDataGuardRoleChanged;
 
     /**
-     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
+     * @return The date and time the Autonomous Data Guard role was switched for the Autonomous AI Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the &#34;primary&#34; role in the primary Data Guard region, or database located in the remote Data Guard standby region.
      * 
      */
     public Output<String> timeDataGuardRoleChanged() {
@@ -1878,56 +1908,56 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.timeDeletionOfFreeAutonomousDatabase;
     }
     /**
-     * The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
      * 
      */
     @Export(name="timeDisasterRecoveryRoleChanged", refs={String.class}, tree="[0]")
     private Output<String> timeDisasterRecoveryRoleChanged;
 
     /**
-     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
+     * @return The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
      * 
      */
     public Output<String> timeDisasterRecoveryRoleChanged() {
         return this.timeDisasterRecoveryRoleChanged;
     }
     /**
-     * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     @Export(name="timeEarliestAvailableDbVersionUpgrade", refs={String.class}, tree="[0]")
     private Output<String> timeEarliestAvailableDbVersionUpgrade;
 
     /**
-     * @return The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * @return The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     public Output<String> timeEarliestAvailableDbVersionUpgrade() {
         return this.timeEarliestAvailableDbVersionUpgrade;
     }
     /**
-     * The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     @Export(name="timeLatestAvailableDbVersionUpgrade", refs={String.class}, tree="[0]")
     private Output<String> timeLatestAvailableDbVersionUpgrade;
 
     /**
-     * @return The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * @return The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     public Output<String> timeLatestAvailableDbVersionUpgrade() {
         return this.timeLatestAvailableDbVersionUpgrade;
     }
     /**
-     * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+     * The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
      * 
      */
     @Export(name="timeLocalDataGuardEnabled", refs={String.class}, tree="[0]")
     private Output<String> timeLocalDataGuardEnabled;
 
     /**
-     * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
+     * @return The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
      * 
      */
     public Output<String> timeLocalDataGuardEnabled() {
@@ -1962,14 +1992,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.timeMaintenanceEnd;
     }
     /**
-     * (Updatable) The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     * (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
      * 
      */
     @Export(name="timeOfAutoRefreshStart", refs={String.class}, tree="[0]")
     private Output<String> timeOfAutoRefreshStart;
 
     /**
-     * @return (Updatable) The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
+     * @return (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
      * 
      */
     public Output<String> timeOfAutoRefreshStart() {
@@ -2032,14 +2062,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.timeOfLastRefreshPoint;
     }
     /**
-     * The timestamp of the last switchover operation for the Autonomous Database.
+     * The timestamp of the last switchover operation for the Autonomous AI Database.
      * 
      */
     @Export(name="timeOfLastSwitchover", refs={String.class}, tree="[0]")
     private Output<String> timeOfLastSwitchover;
 
     /**
-     * @return The timestamp of the last switchover operation for the Autonomous Database.
+     * @return The timestamp of the last switchover operation for the Autonomous AI Database.
      * 
      */
     public Output<String> timeOfLastSwitchover() {
@@ -2074,28 +2104,28 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.timeReclamationOfFreeAutonomousDatabase;
     }
     /**
-     * The date and time the Autonomous Database scheduled to upgrade to 23ai. Send this value along with the target dbVersion value to schedule the database version upgrade. After the upgrade is scheduled and before the scheduled upgrade time arrives, please keep the dbVersion value the same as the backend&#39;s current db_version.
+     * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      * 
      */
     @Export(name="timeScheduledDbVersionUpgrade", refs={String.class}, tree="[0]")
     private Output<String> timeScheduledDbVersionUpgrade;
 
     /**
-     * @return The date and time the Autonomous Database scheduled to upgrade to 23ai. Send this value along with the target dbVersion value to schedule the database version upgrade. After the upgrade is scheduled and before the scheduled upgrade time arrives, please keep the dbVersion value the same as the backend&#39;s current db_version.
+     * @return The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      * 
      */
     public Output<String> timeScheduledDbVersionUpgrade() {
         return this.timeScheduledDbVersionUpgrade;
     }
     /**
-     * The date and time the Autonomous Database was most recently undeleted.
+     * The date and time the Autonomous AI Database was most recently undeleted.
      * 
      */
     @Export(name="timeUndeleted", refs={String.class}, tree="[0]")
     private Output<String> timeUndeleted;
 
     /**
-     * @return The date and time the Autonomous Database was most recently undeleted.
+     * @return The date and time the Autonomous AI Database was most recently undeleted.
      * 
      */
     public Output<String> timeUndeleted() {
@@ -2116,14 +2146,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.timeUntilReconnectCloneEnabled;
     }
     /**
-     * The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+     * The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
      * 
      */
     @Export(name="timestamp", refs={String.class}, tree="[0]")
     private Output<String> timestamp;
 
     /**
-     * @return The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+     * @return The timestamp specified for the point-in-time clone of the source Autonomous AI Database. The timestamp must be in the past.
      * 
      */
     public Output<String> timestamp() {
@@ -2158,32 +2188,60 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.useLatestAvailableBackupTimeStamp;
     }
     /**
-     * The storage space consumed by Autonomous Database in GBs.
+     * The storage space consumed by Autonomous AI Database in GBs.
      * 
      */
     @Export(name="usedDataStorageSizeInGbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedDataStorageSizeInGbs;
 
     /**
-     * @return The storage space consumed by Autonomous Database in GBs.
+     * @return The storage space consumed by Autonomous AI Database in GBs.
      * 
      */
     public Output<Integer> usedDataStorageSizeInGbs() {
         return this.usedDataStorageSizeInGbs;
     }
     /**
-     * The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
+     * The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
      * 
      */
     @Export(name="usedDataStorageSizeInTbs", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedDataStorageSizeInTbs;
 
     /**
-     * @return The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
+     * @return The amount of storage that has been used for Autonomous AI Databases in dedicated infrastructure, in terabytes.
      * 
      */
     public Output<Integer> usedDataStorageSizeInTbs() {
         return this.usedDataStorageSizeInTbs;
+    }
+    /**
+     * The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{&#34;sqlDevWebUrl&#34;: &#34;https://&lt;hostname&gt;/ords...&#34;, &#34;apexUrl&#34;, &#34;https://&lt;hostname&gt;/ords...&#34;}`
+     * 
+     */
+    @Export(name="vanityConnectionUrls", refs={List.class,AutonomousDatabaseVanityConnectionUrl.class}, tree="[0,1]")
+    private Output<List<AutonomousDatabaseVanityConnectionUrl>> vanityConnectionUrls;
+
+    /**
+     * @return The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{&#34;sqlDevWebUrl&#34;: &#34;https://&lt;hostname&gt;/ords...&#34;, &#34;apexUrl&#34;, &#34;https://&lt;hostname&gt;/ords...&#34;}`
+     * 
+     */
+    public Output<List<AutonomousDatabaseVanityConnectionUrl>> vanityConnectionUrls() {
+        return this.vanityConnectionUrls;
+    }
+    /**
+     * Details for api gateway and vanity url(custom url) for dbTools.
+     * 
+     */
+    @Export(name="vanityUrlDetails", refs={List.class,AutonomousDatabaseVanityUrlDetail.class}, tree="[0,1]")
+    private Output<List<AutonomousDatabaseVanityUrlDetail>> vanityUrlDetails;
+
+    /**
+     * @return Details for api gateway and vanity url(custom url) for dbTools.
+     * 
+     */
+    public Output<List<AutonomousDatabaseVanityUrlDetail>> vanityUrlDetails() {
+        return this.vanityUrlDetails;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -2200,9 +2258,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.vaultId;
     }
     /**
-     * (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+     * (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous AI Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
-     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it’s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud{@literal @}Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
+     * For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it’s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud{@literal @}Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      * 
@@ -2216,9 +2274,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ List<String>> whitelistedIps;
 
     /**
-     * @return (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+     * @return (Updatable) The client IP access control list (ACL). This feature is available for [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud{@literal @}Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous AI Database instance. If `arePrimaryWhitelistedIpsUsed` is &#39;TRUE&#39; then Autonomous AI Database uses this primary&#39;s IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
      * 
-     * For Autonomous Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it’s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud{@literal @}Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
+     * For Autonomous AI Database Serverless, this is an array of CIDR (classless inter-domain routing) notations for a subnet or VCN OCID (virtual cloud network Oracle Cloud ID). Multiple IPs and VCN OCIDs should be separate strings separated by commas, but if it’s other configurations that need multiple pieces of information then its each piece is connected with semicolon (;) as a delimiter. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id&gt;&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id1&gt;;1.1.1.1&#34;,&#34;ocid1.vcn.oc1.sea.&lt;unique_id2&gt;;1.1.0.0/16&#34;]` For Exadata Cloud{@literal @}Customer, this is an array of IP addresses or CIDR notations. Example: `[&#34;1.1.1.1&#34;,&#34;1.1.1.0/24&#34;,&#34;1.1.2.25&#34;]`
      * 
      * For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
      * 

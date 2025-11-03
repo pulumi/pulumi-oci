@@ -12,11 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
-//
-// Update advanced feature configurations for the Fleet.
-// Ensure that the namespace and bucket storage are created prior to turning on the JfrRecording or CryptoEventAnalysis feature.
-//
 // ## Example Usage
 //
 // ```go
@@ -34,65 +29,67 @@ import (
 //			_, err := jms.NewFleetAdvancedFeatureConfiguration(ctx, "test_fleet_advanced_feature_configuration", &jms.FleetAdvancedFeatureConfigurationArgs{
 //				FleetId: pulumi.Any(testFleet.Id),
 //				AdvancedUsageTracking: &jms.FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{
-//					IsEnabled: pulumi.Any(fleetAdvancedFeatureConfigurationAdvancedUsageTrackingIsEnabled),
+//					IsEnabled: pulumi.Bool(true),
 //				},
 //				AnalyticBucketName: pulumi.Any(testBucket.Name),
-//				AnalyticNamespace:  pulumi.Any(fleetAdvancedFeatureConfigurationAnalyticNamespace),
+//				AnalyticNamespace:  pulumi.String("example-bucket-namespace"),
 //				CryptoEventAnalysis: &jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs{
-//					IsEnabled: pulumi.Any(fleetAdvancedFeatureConfigurationCryptoEventAnalysisIsEnabled),
+//					IsEnabled: pulumi.Bool(true),
 //					SummarizedEventsLog: &jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs{
 //						LogGroupId: pulumi.Any(testLogGroup.Id),
 //						LogId:      pulumi.Any(testLog.Id),
 //					},
 //				},
 //				JavaMigrationAnalysis: &jms.FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs{
-//					IsEnabled: pulumi.Any(fleetAdvancedFeatureConfigurationJavaMigrationAnalysisIsEnabled),
+//					IsEnabled: pulumi.Bool(true),
 //				},
 //				JfrRecording: &jms.FleetAdvancedFeatureConfigurationJfrRecordingArgs{
-//					IsEnabled: pulumi.Any(fleetAdvancedFeatureConfigurationJfrRecordingIsEnabled),
+//					IsEnabled: pulumi.Bool(true),
 //				},
 //				Lcm: &jms.FleetAdvancedFeatureConfigurationLcmArgs{
-//					IsEnabled: pulumi.Any(fleetAdvancedFeatureConfigurationLcmIsEnabled),
+//					IsEnabled: pulumi.Bool(true),
 //					PostInstallationActions: &jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs{
-//						AddLoggingHandler:   pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsAddLoggingHandler),
-//						DisabledTlsVersions: pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsDisabledTlsVersions),
-//						GlobalLoggingLevel:  pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsGlobalLoggingLevel),
+//						AddLoggingHandler: pulumi.Bool(false),
+//						DisabledTlsVersions: pulumi.StringArray{
+//							pulumi.String("TLS_1_0"),
+//						},
+//						GlobalLoggingLevel: pulumi.String("ALL"),
 //						MinimumKeySizeSettings: &jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs{
 //							Certpaths: jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArray{
 //								&jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs{
-//									KeySize: pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathKeySize),
-//									Name:    pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathName),
+//									KeySize: pulumi.Int(2048),
+//									Name:    pulumi.String("RSA"),
 //								},
 //							},
 //							Jars: jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArray{
 //								&jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs{
-//									KeySize: pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarKeySize),
-//									Name:    pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarName),
+//									KeySize: pulumi.Int(2048),
+//									Name:    pulumi.String("RSA"),
 //								},
 //							},
 //							Tls: jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArray{
 //								&jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs{
-//									KeySize: pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsKeySize),
-//									Name:    pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsName),
+//									KeySize: pulumi.Int(2048),
+//									Name:    pulumi.String("RSA"),
 //								},
 //							},
 //						},
 //						Proxies: &jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs{
-//							FtpProxyHost:     pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesFtpProxyHost),
-//							FtpProxyPort:     pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesFtpProxyPort),
-//							HttpProxyHost:    pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpProxyHost),
-//							HttpProxyPort:    pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpProxyPort),
-//							HttpsProxyHost:   pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpsProxyHost),
-//							HttpsProxyPort:   pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesHttpsProxyPort),
-//							SocksProxyHost:   pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesSocksProxyHost),
-//							SocksProxyPort:   pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesSocksProxyPort),
-//							UseSystemProxies: pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesUseSystemProxies),
+//							FtpProxyHost:     pulumi.String("example-ftp-proxy-host"),
+//							FtpProxyPort:     pulumi.Int(10),
+//							HttpProxyHost:    pulumi.String("example-http-proxy-host"),
+//							HttpProxyPort:    pulumi.Int(10),
+//							HttpsProxyHost:   pulumi.String("example-https-proxy-host"),
+//							HttpsProxyPort:   pulumi.Int(10),
+//							SocksProxyHost:   pulumi.String("example-socks-proxy-host"),
+//							SocksProxyPort:   pulumi.Int(10),
+//							UseSystemProxies: pulumi.Bool(false),
 //						},
-//						ShouldReplaceCertificatesOperatingSystem: pulumi.Any(fleetAdvancedFeatureConfigurationLcmPostInstallationActionsShouldReplaceCertificatesOperatingSystem),
+//						ShouldReplaceCertificatesOperatingSystem: pulumi.Bool(false),
 //					},
 //				},
 //				PerformanceTuningAnalysis: &jms.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{
-//					IsEnabled: pulumi.Any(fleetAdvancedFeatureConfigurationPerformanceTuningAnalysisIsEnabled),
+//					IsEnabled: pulumi.Bool(true),
 //				},
 //			})
 //			if err != nil {

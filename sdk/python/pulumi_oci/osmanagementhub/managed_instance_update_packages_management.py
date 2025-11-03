@@ -173,10 +173,6 @@ class ManagedInstanceUpdatePackagesManagement(pulumi.CustomResource):
                  work_request_details: Optional[pulumi.Input[Union['ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Managed Instance Update Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Updates a package on a managed instance.
-
         ## Example Usage
 
         ```python
@@ -215,10 +211,6 @@ class ManagedInstanceUpdatePackagesManagement(pulumi.CustomResource):
                  args: ManagedInstanceUpdatePackagesManagementArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Managed Instance Update Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
-
-        Updates a package on a managed instance.
-
         ## Example Usage
 
         ```python

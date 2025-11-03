@@ -19,11 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
- * 
- * Creates a data source (DataSource resource), using parameters passed
- * through a CreateDataSourceDetails resource.
- * 
  * ## Example Usage
  * 
  * <pre>

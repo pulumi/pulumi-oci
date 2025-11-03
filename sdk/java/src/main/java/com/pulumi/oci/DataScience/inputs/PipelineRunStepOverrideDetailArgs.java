@@ -10,7 +10,9 @@ import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepConfig
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -95,6 +97,21 @@ public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resource
         return this.stepName;
     }
 
+    /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    @Import(name="stepStorageMountConfigurationDetailsLists")
+    private @Nullable Output<List<PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs>> stepStorageMountConfigurationDetailsLists;
+
+    /**
+     * @return The storage mount details to mount to the instance running the pipeline step.
+     * 
+     */
+    public Optional<Output<List<PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs>>> stepStorageMountConfigurationDetailsLists() {
+        return Optional.ofNullable(this.stepStorageMountConfigurationDetailsLists);
+    }
+
     private PipelineRunStepOverrideDetailArgs() {}
 
     private PipelineRunStepOverrideDetailArgs(PipelineRunStepOverrideDetailArgs $) {
@@ -103,6 +120,7 @@ public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resource
         this.stepDataflowConfigurationDetails = $.stepDataflowConfigurationDetails;
         this.stepInfrastructureConfigurationDetails = $.stepInfrastructureConfigurationDetails;
         this.stepName = $.stepName;
+        this.stepStorageMountConfigurationDetailsLists = $.stepStorageMountConfigurationDetailsLists;
     }
 
     public static Builder builder() {
@@ -226,6 +244,37 @@ public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resource
          */
         public Builder stepName(String stepName) {
             return stepName(Output.of(stepName));
+        }
+
+        /**
+         * @param stepStorageMountConfigurationDetailsLists The storage mount details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepStorageMountConfigurationDetailsLists(@Nullable Output<List<PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs>> stepStorageMountConfigurationDetailsLists) {
+            $.stepStorageMountConfigurationDetailsLists = stepStorageMountConfigurationDetailsLists;
+            return this;
+        }
+
+        /**
+         * @param stepStorageMountConfigurationDetailsLists The storage mount details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepStorageMountConfigurationDetailsLists(List<PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs> stepStorageMountConfigurationDetailsLists) {
+            return stepStorageMountConfigurationDetailsLists(Output.of(stepStorageMountConfigurationDetailsLists));
+        }
+
+        /**
+         * @param stepStorageMountConfigurationDetailsLists The storage mount details to mount to the instance running the pipeline step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepStorageMountConfigurationDetailsLists(PipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs... stepStorageMountConfigurationDetailsLists) {
+            return stepStorageMountConfigurationDetailsLists(List.of(stepStorageMountConfigurationDetailsLists));
         }
 
         public PipelineRunStepOverrideDetailArgs build() {

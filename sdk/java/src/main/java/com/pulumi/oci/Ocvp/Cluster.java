@@ -20,83 +20,11 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
- * 
- * Create a vSphere Cluster in software-defined data center (SDDC).
- * 
- * Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/WorkRequest/) operations to track the
- * creation of the Cluster.
- * 
- * **Important:** You must configure the Cluster&#39;s networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
- * 
  * ## Example Usage
- * 
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Ocvp.Cluster;
- * import com.pulumi.oci.Ocvp.ClusterArgs;
- * import com.pulumi.oci.Ocvp.inputs.ClusterNetworkConfigurationArgs;
- * import com.pulumi.oci.Ocvp.inputs.ClusterDatastoreArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testCluster = new Cluster("testCluster", ClusterArgs.builder()
- *             .computeAvailabilityDomain(clusterComputeAvailabilityDomain)
- *             .esxiHostsCount(clusterEsxiHostsCount)
- *             .networkConfiguration(ClusterNetworkConfigurationArgs.builder()
- *                 .nsxEdgeVtepVlanId(testVlan.id())
- *                 .nsxVtepVlanId(testVlan.id())
- *                 .provisioningSubnetId(testSubnet.id())
- *                 .vmotionVlanId(testVlan.id())
- *                 .vsanVlanId(testVlan.id())
- *                 .hcxVlanId(testVlan.id())
- *                 .nsxEdgeUplink1vlanId(testNsxEdgeUplink1vlan.id())
- *                 .nsxEdgeUplink2vlanId(testNsxEdgeUplink2vlan.id())
- *                 .provisioningVlanId(testVlan.id())
- *                 .replicationVlanId(testVlan.id())
- *                 .vsphereVlanId(testVlan.id())
- *                 .build())
- *             .sddcId(testSddc.id())
- *             .capacityReservationId(testCapacityReservation.id())
- *             .datastores(ClusterDatastoreArgs.builder()
- *                 .blockVolumeIds(clusterDatastoresBlockVolumeIds)
- *                 .datastoreType(clusterDatastoresDatastoreType)
- *                 .build())
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .displayName(clusterDisplayName)
- *             .esxiSoftwareVersion(clusterEsxiSoftwareVersion)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .initialCommitment(clusterInitialCommitment)
- *             .initialHostOcpuCount(clusterInitialHostOcpuCount)
- *             .initialHostShapeName(testShape.name())
- *             .instanceDisplayNamePrefix(clusterInstanceDisplayNamePrefix)
- *             .isShieldedInstanceEnabled(clusterIsShieldedInstanceEnabled)
- *             .vmwareSoftwareVersion(clusterVmwareSoftwareVersion)
- *             .workloadNetworkCidr(clusterWorkloadNetworkCidr)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * 
  * ## Import
  * 
@@ -114,6 +42,12 @@ public class Cluster extends com.pulumi.resources.CustomResource {
 
     public Output<Integer> actualEsxiHostsCount() {
         return this.actualEsxiHostsCount;
+    }
+    @Export(name="attachDatastoreClusterIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> attachDatastoreClusterIds;
+
+    public Output<Optional<List<String>>> attachDatastoreClusterIds() {
+        return Codegen.optional(this.attachDatastoreClusterIds);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
@@ -158,6 +92,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.computeAvailabilityDomain;
     }
     /**
+     * A list of datastore clusters.
+     * 
+     */
+    @Export(name="datastoreClusterIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> datastoreClusterIds;
+
+    /**
+     * @return A list of datastore clusters.
+     * 
+     */
+    public Output<List<String>> datastoreClusterIds() {
+        return this.datastoreClusterIds;
+    }
+    /**
      * A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      * 
      */
@@ -185,15 +133,21 @@ public class Cluster extends com.pulumi.resources.CustomResource {
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
+    @Export(name="detachDatastoreClusterIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<String>> detachDatastoreClusterIds;
+
+    public Output<Optional<List<String>>> detachDatastoreClusterIds() {
+        return Codegen.optional(this.detachDatastoreClusterIds);
+    }
     /**
-     * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+     * @return (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {

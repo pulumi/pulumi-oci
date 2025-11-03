@@ -949,10 +949,6 @@ class DesktopPool(pulumi.CustomResource):
                  use_dedicated_vm_host: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
-
-        Creates a desktop pool with the given configuration parameters.
-
         ## Example Usage
 
         ```python
@@ -1081,10 +1077,6 @@ class DesktopPool(pulumi.CustomResource):
                  args: DesktopPoolArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
-
-        Creates a desktop pool with the given configuration parameters.
-
         ## Example Usage
 
         ```python

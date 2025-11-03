@@ -18,10 +18,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Globally Distributed Database service.
- * 
- * Creates a PrivateEndpoint.
- * 
  * ## Example Usage
  * 
  * <pre>

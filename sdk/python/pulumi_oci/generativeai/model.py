@@ -512,11 +512,7 @@ class Model(pulumi.CustomResource):
                  version: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Model resource in Oracle Cloud Infrastructure Generative AI service.
-
-        Creates a custom model by fine-tuning a base model with your own dataset. You can create a new custom models or create a new version of existing custom model..
-
-        The header contains an opc-work-request-id, which is the id for the WorkRequest that tracks the model creation progress.
+        ## Example Usage
 
         ## Import
 
@@ -549,11 +545,7 @@ class Model(pulumi.CustomResource):
                  args: ModelArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Model resource in Oracle Cloud Infrastructure Generative AI service.
-
-        Creates a custom model by fine-tuning a base model with your own dataset. You can create a new custom models or create a new version of existing custom model..
-
-        The header contains an opc-work-request-id, which is the id for the WorkRequest that tracks the model creation progress.
+        ## Example Usage
 
         ## Import
 

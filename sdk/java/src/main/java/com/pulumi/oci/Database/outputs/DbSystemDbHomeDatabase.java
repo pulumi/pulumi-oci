@@ -64,10 +64,6 @@ public final class DbSystemDbHomeDatabase {
      * 
      */
     private @Nullable String dbName;
-    /**
-     * @return The `DB_UNIQUE_NAME` of the Oracle Database.
-     * 
-     */
     private @Nullable String dbUniqueName;
     /**
      * @return **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud{@literal @}Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
@@ -97,7 +93,7 @@ public final class DbSystemDbHomeDatabase {
      */
     private @Nullable String kmsKeyId;
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     private @Nullable String kmsKeyVersionId;
@@ -216,10 +212,6 @@ public final class DbSystemDbHomeDatabase {
     public Optional<String> dbName() {
         return Optional.ofNullable(this.dbName);
     }
-    /**
-     * @return The `DB_UNIQUE_NAME` of the Oracle Database.
-     * 
-     */
     public Optional<String> dbUniqueName() {
         return Optional.ofNullable(this.dbUniqueName);
     }
@@ -261,7 +253,7 @@ public final class DbSystemDbHomeDatabase {
         return Optional.ofNullable(this.kmsKeyId);
     }
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public Optional<String> kmsKeyVersionId() {

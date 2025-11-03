@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Web App Firewall Policy resource in Oracle Cloud Infrastructure Waf service.
-//
-// Creates a new WebAppFirewallPolicy.
-//
 // ## Example Usage
 //
 // ```go

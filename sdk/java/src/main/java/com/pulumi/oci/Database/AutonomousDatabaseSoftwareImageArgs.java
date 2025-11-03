@@ -48,14 +48,14 @@ public final class AutonomousDatabaseSoftwareImageArgs extends com.pulumi.resour
     }
 
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * 
      */
     public Output<String> displayName() {
@@ -93,7 +93,7 @@ public final class AutonomousDatabaseSoftwareImageArgs extends com.pulumi.resour
     }
 
     /**
-     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -103,7 +103,7 @@ public final class AutonomousDatabaseSoftwareImageArgs extends com.pulumi.resour
     private Output<String> sourceCdbId;
 
     /**
-     * @return The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * @return The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -185,7 +185,7 @@ public final class AutonomousDatabaseSoftwareImageArgs extends com.pulumi.resour
         }
 
         /**
-         * @param displayName The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+         * @param displayName The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class AutonomousDatabaseSoftwareImageArgs extends com.pulumi.resour
         }
 
         /**
-         * @param displayName The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+         * @param displayName The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class AutonomousDatabaseSoftwareImageArgs extends com.pulumi.resour
         }
 
         /**
-         * @param sourceCdbId The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+         * @param sourceCdbId The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -262,7 +262,7 @@ public final class AutonomousDatabaseSoftwareImageArgs extends com.pulumi.resour
         }
 
         /**
-         * @param sourceCdbId The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+         * @param sourceCdbId The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

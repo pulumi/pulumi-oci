@@ -272,14 +272,14 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Import(name="peerRole")
     private @Nullable Output<String> peerRole;
 
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public Optional<Output<String>> peerRole() {
@@ -302,14 +302,14 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
     }
 
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Import(name="role")
     private @Nullable Output<String> role;
 
     /**
-     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      * 
      */
     public Optional<Output<String>> role() {
@@ -807,7 +807,7 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         }
 
         /**
-         * @param peerRole The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * @param peerRole The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          * 
          * @return builder
          * 
@@ -818,7 +818,7 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         }
 
         /**
-         * @param peerRole The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * @param peerRole The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          * 
          * @return builder
          * 
@@ -849,7 +849,7 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         }
 
         /**
-         * @param role The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * @param role The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          * 
          * @return builder
          * 
@@ -860,7 +860,7 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         }
 
         /**
-         * @param role The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
+         * @param role The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
          * 
          * @return builder
          * 

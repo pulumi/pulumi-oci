@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the External Database Connector resource in Oracle Cloud Infrastructure Database service.
-//
-// Creates a new external database connector.
-//
 // ## Example Usage
 //
 // ```go
@@ -79,7 +75,7 @@ type ExternalDatabaseConnector struct {
 	ConnectionCredentials ExternalDatabaseConnectorConnectionCredentialsOutput `pulumi:"connectionCredentials"`
 	// The status of connectivity to the external database.
 	ConnectionStatus pulumi.StringOutput `pulumi:"connectionStatus"`
-	// (Updatable) The Oracle Database connection string.
+	// (Updatable) The Oracle AI Database connection string.
 	ConnectionString ExternalDatabaseConnectorConnectionStringOutput `pulumi:"connectionString"`
 	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ConnectorAgentId pulumi.StringOutput `pulumi:"connectorAgentId"`
@@ -159,7 +155,7 @@ type externalDatabaseConnectorState struct {
 	ConnectionCredentials *ExternalDatabaseConnectorConnectionCredentials `pulumi:"connectionCredentials"`
 	// The status of connectivity to the external database.
 	ConnectionStatus *string `pulumi:"connectionStatus"`
-	// (Updatable) The Oracle Database connection string.
+	// (Updatable) The Oracle AI Database connection string.
 	ConnectionString *ExternalDatabaseConnectorConnectionString `pulumi:"connectionString"`
 	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ConnectorAgentId *string `pulumi:"connectorAgentId"`
@@ -195,7 +191,7 @@ type ExternalDatabaseConnectorState struct {
 	ConnectionCredentials ExternalDatabaseConnectorConnectionCredentialsPtrInput
 	// The status of connectivity to the external database.
 	ConnectionStatus pulumi.StringPtrInput
-	// (Updatable) The Oracle Database connection string.
+	// (Updatable) The Oracle AI Database connection string.
 	ConnectionString ExternalDatabaseConnectorConnectionStringPtrInput
 	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ConnectorAgentId pulumi.StringPtrInput
@@ -231,7 +227,7 @@ func (ExternalDatabaseConnectorState) ElementType() reflect.Type {
 type externalDatabaseConnectorArgs struct {
 	// (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
 	ConnectionCredentials ExternalDatabaseConnectorConnectionCredentials `pulumi:"connectionCredentials"`
-	// (Updatable) The Oracle Database connection string.
+	// (Updatable) The Oracle AI Database connection string.
 	ConnectionString ExternalDatabaseConnectorConnectionString `pulumi:"connectionString"`
 	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ConnectorAgentId string `pulumi:"connectorAgentId"`
@@ -254,7 +250,7 @@ type externalDatabaseConnectorArgs struct {
 type ExternalDatabaseConnectorArgs struct {
 	// (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
 	ConnectionCredentials ExternalDatabaseConnectorConnectionCredentialsInput
-	// (Updatable) The Oracle Database connection string.
+	// (Updatable) The Oracle AI Database connection string.
 	ConnectionString ExternalDatabaseConnectorConnectionStringInput
 	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	ConnectorAgentId pulumi.StringInput
@@ -377,7 +373,7 @@ func (o ExternalDatabaseConnectorOutput) ConnectionStatus() pulumi.StringOutput 
 	return o.ApplyT(func(v *ExternalDatabaseConnector) pulumi.StringOutput { return v.ConnectionStatus }).(pulumi.StringOutput)
 }
 
-// (Updatable) The Oracle Database connection string.
+// (Updatable) The Oracle AI Database connection string.
 func (o ExternalDatabaseConnectorOutput) ConnectionString() ExternalDatabaseConnectorConnectionStringOutput {
 	return o.ApplyT(func(v *ExternalDatabaseConnector) ExternalDatabaseConnectorConnectionStringOutput {
 		return v.ConnectionString

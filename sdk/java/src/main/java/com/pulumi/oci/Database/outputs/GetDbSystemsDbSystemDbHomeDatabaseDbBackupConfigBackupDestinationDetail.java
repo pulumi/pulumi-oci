@@ -11,6 +11,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
+    private String backupRetentionPolicyOnTerminate;
     private String dbrsPolicyId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
@@ -18,10 +19,14 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
      */
     private String id;
     private Boolean isRemote;
+    private Boolean isRetentionLockEnabled;
     private String remoteRegion;
     private String type;
 
     private GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail() {}
+    public String backupRetentionPolicyOnTerminate() {
+        return this.backupRetentionPolicyOnTerminate;
+    }
     public String dbrsPolicyId() {
         return this.dbrsPolicyId;
     }
@@ -34,6 +39,9 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     }
     public Boolean isRemote() {
         return this.isRemote;
+    }
+    public Boolean isRetentionLockEnabled() {
+        return this.isRetentionLockEnabled;
     }
     public String remoteRegion() {
         return this.remoteRegion;
@@ -51,21 +59,33 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
     }
     @CustomType.Builder
     public static final class Builder {
+        private String backupRetentionPolicyOnTerminate;
         private String dbrsPolicyId;
         private String id;
         private Boolean isRemote;
+        private Boolean isRetentionLockEnabled;
         private String remoteRegion;
         private String type;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupRetentionPolicyOnTerminate = defaults.backupRetentionPolicyOnTerminate;
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.isRemote = defaults.isRemote;
+    	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
         }
 
+        @CustomType.Setter
+        public Builder backupRetentionPolicyOnTerminate(String backupRetentionPolicyOnTerminate) {
+            if (backupRetentionPolicyOnTerminate == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "backupRetentionPolicyOnTerminate");
+            }
+            this.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
+            return this;
+        }
         @CustomType.Setter
         public Builder dbrsPolicyId(String dbrsPolicyId) {
             if (dbrsPolicyId == null) {
@@ -91,6 +111,14 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
             return this;
         }
         @CustomType.Setter
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            if (isRetentionLockEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "isRetentionLockEnabled");
+            }
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder remoteRegion(String remoteRegion) {
             if (remoteRegion == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "remoteRegion");
@@ -108,9 +136,11 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestina
         }
         public GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail build() {
             final var _resultValue = new GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail();
+            _resultValue.backupRetentionPolicyOnTerminate = backupRetentionPolicyOnTerminate;
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
             _resultValue.isRemote = isRemote;
+            _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             return _resultValue;

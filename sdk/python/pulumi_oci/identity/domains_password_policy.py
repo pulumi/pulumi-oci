@@ -3395,10 +3395,6 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  user_name_disallowed: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a password policy.
-
         ## Example Usage
 
         ## Import
@@ -3844,10 +3840,6 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                  args: DomainsPasswordPolicyArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Password Policy resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create a password policy.
-
         ## Example Usage
 
         ## Import

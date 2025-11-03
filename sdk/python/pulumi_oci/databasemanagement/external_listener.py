@@ -573,9 +573,7 @@ class ExternalListener(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
-        This resource provides the External Listener resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external listener specified by `externalListenerId`.
+        ## Example Usage
 
         ## Import
 
@@ -603,9 +601,7 @@ class ExternalListener(pulumi.CustomResource):
                  args: ExternalListenerArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the External Listener resource in Oracle Cloud Infrastructure Database Management service.
-
-        Updates the external listener specified by `externalListenerId`.
+        ## Example Usage
 
         ## Import
 

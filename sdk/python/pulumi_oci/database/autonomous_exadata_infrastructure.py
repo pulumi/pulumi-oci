@@ -55,7 +55,7 @@ class AutonomousExadataInfrastructureArgs:
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         if availability_domain is not None:
             warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
@@ -225,7 +225,7 @@ class AutonomousExadataInfrastructureArgs:
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -274,7 +274,7 @@ class _AutonomousExadataInfrastructureState:
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Autonomous Exadata Infrastructure.
@@ -508,7 +508,7 @@ class _AutonomousExadataInfrastructureState:
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -618,10 +618,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-
-        **Deprecated** To create a new Autonomous Database system on dedicated Exadata Infrastructure, use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) and [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster) operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
-
         ## Example Usage
 
         ```python
@@ -680,7 +676,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
                
@@ -700,10 +696,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                  args: AutonomousExadataInfrastructureArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
-
-        **Deprecated** To create a new Autonomous Database system on dedicated Exadata Infrastructure, use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure) and [CreateCloudAutonomousVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/CreateCloudAutonomousVmCluster) operations instead. Note that to create an Autonomous VM cluster, you must have an existing Exadata Infrastructure resource to contain the VM cluster.
-
         ## Example Usage
 
         ```python
@@ -868,7 +860,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowArgs', 'AutonomousExadataInfrastructureMaintenanceWindowArgsDict']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+               * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the Autonomous Exadata Infrastructure.
         :param pulumi.Input[_builtins.str] shape: The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Autonomous Exadata Infrastructure.
@@ -1027,7 +1019,7 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
     def nsg_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
         (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         """
         return pulumi.get(self, "nsg_ids")
 

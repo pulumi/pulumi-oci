@@ -131,7 +131,7 @@ class _DatabaseUpgradeState:
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.int] last_backup_duration_in_seconds: The duration when the latest database backup created.
         :param pulumi.Input[_builtins.str] last_backup_timestamp: The date and time when the latest database backup was created.
         :param pulumi.Input[_builtins.str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
@@ -459,7 +459,7 @@ class _DatabaseUpgradeState:
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -635,20 +635,6 @@ class DatabaseUpgrade(pulumi.CustomResource):
                  database_upgrade_source_details: Optional[pulumi.Input[Union['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs', 'DatabaseUpgradeDatabaseUpgradeSourceDetailsArgsDict']]] = None,
                  __props__=None):
         """
-        This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.
-
-        Upgrades the specified Oracle Database instance.
-
-        Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
-        	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
-        	To avoid a force new create of the db_home on the next apply, add the following to the resource
-        	```	lifecycle {
-        	   	ignore_changes = [
-        	   		db_home.0.db_version,
-        	   	]
-        	}
-        	```
-
         ## Example Usage
 
         ## Import
@@ -668,20 +654,6 @@ class DatabaseUpgrade(pulumi.CustomResource):
                  args: DatabaseUpgradeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Database Upgrade resource in Oracle Cloud Infrastructure Database service.
-
-        Upgrades the specified Oracle Database instance.
-
-        Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
-        	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
-        	To avoid a force new create of the db_home on the next apply, add the following to the resource
-        	```	lifecycle {
-        	   	ignore_changes = [
-        	   		db_home.0.db_version,
-        	   	]
-        	}
-        	```
-
         ## Example Usage
 
         ## Import
@@ -824,7 +796,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[_builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param pulumi.Input[_builtins.int] last_backup_duration_in_seconds: The duration when the latest database backup created.
         :param pulumi.Input[_builtins.str] last_backup_timestamp: The date and time when the latest database backup was created.
         :param pulumi.Input[_builtins.str] last_failed_backup_timestamp: The date and time when the latest database backup failed.
@@ -1043,7 +1015,7 @@ class DatabaseUpgrade(pulumi.CustomResource):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 

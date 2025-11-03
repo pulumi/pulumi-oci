@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Product License resource in Oracle Cloud Infrastructure License Manager service.
- *
- * Creates a new product license.
- *
  * ## Example Usage
  *
  * ```typescript

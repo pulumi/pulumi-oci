@@ -84,7 +84,7 @@ type GetDatabaseMaintenanceRunHistoriesResult struct {
 	MaintenanceRunHistories []GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistory `pulumi:"maintenanceRunHistories"`
 	// Maintenance type.
 	MaintenanceType *string `pulumi:"maintenanceType"`
-	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+	// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State *string `pulumi:"state"`
 	// The ID of the target resource on which the maintenance run occurs.
 	TargetResourceId *string `pulumi:"targetResourceId"`
@@ -169,7 +169,7 @@ func (o GetDatabaseMaintenanceRunHistoriesResultOutput) MaintenanceType() pulumi
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesResult) *string { return v.MaintenanceType }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+// The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 func (o GetDatabaseMaintenanceRunHistoriesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDatabaseMaintenanceRunHistoriesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

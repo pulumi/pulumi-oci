@@ -379,9 +379,7 @@ class Report(pulumi.CustomResource):
                  report_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Report resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the specified report. Only tags can be updated.
+        ## Example Usage
 
         ## Import
 
@@ -409,9 +407,7 @@ class Report(pulumi.CustomResource):
                  args: ReportArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Report resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Updates the specified report. Only tags can be updated.
+        ## Example Usage
 
         ## Import
 

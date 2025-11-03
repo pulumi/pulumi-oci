@@ -732,10 +732,6 @@ class MysqlBackup(pulumi.CustomResource):
                  validate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
-        This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Create a backup of a DB System.
-
         ## Example Usage
 
         ```python
@@ -788,10 +784,6 @@ class MysqlBackup(pulumi.CustomResource):
                  args: Optional[MysqlBackupArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
-
-        Create a backup of a DB System.
-
         ## Example Usage
 
         ```python

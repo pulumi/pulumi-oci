@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
- * 
- * Creates a new deployment artifact.
- * 
  * ## Example Usage
  * 
  * <pre>

@@ -19,10 +19,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
- * 
- * Creates an Exadata Database Storage Vault
- * 
  * ## Example Usage
  * 
  * <pre>

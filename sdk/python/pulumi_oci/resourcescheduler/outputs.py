@@ -42,8 +42,6 @@ class ScheduleResource(dict):
         """
         :param _builtins.str id: (Updatable) This is the resource OCID.
         :param Mapping[str, _builtins.str] metadata: (Updatable) This is additional information that helps to identity the resource for the schedule.
-               
-               <<<<<<< ours
                { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         :param Sequence['ScheduleResourceParameterArgs'] parameters: (Updatable) This is the user input parameters to use when acting on the resource.
                
@@ -68,8 +66,6 @@ class ScheduleResource(dict):
     def metadata(self) -> Optional[Mapping[str, _builtins.str]]:
         """
         (Updatable) This is additional information that helps to identity the resource for the schedule.
-
-        <<<<<<< ours
         { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
         return pulumi.get(self, "metadata")
@@ -243,7 +239,6 @@ class ScheduleResourceParameter(dict):
         """
         :param _builtins.str parameter_type: (Updatable) This is the parameter type on which the input parameter is defined
         :param _builtins.str value: (Updatable) This is the HTTP request header value.
-               =======
                { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
         pulumi.set(__self__, "parameter_type", parameter_type)
@@ -263,7 +258,6 @@ class ScheduleResourceParameter(dict):
     def value(self) -> Optional[_builtins.str]:
         """
         (Updatable) This is the HTTP request header value.
-        =======
         { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
         return pulumi.get(self, "value")

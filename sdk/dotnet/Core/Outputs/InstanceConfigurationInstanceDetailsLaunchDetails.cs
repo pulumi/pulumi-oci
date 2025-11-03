@@ -100,6 +100,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? IpxeScript;
         /// <summary>
+        /// Whether to enable AI enterprise on the instance.
+        /// </summary>
+        public readonly bool? IsAiEnterpriseEnabled;
+        /// <summary>
         /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         /// </summary>
         public readonly bool? IsPvEncryptionInTransitEnabled;
@@ -223,6 +227,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? ipxeScript,
 
+            bool? isAiEnterpriseEnabled,
+
             bool? isPvEncryptionInTransitEnabled,
 
             string? launchMode,
@@ -265,6 +271,7 @@ namespace Pulumi.Oci.Core.Outputs
             FreeformTags = freeformTags;
             InstanceOptions = instanceOptions;
             IpxeScript = ipxeScript;
+            IsAiEnterpriseEnabled = isAiEnterpriseEnabled;
             IsPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             LaunchMode = launchMode;
             LaunchOptions = launchOptions;

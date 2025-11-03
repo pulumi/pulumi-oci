@@ -82,7 +82,7 @@ class GetAutonomousDatabaseSoftwareImageResult:
     @pulumi.getter(name="autonomousDsiOneOffPatches")
     def autonomous_dsi_one_off_patches(self) -> Sequence[_builtins.str]:
         """
-        One-off patches included in the Autonomous Database Software Image
+        One-off patches included in the Autonomous AI Database Software Image
         """
         return pulumi.get(self, "autonomous_dsi_one_off_patches")
 
@@ -98,7 +98,7 @@ class GetAutonomousDatabaseSoftwareImageResult:
     @pulumi.getter(name="databaseVersion")
     def database_version(self) -> _builtins.str:
         """
-        The database version with which the Autonomous Database Software Image is to be built.
+        The database version with which the Autonomous AI Database Software Image is to be built.
         """
         return pulumi.get(self, "database_version")
 
@@ -114,7 +114,7 @@ class GetAutonomousDatabaseSoftwareImageResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+        The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -130,7 +130,7 @@ class GetAutonomousDatabaseSoftwareImageResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database Software Image.
         """
         return pulumi.get(self, "id")
 
@@ -167,7 +167,7 @@ class GetAutonomousDatabaseSoftwareImageResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of the Autonomous Database Software Image.
+        The current state of the Autonomous AI Database Software Image.
         """
         return pulumi.get(self, "state")
 
@@ -183,7 +183,7 @@ class GetAutonomousDatabaseSoftwareImageResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the Autonomous Database Software Image was created.
+        The date and time the Autonomous AI Database Software Image was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -216,7 +216,7 @@ def get_autonomous_database_software_image(autonomous_database_software_image_id
     """
     This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
 
-    Gets information about the specified Autonomous Database Software Image.
+    Gets information about the specified Autonomous AI Database Software Image.
 
     ## Example Usage
 
@@ -228,7 +228,7 @@ def get_autonomous_database_software_image(autonomous_database_software_image_id
     ```
 
 
-    :param _builtins.str autonomous_database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str autonomous_database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
     __args__ = dict()
     __args__['autonomousDatabaseSoftwareImageId'] = autonomous_database_software_image_id
@@ -256,7 +256,7 @@ def get_autonomous_database_software_image_output(autonomous_database_software_i
     """
     This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
 
-    Gets information about the specified Autonomous Database Software Image.
+    Gets information about the specified Autonomous AI Database Software Image.
 
     ## Example Usage
 
@@ -268,7 +268,7 @@ def get_autonomous_database_software_image_output(autonomous_database_software_i
     ```
 
 
-    :param _builtins.str autonomous_database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str autonomous_database_software_image_id: The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
     __args__ = dict()
     __args__['autonomousDatabaseSoftwareImageId'] = autonomous_database_software_image_id

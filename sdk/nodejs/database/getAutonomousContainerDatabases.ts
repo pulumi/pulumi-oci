@@ -80,7 +80,7 @@ export interface GetAutonomousContainerDatabasesArgs {
      */
     infrastructureType?: string;
     /**
-     * A filter to return only resources that match the given service level agreement type exactly.
+     * A filter to return only resources that match the given service-level agreement type exactly.
      */
     serviceLevelAgreementType?: string;
     /**
@@ -98,7 +98,7 @@ export interface GetAutonomousContainerDatabasesResult {
      */
     readonly autonomousContainerDatabases: outputs.Database.GetAutonomousContainerDatabasesAutonomousContainerDatabase[];
     /**
-     * **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
+     * **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      */
     readonly autonomousExadataInfrastructureId?: string;
     /**
@@ -213,7 +213,7 @@ export interface GetAutonomousContainerDatabasesOutputArgs {
      */
     infrastructureType?: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the given service level agreement type exactly.
+     * A filter to return only resources that match the given service-level agreement type exactly.
      */
     serviceLevelAgreementType?: pulumi.Input<string>;
     /**

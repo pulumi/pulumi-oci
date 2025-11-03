@@ -55,6 +55,21 @@ public final class GetEndpointsPlainArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     * 
+     */
+    @Import(name="generativeAiPrivateEndpointId")
+    private @Nullable String generativeAiPrivateEndpointId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+     * 
+     */
+    public Optional<String> generativeAiPrivateEndpointId() {
+        return Optional.ofNullable(this.generativeAiPrivateEndpointId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
      * 
      */
@@ -90,6 +105,7 @@ public final class GetEndpointsPlainArgs extends com.pulumi.resources.InvokeArgs
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.generativeAiPrivateEndpointId = $.generativeAiPrivateEndpointId;
         this.id = $.id;
         this.state = $.state;
     }
@@ -141,6 +157,17 @@ public final class GetEndpointsPlainArgs extends com.pulumi.resources.InvokeArgs
 
         public Builder filters(GetEndpointsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param generativeAiPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generativeAiPrivateEndpointId(@Nullable String generativeAiPrivateEndpointId) {
+            $.generativeAiPrivateEndpointId = generativeAiPrivateEndpointId;
+            return this;
         }
 
         /**

@@ -498,10 +498,6 @@ class NetworkFirewall(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource provides the Network Firewall resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new NetworkFirewall.
-
         ## Example Usage
 
         ```python
@@ -561,10 +557,6 @@ class NetworkFirewall(pulumi.CustomResource):
                  args: NetworkFirewallArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Network Firewall resource in Oracle Cloud Infrastructure Network Firewall service.
-
-        Creates a new NetworkFirewall.
-
         ## Example Usage
 
         ```python

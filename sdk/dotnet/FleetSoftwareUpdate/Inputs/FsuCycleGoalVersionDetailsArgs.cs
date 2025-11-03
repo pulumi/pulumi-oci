@@ -12,6 +12,18 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
 
     public sealed class FsuCycleGoalVersionDetailsArgs : global::Pulumi.ResourceArgs
     {
+        [Input("components")]
+        private InputList<Inputs.FsuCycleGoalVersionDetailsComponentArgs>? _components;
+
+        /// <summary>
+        /// (Updatable) Details of goal versions for components in an Exadata software stack.
+        /// </summary>
+        public InputList<Inputs.FsuCycleGoalVersionDetailsComponentArgs> Components
+        {
+            get => _components ?? (_components = new InputList<Inputs.FsuCycleGoalVersionDetailsComponentArgs>());
+            set => _components = value;
+        }
+
         /// <summary>
         /// (Updatable) Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.  If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.  If more than one existing home for the selected image is found, then the home with the least number of databases will be used.  If multiple homes have the least number of databases, then a home will be selected at random.
         /// </summary>
@@ -25,19 +37,19 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         public Input<string>? NewHomePrefix { get; set; }
 
         /// <summary>
-        /// (Updatable) Target database software image OCID.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the goal database software image.
         /// </summary>
         [Input("softwareImageId")]
         public Input<string>? SoftwareImageId { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of goal target version specified
+        /// (Updatable) Type of goal version specified
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Target DB or GI version string for the Exadata Fleet Update Cycle.
+        /// (Updatable) Goal version string for the Exadata Fleet Update Cycle. Applicable to Database, Grid Infrastructure, or Exadata Image software updates.
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

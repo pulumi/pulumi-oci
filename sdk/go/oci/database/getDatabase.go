@@ -104,7 +104,7 @@ type LookupDatabaseResult struct {
 	KmsKeyId        string `pulumi:"kmsKeyId"`
 	KmsKeyMigration bool   `pulumi:"kmsKeyMigration"`
 	KmsKeyRotation  int    `pulumi:"kmsKeyRotation"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
 	// The duration when the latest database backup created.
 	LastBackupDurationInSeconds int `pulumi:"lastBackupDurationInSeconds"`
@@ -295,7 +295,7 @@ func (o LookupDatabaseResultOutput) KmsKeyRotation() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) int { return v.KmsKeyRotation }).(pulumi.IntOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o LookupDatabaseResultOutput) KmsKeyVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
 }

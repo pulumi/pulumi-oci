@@ -28,7 +28,7 @@ class GetEndpointsResult:
     """
     A collection of values returned by getEndpoints.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, endpoint_collections=None, filters=None, id=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, endpoint_collections=None, filters=None, generative_ai_private_endpoint_id=None, id=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -41,6 +41,9 @@ class GetEndpointsResult:
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
+        if generative_ai_private_endpoint_id and not isinstance(generative_ai_private_endpoint_id, str):
+            raise TypeError("Expected argument 'generative_ai_private_endpoint_id' to be a str")
+        pulumi.set(__self__, "generative_ai_private_endpoint_id", generative_ai_private_endpoint_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -56,9 +59,6 @@ class GetEndpointsResult:
     @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @_builtins.property
@@ -73,6 +73,11 @@ class GetEndpointsResult:
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetEndpointsFilterResult']]:
         return pulumi.get(self, "filters")
+
+    @_builtins.property
+    @pulumi.getter(name="generativeAiPrivateEndpointId")
+    def generative_ai_private_endpoint_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "generative_ai_private_endpoint_id")
 
     @_builtins.property
     @pulumi.getter
@@ -98,6 +103,7 @@ class AwaitableGetEndpointsResult(GetEndpointsResult):
             display_name=self.display_name,
             endpoint_collections=self.endpoint_collections,
             filters=self.filters,
+            generative_ai_private_endpoint_id=self.generative_ai_private_endpoint_id,
             id=self.id,
             state=self.state)
 
@@ -105,6 +111,7 @@ class AwaitableGetEndpointsResult(GetEndpointsResult):
 def get_endpoints(compartment_id: Optional[_builtins.str] = None,
                   display_name: Optional[_builtins.str] = None,
                   filters: Optional[Sequence[Union['GetEndpointsFilterArgs', 'GetEndpointsFilterArgsDict']]] = None,
+                  generative_ai_private_endpoint_id: Optional[_builtins.str] = None,
                   id: Optional[_builtins.str] = None,
                   state: Optional[_builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEndpointsResult:
@@ -121,6 +128,7 @@ def get_endpoints(compartment_id: Optional[_builtins.str] = None,
 
     test_endpoints = oci.GenerativeAi.get_endpoints(compartment_id=compartment_id,
         display_name=endpoint_display_name,
+        generative_ai_private_endpoint_id=test_generative_ai_private_endpoint["id"],
         id=endpoint_id,
         state=endpoint_state)
     ```
@@ -128,6 +136,7 @@ def get_endpoints(compartment_id: Optional[_builtins.str] = None,
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+    :param _builtins.str generative_ai_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
     :param _builtins.str state: A filter to return only resources that their lifecycle state matches the given lifecycle state.
     """
@@ -135,6 +144,7 @@ def get_endpoints(compartment_id: Optional[_builtins.str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['generativeAiPrivateEndpointId'] = generative_ai_private_endpoint_id
     __args__['id'] = id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -145,11 +155,13 @@ def get_endpoints(compartment_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         endpoint_collections=pulumi.get(__ret__, 'endpoint_collections'),
         filters=pulumi.get(__ret__, 'filters'),
+        generative_ai_private_endpoint_id=pulumi.get(__ret__, 'generative_ai_private_endpoint_id'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
 def get_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEndpointsFilterArgs', 'GetEndpointsFilterArgsDict']]]]] = None,
+                         generative_ai_private_endpoint_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                          id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEndpointsResult]:
@@ -166,6 +178,7 @@ def get_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
 
     test_endpoints = oci.GenerativeAi.get_endpoints(compartment_id=compartment_id,
         display_name=endpoint_display_name,
+        generative_ai_private_endpoint_id=test_generative_ai_private_endpoint["id"],
         id=endpoint_id,
         state=endpoint_state)
     ```
@@ -173,6 +186,7 @@ def get_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+    :param _builtins.str generative_ai_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
     :param _builtins.str state: A filter to return only resources that their lifecycle state matches the given lifecycle state.
     """
@@ -180,6 +194,7 @@ def get_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['generativeAiPrivateEndpointId'] = generative_ai_private_endpoint_id
     __args__['id'] = id
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -189,5 +204,6 @@ def get_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
         display_name=pulumi.get(__response__, 'display_name'),
         endpoint_collections=pulumi.get(__response__, 'endpoint_collections'),
         filters=pulumi.get(__response__, 'filters'),
+        generative_ai_private_endpoint_id=pulumi.get(__response__, 'generative_ai_private_endpoint_id'),
         id=pulumi.get(__response__, 'id'),
         state=pulumi.get(__response__, 'state')))

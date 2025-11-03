@@ -34,6 +34,8 @@ type LookupEndpointArgs struct {
 
 // A collection of values returned by getEndpoint.
 type LookupEndpointResult struct {
+	// Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+	Alias string `pulumi:"alias"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the endpoint compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -96,6 +98,11 @@ func (o LookupEndpointResultOutput) ToLookupEndpointResultOutput() LookupEndpoin
 
 func (o LookupEndpointResultOutput) ToLookupEndpointResultOutputWithContext(ctx context.Context) LookupEndpointResultOutput {
 	return o
+}
+
+// Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+func (o LookupEndpointResultOutput) Alias() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupEndpointResult) string { return v.Alias }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the endpoint compartment.

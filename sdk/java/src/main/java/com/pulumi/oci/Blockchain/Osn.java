@@ -15,10 +15,6 @@ import java.lang.String;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Osn resource in Oracle Cloud Infrastructure Blockchain service.
- * 
- * Create Blockchain Platform Osn
- * 
  * ## Example Usage
  * 
  * <pre>

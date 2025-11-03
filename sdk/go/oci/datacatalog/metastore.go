@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Metastore resource in Oracle Cloud Infrastructure Data Catalog service.
-//
-// Creates a new metastore.
-//
 // ## Example Usage
 //
 // ```go

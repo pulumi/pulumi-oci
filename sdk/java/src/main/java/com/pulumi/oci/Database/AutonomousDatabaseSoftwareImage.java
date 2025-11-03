@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.
- * 
- * create Autonomous Database Software Image in the specified compartment.
- * 
  * ## Example Usage
  * 
  * <pre>
@@ -70,14 +66,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage")
 public class AutonomousDatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
     /**
-     * One-off patches included in the Autonomous Database Software Image
+     * One-off patches included in the Autonomous AI Database Software Image
      * 
      */
     @Export(name="autonomousDsiOneOffPatches", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> autonomousDsiOneOffPatches;
 
     /**
-     * @return One-off patches included in the Autonomous Database Software Image
+     * @return One-off patches included in the Autonomous AI Database Software Image
      * 
      */
     public Output<List<String>> autonomousDsiOneOffPatches() {
@@ -98,14 +94,14 @@ public class AutonomousDatabaseSoftwareImage extends com.pulumi.resources.Custom
         return this.compartmentId;
     }
     /**
-     * The database version with which the Autonomous Database Software Image is to be built.
+     * The database version with which the Autonomous AI Database Software Image is to be built.
      * 
      */
     @Export(name="databaseVersion", refs={String.class}, tree="[0]")
     private Output<String> databaseVersion;
 
     /**
-     * @return The database version with which the Autonomous Database Software Image is to be built.
+     * @return The database version with which the Autonomous AI Database Software Image is to be built.
      * 
      */
     public Output<String> databaseVersion() {
@@ -126,14 +122,14 @@ public class AutonomousDatabaseSoftwareImage extends com.pulumi.resources.Custom
         return this.definedTags;
     }
     /**
-     * The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return The user-friendly name for the Autonomous Database Software Image. The name does not have to be unique.
+     * @return The user-friendly name for the Autonomous AI Database Software Image. The name does not have to be unique.
      * 
      */
     public Output<String> displayName() {
@@ -196,7 +192,7 @@ public class AutonomousDatabaseSoftwareImage extends com.pulumi.resources.Custom
         return this.releaseUpdate;
     }
     /**
-     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -206,7 +202,7 @@ public class AutonomousDatabaseSoftwareImage extends com.pulumi.resources.Custom
     private Output<String> sourceCdbId;
 
     /**
-     * @return The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous Database Software Image.
+     * @return The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,14 +212,14 @@ public class AutonomousDatabaseSoftwareImage extends com.pulumi.resources.Custom
         return this.sourceCdbId;
     }
     /**
-     * The current state of the Autonomous Database Software Image.
+     * The current state of the Autonomous AI Database Software Image.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Autonomous Database Software Image.
+     * @return The current state of the Autonomous AI Database Software Image.
      * 
      */
     public Output<String> state() {
@@ -244,14 +240,14 @@ public class AutonomousDatabaseSoftwareImage extends com.pulumi.resources.Custom
         return this.systemTags;
     }
     /**
-     * The date and time the Autonomous Database Software Image was created.
+     * The date and time the Autonomous AI Database Software Image was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the Autonomous Database Software Image was created.
+     * @return The date and time the Autonomous AI Database Software Image was created.
      * 
      */
     public Output<String> timeCreated() {

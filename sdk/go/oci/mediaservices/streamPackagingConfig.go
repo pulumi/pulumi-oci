@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
-//
-// Creates a new Packaging Configuration.
-//
 // ## Example Usage
 //
 // ```go

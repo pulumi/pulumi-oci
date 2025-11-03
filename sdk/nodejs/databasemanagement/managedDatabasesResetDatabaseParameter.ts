@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Managed Databases Reset Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
- *
- * Resets database parameter values to their default or startup values.
- *
  * ## Example Usage
  *
  * ```typescript

@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
- * 
- * Add custom log analytics entity type.
- * 
  * ## Example Usage
  * 
  * <pre>

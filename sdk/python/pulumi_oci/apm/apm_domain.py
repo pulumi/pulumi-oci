@@ -316,10 +316,6 @@ class ApmDomain(pulumi.CustomResource):
                  is_free_tier: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Apm service.
-
-        Creates a new APM domain.
-
         ## Example Usage
 
         ```python
@@ -367,10 +363,6 @@ class ApmDomain(pulumi.CustomResource):
                  args: ApmDomainArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Apm Domain resource in Oracle Cloud Infrastructure Apm service.
-
-        Creates a new APM domain.
-
         ## Example Usage
 
         ```python

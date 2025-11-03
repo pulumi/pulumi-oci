@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DevOps
 {
     /// <summary>
-    /// This resource provides the Repository Setting resource in Oracle Cloud Infrastructure Devops service.
-    /// 
-    /// Updates the settings for a repository.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

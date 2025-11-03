@@ -16,10 +16,6 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
- * 
- * Creates a new Service for the Network Firewall Policy.
- * 
  * ## Example Usage
  * 
  * <pre>

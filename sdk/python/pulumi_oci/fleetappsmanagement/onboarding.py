@@ -330,12 +330,6 @@ class Onboarding(pulumi.CustomResource):
                  is_fams_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Onboard a tenant to Fleet Application Management.
-        The onboarding process lets Fleet Application Management create a few required policies that you need to start using it
-        and its features.
-
         ## Example Usage
 
         ```python
@@ -375,12 +369,6 @@ class Onboarding(pulumi.CustomResource):
                  args: OnboardingArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
-
-        Onboard a tenant to Fleet Application Management.
-        The onboarding process lets Fleet Application Management create a few required policies that you need to start using it
-        and its features.
-
         ## Example Usage
 
         ```python

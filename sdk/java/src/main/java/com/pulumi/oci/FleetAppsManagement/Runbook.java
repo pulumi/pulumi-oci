@@ -17,10 +17,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
- * 
- * Creates a runbook.
- * 
  * ## Example Usage
  * 
  * <pre>

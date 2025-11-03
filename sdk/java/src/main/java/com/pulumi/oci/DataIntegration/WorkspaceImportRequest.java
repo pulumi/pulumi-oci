@@ -20,10 +20,6 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
- * 
- * Import Metadata Object
- * 
  * ## Example Usage
  * 
  * <pre>

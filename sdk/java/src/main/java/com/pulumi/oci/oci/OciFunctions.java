@@ -9,6 +9,10 @@ import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Utilities;
+import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
+import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformPlainArgs;
+import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
+import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
 import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancePlainArgs;
 import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
@@ -67,6 +71,34 @@ import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancePlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
+import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotDomainPlainArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
+import com.pulumi.oci.oci.inputs.GetIotIotDomainsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigPlainArgs;
@@ -79,6 +111,36 @@ import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterPlainArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorPlainArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
+import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionPlainArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancePlainArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentPlainArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
+import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancePlainArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
@@ -113,6 +175,8 @@ import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersPlainArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsPlainArgs;
+import com.pulumi.oci.oci.outputs.GetAiDataPlatformAiDataPlatformResult;
+import com.pulumi.oci.oci.outputs.GetAiDataPlatformAiDataPlatformsResult;
 import com.pulumi.oci.oci.outputs.GetApiPlatformApiPlatformInstanceResult;
 import com.pulumi.oci.oci.outputs.GetApiPlatformApiPlatformInstancesResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolApiMetadataByEntityTypesResult;
@@ -142,12 +206,41 @@ import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingsResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeysResult;
+import com.pulumi.oci.oci.outputs.GetIotDigitalTwinAdapterResult;
+import com.pulumi.oci.oci.outputs.GetIotDigitalTwinAdaptersResult;
+import com.pulumi.oci.oci.outputs.GetIotDigitalTwinInstanceContentResult;
+import com.pulumi.oci.oci.outputs.GetIotDigitalTwinInstanceResult;
+import com.pulumi.oci.oci.outputs.GetIotDigitalTwinInstancesResult;
+import com.pulumi.oci.oci.outputs.GetIotDigitalTwinModelResult;
+import com.pulumi.oci.oci.outputs.GetIotDigitalTwinModelSpecResult;
+import com.pulumi.oci.oci.outputs.GetIotDigitalTwinModelsResult;
+import com.pulumi.oci.oci.outputs.GetIotDigitalTwinRelationshipResult;
+import com.pulumi.oci.oci.outputs.GetIotDigitalTwinRelationshipsResult;
+import com.pulumi.oci.oci.outputs.GetIotIotDomainGroupResult;
+import com.pulumi.oci.oci.outputs.GetIotIotDomainGroupsResult;
+import com.pulumi.oci.oci.outputs.GetIotIotDomainResult;
+import com.pulumi.oci.oci.outputs.GetIotIotDomainsResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigVersionResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigVersionsResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigsResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClustersResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationMappingMetadataResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationSummariesMetadataResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudExternalLocationsMetadataResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudNetworkAnchorResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudNetworkAnchorsResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudOmHubMultiCloudMetadataResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudOmHubMultiCloudsMetadataResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudResourceAnchorResult;
+import com.pulumi.oci.oci.outputs.GetMulticloudResourceAnchorsResult;
+import com.pulumi.oci.oci.outputs.GetResourceAnalyticsMonitoredRegionResult;
+import com.pulumi.oci.oci.outputs.GetResourceAnalyticsMonitoredRegionsResult;
+import com.pulumi.oci.oci.outputs.GetResourceAnalyticsResourceAnalyticsInstanceResult;
+import com.pulumi.oci.oci.outputs.GetResourceAnalyticsResourceAnalyticsInstancesResult;
+import com.pulumi.oci.oci.outputs.GetResourceAnalyticsTenancyAttachmentResult;
+import com.pulumi.oci.oci.outputs.GetResourceAnalyticsTenancyAttachmentsResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceScanResultsResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceServerInstalledPatchesResult;
@@ -168,6 +261,545 @@ import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainsResult;
 import java.util.concurrent.CompletableFuture;
 
 public final class OciFunctions {
+    /**
+     * This data source provides details about a specific Ai Data Platform resource in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets information about a AiDataPlatform.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatform = OciFunctions.getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs.builder()
+     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiDataPlatformAiDataPlatformResult> getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs args) {
+        return getAiDataPlatformAiDataPlatform(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ai Data Platform resource in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets information about a AiDataPlatform.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatform = OciFunctions.getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs.builder()
+     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAiDataPlatformAiDataPlatformResult> getAiDataPlatformAiDataPlatformPlain(GetAiDataPlatformAiDataPlatformPlainArgs args) {
+        return getAiDataPlatformAiDataPlatformPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ai Data Platform resource in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets information about a AiDataPlatform.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatform = OciFunctions.getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs.builder()
+     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiDataPlatformAiDataPlatformResult> getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getAiDataPlatformAiDataPlatform:getAiDataPlatformAiDataPlatform", TypeShape.of(GetAiDataPlatformAiDataPlatformResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ai Data Platform resource in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets information about a AiDataPlatform.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatform = OciFunctions.getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs.builder()
+     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiDataPlatformAiDataPlatformResult> getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getAiDataPlatformAiDataPlatform:getAiDataPlatformAiDataPlatform", TypeShape.of(GetAiDataPlatformAiDataPlatformResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ai Data Platform resource in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets information about a AiDataPlatform.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatform = OciFunctions.getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs.builder()
+     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAiDataPlatformAiDataPlatformResult> getAiDataPlatformAiDataPlatformPlain(GetAiDataPlatformAiDataPlatformPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getAiDataPlatformAiDataPlatform:getAiDataPlatformAiDataPlatform", TypeShape.of(GetAiDataPlatformAiDataPlatformResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ai Data Platforms in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets a list of AiDataPlatforms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatforms = OciFunctions.getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiDataPlatformDisplayName)
+     *             .excludeLifecycleState(aiDataPlatformExcludeLifecycleState)
+     *             .id(aiDataPlatformId)
+     *             .includeLegacy(aiDataPlatformIncludeLegacy)
+     *             .state(aiDataPlatformState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiDataPlatformAiDataPlatformsResult> getAiDataPlatformAiDataPlatforms() {
+        return getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ai Data Platforms in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets a list of AiDataPlatforms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatforms = OciFunctions.getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiDataPlatformDisplayName)
+     *             .excludeLifecycleState(aiDataPlatformExcludeLifecycleState)
+     *             .id(aiDataPlatformId)
+     *             .includeLegacy(aiDataPlatformIncludeLegacy)
+     *             .state(aiDataPlatformState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAiDataPlatformAiDataPlatformsResult> getAiDataPlatformAiDataPlatformsPlain() {
+        return getAiDataPlatformAiDataPlatformsPlain(GetAiDataPlatformAiDataPlatformsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ai Data Platforms in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets a list of AiDataPlatforms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatforms = OciFunctions.getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiDataPlatformDisplayName)
+     *             .excludeLifecycleState(aiDataPlatformExcludeLifecycleState)
+     *             .id(aiDataPlatformId)
+     *             .includeLegacy(aiDataPlatformIncludeLegacy)
+     *             .state(aiDataPlatformState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiDataPlatformAiDataPlatformsResult> getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs args) {
+        return getAiDataPlatformAiDataPlatforms(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ai Data Platforms in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets a list of AiDataPlatforms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatforms = OciFunctions.getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiDataPlatformDisplayName)
+     *             .excludeLifecycleState(aiDataPlatformExcludeLifecycleState)
+     *             .id(aiDataPlatformId)
+     *             .includeLegacy(aiDataPlatformIncludeLegacy)
+     *             .state(aiDataPlatformState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAiDataPlatformAiDataPlatformsResult> getAiDataPlatformAiDataPlatformsPlain(GetAiDataPlatformAiDataPlatformsPlainArgs args) {
+        return getAiDataPlatformAiDataPlatformsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ai Data Platforms in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets a list of AiDataPlatforms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatforms = OciFunctions.getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiDataPlatformDisplayName)
+     *             .excludeLifecycleState(aiDataPlatformExcludeLifecycleState)
+     *             .id(aiDataPlatformId)
+     *             .includeLegacy(aiDataPlatformIncludeLegacy)
+     *             .state(aiDataPlatformState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiDataPlatformAiDataPlatformsResult> getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getAiDataPlatformAiDataPlatforms:getAiDataPlatformAiDataPlatforms", TypeShape.of(GetAiDataPlatformAiDataPlatformsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ai Data Platforms in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets a list of AiDataPlatforms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatforms = OciFunctions.getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiDataPlatformDisplayName)
+     *             .excludeLifecycleState(aiDataPlatformExcludeLifecycleState)
+     *             .id(aiDataPlatformId)
+     *             .includeLegacy(aiDataPlatformIncludeLegacy)
+     *             .state(aiDataPlatformState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiDataPlatformAiDataPlatformsResult> getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getAiDataPlatformAiDataPlatforms:getAiDataPlatformAiDataPlatforms", TypeShape.of(GetAiDataPlatformAiDataPlatformsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ai Data Platforms in Oracle Cloud Infrastructure Ai Data Platform service.
+     * 
+     * Gets a list of AiDataPlatforms.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetAiDataPlatformAiDataPlatformsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiDataPlatforms = OciFunctions.getAiDataPlatformAiDataPlatforms(GetAiDataPlatformAiDataPlatformsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiDataPlatformDisplayName)
+     *             .excludeLifecycleState(aiDataPlatformExcludeLifecycleState)
+     *             .id(aiDataPlatformId)
+     *             .includeLegacy(aiDataPlatformIncludeLegacy)
+     *             .state(aiDataPlatformState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAiDataPlatformAiDataPlatformsResult> getAiDataPlatformAiDataPlatformsPlain(GetAiDataPlatformAiDataPlatformsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getAiDataPlatformAiDataPlatforms:getAiDataPlatformAiDataPlatforms", TypeShape.of(GetAiDataPlatformAiDataPlatformsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
      * 
@@ -7030,6 +7662,3086 @@ public final class OciFunctions {
         return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbGcpKeys:getDbmulticloudOracleDbGcpKeys", TypeShape.of(GetDbmulticloudOracleDbGcpKeysResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Digital Twin Adapter resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin adapter identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinAdapter = OciFunctions.getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs.builder()
+     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinAdapterResult> getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs args) {
+        return getIotDigitalTwinAdapter(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Adapter resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin adapter identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinAdapter = OciFunctions.getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs.builder()
+     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinAdapterResult> getIotDigitalTwinAdapterPlain(GetIotDigitalTwinAdapterPlainArgs args) {
+        return getIotDigitalTwinAdapterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Adapter resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin adapter identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinAdapter = OciFunctions.getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs.builder()
+     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinAdapterResult> getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinAdapter:getIotDigitalTwinAdapter", TypeShape.of(GetIotDigitalTwinAdapterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Adapter resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin adapter identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinAdapter = OciFunctions.getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs.builder()
+     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinAdapterResult> getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinAdapter:getIotDigitalTwinAdapter", TypeShape.of(GetIotDigitalTwinAdapterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Adapter resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin adapter identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdapterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinAdapter = OciFunctions.getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs.builder()
+     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinAdapterResult> getIotDigitalTwinAdapterPlain(GetIotDigitalTwinAdapterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotDigitalTwinAdapter:getIotDigitalTwinAdapter", TypeShape.of(GetIotDigitalTwinAdapterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Adapters in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin adapters within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinAdapters = OciFunctions.getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
+     *             .displayName(digitalTwinAdapterDisplayName)
+     *             .id(digitalTwinAdapterId)
+     *             .state(digitalTwinAdapterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinAdaptersResult> getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs args) {
+        return getIotDigitalTwinAdapters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Digital Twin Adapters in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin adapters within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinAdapters = OciFunctions.getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
+     *             .displayName(digitalTwinAdapterDisplayName)
+     *             .id(digitalTwinAdapterId)
+     *             .state(digitalTwinAdapterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinAdaptersResult> getIotDigitalTwinAdaptersPlain(GetIotDigitalTwinAdaptersPlainArgs args) {
+        return getIotDigitalTwinAdaptersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Digital Twin Adapters in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin adapters within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinAdapters = OciFunctions.getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
+     *             .displayName(digitalTwinAdapterDisplayName)
+     *             .id(digitalTwinAdapterId)
+     *             .state(digitalTwinAdapterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinAdaptersResult> getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinAdapters:getIotDigitalTwinAdapters", TypeShape.of(GetIotDigitalTwinAdaptersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Adapters in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin adapters within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinAdapters = OciFunctions.getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
+     *             .displayName(digitalTwinAdapterDisplayName)
+     *             .id(digitalTwinAdapterId)
+     *             .state(digitalTwinAdapterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinAdaptersResult> getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinAdapters:getIotDigitalTwinAdapters", TypeShape.of(GetIotDigitalTwinAdaptersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Adapters in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin adapters within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinAdaptersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinAdapters = OciFunctions.getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
+     *             .displayName(digitalTwinAdapterDisplayName)
+     *             .id(digitalTwinAdapterId)
+     *             .state(digitalTwinAdapterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinAdaptersResult> getIotDigitalTwinAdaptersPlain(GetIotDigitalTwinAdaptersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotDigitalTwinAdapters:getIotDigitalTwinAdapters", TypeShape.of(GetIotDigitalTwinAdaptersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Instance resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin instance identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstance = OciFunctions.getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs.builder()
+     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinInstanceResult> getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs args) {
+        return getIotDigitalTwinInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Instance resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin instance identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstance = OciFunctions.getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs.builder()
+     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinInstanceResult> getIotDigitalTwinInstancePlain(GetIotDigitalTwinInstancePlainArgs args) {
+        return getIotDigitalTwinInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Instance resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin instance identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstance = OciFunctions.getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs.builder()
+     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinInstanceResult> getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinInstance:getIotDigitalTwinInstance", TypeShape.of(GetIotDigitalTwinInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Instance resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin instance identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstance = OciFunctions.getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs.builder()
+     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinInstanceResult> getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinInstance:getIotDigitalTwinInstance", TypeShape.of(GetIotDigitalTwinInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Instance resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin instance identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstance = OciFunctions.getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs.builder()
+     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinInstanceResult> getIotDigitalTwinInstancePlain(GetIotDigitalTwinInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotDigitalTwinInstance:getIotDigitalTwinInstance", TypeShape.of(GetIotDigitalTwinInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Instance Content resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the latest snapshot data of digital twin instance identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstanceContent = OciFunctions.getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs.builder()
+     *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .shouldIncludeMetadata(digitalTwinInstanceContentShouldIncludeMetadata)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinInstanceContentResult> getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs args) {
+        return getIotDigitalTwinInstanceContent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Instance Content resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the latest snapshot data of digital twin instance identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstanceContent = OciFunctions.getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs.builder()
+     *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .shouldIncludeMetadata(digitalTwinInstanceContentShouldIncludeMetadata)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinInstanceContentResult> getIotDigitalTwinInstanceContentPlain(GetIotDigitalTwinInstanceContentPlainArgs args) {
+        return getIotDigitalTwinInstanceContentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Instance Content resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the latest snapshot data of digital twin instance identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstanceContent = OciFunctions.getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs.builder()
+     *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .shouldIncludeMetadata(digitalTwinInstanceContentShouldIncludeMetadata)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinInstanceContentResult> getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinInstanceContent:getIotDigitalTwinInstanceContent", TypeShape.of(GetIotDigitalTwinInstanceContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Instance Content resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the latest snapshot data of digital twin instance identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstanceContent = OciFunctions.getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs.builder()
+     *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .shouldIncludeMetadata(digitalTwinInstanceContentShouldIncludeMetadata)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinInstanceContentResult> getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinInstanceContent:getIotDigitalTwinInstanceContent", TypeShape.of(GetIotDigitalTwinInstanceContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Instance Content resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the latest snapshot data of digital twin instance identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstanceContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstanceContent = OciFunctions.getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs.builder()
+     *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .shouldIncludeMetadata(digitalTwinInstanceContentShouldIncludeMetadata)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinInstanceContentResult> getIotDigitalTwinInstanceContentPlain(GetIotDigitalTwinInstanceContentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotDigitalTwinInstanceContent:getIotDigitalTwinInstanceContent", TypeShape.of(GetIotDigitalTwinInstanceContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Instances in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin instances within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
+     *             .displayName(digitalTwinInstanceDisplayName)
+     *             .id(digitalTwinInstanceId)
+     *             .state(digitalTwinInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinInstancesResult> getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs args) {
+        return getIotDigitalTwinInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Digital Twin Instances in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin instances within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
+     *             .displayName(digitalTwinInstanceDisplayName)
+     *             .id(digitalTwinInstanceId)
+     *             .state(digitalTwinInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinInstancesResult> getIotDigitalTwinInstancesPlain(GetIotDigitalTwinInstancesPlainArgs args) {
+        return getIotDigitalTwinInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Digital Twin Instances in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin instances within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
+     *             .displayName(digitalTwinInstanceDisplayName)
+     *             .id(digitalTwinInstanceId)
+     *             .state(digitalTwinInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinInstancesResult> getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinInstances:getIotDigitalTwinInstances", TypeShape.of(GetIotDigitalTwinInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Instances in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin instances within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
+     *             .displayName(digitalTwinInstanceDisplayName)
+     *             .id(digitalTwinInstanceId)
+     *             .state(digitalTwinInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinInstancesResult> getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinInstances:getIotDigitalTwinInstances", TypeShape.of(GetIotDigitalTwinInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Instances in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin instances within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
+     *             .displayName(digitalTwinInstanceDisplayName)
+     *             .id(digitalTwinInstanceId)
+     *             .state(digitalTwinInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinInstancesResult> getIotDigitalTwinInstancesPlain(GetIotDigitalTwinInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotDigitalTwinInstances:getIotDigitalTwinInstances", TypeShape.of(GetIotDigitalTwinInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Model resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin model identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModel = OciFunctions.getIotDigitalTwinModel(GetIotDigitalTwinModelArgs.builder()
+     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinModelResult> getIotDigitalTwinModel(GetIotDigitalTwinModelArgs args) {
+        return getIotDigitalTwinModel(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Model resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin model identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModel = OciFunctions.getIotDigitalTwinModel(GetIotDigitalTwinModelArgs.builder()
+     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinModelResult> getIotDigitalTwinModelPlain(GetIotDigitalTwinModelPlainArgs args) {
+        return getIotDigitalTwinModelPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Model resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin model identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModel = OciFunctions.getIotDigitalTwinModel(GetIotDigitalTwinModelArgs.builder()
+     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinModelResult> getIotDigitalTwinModel(GetIotDigitalTwinModelArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinModel:getIotDigitalTwinModel", TypeShape.of(GetIotDigitalTwinModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Model resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin model identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModel = OciFunctions.getIotDigitalTwinModel(GetIotDigitalTwinModelArgs.builder()
+     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinModelResult> getIotDigitalTwinModel(GetIotDigitalTwinModelArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinModel:getIotDigitalTwinModel", TypeShape.of(GetIotDigitalTwinModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Model resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin model identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModel = OciFunctions.getIotDigitalTwinModel(GetIotDigitalTwinModelArgs.builder()
+     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinModelResult> getIotDigitalTwinModelPlain(GetIotDigitalTwinModelPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotDigitalTwinModel:getIotDigitalTwinModel", TypeShape.of(GetIotDigitalTwinModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Model Spec resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the spec of digital twin model identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModelSpec = OciFunctions.getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs.builder()
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinModelSpecResult> getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs args) {
+        return getIotDigitalTwinModelSpec(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Model Spec resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the spec of digital twin model identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModelSpec = OciFunctions.getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs.builder()
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinModelSpecResult> getIotDigitalTwinModelSpecPlain(GetIotDigitalTwinModelSpecPlainArgs args) {
+        return getIotDigitalTwinModelSpecPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Model Spec resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the spec of digital twin model identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModelSpec = OciFunctions.getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs.builder()
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinModelSpecResult> getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinModelSpec:getIotDigitalTwinModelSpec", TypeShape.of(GetIotDigitalTwinModelSpecResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Model Spec resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the spec of digital twin model identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModelSpec = OciFunctions.getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs.builder()
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinModelSpecResult> getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinModelSpec:getIotDigitalTwinModelSpec", TypeShape.of(GetIotDigitalTwinModelSpecResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Model Spec resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the spec of digital twin model identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelSpecArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModelSpec = OciFunctions.getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs.builder()
+     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinModelSpecResult> getIotDigitalTwinModelSpecPlain(GetIotDigitalTwinModelSpecPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotDigitalTwinModelSpec:getIotDigitalTwinModelSpec", TypeShape.of(GetIotDigitalTwinModelSpecResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Models in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin models within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModels = OciFunctions.getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .displayName(digitalTwinModelDisplayName)
+     *             .id(digitalTwinModelId)
+     *             .specUriStartsWith(digitalTwinModelSpecUriStartsWith)
+     *             .state(digitalTwinModelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinModelsResult> getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs args) {
+        return getIotDigitalTwinModels(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Digital Twin Models in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin models within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModels = OciFunctions.getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .displayName(digitalTwinModelDisplayName)
+     *             .id(digitalTwinModelId)
+     *             .specUriStartsWith(digitalTwinModelSpecUriStartsWith)
+     *             .state(digitalTwinModelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinModelsResult> getIotDigitalTwinModelsPlain(GetIotDigitalTwinModelsPlainArgs args) {
+        return getIotDigitalTwinModelsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Digital Twin Models in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin models within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModels = OciFunctions.getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .displayName(digitalTwinModelDisplayName)
+     *             .id(digitalTwinModelId)
+     *             .specUriStartsWith(digitalTwinModelSpecUriStartsWith)
+     *             .state(digitalTwinModelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinModelsResult> getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinModels:getIotDigitalTwinModels", TypeShape.of(GetIotDigitalTwinModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Models in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin models within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModels = OciFunctions.getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .displayName(digitalTwinModelDisplayName)
+     *             .id(digitalTwinModelId)
+     *             .specUriStartsWith(digitalTwinModelSpecUriStartsWith)
+     *             .state(digitalTwinModelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinModelsResult> getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinModels:getIotDigitalTwinModels", TypeShape.of(GetIotDigitalTwinModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Models in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin models within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinModels = OciFunctions.getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .displayName(digitalTwinModelDisplayName)
+     *             .id(digitalTwinModelId)
+     *             .specUriStartsWith(digitalTwinModelSpecUriStartsWith)
+     *             .state(digitalTwinModelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinModelsResult> getIotDigitalTwinModelsPlain(GetIotDigitalTwinModelsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotDigitalTwinModels:getIotDigitalTwinModels", TypeShape.of(GetIotDigitalTwinModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Relationship resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin relationship identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinRelationship = OciFunctions.getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs.builder()
+     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinRelationshipResult> getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs args) {
+        return getIotDigitalTwinRelationship(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Relationship resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin relationship identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinRelationship = OciFunctions.getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs.builder()
+     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinRelationshipResult> getIotDigitalTwinRelationshipPlain(GetIotDigitalTwinRelationshipPlainArgs args) {
+        return getIotDigitalTwinRelationshipPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Relationship resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin relationship identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinRelationship = OciFunctions.getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs.builder()
+     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinRelationshipResult> getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinRelationship:getIotDigitalTwinRelationship", TypeShape.of(GetIotDigitalTwinRelationshipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Relationship resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin relationship identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinRelationship = OciFunctions.getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs.builder()
+     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinRelationshipResult> getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinRelationship:getIotDigitalTwinRelationship", TypeShape.of(GetIotDigitalTwinRelationshipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Digital Twin Relationship resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the digital twin relationship identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinRelationship = OciFunctions.getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs.builder()
+     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinRelationshipResult> getIotDigitalTwinRelationshipPlain(GetIotDigitalTwinRelationshipPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotDigitalTwinRelationship:getIotDigitalTwinRelationship", TypeShape.of(GetIotDigitalTwinRelationshipResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Relationships in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin relationships within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinRelationships = OciFunctions.getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .contentPath(digitalTwinRelationshipContentPath)
+     *             .displayName(digitalTwinRelationshipDisplayName)
+     *             .id(digitalTwinRelationshipId)
+     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .state(digitalTwinRelationshipState)
+     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinRelationshipsResult> getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs args) {
+        return getIotDigitalTwinRelationships(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Digital Twin Relationships in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin relationships within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinRelationships = OciFunctions.getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .contentPath(digitalTwinRelationshipContentPath)
+     *             .displayName(digitalTwinRelationshipDisplayName)
+     *             .id(digitalTwinRelationshipId)
+     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .state(digitalTwinRelationshipState)
+     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinRelationshipsResult> getIotDigitalTwinRelationshipsPlain(GetIotDigitalTwinRelationshipsPlainArgs args) {
+        return getIotDigitalTwinRelationshipsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Digital Twin Relationships in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin relationships within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinRelationships = OciFunctions.getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .contentPath(digitalTwinRelationshipContentPath)
+     *             .displayName(digitalTwinRelationshipDisplayName)
+     *             .id(digitalTwinRelationshipId)
+     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .state(digitalTwinRelationshipState)
+     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinRelationshipsResult> getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinRelationships:getIotDigitalTwinRelationships", TypeShape.of(GetIotDigitalTwinRelationshipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Relationships in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin relationships within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinRelationships = OciFunctions.getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .contentPath(digitalTwinRelationshipContentPath)
+     *             .displayName(digitalTwinRelationshipDisplayName)
+     *             .id(digitalTwinRelationshipId)
+     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .state(digitalTwinRelationshipState)
+     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotDigitalTwinRelationshipsResult> getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotDigitalTwinRelationships:getIotDigitalTwinRelationships", TypeShape.of(GetIotDigitalTwinRelationshipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Digital Twin Relationships in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of digital twin relationships within the specified IoT domain.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotDigitalTwinRelationshipsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDigitalTwinRelationships = OciFunctions.getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs.builder()
+     *             .iotDomainId(testIotDomain.id())
+     *             .contentPath(digitalTwinRelationshipContentPath)
+     *             .displayName(digitalTwinRelationshipDisplayName)
+     *             .id(digitalTwinRelationshipId)
+     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .state(digitalTwinRelationshipState)
+     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotDigitalTwinRelationshipsResult> getIotDigitalTwinRelationshipsPlain(GetIotDigitalTwinRelationshipsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotDigitalTwinRelationships:getIotDigitalTwinRelationships", TypeShape.of(GetIotDigitalTwinRelationshipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Domain resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the IoT domain identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomain = OciFunctions.getIotIotDomain(GetIotIotDomainArgs.builder()
+     *             .iotDomainId(testIotDomainOciIotIotDomain.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainResult> getIotIotDomain(GetIotIotDomainArgs args) {
+        return getIotIotDomain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Iot Domain resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the IoT domain identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomain = OciFunctions.getIotIotDomain(GetIotIotDomainArgs.builder()
+     *             .iotDomainId(testIotDomainOciIotIotDomain.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotDomainResult> getIotIotDomainPlain(GetIotIotDomainPlainArgs args) {
+        return getIotIotDomainPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Iot Domain resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the IoT domain identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomain = OciFunctions.getIotIotDomain(GetIotIotDomainArgs.builder()
+     *             .iotDomainId(testIotDomainOciIotIotDomain.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainResult> getIotIotDomain(GetIotIotDomainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotDomain:getIotIotDomain", TypeShape.of(GetIotIotDomainResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Domain resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the IoT domain identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomain = OciFunctions.getIotIotDomain(GetIotIotDomainArgs.builder()
+     *             .iotDomainId(testIotDomainOciIotIotDomain.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainResult> getIotIotDomain(GetIotIotDomainArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotDomain:getIotIotDomain", TypeShape.of(GetIotIotDomainResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Domain resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the IoT domain identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomain = OciFunctions.getIotIotDomain(GetIotIotDomainArgs.builder()
+     *             .iotDomainId(testIotDomainOciIotIotDomain.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotDomainResult> getIotIotDomainPlain(GetIotIotDomainPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotIotDomain:getIotIotDomain", TypeShape.of(GetIotIotDomainResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Domain Group resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the IoT domain group identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomainGroup = OciFunctions.getIotIotDomainGroup(GetIotIotDomainGroupArgs.builder()
+     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainGroupResult> getIotIotDomainGroup(GetIotIotDomainGroupArgs args) {
+        return getIotIotDomainGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Iot Domain Group resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the IoT domain group identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomainGroup = OciFunctions.getIotIotDomainGroup(GetIotIotDomainGroupArgs.builder()
+     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotDomainGroupResult> getIotIotDomainGroupPlain(GetIotIotDomainGroupPlainArgs args) {
+        return getIotIotDomainGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Iot Domain Group resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the IoT domain group identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomainGroup = OciFunctions.getIotIotDomainGroup(GetIotIotDomainGroupArgs.builder()
+     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainGroupResult> getIotIotDomainGroup(GetIotIotDomainGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotDomainGroup:getIotIotDomainGroup", TypeShape.of(GetIotIotDomainGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Domain Group resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the IoT domain group identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomainGroup = OciFunctions.getIotIotDomainGroup(GetIotIotDomainGroupArgs.builder()
+     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainGroupResult> getIotIotDomainGroup(GetIotIotDomainGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotDomainGroup:getIotIotDomainGroup", TypeShape.of(GetIotIotDomainGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Iot Domain Group resource in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves the IoT domain group identified by the specified OCID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomainGroup = OciFunctions.getIotIotDomainGroup(GetIotIotDomainGroupArgs.builder()
+     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotDomainGroupResult> getIotIotDomainGroupPlain(GetIotIotDomainGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotIotDomainGroup:getIotIotDomainGroup", TypeShape.of(GetIotIotDomainGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Iot Domain Groups in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of IoT domain groups within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomainGroups = OciFunctions.getIotIotDomainGroups(GetIotIotDomainGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotDomainGroupDisplayName)
+     *             .id(iotDomainGroupId)
+     *             .state(iotDomainGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainGroupsResult> getIotIotDomainGroups(GetIotIotDomainGroupsArgs args) {
+        return getIotIotDomainGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Iot Domain Groups in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of IoT domain groups within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomainGroups = OciFunctions.getIotIotDomainGroups(GetIotIotDomainGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotDomainGroupDisplayName)
+     *             .id(iotDomainGroupId)
+     *             .state(iotDomainGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotDomainGroupsResult> getIotIotDomainGroupsPlain(GetIotIotDomainGroupsPlainArgs args) {
+        return getIotIotDomainGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Iot Domain Groups in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of IoT domain groups within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomainGroups = OciFunctions.getIotIotDomainGroups(GetIotIotDomainGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotDomainGroupDisplayName)
+     *             .id(iotDomainGroupId)
+     *             .state(iotDomainGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainGroupsResult> getIotIotDomainGroups(GetIotIotDomainGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotDomainGroups:getIotIotDomainGroups", TypeShape.of(GetIotIotDomainGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Iot Domain Groups in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of IoT domain groups within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomainGroups = OciFunctions.getIotIotDomainGroups(GetIotIotDomainGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotDomainGroupDisplayName)
+     *             .id(iotDomainGroupId)
+     *             .state(iotDomainGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainGroupsResult> getIotIotDomainGroups(GetIotIotDomainGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotDomainGroups:getIotIotDomainGroups", TypeShape.of(GetIotIotDomainGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Iot Domain Groups in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of IoT domain groups within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomainGroups = OciFunctions.getIotIotDomainGroups(GetIotIotDomainGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotDomainGroupDisplayName)
+     *             .id(iotDomainGroupId)
+     *             .state(iotDomainGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotDomainGroupsResult> getIotIotDomainGroupsPlain(GetIotIotDomainGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotIotDomainGroups:getIotIotDomainGroups", TypeShape.of(GetIotIotDomainGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Iot Domains in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of IoT domains within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomains = OciFunctions.getIotIotDomains(GetIotIotDomainsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotDomainDisplayName)
+     *             .id(iotDomainId)
+     *             .iotDomainGroupId(testIotDomainGroup.id())
+     *             .state(iotDomainState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainsResult> getIotIotDomains(GetIotIotDomainsArgs args) {
+        return getIotIotDomains(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Iot Domains in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of IoT domains within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomains = OciFunctions.getIotIotDomains(GetIotIotDomainsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotDomainDisplayName)
+     *             .id(iotDomainId)
+     *             .iotDomainGroupId(testIotDomainGroup.id())
+     *             .state(iotDomainState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotDomainsResult> getIotIotDomainsPlain(GetIotIotDomainsPlainArgs args) {
+        return getIotIotDomainsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Iot Domains in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of IoT domains within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomains = OciFunctions.getIotIotDomains(GetIotIotDomainsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotDomainDisplayName)
+     *             .id(iotDomainId)
+     *             .iotDomainGroupId(testIotDomainGroup.id())
+     *             .state(iotDomainState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainsResult> getIotIotDomains(GetIotIotDomainsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotDomains:getIotIotDomains", TypeShape.of(GetIotIotDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Iot Domains in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of IoT domains within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomains = OciFunctions.getIotIotDomains(GetIotIotDomainsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotDomainDisplayName)
+     *             .id(iotDomainId)
+     *             .iotDomainGroupId(testIotDomainGroup.id())
+     *             .state(iotDomainState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetIotIotDomainsResult> getIotIotDomains(GetIotIotDomainsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getIotIotDomains:getIotIotDomains", TypeShape.of(GetIotIotDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Iot Domains in Oracle Cloud Infrastructure Iot service.
+     * 
+     * Retrieves a list of IoT domains within the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetIotIotDomainsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testIotDomains = OciFunctions.getIotIotDomains(GetIotIotDomainsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(iotDomainDisplayName)
+     *             .id(iotDomainId)
+     *             .iotDomainGroupId(testIotDomainGroup.id())
+     *             .state(iotDomainState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetIotIotDomainsResult> getIotIotDomainsPlain(GetIotIotDomainsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getIotIotDomains:getIotIotDomains", TypeShape.of(GetIotIotDomainsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
      * 
      * Gets information about a KafkaCluster.
@@ -8503,6 +12215,3607 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetManagedKafkaKafkaClustersResult> getManagedKafkaKafkaClustersPlain(GetManagedKafkaKafkaClustersPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaClusters:getManagedKafkaKafkaClusters", TypeShape.of(GetManagedKafkaKafkaClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocation metadata from Oracle Cloud Infrastructure to the Cloud Service Provider for regions, Physical Availability Zones.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationMappingMetadata = OciFunctions.getMulticloudExternalLocationMappingMetadata(GetMulticloudExternalLocationMappingMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionServiceNames(subscriptionServiceNameList)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudExternalLocationMappingMetadataResult> getMulticloudExternalLocationMappingMetadata(GetMulticloudExternalLocationMappingMetadataArgs args) {
+        return getMulticloudExternalLocationMappingMetadata(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocation metadata from Oracle Cloud Infrastructure to the Cloud Service Provider for regions, Physical Availability Zones.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationMappingMetadata = OciFunctions.getMulticloudExternalLocationMappingMetadata(GetMulticloudExternalLocationMappingMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionServiceNames(subscriptionServiceNameList)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudExternalLocationMappingMetadataResult> getMulticloudExternalLocationMappingMetadataPlain(GetMulticloudExternalLocationMappingMetadataPlainArgs args) {
+        return getMulticloudExternalLocationMappingMetadataPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocation metadata from Oracle Cloud Infrastructure to the Cloud Service Provider for regions, Physical Availability Zones.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationMappingMetadata = OciFunctions.getMulticloudExternalLocationMappingMetadata(GetMulticloudExternalLocationMappingMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionServiceNames(subscriptionServiceNameList)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudExternalLocationMappingMetadataResult> getMulticloudExternalLocationMappingMetadata(GetMulticloudExternalLocationMappingMetadataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudExternalLocationMappingMetadata:getMulticloudExternalLocationMappingMetadata", TypeShape.of(GetMulticloudExternalLocationMappingMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocation metadata from Oracle Cloud Infrastructure to the Cloud Service Provider for regions, Physical Availability Zones.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationMappingMetadata = OciFunctions.getMulticloudExternalLocationMappingMetadata(GetMulticloudExternalLocationMappingMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionServiceNames(subscriptionServiceNameList)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudExternalLocationMappingMetadataResult> getMulticloudExternalLocationMappingMetadata(GetMulticloudExternalLocationMappingMetadataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudExternalLocationMappingMetadata:getMulticloudExternalLocationMappingMetadata", TypeShape.of(GetMulticloudExternalLocationMappingMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Location Mapping Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocation metadata from Oracle Cloud Infrastructure to the Cloud Service Provider for regions, Physical Availability Zones.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationMappingMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationMappingMetadata = OciFunctions.getMulticloudExternalLocationMappingMetadata(GetMulticloudExternalLocationMappingMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionServiceNames(subscriptionServiceNameList)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudExternalLocationMappingMetadataResult> getMulticloudExternalLocationMappingMetadataPlain(GetMulticloudExternalLocationMappingMetadataPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudExternalLocationMappingMetadata:getMulticloudExternalLocationMappingMetadata", TypeShape.of(GetMulticloudExternalLocationMappingMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Location Summaries Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocationSummary metadata from Oracle Cloud Infrastructure Region to the Cloud Service Provider region across all regions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationSummariesMetadata = OciFunctions.getMulticloudExternalLocationSummariesMetadata(GetMulticloudExternalLocationSummariesMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .entityType(entityType)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudExternalLocationSummariesMetadataResult> getMulticloudExternalLocationSummariesMetadata(GetMulticloudExternalLocationSummariesMetadataArgs args) {
+        return getMulticloudExternalLocationSummariesMetadata(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Location Summaries Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocationSummary metadata from Oracle Cloud Infrastructure Region to the Cloud Service Provider region across all regions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationSummariesMetadata = OciFunctions.getMulticloudExternalLocationSummariesMetadata(GetMulticloudExternalLocationSummariesMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .entityType(entityType)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudExternalLocationSummariesMetadataResult> getMulticloudExternalLocationSummariesMetadataPlain(GetMulticloudExternalLocationSummariesMetadataPlainArgs args) {
+        return getMulticloudExternalLocationSummariesMetadataPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Location Summaries Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocationSummary metadata from Oracle Cloud Infrastructure Region to the Cloud Service Provider region across all regions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationSummariesMetadata = OciFunctions.getMulticloudExternalLocationSummariesMetadata(GetMulticloudExternalLocationSummariesMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .entityType(entityType)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudExternalLocationSummariesMetadataResult> getMulticloudExternalLocationSummariesMetadata(GetMulticloudExternalLocationSummariesMetadataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudExternalLocationSummariesMetadata:getMulticloudExternalLocationSummariesMetadata", TypeShape.of(GetMulticloudExternalLocationSummariesMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Location Summaries Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocationSummary metadata from Oracle Cloud Infrastructure Region to the Cloud Service Provider region across all regions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationSummariesMetadata = OciFunctions.getMulticloudExternalLocationSummariesMetadata(GetMulticloudExternalLocationSummariesMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .entityType(entityType)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudExternalLocationSummariesMetadataResult> getMulticloudExternalLocationSummariesMetadata(GetMulticloudExternalLocationSummariesMetadataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudExternalLocationSummariesMetadata:getMulticloudExternalLocationSummariesMetadata", TypeShape.of(GetMulticloudExternalLocationSummariesMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Location Summaries Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocationSummary metadata from Oracle Cloud Infrastructure Region to the Cloud Service Provider region across all regions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationSummariesMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationSummariesMetadata = OciFunctions.getMulticloudExternalLocationSummariesMetadata(GetMulticloudExternalLocationSummariesMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .entityType(entityType)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudExternalLocationSummariesMetadataResult> getMulticloudExternalLocationSummariesMetadataPlain(GetMulticloudExternalLocationSummariesMetadataPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudExternalLocationSummariesMetadata:getMulticloudExternalLocationSummariesMetadata", TypeShape.of(GetMulticloudExternalLocationSummariesMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Locations Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocationDetail metadata from Oracle Cloud Infrastructure to Cloud  Service Provider for regions, Availability Zones, and Cluster Placement Group ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationsMetadata = OciFunctions.getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .entityType(externalLocationsMetadataEntityType)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudExternalLocationsMetadataResult> getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs args) {
+        return getMulticloudExternalLocationsMetadata(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Locations Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocationDetail metadata from Oracle Cloud Infrastructure to Cloud  Service Provider for regions, Availability Zones, and Cluster Placement Group ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationsMetadata = OciFunctions.getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .entityType(externalLocationsMetadataEntityType)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudExternalLocationsMetadataResult> getMulticloudExternalLocationsMetadataPlain(GetMulticloudExternalLocationsMetadataPlainArgs args) {
+        return getMulticloudExternalLocationsMetadataPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of External Locations Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocationDetail metadata from Oracle Cloud Infrastructure to Cloud  Service Provider for regions, Availability Zones, and Cluster Placement Group ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationsMetadata = OciFunctions.getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .entityType(externalLocationsMetadataEntityType)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudExternalLocationsMetadataResult> getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudExternalLocationsMetadata:getMulticloudExternalLocationsMetadata", TypeShape.of(GetMulticloudExternalLocationsMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Locations Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocationDetail metadata from Oracle Cloud Infrastructure to Cloud  Service Provider for regions, Availability Zones, and Cluster Placement Group ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationsMetadata = OciFunctions.getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .entityType(externalLocationsMetadataEntityType)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudExternalLocationsMetadataResult> getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudExternalLocationsMetadata:getMulticloudExternalLocationsMetadata", TypeShape.of(GetMulticloudExternalLocationsMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of External Locations Metadata in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * List externalLocationDetail metadata from Oracle Cloud Infrastructure to Cloud  Service Provider for regions, Availability Zones, and Cluster Placement Group ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudExternalLocationsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExternalLocationsMetadata = OciFunctions.getMulticloudExternalLocationsMetadata(GetMulticloudExternalLocationsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .entityType(externalLocationsMetadataEntityType)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudExternalLocationsMetadataResult> getMulticloudExternalLocationsMetadataPlain(GetMulticloudExternalLocationsMetadataPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudExternalLocationsMetadata:getMulticloudExternalLocationsMetadata", TypeShape.of(GetMulticloudExternalLocationsMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about a NetworkAnchor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchor = OciFunctions.getMulticloudNetworkAnchor(GetMulticloudNetworkAnchorArgs.builder()
+     *             .networkAnchorId(networkAnchorId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .externalLocation(networkAnchorExternalLocation)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudNetworkAnchorResult> getMulticloudNetworkAnchor(GetMulticloudNetworkAnchorArgs args) {
+        return getMulticloudNetworkAnchor(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about a NetworkAnchor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchor = OciFunctions.getMulticloudNetworkAnchor(GetMulticloudNetworkAnchorArgs.builder()
+     *             .networkAnchorId(networkAnchorId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .externalLocation(networkAnchorExternalLocation)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudNetworkAnchorResult> getMulticloudNetworkAnchorPlain(GetMulticloudNetworkAnchorPlainArgs args) {
+        return getMulticloudNetworkAnchorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about a NetworkAnchor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchor = OciFunctions.getMulticloudNetworkAnchor(GetMulticloudNetworkAnchorArgs.builder()
+     *             .networkAnchorId(networkAnchorId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .externalLocation(networkAnchorExternalLocation)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudNetworkAnchorResult> getMulticloudNetworkAnchor(GetMulticloudNetworkAnchorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudNetworkAnchor:getMulticloudNetworkAnchor", TypeShape.of(GetMulticloudNetworkAnchorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about a NetworkAnchor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchor = OciFunctions.getMulticloudNetworkAnchor(GetMulticloudNetworkAnchorArgs.builder()
+     *             .networkAnchorId(networkAnchorId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .externalLocation(networkAnchorExternalLocation)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudNetworkAnchorResult> getMulticloudNetworkAnchor(GetMulticloudNetworkAnchorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudNetworkAnchor:getMulticloudNetworkAnchor", TypeShape.of(GetMulticloudNetworkAnchorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about a NetworkAnchor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchor = OciFunctions.getMulticloudNetworkAnchor(GetMulticloudNetworkAnchorArgs.builder()
+     *             .networkAnchorId(networkAnchorId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .externalLocation(networkAnchorExternalLocation)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudNetworkAnchorResult> getMulticloudNetworkAnchorPlain(GetMulticloudNetworkAnchorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudNetworkAnchor:getMulticloudNetworkAnchor", TypeShape.of(GetMulticloudNetworkAnchorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of NetworkAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
+     *             .externalLocation(externalLocation)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
+     *             .displayName(displayName)
+     *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
+     *             .id(id)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudNetworkAnchorsResult> getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs args) {
+        return getMulticloudNetworkAnchors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of NetworkAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
+     *             .externalLocation(externalLocation)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
+     *             .displayName(displayName)
+     *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
+     *             .id(id)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudNetworkAnchorsResult> getMulticloudNetworkAnchorsPlain(GetMulticloudNetworkAnchorsPlainArgs args) {
+        return getMulticloudNetworkAnchorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of NetworkAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
+     *             .externalLocation(externalLocation)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
+     *             .displayName(displayName)
+     *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
+     *             .id(id)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudNetworkAnchorsResult> getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudNetworkAnchors:getMulticloudNetworkAnchors", TypeShape.of(GetMulticloudNetworkAnchorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of NetworkAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
+     *             .externalLocation(externalLocation)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
+     *             .displayName(displayName)
+     *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
+     *             .id(id)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudNetworkAnchorsResult> getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudNetworkAnchors:getMulticloudNetworkAnchors", TypeShape.of(GetMulticloudNetworkAnchorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of NetworkAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudNetworkAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkAnchors = OciFunctions.getMulticloudNetworkAnchors(GetMulticloudNetworkAnchorsArgs.builder()
+     *             .externalLocation(externalLocation)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .networkAnchorLifecycleState(networkAnchorLifecycleState)
+     *             .displayName(displayName)
+     *             .networkAnchorOciSubnetId(networkAnchorOciSubnetId)
+     *             .networkAnchorOciVcnId(networkAnchorOciVcnId)
+     *             .id(id)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudNetworkAnchorsResult> getMulticloudNetworkAnchorsPlain(GetMulticloudNetworkAnchorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudNetworkAnchors:getMulticloudNetworkAnchors", TypeShape.of(GetMulticloudNetworkAnchorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific OmHub MultiCloud base compartment in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about multicloud base compartment
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMultiCloudMetadata = OciFunctions.getMulticloudOmHubMultiCloudMetadata(GetMulticloudOmHubMultiCloudMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudOmHubMultiCloudMetadataResult> getMulticloudOmHubMultiCloudMetadata(GetMulticloudOmHubMultiCloudMetadataArgs args) {
+        return getMulticloudOmHubMultiCloudMetadata(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific OmHub MultiCloud base compartment in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about multicloud base compartment
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMultiCloudMetadata = OciFunctions.getMulticloudOmHubMultiCloudMetadata(GetMulticloudOmHubMultiCloudMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudOmHubMultiCloudMetadataResult> getMulticloudOmHubMultiCloudMetadataPlain(GetMulticloudOmHubMultiCloudMetadataPlainArgs args) {
+        return getMulticloudOmHubMultiCloudMetadataPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific OmHub MultiCloud base compartment in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about multicloud base compartment
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMultiCloudMetadata = OciFunctions.getMulticloudOmHubMultiCloudMetadata(GetMulticloudOmHubMultiCloudMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudOmHubMultiCloudMetadataResult> getMulticloudOmHubMultiCloudMetadata(GetMulticloudOmHubMultiCloudMetadataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudOmHubMultiCloudMetadata:getMulticloudOmHubMultiCloudMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific OmHub MultiCloud base compartment in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about multicloud base compartment
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMultiCloudMetadata = OciFunctions.getMulticloudOmHubMultiCloudMetadata(GetMulticloudOmHubMultiCloudMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudOmHubMultiCloudMetadataResult> getMulticloudOmHubMultiCloudMetadata(GetMulticloudOmHubMultiCloudMetadataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudOmHubMultiCloudMetadata:getMulticloudOmHubMultiCloudMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific OmHub MultiCloud base compartment in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about multicloud base compartment
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMultiCloudMetadata = OciFunctions.getMulticloudOmHubMultiCloudMetadata(GetMulticloudOmHubMultiCloudMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(subscriptionId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudOmHubMultiCloudMetadataResult> getMulticloudOmHubMultiCloudMetadataPlain(GetMulticloudOmHubMultiCloudMetadataPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudOmHubMultiCloudMetadata:getMulticloudOmHubMultiCloudMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMultiCloudsMetadata = OciFunctions.getMulticloudOmHubMultiCloudsMetadata(GetMulticloudOmHubMultiCloudsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudOmHubMultiCloudsMetadataResult> getMulticloudOmHubMultiCloudsMetadata(GetMulticloudOmHubMultiCloudsMetadataArgs args) {
+        return getMulticloudOmHubMultiCloudsMetadata(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMultiCloudsMetadata = OciFunctions.getMulticloudOmHubMultiCloudsMetadata(GetMulticloudOmHubMultiCloudsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudOmHubMultiCloudsMetadataResult> getMulticloudOmHubMultiCloudsMetadataPlain(GetMulticloudOmHubMultiCloudsMetadataPlainArgs args) {
+        return getMulticloudOmHubMultiCloudsMetadataPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMultiCloudsMetadata = OciFunctions.getMulticloudOmHubMultiCloudsMetadata(GetMulticloudOmHubMultiCloudsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudOmHubMultiCloudsMetadataResult> getMulticloudOmHubMultiCloudsMetadata(GetMulticloudOmHubMultiCloudsMetadataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudOmHubMultiCloudsMetadata:getMulticloudOmHubMultiCloudsMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudsMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMultiCloudsMetadata = OciFunctions.getMulticloudOmHubMultiCloudsMetadata(GetMulticloudOmHubMultiCloudsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudOmHubMultiCloudsMetadataResult> getMulticloudOmHubMultiCloudsMetadata(GetMulticloudOmHubMultiCloudsMetadataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudOmHubMultiCloudsMetadata:getMulticloudOmHubMultiCloudsMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudsMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of compartments under a root compartment in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of multicloud metadata with multicloud base compartment and subscription across Cloud Service Providers.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudOmHubMultiCloudsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOmHubMultiCloudsMetadata = OciFunctions.getMulticloudOmHubMultiCloudsMetadata(GetMulticloudOmHubMultiCloudsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudOmHubMultiCloudsMetadataResult> getMulticloudOmHubMultiCloudsMetadataPlain(GetMulticloudOmHubMultiCloudsMetadataPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudOmHubMultiCloudsMetadata:getMulticloudOmHubMultiCloudsMetadata", TypeShape.of(GetMulticloudOmHubMultiCloudsMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about a ResourceAnchor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchor = OciFunctions.getMulticloudResourceAnchor(GetMulticloudResourceAnchorArgs.builder()
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudResourceAnchorResult> getMulticloudResourceAnchor(GetMulticloudResourceAnchorArgs args) {
+        return getMulticloudResourceAnchor(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about a ResourceAnchor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchor = OciFunctions.getMulticloudResourceAnchor(GetMulticloudResourceAnchorArgs.builder()
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudResourceAnchorResult> getMulticloudResourceAnchorPlain(GetMulticloudResourceAnchorPlainArgs args) {
+        return getMulticloudResourceAnchorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about a ResourceAnchor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchor = OciFunctions.getMulticloudResourceAnchor(GetMulticloudResourceAnchorArgs.builder()
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudResourceAnchorResult> getMulticloudResourceAnchor(GetMulticloudResourceAnchorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudResourceAnchor:getMulticloudResourceAnchor", TypeShape.of(GetMulticloudResourceAnchorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about a ResourceAnchor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchor = OciFunctions.getMulticloudResourceAnchor(GetMulticloudResourceAnchorArgs.builder()
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudResourceAnchorResult> getMulticloudResourceAnchor(GetMulticloudResourceAnchorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudResourceAnchor:getMulticloudResourceAnchor", TypeShape.of(GetMulticloudResourceAnchorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets information about a ResourceAnchor.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchor = OciFunctions.getMulticloudResourceAnchor(GetMulticloudResourceAnchorArgs.builder()
+     *             .resourceAnchorId(resourceAnchorId)
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudResourceAnchorResult> getMulticloudResourceAnchorPlain(GetMulticloudResourceAnchorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudResourceAnchor:getMulticloudResourceAnchor", TypeShape.of(GetMulticloudResourceAnchorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of ResourceAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnchorDisplayName)
+     *             .id(resourceAnchorId)
+     *             .isCompartmentIdInSubtree(resourceAnchorIsCompartmentIdInSubtree)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(resourceAnchorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudResourceAnchorsResult> getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs args) {
+        return getMulticloudResourceAnchors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of ResourceAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnchorDisplayName)
+     *             .id(resourceAnchorId)
+     *             .isCompartmentIdInSubtree(resourceAnchorIsCompartmentIdInSubtree)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(resourceAnchorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudResourceAnchorsResult> getMulticloudResourceAnchorsPlain(GetMulticloudResourceAnchorsPlainArgs args) {
+        return getMulticloudResourceAnchorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of ResourceAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnchorDisplayName)
+     *             .id(resourceAnchorId)
+     *             .isCompartmentIdInSubtree(resourceAnchorIsCompartmentIdInSubtree)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(resourceAnchorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudResourceAnchorsResult> getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", TypeShape.of(GetMulticloudResourceAnchorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of ResourceAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnchorDisplayName)
+     *             .id(resourceAnchorId)
+     *             .isCompartmentIdInSubtree(resourceAnchorIsCompartmentIdInSubtree)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(resourceAnchorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMulticloudResourceAnchorsResult> getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", TypeShape.of(GetMulticloudResourceAnchorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
+     * 
+     * Gets a list of ResourceAnchors.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetMulticloudResourceAnchorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnchors = OciFunctions.getMulticloudResourceAnchors(GetMulticloudResourceAnchorsArgs.builder()
+     *             .subscriptionId(subscriptionId)
+     *             .subscriptionServiceName(subscriptionServiceName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnchorDisplayName)
+     *             .id(resourceAnchorId)
+     *             .isCompartmentIdInSubtree(resourceAnchorIsCompartmentIdInSubtree)
+     *             .linkedCompartmentId(linkedCompartmentId)
+     *             .lifecycleState(resourceAnchorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMulticloudResourceAnchorsResult> getMulticloudResourceAnchorsPlain(GetMulticloudResourceAnchorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getMulticloudResourceAnchors:getMulticloudResourceAnchors", TypeShape.of(GetMulticloudResourceAnchorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Region resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a MonitoredRegion.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegion = OciFunctions.getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs.builder()
+     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsMonitoredRegionResult> getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs args) {
+        return getResourceAnalyticsMonitoredRegion(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Monitored Region resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a MonitoredRegion.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegion = OciFunctions.getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs.builder()
+     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsMonitoredRegionResult> getResourceAnalyticsMonitoredRegionPlain(GetResourceAnalyticsMonitoredRegionPlainArgs args) {
+        return getResourceAnalyticsMonitoredRegionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Monitored Region resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a MonitoredRegion.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegion = OciFunctions.getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs.builder()
+     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsMonitoredRegionResult> getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsMonitoredRegion:getResourceAnalyticsMonitoredRegion", TypeShape.of(GetResourceAnalyticsMonitoredRegionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Region resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a MonitoredRegion.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegion = OciFunctions.getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs.builder()
+     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsMonitoredRegionResult> getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsMonitoredRegion:getResourceAnalyticsMonitoredRegion", TypeShape.of(GetResourceAnalyticsMonitoredRegionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Monitored Region resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a MonitoredRegion.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegion = OciFunctions.getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs.builder()
+     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsMonitoredRegionResult> getResourceAnalyticsMonitoredRegionPlain(GetResourceAnalyticsMonitoredRegionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getResourceAnalyticsMonitoredRegion:getResourceAnalyticsMonitoredRegion", TypeShape.of(GetResourceAnalyticsMonitoredRegionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Regions in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of MonitoredRegions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
+     *             .id(monitoredRegionId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(monitoredRegionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsMonitoredRegionsResult> getResourceAnalyticsMonitoredRegions() {
+        return getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitored Regions in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of MonitoredRegions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
+     *             .id(monitoredRegionId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(monitoredRegionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsMonitoredRegionsResult> getResourceAnalyticsMonitoredRegionsPlain() {
+        return getResourceAnalyticsMonitoredRegionsPlain(GetResourceAnalyticsMonitoredRegionsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitored Regions in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of MonitoredRegions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
+     *             .id(monitoredRegionId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(monitoredRegionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsMonitoredRegionsResult> getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs args) {
+        return getResourceAnalyticsMonitoredRegions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitored Regions in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of MonitoredRegions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
+     *             .id(monitoredRegionId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(monitoredRegionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsMonitoredRegionsResult> getResourceAnalyticsMonitoredRegionsPlain(GetResourceAnalyticsMonitoredRegionsPlainArgs args) {
+        return getResourceAnalyticsMonitoredRegionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Monitored Regions in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of MonitoredRegions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
+     *             .id(monitoredRegionId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(monitoredRegionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsMonitoredRegionsResult> getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsMonitoredRegions:getResourceAnalyticsMonitoredRegions", TypeShape.of(GetResourceAnalyticsMonitoredRegionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Regions in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of MonitoredRegions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
+     *             .id(monitoredRegionId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(monitoredRegionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsMonitoredRegionsResult> getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsMonitoredRegions:getResourceAnalyticsMonitoredRegions", TypeShape.of(GetResourceAnalyticsMonitoredRegionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Monitored Regions in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of MonitoredRegions.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
+     *             .id(monitoredRegionId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(monitoredRegionState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsMonitoredRegionsResult> getResourceAnalyticsMonitoredRegionsPlain(GetResourceAnalyticsMonitoredRegionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getResourceAnalyticsMonitoredRegions:getResourceAnalyticsMonitoredRegions", TypeShape.of(GetResourceAnalyticsMonitoredRegionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Resource Analytics Instance resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a ResourceAnalyticsInstance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstance = OciFunctions.getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs.builder()
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsResourceAnalyticsInstanceResult> getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs args) {
+        return getResourceAnalyticsResourceAnalyticsInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Resource Analytics Instance resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a ResourceAnalyticsInstance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstance = OciFunctions.getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs.builder()
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsResourceAnalyticsInstanceResult> getResourceAnalyticsResourceAnalyticsInstancePlain(GetResourceAnalyticsResourceAnalyticsInstancePlainArgs args) {
+        return getResourceAnalyticsResourceAnalyticsInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Resource Analytics Instance resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a ResourceAnalyticsInstance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstance = OciFunctions.getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs.builder()
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsResourceAnalyticsInstanceResult> getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsResourceAnalyticsInstance:getResourceAnalyticsResourceAnalyticsInstance", TypeShape.of(GetResourceAnalyticsResourceAnalyticsInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Resource Analytics Instance resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a ResourceAnalyticsInstance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstance = OciFunctions.getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs.builder()
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsResourceAnalyticsInstanceResult> getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsResourceAnalyticsInstance:getResourceAnalyticsResourceAnalyticsInstance", TypeShape.of(GetResourceAnalyticsResourceAnalyticsInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Resource Analytics Instance resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a ResourceAnalyticsInstance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstance = OciFunctions.getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs.builder()
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsResourceAnalyticsInstanceResult> getResourceAnalyticsResourceAnalyticsInstancePlain(GetResourceAnalyticsResourceAnalyticsInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getResourceAnalyticsResourceAnalyticsInstance:getResourceAnalyticsResourceAnalyticsInstance", TypeShape.of(GetResourceAnalyticsResourceAnalyticsInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resource Analytics Instances in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of ResourceAnalyticsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstances = OciFunctions.getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnalyticsInstanceDisplayName)
+     *             .id(resourceAnalyticsInstanceId)
+     *             .state(resourceAnalyticsInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsResourceAnalyticsInstancesResult> getResourceAnalyticsResourceAnalyticsInstances() {
+        return getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resource Analytics Instances in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of ResourceAnalyticsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstances = OciFunctions.getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnalyticsInstanceDisplayName)
+     *             .id(resourceAnalyticsInstanceId)
+     *             .state(resourceAnalyticsInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsResourceAnalyticsInstancesResult> getResourceAnalyticsResourceAnalyticsInstancesPlain() {
+        return getResourceAnalyticsResourceAnalyticsInstancesPlain(GetResourceAnalyticsResourceAnalyticsInstancesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resource Analytics Instances in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of ResourceAnalyticsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstances = OciFunctions.getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnalyticsInstanceDisplayName)
+     *             .id(resourceAnalyticsInstanceId)
+     *             .state(resourceAnalyticsInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsResourceAnalyticsInstancesResult> getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs args) {
+        return getResourceAnalyticsResourceAnalyticsInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resource Analytics Instances in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of ResourceAnalyticsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstances = OciFunctions.getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnalyticsInstanceDisplayName)
+     *             .id(resourceAnalyticsInstanceId)
+     *             .state(resourceAnalyticsInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsResourceAnalyticsInstancesResult> getResourceAnalyticsResourceAnalyticsInstancesPlain(GetResourceAnalyticsResourceAnalyticsInstancesPlainArgs args) {
+        return getResourceAnalyticsResourceAnalyticsInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Resource Analytics Instances in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of ResourceAnalyticsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstances = OciFunctions.getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnalyticsInstanceDisplayName)
+     *             .id(resourceAnalyticsInstanceId)
+     *             .state(resourceAnalyticsInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsResourceAnalyticsInstancesResult> getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsResourceAnalyticsInstances:getResourceAnalyticsResourceAnalyticsInstances", TypeShape.of(GetResourceAnalyticsResourceAnalyticsInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resource Analytics Instances in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of ResourceAnalyticsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstances = OciFunctions.getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnalyticsInstanceDisplayName)
+     *             .id(resourceAnalyticsInstanceId)
+     *             .state(resourceAnalyticsInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsResourceAnalyticsInstancesResult> getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsResourceAnalyticsInstances:getResourceAnalyticsResourceAnalyticsInstances", TypeShape.of(GetResourceAnalyticsResourceAnalyticsInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Resource Analytics Instances in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of ResourceAnalyticsInstances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsResourceAnalyticsInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testResourceAnalyticsInstances = OciFunctions.getResourceAnalyticsResourceAnalyticsInstances(GetResourceAnalyticsResourceAnalyticsInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(resourceAnalyticsInstanceDisplayName)
+     *             .id(resourceAnalyticsInstanceId)
+     *             .state(resourceAnalyticsInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsResourceAnalyticsInstancesResult> getResourceAnalyticsResourceAnalyticsInstancesPlain(GetResourceAnalyticsResourceAnalyticsInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getResourceAnalyticsResourceAnalyticsInstances:getResourceAnalyticsResourceAnalyticsInstances", TypeShape.of(GetResourceAnalyticsResourceAnalyticsInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Tenancy Attachment resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a TenancyAttachment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachment = OciFunctions.getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs.builder()
+     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsTenancyAttachmentResult> getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs args) {
+        return getResourceAnalyticsTenancyAttachment(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Tenancy Attachment resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a TenancyAttachment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachment = OciFunctions.getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs.builder()
+     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsTenancyAttachmentResult> getResourceAnalyticsTenancyAttachmentPlain(GetResourceAnalyticsTenancyAttachmentPlainArgs args) {
+        return getResourceAnalyticsTenancyAttachmentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Tenancy Attachment resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a TenancyAttachment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachment = OciFunctions.getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs.builder()
+     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsTenancyAttachmentResult> getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsTenancyAttachment:getResourceAnalyticsTenancyAttachment", TypeShape.of(GetResourceAnalyticsTenancyAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Tenancy Attachment resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a TenancyAttachment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachment = OciFunctions.getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs.builder()
+     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsTenancyAttachmentResult> getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsTenancyAttachment:getResourceAnalyticsTenancyAttachment", TypeShape.of(GetResourceAnalyticsTenancyAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Tenancy Attachment resource in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets information about a TenancyAttachment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachment = OciFunctions.getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs.builder()
+     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsTenancyAttachmentResult> getResourceAnalyticsTenancyAttachmentPlain(GetResourceAnalyticsTenancyAttachmentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getResourceAnalyticsTenancyAttachment:getResourceAnalyticsTenancyAttachment", TypeShape.of(GetResourceAnalyticsTenancyAttachmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Tenancy Attachments in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of TenancyAttachments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
+     *             .id(tenancyAttachmentId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(tenancyAttachmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsTenancyAttachmentsResult> getResourceAnalyticsTenancyAttachments() {
+        return getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Tenancy Attachments in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of TenancyAttachments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
+     *             .id(tenancyAttachmentId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(tenancyAttachmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsTenancyAttachmentsResult> getResourceAnalyticsTenancyAttachmentsPlain() {
+        return getResourceAnalyticsTenancyAttachmentsPlain(GetResourceAnalyticsTenancyAttachmentsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Tenancy Attachments in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of TenancyAttachments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
+     *             .id(tenancyAttachmentId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(tenancyAttachmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsTenancyAttachmentsResult> getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs args) {
+        return getResourceAnalyticsTenancyAttachments(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Tenancy Attachments in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of TenancyAttachments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
+     *             .id(tenancyAttachmentId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(tenancyAttachmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsTenancyAttachmentsResult> getResourceAnalyticsTenancyAttachmentsPlain(GetResourceAnalyticsTenancyAttachmentsPlainArgs args) {
+        return getResourceAnalyticsTenancyAttachmentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Tenancy Attachments in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of TenancyAttachments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
+     *             .id(tenancyAttachmentId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(tenancyAttachmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsTenancyAttachmentsResult> getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsTenancyAttachments:getResourceAnalyticsTenancyAttachments", TypeShape.of(GetResourceAnalyticsTenancyAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Tenancy Attachments in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of TenancyAttachments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
+     *             .id(tenancyAttachmentId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(tenancyAttachmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetResourceAnalyticsTenancyAttachmentsResult> getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getResourceAnalyticsTenancyAttachments:getResourceAnalyticsTenancyAttachments", TypeShape.of(GetResourceAnalyticsTenancyAttachmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Tenancy Attachments in Oracle Cloud Infrastructure Resource Analytics service.
+     * 
+     * Gets a list of TenancyAttachments.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetResourceAnalyticsTenancyAttachmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
+     *             .id(tenancyAttachmentId)
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .state(tenancyAttachmentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetResourceAnalyticsTenancyAttachmentsResult> getResourceAnalyticsTenancyAttachmentsPlain(GetResourceAnalyticsTenancyAttachmentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getResourceAnalyticsTenancyAttachments:getResourceAnalyticsTenancyAttachments", TypeShape.of(GetResourceAnalyticsTenancyAttachmentsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Wlms service.

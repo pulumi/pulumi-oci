@@ -12,10 +12,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
-//
-// # Create Blockchain Platform Peer
-//
 // ## Example Usage
 //
 // ```go

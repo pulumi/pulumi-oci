@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataCatalog
 {
     /// <summary>
-    /// This resource provides the Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
-    /// 
-    /// Create a new data asset.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

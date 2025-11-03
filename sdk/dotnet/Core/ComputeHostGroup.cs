@@ -10,10 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// This resource provides the Compute Host Group resource in Oracle Cloud Infrastructure Core service.
-    /// 
-    /// Creates a new compute host group in the specified compartment and availability domain.
-    /// 
     /// ## Example Usage
     /// 
     /// ```csharp

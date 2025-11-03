@@ -19,13 +19,6 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Oda Instance resource in Oracle Cloud Infrastructure Digital Assistant service.
- * 
- * Starts an asynchronous job to create a Digital Assistant instance.
- * 
- * To monitor the status of the job, take the `opc-work-request-id` response
- * header value and use it to call `GET /workRequests/{workRequestId}`.
- * 
  * ## Example Usage
  * 
  * <pre>

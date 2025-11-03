@@ -235,10 +235,6 @@ class DataSafeConfiguration(pulumi.CustomResource):
                  is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
                  __props__=None):
         """
-        This resource provides the Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Enables Data Safe in the tenancy and region.
-
         ## Example Usage
 
         ```python
@@ -270,10 +266,6 @@ class DataSafeConfiguration(pulumi.CustomResource):
                  args: DataSafeConfigurationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
-
-        Enables Data Safe in the tenancy and region.
-
         ## Example Usage
 
         ```python
